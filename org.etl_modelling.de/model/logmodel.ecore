@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logmodel" nsURI="http://www.example.org/logmodel" nsPrefix="logmodel">
+  <eClassifiers xsi:type="ecore:EClass" name="logpackage" eSuperTypes="ETL_MODEL.ecore#//Package">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
+        eType="#//Entity" containment="true" eOpposite="#//Entity/logpackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commonmapping" upperBound="-1"
+        eType="#//CommonMapping" containment="true" eOpposite="#//CommonMapping/logpackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logpackage" eType="#//logpackage"
+        eOpposite="#//logpackage/entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityField" upperBound="-1"
+        eType="#//Field" containment="true" eOpposite="#//Field/entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="include" upperBound="-1"
+        eType="#//Include" containment="true" eOpposite="#//Include/entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
+        eType="#//Relationship" containment="true" eOpposite="#//Relationship/entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
+        eOpposite="#//Entity/entityField"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="include" eType="#//Include"
+        eOpposite="#//Include/includeFields"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="original_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="short_describtion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateFormat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NullIndicator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowExponent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasImplicitComma" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFastChanging" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum type_enums.ecore#//FieldTypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromEntity" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toEntity" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifiyingFieldsRel"
+        upperBound="-1" eType="#//Field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="describingFieldsRel" upperBound="-1"
+        eType="#//Field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="describingfields" upperBound="-1"
+        eType="#//Field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
+        eOpposite="#//Entity/relationships"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BKDomain"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Include" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includeFields" upperBound="-1"
+        eType="#//Field" containment="true" eOpposite="#//Field/include"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifyingfields" upperBound="-1"
+        eType="#//Field" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
+        eOpposite="#//Entity/include"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessTerm" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primaryFdmID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primaryFDMName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usedBy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalSpecification"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regulatoryRequirements"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DataOwner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommonMapping" eSuperTypes="ETL_MODEL.ecore#//namedelement #//anotatable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commonmappinginputfields"
+        upperBound="-1" eType="#//Field" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commonmappingoutputfields"
+        upperBound="-1" eType="#//Field" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logpackage" eType="#//logpackage"
+        eOpposite="#//logpackage/commonmapping"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="anotatable" eSuperTypes="ETL_MODEL.ecore#//Annotation"/>
+</ecore:EPackage>

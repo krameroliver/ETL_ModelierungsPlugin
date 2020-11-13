@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated logmodel -->
+      <package
+            uri="http://www.example.org/logmodel"
+            class="logmodel.LogmodelPackage"
+            genModel="model/logmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated logmodel -->
+      <package
+            uri="http://www.example.org/specmodel"
+            class="specmodel.SpecmodelPackage"
+            genModel="model/logmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated logmodel -->
+      <package
+            uri="http://www.example.org/ETL_MODEL"
+            class="ETL_MODEL.ETL_MODELPackage"
+            genModel="model/logmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated logmodel -->
+      <package
+            uri="http://www.example.org/package_enums"
+            class="package_enums.Package_enumsPackage"
+            genModel="model/logmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated logmodel -->
+      <package
+            uri="http://www.example.org/type_enum"
+            class="type_enum.Type_enumPackage"
+            genModel="model/logmodel.genmodel"/>
+   </extension>
+
+</plugin>

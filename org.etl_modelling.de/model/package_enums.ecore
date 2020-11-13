@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="package_enums" nsURI="http://www.example.org/package_enums"
+    nsPrefix="package_enums">
+  <eClassifiers xsi:type="ecore:EEnum" name="LAYERTYPE">
+    <eLiterals name="STAGE"/>
+    <eLiterals name="INTEGRATION" value="1"/>
+    <eLiterals name="EXPORT" value="2"/>
+    <eLiterals name="REPORTING" value="3"/>
+    <eLiterals name="HARMONISATION" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HISTORISATIONTYPE">
+    <eLiterals name="NONE"/>
+    <eLiterals name="DAY_PARTITIONED" value="1"/>
+    <eLiterals name="MONTH_PARTITIONED" value="2"/>
+    <eLiterals name="BITEMPORAL" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="REPRESENTATIONS">
+    <eLiterals name="FLAT_TABLE"/>
+    <eLiterals name="BITEMPORAL" value="1"/>
+    <eLiterals name="ThirdNF" value="2" literal="ThirdNF"/>
+    <eLiterals name="SNOWFLAKE" value="3"/>
+    <eLiterals name="STAR" value="4"/>
+  </eClassifiers>
+</ecore:EPackage>

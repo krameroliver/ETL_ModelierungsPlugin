@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ETL_MODEL" nsURI="http://www.example.org/ETL_MODEL" nsPrefix="ETL_MODEL">
+  <eClassifiers xsi:type="ecore:EClass" name="namedelement" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" abstract="true" interface="true"
+      eSuperTypes="#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LAYER" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LAYER_TYPE" eType="ecore:EEnum package_enums.ecore#//LAYERTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="HISTORISATION" eType="ecore:EEnum package_enums.ecore#//HISTORISATIONTYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="REPRESENTATION" eType="ecore:EEnum package_enums.ecore#//REPRESENTATIONS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation" abstract="true" interface="true"
+      eSuperTypes="#//namedelement"/>
+</ecore:EPackage>

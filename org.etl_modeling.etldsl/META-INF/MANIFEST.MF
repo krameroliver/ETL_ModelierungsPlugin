@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.etl_modeling.etldsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.etl_modeling.etldsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.etl_modeling.etldsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.etl_modelling.de,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.etl_modeling.etldsl.services,
+ org.etl_modeling.etldsl.scoping,
+ org.etl_modeling.etldsl.parser.antlr.internal,
+ org.etl_modeling.etldsl,
+ org.etl_modeling.etldsl.validation,
+ org.etl_modeling.etldsl.parser.antlr,
+ org.etl_modeling.etldsl.serializer,
+ org.etl_modeling.etldsl.generator,
+ org.etl_modeling.etldsl.formatting2
+Import-Package: org.apache.log4j

@@ -1,0 +1,263 @@
+/**
+ */
+package specmodel;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Source</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link specmodel.Source#getSourceBusinessrule <em>Source Businessrule</em>}</li>
+ *   <li>{@link specmodel.Source#getParentSource <em>Parent Source</em>}</li>
+ *   <li>{@link specmodel.Source#getChildSource <em>Child Source</em>}</li>
+ *   <li>{@link specmodel.Source#getSourceSpecification <em>Source Specification</em>}</li>
+ *   <li>{@link specmodel.Source#getSpecification <em>Specification</em>}</li>
+ *   <li>{@link specmodel.Source#getFilters <em>Filters</em>}</li>
+ *   <li>{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}</li>
+ *   <li>{@link specmodel.Source#getParentJoinFields <em>Parent Join Fields</em>}</li>
+ *   <li>{@link specmodel.Source#getChildJoinFields <em>Child Join Fields</em>}</li>
+ *   <li>{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}</li>
+ *   <li>{@link specmodel.Source#getJoinEntity <em>Join Entity</em>}</li>
+ *   <li>{@link specmodel.Source#getRelationship <em>Relationship</em>}</li>
+ * </ul>
+ *
+ * @see specmodel.SpecmodelPackage#getSource()
+ * @model
+ * @generated
+ */
+public interface Source extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Source Businessrule</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Businessrule</em>' reference.
+	 * @see #setSourceBusinessrule(BusinessRule)
+	 * @see specmodel.SpecmodelPackage#getSource_SourceBusinessrule()
+	 * @model
+	 * @generated
+	 */
+	BusinessRule getSourceBusinessrule();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getSourceBusinessrule <em>Source Businessrule</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Businessrule</em>' reference.
+	 * @see #getSourceBusinessrule()
+	 * @generated
+	 */
+	void setSourceBusinessrule(BusinessRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent Source</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.Source#getChildSource <em>Child Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Source</em>' container reference.
+	 * @see #setParentSource(Source)
+	 * @see specmodel.SpecmodelPackage#getSource_ParentSource()
+	 * @see specmodel.Source#getChildSource
+	 * @model opposite="childSource" transient="false"
+	 * @generated
+	 */
+	Source getParentSource();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getParentSource <em>Parent Source</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Source</em>' container reference.
+	 * @see #getParentSource()
+	 * @generated
+	 */
+	void setParentSource(Source value);
+
+	/**
+	 * Returns the value of the '<em><b>Child Source</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.Source}.
+	 * It is bidirectional and its opposite is '{@link specmodel.Source#getParentSource <em>Parent Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Child Source</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_ChildSource()
+	 * @see specmodel.Source#getParentSource
+	 * @model opposite="parentSource" containment="true"
+	 * @generated
+	 */
+	EList<Source> getChildSource();
+
+	/**
+	 * Returns the value of the '<em><b>Source Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Specification</em>' reference.
+	 * @see #setSourceSpecification(Specification)
+	 * @see specmodel.SpecmodelPackage#getSource_SourceSpecification()
+	 * @model
+	 * @generated
+	 */
+	Specification getSourceSpecification();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getSourceSpecification <em>Source Specification</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Specification</em>' reference.
+	 * @see #getSourceSpecification()
+	 * @generated
+	 */
+	void setSourceSpecification(Specification value);
+
+	/**
+	 * Returns the value of the '<em><b>Specification</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.Specification#getPrimarySource <em>Primary Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Specification</em>' container reference.
+	 * @see #setSpecification(Specification)
+	 * @see specmodel.SpecmodelPackage#getSource_Specification()
+	 * @see specmodel.Specification#getPrimarySource
+	 * @model opposite="primarySource" transient="false"
+	 * @generated
+	 */
+	Specification getSpecification();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getSpecification <em>Specification</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Specification</em>' container reference.
+	 * @see #getSpecification()
+	 * @generated
+	 */
+	void setSpecification(Specification value);
+
+	/**
+	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filters</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_Filters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Filter> getFilters();
+
+	/**
+	 * Returns the value of the '<em><b>Vectorkeys</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.VectorKey}.
+	 * It is bidirectional and its opposite is '{@link specmodel.VectorKey#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vectorkeys</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_Vectorkeys()
+	 * @see specmodel.VectorKey#getSource
+	 * @model opposite="source" containment="true"
+	 * @generated
+	 */
+	EList<VectorKey> getVectorkeys();
+
+	/**
+	 * Returns the value of the '<em><b>Parent Join Fields</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.JoinField}.
+	 * It is bidirectional and its opposite is '{@link specmodel.JoinField#getParentSource <em>Parent Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Join Fields</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_ParentJoinFields()
+	 * @see specmodel.JoinField#getParentSource
+	 * @model opposite="parentSource" containment="true"
+	 * @generated
+	 */
+	EList<JoinField> getParentJoinFields();
+
+	/**
+	 * Returns the value of the '<em><b>Child Join Fields</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.JoinField}.
+	 * It is bidirectional and its opposite is '{@link specmodel.JoinField#getChildSource <em>Child Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Child Join Fields</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_ChildJoinFields()
+	 * @see specmodel.JoinField#getChildSource
+	 * @model opposite="childSource" containment="true"
+	 * @generated
+	 */
+	EList<JoinField> getChildJoinFields();
+
+	/**
+	 * Returns the value of the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Entity</em>' reference.
+	 * @see #setSourceEntity(Entity)
+	 * @see specmodel.SpecmodelPackage#getSource_SourceEntity()
+	 * @model
+	 * @generated
+	 */
+	Entity getSourceEntity();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Entity</em>' reference.
+	 * @see #getSourceEntity()
+	 * @generated
+	 */
+	void setSourceEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Join Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Join Entity</em>' reference.
+	 * @see #setJoinEntity(Entity)
+	 * @see specmodel.SpecmodelPackage#getSource_JoinEntity()
+	 * @model
+	 * @generated
+	 */
+	Entity getJoinEntity();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getJoinEntity <em>Join Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Join Entity</em>' reference.
+	 * @see #getJoinEntity()
+	 * @generated
+	 */
+	void setJoinEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Relationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Relationship</em>' reference.
+	 * @see #setRelationship(Relationship)
+	 * @see specmodel.SpecmodelPackage#getSource_Relationship()
+	 * @model
+	 * @generated
+	 */
+	Relationship getRelationship();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getRelationship <em>Relationship</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Relationship</em>' reference.
+	 * @see #getRelationship()
+	 * @generated
+	 */
+	void setRelationship(Relationship value);
+
+} // Source

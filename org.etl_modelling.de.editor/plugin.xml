@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated logmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="logmodel.presentation.LogmodelModelWizardID"
+            name="%_UI_LogmodelModelWizard_label"
+            class="logmodel.presentation.LogmodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/LogmodelModelFile.gif">
+         <description>%_UI_LogmodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated logmodel -->
+      <editor
+            id="logmodel.presentation.LogmodelEditorID"
+            name="%_UI_LogmodelEditor_label"
+            icon="icons/full/obj16/LogmodelModelFile.gif"
+            extensions="logmodel"
+            class="logmodel.presentation.LogmodelEditor"
+            contributorClass="logmodel.presentation.LogmodelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated logmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="specmodel.presentation.SpecmodelModelWizardID"
+            name="%_UI_SpecmodelModelWizard_label"
+            class="specmodel.presentation.SpecmodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpecmodelModelFile.gif">
+         <description>%_UI_SpecmodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated logmodel -->
+      <editor
+            id="specmodel.presentation.SpecmodelEditorID"
+            name="%_UI_SpecmodelEditor_label"
+            icon="icons/full/obj16/SpecmodelModelFile.gif"
+            extensions="specmodel"
+            class="specmodel.presentation.SpecmodelEditor"
+            contributorClass="specmodel.presentation.SpecmodelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

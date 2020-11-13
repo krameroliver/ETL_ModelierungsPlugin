@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<feature id="org.etl_modeling.etldsl.feature" version="0.0.0">
+		<category name="main"/>
+	</feature>
+	<feature id="org.etl_modeling.etldsl.feature.source" version="0.0.0">
+		<category name="main.source"/>
+	</feature>
+	<category-def name="main" label="ETLDsl"/>
+	<category-def name="main.source" label="ETLDsl (Sources)"/>
+</site>
