@@ -768,7 +768,6 @@ public interface LogmodelPackage extends EPackage {
 	 */
 	int COMMON_MAPPING_OPERATION_COUNT = ETL_MODELPackage.NAMEDELEMENT_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link logmodel.impl.anotatableImpl <em>anotatable</em>}' class.
 	 * <!-- begin-user-doc -->

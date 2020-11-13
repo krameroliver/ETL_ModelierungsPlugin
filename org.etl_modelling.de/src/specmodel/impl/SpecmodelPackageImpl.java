@@ -427,6 +427,26 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getBusinessRule_TargetRelationship() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBusinessRule_SourceReleationship() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSource() {
 		return sourceEClass;
 	}
@@ -903,6 +923,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		createEAttribute(businessRuleEClass, BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY);
 		createEAttribute(businessRuleEClass, BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY);
 		createEAttribute(businessRuleEClass, BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS);
+		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_RELATIONSHIP);
+		createEReference(businessRuleEClass, BUSINESS_RULE__SOURCE_RELEATIONSHIP);
 
 		sourceEClass = createEClass(SOURCE);
 		createEReference(sourceEClass, SOURCE__SOURCE_BUSINESSRULE);
@@ -1020,6 +1042,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		initEAttribute(getBusinessRule_RelationshipSourceEntityUseHashKey(), ecorePackage.getEBoolean(), "relationshipSourceEntityUseHashKey", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessRule_TargetEntityUseHashKey(), ecorePackage.getEBoolean(), "targetEntityUseHashKey", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessRule_TargetMappingOutputFields(), ecorePackage.getEString(), "targetMappingOutputFields", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_TargetRelationship(), this.getRelationship(), null, "targetRelationship", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_SourceReleationship(), this.getRelationship(), null, "sourceReleationship", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSource_SourceBusinessrule(), this.getBusinessRule(), null, "sourceBusinessrule", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

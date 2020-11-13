@@ -78,6 +78,8 @@ public class BusinessRuleItemProvider
 			addRelationshipSourceEntityUseHashKeyPropertyDescriptor(object);
 			addTargetEntityUseHashKeyPropertyDescriptor(object);
 			addTargetMappingOutputFieldsPropertyDescriptor(object);
+			addTargetRelationshipPropertyDescriptor(object);
+			addSourceReleationshipPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -320,6 +322,50 @@ public class BusinessRuleItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Relationship feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetRelationshipPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_targetRelationship_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_targetRelationship_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__TARGET_RELATIONSHIP,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source Releationship feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceReleationshipPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_sourceReleationship_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_sourceReleationship_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__SOURCE_RELEATIONSHIP,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

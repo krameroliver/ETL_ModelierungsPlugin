@@ -351,13 +351,31 @@ public interface SpecmodelPackage extends EPackage {
 	int BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 13;
 
 	/**
+	 * The feature id for the '<em><b>Target Relationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_RULE__TARGET_RELATIONSHIP = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Source Releationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_RULE__SOURCE_RELEATIONSHIP = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 15;
+
+	/**
 	 * The number of structural features of the '<em>Business Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_RULE_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 14;
+	int BUSINESS_RULE_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of operations of the '<em>Business Rule</em>' class.
@@ -1165,6 +1183,28 @@ public interface SpecmodelPackage extends EPackage {
 	EAttribute getBusinessRule_TargetMappingOutputFields();
 
 	/**
+	 * Returns the meta object for the reference '{@link specmodel.BusinessRule#getTargetRelationship <em>Target Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target Relationship</em>'.
+	 * @see specmodel.BusinessRule#getTargetRelationship()
+	 * @see #getBusinessRule()
+	 * @generated
+	 */
+	EReference getBusinessRule_TargetRelationship();
+
+	/**
+	 * Returns the meta object for the reference '{@link specmodel.BusinessRule#getSourceReleationship <em>Source Releationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Releationship</em>'.
+	 * @see specmodel.BusinessRule#getSourceReleationship()
+	 * @see #getBusinessRule()
+	 * @generated
+	 */
+	EReference getBusinessRule_SourceReleationship();
+
+	/**
 	 * Returns the meta object for class '{@link specmodel.Source <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1824,6 +1864,22 @@ public interface SpecmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS = eINSTANCE.getBusinessRule_TargetMappingOutputFields();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Relationship</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_RULE__TARGET_RELATIONSHIP = eINSTANCE.getBusinessRule_TargetRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Releationship</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_RULE__SOURCE_RELEATIONSHIP = eINSTANCE.getBusinessRule_SourceReleationship();
 
 		/**
 		 * The meta object literal for the '{@link specmodel.impl.SourceImpl <em>Source</em>}' class.

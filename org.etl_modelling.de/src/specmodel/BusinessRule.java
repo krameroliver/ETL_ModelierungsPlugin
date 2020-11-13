@@ -29,6 +29,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link specmodel.BusinessRule#isRelationshipSourceEntityUseHashKey <em>Relationship Source Entity Use Hash Key</em>}</li>
  *   <li>{@link specmodel.BusinessRule#isTargetEntityUseHashKey <em>Target Entity Use Hash Key</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getTargetRelationship <em>Target Relationship</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getSourceReleationship <em>Source Releationship</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getBusinessRule()
@@ -334,5 +336,49 @@ public interface BusinessRule extends namedelement {
 	 * @generated
 	 */
 	void setTargetMappingOutputFields(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Relationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Relationship</em>' reference.
+	 * @see #setTargetRelationship(Relationship)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_TargetRelationship()
+	 * @model
+	 * @generated
+	 */
+	Relationship getTargetRelationship();
+
+	/**
+	 * Sets the value of the '{@link specmodel.BusinessRule#getTargetRelationship <em>Target Relationship</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Relationship</em>' reference.
+	 * @see #getTargetRelationship()
+	 * @generated
+	 */
+	void setTargetRelationship(Relationship value);
+
+	/**
+	 * Returns the value of the '<em><b>Source Releationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Releationship</em>' reference.
+	 * @see #setSourceReleationship(Relationship)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_SourceReleationship()
+	 * @model
+	 * @generated
+	 */
+	Relationship getSourceReleationship();
+
+	/**
+	 * Sets the value of the '{@link specmodel.BusinessRule#getSourceReleationship <em>Source Releationship</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Releationship</em>' reference.
+	 * @see #getSourceReleationship()
+	 * @generated
+	 */
+	void setSourceReleationship(Relationship value);
 
 } // BusinessRule

@@ -39,6 +39,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetMappingOutputFields"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetRelationship" eType="#//Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceReleationship" eType="#//Relationship"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceBusinessrule" eType="#//BusinessRule"/>

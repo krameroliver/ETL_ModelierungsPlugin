@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import specmodel.BusinessRule;
 import specmodel.Dedup;
 import specmodel.Entity;
+import specmodel.Relationship;
 import specmodel.RuleType;
 import specmodel.Specification;
 import specmodel.SpecmodelPackage;
@@ -51,6 +52,8 @@ import specmodel.VectorKey;
  *   <li>{@link specmodel.impl.BusinessRuleImpl#isRelationshipSourceEntityUseHashKey <em>Relationship Source Entity Use Hash Key</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#isTargetEntityUseHashKey <em>Target Entity Use Hash Key</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetRelationship <em>Target Relationship</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getSourceReleationship <em>Source Releationship</em>}</li>
  * </ul>
  *
  * @generated
@@ -255,6 +258,26 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @ordered
 	 */
 	protected String targetMappingOutputFields = TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTargetRelationship() <em>Target Relationship</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetRelationship()
+	 * @generated
+	 * @ordered
+	 */
+	protected Relationship targetRelationship;
+
+	/**
+	 * The cached value of the '{@link #getSourceReleationship() <em>Source Releationship</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceReleationship()
+	 * @generated
+	 * @ordered
+	 */
+	protected Relationship sourceReleationship;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -737,6 +760,86 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Relationship getTargetRelationship() {
+		if (targetRelationship != null && targetRelationship.eIsProxy()) {
+			InternalEObject oldTargetRelationship = (InternalEObject)targetRelationship;
+			targetRelationship = (Relationship)eResolveProxy(oldTargetRelationship);
+			if (targetRelationship != oldTargetRelationship) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP, oldTargetRelationship, targetRelationship));
+			}
+		}
+		return targetRelationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Relationship basicGetTargetRelationship() {
+		return targetRelationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTargetRelationship(Relationship newTargetRelationship) {
+		Relationship oldTargetRelationship = targetRelationship;
+		targetRelationship = newTargetRelationship;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP, oldTargetRelationship, targetRelationship));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Relationship getSourceReleationship() {
+		if (sourceReleationship != null && sourceReleationship.eIsProxy()) {
+			InternalEObject oldSourceReleationship = (InternalEObject)sourceReleationship;
+			sourceReleationship = (Relationship)eResolveProxy(oldSourceReleationship);
+			if (sourceReleationship != oldSourceReleationship) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP, oldSourceReleationship, sourceReleationship));
+			}
+		}
+		return sourceReleationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Relationship basicGetSourceReleationship() {
+		return sourceReleationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSourceReleationship(Relationship newSourceReleationship) {
+		Relationship oldSourceReleationship = sourceReleationship;
+		sourceReleationship = newSourceReleationship;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP, oldSourceReleationship, sourceReleationship));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -835,6 +938,12 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				return isTargetEntityUseHashKey();
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
 				return getTargetMappingOutputFields();
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
+				if (resolve) return getTargetRelationship();
+				return basicGetTargetRelationship();
+			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
+				if (resolve) return getSourceReleationship();
+				return basicGetSourceReleationship();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -895,6 +1004,12 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
 				setTargetMappingOutputFields((String)newValue);
 				return;
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
+				setTargetRelationship((Relationship)newValue);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
+				setSourceReleationship((Relationship)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -952,6 +1067,12 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
 				setTargetMappingOutputFields(TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT);
 				return;
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
+				setTargetRelationship((Relationship)null);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
+				setSourceReleationship((Relationship)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -994,6 +1115,10 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				return targetEntityUseHashKey != TARGET_ENTITY_USE_HASH_KEY_EDEFAULT;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
 				return TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT == null ? targetMappingOutputFields != null : !TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT.equals(targetMappingOutputFields);
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
+				return targetRelationship != null;
+			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
+				return sourceReleationship != null;
 		}
 		return super.eIsSet(featureID);
 	}
