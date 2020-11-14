@@ -325,6 +325,29 @@ public class SpecmodelItemProviderAdapterFactory extends SpecmodelAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link specmodel.ReadEntitySpecification} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReadEntitySpecificationItemProvider readEntitySpecificationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link specmodel.ReadEntitySpecification}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReadEntitySpecificationAdapter() {
+		if (readEntitySpecificationItemProvider == null) {
+			readEntitySpecificationItemProvider = new ReadEntitySpecificationItemProvider(this);
+		}
+
+		return readEntitySpecificationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,6 +463,7 @@ public class SpecmodelItemProviderAdapterFactory extends SpecmodelAdapterFactory
 		if (fieldItemProvider != null) fieldItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
+		if (readEntitySpecificationItemProvider != null) readEntitySpecificationItemProvider.dispose();
 	}
 
 }

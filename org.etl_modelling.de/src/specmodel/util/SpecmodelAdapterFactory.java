@@ -114,6 +114,10 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 				return createRelationshipAdapter();
 			}
 			@Override
+			public Adapter caseReadEntitySpecification(ReadEntitySpecification object) {
+				return createReadEntitySpecificationAdapter();
+			}
+			@Override
 			public Adapter casenamedelement(namedelement object) {
 				return createnamedelementAdapter();
 			}
@@ -292,6 +296,20 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link specmodel.ReadEntitySpecification <em>Read Entity Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see specmodel.ReadEntitySpecification
+	 * @generated
+	 */
+	public Adapter createReadEntitySpecificationAdapter() {
 		return null;
 	}
 

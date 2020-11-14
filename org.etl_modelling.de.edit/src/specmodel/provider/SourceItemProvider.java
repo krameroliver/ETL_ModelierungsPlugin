@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -68,6 +69,14 @@ public class SourceItemProvider
 			addSourceSpecificationPropertyDescriptor(object);
 			addSourceEntityPropertyDescriptor(object);
 			addJoinEntityPropertyDescriptor(object);
+			addSourceReleationshipPropertyDescriptor(object);
+			addIsMandatoryPropertyDescriptor(object);
+			addIsVectorPropertyDescriptor(object);
+			addIsMultiplyingPropertyDescriptor(object);
+			addAliasPropertyDescriptor(object);
+			addReadentityspecificationPropertyDescriptor(object);
+			addJoinCommentPropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 			addRelationshipPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -162,6 +171,28 @@ public class SourceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Source Releationship feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceReleationshipPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_sourceReleationship_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_sourceReleationship_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__SOURCE_RELEATIONSHIP,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Relationship feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,6 +215,160 @@ public class SourceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Mandatory feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMandatoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_isMandatory_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_isMandatory_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__IS_MANDATORY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Vector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsVectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_isVector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_isVector_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__IS_VECTOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Multiplying feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMultiplyingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_isMultiplying_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_isMultiplying_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__IS_MULTIPLYING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Alias feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAliasPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_alias_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_alias_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__ALIAS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Readentityspecification feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReadentityspecificationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_readentityspecification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_readentityspecification_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__READENTITYSPECIFICATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Join Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addJoinCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_joinComment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_joinComment_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__JOIN_COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_comment_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -200,6 +385,7 @@ public class SourceItemProvider
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__VECTORKEYS);
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__PARENT_JOIN_FIELDS);
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELDS);
+			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__READENTITYSPECIFICATION);
 		}
 		return childrenFeatures;
 	}
@@ -236,7 +422,8 @@ public class SourceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Source_type");
+		Source source = (Source)object;
+		return getString("_UI_Source_type") + " " + source.isIsMandatory();
 	}
 
 
@@ -252,11 +439,20 @@ public class SourceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Source.class)) {
+			case SpecmodelPackage.SOURCE__IS_MANDATORY:
+			case SpecmodelPackage.SOURCE__IS_VECTOR:
+			case SpecmodelPackage.SOURCE__IS_MULTIPLYING:
+			case SpecmodelPackage.SOURCE__ALIAS:
+			case SpecmodelPackage.SOURCE__JOIN_COMMENT:
+			case SpecmodelPackage.SOURCE__COMMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case SpecmodelPackage.SOURCE__CHILD_SOURCE:
 			case SpecmodelPackage.SOURCE__FILTERS:
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 			case SpecmodelPackage.SOURCE__PARENT_JOIN_FIELDS:
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELDS:
+			case SpecmodelPackage.SOURCE__READENTITYSPECIFICATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -298,6 +494,11 @@ public class SourceItemProvider
 			(createChildParameter
 				(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELDS,
 				 SpecmodelFactory.eINSTANCE.createJoinField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SpecmodelPackage.Literals.SOURCE__READENTITYSPECIFICATION,
+				 SpecmodelFactory.eINSTANCE.createReadEntitySpecification()));
 	}
 
 	/**

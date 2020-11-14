@@ -61,6 +61,15 @@
         eType="#//JoinField" containment="true" eOpposite="#//JoinField/childSource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="joinEntity" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceReleationship" eType="#//Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiplying" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="readentityspecification"
+        eType="#//ReadEntitySpecification" containment="true" eOpposite="#//ReadEntitySpecification/source"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="joinComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationship" eType="#//Relationship"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Filter">
@@ -113,6 +122,7 @@
         eType="#//Field" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="describingFields" upperBound="-1"
         eType="#//Field" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipAlias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RuleType">
     <eLiterals name="SingleFire"/>
@@ -120,5 +130,11 @@
     <eLiterals name="Aggregation" value="2"/>
     <eLiterals name="Filter" value="3"/>
     <eLiterals name="Dedup" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadEntitySpecification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"
+        eOpposite="#//Source/readentityspecification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReadKeySats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReadKeySatsReason" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

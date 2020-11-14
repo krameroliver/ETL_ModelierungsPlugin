@@ -141,6 +141,12 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SpecmodelPackage.READ_ENTITY_SPECIFICATION: {
+				ReadEntitySpecification readEntitySpecification = (ReadEntitySpecification)theEObject;
+				T result = caseReadEntitySpecification(readEntitySpecification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -307,6 +313,21 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRelationship(Relationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Read Entity Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Read Entity Specification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReadEntitySpecification(ReadEntitySpecification object) {
 		return null;
 	}
 

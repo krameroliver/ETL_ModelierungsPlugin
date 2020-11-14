@@ -126,6 +126,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/childJoinFields"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/sourceEntity"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/joinEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/sourceReleationship"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/isMandatory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/isVector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/isMultiplying"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/alias"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/readentityspecification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/joinComment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/comment"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/relationship"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Filter">
@@ -163,6 +171,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Relationship/toEntity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Relationship/identifyingFields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Relationship/describingFields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Relationship/relationshipAlias"/>
+    </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//ReadEntitySpecification">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//ReadEntitySpecification/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//ReadEntitySpecification/ReadKeySats"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//ReadEntitySpecification/ReadKeySatsReason"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Package_enums" disposableProviderFactory="true" ecorePackage="package_enums.ecore#/">

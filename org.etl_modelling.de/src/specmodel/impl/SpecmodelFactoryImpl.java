@@ -68,6 +68,7 @@ public class SpecmodelFactoryImpl extends EFactoryImpl implements SpecmodelFacto
 			case SpecmodelPackage.FIELD: return createField();
 			case SpecmodelPackage.ENTITY: return createEntity();
 			case SpecmodelPackage.RELATIONSHIP: return createRelationship();
+			case SpecmodelPackage.READ_ENTITY_SPECIFICATION: return createReadEntitySpecification();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -222,6 +223,17 @@ public class SpecmodelFactoryImpl extends EFactoryImpl implements SpecmodelFacto
 	public Relationship createRelationship() {
 		RelationshipImpl relationship = new RelationshipImpl();
 		return relationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ReadEntitySpecification createReadEntitySpecification() {
+		ReadEntitySpecificationImpl readEntitySpecification = new ReadEntitySpecificationImpl();
+		return readEntitySpecification;
 	}
 
 	/**

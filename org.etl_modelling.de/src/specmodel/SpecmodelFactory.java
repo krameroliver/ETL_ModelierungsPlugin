@@ -121,6 +121,15 @@ public interface SpecmodelFactory extends EFactory {
 	Relationship createRelationship();
 
 	/**
+	 * Returns a new object of class '<em>Read Entity Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Read Entity Specification</em>'.
+	 * @generated
+	 */
+	ReadEntitySpecification createReadEntitySpecification();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -69,6 +69,7 @@ public class RelationshipItemProvider
 
 			addNamePropertyDescriptor(object);
 			addToEntityPropertyDescriptor(object);
+			addRelationshipAliasPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -113,6 +114,28 @@ public class RelationshipItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Relationship Alias feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRelationshipAliasPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Relationship_relationshipAlias_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Relationship_relationshipAlias_feature", "_UI_Relationship_type"),
+				 SpecmodelPackage.Literals.RELATIONSHIP__RELATIONSHIP_ALIAS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -187,6 +210,7 @@ public class RelationshipItemProvider
 
 		switch (notification.getFeatureID(Relationship.class)) {
 			case SpecmodelPackage.RELATIONSHIP__NAME:
+			case SpecmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SpecmodelPackage.RELATIONSHIP__IDENTIFYING_FIELDS:

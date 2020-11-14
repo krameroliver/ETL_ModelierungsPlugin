@@ -496,13 +496,85 @@ public interface SpecmodelPackage extends EPackage {
 	int SOURCE__JOIN_ENTITY = 10;
 
 	/**
+	 * The feature id for the '<em><b>Source Releationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__SOURCE_RELEATIONSHIP = 11;
+
+	/**
+	 * The feature id for the '<em><b>Is Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__IS_MANDATORY = 12;
+
+	/**
+	 * The feature id for the '<em><b>Is Vector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__IS_VECTOR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Is Multiplying</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__IS_MULTIPLYING = 14;
+
+	/**
+	 * The feature id for the '<em><b>Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__ALIAS = 15;
+
+	/**
+	 * The feature id for the '<em><b>Readentityspecification</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__READENTITYSPECIFICATION = 16;
+
+	/**
+	 * The feature id for the '<em><b>Join Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__JOIN_COMMENT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__COMMENT = 18;
+
+	/**
 	 * The feature id for the '<em><b>Relationship</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__RELATIONSHIP = 11;
+	int SOURCE__RELATIONSHIP = 19;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -511,7 +583,7 @@ public interface SpecmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 12;
+	int SOURCE_FEATURE_COUNT = 20;
 
 	/**
 	 * The number of operations of the '<em>Source</em>' class.
@@ -926,13 +998,22 @@ public interface SpecmodelPackage extends EPackage {
 	int RELATIONSHIP__DESCRIBING_FIELDS = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Relationship Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP__RELATIONSHIP_ALIAS = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 4;
+	int RELATIONSHIP_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Relationship</em>' class.
@@ -944,6 +1025,61 @@ public interface SpecmodelPackage extends EPackage {
 	int RELATIONSHIP_OPERATION_COUNT = ETL_MODELPackage.NAMEDELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link specmodel.impl.ReadEntitySpecificationImpl <em>Read Entity Specification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see specmodel.impl.ReadEntitySpecificationImpl
+	 * @see specmodel.impl.SpecmodelPackageImpl#getReadEntitySpecification()
+	 * @generated
+	 */
+	int READ_ENTITY_SPECIFICATION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_ENTITY_SPECIFICATION__SOURCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Read Key Sats</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_ENTITY_SPECIFICATION__READ_KEY_SATS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Read Key Sats Reason</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON = 2;
+
+	/**
+	 * The number of structural features of the '<em>Read Entity Specification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_ENTITY_SPECIFICATION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Read Entity Specification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_ENTITY_SPECIFICATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link specmodel.RuleType <em>Rule Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -951,7 +1087,7 @@ public interface SpecmodelPackage extends EPackage {
 	 * @see specmodel.impl.SpecmodelPackageImpl#getRuleType()
 	 * @generated
 	 */
-	int RULE_TYPE = 11;
+	int RULE_TYPE = 12;
 
 
 	/**
@@ -1336,6 +1472,17 @@ public interface SpecmodelPackage extends EPackage {
 	EReference getSource_JoinEntity();
 
 	/**
+	 * Returns the meta object for the reference '{@link specmodel.Source#getSourceReleationship <em>Source Releationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Releationship</em>'.
+	 * @see specmodel.Source#getSourceReleationship()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EReference getSource_SourceReleationship();
+
+	/**
 	 * Returns the meta object for the reference '{@link specmodel.Source#getRelationship <em>Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1345,6 +1492,83 @@ public interface SpecmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSource_Relationship();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#isIsMandatory <em>Is Mandatory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Mandatory</em>'.
+	 * @see specmodel.Source#isIsMandatory()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_IsMandatory();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#isIsVector <em>Is Vector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Vector</em>'.
+	 * @see specmodel.Source#isIsVector()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_IsVector();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#isIsMultiplying <em>Is Multiplying</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Multiplying</em>'.
+	 * @see specmodel.Source#isIsMultiplying()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_IsMultiplying();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#getAlias <em>Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alias</em>'.
+	 * @see specmodel.Source#getAlias()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_Alias();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link specmodel.Source#getReadentityspecification <em>Readentityspecification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Readentityspecification</em>'.
+	 * @see specmodel.Source#getReadentityspecification()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EReference getSource_Readentityspecification();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#getJoinComment <em>Join Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Join Comment</em>'.
+	 * @see specmodel.Source#getJoinComment()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_JoinComment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see specmodel.Source#getComment()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_Comment();
 
 	/**
 	 * Returns the meta object for class '{@link specmodel.Filter <em>Filter</em>}'.
@@ -1657,6 +1881,60 @@ public interface SpecmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRelationship_DescribingFields();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Relationship#getRelationshipAlias <em>Relationship Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relationship Alias</em>'.
+	 * @see specmodel.Relationship#getRelationshipAlias()
+	 * @see #getRelationship()
+	 * @generated
+	 */
+	EAttribute getRelationship_RelationshipAlias();
+
+	/**
+	 * Returns the meta object for class '{@link specmodel.ReadEntitySpecification <em>Read Entity Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Read Entity Specification</em>'.
+	 * @see specmodel.ReadEntitySpecification
+	 * @generated
+	 */
+	EClass getReadEntitySpecification();
+
+	/**
+	 * Returns the meta object for the container reference '{@link specmodel.ReadEntitySpecification#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Source</em>'.
+	 * @see specmodel.ReadEntitySpecification#getSource()
+	 * @see #getReadEntitySpecification()
+	 * @generated
+	 */
+	EReference getReadEntitySpecification_Source();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.ReadEntitySpecification#isReadKeySats <em>Read Key Sats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Read Key Sats</em>'.
+	 * @see specmodel.ReadEntitySpecification#isReadKeySats()
+	 * @see #getReadEntitySpecification()
+	 * @generated
+	 */
+	EAttribute getReadEntitySpecification_ReadKeySats();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.ReadEntitySpecification#getReadKeySatsReason <em>Read Key Sats Reason</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Read Key Sats Reason</em>'.
+	 * @see specmodel.ReadEntitySpecification#getReadKeySatsReason()
+	 * @see #getReadEntitySpecification()
+	 * @generated
+	 */
+	EAttribute getReadEntitySpecification_ReadKeySatsReason();
 
 	/**
 	 * Returns the meta object for enum '{@link specmodel.RuleType <em>Rule Type</em>}'.
@@ -1980,12 +2258,76 @@ public interface SpecmodelPackage extends EPackage {
 		EReference SOURCE__JOIN_ENTITY = eINSTANCE.getSource_JoinEntity();
 
 		/**
+		 * The meta object literal for the '<em><b>Source Releationship</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE__SOURCE_RELEATIONSHIP = eINSTANCE.getSource_SourceReleationship();
+
+		/**
 		 * The meta object literal for the '<em><b>Relationship</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SOURCE__RELATIONSHIP = eINSTANCE.getSource_Relationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Mandatory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__IS_MANDATORY = eINSTANCE.getSource_IsMandatory();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Vector</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__IS_VECTOR = eINSTANCE.getSource_IsVector();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Multiplying</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__IS_MULTIPLYING = eINSTANCE.getSource_IsMultiplying();
+
+		/**
+		 * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__ALIAS = eINSTANCE.getSource_Alias();
+
+		/**
+		 * The meta object literal for the '<em><b>Readentityspecification</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE__READENTITYSPECIFICATION = eINSTANCE.getSource_Readentityspecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Join Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__JOIN_COMMENT = eINSTANCE.getSource_JoinComment();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__COMMENT = eINSTANCE.getSource_Comment();
 
 		/**
 		 * The meta object literal for the '{@link specmodel.impl.FilterImpl <em>Filter</em>}' class.
@@ -2232,6 +2574,48 @@ public interface SpecmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RELATIONSHIP__DESCRIBING_FIELDS = eINSTANCE.getRelationship_DescribingFields();
+
+		/**
+		 * The meta object literal for the '<em><b>Relationship Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATIONSHIP__RELATIONSHIP_ALIAS = eINSTANCE.getRelationship_RelationshipAlias();
+
+		/**
+		 * The meta object literal for the '{@link specmodel.impl.ReadEntitySpecificationImpl <em>Read Entity Specification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see specmodel.impl.ReadEntitySpecificationImpl
+		 * @see specmodel.impl.SpecmodelPackageImpl#getReadEntitySpecification()
+		 * @generated
+		 */
+		EClass READ_ENTITY_SPECIFICATION = eINSTANCE.getReadEntitySpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference READ_ENTITY_SPECIFICATION__SOURCE = eINSTANCE.getReadEntitySpecification_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Read Key Sats</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute READ_ENTITY_SPECIFICATION__READ_KEY_SATS = eINSTANCE.getReadEntitySpecification_ReadKeySats();
+
+		/**
+		 * The meta object literal for the '<em><b>Read Key Sats Reason</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON = eINSTANCE.getReadEntitySpecification_ReadKeySatsReason();
 
 		/**
 		 * The meta object literal for the '{@link specmodel.RuleType <em>Rule Type</em>}' enum.

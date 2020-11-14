@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link specmodel.Relationship#getToEntity <em>To Entity</em>}</li>
  *   <li>{@link specmodel.Relationship#getIdentifyingFields <em>Identifying Fields</em>}</li>
  *   <li>{@link specmodel.Relationship#getDescribingFields <em>Describing Fields</em>}</li>
+ *   <li>{@link specmodel.Relationship#getRelationshipAlias <em>Relationship Alias</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getRelationship()
@@ -95,5 +96,27 @@ public interface Relationship extends namedelement {
 	 * @generated
 	 */
 	EList<Field> getDescribingFields();
+
+	/**
+	 * Returns the value of the '<em><b>Relationship Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Relationship Alias</em>' attribute.
+	 * @see #setRelationshipAlias(String)
+	 * @see specmodel.SpecmodelPackage#getRelationship_RelationshipAlias()
+	 * @model
+	 * @generated
+	 */
+	String getRelationshipAlias();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Relationship#getRelationshipAlias <em>Relationship Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Relationship Alias</em>' attribute.
+	 * @see #getRelationshipAlias()
+	 * @generated
+	 */
+	void setRelationshipAlias(String value);
 
 } // Relationship

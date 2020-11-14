@@ -37,6 +37,7 @@ import specmodel.SpecmodelPackage;
  *   <li>{@link specmodel.impl.RelationshipImpl#getToEntity <em>To Entity</em>}</li>
  *   <li>{@link specmodel.impl.RelationshipImpl#getIdentifyingFields <em>Identifying Fields</em>}</li>
  *   <li>{@link specmodel.impl.RelationshipImpl#getDescribingFields <em>Describing Fields</em>}</li>
+ *   <li>{@link specmodel.impl.RelationshipImpl#getRelationshipAlias <em>Relationship Alias</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,6 +92,26 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * @ordered
 	 */
 	protected EList<Field> describingFields;
+
+	/**
+	 * The default value of the '{@link #getRelationshipAlias() <em>Relationship Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelationshipAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RELATIONSHIP_ALIAS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRelationshipAlias() <em>Relationship Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelationshipAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected String relationshipAlias = RELATIONSHIP_ALIAS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,6 +270,29 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 */
 	@Override
+	public String getRelationshipAlias() {
+		return relationshipAlias;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRelationshipAlias(String newRelationshipAlias) {
+		String oldRelationshipAlias = relationshipAlias;
+		relationshipAlias = newRelationshipAlias;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS, oldRelationshipAlias, relationshipAlias));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SpecmodelPackage.RELATIONSHIP__ENTITY:
@@ -310,6 +354,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				return getIdentifyingFields();
 			case SpecmodelPackage.RELATIONSHIP__DESCRIBING_FIELDS:
 				return getDescribingFields();
+			case SpecmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				return getRelationshipAlias();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -340,6 +386,9 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				getDescribingFields().clear();
 				getDescribingFields().addAll((Collection<? extends Field>)newValue);
 				return;
+			case SpecmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				setRelationshipAlias((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -367,6 +416,9 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 			case SpecmodelPackage.RELATIONSHIP__DESCRIBING_FIELDS:
 				getDescribingFields().clear();
 				return;
+			case SpecmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				setRelationshipAlias(RELATIONSHIP_ALIAS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -389,6 +441,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				return identifyingFields != null && !identifyingFields.isEmpty();
 			case SpecmodelPackage.RELATIONSHIP__DESCRIBING_FIELDS:
 				return describingFields != null && !describingFields.isEmpty();
+			case SpecmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				return RELATIONSHIP_ALIAS_EDEFAULT == null ? relationshipAlias != null : !RELATIONSHIP_ALIAS_EDEFAULT.equals(relationshipAlias);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -405,6 +459,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", relationshipAlias: ");
+		result.append(relationshipAlias);
 		result.append(')');
 		return result.toString();
 	}
