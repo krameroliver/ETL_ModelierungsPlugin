@@ -2,6 +2,7 @@
  */
 package specmodel;
 
+import logmodel.Entity;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -25,6 +26,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link specmodel.Source#getReadEntitySpecification <em>Read Entity Specification</em>}</li>
  *   <li>{@link specmodel.Source#getFilters <em>Filters</em>}</li>
  *   <li>{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}</li>
+ *   <li>{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}</li>
+ *   <li>{@link specmodel.Source#isIsVector <em>Is Vector</em>}</li>
+ *   <li>{@link specmodel.Source#isIsMultiplying <em>Is Multiplying</em>}</li>
+ *   <li>{@link specmodel.Source#getComment <em>Comment</em>}</li>
+ *   <li>{@link specmodel.Source#getAlias <em>Alias</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getSource()
@@ -215,5 +221,115 @@ public interface Source extends EObject {
 	 * @generated
 	 */
 	EList<VectorKey> getVectorkeys();
+
+	/**
+	 * Returns the value of the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Entity</em>' reference.
+	 * @see #setSourceEntity(Entity)
+	 * @see specmodel.SpecmodelPackage#getSource_SourceEntity()
+	 * @model
+	 * @generated
+	 */
+	Entity getSourceEntity();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Entity</em>' reference.
+	 * @see #getSourceEntity()
+	 * @generated
+	 */
+	void setSourceEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Vector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Vector</em>' attribute.
+	 * @see #setIsVector(boolean)
+	 * @see specmodel.SpecmodelPackage#getSource_IsVector()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsVector();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#isIsVector <em>Is Vector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Vector</em>' attribute.
+	 * @see #isIsVector()
+	 * @generated
+	 */
+	void setIsVector(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Multiplying</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Multiplying</em>' attribute.
+	 * @see #setIsMultiplying(boolean)
+	 * @see specmodel.SpecmodelPackage#getSource_IsMultiplying()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsMultiplying();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#isIsMultiplying <em>Is Multiplying</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Multiplying</em>' attribute.
+	 * @see #isIsMultiplying()
+	 * @generated
+	 */
+	void setIsMultiplying(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comment</em>' attribute.
+	 * @see #setComment(String)
+	 * @see specmodel.SpecmodelPackage#getSource_Comment()
+	 * @model
+	 * @generated
+	 */
+	String getComment();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getComment <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comment</em>' attribute.
+	 * @see #getComment()
+	 * @generated
+	 */
+	void setComment(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Alias</em>' attribute.
+	 * @see #setAlias(String)
+	 * @see specmodel.SpecmodelPackage#getSource_Alias()
+	 * @model
+	 * @generated
+	 */
+	String getAlias();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getAlias <em>Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Alias</em>' attribute.
+	 * @see #getAlias()
+	 * @generated
+	 */
+	void setAlias(String value);
 
 } // Source

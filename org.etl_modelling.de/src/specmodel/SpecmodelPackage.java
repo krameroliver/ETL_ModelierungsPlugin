@@ -881,13 +881,58 @@ public interface SpecmodelPackage extends EPackage {
 	int SOURCE__VECTORKEYS = 9;
 
 	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__SOURCE_ENTITY = 10;
+
+	/**
+	 * The feature id for the '<em><b>Is Vector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__IS_VECTOR = 11;
+
+	/**
+	 * The feature id for the '<em><b>Is Multiplying</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__IS_MULTIPLYING = 12;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__COMMENT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__ALIAS = 14;
+
+	/**
 	 * The number of structural features of the '<em>Source</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 10;
+	int SOURCE_FEATURE_COUNT = 15;
 
 	/**
 	 * The number of operations of the '<em>Source</em>' class.
@@ -1464,6 +1509,61 @@ public interface SpecmodelPackage extends EPackage {
 	EReference getSource_Vectorkeys();
 
 	/**
+	 * Returns the meta object for the reference '{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Entity</em>'.
+	 * @see specmodel.Source#getSourceEntity()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EReference getSource_SourceEntity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#isIsVector <em>Is Vector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Vector</em>'.
+	 * @see specmodel.Source#isIsVector()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_IsVector();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#isIsMultiplying <em>Is Multiplying</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Multiplying</em>'.
+	 * @see specmodel.Source#isIsMultiplying()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_IsMultiplying();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see specmodel.Source#getComment()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_Comment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#getAlias <em>Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alias</em>'.
+	 * @see specmodel.Source#getAlias()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_Alias();
+
+	/**
 	 * Returns the meta object for class '{@link specmodel.VectorKey <em>Vector Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1921,6 +2021,46 @@ public interface SpecmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SOURCE__VECTORKEYS = eINSTANCE.getSource_Vectorkeys();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE__SOURCE_ENTITY = eINSTANCE.getSource_SourceEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Vector</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__IS_VECTOR = eINSTANCE.getSource_IsVector();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Multiplying</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__IS_MULTIPLYING = eINSTANCE.getSource_IsMultiplying();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__COMMENT = eINSTANCE.getSource_Comment();
+
+		/**
+		 * The meta object literal for the '<em><b>Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__ALIAS = eINSTANCE.getSource_Alias();
 
 		/**
 		 * The meta object literal for the '{@link specmodel.impl.VectorKeyImpl <em>Vector Key</em>}' class.

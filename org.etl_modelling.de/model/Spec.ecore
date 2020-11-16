@@ -23,6 +23,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReadEntitySpecification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"
         eOpposite="#//Source/readEntitySpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReadKeySats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReadKeySatsReason" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JoinField" eSuperTypes="logmodel.ecore#//Field">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentSource" eType="#//Source"
@@ -90,6 +92,11 @@
         eType="#//Filter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vectorkeys" upperBound="-1"
         eType="#//VectorKey" eOpposite="#//VectorKey/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="ecore:EClass logmodel.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiplying" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VectorKey">
     <eStructuralFeatures xsi:type="ecore:EReference" name="businessrule" eType="#//BusinessRule"

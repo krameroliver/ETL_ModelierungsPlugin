@@ -679,6 +679,56 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getSource_SourceEntity() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSource_IsVector() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSource_IsMultiplying() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSource_Comment() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSource_Alias() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getVectorKey() {
 		return vectorKeyEClass;
 	}
@@ -797,6 +847,11 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		createEReference(sourceEClass, SOURCE__READ_ENTITY_SPECIFICATION);
 		createEReference(sourceEClass, SOURCE__FILTERS);
 		createEReference(sourceEClass, SOURCE__VECTORKEYS);
+		createEReference(sourceEClass, SOURCE__SOURCE_ENTITY);
+		createEAttribute(sourceEClass, SOURCE__IS_VECTOR);
+		createEAttribute(sourceEClass, SOURCE__IS_MULTIPLYING);
+		createEAttribute(sourceEClass, SOURCE__COMMENT);
+		createEAttribute(sourceEClass, SOURCE__ALIAS);
 
 		vectorKeyEClass = createEClass(VECTOR_KEY);
 		createEReference(vectorKeyEClass, VECTOR_KEY__BUSINESSRULE);
@@ -900,6 +955,11 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		initEReference(getSource_ReadEntitySpecification(), this.getReadEntitySpecification(), this.getReadEntitySpecification_Source(), "readEntitySpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_Filters(), this.getFilter(), null, "filters", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Source(), "vectorkeys", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_SourceEntity(), theLogmodelPackage.getEntity(), null, "sourceEntity", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_IsVector(), ecorePackage.getEBoolean(), "isVector", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_IsMultiplying(), ecorePackage.getEBoolean(), "isMultiplying", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vectorKeyEClass, VectorKey.class, "VectorKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVectorKey_Businessrule(), this.getBusinessRule(), this.getBusinessRule_Vectorkeys(), "businessrule", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

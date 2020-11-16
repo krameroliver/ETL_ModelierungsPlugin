@@ -4,6 +4,7 @@ package specmodel.impl;
 
 import java.util.Collection;
 
+import logmodel.Entity;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -48,6 +49,11 @@ import specmodel.VectorKey;
  *   <li>{@link specmodel.impl.SourceImpl#getReadEntitySpecification <em>Read Entity Specification</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getVectorkeys <em>Vectorkeys</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getSourceEntity <em>Source Entity</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#isIsVector <em>Is Vector</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#isIsMultiplying <em>Is Multiplying</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getAlias <em>Alias</em>}</li>
  * </ul>
  *
  * @generated
@@ -132,6 +138,96 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * @ordered
 	 */
 	protected EList<VectorKey> vectorkeys;
+
+	/**
+	 * The cached value of the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Entity sourceEntity;
+
+	/**
+	 * The default value of the '{@link #isIsVector() <em>Is Vector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsVector()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_VECTOR_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsVector() <em>Is Vector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsVector()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isVector = IS_VECTOR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsMultiplying() <em>Is Multiplying</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMultiplying()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_MULTIPLYING_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsMultiplying() <em>Is Multiplying</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMultiplying()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isMultiplying = IS_MULTIPLYING_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALIAS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlias() <em>Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected String alias = ALIAS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -450,6 +546,138 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Entity getSourceEntity() {
+		if (sourceEntity != null && sourceEntity.eIsProxy()) {
+			InternalEObject oldSourceEntity = (InternalEObject)sourceEntity;
+			sourceEntity = (Entity)eResolveProxy(oldSourceEntity);
+			if (sourceEntity != oldSourceEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.SOURCE__SOURCE_ENTITY, oldSourceEntity, sourceEntity));
+			}
+		}
+		return sourceEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetSourceEntity() {
+		return sourceEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSourceEntity(Entity newSourceEntity) {
+		Entity oldSourceEntity = sourceEntity;
+		sourceEntity = newSourceEntity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__SOURCE_ENTITY, oldSourceEntity, sourceEntity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isIsVector() {
+		return isVector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsVector(boolean newIsVector) {
+		boolean oldIsVector = isVector;
+		isVector = newIsVector;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__IS_VECTOR, oldIsVector, isVector));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isIsMultiplying() {
+		return isMultiplying;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsMultiplying(boolean newIsMultiplying) {
+		boolean oldIsMultiplying = isMultiplying;
+		isMultiplying = newIsMultiplying;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__IS_MULTIPLYING, oldIsMultiplying, isMultiplying));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAlias() {
+		return alias;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAlias(String newAlias) {
+		String oldAlias = alias;
+		alias = newAlias;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__ALIAS, oldAlias, alias));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -553,6 +781,17 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return getFilters();
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 				return getVectorkeys();
+			case SpecmodelPackage.SOURCE__SOURCE_ENTITY:
+				if (resolve) return getSourceEntity();
+				return basicGetSourceEntity();
+			case SpecmodelPackage.SOURCE__IS_VECTOR:
+				return isIsVector();
+			case SpecmodelPackage.SOURCE__IS_MULTIPLYING:
+				return isIsMultiplying();
+			case SpecmodelPackage.SOURCE__COMMENT:
+				return getComment();
+			case SpecmodelPackage.SOURCE__ALIAS:
+				return getAlias();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -601,6 +840,21 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				getVectorkeys().clear();
 				getVectorkeys().addAll((Collection<? extends VectorKey>)newValue);
 				return;
+			case SpecmodelPackage.SOURCE__SOURCE_ENTITY:
+				setSourceEntity((Entity)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__IS_VECTOR:
+				setIsVector((Boolean)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__IS_MULTIPLYING:
+				setIsMultiplying((Boolean)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__COMMENT:
+				setComment((String)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__ALIAS:
+				setAlias((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -643,6 +897,21 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 				getVectorkeys().clear();
 				return;
+			case SpecmodelPackage.SOURCE__SOURCE_ENTITY:
+				setSourceEntity((Entity)null);
+				return;
+			case SpecmodelPackage.SOURCE__IS_VECTOR:
+				setIsVector(IS_VECTOR_EDEFAULT);
+				return;
+			case SpecmodelPackage.SOURCE__IS_MULTIPLYING:
+				setIsMultiplying(IS_MULTIPLYING_EDEFAULT);
+				return;
+			case SpecmodelPackage.SOURCE__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
+			case SpecmodelPackage.SOURCE__ALIAS:
+				setAlias(ALIAS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -675,8 +944,40 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return filters != null && !filters.isEmpty();
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 				return vectorkeys != null && !vectorkeys.isEmpty();
+			case SpecmodelPackage.SOURCE__SOURCE_ENTITY:
+				return sourceEntity != null;
+			case SpecmodelPackage.SOURCE__IS_VECTOR:
+				return isVector != IS_VECTOR_EDEFAULT;
+			case SpecmodelPackage.SOURCE__IS_MULTIPLYING:
+				return isMultiplying != IS_MULTIPLYING_EDEFAULT;
+			case SpecmodelPackage.SOURCE__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case SpecmodelPackage.SOURCE__ALIAS:
+				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (isVector: ");
+		result.append(isVector);
+		result.append(", isMultiplying: ");
+		result.append(isMultiplying);
+		result.append(", comment: ");
+		result.append(comment);
+		result.append(", alias: ");
+		result.append(alias);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SourceImpl
