@@ -2,6 +2,8 @@
  */
 package specmodel;
 
+import logmodel.Field;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link specmodel.Dedup#getPostDedupBusinessrule <em>Post Dedup Businessrule</em>}</li>
- *   <li>{@link specmodel.Dedup#getPreDedupBusinessrule <em>Pre Dedup Businessrule</em>}</li>
+ *   <li>{@link specmodel.Dedup#getPreDedupBusinessRule <em>Pre Dedup Business Rule</em>}</li>
+ *   <li>{@link specmodel.Dedup#getPostDedupBusinessRule <em>Post Dedup Business Rule</em>}</li>
  *   <li>{@link specmodel.Dedup#getField <em>Field</em>}</li>
  * </ul>
  *
@@ -24,52 +26,52 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Dedup extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Post Dedup Businessrule</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.BusinessRule#getPostDedup <em>Post Dedup</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Post Dedup Businessrule</em>' container reference.
-	 * @see #setPostDedupBusinessrule(BusinessRule)
-	 * @see specmodel.SpecmodelPackage#getDedup_PostDedupBusinessrule()
-	 * @see specmodel.BusinessRule#getPostDedup
-	 * @model opposite="postDedup" transient="false"
-	 * @generated
-	 */
-	BusinessRule getPostDedupBusinessrule();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Dedup#getPostDedupBusinessrule <em>Post Dedup Businessrule</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Post Dedup Businessrule</em>' container reference.
-	 * @see #getPostDedupBusinessrule()
-	 * @generated
-	 */
-	void setPostDedupBusinessrule(BusinessRule value);
-
-	/**
-	 * Returns the value of the '<em><b>Pre Dedup Businessrule</b></em>' container reference.
+	 * Returns the value of the '<em><b>Pre Dedup Business Rule</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link specmodel.BusinessRule#getPreDedup <em>Pre Dedup</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pre Dedup Businessrule</em>' container reference.
-	 * @see #setPreDedupBusinessrule(BusinessRule)
-	 * @see specmodel.SpecmodelPackage#getDedup_PreDedupBusinessrule()
+	 * @return the value of the '<em>Pre Dedup Business Rule</em>' container reference.
+	 * @see #setPreDedupBusinessRule(BusinessRule)
+	 * @see specmodel.SpecmodelPackage#getDedup_PreDedupBusinessRule()
 	 * @see specmodel.BusinessRule#getPreDedup
 	 * @model opposite="preDedup" transient="false"
 	 * @generated
 	 */
-	BusinessRule getPreDedupBusinessrule();
+	BusinessRule getPreDedupBusinessRule();
 
 	/**
-	 * Sets the value of the '{@link specmodel.Dedup#getPreDedupBusinessrule <em>Pre Dedup Businessrule</em>}' container reference.
+	 * Sets the value of the '{@link specmodel.Dedup#getPreDedupBusinessRule <em>Pre Dedup Business Rule</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pre Dedup Businessrule</em>' container reference.
-	 * @see #getPreDedupBusinessrule()
+	 * @param value the new value of the '<em>Pre Dedup Business Rule</em>' container reference.
+	 * @see #getPreDedupBusinessRule()
 	 * @generated
 	 */
-	void setPreDedupBusinessrule(BusinessRule value);
+	void setPreDedupBusinessRule(BusinessRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Post Dedup Business Rule</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.BusinessRule#getPostDedup <em>Post Dedup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Post Dedup Business Rule</em>' container reference.
+	 * @see #setPostDedupBusinessRule(BusinessRule)
+	 * @see specmodel.SpecmodelPackage#getDedup_PostDedupBusinessRule()
+	 * @see specmodel.BusinessRule#getPostDedup
+	 * @model opposite="postDedup" transient="false"
+	 * @generated
+	 */
+	BusinessRule getPostDedupBusinessRule();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Dedup#getPostDedupBusinessRule <em>Post Dedup Business Rule</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Post Dedup Business Rule</em>' container reference.
+	 * @see #getPostDedupBusinessRule()
+	 * @generated
+	 */
+	void setPostDedupBusinessRule(BusinessRule value);
 
 	/**
 	 * Returns the value of the '<em><b>Field</b></em>' reference.

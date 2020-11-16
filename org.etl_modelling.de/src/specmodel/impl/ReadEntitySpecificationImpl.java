@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import specmodel.ReadEntitySpecification;
 import specmodel.Source;
 import specmodel.SpecmodelPackage;
@@ -26,49 +24,20 @@ import specmodel.SpecmodelPackage;
  * </p>
  * <ul>
  *   <li>{@link specmodel.impl.ReadEntitySpecificationImpl#getSource <em>Source</em>}</li>
- *   <li>{@link specmodel.impl.ReadEntitySpecificationImpl#isReadKeySats <em>Read Key Sats</em>}</li>
- *   <li>{@link specmodel.impl.ReadEntitySpecificationImpl#getReadKeySatsReason <em>Read Key Sats Reason</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container implements ReadEntitySpecification {
 	/**
-	 * The default value of the '{@link #isReadKeySats() <em>Read Key Sats</em>}' attribute.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isReadKeySats()
+	 * @see #getSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean READ_KEY_SATS_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isReadKeySats() <em>Read Key Sats</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isReadKeySats()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean readKeySats = READ_KEY_SATS_EDEFAULT;
-	/**
-	 * The default value of the '{@link #getReadKeySatsReason() <em>Read Key Sats Reason</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReadKeySatsReason()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String READ_KEY_SATS_REASON_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getReadKeySatsReason() <em>Read Key Sats Reason</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReadKeySatsReason()
-	 * @generated
-	 * @ordered
-	 */
-	protected String readKeySatsReason = READ_KEY_SATS_REASON_EDEFAULT;
+	protected Source source;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,8 +65,24 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 	 */
 	@Override
 	public Source getSource() {
-		if (eContainerFeatureID() != SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE) return null;
-		return (Source)eInternalContainer();
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (Source)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE, oldSource, source));
+			}
+		}
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Source basicGetSource() {
+		return source;
 	}
 
 	/**
@@ -106,7 +91,12 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public NotificationChain basicSetSource(Source newSource, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSource, SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE, msgs);
+		Source oldSource = source;
+		source = newSource;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE, oldSource, newSource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -117,14 +107,12 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 	 */
 	@Override
 	public void setSource(Source newSource) {
-		if (newSource != eInternalContainer() || (eContainerFeatureID() != SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE && newSource != null)) {
-			if (EcoreUtil.isAncestor(this, newSource))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+		if (newSource != source) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, Source.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, SpecmodelPackage.SOURCE__READENTITYSPECIFICATION, Source.class, msgs);
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, Source.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -138,57 +126,11 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public boolean isReadKeySats() {
-		return readKeySats;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReadKeySats(boolean newReadKeySats) {
-		boolean oldReadKeySats = readKeySats;
-		readKeySats = newReadKeySats;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS, oldReadKeySats, readKeySats));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getReadKeySatsReason() {
-		return readKeySatsReason;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReadKeySatsReason(String newReadKeySatsReason) {
-		String oldReadKeySatsReason = readKeySatsReason;
-		readKeySatsReason = newReadKeySatsReason;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON, oldReadKeySatsReason, readKeySatsReason));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, Source.class, msgs);
 				return basicSetSource((Source)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -214,28 +156,11 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE:
-				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SOURCE__READENTITYSPECIFICATION, Source.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE:
-				return getSource();
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS:
-				return isReadKeySats();
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON:
-				return getReadKeySatsReason();
+				if (resolve) return getSource();
+				return basicGetSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,12 +175,6 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 		switch (featureID) {
 			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE:
 				setSource((Source)newValue);
-				return;
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS:
-				setReadKeySats((Boolean)newValue);
-				return;
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON:
-				setReadKeySatsReason((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -272,12 +191,6 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE:
 				setSource((Source)null);
 				return;
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS:
-				setReadKeySats(READ_KEY_SATS_EDEFAULT);
-				return;
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON:
-				setReadKeySatsReason(READ_KEY_SATS_REASON_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -291,31 +204,9 @@ public class ReadEntitySpecificationImpl extends MinimalEObjectImpl.Container im
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE:
-				return getSource() != null;
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS:
-				return readKeySats != READ_KEY_SATS_EDEFAULT;
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON:
-				return READ_KEY_SATS_REASON_EDEFAULT == null ? readKeySatsReason != null : !READ_KEY_SATS_REASON_EDEFAULT.equals(readKeySatsReason);
+				return source != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (ReadKeySats: ");
-		result.append(readKeySats);
-		result.append(", ReadKeySatsReason: ");
-		result.append(readKeySatsReason);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ReadEntitySpecificationImpl

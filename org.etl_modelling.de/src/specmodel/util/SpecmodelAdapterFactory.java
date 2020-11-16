@@ -4,6 +4,8 @@ package specmodel.util;
 
 import ETL_MODEL.namedelement;
 
+import logmodel.Field;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -78,6 +80,26 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 				return createSpecificationAdapter();
 			}
 			@Override
+			public Adapter caseReadEntitySpecification(ReadEntitySpecification object) {
+				return createReadEntitySpecificationAdapter();
+			}
+			@Override
+			public Adapter caseJoinField(JoinField object) {
+				return createJoinFieldAdapter();
+			}
+			@Override
+			public Adapter caseDedup(Dedup object) {
+				return createDedupAdapter();
+			}
+			@Override
+			public Adapter caseFilter(Filter object) {
+				return createFilterAdapter();
+			}
+			@Override
+			public Adapter caseSubSpecification(SubSpecification object) {
+				return createSubSpecificationAdapter();
+			}
+			@Override
 			public Adapter caseBusinessRule(BusinessRule object) {
 				return createBusinessRuleAdapter();
 			}
@@ -86,36 +108,8 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 				return createSourceAdapter();
 			}
 			@Override
-			public Adapter caseFilter(Filter object) {
-				return createFilterAdapter();
-			}
-			@Override
-			public Adapter caseDedup(Dedup object) {
-				return createDedupAdapter();
-			}
-			@Override
 			public Adapter caseVectorKey(VectorKey object) {
 				return createVectorKeyAdapter();
-			}
-			@Override
-			public Adapter caseJoinField(JoinField object) {
-				return createJoinFieldAdapter();
-			}
-			@Override
-			public Adapter caseField(Field object) {
-				return createFieldAdapter();
-			}
-			@Override
-			public Adapter caseEntity(Entity object) {
-				return createEntityAdapter();
-			}
-			@Override
-			public Adapter caseRelationship(Relationship object) {
-				return createRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseReadEntitySpecification(ReadEntitySpecification object) {
-				return createReadEntitySpecificationAdapter();
 			}
 			@Override
 			public Adapter casenamedelement(namedelement object) {
@@ -124,6 +118,10 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePackage(ETL_MODEL.Package object) {
 				return createPackageAdapter();
+			}
+			@Override
+			public Adapter caseField(Field object) {
+				return createFieldAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -174,6 +172,76 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link specmodel.ReadEntitySpecification <em>Read Entity Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see specmodel.ReadEntitySpecification
+	 * @generated
+	 */
+	public Adapter createReadEntitySpecificationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link specmodel.JoinField <em>Join Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see specmodel.JoinField
+	 * @generated
+	 */
+	public Adapter createJoinFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link specmodel.Dedup <em>Dedup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see specmodel.Dedup
+	 * @generated
+	 */
+	public Adapter createDedupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link specmodel.Filter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see specmodel.Filter
+	 * @generated
+	 */
+	public Adapter createFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link specmodel.SubSpecification <em>Sub Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see specmodel.SubSpecification
+	 * @generated
+	 */
+	public Adapter createSubSpecificationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link specmodel.BusinessRule <em>Business Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -202,34 +270,6 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link specmodel.Filter <em>Filter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see specmodel.Filter
-	 * @generated
-	 */
-	public Adapter createFilterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link specmodel.Dedup <em>Dedup</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see specmodel.Dedup
-	 * @generated
-	 */
-	public Adapter createDedupAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link specmodel.VectorKey <em>Vector Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -240,76 +280,6 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVectorKeyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link specmodel.JoinField <em>Join Field</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see specmodel.JoinField
-	 * @generated
-	 */
-	public Adapter createJoinFieldAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link specmodel.Field <em>Field</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see specmodel.Field
-	 * @generated
-	 */
-	public Adapter createFieldAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link specmodel.Entity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see specmodel.Entity
-	 * @generated
-	 */
-	public Adapter createEntityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link specmodel.Relationship <em>Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see specmodel.Relationship
-	 * @generated
-	 */
-	public Adapter createRelationshipAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link specmodel.ReadEntitySpecification <em>Read Entity Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see specmodel.ReadEntitySpecification
-	 * @generated
-	 */
-	public Adapter createReadEntitySpecificationAdapter() {
 		return null;
 	}
 
@@ -338,6 +308,20 @@ public class SpecmodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link logmodel.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see logmodel.Field
+	 * @generated
+	 */
+	public Adapter createFieldAdapter() {
 		return null;
 	}
 

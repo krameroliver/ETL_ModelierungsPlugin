@@ -59,25 +59,71 @@ public class FilterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFilterFieldPropertyDescriptor(object);
+			addFieldPropertyDescriptor(object);
+			addPreFilterBusinessRulePropertyDescriptor(object);
+			addPostFilterBusinessRulePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Filter Field feature.
+	 * This adds a property descriptor for the Field feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFilterFieldPropertyDescriptor(Object object) {
+	protected void addFieldPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Filter_filterField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Filter_filterField_feature", "_UI_Filter_type"),
-				 SpecmodelPackage.Literals.FILTER__FILTER_FIELD,
+				 getString("_UI_Filter_field_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Filter_field_feature", "_UI_Filter_type"),
+				 SpecmodelPackage.Literals.FILTER__FIELD,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pre Filter Business Rule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreFilterBusinessRulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Filter_preFilterBusinessRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Filter_preFilterBusinessRule_feature", "_UI_Filter_type"),
+				 SpecmodelPackage.Literals.FILTER__PRE_FILTER_BUSINESS_RULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Post Filter Business Rule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPostFilterBusinessRulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Filter_postFilterBusinessRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Filter_postFilterBusinessRule_feature", "_UI_Filter_type"),
+				 SpecmodelPackage.Literals.FILTER__POST_FILTER_BUSINESS_RULE,
 				 true,
 				 false,
 				 true,

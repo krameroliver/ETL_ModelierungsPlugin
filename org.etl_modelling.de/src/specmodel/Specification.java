@@ -3,7 +3,6 @@
 package specmodel;
 
 import ETL_MODEL.namedelement;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -17,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link specmodel.Specification#getSpecpackage <em>Specpackage</em>}</li>
  *   <li>{@link specmodel.Specification#getBusinessrules <em>Businessrules</em>}</li>
- *   <li>{@link specmodel.Specification#getPrimarySource <em>Primary Source</em>}</li>
+ *   <li>{@link specmodel.Specification#getPrimarySources <em>Primary Sources</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getSpecification()
@@ -27,14 +26,14 @@ import org.eclipse.emf.common.util.EList;
 public interface Specification extends namedelement {
 	/**
 	 * Returns the value of the '<em><b>Specpackage</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.SpecPackage#getSpecification <em>Specification</em>}'.
+	 * It is bidirectional and its opposite is '{@link specmodel.SpecPackage#getSpecifications <em>Specifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Specpackage</em>' container reference.
 	 * @see #setSpecpackage(SpecPackage)
 	 * @see specmodel.SpecmodelPackage#getSpecification_Specpackage()
-	 * @see specmodel.SpecPackage#getSpecification
-	 * @model opposite="specification" transient="false"
+	 * @see specmodel.SpecPackage#getSpecifications
+	 * @model opposite="specifications" transient="false"
 	 * @generated
 	 */
 	SpecPackage getSpecpackage();
@@ -64,17 +63,17 @@ public interface Specification extends namedelement {
 	EList<BusinessRule> getBusinessrules();
 
 	/**
-	 * Returns the value of the '<em><b>Primary Source</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Primary Sources</b></em>' containment reference list.
 	 * The list contents are of type {@link specmodel.Source}.
 	 * It is bidirectional and its opposite is '{@link specmodel.Source#getSpecification <em>Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Primary Source</em>' containment reference list.
-	 * @see specmodel.SpecmodelPackage#getSpecification_PrimarySource()
+	 * @return the value of the '<em>Primary Sources</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSpecification_PrimarySources()
 	 * @see specmodel.Source#getSpecification
 	 * @model opposite="specification" containment="true"
 	 * @generated
 	 */
-	EList<Source> getPrimarySource();
+	EList<Source> getPrimarySources();
 
 } // Specification

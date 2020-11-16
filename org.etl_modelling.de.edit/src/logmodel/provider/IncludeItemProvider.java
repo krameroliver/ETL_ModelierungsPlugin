@@ -29,6 +29,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import specmodel.SpecmodelFactory;
 
 /**
  * This is the item provider adapter for a {@link logmodel.Include} object.
@@ -213,8 +214,18 @@ public class IncludeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(LogmodelPackage.Literals.INCLUDE__INCLUDE_FIELDS,
+				 SpecmodelFactory.eINSTANCE.createJoinField()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LogmodelPackage.Literals.INCLUDE__IDENTIFYINGFIELDS,
 				 LogmodelFactory.eINSTANCE.createField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogmodelPackage.Literals.INCLUDE__IDENTIFYINGFIELDS,
+				 SpecmodelFactory.eINSTANCE.createJoinField()));
 	}
 
 	/**

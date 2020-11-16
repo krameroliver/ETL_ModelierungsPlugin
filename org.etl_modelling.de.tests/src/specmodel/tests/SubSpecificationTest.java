@@ -2,28 +2,18 @@
  */
 package specmodel.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
-import specmodel.Entity;
 import specmodel.SpecmodelFactory;
+import specmodel.SubSpecification;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Entity</b></em>'.
+ * A test case for the model object '<em><b>Sub Specification</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityTest extends TestCase {
-
-	/**
-	 * The fixture for this Entity test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Entity fixture = null;
+public class SubSpecificationTest extends SpecificationTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,37 +21,28 @@ public class EntityTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(EntityTest.class);
+		TestRunner.run(SubSpecificationTest.class);
 	}
 
 	/**
-	 * Constructs a new Entity test case with the given name.
+	 * Constructs a new Sub Specification test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityTest(String name) {
+	public SubSpecificationTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Entity test case.
+	 * Returns the fixture for this Sub Specification test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Entity fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
-	 * Returns the fixture for this Entity test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Entity getFixture() {
-		return fixture;
+	@Override
+	protected SubSpecification getFixture() {
+		return (SubSpecification)fixture;
 	}
 
 	/**
@@ -72,7 +53,7 @@ public class EntityTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SpecmodelFactory.eINSTANCE.createEntity());
+		setFixture(SpecmodelFactory.eINSTANCE.createSubSpecification());
 	}
 
 	/**
@@ -86,4 +67,4 @@ public class EntityTest extends TestCase {
 		setFixture(null);
 	}
 
-} //EntityTest
+} //SubSpecificationTest

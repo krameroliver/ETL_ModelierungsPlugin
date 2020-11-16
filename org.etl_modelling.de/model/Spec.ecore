@@ -1,129 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="specmodel" nsURI="http://www.example.org/specmodel" nsPrefix="specmodel">
-  <eClassifiers xsi:type="ecore:EClass" name="SpecPackage" eSuperTypes="ETL_MODEL.ecore#//Package">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" upperBound="-1"
-        eType="#//Specification" containment="true" eOpposite="#//Specification/specpackage"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Specification" eSuperTypes="ETL_MODEL.ecore#//namedelement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specpackage" eType="#//SpecPackage"
-        eOpposite="#//SpecPackage/specification"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="businessrules" upperBound="-1"
-        eType="#//BusinessRule" containment="true" eOpposite="#//BusinessRule/specification"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="primarySource" upperBound="-1"
-        eType="#//Source" containment="true" eOpposite="#//Source/specification"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessRule" eSuperTypes="ETL_MODEL.ecore#//namedelement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="#//Specification"
-        eOpposite="#//Specification/businessrules"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="postDedup" eType="#//Dedup"
-        containment="true" eOpposite="#//Dedup/postDedupBusinessrule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="preDedup" eType="#//Dedup"
-        containment="true" eOpposite="#//Dedup/preDedupBusinessrule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vectorkeys" upperBound="-1"
-        eType="#//VectorKey" containment="true" eOpposite="#//VectorKey/businessrule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipTargetEntity"
-        eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetEntity" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetParentEntity" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lookupEntities" upperBound="-1"
-        eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipSourceEntity"
-        eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruletype" eType="#//RuleType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipTargetEntityUseHashKey"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipSourceEntityUseHashKey"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetEntityUseHashKey"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetMappingOutputFields"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetRelationship" eType="#//Relationship"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceReleationship" eType="#//Relationship"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Source">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceBusinessrule" eType="#//BusinessRule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSource" eType="#//Source"
-        eOpposite="#//Source/childSource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childSource" upperBound="-1"
-        eType="#//Source" containment="true" eOpposite="#//Source/parentSource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSpecification" eType="#//Specification"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="#//Specification"
-        eOpposite="#//Specification/primarySource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
-        eType="#//Filter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vectorkeys" upperBound="-1"
-        eType="#//VectorKey" containment="true" eOpposite="#//VectorKey/source"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parentJoinFields" upperBound="-1"
-        eType="#//JoinField" containment="true" eOpposite="#//JoinField/parentSource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childJoinFields" upperBound="-1"
-        eType="#//JoinField" containment="true" eOpposite="#//JoinField/childSource"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="joinEntity" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceReleationship" eType="#//Relationship"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiplying" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="readentityspecification"
-        eType="#//ReadEntitySpecification" containment="true" eOpposite="#//ReadEntitySpecification/source"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="joinComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationship" eType="#//Relationship"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Filter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="filterField" eType="#//Field"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dedup">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="postDedupBusinessrule"
-        eType="#//BusinessRule" eOpposite="#//BusinessRule/postDedup"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="preDedupBusinessrule" eType="#//BusinessRule"
-        eOpposite="#//BusinessRule/preDedup"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VectorKey">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"
-        eOpposite="#//Source/vectorkeys"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="businessrule" eType="#//BusinessRule"
-        eOpposite="#//BusinessRule/vectorkeys"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JoinField">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSource" eType="#//Source"
-        eOpposite="#//Source/parentJoinFields"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childSource" eType="#//Source"
-        eOpposite="#//Source/childJoinFields"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="#//Field"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="ETL_MODEL.ecore#//namedelement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
-        eOpposite="#//Entity/fields"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceEntity" eType="#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="ETL_MODEL.ecore#//namedelement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
-        eType="#//Relationship" containment="true" eOpposite="#//Relationship/entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//Field" containment="true" eOpposite="#//Field/entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="isBaselineEntityFor" eType="#//Entity"
-        eOpposite="#//Entity/baselineEntity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="baselineEntity" eType="#//Entity"
-        eOpposite="#//Entity/isBaselineEntityFor"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
-        eType="#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="ETL_MODEL.ecore#//namedelement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
-        eOpposite="#//Entity/relationships"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="toEntity" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="identifyingFields" upperBound="-1"
-        eType="#//Field" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="describingFields" upperBound="-1"
-        eType="#//Field" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipAlias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RuleType">
     <eLiterals name="SingleFire"/>
     <eLiterals name="MultiFire" value="1"/>
@@ -131,10 +8,93 @@
     <eLiterals name="Filter" value="3"/>
     <eLiterals name="Dedup" value="4"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecPackage" eSuperTypes="ETL_MODEL.ecore#//Package">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specifications" upperBound="-1"
+        eType="#//Specification" containment="true" eOpposite="#//Specification/specpackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Specification" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specpackage" eType="#//SpecPackage"
+        eOpposite="#//SpecPackage/specifications"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessrules" upperBound="-1"
+        eType="#//BusinessRule" containment="true" eOpposite="#//BusinessRule/specification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primarySources" upperBound="-1"
+        eType="#//Source" containment="true" eOpposite="#//Source/specification"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReadEntitySpecification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"
-        eOpposite="#//Source/readentityspecification"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReadKeySats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ReadKeySatsReason" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eOpposite="#//Source/readEntitySpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JoinField" eSuperTypes="logmodel.ecore#//Field">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSource" eType="#//Source"
+        eOpposite="#//Source/parentJoinFields"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childSource" eType="#//Source"
+        eOpposite="#//Source/childJoinField"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="ecore:EClass logmodel.ecore#//Field"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dedup">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preDedupBusinessRule" eType="#//BusinessRule"
+        eOpposite="#//BusinessRule/preDedup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postDedupBusinessRule"
+        eType="#//BusinessRule" eOpposite="#//BusinessRule/postDedup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="ecore:EClass logmodel.ecore#//Field"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field" eType="ecore:EClass logmodel.ecore#//Field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preFilterBusinessRule"
+        eType="#//BusinessRule" eOpposite="#//BusinessRule/preFilter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postFilterBusinessRule"
+        eType="#//BusinessRule" eOpposite="#//BusinessRule/postFilter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubSpecification" eSuperTypes="#//Specification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessRule" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="#//Specification"
+        eOpposite="#//Specification/businessrules"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preDedup" eType="#//Dedup"
+        containment="true" eOpposite="#//Dedup/preDedupBusinessRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postDedup" eType="#//Dedup"
+        containment="true" eOpposite="#//Dedup/postDedupBusinessRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vectorkeys" upperBound="-1"
+        eType="#//VectorKey" containment="true" eOpposite="#//VectorKey/businessrule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preFilter" eType="#//Filter"
+        containment="true" eOpposite="#//Filter/preFilterBusinessRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="postFilter" eType="#//Filter"
+        containment="true" eOpposite="#//Filter/postFilterBusinessRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RuleType" eType="#//RuleType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetEntity" eType="ecore:EClass logmodel.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipSourceEntity"
+        eType="ecore:EClass logmodel.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipTargetEntity"
+        eType="ecore:EClass logmodel.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetParentEntity" eType="ecore:EClass logmodel.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lookupEntities" eType="ecore:EClass logmodel.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetMappingOutputFields"
+        eType="ecore:EClass logmodel.ecore#//CommonMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetRelationship" eType="ecore:EClass logmodel.ecore#//Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Source">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceBusinessRule" eType="#//BusinessRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSpecification" eType="#//Specification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSource" eType="#//Source"
+        eOpposite="#//Source/childSources"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childSources" upperBound="-1"
+        eType="#//Source" containment="true" eOpposite="#//Source/parentSource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="#//Specification"
+        eOpposite="#//Specification/primarySources"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentJoinFields" upperBound="-1"
+        eType="#//JoinField" containment="true" eOpposite="#//JoinField/parentSource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childJoinField" upperBound="-1"
+        eType="#//JoinField" containment="true" eOpposite="#//JoinField/childSource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="readEntitySpecification"
+        eType="#//ReadEntitySpecification" eOpposite="#//ReadEntitySpecification/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
+        eType="#//Filter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vectorkeys" upperBound="-1"
+        eType="#//VectorKey" eOpposite="#//VectorKey/source"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VectorKey">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessrule" eType="#//BusinessRule"
+        eOpposite="#//BusinessRule/vectorkeys"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Source"
+        eOpposite="#//Source/vectorkeys"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -39,7 +39,7 @@ import specmodel.SpecmodelPackage;
  *   <li>{@link specmodel.impl.SpecPackageImpl#getLAYER_TYPE <em>LAYER TYPE</em>}</li>
  *   <li>{@link specmodel.impl.SpecPackageImpl#getHISTORISATION <em>HISTORISATION</em>}</li>
  *   <li>{@link specmodel.impl.SpecPackageImpl#getREPRESENTATION <em>REPRESENTATION</em>}</li>
- *   <li>{@link specmodel.impl.SpecPackageImpl#getSpecification <em>Specification</em>}</li>
+ *   <li>{@link specmodel.impl.SpecPackageImpl#getSpecifications <em>Specifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -146,14 +146,14 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 	protected REPRESENTATIONS representation = REPRESENTATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpecification() <em>Specification</em>}' containment reference list.
+	 * The cached value of the '{@link #getSpecifications() <em>Specifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecification()
+	 * @see #getSpecifications()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specification> specification;
+	protected EList<Specification> specifications;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,11 +295,11 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 	 * @generated
 	 */
 	@Override
-	public EList<Specification> getSpecification() {
-		if (specification == null) {
-			specification = new EObjectContainmentWithInverseEList<Specification>(Specification.class, this, SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION, SpecmodelPackage.SPECIFICATION__SPECPACKAGE);
+	public EList<Specification> getSpecifications() {
+		if (specifications == null) {
+			specifications = new EObjectContainmentWithInverseEList<Specification>(Specification.class, this, SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS, SpecmodelPackage.SPECIFICATION__SPECPACKAGE);
 		}
-		return specification;
+		return specifications;
 	}
 
 	/**
@@ -311,8 +311,8 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpecification()).basicAdd(otherEnd, msgs);
+			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpecifications()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -325,8 +325,8 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION:
-				return ((InternalEList<?>)getSpecification()).basicRemove(otherEnd, msgs);
+			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS:
+				return ((InternalEList<?>)getSpecifications()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -349,8 +349,8 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 				return getHISTORISATION();
 			case SpecmodelPackage.SPEC_PACKAGE__REPRESENTATION:
 				return getREPRESENTATION();
-			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION:
-				return getSpecification();
+			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS:
+				return getSpecifications();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,9 +379,9 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 			case SpecmodelPackage.SPEC_PACKAGE__REPRESENTATION:
 				setREPRESENTATION((REPRESENTATIONS)newValue);
 				return;
-			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION:
-				getSpecification().clear();
-				getSpecification().addAll((Collection<? extends Specification>)newValue);
+			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS:
+				getSpecifications().clear();
+				getSpecifications().addAll((Collection<? extends Specification>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -410,8 +410,8 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 			case SpecmodelPackage.SPEC_PACKAGE__REPRESENTATION:
 				setREPRESENTATION(REPRESENTATION_EDEFAULT);
 				return;
-			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION:
-				getSpecification().clear();
+			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS:
+				getSpecifications().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -435,8 +435,8 @@ public class SpecPackageImpl extends MinimalEObjectImpl.Container implements Spe
 				return historisation != HISTORISATION_EDEFAULT;
 			case SpecmodelPackage.SPEC_PACKAGE__REPRESENTATION:
 				return representation != REPRESENTATION_EDEFAULT;
-			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION:
-				return specification != null && !specification.isEmpty();
+			case SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS:
+				return specifications != null && !specifications.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

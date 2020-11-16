@@ -29,6 +29,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import specmodel.SpecmodelFactory;
 
 /**
  * This is the item provider adapter for a {@link logmodel.Entity} object.
@@ -235,6 +236,11 @@ public class EntityItemProvider
 			(createChildParameter
 				(LogmodelPackage.Literals.ENTITY__ENTITY_FIELD,
 				 LogmodelFactory.eINSTANCE.createField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogmodelPackage.Literals.ENTITY__ENTITY_FIELD,
+				 SpecmodelFactory.eINSTANCE.createJoinField()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -468,13 +468,22 @@ public interface LogmodelPackage extends EPackage {
 	int RELATIONSHIP__ENTITY = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Relationship Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP__RELATIONSHIP_ALIAS = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 6;
+	int RELATIONSHIP_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Relationship</em>' class.
@@ -1144,6 +1153,17 @@ public interface LogmodelPackage extends EPackage {
 	EReference getRelationship_Entity();
 
 	/**
+	 * Returns the meta object for the attribute '{@link logmodel.Relationship#getRelationshipAlias <em>Relationship Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relationship Alias</em>'.
+	 * @see logmodel.Relationship#getRelationshipAlias()
+	 * @see #getRelationship()
+	 * @generated
+	 */
+	EAttribute getRelationship_RelationshipAlias();
+
+	/**
 	 * Returns the meta object for class '{@link logmodel.BKDomain <em>BK Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1647,6 +1667,14 @@ public interface LogmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RELATIONSHIP__ENTITY = eINSTANCE.getRelationship_Entity();
+
+		/**
+		 * The meta object literal for the '<em><b>Relationship Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATIONSHIP__RELATIONSHIP_ALIAS = eINSTANCE.getRelationship_RelationshipAlias();
 
 		/**
 		 * The meta object literal for the '{@link logmodel.impl.BKDomainImpl <em>BK Domain</em>}' class.

@@ -498,6 +498,16 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getRelationship_RelationshipAlias() {
+		return (EAttribute)relationshipEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBKDomain() {
 		return bkDomainEClass;
 	}
@@ -765,6 +775,7 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		createEReference(relationshipEClass, RELATIONSHIP__DESCRIBING_FIELDS_REL);
 		createEReference(relationshipEClass, RELATIONSHIP__DESCRIBINGFIELDS);
 		createEReference(relationshipEClass, RELATIONSHIP__ENTITY);
+		createEAttribute(relationshipEClass, RELATIONSHIP__RELATIONSHIP_ALIAS);
 
 		bkDomainEClass = createEClass(BK_DOMAIN);
 
@@ -870,6 +881,7 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		initEReference(getRelationship_DescribingFieldsRel(), this.getField(), null, "describingFieldsRel", null, 0, -1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationship_Describingfields(), this.getField(), null, "describingfields", null, 0, -1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationship_Entity(), this.getEntity(), this.getEntity_Relationships(), "entity", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationship_RelationshipAlias(), ecorePackage.getEString(), "relationshipAlias", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bkDomainEClass, BKDomain.class, "BKDomain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

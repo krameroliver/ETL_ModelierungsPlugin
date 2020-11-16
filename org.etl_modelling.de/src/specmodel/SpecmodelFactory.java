@@ -40,6 +40,51 @@ public interface SpecmodelFactory extends EFactory {
 	Specification createSpecification();
 
 	/**
+	 * Returns a new object of class '<em>Read Entity Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Read Entity Specification</em>'.
+	 * @generated
+	 */
+	ReadEntitySpecification createReadEntitySpecification();
+
+	/**
+	 * Returns a new object of class '<em>Join Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Join Field</em>'.
+	 * @generated
+	 */
+	JoinField createJoinField();
+
+	/**
+	 * Returns a new object of class '<em>Dedup</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dedup</em>'.
+	 * @generated
+	 */
+	Dedup createDedup();
+
+	/**
+	 * Returns a new object of class '<em>Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Filter</em>'.
+	 * @generated
+	 */
+	Filter createFilter();
+
+	/**
+	 * Returns a new object of class '<em>Sub Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sub Specification</em>'.
+	 * @generated
+	 */
+	SubSpecification createSubSpecification();
+
+	/**
 	 * Returns a new object of class '<em>Business Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,24 +103,6 @@ public interface SpecmodelFactory extends EFactory {
 	Source createSource();
 
 	/**
-	 * Returns a new object of class '<em>Filter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Filter</em>'.
-	 * @generated
-	 */
-	Filter createFilter();
-
-	/**
-	 * Returns a new object of class '<em>Dedup</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dedup</em>'.
-	 * @generated
-	 */
-	Dedup createDedup();
-
-	/**
 	 * Returns a new object of class '<em>Vector Key</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,51 +110,6 @@ public interface SpecmodelFactory extends EFactory {
 	 * @generated
 	 */
 	VectorKey createVectorKey();
-
-	/**
-	 * Returns a new object of class '<em>Join Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Join Field</em>'.
-	 * @generated
-	 */
-	JoinField createJoinField();
-
-	/**
-	 * Returns a new object of class '<em>Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Field</em>'.
-	 * @generated
-	 */
-	Field createField();
-
-	/**
-	 * Returns a new object of class '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entity</em>'.
-	 * @generated
-	 */
-	Entity createEntity();
-
-	/**
-	 * Returns a new object of class '<em>Relationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Relationship</em>'.
-	 * @generated
-	 */
-	Relationship createRelationship();
-
-	/**
-	 * Returns a new object of class '<em>Read Entity Specification</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Read Entity Specification</em>'.
-	 * @generated
-	 */
-	ReadEntitySpecification createReadEntitySpecification();
 
 	/**
 	 * Returns the package supported by this factory.

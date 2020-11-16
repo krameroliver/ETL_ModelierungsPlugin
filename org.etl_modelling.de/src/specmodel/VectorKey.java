@@ -13,9 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link specmodel.VectorKey#getSource <em>Source</em>}</li>
  *   <li>{@link specmodel.VectorKey#getBusinessrule <em>Businessrule</em>}</li>
- *   <li>{@link specmodel.VectorKey#getField <em>Field</em>}</li>
+ *   <li>{@link specmodel.VectorKey#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getVectorKey()
@@ -23,30 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface VectorKey extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Source</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' container reference.
-	 * @see #setSource(Source)
-	 * @see specmodel.SpecmodelPackage#getVectorKey_Source()
-	 * @see specmodel.Source#getVectorkeys
-	 * @model opposite="vectorkeys" transient="false"
-	 * @generated
-	 */
-	Source getSource();
-
-	/**
-	 * Sets the value of the '{@link specmodel.VectorKey#getSource <em>Source</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' container reference.
-	 * @see #getSource()
-	 * @generated
-	 */
-	void setSource(Source value);
-
 	/**
 	 * Returns the value of the '<em><b>Businessrule</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link specmodel.BusinessRule#getVectorkeys <em>Vectorkeys</em>}'.
@@ -72,25 +47,27 @@ public interface VectorKey extends EObject {
 	void setBusinessrule(BusinessRule value);
 
 	/**
-	 * Returns the value of the '<em><b>Field</b></em>' reference.
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Field</em>' reference.
-	 * @see #setField(Field)
-	 * @see specmodel.SpecmodelPackage#getVectorKey_Field()
-	 * @model
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(Source)
+	 * @see specmodel.SpecmodelPackage#getVectorKey_Source()
+	 * @see specmodel.Source#getVectorkeys
+	 * @model opposite="vectorkeys"
 	 * @generated
 	 */
-	Field getField();
+	Source getSource();
 
 	/**
-	 * Sets the value of the '{@link specmodel.VectorKey#getField <em>Field</em>}' reference.
+	 * Sets the value of the '{@link specmodel.VectorKey#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Field</em>' reference.
-	 * @see #getField()
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
 	 * @generated
 	 */
-	void setField(Field value);
+	void setSource(Source value);
 
 } // VectorKey

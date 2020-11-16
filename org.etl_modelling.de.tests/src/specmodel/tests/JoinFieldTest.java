@@ -2,9 +2,9 @@
  */
 package specmodel.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
+
+import logmodel.tests.FieldTest;
 
 import specmodel.JoinField;
 import specmodel.SpecmodelFactory;
@@ -15,15 +15,7 @@ import specmodel.SpecmodelFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class JoinFieldTest extends TestCase {
-
-	/**
-	 * The fixture for this Join Field test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected JoinField fixture = null;
+public class JoinFieldTest extends FieldTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +37,14 @@ public class JoinFieldTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Join Field test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(JoinField fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Join Field test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected JoinField getFixture() {
-		return fixture;
+		return (JoinField)fixture;
 	}
 
 	/**

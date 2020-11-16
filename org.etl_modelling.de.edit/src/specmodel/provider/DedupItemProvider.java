@@ -59,9 +59,55 @@ public class DedupItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPreDedupBusinessRulePropertyDescriptor(object);
+			addPostDedupBusinessRulePropertyDescriptor(object);
 			addFieldPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Pre Dedup Business Rule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreDedupBusinessRulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Dedup_preDedupBusinessRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Dedup_preDedupBusinessRule_feature", "_UI_Dedup_type"),
+				 SpecmodelPackage.Literals.DEDUP__PRE_DEDUP_BUSINESS_RULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Post Dedup Business Rule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPostDedupBusinessRulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Dedup_postDedupBusinessRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Dedup_postDedupBusinessRule_feature", "_UI_Dedup_type"),
+				 SpecmodelPackage.Literals.DEDUP__POST_DEDUP_BUSINESS_RULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

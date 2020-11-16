@@ -232,7 +232,7 @@ public class Package_enumsPackageImpl extends EPackageImpl implements Package_en
 
 		initEEnum(representationsEEnum, package_enums.REPRESENTATIONS.class, "REPRESENTATIONS");
 		addEEnumLiteral(representationsEEnum, package_enums.REPRESENTATIONS.FLAT_TABLE);
-		addEEnumLiteral(representationsEEnum, package_enums.REPRESENTATIONS.BITEMPORAL);
+		addEEnumLiteral(representationsEEnum, package_enums.REPRESENTATIONS.DATAVAULT);
 		addEEnumLiteral(representationsEEnum, package_enums.REPRESENTATIONS.THIRD_NF);
 		addEEnumLiteral(representationsEEnum, package_enums.REPRESENTATIONS.SNOWFLAKE);
 		addEEnumLiteral(representationsEEnum, package_enums.REPRESENTATIONS.STAR);

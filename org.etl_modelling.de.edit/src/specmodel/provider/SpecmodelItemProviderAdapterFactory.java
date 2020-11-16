@@ -118,6 +118,121 @@ public class SpecmodelItemProviderAdapterFactory extends SpecmodelAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link specmodel.ReadEntitySpecification} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReadEntitySpecificationItemProvider readEntitySpecificationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link specmodel.ReadEntitySpecification}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReadEntitySpecificationAdapter() {
+		if (readEntitySpecificationItemProvider == null) {
+			readEntitySpecificationItemProvider = new ReadEntitySpecificationItemProvider(this);
+		}
+
+		return readEntitySpecificationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link specmodel.JoinField} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JoinFieldItemProvider joinFieldItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link specmodel.JoinField}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJoinFieldAdapter() {
+		if (joinFieldItemProvider == null) {
+			joinFieldItemProvider = new JoinFieldItemProvider(this);
+		}
+
+		return joinFieldItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link specmodel.Dedup} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DedupItemProvider dedupItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link specmodel.Dedup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDedupAdapter() {
+		if (dedupItemProvider == null) {
+			dedupItemProvider = new DedupItemProvider(this);
+		}
+
+		return dedupItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link specmodel.Filter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterItemProvider filterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link specmodel.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterAdapter() {
+		if (filterItemProvider == null) {
+			filterItemProvider = new FilterItemProvider(this);
+		}
+
+		return filterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link specmodel.SubSpecification} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SubSpecificationItemProvider subSpecificationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link specmodel.SubSpecification}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSubSpecificationAdapter() {
+		if (subSpecificationItemProvider == null) {
+			subSpecificationItemProvider = new SubSpecificationItemProvider(this);
+		}
+
+		return subSpecificationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link specmodel.BusinessRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,52 +279,6 @@ public class SpecmodelItemProviderAdapterFactory extends SpecmodelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link specmodel.Filter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FilterItemProvider filterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link specmodel.Filter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFilterAdapter() {
-		if (filterItemProvider == null) {
-			filterItemProvider = new FilterItemProvider(this);
-		}
-
-		return filterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link specmodel.Dedup} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DedupItemProvider dedupItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link specmodel.Dedup}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDedupAdapter() {
-		if (dedupItemProvider == null) {
-			dedupItemProvider = new DedupItemProvider(this);
-		}
-
-		return dedupItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link specmodel.VectorKey} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,121 +299,6 @@ public class SpecmodelItemProviderAdapterFactory extends SpecmodelAdapterFactory
 		}
 
 		return vectorKeyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link specmodel.JoinField} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected JoinFieldItemProvider joinFieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link specmodel.JoinField}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createJoinFieldAdapter() {
-		if (joinFieldItemProvider == null) {
-			joinFieldItemProvider = new JoinFieldItemProvider(this);
-		}
-
-		return joinFieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link specmodel.Field} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FieldItemProvider fieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link specmodel.Field}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFieldAdapter() {
-		if (fieldItemProvider == null) {
-			fieldItemProvider = new FieldItemProvider(this);
-		}
-
-		return fieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link specmodel.Entity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EntityItemProvider entityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link specmodel.Entity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEntityAdapter() {
-		if (entityItemProvider == null) {
-			entityItemProvider = new EntityItemProvider(this);
-		}
-
-		return entityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link specmodel.Relationship} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RelationshipItemProvider relationshipItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link specmodel.Relationship}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRelationshipAdapter() {
-		if (relationshipItemProvider == null) {
-			relationshipItemProvider = new RelationshipItemProvider(this);
-		}
-
-		return relationshipItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link specmodel.ReadEntitySpecification} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ReadEntitySpecificationItemProvider readEntitySpecificationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link specmodel.ReadEntitySpecification}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createReadEntitySpecificationAdapter() {
-		if (readEntitySpecificationItemProvider == null) {
-			readEntitySpecificationItemProvider = new ReadEntitySpecificationItemProvider(this);
-		}
-
-		return readEntitySpecificationItemProvider;
 	}
 
 	/**
@@ -454,16 +408,14 @@ public class SpecmodelItemProviderAdapterFactory extends SpecmodelAdapterFactory
 	public void dispose() {
 		if (specPackageItemProvider != null) specPackageItemProvider.dispose();
 		if (specificationItemProvider != null) specificationItemProvider.dispose();
+		if (readEntitySpecificationItemProvider != null) readEntitySpecificationItemProvider.dispose();
+		if (joinFieldItemProvider != null) joinFieldItemProvider.dispose();
+		if (dedupItemProvider != null) dedupItemProvider.dispose();
+		if (filterItemProvider != null) filterItemProvider.dispose();
+		if (subSpecificationItemProvider != null) subSpecificationItemProvider.dispose();
 		if (businessRuleItemProvider != null) businessRuleItemProvider.dispose();
 		if (sourceItemProvider != null) sourceItemProvider.dispose();
-		if (filterItemProvider != null) filterItemProvider.dispose();
-		if (dedupItemProvider != null) dedupItemProvider.dispose();
 		if (vectorKeyItemProvider != null) vectorKeyItemProvider.dispose();
-		if (joinFieldItemProvider != null) joinFieldItemProvider.dispose();
-		if (fieldItemProvider != null) fieldItemProvider.dispose();
-		if (entityItemProvider != null) entityItemProvider.dispose();
-		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
-		if (readEntitySpecificationItemProvider != null) readEntitySpecificationItemProvider.dispose();
 	}
 
 }

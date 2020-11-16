@@ -36,7 +36,7 @@ import specmodel.SpecmodelPackage;
  *   <li>{@link specmodel.impl.SpecificationImpl#getName <em>Name</em>}</li>
  *   <li>{@link specmodel.impl.SpecificationImpl#getSpecpackage <em>Specpackage</em>}</li>
  *   <li>{@link specmodel.impl.SpecificationImpl#getBusinessrules <em>Businessrules</em>}</li>
- *   <li>{@link specmodel.impl.SpecificationImpl#getPrimarySource <em>Primary Source</em>}</li>
+ *   <li>{@link specmodel.impl.SpecificationImpl#getPrimarySources <em>Primary Sources</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,14 +73,14 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 	protected EList<BusinessRule> businessrules;
 
 	/**
-	 * The cached value of the '{@link #getPrimarySource() <em>Primary Source</em>}' containment reference list.
+	 * The cached value of the '{@link #getPrimarySources() <em>Primary Sources</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrimarySource()
+	 * @see #getPrimarySources()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Source> primarySource;
+	protected EList<Source> primarySources;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +159,7 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSpecpackage != null)
-				msgs = ((InternalEObject)newSpecpackage).eInverseAdd(this, SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION, SpecPackage.class, msgs);
+				msgs = ((InternalEObject)newSpecpackage).eInverseAdd(this, SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS, SpecPackage.class, msgs);
 			msgs = basicSetSpecpackage(newSpecpackage, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -186,11 +186,11 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 	 * @generated
 	 */
 	@Override
-	public EList<Source> getPrimarySource() {
-		if (primarySource == null) {
-			primarySource = new EObjectContainmentWithInverseEList<Source>(Source.class, this, SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE, SpecmodelPackage.SOURCE__SPECIFICATION);
+	public EList<Source> getPrimarySources() {
+		if (primarySources == null) {
+			primarySources = new EObjectContainmentWithInverseEList<Source>(Source.class, this, SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES, SpecmodelPackage.SOURCE__SPECIFICATION);
 		}
-		return primarySource;
+		return primarySources;
 	}
 
 	/**
@@ -208,8 +208,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 				return basicSetSpecpackage((SpecPackage)otherEnd, msgs);
 			case SpecmodelPackage.SPECIFICATION__BUSINESSRULES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBusinessrules()).basicAdd(otherEnd, msgs);
-			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPrimarySource()).basicAdd(otherEnd, msgs);
+			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPrimarySources()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -226,8 +226,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 				return basicSetSpecpackage(null, msgs);
 			case SpecmodelPackage.SPECIFICATION__BUSINESSRULES:
 				return ((InternalEList<?>)getBusinessrules()).basicRemove(otherEnd, msgs);
-			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE:
-				return ((InternalEList<?>)getPrimarySource()).basicRemove(otherEnd, msgs);
+			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES:
+				return ((InternalEList<?>)getPrimarySources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -241,7 +241,7 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case SpecmodelPackage.SPECIFICATION__SPECPACKAGE:
-				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SPEC_PACKAGE__SPECIFICATION, SpecPackage.class, msgs);
+				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SPEC_PACKAGE__SPECIFICATIONS, SpecPackage.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -260,8 +260,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 				return getSpecpackage();
 			case SpecmodelPackage.SPECIFICATION__BUSINESSRULES:
 				return getBusinessrules();
-			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE:
-				return getPrimarySource();
+			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES:
+				return getPrimarySources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -285,9 +285,9 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 				getBusinessrules().clear();
 				getBusinessrules().addAll((Collection<? extends BusinessRule>)newValue);
 				return;
-			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE:
-				getPrimarySource().clear();
-				getPrimarySource().addAll((Collection<? extends Source>)newValue);
+			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES:
+				getPrimarySources().clear();
+				getPrimarySources().addAll((Collection<? extends Source>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -310,8 +310,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 			case SpecmodelPackage.SPECIFICATION__BUSINESSRULES:
 				getBusinessrules().clear();
 				return;
-			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE:
-				getPrimarySource().clear();
+			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES:
+				getPrimarySources().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -331,8 +331,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 				return getSpecpackage() != null;
 			case SpecmodelPackage.SPECIFICATION__BUSINESSRULES:
 				return businessrules != null && !businessrules.isEmpty();
-			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE:
-				return primarySource != null && !primarySource.isEmpty();
+			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES:
+				return primarySources != null && !primarySources.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

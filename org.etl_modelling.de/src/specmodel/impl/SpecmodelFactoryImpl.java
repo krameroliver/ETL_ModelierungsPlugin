@@ -59,16 +59,14 @@ public class SpecmodelFactoryImpl extends EFactoryImpl implements SpecmodelFacto
 		switch (eClass.getClassifierID()) {
 			case SpecmodelPackage.SPEC_PACKAGE: return createSpecPackage();
 			case SpecmodelPackage.SPECIFICATION: return createSpecification();
+			case SpecmodelPackage.READ_ENTITY_SPECIFICATION: return createReadEntitySpecification();
+			case SpecmodelPackage.JOIN_FIELD: return createJoinField();
+			case SpecmodelPackage.DEDUP: return createDedup();
+			case SpecmodelPackage.FILTER: return createFilter();
+			case SpecmodelPackage.SUB_SPECIFICATION: return createSubSpecification();
 			case SpecmodelPackage.BUSINESS_RULE: return createBusinessRule();
 			case SpecmodelPackage.SOURCE: return createSource();
-			case SpecmodelPackage.FILTER: return createFilter();
-			case SpecmodelPackage.DEDUP: return createDedup();
 			case SpecmodelPackage.VECTOR_KEY: return createVectorKey();
-			case SpecmodelPackage.JOIN_FIELD: return createJoinField();
-			case SpecmodelPackage.FIELD: return createField();
-			case SpecmodelPackage.ENTITY: return createEntity();
-			case SpecmodelPackage.RELATIONSHIP: return createRelationship();
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION: return createReadEntitySpecification();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -132,6 +130,61 @@ public class SpecmodelFactoryImpl extends EFactoryImpl implements SpecmodelFacto
 	 * @generated
 	 */
 	@Override
+	public ReadEntitySpecification createReadEntitySpecification() {
+		ReadEntitySpecificationImpl readEntitySpecification = new ReadEntitySpecificationImpl();
+		return readEntitySpecification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public JoinField createJoinField() {
+		JoinFieldImpl joinField = new JoinFieldImpl();
+		return joinField;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Dedup createDedup() {
+		DedupImpl dedup = new DedupImpl();
+		return dedup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Filter createFilter() {
+		FilterImpl filter = new FilterImpl();
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SubSpecification createSubSpecification() {
+		SubSpecificationImpl subSpecification = new SubSpecificationImpl();
+		return subSpecification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public BusinessRule createBusinessRule() {
 		BusinessRuleImpl businessRule = new BusinessRuleImpl();
 		return businessRule;
@@ -154,86 +207,9 @@ public class SpecmodelFactoryImpl extends EFactoryImpl implements SpecmodelFacto
 	 * @generated
 	 */
 	@Override
-	public Filter createFilter() {
-		FilterImpl filter = new FilterImpl();
-		return filter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Dedup createDedup() {
-		DedupImpl dedup = new DedupImpl();
-		return dedup;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public VectorKey createVectorKey() {
 		VectorKeyImpl vectorKey = new VectorKeyImpl();
 		return vectorKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public JoinField createJoinField() {
-		JoinFieldImpl joinField = new JoinFieldImpl();
-		return joinField;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Field createField() {
-		FieldImpl field = new FieldImpl();
-		return field;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Entity createEntity() {
-		EntityImpl entity = new EntityImpl();
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Relationship createRelationship() {
-		RelationshipImpl relationship = new RelationshipImpl();
-		return relationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ReadEntitySpecification createReadEntitySpecification() {
-		ReadEntitySpecificationImpl readEntitySpecification = new ReadEntitySpecificationImpl();
-		return readEntitySpecification;
 	}
 
 	/**

@@ -4,7 +4,6 @@ package specmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-
 import ETL_MODEL.provider.LogmodelEditPlugin;
 
 import java.util.Collection;
@@ -68,18 +67,20 @@ public class BusinessRuleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addRelationshipTargetEntityPropertyDescriptor(object);
+			addSpecificationPropertyDescriptor(object);
+			addPreDedupPropertyDescriptor(object);
+			addPostDedupPropertyDescriptor(object);
+			addVectorkeysPropertyDescriptor(object);
+			addPreFilterPropertyDescriptor(object);
+			addPostFilterPropertyDescriptor(object);
+			addRuleTypePropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
+			addRelationshipSourceEntityPropertyDescriptor(object);
+			addRelationshipTargetEntityPropertyDescriptor(object);
 			addTargetParentEntityPropertyDescriptor(object);
 			addLookupEntitiesPropertyDescriptor(object);
-			addRelationshipSourceEntityPropertyDescriptor(object);
-			addRuletypePropertyDescriptor(object);
-			addRelationshipTargetEntityUseHashKeyPropertyDescriptor(object);
-			addRelationshipSourceEntityUseHashKeyPropertyDescriptor(object);
-			addTargetEntityUseHashKeyPropertyDescriptor(object);
 			addTargetMappingOutputFieldsPropertyDescriptor(object);
 			addTargetRelationshipPropertyDescriptor(object);
-			addSourceReleationshipPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -107,23 +108,155 @@ public class BusinessRuleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Relationship Target Entity feature.
+	 * This adds a property descriptor for the Specification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRelationshipTargetEntityPropertyDescriptor(Object object) {
+	protected void addSpecificationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BusinessRule_relationshipTargetEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_relationshipTargetEntity_feature", "_UI_BusinessRule_type"),
-				 SpecmodelPackage.Literals.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY,
+				 getString("_UI_BusinessRule_specification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_specification_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__SPECIFICATION,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pre Dedup feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreDedupPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_preDedup_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_preDedup_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__PRE_DEDUP,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Post Dedup feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPostDedupPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_postDedup_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_postDedup_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__POST_DEDUP,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Vectorkeys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVectorkeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_vectorkeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_vectorkeys_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__VECTORKEYS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pre Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_preFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_preFilter_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__PRE_FILTER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Post Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPostFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_postFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_postFilter_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__POST_FILTER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rule Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRuleTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_RuleType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_RuleType_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__RULE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -142,6 +275,50 @@ public class BusinessRuleItemProvider
 				 getString("_UI_BusinessRule_targetEntity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_targetEntity_feature", "_UI_BusinessRule_type"),
 				 SpecmodelPackage.Literals.BUSINESS_RULE__TARGET_ENTITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Relationship Source Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRelationshipSourceEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_relationshipSourceEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_relationshipSourceEntity_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Relationship Target Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRelationshipTargetEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_relationshipTargetEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_relationshipTargetEntity_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY,
 				 true,
 				 false,
 				 true,
@@ -195,116 +372,6 @@ public class BusinessRuleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Relationship Source Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRelationshipSourceEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessRule_relationshipSourceEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_relationshipSourceEntity_feature", "_UI_BusinessRule_type"),
-				 SpecmodelPackage.Literals.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ruletype feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRuletypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessRule_ruletype_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_ruletype_feature", "_UI_BusinessRule_type"),
-				 SpecmodelPackage.Literals.BUSINESS_RULE__RULETYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Relationship Target Entity Use Hash Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRelationshipTargetEntityUseHashKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessRule_relationshipTargetEntityUseHashKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_relationshipTargetEntityUseHashKey_feature", "_UI_BusinessRule_type"),
-				 SpecmodelPackage.Literals.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Relationship Source Entity Use Hash Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRelationshipSourceEntityUseHashKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessRule_relationshipSourceEntityUseHashKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_relationshipSourceEntityUseHashKey_feature", "_UI_BusinessRule_type"),
-				 SpecmodelPackage.Literals.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target Entity Use Hash Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetEntityUseHashKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessRule_targetEntityUseHashKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_targetEntityUseHashKey_feature", "_UI_BusinessRule_type"),
-				 SpecmodelPackage.Literals.BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Target Mapping Output Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,8 +387,8 @@ public class BusinessRuleItemProvider
 				 SpecmodelPackage.Literals.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -349,28 +416,6 @@ public class BusinessRuleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Source Releationship feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourceReleationshipPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessRule_sourceReleationship_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_sourceReleationship_feature", "_UI_BusinessRule_type"),
-				 SpecmodelPackage.Literals.BUSINESS_RULE__SOURCE_RELEATIONSHIP,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -382,9 +427,11 @@ public class BusinessRuleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__POST_DEDUP);
 			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__PRE_DEDUP);
+			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__POST_DEDUP);
 			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__VECTORKEYS);
+			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__PRE_FILTER);
+			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__POST_FILTER);
 		}
 		return childrenFeatures;
 	}
@@ -441,16 +488,14 @@ public class BusinessRuleItemProvider
 
 		switch (notification.getFeatureID(BusinessRule.class)) {
 			case SpecmodelPackage.BUSINESS_RULE__NAME:
-			case SpecmodelPackage.BUSINESS_RULE__RULETYPE:
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY:
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY:
-			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY:
-			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
+			case SpecmodelPackage.BUSINESS_RULE__RULE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
 			case SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP:
+			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
+			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
+			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -470,18 +515,28 @@ public class BusinessRuleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SpecmodelPackage.Literals.BUSINESS_RULE__POST_DEDUP,
+				(SpecmodelPackage.Literals.BUSINESS_RULE__PRE_DEDUP,
 				 SpecmodelFactory.eINSTANCE.createDedup()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SpecmodelPackage.Literals.BUSINESS_RULE__PRE_DEDUP,
+				(SpecmodelPackage.Literals.BUSINESS_RULE__POST_DEDUP,
 				 SpecmodelFactory.eINSTANCE.createDedup()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(SpecmodelPackage.Literals.BUSINESS_RULE__VECTORKEYS,
 				 SpecmodelFactory.eINSTANCE.createVectorKey()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SpecmodelPackage.Literals.BUSINESS_RULE__PRE_FILTER,
+				 SpecmodelFactory.eINSTANCE.createFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SpecmodelPackage.Literals.BUSINESS_RULE__POST_FILTER,
+				 SpecmodelFactory.eINSTANCE.createFilter()));
 	}
 
 	/**
@@ -496,8 +551,10 @@ public class BusinessRuleItemProvider
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == SpecmodelPackage.Literals.BUSINESS_RULE__PRE_DEDUP ||
 			childFeature == SpecmodelPackage.Literals.BUSINESS_RULE__POST_DEDUP ||
-			childFeature == SpecmodelPackage.Literals.BUSINESS_RULE__PRE_DEDUP;
+			childFeature == SpecmodelPackage.Literals.BUSINESS_RULE__PRE_FILTER ||
+			childFeature == SpecmodelPackage.Literals.BUSINESS_RULE__POST_FILTER;
 
 		if (qualify) {
 			return getString

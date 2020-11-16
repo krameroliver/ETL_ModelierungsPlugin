@@ -2,6 +2,10 @@
  */
 package specmodel.impl;
 
+import logmodel.Field;
+
+import logmodel.impl.FieldImpl;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -9,11 +13,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import specmodel.Field;
 import specmodel.JoinField;
 import specmodel.Source;
 import specmodel.SpecmodelPackage;
@@ -33,7 +35,7 @@ import specmodel.SpecmodelPackage;
  *
  * @generated
  */
-public class JoinFieldImpl extends MinimalEObjectImpl.Container implements JoinField {
+public class JoinFieldImpl extends FieldImpl implements JoinField {
 	/**
 	 * The cached value of the '{@link #getField() <em>Field</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -141,7 +143,7 @@ public class JoinFieldImpl extends MinimalEObjectImpl.Container implements JoinF
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newChildSource != null)
-				msgs = ((InternalEObject)newChildSource).eInverseAdd(this, SpecmodelPackage.SOURCE__CHILD_JOIN_FIELDS, Source.class, msgs);
+				msgs = ((InternalEObject)newChildSource).eInverseAdd(this, SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD, Source.class, msgs);
 			msgs = basicSetChildSource(newChildSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -236,7 +238,7 @@ public class JoinFieldImpl extends MinimalEObjectImpl.Container implements JoinF
 			case SpecmodelPackage.JOIN_FIELD__PARENT_SOURCE:
 				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SOURCE__PARENT_JOIN_FIELDS, Source.class, msgs);
 			case SpecmodelPackage.JOIN_FIELD__CHILD_SOURCE:
-				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SOURCE__CHILD_JOIN_FIELDS, Source.class, msgs);
+				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD, Source.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

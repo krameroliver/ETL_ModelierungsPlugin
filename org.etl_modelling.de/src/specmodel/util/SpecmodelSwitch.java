@@ -4,6 +4,8 @@ package specmodel.util;
 
 import ETL_MODEL.namedelement;
 
+import logmodel.Field;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -83,6 +85,40 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SpecmodelPackage.READ_ENTITY_SPECIFICATION: {
+				ReadEntitySpecification readEntitySpecification = (ReadEntitySpecification)theEObject;
+				T result = caseReadEntitySpecification(readEntitySpecification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpecmodelPackage.JOIN_FIELD: {
+				JoinField joinField = (JoinField)theEObject;
+				T result = caseJoinField(joinField);
+				if (result == null) result = caseField(joinField);
+				if (result == null) result = casenamedelement(joinField);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpecmodelPackage.DEDUP: {
+				Dedup dedup = (Dedup)theEObject;
+				T result = caseDedup(dedup);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpecmodelPackage.FILTER: {
+				Filter filter = (Filter)theEObject;
+				T result = caseFilter(filter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpecmodelPackage.SUB_SPECIFICATION: {
+				SubSpecification subSpecification = (SubSpecification)theEObject;
+				T result = caseSubSpecification(subSpecification);
+				if (result == null) result = caseSpecification(subSpecification);
+				if (result == null) result = casenamedelement(subSpecification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SpecmodelPackage.BUSINESS_RULE: {
 				BusinessRule businessRule = (BusinessRule)theEObject;
 				T result = caseBusinessRule(businessRule);
@@ -96,54 +132,9 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpecmodelPackage.FILTER: {
-				Filter filter = (Filter)theEObject;
-				T result = caseFilter(filter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpecmodelPackage.DEDUP: {
-				Dedup dedup = (Dedup)theEObject;
-				T result = caseDedup(dedup);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SpecmodelPackage.VECTOR_KEY: {
 				VectorKey vectorKey = (VectorKey)theEObject;
 				T result = caseVectorKey(vectorKey);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpecmodelPackage.JOIN_FIELD: {
-				JoinField joinField = (JoinField)theEObject;
-				T result = caseJoinField(joinField);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpecmodelPackage.FIELD: {
-				Field field = (Field)theEObject;
-				T result = caseField(field);
-				if (result == null) result = casenamedelement(field);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpecmodelPackage.ENTITY: {
-				Entity entity = (Entity)theEObject;
-				T result = caseEntity(entity);
-				if (result == null) result = casenamedelement(entity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpecmodelPackage.RELATIONSHIP: {
-				Relationship relationship = (Relationship)theEObject;
-				T result = caseRelationship(relationship);
-				if (result == null) result = casenamedelement(relationship);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION: {
-				ReadEntitySpecification readEntitySpecification = (ReadEntitySpecification)theEObject;
-				T result = caseReadEntitySpecification(readEntitySpecification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -182,6 +173,81 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Read Entity Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Read Entity Specification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReadEntitySpecification(ReadEntitySpecification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Join Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Join Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJoinField(JoinField object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dedup</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dedup</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDedup(Dedup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilter(Filter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sub Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sub Specification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSubSpecification(SubSpecification object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Business Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -212,36 +278,6 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFilter(Filter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dedup</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dedup</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDedup(Dedup object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Vector Key</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -253,81 +289,6 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVectorKey(VectorKey object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Join Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Join Field</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseJoinField(JoinField object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseField(Field object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEntity(Entity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRelationship(Relationship object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Read Entity Specification</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Read Entity Specification</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReadEntitySpecification(ReadEntitySpecification object) {
 		return null;
 	}
 
@@ -358,6 +319,21 @@ public class SpecmodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePackage(ETL_MODEL.Package object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseField(Field object) {
 		return null;
 	}
 

@@ -15,26 +15,16 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link specmodel.Source#getSourceBusinessrule <em>Source Businessrule</em>}</li>
- *   <li>{@link specmodel.Source#getParentSource <em>Parent Source</em>}</li>
- *   <li>{@link specmodel.Source#getChildSource <em>Child Source</em>}</li>
+ *   <li>{@link specmodel.Source#getSourceBusinessRule <em>Source Business Rule</em>}</li>
  *   <li>{@link specmodel.Source#getSourceSpecification <em>Source Specification</em>}</li>
+ *   <li>{@link specmodel.Source#getParentSource <em>Parent Source</em>}</li>
+ *   <li>{@link specmodel.Source#getChildSources <em>Child Sources</em>}</li>
  *   <li>{@link specmodel.Source#getSpecification <em>Specification</em>}</li>
+ *   <li>{@link specmodel.Source#getParentJoinFields <em>Parent Join Fields</em>}</li>
+ *   <li>{@link specmodel.Source#getChildJoinField <em>Child Join Field</em>}</li>
+ *   <li>{@link specmodel.Source#getReadEntitySpecification <em>Read Entity Specification</em>}</li>
  *   <li>{@link specmodel.Source#getFilters <em>Filters</em>}</li>
  *   <li>{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}</li>
- *   <li>{@link specmodel.Source#getParentJoinFields <em>Parent Join Fields</em>}</li>
- *   <li>{@link specmodel.Source#getChildJoinFields <em>Child Join Fields</em>}</li>
- *   <li>{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}</li>
- *   <li>{@link specmodel.Source#getJoinEntity <em>Join Entity</em>}</li>
- *   <li>{@link specmodel.Source#getSourceReleationship <em>Source Releationship</em>}</li>
- *   <li>{@link specmodel.Source#isIsMandatory <em>Is Mandatory</em>}</li>
- *   <li>{@link specmodel.Source#isIsVector <em>Is Vector</em>}</li>
- *   <li>{@link specmodel.Source#isIsMultiplying <em>Is Multiplying</em>}</li>
- *   <li>{@link specmodel.Source#getAlias <em>Alias</em>}</li>
- *   <li>{@link specmodel.Source#getReadentityspecification <em>Readentityspecification</em>}</li>
- *   <li>{@link specmodel.Source#getJoinComment <em>Join Comment</em>}</li>
- *   <li>{@link specmodel.Source#getComment <em>Comment</em>}</li>
- *   <li>{@link specmodel.Source#getRelationship <em>Relationship</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getSource()
@@ -43,64 +33,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Source extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Source Businessrule</b></em>' reference.
+	 * Returns the value of the '<em><b>Source Business Rule</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Businessrule</em>' reference.
-	 * @see #setSourceBusinessrule(BusinessRule)
-	 * @see specmodel.SpecmodelPackage#getSource_SourceBusinessrule()
+	 * @return the value of the '<em>Source Business Rule</em>' reference.
+	 * @see #setSourceBusinessRule(BusinessRule)
+	 * @see specmodel.SpecmodelPackage#getSource_SourceBusinessRule()
 	 * @model
 	 * @generated
 	 */
-	BusinessRule getSourceBusinessrule();
+	BusinessRule getSourceBusinessRule();
 
 	/**
-	 * Sets the value of the '{@link specmodel.Source#getSourceBusinessrule <em>Source Businessrule</em>}' reference.
+	 * Sets the value of the '{@link specmodel.Source#getSourceBusinessRule <em>Source Business Rule</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Businessrule</em>' reference.
-	 * @see #getSourceBusinessrule()
+	 * @param value the new value of the '<em>Source Business Rule</em>' reference.
+	 * @see #getSourceBusinessRule()
 	 * @generated
 	 */
-	void setSourceBusinessrule(BusinessRule value);
-
-	/**
-	 * Returns the value of the '<em><b>Parent Source</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.Source#getChildSource <em>Child Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Source</em>' container reference.
-	 * @see #setParentSource(Source)
-	 * @see specmodel.SpecmodelPackage#getSource_ParentSource()
-	 * @see specmodel.Source#getChildSource
-	 * @model opposite="childSource" transient="false"
-	 * @generated
-	 */
-	Source getParentSource();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getParentSource <em>Parent Source</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Source</em>' container reference.
-	 * @see #getParentSource()
-	 * @generated
-	 */
-	void setParentSource(Source value);
-
-	/**
-	 * Returns the value of the '<em><b>Child Source</b></em>' containment reference list.
-	 * The list contents are of type {@link specmodel.Source}.
-	 * It is bidirectional and its opposite is '{@link specmodel.Source#getParentSource <em>Parent Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Child Source</em>' containment reference list.
-	 * @see specmodel.SpecmodelPackage#getSource_ChildSource()
-	 * @see specmodel.Source#getParentSource
-	 * @model opposite="parentSource" containment="true"
-	 * @generated
-	 */
-	EList<Source> getChildSource();
+	void setSourceBusinessRule(BusinessRule value);
 
 	/**
 	 * Returns the value of the '<em><b>Source Specification</b></em>' reference.
@@ -125,15 +77,53 @@ public interface Source extends EObject {
 	void setSourceSpecification(Specification value);
 
 	/**
+	 * Returns the value of the '<em><b>Parent Source</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.Source#getChildSources <em>Child Sources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Source</em>' container reference.
+	 * @see #setParentSource(Source)
+	 * @see specmodel.SpecmodelPackage#getSource_ParentSource()
+	 * @see specmodel.Source#getChildSources
+	 * @model opposite="childSources" transient="false"
+	 * @generated
+	 */
+	Source getParentSource();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getParentSource <em>Parent Source</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Source</em>' container reference.
+	 * @see #getParentSource()
+	 * @generated
+	 */
+	void setParentSource(Source value);
+
+	/**
+	 * Returns the value of the '<em><b>Child Sources</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.Source}.
+	 * It is bidirectional and its opposite is '{@link specmodel.Source#getParentSource <em>Parent Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Child Sources</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_ChildSources()
+	 * @see specmodel.Source#getParentSource
+	 * @model opposite="parentSource" containment="true"
+	 * @generated
+	 */
+	EList<Source> getChildSources();
+
+	/**
 	 * Returns the value of the '<em><b>Specification</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.Specification#getPrimarySource <em>Primary Source</em>}'.
+	 * It is bidirectional and its opposite is '{@link specmodel.Specification#getPrimarySources <em>Primary Sources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Specification</em>' container reference.
 	 * @see #setSpecification(Specification)
 	 * @see specmodel.SpecmodelPackage#getSource_Specification()
-	 * @see specmodel.Specification#getPrimarySource
-	 * @model opposite="primarySource" transient="false"
+	 * @see specmodel.Specification#getPrimarySources
+	 * @model opposite="primarySources" transient="false"
 	 * @generated
 	 */
 	Specification getSpecification();
@@ -147,32 +137,6 @@ public interface Source extends EObject {
 	 * @generated
 	 */
 	void setSpecification(Specification value);
-
-	/**
-	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
-	 * The list contents are of type {@link specmodel.Filter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filters</em>' containment reference list.
-	 * @see specmodel.SpecmodelPackage#getSource_Filters()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Filter> getFilters();
-
-	/**
-	 * Returns the value of the '<em><b>Vectorkeys</b></em>' containment reference list.
-	 * The list contents are of type {@link specmodel.VectorKey}.
-	 * It is bidirectional and its opposite is '{@link specmodel.VectorKey#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vectorkeys</em>' containment reference list.
-	 * @see specmodel.SpecmodelPackage#getSource_Vectorkeys()
-	 * @see specmodel.VectorKey#getSource
-	 * @model opposite="source" containment="true"
-	 * @generated
-	 */
-	EList<VectorKey> getVectorkeys();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Join Fields</b></em>' containment reference list.
@@ -189,261 +153,67 @@ public interface Source extends EObject {
 	EList<JoinField> getParentJoinFields();
 
 	/**
-	 * Returns the value of the '<em><b>Child Join Fields</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Child Join Field</b></em>' containment reference list.
 	 * The list contents are of type {@link specmodel.JoinField}.
 	 * It is bidirectional and its opposite is '{@link specmodel.JoinField#getChildSource <em>Child Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Child Join Fields</em>' containment reference list.
-	 * @see specmodel.SpecmodelPackage#getSource_ChildJoinFields()
+	 * @return the value of the '<em>Child Join Field</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_ChildJoinField()
 	 * @see specmodel.JoinField#getChildSource
 	 * @model opposite="childSource" containment="true"
 	 * @generated
 	 */
-	EList<JoinField> getChildJoinFields();
+	EList<JoinField> getChildJoinField();
 
 	/**
-	 * Returns the value of the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Entity</em>' reference.
-	 * @see #setSourceEntity(Entity)
-	 * @see specmodel.SpecmodelPackage#getSource_SourceEntity()
-	 * @model
-	 * @generated
-	 */
-	Entity getSourceEntity();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Entity</em>' reference.
-	 * @see #getSourceEntity()
-	 * @generated
-	 */
-	void setSourceEntity(Entity value);
-
-	/**
-	 * Returns the value of the '<em><b>Join Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Join Entity</em>' reference.
-	 * @see #setJoinEntity(Entity)
-	 * @see specmodel.SpecmodelPackage#getSource_JoinEntity()
-	 * @model
-	 * @generated
-	 */
-	Entity getJoinEntity();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getJoinEntity <em>Join Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Join Entity</em>' reference.
-	 * @see #getJoinEntity()
-	 * @generated
-	 */
-	void setJoinEntity(Entity value);
-
-	/**
-	 * Returns the value of the '<em><b>Source Releationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Releationship</em>' reference.
-	 * @see #setSourceReleationship(Relationship)
-	 * @see specmodel.SpecmodelPackage#getSource_SourceReleationship()
-	 * @model
-	 * @generated
-	 */
-	Relationship getSourceReleationship();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getSourceReleationship <em>Source Releationship</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Releationship</em>' reference.
-	 * @see #getSourceReleationship()
-	 * @generated
-	 */
-	void setSourceReleationship(Relationship value);
-
-	/**
-	 * Returns the value of the '<em><b>Relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relationship</em>' reference.
-	 * @see #setRelationship(Relationship)
-	 * @see specmodel.SpecmodelPackage#getSource_Relationship()
-	 * @model
-	 * @generated
-	 */
-	Relationship getRelationship();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getRelationship <em>Relationship</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relationship</em>' reference.
-	 * @see #getRelationship()
-	 * @generated
-	 */
-	void setRelationship(Relationship value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Mandatory</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Mandatory</em>' attribute.
-	 * @see #setIsMandatory(boolean)
-	 * @see specmodel.SpecmodelPackage#getSource_IsMandatory()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsMandatory();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#isIsMandatory <em>Is Mandatory</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Mandatory</em>' attribute.
-	 * @see #isIsMandatory()
-	 * @generated
-	 */
-	void setIsMandatory(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Vector</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Vector</em>' attribute.
-	 * @see #setIsVector(boolean)
-	 * @see specmodel.SpecmodelPackage#getSource_IsVector()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsVector();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#isIsVector <em>Is Vector</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Vector</em>' attribute.
-	 * @see #isIsVector()
-	 * @generated
-	 */
-	void setIsVector(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Multiplying</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Multiplying</em>' attribute.
-	 * @see #setIsMultiplying(boolean)
-	 * @see specmodel.SpecmodelPackage#getSource_IsMultiplying()
-	 * @model
-	 * @generated
-	 */
-	boolean isIsMultiplying();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#isIsMultiplying <em>Is Multiplying</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Multiplying</em>' attribute.
-	 * @see #isIsMultiplying()
-	 * @generated
-	 */
-	void setIsMultiplying(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Alias</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alias</em>' attribute.
-	 * @see #setAlias(String)
-	 * @see specmodel.SpecmodelPackage#getSource_Alias()
-	 * @model
-	 * @generated
-	 */
-	String getAlias();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getAlias <em>Alias</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Alias</em>' attribute.
-	 * @see #getAlias()
-	 * @generated
-	 */
-	void setAlias(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Readentityspecification</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Read Entity Specification</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link specmodel.ReadEntitySpecification#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Readentityspecification</em>' containment reference.
-	 * @see #setReadentityspecification(ReadEntitySpecification)
-	 * @see specmodel.SpecmodelPackage#getSource_Readentityspecification()
+	 * @return the value of the '<em>Read Entity Specification</em>' reference.
+	 * @see #setReadEntitySpecification(ReadEntitySpecification)
+	 * @see specmodel.SpecmodelPackage#getSource_ReadEntitySpecification()
 	 * @see specmodel.ReadEntitySpecification#getSource
-	 * @model opposite="source" containment="true"
+	 * @model opposite="source"
 	 * @generated
 	 */
-	ReadEntitySpecification getReadentityspecification();
+	ReadEntitySpecification getReadEntitySpecification();
 
 	/**
-	 * Sets the value of the '{@link specmodel.Source#getReadentityspecification <em>Readentityspecification</em>}' containment reference.
+	 * Sets the value of the '{@link specmodel.Source#getReadEntitySpecification <em>Read Entity Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Readentityspecification</em>' containment reference.
-	 * @see #getReadentityspecification()
+	 * @param value the new value of the '<em>Read Entity Specification</em>' reference.
+	 * @see #getReadEntitySpecification()
 	 * @generated
 	 */
-	void setReadentityspecification(ReadEntitySpecification value);
+	void setReadEntitySpecification(ReadEntitySpecification value);
 
 	/**
-	 * Returns the value of the '<em><b>Join Comment</b></em>' attribute.
+	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.Filter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Join Comment</em>' attribute.
-	 * @see #setJoinComment(String)
-	 * @see specmodel.SpecmodelPackage#getSource_JoinComment()
-	 * @model
+	 * @return the value of the '<em>Filters</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_Filters()
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getJoinComment();
+	EList<Filter> getFilters();
 
 	/**
-	 * Sets the value of the '{@link specmodel.Source#getJoinComment <em>Join Comment</em>}' attribute.
+	 * Returns the value of the '<em><b>Vectorkeys</b></em>' reference list.
+	 * The list contents are of type {@link specmodel.VectorKey}.
+	 * It is bidirectional and its opposite is '{@link specmodel.VectorKey#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Join Comment</em>' attribute.
-	 * @see #getJoinComment()
+	 * @return the value of the '<em>Vectorkeys</em>' reference list.
+	 * @see specmodel.SpecmodelPackage#getSource_Vectorkeys()
+	 * @see specmodel.VectorKey#getSource
+	 * @model opposite="source"
 	 * @generated
 	 */
-	void setJoinComment(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comment</em>' attribute.
-	 * @see #setComment(String)
-	 * @see specmodel.SpecmodelPackage#getSource_Comment()
-	 * @model
-	 * @generated
-	 */
-	String getComment();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getComment <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comment</em>' attribute.
-	 * @see #getComment()
-	 * @generated
-	 */
-	void setComment(String value);
+	EList<VectorKey> getVectorkeys();
 
 } // Source

@@ -29,16 +29,14 @@ public enum REPRESENTATIONS implements Enumerator {
 	FLAT_TABLE(0, "FLAT_TABLE", "FLAT_TABLE"),
 
 	/**
-	 * The '<em><b>BITEMPORAL</b></em>' literal object.
+	 * The '<em><b>DATAVAULT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BITEMPORAL_VALUE
+	 * @see #DATAVAULT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BITEMPORAL(1, "BITEMPORAL", "BITEMPORAL"),
-
-	/**
+	DATAVAULT(1, "DATAVAULT", "DATAVAULT"), /**
 	 * The '<em><b>Third NF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,15 +78,15 @@ public enum REPRESENTATIONS implements Enumerator {
 	public static final int FLAT_TABLE_VALUE = 0;
 
 	/**
-	 * The '<em><b>BITEMPORAL</b></em>' literal value.
+	 * The '<em><b>DATAVAULT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BITEMPORAL
+	 * @see #DATAVAULT
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BITEMPORAL_VALUE = 1;
+	public static final int DATAVAULT_VALUE = 1;
 
 	/**
 	 * The '<em><b>Third NF</b></em>' literal value.
@@ -132,7 +130,7 @@ public enum REPRESENTATIONS implements Enumerator {
 	private static final REPRESENTATIONS[] VALUES_ARRAY =
 		new REPRESENTATIONS[] {
 			FLAT_TABLE,
-			BITEMPORAL,
+			DATAVAULT,
 			THIRD_NF,
 			SNOWFLAKE,
 			STAR,
@@ -193,7 +191,7 @@ public enum REPRESENTATIONS implements Enumerator {
 	public static REPRESENTATIONS get(int value) {
 		switch (value) {
 			case FLAT_TABLE_VALUE: return FLAT_TABLE;
-			case BITEMPORAL_VALUE: return BITEMPORAL;
+			case DATAVAULT_VALUE: return DATAVAULT;
 			case THIRD_NF_VALUE: return THIRD_NF;
 			case SNOWFLAKE_VALUE: return SNOWFLAKE;
 			case STAR_VALUE: return STAR;

@@ -3,7 +3,9 @@
 package specmodel;
 
 import ETL_MODEL.namedelement;
-
+import logmodel.CommonMapping;
+import logmodel.Entity;
+import logmodel.Relationship;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -16,21 +18,19 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link specmodel.BusinessRule#getSpecification <em>Specification</em>}</li>
- *   <li>{@link specmodel.BusinessRule#getPostDedup <em>Post Dedup</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getPreDedup <em>Pre Dedup</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getPostDedup <em>Post Dedup</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getVectorkeys <em>Vectorkeys</em>}</li>
- *   <li>{@link specmodel.BusinessRule#getRelationshipTargetEntity <em>Relationship Target Entity</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getPreFilter <em>Pre Filter</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getPostFilter <em>Post Filter</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getRuleType <em>Rule Type</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getTargetEntity <em>Target Entity</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getRelationshipSourceEntity <em>Relationship Source Entity</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getRelationshipTargetEntity <em>Relationship Target Entity</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getTargetParentEntity <em>Target Parent Entity</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getLookupEntities <em>Lookup Entities</em>}</li>
- *   <li>{@link specmodel.BusinessRule#getRelationshipSourceEntity <em>Relationship Source Entity</em>}</li>
- *   <li>{@link specmodel.BusinessRule#getRuletype <em>Ruletype</em>}</li>
- *   <li>{@link specmodel.BusinessRule#isRelationshipTargetEntityUseHashKey <em>Relationship Target Entity Use Hash Key</em>}</li>
- *   <li>{@link specmodel.BusinessRule#isRelationshipSourceEntityUseHashKey <em>Relationship Source Entity Use Hash Key</em>}</li>
- *   <li>{@link specmodel.BusinessRule#isTargetEntityUseHashKey <em>Target Entity Use Hash Key</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getTargetRelationship <em>Target Relationship</em>}</li>
- *   <li>{@link specmodel.BusinessRule#getSourceReleationship <em>Source Releationship</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getBusinessRule()
@@ -63,39 +63,15 @@ public interface BusinessRule extends namedelement {
 	void setSpecification(Specification value);
 
 	/**
-	 * Returns the value of the '<em><b>Post Dedup</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.Dedup#getPostDedupBusinessrule <em>Post Dedup Businessrule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Post Dedup</em>' containment reference.
-	 * @see #setPostDedup(Dedup)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_PostDedup()
-	 * @see specmodel.Dedup#getPostDedupBusinessrule
-	 * @model opposite="postDedupBusinessrule" containment="true"
-	 * @generated
-	 */
-	Dedup getPostDedup();
-
-	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#getPostDedup <em>Post Dedup</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Post Dedup</em>' containment reference.
-	 * @see #getPostDedup()
-	 * @generated
-	 */
-	void setPostDedup(Dedup value);
-
-	/**
 	 * Returns the value of the '<em><b>Pre Dedup</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.Dedup#getPreDedupBusinessrule <em>Pre Dedup Businessrule</em>}'.
+	 * It is bidirectional and its opposite is '{@link specmodel.Dedup#getPreDedupBusinessRule <em>Pre Dedup Business Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pre Dedup</em>' containment reference.
 	 * @see #setPreDedup(Dedup)
 	 * @see specmodel.SpecmodelPackage#getBusinessRule_PreDedup()
-	 * @see specmodel.Dedup#getPreDedupBusinessrule
-	 * @model opposite="preDedupBusinessrule" containment="true"
+	 * @see specmodel.Dedup#getPreDedupBusinessRule
+	 * @model opposite="preDedupBusinessRule" containment="true"
 	 * @generated
 	 */
 	Dedup getPreDedup();
@@ -109,6 +85,30 @@ public interface BusinessRule extends namedelement {
 	 * @generated
 	 */
 	void setPreDedup(Dedup value);
+
+	/**
+	 * Returns the value of the '<em><b>Post Dedup</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.Dedup#getPostDedupBusinessRule <em>Post Dedup Business Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Post Dedup</em>' containment reference.
+	 * @see #setPostDedup(Dedup)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_PostDedup()
+	 * @see specmodel.Dedup#getPostDedupBusinessRule
+	 * @model opposite="postDedupBusinessRule" containment="true"
+	 * @generated
+	 */
+	Dedup getPostDedup();
+
+	/**
+	 * Sets the value of the '{@link specmodel.BusinessRule#getPostDedup <em>Post Dedup</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Post Dedup</em>' containment reference.
+	 * @see #getPostDedup()
+	 * @generated
+	 */
+	void setPostDedup(Dedup value);
 
 	/**
 	 * Returns the value of the '<em><b>Vectorkeys</b></em>' containment reference list.
@@ -125,26 +125,77 @@ public interface BusinessRule extends namedelement {
 	EList<VectorKey> getVectorkeys();
 
 	/**
-	 * Returns the value of the '<em><b>Relationship Target Entity</b></em>' reference.
+	 * Returns the value of the '<em><b>Pre Filter</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.Filter#getPreFilterBusinessRule <em>Pre Filter Business Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relationship Target Entity</em>' reference.
-	 * @see #setRelationshipTargetEntity(Entity)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_RelationshipTargetEntity()
+	 * @return the value of the '<em>Pre Filter</em>' containment reference.
+	 * @see #setPreFilter(Filter)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_PreFilter()
+	 * @see specmodel.Filter#getPreFilterBusinessRule
+	 * @model opposite="preFilterBusinessRule" containment="true"
+	 * @generated
+	 */
+	Filter getPreFilter();
+
+	/**
+	 * Sets the value of the '{@link specmodel.BusinessRule#getPreFilter <em>Pre Filter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pre Filter</em>' containment reference.
+	 * @see #getPreFilter()
+	 * @generated
+	 */
+	void setPreFilter(Filter value);
+
+	/**
+	 * Returns the value of the '<em><b>Post Filter</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.Filter#getPostFilterBusinessRule <em>Post Filter Business Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Post Filter</em>' containment reference.
+	 * @see #setPostFilter(Filter)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_PostFilter()
+	 * @see specmodel.Filter#getPostFilterBusinessRule
+	 * @model opposite="postFilterBusinessRule" containment="true"
+	 * @generated
+	 */
+	Filter getPostFilter();
+
+	/**
+	 * Sets the value of the '{@link specmodel.BusinessRule#getPostFilter <em>Post Filter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Post Filter</em>' containment reference.
+	 * @see #getPostFilter()
+	 * @generated
+	 */
+	void setPostFilter(Filter value);
+
+	/**
+	 * Returns the value of the '<em><b>Rule Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link specmodel.RuleType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rule Type</em>' attribute.
+	 * @see specmodel.RuleType
+	 * @see #setRuleType(RuleType)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_RuleType()
 	 * @model
 	 * @generated
 	 */
-	Entity getRelationshipTargetEntity();
+	RuleType getRuleType();
 
 	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#getRelationshipTargetEntity <em>Relationship Target Entity</em>}' reference.
+	 * Sets the value of the '{@link specmodel.BusinessRule#getRuleType <em>Rule Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relationship Target Entity</em>' reference.
-	 * @see #getRelationshipTargetEntity()
+	 * @param value the new value of the '<em>Rule Type</em>' attribute.
+	 * @see specmodel.RuleType
+	 * @see #getRuleType()
 	 * @generated
 	 */
-	void setRelationshipTargetEntity(Entity value);
+	void setRuleType(RuleType value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Entity</b></em>' reference.
@@ -169,40 +220,6 @@ public interface BusinessRule extends namedelement {
 	void setTargetEntity(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Target Parent Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Parent Entity</em>' reference.
-	 * @see #setTargetParentEntity(Entity)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_TargetParentEntity()
-	 * @model
-	 * @generated
-	 */
-	Entity getTargetParentEntity();
-
-	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#getTargetParentEntity <em>Target Parent Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Parent Entity</em>' reference.
-	 * @see #getTargetParentEntity()
-	 * @generated
-	 */
-	void setTargetParentEntity(Entity value);
-
-	/**
-	 * Returns the value of the '<em><b>Lookup Entities</b></em>' reference list.
-	 * The list contents are of type {@link specmodel.Entity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lookup Entities</em>' reference list.
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_LookupEntities()
-	 * @model
-	 * @generated
-	 */
-	EList<Entity> getLookupEntities();
-
-	/**
 	 * Returns the value of the '<em><b>Relationship Source Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -225,117 +242,92 @@ public interface BusinessRule extends namedelement {
 	void setRelationshipSourceEntity(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Ruletype</b></em>' attribute.
-	 * The literals are from the enumeration {@link specmodel.RuleType}.
+	 * Returns the value of the '<em><b>Relationship Target Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ruletype</em>' attribute.
-	 * @see specmodel.RuleType
-	 * @see #setRuletype(RuleType)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_Ruletype()
+	 * @return the value of the '<em>Relationship Target Entity</em>' reference.
+	 * @see #setRelationshipTargetEntity(Entity)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_RelationshipTargetEntity()
 	 * @model
 	 * @generated
 	 */
-	RuleType getRuletype();
+	Entity getRelationshipTargetEntity();
 
 	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#getRuletype <em>Ruletype</em>}' attribute.
+	 * Sets the value of the '{@link specmodel.BusinessRule#getRelationshipTargetEntity <em>Relationship Target Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ruletype</em>' attribute.
-	 * @see specmodel.RuleType
-	 * @see #getRuletype()
+	 * @param value the new value of the '<em>Relationship Target Entity</em>' reference.
+	 * @see #getRelationshipTargetEntity()
 	 * @generated
 	 */
-	void setRuletype(RuleType value);
+	void setRelationshipTargetEntity(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Relationship Target Entity Use Hash Key</b></em>' attribute.
+	 * Returns the value of the '<em><b>Target Parent Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relationship Target Entity Use Hash Key</em>' attribute.
-	 * @see #setRelationshipTargetEntityUseHashKey(boolean)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_RelationshipTargetEntityUseHashKey()
+	 * @return the value of the '<em>Target Parent Entity</em>' reference.
+	 * @see #setTargetParentEntity(Entity)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_TargetParentEntity()
 	 * @model
 	 * @generated
 	 */
-	boolean isRelationshipTargetEntityUseHashKey();
+	Entity getTargetParentEntity();
 
 	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#isRelationshipTargetEntityUseHashKey <em>Relationship Target Entity Use Hash Key</em>}' attribute.
+	 * Sets the value of the '{@link specmodel.BusinessRule#getTargetParentEntity <em>Target Parent Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relationship Target Entity Use Hash Key</em>' attribute.
-	 * @see #isRelationshipTargetEntityUseHashKey()
+	 * @param value the new value of the '<em>Target Parent Entity</em>' reference.
+	 * @see #getTargetParentEntity()
 	 * @generated
 	 */
-	void setRelationshipTargetEntityUseHashKey(boolean value);
+	void setTargetParentEntity(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Relationship Source Entity Use Hash Key</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lookup Entities</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relationship Source Entity Use Hash Key</em>' attribute.
-	 * @see #setRelationshipSourceEntityUseHashKey(boolean)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_RelationshipSourceEntityUseHashKey()
+	 * @return the value of the '<em>Lookup Entities</em>' reference.
+	 * @see #setLookupEntities(Entity)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_LookupEntities()
 	 * @model
 	 * @generated
 	 */
-	boolean isRelationshipSourceEntityUseHashKey();
+	Entity getLookupEntities();
 
 	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#isRelationshipSourceEntityUseHashKey <em>Relationship Source Entity Use Hash Key</em>}' attribute.
+	 * Sets the value of the '{@link specmodel.BusinessRule#getLookupEntities <em>Lookup Entities</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relationship Source Entity Use Hash Key</em>' attribute.
-	 * @see #isRelationshipSourceEntityUseHashKey()
+	 * @param value the new value of the '<em>Lookup Entities</em>' reference.
+	 * @see #getLookupEntities()
 	 * @generated
 	 */
-	void setRelationshipSourceEntityUseHashKey(boolean value);
+	void setLookupEntities(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Target Entity Use Hash Key</b></em>' attribute.
+	 * Returns the value of the '<em><b>Target Mapping Output Fields</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Entity Use Hash Key</em>' attribute.
-	 * @see #setTargetEntityUseHashKey(boolean)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_TargetEntityUseHashKey()
-	 * @model
-	 * @generated
-	 */
-	boolean isTargetEntityUseHashKey();
-
-	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#isTargetEntityUseHashKey <em>Target Entity Use Hash Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Entity Use Hash Key</em>' attribute.
-	 * @see #isTargetEntityUseHashKey()
-	 * @generated
-	 */
-	void setTargetEntityUseHashKey(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Target Mapping Output Fields</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Mapping Output Fields</em>' attribute.
-	 * @see #setTargetMappingOutputFields(String)
+	 * @return the value of the '<em>Target Mapping Output Fields</em>' reference.
+	 * @see #setTargetMappingOutputFields(CommonMapping)
 	 * @see specmodel.SpecmodelPackage#getBusinessRule_TargetMappingOutputFields()
 	 * @model
 	 * @generated
 	 */
-	String getTargetMappingOutputFields();
+	CommonMapping getTargetMappingOutputFields();
 
 	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}' attribute.
+	 * Sets the value of the '{@link specmodel.BusinessRule#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Mapping Output Fields</em>' attribute.
+	 * @param value the new value of the '<em>Target Mapping Output Fields</em>' reference.
 	 * @see #getTargetMappingOutputFields()
 	 * @generated
 	 */
-	void setTargetMappingOutputFields(String value);
+	void setTargetMappingOutputFields(CommonMapping value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Relationship</b></em>' reference.
@@ -358,27 +350,5 @@ public interface BusinessRule extends namedelement {
 	 * @generated
 	 */
 	void setTargetRelationship(Relationship value);
-
-	/**
-	 * Returns the value of the '<em><b>Source Releationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Releationship</em>' reference.
-	 * @see #setSourceReleationship(Relationship)
-	 * @see specmodel.SpecmodelPackage#getBusinessRule_SourceReleationship()
-	 * @model
-	 * @generated
-	 */
-	Relationship getSourceReleationship();
-
-	/**
-	 * Sets the value of the '{@link specmodel.BusinessRule#getSourceReleationship <em>Source Releationship</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Releationship</em>' reference.
-	 * @see #getSourceReleationship()
-	 * @generated
-	 */
-	void setSourceReleationship(Relationship value);
 
 } // BusinessRule

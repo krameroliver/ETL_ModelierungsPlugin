@@ -30,7 +30,7 @@ enum HISTORISATIONTYPE returns package_enums::HISTORISATIONTYPE:
 				NONE = 'NONE' | DAY_PARTITIONED = 'DAY_PARTITIONED' | MONTH_PARTITIONED = 'MONTH_PARTITIONED' | BITEMPORAL = 'BITEMPORAL';
 
 enum REPRESENTATIONS returns package_enums::REPRESENTATIONS:
-				FLAT_TABLE = 'FLAT_TABLE' | BITEMPORAL = 'BITEMPORAL' | ThirdNF = 'ThirdNF' | SNOWFLAKE = 'SNOWFLAKE' | STAR = 'STAR';
+				FLAT_TABLE = 'FLAT_TABLE' | DATAVAULT = 'DATAVAULT' | ThirdNF = 'ThirdNF' | SNOWFLAKE = 'SNOWFLAKE' | STAR = 'STAR';
 
 
 CommonMapping returns CommonMapping:
@@ -48,7 +48,7 @@ Entity returns Entity:
 	'Entity' name=ID
 	'{'
 		('entityFields' '{' entityField+=Field ( entityField+=Field)* '}' )?
-		(('INCLUDES' '['include+=Include("," include+=Include)* ']')? |	('Relationship' '['relationships+=Relationship("," relationships+=Relationship)* ']')?	)
+		(('Includes' '{'include+=Include("," include+=Include)* '}')? |	('Relationships' '{'relationships+=Relationship("," relationships+=Relationship)* '}')?	)
 	'}';
 
 Field returns Field:
@@ -94,7 +94,7 @@ name=STRING
 Relationship returns Relationship:
 	{Relationship}
 	name=ID
-	'FROM: ' fromEntity=[Entity|QualifiedName] 'To: ' toEntity=[Entity|QualifiedName]
+    'ToEntity: ' toEntity=[Entity|QualifiedName]
 	('DescribingFields:{' describingFieldsRel+=[Field|QualifiedName] '}')? 
 	('IdentifyingFields:{' identifiyingFieldsRel+=[Field|QualifiedName] '}')?
 	;

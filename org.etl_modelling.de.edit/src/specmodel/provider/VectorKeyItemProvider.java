@@ -59,25 +59,48 @@ public class VectorKeyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFieldPropertyDescriptor(object);
+			addBusinessrulePropertyDescriptor(object);
+			addSourcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Field feature.
+	 * This adds a property descriptor for the Businessrule feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFieldPropertyDescriptor(Object object) {
+	protected void addBusinessrulePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_VectorKey_field_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VectorKey_field_feature", "_UI_VectorKey_type"),
-				 SpecmodelPackage.Literals.VECTOR_KEY__FIELD,
+				 getString("_UI_VectorKey_businessrule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VectorKey_businessrule_feature", "_UI_VectorKey_type"),
+				 SpecmodelPackage.Literals.VECTOR_KEY__BUSINESSRULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VectorKey_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VectorKey_source_feature", "_UI_VectorKey_type"),
+				 SpecmodelPackage.Literals.VECTOR_KEY__SOURCE,
 				 true,
 				 false,
 				 true,

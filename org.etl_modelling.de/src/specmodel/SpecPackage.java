@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link specmodel.SpecPackage#getSpecification <em>Specification</em>}</li>
+ *   <li>{@link specmodel.SpecPackage#getSpecifications <em>Specifications</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getSpecPackage()
@@ -22,17 +22,17 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface SpecPackage extends ETL_MODEL.Package {
 	/**
-	 * Returns the value of the '<em><b>Specification</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Specifications</b></em>' containment reference list.
 	 * The list contents are of type {@link specmodel.Specification}.
 	 * It is bidirectional and its opposite is '{@link specmodel.Specification#getSpecpackage <em>Specpackage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specification</em>' containment reference list.
-	 * @see specmodel.SpecmodelPackage#getSpecPackage_Specification()
+	 * @return the value of the '<em>Specifications</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getSpecPackage_Specifications()
 	 * @see specmodel.Specification#getSpecpackage
 	 * @model opposite="specpackage" containment="true"
 	 * @generated
 	 */
-	EList<Specification> getSpecification();
+	EList<Specification> getSpecifications();
 
 } // SpecPackage

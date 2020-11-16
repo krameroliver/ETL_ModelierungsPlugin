@@ -8,20 +8,17 @@ import ETL_MODEL.provider.LogmodelEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
+import logmodel.provider.FieldItemProvider;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import specmodel.JoinField;
 import specmodel.SpecmodelPackage;
 
 /**
@@ -30,14 +27,7 @@ import specmodel.SpecmodelPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class JoinFieldItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class JoinFieldItemProvider extends FieldItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,9 +49,55 @@ public class JoinFieldItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addParentSourcePropertyDescriptor(object);
+			addChildSourcePropertyDescriptor(object);
 			addFieldPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Source feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_JoinField_parentSource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_JoinField_parentSource_feature", "_UI_JoinField_type"),
+				 SpecmodelPackage.Literals.JOIN_FIELD__PARENT_SOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Child Source feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addChildSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_JoinField_childSource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_JoinField_childSource_feature", "_UI_JoinField_type"),
+				 SpecmodelPackage.Literals.JOIN_FIELD__CHILD_SOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -105,7 +141,10 @@ public class JoinFieldItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_JoinField_type");
+		String label = ((JoinField)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_JoinField_type") :
+			getString("_UI_JoinField_type") + " " + label;
 	}
 
 

@@ -4,6 +4,9 @@ package specmodel.impl;
 
 import java.util.Collection;
 
+import logmodel.CommonMapping;
+import logmodel.Entity;
+import logmodel.Relationship;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -16,14 +19,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import specmodel.BusinessRule;
 import specmodel.Dedup;
-import specmodel.Entity;
-import specmodel.Relationship;
+import specmodel.Filter;
 import specmodel.RuleType;
 import specmodel.Specification;
 import specmodel.SpecmodelPackage;
@@ -39,21 +40,19 @@ import specmodel.VectorKey;
  * <ul>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getSpecification <em>Specification</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#getPostDedup <em>Post Dedup</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getPreDedup <em>Pre Dedup</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getPostDedup <em>Post Dedup</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getVectorkeys <em>Vectorkeys</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#getRelationshipTargetEntity <em>Relationship Target Entity</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getPreFilter <em>Pre Filter</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getPostFilter <em>Post Filter</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getRuleType <em>Rule Type</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetEntity <em>Target Entity</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getRelationshipSourceEntity <em>Relationship Source Entity</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getRelationshipTargetEntity <em>Relationship Target Entity</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetParentEntity <em>Target Parent Entity</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getLookupEntities <em>Lookup Entities</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#getRelationshipSourceEntity <em>Relationship Source Entity</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#getRuletype <em>Ruletype</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#isRelationshipTargetEntityUseHashKey <em>Relationship Target Entity Use Hash Key</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#isRelationshipSourceEntityUseHashKey <em>Relationship Source Entity Use Hash Key</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#isTargetEntityUseHashKey <em>Target Entity Use Hash Key</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetRelationship <em>Target Relationship</em>}</li>
- *   <li>{@link specmodel.impl.BusinessRuleImpl#getSourceReleationship <em>Source Releationship</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,16 +79,6 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPostDedup() <em>Post Dedup</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostDedup()
-	 * @generated
-	 * @ordered
-	 */
-	protected Dedup postDedup;
-
-	/**
 	 * The cached value of the '{@link #getPreDedup() <em>Pre Dedup</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,6 +87,16 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @ordered
 	 */
 	protected Dedup preDedup;
+
+	/**
+	 * The cached value of the '{@link #getPostDedup() <em>Post Dedup</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPostDedup()
+	 * @generated
+	 * @ordered
+	 */
+	protected Dedup postDedup;
 
 	/**
 	 * The cached value of the '{@link #getVectorkeys() <em>Vectorkeys</em>}' containment reference list.
@@ -110,14 +109,44 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	protected EList<VectorKey> vectorkeys;
 
 	/**
-	 * The cached value of the '{@link #getRelationshipTargetEntity() <em>Relationship Target Entity</em>}' reference.
+	 * The cached value of the '{@link #getPreFilter() <em>Pre Filter</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRelationshipTargetEntity()
+	 * @see #getPreFilter()
 	 * @generated
 	 * @ordered
 	 */
-	protected Entity relationshipTargetEntity;
+	protected Filter preFilter;
+
+	/**
+	 * The cached value of the '{@link #getPostFilter() <em>Post Filter</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPostFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Filter postFilter;
+
+	/**
+	 * The default value of the '{@link #getRuleType() <em>Rule Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuleType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RuleType RULE_TYPE_EDEFAULT = RuleType.SINGLE_FIRE;
+
+	/**
+	 * The cached value of the '{@link #getRuleType() <em>Rule Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuleType()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuleType ruleType = RULE_TYPE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
@@ -130,26 +159,6 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	protected Entity targetEntity;
 
 	/**
-	 * The cached value of the '{@link #getTargetParentEntity() <em>Target Parent Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetParentEntity()
-	 * @generated
-	 * @ordered
-	 */
-	protected Entity targetParentEntity;
-
-	/**
-	 * The cached value of the '{@link #getLookupEntities() <em>Lookup Entities</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLookupEntities()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Entity> lookupEntities;
-
-	/**
 	 * The cached value of the '{@link #getRelationshipSourceEntity() <em>Relationship Source Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,104 +169,44 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	protected Entity relationshipSourceEntity;
 
 	/**
-	 * The default value of the '{@link #getRuletype() <em>Ruletype</em>}' attribute.
+	 * The cached value of the '{@link #getRelationshipTargetEntity() <em>Relationship Target Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRuletype()
+	 * @see #getRelationshipTargetEntity()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final RuleType RULETYPE_EDEFAULT = RuleType.SINGLE_FIRE;
+	protected Entity relationshipTargetEntity;
 
 	/**
-	 * The cached value of the '{@link #getRuletype() <em>Ruletype</em>}' attribute.
+	 * The cached value of the '{@link #getTargetParentEntity() <em>Target Parent Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRuletype()
+	 * @see #getTargetParentEntity()
 	 * @generated
 	 * @ordered
 	 */
-	protected RuleType ruletype = RULETYPE_EDEFAULT;
+	protected Entity targetParentEntity;
 
 	/**
-	 * The default value of the '{@link #isRelationshipTargetEntityUseHashKey() <em>Relationship Target Entity Use Hash Key</em>}' attribute.
+	 * The cached value of the '{@link #getLookupEntities() <em>Lookup Entities</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isRelationshipTargetEntityUseHashKey()
+	 * @see #getLookupEntities()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY_EDEFAULT = false;
+	protected Entity lookupEntities;
 
 	/**
-	 * The cached value of the '{@link #isRelationshipTargetEntityUseHashKey() <em>Relationship Target Entity Use Hash Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRelationshipTargetEntityUseHashKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean relationshipTargetEntityUseHashKey = RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isRelationshipSourceEntityUseHashKey() <em>Relationship Source Entity Use Hash Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRelationshipSourceEntityUseHashKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isRelationshipSourceEntityUseHashKey() <em>Relationship Source Entity Use Hash Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRelationshipSourceEntityUseHashKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean relationshipSourceEntityUseHashKey = RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isTargetEntityUseHashKey() <em>Target Entity Use Hash Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isTargetEntityUseHashKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean TARGET_ENTITY_USE_HASH_KEY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isTargetEntityUseHashKey() <em>Target Entity Use Hash Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isTargetEntityUseHashKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean targetEntityUseHashKey = TARGET_ENTITY_USE_HASH_KEY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTargetMappingOutputFields() <em>Target Mapping Output Fields</em>}' attribute.
+	 * The cached value of the '{@link #getTargetMappingOutputFields() <em>Target Mapping Output Fields</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTargetMappingOutputFields()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTargetMappingOutputFields() <em>Target Mapping Output Fields</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetMappingOutputFields()
-	 * @generated
-	 * @ordered
-	 */
-	protected String targetMappingOutputFields = TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT;
+	protected CommonMapping targetMappingOutputFields;
 
 	/**
 	 * The cached value of the '{@link #getTargetRelationship() <em>Target Relationship</em>}' reference.
@@ -268,16 +217,6 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @ordered
 	 */
 	protected Relationship targetRelationship;
-
-	/**
-	 * The cached value of the '{@link #getSourceReleationship() <em>Source Releationship</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSourceReleationship()
-	 * @generated
-	 * @ordered
-	 */
-	protected Relationship sourceReleationship;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -370,51 +309,6 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public Dedup getPostDedup() {
-		return postDedup;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPostDedup(Dedup newPostDedup, NotificationChain msgs) {
-		Dedup oldPostDedup = postDedup;
-		postDedup = newPostDedup;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, oldPostDedup, newPostDedup);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setPostDedup(Dedup newPostDedup) {
-		if (newPostDedup != postDedup) {
-			NotificationChain msgs = null;
-			if (postDedup != null)
-				msgs = ((InternalEObject)postDedup).eInverseRemove(this, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE, Dedup.class, msgs);
-			if (newPostDedup != null)
-				msgs = ((InternalEObject)newPostDedup).eInverseAdd(this, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE, Dedup.class, msgs);
-			msgs = basicSetPostDedup(newPostDedup, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, newPostDedup, newPostDedup));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Dedup getPreDedup() {
 		return preDedup;
 	}
@@ -444,14 +338,59 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 		if (newPreDedup != preDedup) {
 			NotificationChain msgs = null;
 			if (preDedup != null)
-				msgs = ((InternalEObject)preDedup).eInverseRemove(this, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE, Dedup.class, msgs);
+				msgs = ((InternalEObject)preDedup).eInverseRemove(this, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE, Dedup.class, msgs);
 			if (newPreDedup != null)
-				msgs = ((InternalEObject)newPreDedup).eInverseAdd(this, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE, Dedup.class, msgs);
+				msgs = ((InternalEObject)newPreDedup).eInverseAdd(this, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE, Dedup.class, msgs);
 			msgs = basicSetPreDedup(newPreDedup, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP, newPreDedup, newPreDedup));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Dedup getPostDedup() {
+		return postDedup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPostDedup(Dedup newPostDedup, NotificationChain msgs) {
+		Dedup oldPostDedup = postDedup;
+		postDedup = newPostDedup;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, oldPostDedup, newPostDedup);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPostDedup(Dedup newPostDedup) {
+		if (newPostDedup != postDedup) {
+			NotificationChain msgs = null;
+			if (postDedup != null)
+				msgs = ((InternalEObject)postDedup).eInverseRemove(this, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE, Dedup.class, msgs);
+			if (newPostDedup != null)
+				msgs = ((InternalEObject)newPostDedup).eInverseAdd(this, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE, Dedup.class, msgs);
+			msgs = basicSetPostDedup(newPostDedup, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, newPostDedup, newPostDedup));
 	}
 
 	/**
@@ -473,16 +412,8 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public Entity getRelationshipTargetEntity() {
-		if (relationshipTargetEntity != null && relationshipTargetEntity.eIsProxy()) {
-			InternalEObject oldRelationshipTargetEntity = (InternalEObject)relationshipTargetEntity;
-			relationshipTargetEntity = (Entity)eResolveProxy(oldRelationshipTargetEntity);
-			if (relationshipTargetEntity != oldRelationshipTargetEntity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY, oldRelationshipTargetEntity, relationshipTargetEntity));
-			}
-		}
-		return relationshipTargetEntity;
+	public Filter getPreFilter() {
+		return preFilter;
 	}
 
 	/**
@@ -490,8 +421,14 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity basicGetRelationshipTargetEntity() {
-		return relationshipTargetEntity;
+	public NotificationChain basicSetPreFilter(Filter newPreFilter, NotificationChain msgs) {
+		Filter oldPreFilter = preFilter;
+		preFilter = newPreFilter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__PRE_FILTER, oldPreFilter, newPreFilter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -500,11 +437,86 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public void setRelationshipTargetEntity(Entity newRelationshipTargetEntity) {
-		Entity oldRelationshipTargetEntity = relationshipTargetEntity;
-		relationshipTargetEntity = newRelationshipTargetEntity;
+	public void setPreFilter(Filter newPreFilter) {
+		if (newPreFilter != preFilter) {
+			NotificationChain msgs = null;
+			if (preFilter != null)
+				msgs = ((InternalEObject)preFilter).eInverseRemove(this, SpecmodelPackage.FILTER__PRE_FILTER_BUSINESS_RULE, Filter.class, msgs);
+			if (newPreFilter != null)
+				msgs = ((InternalEObject)newPreFilter).eInverseAdd(this, SpecmodelPackage.FILTER__PRE_FILTER_BUSINESS_RULE, Filter.class, msgs);
+			msgs = basicSetPreFilter(newPreFilter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__PRE_FILTER, newPreFilter, newPreFilter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Filter getPostFilter() {
+		return postFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPostFilter(Filter newPostFilter, NotificationChain msgs) {
+		Filter oldPostFilter = postFilter;
+		postFilter = newPostFilter;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__POST_FILTER, oldPostFilter, newPostFilter);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPostFilter(Filter newPostFilter) {
+		if (newPostFilter != postFilter) {
+			NotificationChain msgs = null;
+			if (postFilter != null)
+				msgs = ((InternalEObject)postFilter).eInverseRemove(this, SpecmodelPackage.FILTER__POST_FILTER_BUSINESS_RULE, Filter.class, msgs);
+			if (newPostFilter != null)
+				msgs = ((InternalEObject)newPostFilter).eInverseAdd(this, SpecmodelPackage.FILTER__POST_FILTER_BUSINESS_RULE, Filter.class, msgs);
+			msgs = basicSetPostFilter(newPostFilter, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__POST_FILTER, newPostFilter, newPostFilter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RuleType getRuleType() {
+		return ruleType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRuleType(RuleType newRuleType) {
+		RuleType oldRuleType = ruleType;
+		ruleType = newRuleType == null ? RULE_TYPE_EDEFAULT : newRuleType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY, oldRelationshipTargetEntity, relationshipTargetEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__RULE_TYPE, oldRuleType, ruleType));
 	}
 
 	/**
@@ -553,59 +565,6 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public Entity getTargetParentEntity() {
-		if (targetParentEntity != null && targetParentEntity.eIsProxy()) {
-			InternalEObject oldTargetParentEntity = (InternalEObject)targetParentEntity;
-			targetParentEntity = (Entity)eResolveProxy(oldTargetParentEntity);
-			if (targetParentEntity != oldTargetParentEntity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY, oldTargetParentEntity, targetParentEntity));
-			}
-		}
-		return targetParentEntity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity basicGetTargetParentEntity() {
-		return targetParentEntity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTargetParentEntity(Entity newTargetParentEntity) {
-		Entity oldTargetParentEntity = targetParentEntity;
-		targetParentEntity = newTargetParentEntity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY, oldTargetParentEntity, targetParentEntity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Entity> getLookupEntities() {
-		if (lookupEntities == null) {
-			lookupEntities = new EObjectResolvingEList<Entity>(Entity.class, this, SpecmodelPackage.BUSINESS_RULE__LOOKUP_ENTITIES);
-		}
-		return lookupEntities;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Entity getRelationshipSourceEntity() {
 		if (relationshipSourceEntity != null && relationshipSourceEntity.eIsProxy()) {
 			InternalEObject oldRelationshipSourceEntity = (InternalEObject)relationshipSourceEntity;
@@ -646,8 +605,25 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public RuleType getRuletype() {
-		return ruletype;
+	public Entity getRelationshipTargetEntity() {
+		if (relationshipTargetEntity != null && relationshipTargetEntity.eIsProxy()) {
+			InternalEObject oldRelationshipTargetEntity = (InternalEObject)relationshipTargetEntity;
+			relationshipTargetEntity = (Entity)eResolveProxy(oldRelationshipTargetEntity);
+			if (relationshipTargetEntity != oldRelationshipTargetEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY, oldRelationshipTargetEntity, relationshipTargetEntity));
+			}
+		}
+		return relationshipTargetEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetRelationshipTargetEntity() {
+		return relationshipTargetEntity;
 	}
 
 	/**
@@ -656,11 +632,11 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public void setRuletype(RuleType newRuletype) {
-		RuleType oldRuletype = ruletype;
-		ruletype = newRuletype == null ? RULETYPE_EDEFAULT : newRuletype;
+	public void setRelationshipTargetEntity(Entity newRelationshipTargetEntity) {
+		Entity oldRelationshipTargetEntity = relationshipTargetEntity;
+		relationshipTargetEntity = newRelationshipTargetEntity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__RULETYPE, oldRuletype, ruletype));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY, oldRelationshipTargetEntity, relationshipTargetEntity));
 	}
 
 	/**
@@ -669,8 +645,25 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public boolean isRelationshipTargetEntityUseHashKey() {
-		return relationshipTargetEntityUseHashKey;
+	public Entity getTargetParentEntity() {
+		if (targetParentEntity != null && targetParentEntity.eIsProxy()) {
+			InternalEObject oldTargetParentEntity = (InternalEObject)targetParentEntity;
+			targetParentEntity = (Entity)eResolveProxy(oldTargetParentEntity);
+			if (targetParentEntity != oldTargetParentEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY, oldTargetParentEntity, targetParentEntity));
+			}
+		}
+		return targetParentEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetTargetParentEntity() {
+		return targetParentEntity;
 	}
 
 	/**
@@ -679,11 +672,11 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public void setRelationshipTargetEntityUseHashKey(boolean newRelationshipTargetEntityUseHashKey) {
-		boolean oldRelationshipTargetEntityUseHashKey = relationshipTargetEntityUseHashKey;
-		relationshipTargetEntityUseHashKey = newRelationshipTargetEntityUseHashKey;
+	public void setTargetParentEntity(Entity newTargetParentEntity) {
+		Entity oldTargetParentEntity = targetParentEntity;
+		targetParentEntity = newTargetParentEntity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY, oldRelationshipTargetEntityUseHashKey, relationshipTargetEntityUseHashKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY, oldTargetParentEntity, targetParentEntity));
 	}
 
 	/**
@@ -692,8 +685,25 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public boolean isRelationshipSourceEntityUseHashKey() {
-		return relationshipSourceEntityUseHashKey;
+	public Entity getLookupEntities() {
+		if (lookupEntities != null && lookupEntities.eIsProxy()) {
+			InternalEObject oldLookupEntities = (InternalEObject)lookupEntities;
+			lookupEntities = (Entity)eResolveProxy(oldLookupEntities);
+			if (lookupEntities != oldLookupEntities) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__LOOKUP_ENTITIES, oldLookupEntities, lookupEntities));
+			}
+		}
+		return lookupEntities;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetLookupEntities() {
+		return lookupEntities;
 	}
 
 	/**
@@ -702,11 +712,11 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public void setRelationshipSourceEntityUseHashKey(boolean newRelationshipSourceEntityUseHashKey) {
-		boolean oldRelationshipSourceEntityUseHashKey = relationshipSourceEntityUseHashKey;
-		relationshipSourceEntityUseHashKey = newRelationshipSourceEntityUseHashKey;
+	public void setLookupEntities(Entity newLookupEntities) {
+		Entity oldLookupEntities = lookupEntities;
+		lookupEntities = newLookupEntities;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY, oldRelationshipSourceEntityUseHashKey, relationshipSourceEntityUseHashKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__LOOKUP_ENTITIES, oldLookupEntities, lookupEntities));
 	}
 
 	/**
@@ -715,8 +725,16 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public boolean isTargetEntityUseHashKey() {
-		return targetEntityUseHashKey;
+	public CommonMapping getTargetMappingOutputFields() {
+		if (targetMappingOutputFields != null && targetMappingOutputFields.eIsProxy()) {
+			InternalEObject oldTargetMappingOutputFields = (InternalEObject)targetMappingOutputFields;
+			targetMappingOutputFields = (CommonMapping)eResolveProxy(oldTargetMappingOutputFields);
+			if (targetMappingOutputFields != oldTargetMappingOutputFields) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS, oldTargetMappingOutputFields, targetMappingOutputFields));
+			}
+		}
+		return targetMappingOutputFields;
 	}
 
 	/**
@@ -724,21 +742,7 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setTargetEntityUseHashKey(boolean newTargetEntityUseHashKey) {
-		boolean oldTargetEntityUseHashKey = targetEntityUseHashKey;
-		targetEntityUseHashKey = newTargetEntityUseHashKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY, oldTargetEntityUseHashKey, targetEntityUseHashKey));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getTargetMappingOutputFields() {
+	public CommonMapping basicGetTargetMappingOutputFields() {
 		return targetMappingOutputFields;
 	}
 
@@ -748,8 +752,8 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @generated
 	 */
 	@Override
-	public void setTargetMappingOutputFields(String newTargetMappingOutputFields) {
-		String oldTargetMappingOutputFields = targetMappingOutputFields;
+	public void setTargetMappingOutputFields(CommonMapping newTargetMappingOutputFields) {
+		CommonMapping oldTargetMappingOutputFields = targetMappingOutputFields;
 		targetMappingOutputFields = newTargetMappingOutputFields;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS, oldTargetMappingOutputFields, targetMappingOutputFields));
@@ -800,46 +804,6 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Relationship getSourceReleationship() {
-		if (sourceReleationship != null && sourceReleationship.eIsProxy()) {
-			InternalEObject oldSourceReleationship = (InternalEObject)sourceReleationship;
-			sourceReleationship = (Relationship)eResolveProxy(oldSourceReleationship);
-			if (sourceReleationship != oldSourceReleationship) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP, oldSourceReleationship, sourceReleationship));
-			}
-		}
-		return sourceReleationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Relationship basicGetSourceReleationship() {
-		return sourceReleationship;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSourceReleationship(Relationship newSourceReleationship) {
-		Relationship oldSourceReleationship = sourceReleationship;
-		sourceReleationship = newSourceReleationship;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP, oldSourceReleationship, sourceReleationship));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -848,16 +812,24 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetSpecification((Specification)otherEnd, msgs);
-			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
-				if (postDedup != null)
-					msgs = ((InternalEObject)postDedup).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, null, msgs);
-				return basicSetPostDedup((Dedup)otherEnd, msgs);
 			case SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP:
 				if (preDedup != null)
 					msgs = ((InternalEObject)preDedup).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP, null, msgs);
 				return basicSetPreDedup((Dedup)otherEnd, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
+				if (postDedup != null)
+					msgs = ((InternalEObject)postDedup).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, null, msgs);
+				return basicSetPostDedup((Dedup)otherEnd, msgs);
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVectorkeys()).basicAdd(otherEnd, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
+				if (preFilter != null)
+					msgs = ((InternalEObject)preFilter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.BUSINESS_RULE__PRE_FILTER, null, msgs);
+				return basicSetPreFilter((Filter)otherEnd, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
+				if (postFilter != null)
+					msgs = ((InternalEObject)postFilter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.BUSINESS_RULE__POST_FILTER, null, msgs);
+				return basicSetPostFilter((Filter)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -872,12 +844,16 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 		switch (featureID) {
 			case SpecmodelPackage.BUSINESS_RULE__SPECIFICATION:
 				return basicSetSpecification(null, msgs);
-			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
-				return basicSetPostDedup(null, msgs);
 			case SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP:
 				return basicSetPreDedup(null, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
+				return basicSetPostDedup(null, msgs);
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
 				return ((InternalEList<?>)getVectorkeys()).basicRemove(otherEnd, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
+				return basicSetPreFilter(null, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
+				return basicSetPostFilter(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -908,42 +884,39 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				return getName();
 			case SpecmodelPackage.BUSINESS_RULE__SPECIFICATION:
 				return getSpecification();
-			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
-				return getPostDedup();
 			case SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP:
 				return getPreDedup();
+			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
+				return getPostDedup();
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
 				return getVectorkeys();
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
-				if (resolve) return getRelationshipTargetEntity();
-				return basicGetRelationshipTargetEntity();
+			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
+				return getPreFilter();
+			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
+				return getPostFilter();
+			case SpecmodelPackage.BUSINESS_RULE__RULE_TYPE:
+				return getRuleType();
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
+				if (resolve) return getRelationshipSourceEntity();
+				return basicGetRelationshipSourceEntity();
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
+				if (resolve) return getRelationshipTargetEntity();
+				return basicGetRelationshipTargetEntity();
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY:
 				if (resolve) return getTargetParentEntity();
 				return basicGetTargetParentEntity();
 			case SpecmodelPackage.BUSINESS_RULE__LOOKUP_ENTITIES:
-				return getLookupEntities();
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
-				if (resolve) return getRelationshipSourceEntity();
-				return basicGetRelationshipSourceEntity();
-			case SpecmodelPackage.BUSINESS_RULE__RULETYPE:
-				return getRuletype();
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY:
-				return isRelationshipTargetEntityUseHashKey();
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY:
-				return isRelationshipSourceEntityUseHashKey();
-			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY:
-				return isTargetEntityUseHashKey();
+				if (resolve) return getLookupEntities();
+				return basicGetLookupEntities();
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
-				return getTargetMappingOutputFields();
+				if (resolve) return getTargetMappingOutputFields();
+				return basicGetTargetMappingOutputFields();
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				if (resolve) return getTargetRelationship();
 				return basicGetTargetRelationship();
-			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
-				if (resolve) return getSourceReleationship();
-				return basicGetSourceReleationship();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -963,52 +936,45 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 			case SpecmodelPackage.BUSINESS_RULE__SPECIFICATION:
 				setSpecification((Specification)newValue);
 				return;
-			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
-				setPostDedup((Dedup)newValue);
-				return;
 			case SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP:
 				setPreDedup((Dedup)newValue);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
+				setPostDedup((Dedup)newValue);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
 				getVectorkeys().clear();
 				getVectorkeys().addAll((Collection<? extends VectorKey>)newValue);
 				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
-				setRelationshipTargetEntity((Entity)newValue);
+			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
+				setPreFilter((Filter)newValue);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
+				setPostFilter((Filter)newValue);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__RULE_TYPE:
+				setRuleType((RuleType)newValue);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY:
 				setTargetEntity((Entity)newValue);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
+				setRelationshipSourceEntity((Entity)newValue);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
+				setRelationshipTargetEntity((Entity)newValue);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY:
 				setTargetParentEntity((Entity)newValue);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__LOOKUP_ENTITIES:
-				getLookupEntities().clear();
-				getLookupEntities().addAll((Collection<? extends Entity>)newValue);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
-				setRelationshipSourceEntity((Entity)newValue);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RULETYPE:
-				setRuletype((RuleType)newValue);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY:
-				setRelationshipTargetEntityUseHashKey((Boolean)newValue);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY:
-				setRelationshipSourceEntityUseHashKey((Boolean)newValue);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY:
-				setTargetEntityUseHashKey((Boolean)newValue);
+				setLookupEntities((Entity)newValue);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
-				setTargetMappingOutputFields((String)newValue);
+				setTargetMappingOutputFields((CommonMapping)newValue);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				setTargetRelationship((Relationship)newValue);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
-				setSourceReleationship((Relationship)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1028,50 +994,44 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 			case SpecmodelPackage.BUSINESS_RULE__SPECIFICATION:
 				setSpecification((Specification)null);
 				return;
-			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
-				setPostDedup((Dedup)null);
-				return;
 			case SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP:
 				setPreDedup((Dedup)null);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
+				setPostDedup((Dedup)null);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
 				getVectorkeys().clear();
 				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
-				setRelationshipTargetEntity((Entity)null);
+			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
+				setPreFilter((Filter)null);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
+				setPostFilter((Filter)null);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__RULE_TYPE:
+				setRuleType(RULE_TYPE_EDEFAULT);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY:
 				setTargetEntity((Entity)null);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
+				setRelationshipSourceEntity((Entity)null);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
+				setRelationshipTargetEntity((Entity)null);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY:
 				setTargetParentEntity((Entity)null);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__LOOKUP_ENTITIES:
-				getLookupEntities().clear();
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
-				setRelationshipSourceEntity((Entity)null);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RULETYPE:
-				setRuletype(RULETYPE_EDEFAULT);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY:
-				setRelationshipTargetEntityUseHashKey(RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY_EDEFAULT);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY:
-				setRelationshipSourceEntityUseHashKey(RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY_EDEFAULT);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY:
-				setTargetEntityUseHashKey(TARGET_ENTITY_USE_HASH_KEY_EDEFAULT);
+				setLookupEntities((Entity)null);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
-				setTargetMappingOutputFields(TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT);
+				setTargetMappingOutputFields((CommonMapping)null);
 				return;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				setTargetRelationship((Relationship)null);
-				return;
-			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
-				setSourceReleationship((Relationship)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1089,36 +1049,32 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SpecmodelPackage.BUSINESS_RULE__SPECIFICATION:
 				return getSpecification() != null;
-			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
-				return postDedup != null;
 			case SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP:
 				return preDedup != null;
+			case SpecmodelPackage.BUSINESS_RULE__POST_DEDUP:
+				return postDedup != null;
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
 				return vectorkeys != null && !vectorkeys.isEmpty();
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
-				return relationshipTargetEntity != null;
+			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
+				return preFilter != null;
+			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
+				return postFilter != null;
+			case SpecmodelPackage.BUSINESS_RULE__RULE_TYPE:
+				return ruleType != RULE_TYPE_EDEFAULT;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY:
 				return targetEntity != null;
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
+				return relationshipSourceEntity != null;
+			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY:
+				return relationshipTargetEntity != null;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_PARENT_ENTITY:
 				return targetParentEntity != null;
 			case SpecmodelPackage.BUSINESS_RULE__LOOKUP_ENTITIES:
-				return lookupEntities != null && !lookupEntities.isEmpty();
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY:
-				return relationshipSourceEntity != null;
-			case SpecmodelPackage.BUSINESS_RULE__RULETYPE:
-				return ruletype != RULETYPE_EDEFAULT;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY:
-				return relationshipTargetEntityUseHashKey != RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY_EDEFAULT;
-			case SpecmodelPackage.BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY:
-				return relationshipSourceEntityUseHashKey != RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY_EDEFAULT;
-			case SpecmodelPackage.BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY:
-				return targetEntityUseHashKey != TARGET_ENTITY_USE_HASH_KEY_EDEFAULT;
+				return lookupEntities != null;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS:
-				return TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT == null ? targetMappingOutputFields != null : !TARGET_MAPPING_OUTPUT_FIELDS_EDEFAULT.equals(targetMappingOutputFields);
+				return targetMappingOutputFields != null;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				return targetRelationship != null;
-			case SpecmodelPackage.BUSINESS_RULE__SOURCE_RELEATIONSHIP:
-				return sourceReleationship != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1135,16 +1091,8 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", ruletype: ");
-		result.append(ruletype);
-		result.append(", relationshipTargetEntityUseHashKey: ");
-		result.append(relationshipTargetEntityUseHashKey);
-		result.append(", relationshipSourceEntityUseHashKey: ");
-		result.append(relationshipSourceEntityUseHashKey);
-		result.append(", targetEntityUseHashKey: ");
-		result.append(targetEntityUseHashKey);
-		result.append(", targetMappingOutputFields: ");
-		result.append(targetMappingOutputFields);
+		result.append(", RuleType: ");
+		result.append(ruleType);
 		result.append(')');
 		return result.toString();
 	}

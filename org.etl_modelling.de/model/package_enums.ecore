@@ -17,7 +17,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="REPRESENTATIONS">
     <eLiterals name="FLAT_TABLE"/>
-    <eLiterals name="BITEMPORAL" value="1"/>
+    <eLiterals name="DATAVAULT" value="1" literal="DATAVAULT"/>
     <eLiterals name="ThirdNF" value="2" literal="ThirdNF"/>
     <eLiterals name="SNOWFLAKE" value="3"/>
     <eLiterals name="STAR" value="4"/>

@@ -4,7 +4,6 @@ package specmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-
 import ETL_MODEL.provider.LogmodelEditPlugin;
 
 import java.util.Collection;
@@ -68,6 +67,9 @@ public class SpecificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addSpecpackagePropertyDescriptor(object);
+			addBusinessrulesPropertyDescriptor(object);
+			addPrimarySourcesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +97,72 @@ public class SpecificationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Specpackage feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSpecpackagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Specification_specpackage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Specification_specpackage_feature", "_UI_Specification_type"),
+				 SpecmodelPackage.Literals.SPECIFICATION__SPECPACKAGE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Businessrules feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBusinessrulesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Specification_businessrules_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Specification_businessrules_feature", "_UI_Specification_type"),
+				 SpecmodelPackage.Literals.SPECIFICATION__BUSINESSRULES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Primary Sources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPrimarySourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Specification_primarySources_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Specification_primarySources_feature", "_UI_Specification_type"),
+				 SpecmodelPackage.Literals.SPECIFICATION__PRIMARY_SOURCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -107,7 +175,7 @@ public class SpecificationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpecmodelPackage.Literals.SPECIFICATION__BUSINESSRULES);
-			childrenFeatures.add(SpecmodelPackage.Literals.SPECIFICATION__PRIMARY_SOURCE);
+			childrenFeatures.add(SpecmodelPackage.Literals.SPECIFICATION__PRIMARY_SOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -167,7 +235,7 @@ public class SpecificationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SpecmodelPackage.SPECIFICATION__BUSINESSRULES:
-			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCE:
+			case SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -192,7 +260,7 @@ public class SpecificationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SpecmodelPackage.Literals.SPECIFICATION__PRIMARY_SOURCE,
+				(SpecmodelPackage.Literals.SPECIFICATION__PRIMARY_SOURCES,
 				 SpecmodelFactory.eINSTANCE.createSource()));
 	}
 

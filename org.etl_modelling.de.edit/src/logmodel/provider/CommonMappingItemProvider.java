@@ -29,6 +29,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import specmodel.SpecmodelFactory;
 
 /**
  * This is the item provider adapter for a {@link logmodel.CommonMapping} object.
@@ -213,8 +214,18 @@ public class CommonMappingItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(LogmodelPackage.Literals.COMMON_MAPPING__COMMONMAPPINGINPUTFIELDS,
+				 SpecmodelFactory.eINSTANCE.createJoinField()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LogmodelPackage.Literals.COMMON_MAPPING__COMMONMAPPINGOUTPUTFIELDS,
 				 LogmodelFactory.eINSTANCE.createField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogmodelPackage.Literals.COMMON_MAPPING__COMMONMAPPINGOUTPUTFIELDS,
+				 SpecmodelFactory.eINSTANCE.createJoinField()));
 	}
 
 	/**

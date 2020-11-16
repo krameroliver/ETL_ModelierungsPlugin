@@ -2,6 +2,8 @@
  */
 package specmodel.impl;
 
+import logmodel.Field;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -15,7 +17,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import specmodel.BusinessRule;
 import specmodel.Dedup;
-import specmodel.Field;
 import specmodel.SpecmodelPackage;
 
 /**
@@ -26,8 +27,8 @@ import specmodel.SpecmodelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link specmodel.impl.DedupImpl#getPostDedupBusinessrule <em>Post Dedup Businessrule</em>}</li>
- *   <li>{@link specmodel.impl.DedupImpl#getPreDedupBusinessrule <em>Pre Dedup Businessrule</em>}</li>
+ *   <li>{@link specmodel.impl.DedupImpl#getPreDedupBusinessRule <em>Pre Dedup Business Rule</em>}</li>
+ *   <li>{@link specmodel.impl.DedupImpl#getPostDedupBusinessRule <em>Post Dedup Business Rule</em>}</li>
  *   <li>{@link specmodel.impl.DedupImpl#getField <em>Field</em>}</li>
  * </ul>
  *
@@ -69,8 +70,8 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	 * @generated
 	 */
 	@Override
-	public BusinessRule getPostDedupBusinessrule() {
-		if (eContainerFeatureID() != SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE) return null;
+	public BusinessRule getPreDedupBusinessRule() {
+		if (eContainerFeatureID() != SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE) return null;
 		return (BusinessRule)eInternalContainer();
 	}
 
@@ -79,8 +80,8 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPostDedupBusinessrule(BusinessRule newPostDedupBusinessrule, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPostDedupBusinessrule, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE, msgs);
+	public NotificationChain basicSetPreDedupBusinessRule(BusinessRule newPreDedupBusinessRule, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPreDedupBusinessRule, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE, msgs);
 		return msgs;
 	}
 
@@ -90,20 +91,20 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	 * @generated
 	 */
 	@Override
-	public void setPostDedupBusinessrule(BusinessRule newPostDedupBusinessrule) {
-		if (newPostDedupBusinessrule != eInternalContainer() || (eContainerFeatureID() != SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE && newPostDedupBusinessrule != null)) {
-			if (EcoreUtil.isAncestor(this, newPostDedupBusinessrule))
+	public void setPreDedupBusinessRule(BusinessRule newPreDedupBusinessRule) {
+		if (newPreDedupBusinessRule != eInternalContainer() || (eContainerFeatureID() != SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE && newPreDedupBusinessRule != null)) {
+			if (EcoreUtil.isAncestor(this, newPreDedupBusinessRule))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPostDedupBusinessrule != null)
-				msgs = ((InternalEObject)newPostDedupBusinessrule).eInverseAdd(this, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, BusinessRule.class, msgs);
-			msgs = basicSetPostDedupBusinessrule(newPostDedupBusinessrule, msgs);
+			if (newPreDedupBusinessRule != null)
+				msgs = ((InternalEObject)newPreDedupBusinessRule).eInverseAdd(this, SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP, BusinessRule.class, msgs);
+			msgs = basicSetPreDedupBusinessRule(newPreDedupBusinessRule, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE, newPostDedupBusinessrule, newPostDedupBusinessrule));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE, newPreDedupBusinessRule, newPreDedupBusinessRule));
 	}
 
 	/**
@@ -112,8 +113,8 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	 * @generated
 	 */
 	@Override
-	public BusinessRule getPreDedupBusinessrule() {
-		if (eContainerFeatureID() != SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE) return null;
+	public BusinessRule getPostDedupBusinessRule() {
+		if (eContainerFeatureID() != SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE) return null;
 		return (BusinessRule)eInternalContainer();
 	}
 
@@ -122,8 +123,8 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPreDedupBusinessrule(BusinessRule newPreDedupBusinessrule, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPreDedupBusinessrule, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE, msgs);
+	public NotificationChain basicSetPostDedupBusinessRule(BusinessRule newPostDedupBusinessRule, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPostDedupBusinessRule, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE, msgs);
 		return msgs;
 	}
 
@@ -133,20 +134,20 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	 * @generated
 	 */
 	@Override
-	public void setPreDedupBusinessrule(BusinessRule newPreDedupBusinessrule) {
-		if (newPreDedupBusinessrule != eInternalContainer() || (eContainerFeatureID() != SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE && newPreDedupBusinessrule != null)) {
-			if (EcoreUtil.isAncestor(this, newPreDedupBusinessrule))
+	public void setPostDedupBusinessRule(BusinessRule newPostDedupBusinessRule) {
+		if (newPostDedupBusinessRule != eInternalContainer() || (eContainerFeatureID() != SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE && newPostDedupBusinessRule != null)) {
+			if (EcoreUtil.isAncestor(this, newPostDedupBusinessRule))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPreDedupBusinessrule != null)
-				msgs = ((InternalEObject)newPreDedupBusinessrule).eInverseAdd(this, SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP, BusinessRule.class, msgs);
-			msgs = basicSetPreDedupBusinessrule(newPreDedupBusinessrule, msgs);
+			if (newPostDedupBusinessRule != null)
+				msgs = ((InternalEObject)newPostDedupBusinessRule).eInverseAdd(this, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, BusinessRule.class, msgs);
+			msgs = basicSetPostDedupBusinessRule(newPostDedupBusinessRule, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE, newPreDedupBusinessrule, newPreDedupBusinessrule));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE, newPostDedupBusinessRule, newPostDedupBusinessRule));
 	}
 
 	/**
@@ -197,14 +198,14 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE:
+			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPostDedupBusinessrule((BusinessRule)otherEnd, msgs);
-			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE:
+				return basicSetPreDedupBusinessRule((BusinessRule)otherEnd, msgs);
+			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPreDedupBusinessrule((BusinessRule)otherEnd, msgs);
+				return basicSetPostDedupBusinessRule((BusinessRule)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -217,10 +218,10 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE:
-				return basicSetPostDedupBusinessrule(null, msgs);
-			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE:
-				return basicSetPreDedupBusinessrule(null, msgs);
+			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE:
+				return basicSetPreDedupBusinessRule(null, msgs);
+			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE:
+				return basicSetPostDedupBusinessRule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -233,10 +234,10 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE:
-				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, BusinessRule.class, msgs);
-			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE:
+			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE:
 				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.BUSINESS_RULE__PRE_DEDUP, BusinessRule.class, msgs);
+			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE:
+				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.BUSINESS_RULE__POST_DEDUP, BusinessRule.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -249,10 +250,10 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE:
-				return getPostDedupBusinessrule();
-			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE:
-				return getPreDedupBusinessrule();
+			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE:
+				return getPreDedupBusinessRule();
+			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE:
+				return getPostDedupBusinessRule();
 			case SpecmodelPackage.DEDUP__FIELD:
 				if (resolve) return getField();
 				return basicGetField();
@@ -268,11 +269,11 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE:
-				setPostDedupBusinessrule((BusinessRule)newValue);
+			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE:
+				setPreDedupBusinessRule((BusinessRule)newValue);
 				return;
-			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE:
-				setPreDedupBusinessrule((BusinessRule)newValue);
+			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE:
+				setPostDedupBusinessRule((BusinessRule)newValue);
 				return;
 			case SpecmodelPackage.DEDUP__FIELD:
 				setField((Field)newValue);
@@ -289,11 +290,11 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE:
-				setPostDedupBusinessrule((BusinessRule)null);
+			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE:
+				setPreDedupBusinessRule((BusinessRule)null);
 				return;
-			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE:
-				setPreDedupBusinessrule((BusinessRule)null);
+			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE:
+				setPostDedupBusinessRule((BusinessRule)null);
 				return;
 			case SpecmodelPackage.DEDUP__FIELD:
 				setField((Field)null);
@@ -310,10 +311,10 @@ public class DedupImpl extends MinimalEObjectImpl.Container implements Dedup {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESSRULE:
-				return getPostDedupBusinessrule() != null;
-			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESSRULE:
-				return getPreDedupBusinessrule() != null;
+			case SpecmodelPackage.DEDUP__PRE_DEDUP_BUSINESS_RULE:
+				return getPreDedupBusinessRule() != null;
+			case SpecmodelPackage.DEDUP__POST_DEDUP_BUSINESS_RULE:
+				return getPostDedupBusinessRule() != null;
 			case SpecmodelPackage.DEDUP__FIELD:
 				return field != null;
 		}

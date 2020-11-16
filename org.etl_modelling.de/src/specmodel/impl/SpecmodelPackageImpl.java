@@ -24,18 +24,16 @@ import package_enums.impl.Package_enumsPackageImpl;
 
 import specmodel.BusinessRule;
 import specmodel.Dedup;
-import specmodel.Entity;
-import specmodel.Field;
 import specmodel.Filter;
 import specmodel.JoinField;
 import specmodel.ReadEntitySpecification;
-import specmodel.Relationship;
 import specmodel.RuleType;
 import specmodel.Source;
 import specmodel.SpecPackage;
 import specmodel.Specification;
 import specmodel.SpecmodelFactory;
 import specmodel.SpecmodelPackage;
+import specmodel.SubSpecification;
 import specmodel.VectorKey;
 
 import type_enum.Type_enumPackage;
@@ -68,6 +66,41 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass readEntitySpecificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass joinFieldEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dedupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass filterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass subSpecificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass businessRuleEClass = null;
 
 	/**
@@ -82,56 +115,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass filterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dedupEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass vectorKeyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass joinFieldEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fieldEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass relationshipEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass readEntitySpecificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +219,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSpecPackage_Specification() {
+	public EReference getSpecPackage_Specifications() {
 		return (EReference)specPackageEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -275,7 +259,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSpecification_PrimarySource() {
+	public EReference getSpecification_PrimarySources() {
 		return (EReference)specificationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -285,8 +269,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getBusinessRule() {
-		return businessRuleEClass;
+	public EClass getReadEntitySpecification() {
+		return readEntitySpecificationEClass;
 	}
 
 	/**
@@ -295,468 +279,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getBusinessRule_Specification() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_PostDedup() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_PreDedup() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_Vectorkeys() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_RelationshipTargetEntity() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_TargetEntity() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_TargetParentEntity() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_LookupEntities() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_RelationshipSourceEntity() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBusinessRule_Ruletype() {
-		return (EAttribute)businessRuleEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBusinessRule_RelationshipTargetEntityUseHashKey() {
-		return (EAttribute)businessRuleEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBusinessRule_RelationshipSourceEntityUseHashKey() {
-		return (EAttribute)businessRuleEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBusinessRule_TargetEntityUseHashKey() {
-		return (EAttribute)businessRuleEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBusinessRule_TargetMappingOutputFields() {
-		return (EAttribute)businessRuleEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_TargetRelationship() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBusinessRule_SourceReleationship() {
-		return (EReference)businessRuleEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSource() {
-		return sourceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_SourceBusinessrule() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_ParentSource() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_ChildSource() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_SourceSpecification() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_Specification() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_Filters() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_Vectorkeys() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_ParentJoinFields() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_ChildJoinFields() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_SourceEntity() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_JoinEntity() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_SourceReleationship() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_Relationship() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSource_IsMandatory() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSource_IsVector() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSource_IsMultiplying() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSource_Alias() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_Readentityspecification() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSource_JoinComment() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSource_Comment() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getFilter() {
-		return filterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFilter_FilterField() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDedup() {
-		return dedupEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDedup_PostDedupBusinessrule() {
-		return (EReference)dedupEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDedup_PreDedupBusinessrule() {
-		return (EReference)dedupEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDedup_Field() {
-		return (EReference)dedupEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getVectorKey() {
-		return vectorKeyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getVectorKey_Source() {
-		return (EReference)vectorKeyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getVectorKey_Businessrule() {
-		return (EReference)vectorKeyEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getVectorKey_Field() {
-		return (EReference)vectorKeyEClass.getEStructuralFeatures().get(2);
+	public EReference getReadEntitySpecification_Source() {
+		return (EReference)readEntitySpecificationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -805,8 +329,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getField() {
-		return fieldEClass;
+	public EClass getDedup() {
+		return dedupEClass;
 	}
 
 	/**
@@ -815,8 +339,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getField_Entity() {
-		return (EReference)fieldEClass.getEStructuralFeatures().get(0);
+	public EReference getDedup_PreDedupBusinessRule() {
+		return (EReference)dedupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -825,8 +349,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getField_ReferenceEntity() {
-		return (EReference)fieldEClass.getEStructuralFeatures().get(1);
+	public EReference getDedup_PostDedupBusinessRule() {
+		return (EReference)dedupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -835,8 +359,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getEntity() {
-		return entityEClass;
+	public EReference getDedup_Field() {
+		return (EReference)dedupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -845,8 +369,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_Relationships() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(0);
+	public EClass getFilter() {
+		return filterEClass;
 	}
 
 	/**
@@ -855,8 +379,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_PartOf() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(1);
+	public EReference getFilter_Field() {
+		return (EReference)filterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -865,8 +389,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_Fields() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(2);
+	public EReference getFilter_PreFilterBusinessRule() {
+		return (EReference)filterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -875,8 +399,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_IsBaselineEntityFor() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
+	public EReference getFilter_PostFilterBusinessRule() {
+		return (EReference)filterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -885,8 +409,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_BaselineEntity() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(4);
+	public EClass getSubSpecification() {
+		return subSpecificationEClass;
 	}
 
 	/**
@@ -895,8 +419,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_Extends() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(5);
+	public EClass getBusinessRule() {
+		return businessRuleEClass;
 	}
 
 	/**
@@ -905,8 +429,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getRelationship() {
-		return relationshipEClass;
+	public EReference getBusinessRule_Specification() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -915,8 +439,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRelationship_Entity() {
-		return (EReference)relationshipEClass.getEStructuralFeatures().get(0);
+	public EReference getBusinessRule_PreDedup() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -925,8 +449,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRelationship_ToEntity() {
-		return (EReference)relationshipEClass.getEStructuralFeatures().get(1);
+	public EReference getBusinessRule_PostDedup() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -935,8 +459,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRelationship_IdentifyingFields() {
-		return (EReference)relationshipEClass.getEStructuralFeatures().get(2);
+	public EReference getBusinessRule_Vectorkeys() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -945,8 +469,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getRelationship_DescribingFields() {
-		return (EReference)relationshipEClass.getEStructuralFeatures().get(3);
+	public EReference getBusinessRule_PreFilter() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -955,8 +479,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getRelationship_RelationshipAlias() {
-		return (EAttribute)relationshipEClass.getEStructuralFeatures().get(4);
+	public EReference getBusinessRule_PostFilter() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -965,8 +489,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EClass getReadEntitySpecification() {
-		return readEntitySpecificationEClass;
+	public EAttribute getBusinessRule_RuleType() {
+		return (EAttribute)businessRuleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -975,8 +499,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getReadEntitySpecification_Source() {
-		return (EReference)readEntitySpecificationEClass.getEStructuralFeatures().get(0);
+	public EReference getBusinessRule_TargetEntity() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -985,8 +509,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getReadEntitySpecification_ReadKeySats() {
-		return (EAttribute)readEntitySpecificationEClass.getEStructuralFeatures().get(1);
+	public EReference getBusinessRule_RelationshipSourceEntity() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -995,8 +519,188 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getReadEntitySpecification_ReadKeySatsReason() {
-		return (EAttribute)readEntitySpecificationEClass.getEStructuralFeatures().get(2);
+	public EReference getBusinessRule_RelationshipTargetEntity() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBusinessRule_TargetParentEntity() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBusinessRule_LookupEntities() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBusinessRule_TargetMappingOutputFields() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBusinessRule_TargetRelationship() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSource() {
+		return sourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_SourceBusinessRule() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_SourceSpecification() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_ParentSource() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_ChildSources() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_Specification() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_ParentJoinFields() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_ChildJoinField() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_ReadEntitySpecification() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_Filters() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_Vectorkeys() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getVectorKey() {
+		return vectorKeyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getVectorKey_Businessrule() {
+		return (EReference)vectorKeyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getVectorKey_Source() {
+		return (EReference)vectorKeyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1039,94 +743,64 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 
 		// Create classes and their features
 		specPackageEClass = createEClass(SPEC_PACKAGE);
-		createEReference(specPackageEClass, SPEC_PACKAGE__SPECIFICATION);
+		createEReference(specPackageEClass, SPEC_PACKAGE__SPECIFICATIONS);
 
 		specificationEClass = createEClass(SPECIFICATION);
 		createEReference(specificationEClass, SPECIFICATION__SPECPACKAGE);
 		createEReference(specificationEClass, SPECIFICATION__BUSINESSRULES);
-		createEReference(specificationEClass, SPECIFICATION__PRIMARY_SOURCE);
+		createEReference(specificationEClass, SPECIFICATION__PRIMARY_SOURCES);
 
-		businessRuleEClass = createEClass(BUSINESS_RULE);
-		createEReference(businessRuleEClass, BUSINESS_RULE__SPECIFICATION);
-		createEReference(businessRuleEClass, BUSINESS_RULE__POST_DEDUP);
-		createEReference(businessRuleEClass, BUSINESS_RULE__PRE_DEDUP);
-		createEReference(businessRuleEClass, BUSINESS_RULE__VECTORKEYS);
-		createEReference(businessRuleEClass, BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY);
-		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_ENTITY);
-		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_PARENT_ENTITY);
-		createEReference(businessRuleEClass, BUSINESS_RULE__LOOKUP_ENTITIES);
-		createEReference(businessRuleEClass, BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY);
-		createEAttribute(businessRuleEClass, BUSINESS_RULE__RULETYPE);
-		createEAttribute(businessRuleEClass, BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY_USE_HASH_KEY);
-		createEAttribute(businessRuleEClass, BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY_USE_HASH_KEY);
-		createEAttribute(businessRuleEClass, BUSINESS_RULE__TARGET_ENTITY_USE_HASH_KEY);
-		createEAttribute(businessRuleEClass, BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS);
-		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_RELATIONSHIP);
-		createEReference(businessRuleEClass, BUSINESS_RULE__SOURCE_RELEATIONSHIP);
-
-		sourceEClass = createEClass(SOURCE);
-		createEReference(sourceEClass, SOURCE__SOURCE_BUSINESSRULE);
-		createEReference(sourceEClass, SOURCE__PARENT_SOURCE);
-		createEReference(sourceEClass, SOURCE__CHILD_SOURCE);
-		createEReference(sourceEClass, SOURCE__SOURCE_SPECIFICATION);
-		createEReference(sourceEClass, SOURCE__SPECIFICATION);
-		createEReference(sourceEClass, SOURCE__FILTERS);
-		createEReference(sourceEClass, SOURCE__VECTORKEYS);
-		createEReference(sourceEClass, SOURCE__PARENT_JOIN_FIELDS);
-		createEReference(sourceEClass, SOURCE__CHILD_JOIN_FIELDS);
-		createEReference(sourceEClass, SOURCE__SOURCE_ENTITY);
-		createEReference(sourceEClass, SOURCE__JOIN_ENTITY);
-		createEReference(sourceEClass, SOURCE__SOURCE_RELEATIONSHIP);
-		createEAttribute(sourceEClass, SOURCE__IS_MANDATORY);
-		createEAttribute(sourceEClass, SOURCE__IS_VECTOR);
-		createEAttribute(sourceEClass, SOURCE__IS_MULTIPLYING);
-		createEAttribute(sourceEClass, SOURCE__ALIAS);
-		createEReference(sourceEClass, SOURCE__READENTITYSPECIFICATION);
-		createEAttribute(sourceEClass, SOURCE__JOIN_COMMENT);
-		createEAttribute(sourceEClass, SOURCE__COMMENT);
-		createEReference(sourceEClass, SOURCE__RELATIONSHIP);
-
-		filterEClass = createEClass(FILTER);
-		createEReference(filterEClass, FILTER__FILTER_FIELD);
-
-		dedupEClass = createEClass(DEDUP);
-		createEReference(dedupEClass, DEDUP__POST_DEDUP_BUSINESSRULE);
-		createEReference(dedupEClass, DEDUP__PRE_DEDUP_BUSINESSRULE);
-		createEReference(dedupEClass, DEDUP__FIELD);
-
-		vectorKeyEClass = createEClass(VECTOR_KEY);
-		createEReference(vectorKeyEClass, VECTOR_KEY__SOURCE);
-		createEReference(vectorKeyEClass, VECTOR_KEY__BUSINESSRULE);
-		createEReference(vectorKeyEClass, VECTOR_KEY__FIELD);
+		readEntitySpecificationEClass = createEClass(READ_ENTITY_SPECIFICATION);
+		createEReference(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__SOURCE);
 
 		joinFieldEClass = createEClass(JOIN_FIELD);
 		createEReference(joinFieldEClass, JOIN_FIELD__PARENT_SOURCE);
 		createEReference(joinFieldEClass, JOIN_FIELD__CHILD_SOURCE);
 		createEReference(joinFieldEClass, JOIN_FIELD__FIELD);
 
-		fieldEClass = createEClass(FIELD);
-		createEReference(fieldEClass, FIELD__ENTITY);
-		createEReference(fieldEClass, FIELD__REFERENCE_ENTITY);
+		dedupEClass = createEClass(DEDUP);
+		createEReference(dedupEClass, DEDUP__PRE_DEDUP_BUSINESS_RULE);
+		createEReference(dedupEClass, DEDUP__POST_DEDUP_BUSINESS_RULE);
+		createEReference(dedupEClass, DEDUP__FIELD);
 
-		entityEClass = createEClass(ENTITY);
-		createEReference(entityEClass, ENTITY__RELATIONSHIPS);
-		createEReference(entityEClass, ENTITY__PART_OF);
-		createEReference(entityEClass, ENTITY__FIELDS);
-		createEReference(entityEClass, ENTITY__IS_BASELINE_ENTITY_FOR);
-		createEReference(entityEClass, ENTITY__BASELINE_ENTITY);
-		createEReference(entityEClass, ENTITY__EXTENDS);
+		filterEClass = createEClass(FILTER);
+		createEReference(filterEClass, FILTER__FIELD);
+		createEReference(filterEClass, FILTER__PRE_FILTER_BUSINESS_RULE);
+		createEReference(filterEClass, FILTER__POST_FILTER_BUSINESS_RULE);
 
-		relationshipEClass = createEClass(RELATIONSHIP);
-		createEReference(relationshipEClass, RELATIONSHIP__ENTITY);
-		createEReference(relationshipEClass, RELATIONSHIP__TO_ENTITY);
-		createEReference(relationshipEClass, RELATIONSHIP__IDENTIFYING_FIELDS);
-		createEReference(relationshipEClass, RELATIONSHIP__DESCRIBING_FIELDS);
-		createEAttribute(relationshipEClass, RELATIONSHIP__RELATIONSHIP_ALIAS);
+		subSpecificationEClass = createEClass(SUB_SPECIFICATION);
 
-		readEntitySpecificationEClass = createEClass(READ_ENTITY_SPECIFICATION);
-		createEReference(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__SOURCE);
-		createEAttribute(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__READ_KEY_SATS);
-		createEAttribute(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON);
+		businessRuleEClass = createEClass(BUSINESS_RULE);
+		createEReference(businessRuleEClass, BUSINESS_RULE__SPECIFICATION);
+		createEReference(businessRuleEClass, BUSINESS_RULE__PRE_DEDUP);
+		createEReference(businessRuleEClass, BUSINESS_RULE__POST_DEDUP);
+		createEReference(businessRuleEClass, BUSINESS_RULE__VECTORKEYS);
+		createEReference(businessRuleEClass, BUSINESS_RULE__PRE_FILTER);
+		createEReference(businessRuleEClass, BUSINESS_RULE__POST_FILTER);
+		createEAttribute(businessRuleEClass, BUSINESS_RULE__RULE_TYPE);
+		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_ENTITY);
+		createEReference(businessRuleEClass, BUSINESS_RULE__RELATIONSHIP_SOURCE_ENTITY);
+		createEReference(businessRuleEClass, BUSINESS_RULE__RELATIONSHIP_TARGET_ENTITY);
+		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_PARENT_ENTITY);
+		createEReference(businessRuleEClass, BUSINESS_RULE__LOOKUP_ENTITIES);
+		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS);
+		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_RELATIONSHIP);
+
+		sourceEClass = createEClass(SOURCE);
+		createEReference(sourceEClass, SOURCE__SOURCE_BUSINESS_RULE);
+		createEReference(sourceEClass, SOURCE__SOURCE_SPECIFICATION);
+		createEReference(sourceEClass, SOURCE__PARENT_SOURCE);
+		createEReference(sourceEClass, SOURCE__CHILD_SOURCES);
+		createEReference(sourceEClass, SOURCE__SPECIFICATION);
+		createEReference(sourceEClass, SOURCE__PARENT_JOIN_FIELDS);
+		createEReference(sourceEClass, SOURCE__CHILD_JOIN_FIELD);
+		createEReference(sourceEClass, SOURCE__READ_ENTITY_SPECIFICATION);
+		createEReference(sourceEClass, SOURCE__FILTERS);
+		createEReference(sourceEClass, SOURCE__VECTORKEYS);
+
+		vectorKeyEClass = createEClass(VECTOR_KEY);
+		createEReference(vectorKeyEClass, VECTOR_KEY__BUSINESSRULE);
+		createEReference(vectorKeyEClass, VECTOR_KEY__SOURCE);
 
 		// Create enums
 		ruleTypeEEnum = createEEnum(RULE_TYPE);
@@ -1157,6 +831,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 
 		// Obtain other dependent packages
 		ETL_MODELPackage theETL_MODELPackage = (ETL_MODELPackage)EPackage.Registry.INSTANCE.getEPackage(ETL_MODELPackage.eNS_URI);
+		LogmodelPackage theLogmodelPackage = (LogmodelPackage)EPackage.Registry.INSTANCE.getEPackage(LogmodelPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1165,101 +840,70 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		// Add supertypes to classes
 		specPackageEClass.getESuperTypes().add(theETL_MODELPackage.getPackage());
 		specificationEClass.getESuperTypes().add(theETL_MODELPackage.getnamedelement());
+		joinFieldEClass.getESuperTypes().add(theLogmodelPackage.getField());
+		subSpecificationEClass.getESuperTypes().add(this.getSpecification());
 		businessRuleEClass.getESuperTypes().add(theETL_MODELPackage.getnamedelement());
-		fieldEClass.getESuperTypes().add(theETL_MODELPackage.getnamedelement());
-		entityEClass.getESuperTypes().add(theETL_MODELPackage.getnamedelement());
-		relationshipEClass.getESuperTypes().add(theETL_MODELPackage.getnamedelement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(specPackageEClass, SpecPackage.class, "SpecPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecPackage_Specification(), this.getSpecification(), this.getSpecification_Specpackage(), "specification", null, 0, -1, SpecPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecPackage_Specifications(), this.getSpecification(), this.getSpecification_Specpackage(), "specifications", null, 0, -1, SpecPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specificationEClass, Specification.class, "Specification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecification_Specpackage(), this.getSpecPackage(), this.getSpecPackage_Specification(), "specpackage", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecification_Specpackage(), this.getSpecPackage(), this.getSpecPackage_Specifications(), "specpackage", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecification_Businessrules(), this.getBusinessRule(), this.getBusinessRule_Specification(), "businessrules", null, 0, -1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecification_PrimarySource(), this.getSource(), this.getSource_Specification(), "primarySource", null, 0, -1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecification_PrimarySources(), this.getSource(), this.getSource_Specification(), "primarySources", null, 0, -1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(businessRuleEClass, BusinessRule.class, "BusinessRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBusinessRule_Specification(), this.getSpecification(), this.getSpecification_Businessrules(), "specification", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_PostDedup(), this.getDedup(), this.getDedup_PostDedupBusinessrule(), "postDedup", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_PreDedup(), this.getDedup(), this.getDedup_PreDedupBusinessrule(), "preDedup", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Businessrule(), "vectorkeys", null, 0, -1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_RelationshipTargetEntity(), this.getEntity(), null, "relationshipTargetEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_TargetEntity(), this.getEntity(), null, "targetEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_TargetParentEntity(), this.getEntity(), null, "targetParentEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_LookupEntities(), this.getEntity(), null, "lookupEntities", null, 0, -1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_RelationshipSourceEntity(), this.getEntity(), null, "relationshipSourceEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBusinessRule_Ruletype(), this.getRuleType(), "ruletype", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBusinessRule_RelationshipTargetEntityUseHashKey(), ecorePackage.getEBoolean(), "relationshipTargetEntityUseHashKey", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBusinessRule_RelationshipSourceEntityUseHashKey(), ecorePackage.getEBoolean(), "relationshipSourceEntityUseHashKey", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBusinessRule_TargetEntityUseHashKey(), ecorePackage.getEBoolean(), "targetEntityUseHashKey", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBusinessRule_TargetMappingOutputFields(), ecorePackage.getEString(), "targetMappingOutputFields", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_TargetRelationship(), this.getRelationship(), null, "targetRelationship", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBusinessRule_SourceReleationship(), this.getRelationship(), null, "sourceReleationship", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSource_SourceBusinessrule(), this.getBusinessRule(), null, "sourceBusinessrule", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_ParentSource(), this.getSource(), this.getSource_ChildSource(), "parentSource", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_ChildSource(), this.getSource(), this.getSource_ParentSource(), "childSource", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_SourceSpecification(), this.getSpecification(), null, "sourceSpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_Specification(), this.getSpecification(), this.getSpecification_PrimarySource(), "specification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_Filters(), this.getFilter(), null, "filters", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Source(), "vectorkeys", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_ParentJoinFields(), this.getJoinField(), this.getJoinField_ParentSource(), "parentJoinFields", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_ChildJoinFields(), this.getJoinField(), this.getJoinField_ChildSource(), "childJoinFields", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_SourceEntity(), this.getEntity(), null, "sourceEntity", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_JoinEntity(), this.getEntity(), null, "joinEntity", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_SourceReleationship(), this.getRelationship(), null, "sourceReleationship", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSource_IsMandatory(), ecorePackage.getEBoolean(), "isMandatory", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSource_IsVector(), ecorePackage.getEBoolean(), "isVector", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSource_IsMultiplying(), ecorePackage.getEBoolean(), "isMultiplying", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSource_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_Readentityspecification(), this.getReadEntitySpecification(), this.getReadEntitySpecification_Source(), "readentityspecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSource_JoinComment(), ecorePackage.getEString(), "joinComment", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSource_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_Relationship(), this.getRelationship(), null, "relationship", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFilter_FilterField(), this.getField(), null, "filterField", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dedupEClass, Dedup.class, "Dedup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDedup_PostDedupBusinessrule(), this.getBusinessRule(), this.getBusinessRule_PostDedup(), "postDedupBusinessrule", null, 0, 1, Dedup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDedup_PreDedupBusinessrule(), this.getBusinessRule(), this.getBusinessRule_PreDedup(), "preDedupBusinessrule", null, 0, 1, Dedup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDedup_Field(), this.getField(), null, "field", null, 0, 1, Dedup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(vectorKeyEClass, VectorKey.class, "VectorKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVectorKey_Source(), this.getSource(), this.getSource_Vectorkeys(), "source", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVectorKey_Businessrule(), this.getBusinessRule(), this.getBusinessRule_Vectorkeys(), "businessrule", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVectorKey_Field(), this.getField(), null, "field", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(readEntitySpecificationEClass, ReadEntitySpecification.class, "ReadEntitySpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getReadEntitySpecification_Source(), this.getSource(), this.getSource_ReadEntitySpecification(), "source", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(joinFieldEClass, JoinField.class, "JoinField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJoinField_ParentSource(), this.getSource(), this.getSource_ParentJoinFields(), "parentSource", null, 0, 1, JoinField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJoinField_ChildSource(), this.getSource(), this.getSource_ChildJoinFields(), "childSource", null, 0, 1, JoinField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJoinField_Field(), this.getField(), null, "field", null, 0, 1, JoinField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJoinField_ChildSource(), this.getSource(), this.getSource_ChildJoinField(), "childSource", null, 0, 1, JoinField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJoinField_Field(), theLogmodelPackage.getField(), null, "field", null, 0, 1, JoinField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getField_Entity(), this.getEntity(), this.getEntity_Fields(), "entity", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getField_ReferenceEntity(), this.getEntity(), null, "referenceEntity", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dedupEClass, Dedup.class, "Dedup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDedup_PreDedupBusinessRule(), this.getBusinessRule(), this.getBusinessRule_PreDedup(), "preDedupBusinessRule", null, 0, 1, Dedup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDedup_PostDedupBusinessRule(), this.getBusinessRule(), this.getBusinessRule_PostDedup(), "postDedupBusinessRule", null, 0, 1, Dedup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDedup_Field(), theLogmodelPackage.getField(), null, "field", null, 0, 1, Dedup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntity_Relationships(), this.getRelationship(), this.getRelationship_Entity(), "relationships", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_PartOf(), this.getEntity(), null, "partOf", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_Fields(), this.getField(), this.getField_Entity(), "fields", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_IsBaselineEntityFor(), this.getEntity(), this.getEntity_BaselineEntity(), "isBaselineEntityFor", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_BaselineEntity(), this.getEntity(), this.getEntity_IsBaselineEntityFor(), "baselineEntity", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_Extends(), this.getEntity(), null, "extends", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFilter_Field(), theLogmodelPackage.getField(), null, "field", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilter_PreFilterBusinessRule(), this.getBusinessRule(), this.getBusinessRule_PreFilter(), "preFilterBusinessRule", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilter_PostFilterBusinessRule(), this.getBusinessRule(), this.getBusinessRule_PostFilter(), "postFilterBusinessRule", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRelationship_Entity(), this.getEntity(), this.getEntity_Relationships(), "entity", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRelationship_ToEntity(), this.getEntity(), null, "toEntity", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRelationship_IdentifyingFields(), this.getField(), null, "identifyingFields", null, 0, -1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRelationship_DescribingFields(), this.getField(), null, "describingFields", null, 0, -1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationship_RelationshipAlias(), ecorePackage.getEString(), "relationshipAlias", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(subSpecificationEClass, SubSpecification.class, "SubSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(readEntitySpecificationEClass, ReadEntitySpecification.class, "ReadEntitySpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReadEntitySpecification_Source(), this.getSource(), this.getSource_Readentityspecification(), "source", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReadEntitySpecification_ReadKeySats(), ecorePackage.getEBoolean(), "ReadKeySats", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReadEntitySpecification_ReadKeySatsReason(), ecorePackage.getEString(), "ReadKeySatsReason", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(businessRuleEClass, BusinessRule.class, "BusinessRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBusinessRule_Specification(), this.getSpecification(), this.getSpecification_Businessrules(), "specification", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_PreDedup(), this.getDedup(), this.getDedup_PreDedupBusinessRule(), "preDedup", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_PostDedup(), this.getDedup(), this.getDedup_PostDedupBusinessRule(), "postDedup", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Businessrule(), "vectorkeys", null, 0, -1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_PreFilter(), this.getFilter(), this.getFilter_PreFilterBusinessRule(), "preFilter", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_PostFilter(), this.getFilter(), this.getFilter_PostFilterBusinessRule(), "postFilter", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBusinessRule_RuleType(), this.getRuleType(), "RuleType", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_TargetEntity(), theLogmodelPackage.getEntity(), null, "targetEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_RelationshipSourceEntity(), theLogmodelPackage.getEntity(), null, "relationshipSourceEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_RelationshipTargetEntity(), theLogmodelPackage.getEntity(), null, "relationshipTargetEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_TargetParentEntity(), theLogmodelPackage.getEntity(), null, "targetParentEntity", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_LookupEntities(), theLogmodelPackage.getEntity(), null, "lookupEntities", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_TargetMappingOutputFields(), theLogmodelPackage.getCommonMapping(), null, "targetMappingOutputFields", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_TargetRelationship(), theLogmodelPackage.getRelationship(), null, "targetRelationship", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSource_SourceBusinessRule(), this.getBusinessRule(), null, "sourceBusinessRule", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_SourceSpecification(), this.getSpecification(), null, "sourceSpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_ParentSource(), this.getSource(), this.getSource_ChildSources(), "parentSource", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_ChildSources(), this.getSource(), this.getSource_ParentSource(), "childSources", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_Specification(), this.getSpecification(), this.getSpecification_PrimarySources(), "specification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_ParentJoinFields(), this.getJoinField(), this.getJoinField_ParentSource(), "parentJoinFields", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_ChildJoinField(), this.getJoinField(), this.getJoinField_ChildSource(), "childJoinField", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_ReadEntitySpecification(), this.getReadEntitySpecification(), this.getReadEntitySpecification_Source(), "readEntitySpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_Filters(), this.getFilter(), null, "filters", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Source(), "vectorkeys", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(vectorKeyEClass, VectorKey.class, "VectorKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVectorKey_Businessrule(), this.getBusinessRule(), this.getBusinessRule_Vectorkeys(), "businessrule", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVectorKey_Source(), this.getSource(), this.getSource_Vectorkeys(), "source", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(ruleTypeEEnum, RuleType.class, "RuleType");

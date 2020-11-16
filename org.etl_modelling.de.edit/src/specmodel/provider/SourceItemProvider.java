@@ -22,7 +22,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -65,37 +64,34 @@ public class SourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourceBusinessrulePropertyDescriptor(object);
+			addSourceBusinessRulePropertyDescriptor(object);
 			addSourceSpecificationPropertyDescriptor(object);
-			addSourceEntityPropertyDescriptor(object);
-			addJoinEntityPropertyDescriptor(object);
-			addSourceReleationshipPropertyDescriptor(object);
-			addIsMandatoryPropertyDescriptor(object);
-			addIsVectorPropertyDescriptor(object);
-			addIsMultiplyingPropertyDescriptor(object);
-			addAliasPropertyDescriptor(object);
-			addReadentityspecificationPropertyDescriptor(object);
-			addJoinCommentPropertyDescriptor(object);
-			addCommentPropertyDescriptor(object);
-			addRelationshipPropertyDescriptor(object);
+			addParentSourcePropertyDescriptor(object);
+			addChildSourcesPropertyDescriptor(object);
+			addSpecificationPropertyDescriptor(object);
+			addParentJoinFieldsPropertyDescriptor(object);
+			addChildJoinFieldPropertyDescriptor(object);
+			addReadEntitySpecificationPropertyDescriptor(object);
+			addFiltersPropertyDescriptor(object);
+			addVectorkeysPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source Businessrule feature.
+	 * This adds a property descriptor for the Source Business Rule feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceBusinessrulePropertyDescriptor(Object object) {
+	protected void addSourceBusinessRulePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_sourceBusinessrule_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_sourceBusinessrule_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__SOURCE_BUSINESSRULE,
+				 getString("_UI_Source_sourceBusinessRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_sourceBusinessRule_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__SOURCE_BUSINESS_RULE,
 				 true,
 				 false,
 				 true,
@@ -127,19 +123,19 @@ public class SourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Source Entity feature.
+	 * This adds a property descriptor for the Parent Source feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceEntityPropertyDescriptor(Object object) {
+	protected void addParentSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_sourceEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_sourceEntity_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__SOURCE_ENTITY,
+				 getString("_UI_Source_parentSource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_parentSource_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__PARENT_SOURCE,
 				 true,
 				 false,
 				 true,
@@ -149,19 +145,19 @@ public class SourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Join Entity feature.
+	 * This adds a property descriptor for the Child Sources feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addJoinEntityPropertyDescriptor(Object object) {
+	protected void addChildSourcesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_joinEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_joinEntity_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__JOIN_ENTITY,
+				 getString("_UI_Source_childSources_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_childSources_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__CHILD_SOURCES,
 				 true,
 				 false,
 				 true,
@@ -171,19 +167,19 @@ public class SourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Source Releationship feature.
+	 * This adds a property descriptor for the Specification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceReleationshipPropertyDescriptor(Object object) {
+	protected void addSpecificationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_sourceReleationship_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_sourceReleationship_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__SOURCE_RELEATIONSHIP,
+				 getString("_UI_Source_specification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_specification_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__SPECIFICATION,
 				 true,
 				 false,
 				 true,
@@ -193,19 +189,19 @@ public class SourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Relationship feature.
+	 * This adds a property descriptor for the Parent Join Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRelationshipPropertyDescriptor(Object object) {
+	protected void addParentJoinFieldsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_relationship_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_relationship_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__RELATIONSHIP,
+				 getString("_UI_Source_parentJoinFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_parentJoinFields_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__PARENT_JOIN_FIELDS,
 				 true,
 				 false,
 				 true,
@@ -215,107 +211,19 @@ public class SourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Mandatory feature.
+	 * This adds a property descriptor for the Child Join Field feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsMandatoryPropertyDescriptor(Object object) {
+	protected void addChildJoinFieldPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_isMandatory_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_isMandatory_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__IS_MANDATORY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Vector feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsVectorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_isVector_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_isVector_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__IS_VECTOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Multiplying feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsMultiplyingPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_isMultiplying_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_isMultiplying_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__IS_MULTIPLYING,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Alias feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAliasPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_alias_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_alias_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__ALIAS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Readentityspecification feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReadentityspecificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_readentityspecification_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_readentityspecification_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__READENTITYSPECIFICATION,
+				 getString("_UI_Source_childJoinField_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_childJoinField_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELD,
 				 true,
 				 false,
 				 true,
@@ -325,45 +233,67 @@ public class SourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Join Comment feature.
+	 * This adds a property descriptor for the Read Entity Specification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addJoinCommentPropertyDescriptor(Object object) {
+	protected void addReadEntitySpecificationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_joinComment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_joinComment_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__JOIN_COMMENT,
+				 getString("_UI_Source_readEntitySpecification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_readEntitySpecification_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__READ_ENTITY_SPECIFICATION,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Filters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addFiltersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_comment_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__COMMENT,
+				 getString("_UI_Source_filters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_filters_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__FILTERS,
 				 true,
 				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Vectorkeys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVectorkeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_vectorkeys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_vectorkeys_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__VECTORKEYS,
+				 true,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -380,12 +310,10 @@ public class SourceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__CHILD_SOURCE);
-			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__FILTERS);
-			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__VECTORKEYS);
+			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__CHILD_SOURCES);
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__PARENT_JOIN_FIELDS);
-			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELDS);
-			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__READENTITYSPECIFICATION);
+			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELD);
+			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__FILTERS);
 		}
 		return childrenFeatures;
 	}
@@ -422,8 +350,7 @@ public class SourceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Source source = (Source)object;
-		return getString("_UI_Source_type") + " " + source.isIsMandatory();
+		return getString("_UI_Source_type");
 	}
 
 
@@ -439,20 +366,10 @@ public class SourceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Source.class)) {
-			case SpecmodelPackage.SOURCE__IS_MANDATORY:
-			case SpecmodelPackage.SOURCE__IS_VECTOR:
-			case SpecmodelPackage.SOURCE__IS_MULTIPLYING:
-			case SpecmodelPackage.SOURCE__ALIAS:
-			case SpecmodelPackage.SOURCE__JOIN_COMMENT:
-			case SpecmodelPackage.SOURCE__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SpecmodelPackage.SOURCE__CHILD_SOURCE:
-			case SpecmodelPackage.SOURCE__FILTERS:
-			case SpecmodelPackage.SOURCE__VECTORKEYS:
+			case SpecmodelPackage.SOURCE__CHILD_SOURCES:
 			case SpecmodelPackage.SOURCE__PARENT_JOIN_FIELDS:
-			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELDS:
-			case SpecmodelPackage.SOURCE__READENTITYSPECIFICATION:
+			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
+			case SpecmodelPackage.SOURCE__FILTERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -472,18 +389,8 @@ public class SourceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SpecmodelPackage.Literals.SOURCE__CHILD_SOURCE,
+				(SpecmodelPackage.Literals.SOURCE__CHILD_SOURCES,
 				 SpecmodelFactory.eINSTANCE.createSource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SpecmodelPackage.Literals.SOURCE__FILTERS,
-				 SpecmodelFactory.eINSTANCE.createFilter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SpecmodelPackage.Literals.SOURCE__VECTORKEYS,
-				 SpecmodelFactory.eINSTANCE.createVectorKey()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -492,13 +399,13 @@ public class SourceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELDS,
+				(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELD,
 				 SpecmodelFactory.eINSTANCE.createJoinField()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SpecmodelPackage.Literals.SOURCE__READENTITYSPECIFICATION,
-				 SpecmodelFactory.eINSTANCE.createReadEntitySpecification()));
+				(SpecmodelPackage.Literals.SOURCE__FILTERS,
+				 SpecmodelFactory.eINSTANCE.createFilter()));
 	}
 
 	/**
@@ -514,7 +421,7 @@ public class SourceItemProvider
 
 		boolean qualify =
 			childFeature == SpecmodelPackage.Literals.SOURCE__PARENT_JOIN_FIELDS ||
-			childFeature == SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELDS;
+			childFeature == SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELD;
 
 		if (qualify) {
 			return getString

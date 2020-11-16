@@ -2,7 +2,7 @@
  */
 package specmodel;
 
-import org.eclipse.emf.ecore.EObject;
+import logmodel.Field;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface JoinField extends EObject {
+public interface JoinField extends Field {
 	/**
 	 * Returns the value of the '<em><b>Parent Source</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link specmodel.Source#getParentJoinFields <em>Parent Join Fields</em>}'.
@@ -49,14 +49,14 @@ public interface JoinField extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Child Source</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.Source#getChildJoinFields <em>Child Join Fields</em>}'.
+	 * It is bidirectional and its opposite is '{@link specmodel.Source#getChildJoinField <em>Child Join Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Child Source</em>' container reference.
 	 * @see #setChildSource(Source)
 	 * @see specmodel.SpecmodelPackage#getJoinField_ChildSource()
-	 * @see specmodel.Source#getChildJoinFields
-	 * @model opposite="childJoinFields" transient="false"
+	 * @see specmodel.Source#getChildJoinField
+	 * @model opposite="childJoinField" transient="false"
 	 * @generated
 	 */
 	Source getChildSource();

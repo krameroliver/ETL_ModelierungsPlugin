@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link logmodel.impl.RelationshipImpl#getDescribingFieldsRel <em>Describing Fields Rel</em>}</li>
  *   <li>{@link logmodel.impl.RelationshipImpl#getDescribingfields <em>Describingfields</em>}</li>
  *   <li>{@link logmodel.impl.RelationshipImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link logmodel.impl.RelationshipImpl#getRelationshipAlias <em>Relationship Alias</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +113,26 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * @ordered
 	 */
 	protected EList<Field> describingfields;
+
+	/**
+	 * The default value of the '{@link #getRelationshipAlias() <em>Relationship Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelationshipAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RELATIONSHIP_ALIAS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRelationshipAlias() <em>Relationship Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelationshipAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected String relationshipAlias = RELATIONSHIP_ALIAS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -323,6 +344,29 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 */
 	@Override
+	public String getRelationshipAlias() {
+		return relationshipAlias;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRelationshipAlias(String newRelationshipAlias) {
+		String oldRelationshipAlias = relationshipAlias;
+		relationshipAlias = newRelationshipAlias;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS, oldRelationshipAlias, relationshipAlias));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LogmodelPackage.RELATIONSHIP__ENTITY:
@@ -385,6 +429,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				return getDescribingfields();
 			case LogmodelPackage.RELATIONSHIP__ENTITY:
 				return getEntity();
+			case LogmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				return getRelationshipAlias();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -422,6 +468,9 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 			case LogmodelPackage.RELATIONSHIP__ENTITY:
 				setEntity((Entity)newValue);
 				return;
+			case LogmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				setRelationshipAlias((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -455,6 +504,9 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 			case LogmodelPackage.RELATIONSHIP__ENTITY:
 				setEntity((Entity)null);
 				return;
+			case LogmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				setRelationshipAlias(RELATIONSHIP_ALIAS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -481,6 +533,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				return describingfields != null && !describingfields.isEmpty();
 			case LogmodelPackage.RELATIONSHIP__ENTITY:
 				return getEntity() != null;
+			case LogmodelPackage.RELATIONSHIP__RELATIONSHIP_ALIAS:
+				return RELATIONSHIP_ALIAS_EDEFAULT == null ? relationshipAlias != null : !RELATIONSHIP_ALIAS_EDEFAULT.equals(relationshipAlias);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -497,6 +551,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", relationshipAlias: ");
+		result.append(relationshipAlias);
 		result.append(')');
 		return result.toString();
 	}
