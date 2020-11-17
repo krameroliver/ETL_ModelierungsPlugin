@@ -34,16 +34,6 @@ import specmodel.VectorKey;
  */
 public class VectorKeyImpl extends MinimalEObjectImpl.Container implements VectorKey {
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Source source;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -112,24 +102,8 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 	 */
 	@Override
 	public Source getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (Source)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.VECTOR_KEY__SOURCE, oldSource, source));
-			}
-		}
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Source basicGetSource() {
-		return source;
+		if (eContainerFeatureID() != SpecmodelPackage.VECTOR_KEY__SOURCE) return null;
+		return (Source)eInternalContainer();
 	}
 
 	/**
@@ -138,12 +112,7 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 	 * @generated
 	 */
 	public NotificationChain basicSetSource(Source newSource, NotificationChain msgs) {
-		Source oldSource = source;
-		source = newSource;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecmodelPackage.VECTOR_KEY__SOURCE, oldSource, newSource);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newSource, SpecmodelPackage.VECTOR_KEY__SOURCE, msgs);
 		return msgs;
 	}
 
@@ -154,10 +123,12 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 	 */
 	@Override
 	public void setSource(Source newSource) {
-		if (newSource != source) {
+		if (newSource != eInternalContainer() || (eContainerFeatureID() != SpecmodelPackage.VECTOR_KEY__SOURCE && newSource != null)) {
+			if (EcoreUtil.isAncestor(this, newSource))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, SpecmodelPackage.SOURCE__VECTORKEYS, Source.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSource != null)
 				msgs = ((InternalEObject)newSource).eInverseAdd(this, SpecmodelPackage.SOURCE__VECTORKEYS, Source.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
@@ -180,8 +151,8 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetBusinessrule((BusinessRule)otherEnd, msgs);
 			case SpecmodelPackage.VECTOR_KEY__SOURCE:
-				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, SpecmodelPackage.SOURCE__VECTORKEYS, Source.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetSource((Source)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -213,6 +184,8 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 		switch (eContainerFeatureID()) {
 			case SpecmodelPackage.VECTOR_KEY__BUSINESSRULE:
 				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.BUSINESS_RULE__VECTORKEYS, BusinessRule.class, msgs);
+			case SpecmodelPackage.VECTOR_KEY__SOURCE:
+				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SOURCE__VECTORKEYS, Source.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -228,8 +201,7 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 			case SpecmodelPackage.VECTOR_KEY__BUSINESSRULE:
 				return getBusinessrule();
 			case SpecmodelPackage.VECTOR_KEY__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
+				return getSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,7 +253,7 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 			case SpecmodelPackage.VECTOR_KEY__BUSINESSRULE:
 				return getBusinessrule() != null;
 			case SpecmodelPackage.VECTOR_KEY__SOURCE:
-				return source != null;
+				return getSource() != null;
 		}
 		return super.eIsSet(featureID);
 	}

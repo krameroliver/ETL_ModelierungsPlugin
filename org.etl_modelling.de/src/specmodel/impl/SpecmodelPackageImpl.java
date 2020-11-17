@@ -289,6 +289,26 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getReadEntitySpecification_ReadKeySats() {
+		return (EAttribute)readEntitySpecificationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getReadEntitySpecification_ReadKeySatsReason() {
+		return (EAttribute)readEntitySpecificationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getJoinField() {
 		return joinFieldEClass;
 	}
@@ -729,6 +749,56 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSource_IsMandatory() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSource_JoinComment() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSource_RelationshipAlias() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_SourceReleationship() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_JoinEntity() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getVectorKey() {
 		return vectorKeyEClass;
 	}
@@ -802,6 +872,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 
 		readEntitySpecificationEClass = createEClass(READ_ENTITY_SPECIFICATION);
 		createEReference(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__SOURCE);
+		createEAttribute(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__READ_KEY_SATS);
+		createEAttribute(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON);
 
 		joinFieldEClass = createEClass(JOIN_FIELD);
 		createEReference(joinFieldEClass, JOIN_FIELD__PARENT_SOURCE);
@@ -852,6 +924,11 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		createEAttribute(sourceEClass, SOURCE__IS_MULTIPLYING);
 		createEAttribute(sourceEClass, SOURCE__COMMENT);
 		createEAttribute(sourceEClass, SOURCE__ALIAS);
+		createEAttribute(sourceEClass, SOURCE__IS_MANDATORY);
+		createEAttribute(sourceEClass, SOURCE__JOIN_COMMENT);
+		createEAttribute(sourceEClass, SOURCE__RELATIONSHIP_ALIAS);
+		createEReference(sourceEClass, SOURCE__SOURCE_RELEATIONSHIP);
+		createEReference(sourceEClass, SOURCE__JOIN_ENTITY);
 
 		vectorKeyEClass = createEClass(VECTOR_KEY);
 		createEReference(vectorKeyEClass, VECTOR_KEY__BUSINESSRULE);
@@ -909,7 +986,9 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		initEReference(getSpecification_PrimarySources(), this.getSource(), this.getSource_Specification(), "primarySources", null, 0, -1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(readEntitySpecificationEClass, ReadEntitySpecification.class, "ReadEntitySpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReadEntitySpecification_Source(), this.getSource(), this.getSource_ReadEntitySpecification(), "source", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReadEntitySpecification_Source(), this.getSource(), this.getSource_ReadEntitySpecification(), "source", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReadEntitySpecification_ReadKeySats(), ecorePackage.getEBoolean(), "ReadKeySats", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReadEntitySpecification_ReadKeySatsReason(), ecorePackage.getEString(), "ReadKeySatsReason", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(joinFieldEClass, JoinField.class, "JoinField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJoinField_ParentSource(), this.getSource(), this.getSource_ParentJoinFields(), "parentSource", null, 0, 1, JoinField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -952,18 +1031,23 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		initEReference(getSource_Specification(), this.getSpecification(), this.getSpecification_PrimarySources(), "specification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_ParentJoinFields(), this.getJoinField(), this.getJoinField_ParentSource(), "parentJoinFields", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_ChildJoinField(), this.getJoinField(), this.getJoinField_ChildSource(), "childJoinField", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_ReadEntitySpecification(), this.getReadEntitySpecification(), this.getReadEntitySpecification_Source(), "readEntitySpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_ReadEntitySpecification(), this.getReadEntitySpecification(), this.getReadEntitySpecification_Source(), "readEntitySpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_Filters(), this.getFilter(), null, "filters", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Source(), "vectorkeys", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Source(), "vectorkeys", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_SourceEntity(), theLogmodelPackage.getEntity(), null, "sourceEntity", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_IsVector(), ecorePackage.getEBoolean(), "isVector", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_IsMultiplying(), ecorePackage.getEBoolean(), "isMultiplying", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSource_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_IsMandatory(), ecorePackage.getEBoolean(), "isMandatory", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_JoinComment(), ecorePackage.getEString(), "joinComment", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_RelationshipAlias(), ecorePackage.getEString(), "relationshipAlias", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_SourceReleationship(), theLogmodelPackage.getRelationship(), null, "sourceReleationship", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_JoinEntity(), theLogmodelPackage.getEntity(), null, "joinEntity", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vectorKeyEClass, VectorKey.class, "VectorKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVectorKey_Businessrule(), this.getBusinessRule(), this.getBusinessRule_Vectorkeys(), "businessrule", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVectorKey_Source(), this.getSource(), this.getSource_Vectorkeys(), "source", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVectorKey_Source(), this.getSource(), this.getSource_Vectorkeys(), "source", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(ruleTypeEEnum, RuleType.class, "RuleType");

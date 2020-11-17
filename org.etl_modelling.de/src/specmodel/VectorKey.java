@@ -47,24 +47,24 @@ public interface VectorKey extends EObject {
 	void setBusinessrule(BusinessRule value);
 
 	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * Returns the value of the '<em><b>Source</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
+	 * @return the value of the '<em>Source</em>' container reference.
 	 * @see #setSource(Source)
 	 * @see specmodel.SpecmodelPackage#getVectorKey_Source()
 	 * @see specmodel.Source#getVectorkeys
-	 * @model opposite="vectorkeys"
+	 * @model opposite="vectorkeys" transient="false"
 	 * @generated
 	 */
 	Source getSource();
 
 	/**
-	 * Sets the value of the '{@link specmodel.VectorKey#getSource <em>Source</em>}' reference.
+	 * Sets the value of the '{@link specmodel.VectorKey#getSource <em>Source</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @param value the new value of the '<em>Source</em>' container reference.
 	 * @see #getSource()
 	 * @generated
 	 */

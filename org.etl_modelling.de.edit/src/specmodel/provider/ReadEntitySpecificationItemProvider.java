@@ -20,8 +20,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import specmodel.ReadEntitySpecification;
 import specmodel.SpecmodelPackage;
 
 /**
@@ -60,6 +63,8 @@ public class ReadEntitySpecificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSourcePropertyDescriptor(object);
+			addReadKeySatsPropertyDescriptor(object);
+			addReadKeySatsReasonPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +92,50 @@ public class ReadEntitySpecificationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Read Key Sats feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReadKeySatsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ReadEntitySpecification_ReadKeySats_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReadEntitySpecification_ReadKeySats_feature", "_UI_ReadEntitySpecification_type"),
+				 SpecmodelPackage.Literals.READ_ENTITY_SPECIFICATION__READ_KEY_SATS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Read Key Sats Reason feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReadKeySatsReasonPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ReadEntitySpecification_ReadKeySatsReason_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReadEntitySpecification_ReadKeySatsReason_feature", "_UI_ReadEntitySpecification_type"),
+				 SpecmodelPackage.Literals.READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ReadEntitySpecification.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,7 +154,8 @@ public class ReadEntitySpecificationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ReadEntitySpecification_type");
+		ReadEntitySpecification readEntitySpecification = (ReadEntitySpecification)object;
+		return getString("_UI_ReadEntitySpecification_type") + " " + readEntitySpecification.isReadKeySats();
 	}
 
 
@@ -119,6 +169,13 @@ public class ReadEntitySpecificationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ReadEntitySpecification.class)) {
+			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS:
+			case SpecmodelPackage.READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

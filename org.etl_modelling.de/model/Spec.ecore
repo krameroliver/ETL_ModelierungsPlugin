@@ -87,16 +87,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="childJoinField" upperBound="-1"
         eType="#//JoinField" containment="true" eOpposite="#//JoinField/childSource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="readEntitySpecification"
-        eType="#//ReadEntitySpecification" eOpposite="#//ReadEntitySpecification/source"/>
+        eType="#//ReadEntitySpecification" containment="true" eOpposite="#//ReadEntitySpecification/source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//Filter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vectorkeys" upperBound="-1"
-        eType="#//VectorKey" eOpposite="#//VectorKey/source"/>
+        eType="#//VectorKey" containment="true" eOpposite="#//VectorKey/source"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="ecore:EClass logmodel.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVector" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiplying" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="joinComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipAlias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceReleationship" eType="ecore:EClass logmodel.ecore#//Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joinEntity" eType="ecore:EClass logmodel.ecore#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VectorKey">
     <eStructuralFeatures xsi:type="ecore:EReference" name="businessrule" eType="#//BusinessRule"

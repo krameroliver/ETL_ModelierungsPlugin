@@ -5,6 +5,7 @@ package specmodel.impl;
 import java.util.Collection;
 
 import logmodel.Entity;
+import logmodel.Relationship;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -54,6 +54,11 @@ import specmodel.VectorKey;
  *   <li>{@link specmodel.impl.SourceImpl#isIsMultiplying <em>Is Multiplying</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getAlias <em>Alias</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#isIsMandatory <em>Is Mandatory</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getJoinComment <em>Join Comment</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getRelationshipAlias <em>Relationship Alias</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getSourceReleationship <em>Source Releationship</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getJoinEntity <em>Join Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,7 +115,7 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	protected EList<JoinField> childJoinField;
 
 	/**
-	 * The cached value of the '{@link #getReadEntitySpecification() <em>Read Entity Specification</em>}' reference.
+	 * The cached value of the '{@link #getReadEntitySpecification() <em>Read Entity Specification</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReadEntitySpecification()
@@ -130,7 +135,7 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	protected EList<Filter> filters;
 
 	/**
-	 * The cached value of the '{@link #getVectorkeys() <em>Vectorkeys</em>}' reference list.
+	 * The cached value of the '{@link #getVectorkeys() <em>Vectorkeys</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVectorkeys()
@@ -228,6 +233,86 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * @ordered
 	 */
 	protected String alias = ALIAS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsMandatory() <em>Is Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_MANDATORY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsMandatory() <em>Is Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isMandatory = IS_MANDATORY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getJoinComment() <em>Join Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJoinComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String JOIN_COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getJoinComment() <em>Join Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJoinComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String joinComment = JOIN_COMMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRelationshipAlias() <em>Relationship Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelationshipAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RELATIONSHIP_ALIAS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRelationshipAlias() <em>Relationship Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelationshipAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected String relationshipAlias = RELATIONSHIP_ALIAS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSourceReleationship() <em>Source Releationship</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceReleationship()
+	 * @generated
+	 * @ordered
+	 */
+	protected Relationship sourceReleationship;
+
+	/**
+	 * The cached value of the '{@link #getJoinEntity() <em>Join Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJoinEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Entity joinEntity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -460,23 +545,6 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 */
 	@Override
 	public ReadEntitySpecification getReadEntitySpecification() {
-		if (readEntitySpecification != null && readEntitySpecification.eIsProxy()) {
-			InternalEObject oldReadEntitySpecification = (InternalEObject)readEntitySpecification;
-			readEntitySpecification = (ReadEntitySpecification)eResolveProxy(oldReadEntitySpecification);
-			if (readEntitySpecification != oldReadEntitySpecification) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, oldReadEntitySpecification, readEntitySpecification));
-			}
-		}
-		return readEntitySpecification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReadEntitySpecification basicGetReadEntitySpecification() {
 		return readEntitySpecification;
 	}
 
@@ -536,7 +604,7 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	@Override
 	public EList<VectorKey> getVectorkeys() {
 		if (vectorkeys == null) {
-			vectorkeys = new EObjectWithInverseResolvingEList<VectorKey>(VectorKey.class, this, SpecmodelPackage.SOURCE__VECTORKEYS, SpecmodelPackage.VECTOR_KEY__SOURCE);
+			vectorkeys = new EObjectContainmentWithInverseEList<VectorKey>(VectorKey.class, this, SpecmodelPackage.SOURCE__VECTORKEYS, SpecmodelPackage.VECTOR_KEY__SOURCE);
 		}
 		return vectorkeys;
 	}
@@ -678,6 +746,155 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public boolean isIsMandatory() {
+		return isMandatory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsMandatory(boolean newIsMandatory) {
+		boolean oldIsMandatory = isMandatory;
+		isMandatory = newIsMandatory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__IS_MANDATORY, oldIsMandatory, isMandatory));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getJoinComment() {
+		return joinComment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setJoinComment(String newJoinComment) {
+		String oldJoinComment = joinComment;
+		joinComment = newJoinComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__JOIN_COMMENT, oldJoinComment, joinComment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRelationshipAlias() {
+		return relationshipAlias;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRelationshipAlias(String newRelationshipAlias) {
+		String oldRelationshipAlias = relationshipAlias;
+		relationshipAlias = newRelationshipAlias;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__RELATIONSHIP_ALIAS, oldRelationshipAlias, relationshipAlias));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Relationship getSourceReleationship() {
+		if (sourceReleationship != null && sourceReleationship.eIsProxy()) {
+			InternalEObject oldSourceReleationship = (InternalEObject)sourceReleationship;
+			sourceReleationship = (Relationship)eResolveProxy(oldSourceReleationship);
+			if (sourceReleationship != oldSourceReleationship) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.SOURCE__SOURCE_RELEATIONSHIP, oldSourceReleationship, sourceReleationship));
+			}
+		}
+		return sourceReleationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Relationship basicGetSourceReleationship() {
+		return sourceReleationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSourceReleationship(Relationship newSourceReleationship) {
+		Relationship oldSourceReleationship = sourceReleationship;
+		sourceReleationship = newSourceReleationship;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__SOURCE_RELEATIONSHIP, oldSourceReleationship, sourceReleationship));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Entity getJoinEntity() {
+		if (joinEntity != null && joinEntity.eIsProxy()) {
+			InternalEObject oldJoinEntity = (InternalEObject)joinEntity;
+			joinEntity = (Entity)eResolveProxy(oldJoinEntity);
+			if (joinEntity != oldJoinEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.SOURCE__JOIN_ENTITY, oldJoinEntity, joinEntity));
+			}
+		}
+		return joinEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetJoinEntity() {
+		return joinEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setJoinEntity(Entity newJoinEntity) {
+		Entity oldJoinEntity = joinEntity;
+		joinEntity = newJoinEntity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__JOIN_ENTITY, oldJoinEntity, joinEntity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -698,7 +915,7 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildJoinField()).basicAdd(otherEnd, msgs);
 			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
 				if (readEntitySpecification != null)
-					msgs = ((InternalEObject)readEntitySpecification).eInverseRemove(this, SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE, ReadEntitySpecification.class, msgs);
+					msgs = ((InternalEObject)readEntitySpecification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, null, msgs);
 				return basicSetReadEntitySpecification((ReadEntitySpecification)otherEnd, msgs);
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVectorkeys()).basicAdd(otherEnd, msgs);
@@ -775,8 +992,7 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
 				return getChildJoinField();
 			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
-				if (resolve) return getReadEntitySpecification();
-				return basicGetReadEntitySpecification();
+				return getReadEntitySpecification();
 			case SpecmodelPackage.SOURCE__FILTERS:
 				return getFilters();
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
@@ -792,6 +1008,18 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return getComment();
 			case SpecmodelPackage.SOURCE__ALIAS:
 				return getAlias();
+			case SpecmodelPackage.SOURCE__IS_MANDATORY:
+				return isIsMandatory();
+			case SpecmodelPackage.SOURCE__JOIN_COMMENT:
+				return getJoinComment();
+			case SpecmodelPackage.SOURCE__RELATIONSHIP_ALIAS:
+				return getRelationshipAlias();
+			case SpecmodelPackage.SOURCE__SOURCE_RELEATIONSHIP:
+				if (resolve) return getSourceReleationship();
+				return basicGetSourceReleationship();
+			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
+				if (resolve) return getJoinEntity();
+				return basicGetJoinEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -855,6 +1083,21 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__ALIAS:
 				setAlias((String)newValue);
 				return;
+			case SpecmodelPackage.SOURCE__IS_MANDATORY:
+				setIsMandatory((Boolean)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__JOIN_COMMENT:
+				setJoinComment((String)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__RELATIONSHIP_ALIAS:
+				setRelationshipAlias((String)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__SOURCE_RELEATIONSHIP:
+				setSourceReleationship((Relationship)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
+				setJoinEntity((Entity)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -912,6 +1155,21 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__ALIAS:
 				setAlias(ALIAS_EDEFAULT);
 				return;
+			case SpecmodelPackage.SOURCE__IS_MANDATORY:
+				setIsMandatory(IS_MANDATORY_EDEFAULT);
+				return;
+			case SpecmodelPackage.SOURCE__JOIN_COMMENT:
+				setJoinComment(JOIN_COMMENT_EDEFAULT);
+				return;
+			case SpecmodelPackage.SOURCE__RELATIONSHIP_ALIAS:
+				setRelationshipAlias(RELATIONSHIP_ALIAS_EDEFAULT);
+				return;
+			case SpecmodelPackage.SOURCE__SOURCE_RELEATIONSHIP:
+				setSourceReleationship((Relationship)null);
+				return;
+			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
+				setJoinEntity((Entity)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -954,6 +1212,16 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case SpecmodelPackage.SOURCE__ALIAS:
 				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
+			case SpecmodelPackage.SOURCE__IS_MANDATORY:
+				return isMandatory != IS_MANDATORY_EDEFAULT;
+			case SpecmodelPackage.SOURCE__JOIN_COMMENT:
+				return JOIN_COMMENT_EDEFAULT == null ? joinComment != null : !JOIN_COMMENT_EDEFAULT.equals(joinComment);
+			case SpecmodelPackage.SOURCE__RELATIONSHIP_ALIAS:
+				return RELATIONSHIP_ALIAS_EDEFAULT == null ? relationshipAlias != null : !RELATIONSHIP_ALIAS_EDEFAULT.equals(relationshipAlias);
+			case SpecmodelPackage.SOURCE__SOURCE_RELEATIONSHIP:
+				return sourceReleationship != null;
+			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
+				return joinEntity != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -976,6 +1244,12 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 		result.append(comment);
 		result.append(", alias: ");
 		result.append(alias);
+		result.append(", isMandatory: ");
+		result.append(isMandatory);
+		result.append(", joinComment: ");
+		result.append(joinComment);
+		result.append(", relationshipAlias: ");
+		result.append(relationshipAlias);
 		result.append(')');
 		return result.toString();
 	}

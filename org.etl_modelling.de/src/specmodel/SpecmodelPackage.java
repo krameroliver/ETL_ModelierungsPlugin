@@ -218,7 +218,7 @@ public interface SpecmodelPackage extends EPackage {
 	int READ_ENTITY_SPECIFICATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -227,13 +227,31 @@ public interface SpecmodelPackage extends EPackage {
 	int READ_ENTITY_SPECIFICATION__SOURCE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Read Key Sats</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_ENTITY_SPECIFICATION__READ_KEY_SATS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Read Key Sats Reason</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON = 2;
+
+	/**
 	 * The number of structural features of the '<em>Read Entity Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int READ_ENTITY_SPECIFICATION_FEATURE_COUNT = 1;
+	int READ_ENTITY_SPECIFICATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Read Entity Specification</em>' class.
@@ -854,7 +872,7 @@ public interface SpecmodelPackage extends EPackage {
 	int SOURCE__CHILD_JOIN_FIELD = 6;
 
 	/**
-	 * The feature id for the '<em><b>Read Entity Specification</b></em>' reference.
+	 * The feature id for the '<em><b>Read Entity Specification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -872,7 +890,7 @@ public interface SpecmodelPackage extends EPackage {
 	int SOURCE__FILTERS = 8;
 
 	/**
-	 * The feature id for the '<em><b>Vectorkeys</b></em>' reference list.
+	 * The feature id for the '<em><b>Vectorkeys</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -926,13 +944,58 @@ public interface SpecmodelPackage extends EPackage {
 	int SOURCE__ALIAS = 14;
 
 	/**
+	 * The feature id for the '<em><b>Is Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__IS_MANDATORY = 15;
+
+	/**
+	 * The feature id for the '<em><b>Join Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__JOIN_COMMENT = 16;
+
+	/**
+	 * The feature id for the '<em><b>Relationship Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__RELATIONSHIP_ALIAS = 17;
+
+	/**
+	 * The feature id for the '<em><b>Source Releationship</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__SOURCE_RELEATIONSHIP = 18;
+
+	/**
+	 * The feature id for the '<em><b>Join Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__JOIN_ENTITY = 19;
+
+	/**
 	 * The number of structural features of the '<em>Source</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 15;
+	int SOURCE_FEATURE_COUNT = 20;
 
 	/**
 	 * The number of operations of the '<em>Source</em>' class.
@@ -963,7 +1026,7 @@ public interface SpecmodelPackage extends EPackage {
 	int VECTOR_KEY__BUSINESSRULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1075,15 +1138,37 @@ public interface SpecmodelPackage extends EPackage {
 	EClass getReadEntitySpecification();
 
 	/**
-	 * Returns the meta object for the reference '{@link specmodel.ReadEntitySpecification#getSource <em>Source</em>}'.
+	 * Returns the meta object for the container reference '{@link specmodel.ReadEntitySpecification#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @return the meta object for the container reference '<em>Source</em>'.
 	 * @see specmodel.ReadEntitySpecification#getSource()
 	 * @see #getReadEntitySpecification()
 	 * @generated
 	 */
 	EReference getReadEntitySpecification_Source();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.ReadEntitySpecification#isReadKeySats <em>Read Key Sats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Read Key Sats</em>'.
+	 * @see specmodel.ReadEntitySpecification#isReadKeySats()
+	 * @see #getReadEntitySpecification()
+	 * @generated
+	 */
+	EAttribute getReadEntitySpecification_ReadKeySats();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.ReadEntitySpecification#getReadKeySatsReason <em>Read Key Sats Reason</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Read Key Sats Reason</em>'.
+	 * @see specmodel.ReadEntitySpecification#getReadKeySatsReason()
+	 * @see #getReadEntitySpecification()
+	 * @generated
+	 */
+	EAttribute getReadEntitySpecification_ReadKeySatsReason();
 
 	/**
 	 * Returns the meta object for class '{@link specmodel.JoinField <em>Join Field</em>}'.
@@ -1476,10 +1561,10 @@ public interface SpecmodelPackage extends EPackage {
 	EReference getSource_ChildJoinField();
 
 	/**
-	 * Returns the meta object for the reference '{@link specmodel.Source#getReadEntitySpecification <em>Read Entity Specification</em>}'.
+	 * Returns the meta object for the containment reference '{@link specmodel.Source#getReadEntitySpecification <em>Read Entity Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Read Entity Specification</em>'.
+	 * @return the meta object for the containment reference '<em>Read Entity Specification</em>'.
 	 * @see specmodel.Source#getReadEntitySpecification()
 	 * @see #getSource()
 	 * @generated
@@ -1498,10 +1583,10 @@ public interface SpecmodelPackage extends EPackage {
 	EReference getSource_Filters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}'.
+	 * Returns the meta object for the containment reference list '{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Vectorkeys</em>'.
+	 * @return the meta object for the containment reference list '<em>Vectorkeys</em>'.
 	 * @see specmodel.Source#getVectorkeys()
 	 * @see #getSource()
 	 * @generated
@@ -1564,6 +1649,61 @@ public interface SpecmodelPackage extends EPackage {
 	EAttribute getSource_Alias();
 
 	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#isIsMandatory <em>Is Mandatory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Mandatory</em>'.
+	 * @see specmodel.Source#isIsMandatory()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_IsMandatory();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#getJoinComment <em>Join Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Join Comment</em>'.
+	 * @see specmodel.Source#getJoinComment()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_JoinComment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link specmodel.Source#getRelationshipAlias <em>Relationship Alias</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relationship Alias</em>'.
+	 * @see specmodel.Source#getRelationshipAlias()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EAttribute getSource_RelationshipAlias();
+
+	/**
+	 * Returns the meta object for the reference '{@link specmodel.Source#getSourceReleationship <em>Source Releationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Releationship</em>'.
+	 * @see specmodel.Source#getSourceReleationship()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EReference getSource_SourceReleationship();
+
+	/**
+	 * Returns the meta object for the reference '{@link specmodel.Source#getJoinEntity <em>Join Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Join Entity</em>'.
+	 * @see specmodel.Source#getJoinEntity()
+	 * @see #getSource()
+	 * @generated
+	 */
+	EReference getSource_JoinEntity();
+
+	/**
 	 * Returns the meta object for class '{@link specmodel.VectorKey <em>Vector Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1585,10 +1725,10 @@ public interface SpecmodelPackage extends EPackage {
 	EReference getVectorKey_Businessrule();
 
 	/**
-	 * Returns the meta object for the reference '{@link specmodel.VectorKey#getSource <em>Source</em>}'.
+	 * Returns the meta object for the container reference '{@link specmodel.VectorKey#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @return the meta object for the container reference '<em>Source</em>'.
 	 * @see specmodel.VectorKey#getSource()
 	 * @see #getVectorKey()
 	 * @generated
@@ -1691,12 +1831,28 @@ public interface SpecmodelPackage extends EPackage {
 		EClass READ_ENTITY_SPECIFICATION = eINSTANCE.getReadEntitySpecification();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference READ_ENTITY_SPECIFICATION__SOURCE = eINSTANCE.getReadEntitySpecification_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Read Key Sats</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute READ_ENTITY_SPECIFICATION__READ_KEY_SATS = eINSTANCE.getReadEntitySpecification_ReadKeySats();
+
+		/**
+		 * The meta object literal for the '<em><b>Read Key Sats Reason</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON = eINSTANCE.getReadEntitySpecification_ReadKeySatsReason();
 
 		/**
 		 * The meta object literal for the '{@link specmodel.impl.JoinFieldImpl <em>Join Field</em>}' class.
@@ -1999,7 +2155,7 @@ public interface SpecmodelPackage extends EPackage {
 		EReference SOURCE__CHILD_JOIN_FIELD = eINSTANCE.getSource_ChildJoinField();
 
 		/**
-		 * The meta object literal for the '<em><b>Read Entity Specification</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Read Entity Specification</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2015,7 +2171,7 @@ public interface SpecmodelPackage extends EPackage {
 		EReference SOURCE__FILTERS = eINSTANCE.getSource_Filters();
 
 		/**
-		 * The meta object literal for the '<em><b>Vectorkeys</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Vectorkeys</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2063,6 +2219,46 @@ public interface SpecmodelPackage extends EPackage {
 		EAttribute SOURCE__ALIAS = eINSTANCE.getSource_Alias();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Mandatory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__IS_MANDATORY = eINSTANCE.getSource_IsMandatory();
+
+		/**
+		 * The meta object literal for the '<em><b>Join Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__JOIN_COMMENT = eINSTANCE.getSource_JoinComment();
+
+		/**
+		 * The meta object literal for the '<em><b>Relationship Alias</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOURCE__RELATIONSHIP_ALIAS = eINSTANCE.getSource_RelationshipAlias();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Releationship</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE__SOURCE_RELEATIONSHIP = eINSTANCE.getSource_SourceReleationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Join Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOURCE__JOIN_ENTITY = eINSTANCE.getSource_JoinEntity();
+
+		/**
 		 * The meta object literal for the '{@link specmodel.impl.VectorKeyImpl <em>Vector Key</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2081,7 +2277,7 @@ public interface SpecmodelPackage extends EPackage {
 		EReference VECTOR_KEY__BUSINESSRULE = eINSTANCE.getVectorKey_Businessrule();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

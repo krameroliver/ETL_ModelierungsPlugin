@@ -99,6 +99,8 @@
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//ReadEntitySpecification">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//ReadEntitySpecification/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//ReadEntitySpecification/ReadKeySats"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//ReadEntitySpecification/ReadKeySatsReason"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//JoinField">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//JoinField/parentSource"/>
@@ -140,14 +142,19 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/specification"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/parentJoinFields"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/childJoinField"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/readEntitySpecification"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/readEntitySpecification"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/filters"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/vectorkeys"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/vectorkeys"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/sourceEntity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/isVector"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/isMultiplying"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/comment"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/isMandatory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/joinComment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Source/relationshipAlias"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/sourceReleationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//Source/joinEntity"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//VectorKey">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//VectorKey/businessrule"/>
