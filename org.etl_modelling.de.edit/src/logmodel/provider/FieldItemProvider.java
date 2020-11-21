@@ -76,6 +76,7 @@ public class FieldItemProvider
 			addTableOnlyPropertyDescriptor(object);
 			addIsFastChangingPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addIsBusinessKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -389,6 +390,28 @@ public class FieldItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Business Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsBusinessKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Field_isBusinessKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Field_isBusinessKey_feature", "_UI_Field_type"),
+				 LogmodelPackage.Literals.FIELD__IS_BUSINESS_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Field.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,6 +463,7 @@ public class FieldItemProvider
 			case LogmodelPackage.FIELD__TABLE_ONLY:
 			case LogmodelPackage.FIELD__IS_FAST_CHANGING:
 			case LogmodelPackage.FIELD__TYPE:
+			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import logmodel.Entity;
 import logmodel.Relationship;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -29,6 +30,7 @@ import specmodel.Source;
 import specmodel.Specification;
 import specmodel.SpecmodelPackage;
 import specmodel.VectorKey;
+
 import type_enum.JoinTypes;
 
 /**

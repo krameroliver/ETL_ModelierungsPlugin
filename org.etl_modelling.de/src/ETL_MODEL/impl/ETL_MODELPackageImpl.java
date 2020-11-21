@@ -20,9 +20,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import package_enums.Package_enumsPackage;
 
 import package_enums.impl.Package_enumsPackageImpl;
+
 import specmodel.SpecmodelPackage;
+
 import specmodel.impl.SpecmodelPackageImpl;
+
 import type_enum.Type_enumPackage;
+
 import type_enum.impl.Type_enumPackageImpl;
 
 /**

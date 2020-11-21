@@ -377,13 +377,22 @@ public interface LogmodelPackage extends EPackage {
 	int FIELD__TYPE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 14;
 
 	/**
+	 * The feature id for the '<em><b>Is Business Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__IS_BUSINESS_KEY = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 15;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 15;
+	int FIELD_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of operations of the '<em>Field</em>' class.
@@ -1077,6 +1086,17 @@ public interface LogmodelPackage extends EPackage {
 	EAttribute getField_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link logmodel.Field#isIsBusinessKey <em>Is Business Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Business Key</em>'.
+	 * @see logmodel.Field#isIsBusinessKey()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_IsBusinessKey();
+
+	/**
 	 * Returns the meta object for class '{@link logmodel.Relationship <em>Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1609,6 +1629,14 @@ public interface LogmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIELD__TYPE = eINSTANCE.getField_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Business Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__IS_BUSINESS_KEY = eINSTANCE.getField_IsBusinessKey();
 
 		/**
 		 * The meta object literal for the '{@link logmodel.impl.RelationshipImpl <em>Relationship</em>}' class.

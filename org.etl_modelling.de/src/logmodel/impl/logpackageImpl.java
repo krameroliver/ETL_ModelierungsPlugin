@@ -3,6 +3,7 @@
 package logmodel.impl;
 
 import java.util.Collection;
+
 import logmodel.CommonMapping;
 import logmodel.Entity;
 import logmodel.LogmodelPackage;

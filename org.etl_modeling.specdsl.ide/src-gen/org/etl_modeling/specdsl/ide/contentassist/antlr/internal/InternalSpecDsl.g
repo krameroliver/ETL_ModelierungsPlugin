@@ -1795,7 +1795,7 @@ rule__Source__Group__11__Impl
 :
 (
 	{ before(grammarAccess.getSourceAccess().getGroup_11()); }
-	(rule__Source__Group_11__0)
+	(rule__Source__Group_11__0)?
 	{ after(grammarAccess.getSourceAccess().getGroup_11()); }
 )
 ;

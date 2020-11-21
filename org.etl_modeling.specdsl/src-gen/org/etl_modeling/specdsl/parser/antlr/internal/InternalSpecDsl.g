@@ -912,7 +912,7 @@ ruleSource returns [EObject current=null]
 					}
 				)
 			)
-		)
+		)?
 		(
 			otherlv_31='['
 			{

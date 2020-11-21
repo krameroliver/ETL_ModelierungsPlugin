@@ -3,6 +3,7 @@
 package specmodel.impl;
 
 import logmodel.Field;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -44,6 +45,7 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 	 * @ordered
 	 */
 	protected Field vkField;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

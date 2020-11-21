@@ -33,12 +33,12 @@ public class ETLDslParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ETLDslGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getLogpackageAccess().getAlternatives_7_0(), "rule__Logpackage__Alternatives_7_0");
 			builder.put(grammarAccess.getLogpackageAccess().getAlternatives_7_1_1(), "rule__Logpackage__Alternatives_7_1_1");
-			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
+			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+			builder.put(grammarAccess.getFtAccess().getAlternatives(), "rule__Ft__Alternatives");
 			builder.put(grammarAccess.getLAYERTYPEAccess().getAlternatives(), "rule__LAYERTYPE__Alternatives");
 			builder.put(grammarAccess.getHISTORISATIONTYPEAccess().getAlternatives(), "rule__HISTORISATIONTYPE__Alternatives");
 			builder.put(grammarAccess.getREPRESENTATIONSAccess().getAlternatives(), "rule__REPRESENTATIONS__Alternatives");
-			builder.put(grammarAccess.getFtAccess().getAlternatives(), "rule__Ft__Alternatives");
 			builder.put(grammarAccess.getLogpackageAccess().getGroup(), "rule__Logpackage__Group__0");
 			builder.put(grammarAccess.getLogpackageAccess().getGroup_3(), "rule__Logpackage__Group_3__0");
 			builder.put(grammarAccess.getLogpackageAccess().getGroup_4(), "rule__Logpackage__Group_4__0");
@@ -46,6 +46,9 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLogpackageAccess().getGroup_6(), "rule__Logpackage__Group_6__0");
 			builder.put(grammarAccess.getLogpackageAccess().getGroup_7(), "rule__Logpackage__Group_7__0");
 			builder.put(grammarAccess.getLogpackageAccess().getGroup_7_1(), "rule__Logpackage__Group_7_1__0");
+			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
+			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
+			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getCommonMappingAccess().getGroup(), "rule__CommonMapping__Group__0");
 			builder.put(grammarAccess.getCommonMappingAccess().getGroup_3(), "rule__CommonMapping__Group_3__0");
 			builder.put(grammarAccess.getCommonMappingAccess().getGroup_3_3(), "rule__CommonMapping__Group_3_3__0");
@@ -71,9 +74,6 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFieldAccess().getGroup_14(), "rule__Field__Group_14__0");
 			builder.put(grammarAccess.getFieldAccess().getGroup_15(), "rule__Field__Group_15__0");
 			builder.put(grammarAccess.getFieldAccess().getGroup_16(), "rule__Field__Group_16__0");
-			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
-			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getIncludeAccess().getGroup(), "rule__Include__Group__0");
 			builder.put(grammarAccess.getIncludeAccess().getGroup_2(), "rule__Include__Group_2__0");
 			builder.put(grammarAccess.getIncludeAccess().getGroup_2_1(), "rule__Include__Group_2_1__0");

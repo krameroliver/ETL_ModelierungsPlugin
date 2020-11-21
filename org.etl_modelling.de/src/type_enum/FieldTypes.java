@@ -76,7 +76,9 @@ public enum FieldTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HK(5, "HK", "HK"), /**
+	HK(5, "HK", "HK"),
+
+	/**
 	 * The '<em><b>True False</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -452,7 +452,7 @@ public class SpecDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//	isVector?='Vector'? ('VectoryKeys' '{' (vectorkeys+=VectorKey (',' vectorkeys+=VectorKey)* '}'))? ('JoinViaLink'
 		//	sourceReleationship=[logmodel::Relationship|QualifiedName])? ('JoinComment' joinComment=EString)?
 		//	('PrimaryJoinFields' '{' (parentJoinFields+=JoinField (',' parentJoinFields+=JoinField)*) '}')? ('SecondaryJoinField'
-		//	'{' (childJoinField+=JoinField (',' childJoinField+=JoinField)*) '}')? ('JoinType' JoinType=JoinType) ('['
+		//	'{' (childJoinField+=JoinField (',' childJoinField+=JoinField)*) '}')? ('JoinType' JoinType=JoinType)? ('['
 		//	childSources+=Source
 		//	']')*;
 		@Override public ParserRule getRule() { return rule; }
@@ -462,7 +462,7 @@ public class SpecDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//vectorkeys+=VectorKey)* '}'))? ('JoinViaLink' sourceReleationship=[logmodel::Relationship|QualifiedName])?
 		//('JoinComment' joinComment=EString)? ('PrimaryJoinFields' '{' (parentJoinFields+=JoinField (','
 		//parentJoinFields+=JoinField)*) '}')? ('SecondaryJoinField' '{' (childJoinField+=JoinField (','
-		//childJoinField+=JoinField)*) '}')? ('JoinType' JoinType=JoinType) ('[' childSources+=Source ']')*
+		//childJoinField+=JoinField)*) '}')? ('JoinType' JoinType=JoinType)? ('[' childSources+=Source ']')*
 		public Group getGroup() { return cGroup; }
 		
 		//{specmodel::Source}
@@ -633,7 +633,7 @@ public class SpecDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_10_3() { return cRightCurlyBracketKeyword_10_3; }
 		
-		//('JoinType' JoinType=JoinType)
+		//('JoinType' JoinType=JoinType)?
 		public Group getGroup_11() { return cGroup_11; }
 		
 		//'JoinType'
@@ -1044,7 +1044,7 @@ public class SpecDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//	isVector?='Vector'? ('VectoryKeys' '{' (vectorkeys+=VectorKey (',' vectorkeys+=VectorKey)* '}'))? ('JoinViaLink'
 	//	sourceReleationship=[logmodel::Relationship|QualifiedName])? ('JoinComment' joinComment=EString)?
 	//	('PrimaryJoinFields' '{' (parentJoinFields+=JoinField (',' parentJoinFields+=JoinField)*) '}')? ('SecondaryJoinField'
-	//	'{' (childJoinField+=JoinField (',' childJoinField+=JoinField)*) '}')? ('JoinType' JoinType=JoinType) ('['
+	//	'{' (childJoinField+=JoinField (',' childJoinField+=JoinField)*) '}')? ('JoinType' JoinType=JoinType)? ('['
 	//	childSources+=Source
 	//	']')*;
 	public SourceElements getSourceAccess() {

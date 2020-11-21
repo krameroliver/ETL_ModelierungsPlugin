@@ -7,8 +7,8 @@ import java.util.Collection;
 import logmodel.CommonMapping;
 import logmodel.Field;
 import logmodel.LogmodelPackage;
-
 import logmodel.logpackage;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 

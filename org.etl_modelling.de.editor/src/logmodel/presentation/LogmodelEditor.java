@@ -156,10 +156,13 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import logmodel.provider.LogmodelItemProviderAdapterFactory;
+
 import ETL_MODEL.presentation.LogmodelEditorPlugin;
+
 import ETL_MODEL.provider.ETL_MODELItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
 import specmodel.provider.SpecmodelItemProviderAdapterFactory;
 
 

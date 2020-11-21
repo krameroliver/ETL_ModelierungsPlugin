@@ -20,7 +20,9 @@ import package_enums.Package_enumsPackage;
 import package_enums.impl.Package_enumsPackageImpl;
 
 import specmodel.SpecmodelPackage;
+
 import specmodel.impl.SpecmodelPackageImpl;
+
 import type_enum.FieldTypes;
 import type_enum.JoinTypes;
 import type_enum.Type_enumFactory;

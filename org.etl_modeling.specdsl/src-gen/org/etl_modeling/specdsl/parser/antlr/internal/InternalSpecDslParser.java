@@ -1381,7 +1381,7 @@ public class InternalSpecDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSource"
-    // InternalSpecDsl.g:566:1: ruleSource returns [EObject current=null] : ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) ) (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* ) ;
+    // InternalSpecDsl.g:566:1: ruleSource returns [EObject current=null] : ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) )? (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* ) ;
     public final EObject ruleSource() throws RecognitionException {
         EObject current = null;
 
@@ -1431,11 +1431,11 @@ public class InternalSpecDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSpecDsl.g:572:2: ( ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) ) (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* ) )
-            // InternalSpecDsl.g:573:2: ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) ) (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* )
+            // InternalSpecDsl.g:572:2: ( ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) )? (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* ) )
+            // InternalSpecDsl.g:573:2: ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) )? (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* )
             {
-            // InternalSpecDsl.g:573:2: ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) ) (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* )
-            // InternalSpecDsl.g:574:3: () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) ) (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )*
+            // InternalSpecDsl.g:573:2: ( () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) )? (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )* )
+            // InternalSpecDsl.g:574:3: () ( ( ruleQualifiedName ) ) (otherlv_2= 'alias' ( (lv_alias_3_0= ruleEString ) ) )? ( (lv_isMandatory_4_0= 'mandatory' ) )? ( (lv_isMultiplying_5_0= 'isMultiplying' ) )? ( (lv_isVector_6_0= 'Vector' ) )? (otherlv_7= 'VectoryKeys' otherlv_8= '{' ( ( (lv_vectorkeys_9_0= ruleVectorKey ) ) (otherlv_10= ',' ( (lv_vectorkeys_11_0= ruleVectorKey ) ) )* otherlv_12= '}' ) )? (otherlv_13= 'JoinViaLink' ( ( ruleQualifiedName ) ) )? (otherlv_15= 'JoinComment' ( (lv_joinComment_16_0= ruleEString ) ) )? (otherlv_17= 'PrimaryJoinFields' otherlv_18= '{' ( ( (lv_parentJoinFields_19_0= ruleJoinField ) ) (otherlv_20= ',' ( (lv_parentJoinFields_21_0= ruleJoinField ) ) )* ) otherlv_22= '}' )? (otherlv_23= 'SecondaryJoinField' otherlv_24= '{' ( ( (lv_childJoinField_25_0= ruleJoinField ) ) (otherlv_26= ',' ( (lv_childJoinField_27_0= ruleJoinField ) ) )* ) otherlv_28= '}' )? (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) )? (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )*
             {
             // InternalSpecDsl.g:574:3: ()
             // InternalSpecDsl.g:575:4: 
@@ -2103,59 +2103,70 @@ public class InternalSpecDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSpecDsl.g:891:3: (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) )
-            // InternalSpecDsl.g:892:4: otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) )
-            {
-            otherlv_29=(Token)match(input,36,FOLLOW_30); 
+            // InternalSpecDsl.g:891:3: (otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) ) )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            				newLeafNode(otherlv_29, grammarAccess.getSourceAccess().getJoinTypeKeyword_11_0());
-            			
-            // InternalSpecDsl.g:896:4: ( (lv_JoinType_30_0= ruleJoinType ) )
-            // InternalSpecDsl.g:897:5: (lv_JoinType_30_0= ruleJoinType )
-            {
-            // InternalSpecDsl.g:897:5: (lv_JoinType_30_0= ruleJoinType )
-            // InternalSpecDsl.g:898:6: lv_JoinType_30_0= ruleJoinType
-            {
-
-            						newCompositeNode(grammarAccess.getSourceAccess().getJoinTypeJoinTypeEnumRuleCall_11_1_0());
-            					
-            pushFollow(FOLLOW_31);
-            lv_JoinType_30_0=ruleJoinType();
-
-            state._fsp--;
-
-
-            						if (current==null) {
-            							current = createModelElementForParent(grammarAccess.getSourceRule());
-            						}
-            						set(
-            							current,
-            							"JoinType",
-            							lv_JoinType_30_0,
-            							"org.etl_modeling.specdsl.SpecDsl.JoinType");
-            						afterParserOrEnumRuleCall();
-            					
-
+            if ( (LA21_0==36) ) {
+                alt21=1;
             }
+            switch (alt21) {
+                case 1 :
+                    // InternalSpecDsl.g:892:4: otherlv_29= 'JoinType' ( (lv_JoinType_30_0= ruleJoinType ) )
+                    {
+                    otherlv_29=(Token)match(input,36,FOLLOW_30); 
+
+                    				newLeafNode(otherlv_29, grammarAccess.getSourceAccess().getJoinTypeKeyword_11_0());
+                    			
+                    // InternalSpecDsl.g:896:4: ( (lv_JoinType_30_0= ruleJoinType ) )
+                    // InternalSpecDsl.g:897:5: (lv_JoinType_30_0= ruleJoinType )
+                    {
+                    // InternalSpecDsl.g:897:5: (lv_JoinType_30_0= ruleJoinType )
+                    // InternalSpecDsl.g:898:6: lv_JoinType_30_0= ruleJoinType
+                    {
+
+                    						newCompositeNode(grammarAccess.getSourceAccess().getJoinTypeJoinTypeEnumRuleCall_11_1_0());
+                    					
+                    pushFollow(FOLLOW_31);
+                    lv_JoinType_30_0=ruleJoinType();
+
+                    state._fsp--;
 
 
-            }
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getSourceRule());
+                    						}
+                    						set(
+                    							current,
+                    							"JoinType",
+                    							lv_JoinType_30_0,
+                    							"org.etl_modeling.specdsl.SpecDsl.JoinType");
+                    						afterParserOrEnumRuleCall();
+                    					
 
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
             // InternalSpecDsl.g:916:3: (otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']' )*
-            loop21:
+            loop22:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA21_0==25) ) {
-                    alt21=1;
+                if ( (LA22_0==25) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt22) {
             	case 1 :
             	    // InternalSpecDsl.g:917:4: otherlv_31= '[' ( (lv_childSources_32_0= ruleSource ) ) otherlv_33= ']'
             	    {
@@ -2203,7 +2214,7 @@ public class InternalSpecDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop22;
                 }
             } while (true);
 
@@ -2438,41 +2449,41 @@ public class InternalSpecDslParser extends AbstractInternalAntlrParser {
             // InternalSpecDsl.g:1022:2: ( (enumLiteral_0= 'Aggregation' ) | (enumLiteral_1= 'Dedup' ) | (enumLiteral_2= 'Filter' ) | (enumLiteral_3= 'MultiFire' ) | (enumLiteral_4= 'SingleFire' ) )
             {
             // InternalSpecDsl.g:1022:2: ( (enumLiteral_0= 'Aggregation' ) | (enumLiteral_1= 'Dedup' ) | (enumLiteral_2= 'Filter' ) | (enumLiteral_3= 'MultiFire' ) | (enumLiteral_4= 'SingleFire' ) )
-            int alt22=5;
+            int alt23=5;
             switch ( input.LA(1) ) {
             case 37:
                 {
-                alt22=1;
+                alt23=1;
                 }
                 break;
             case 38:
                 {
-                alt22=2;
+                alt23=2;
                 }
                 break;
             case 39:
                 {
-                alt22=3;
+                alt23=3;
                 }
                 break;
             case 40:
                 {
-                alt22=4;
+                alt23=4;
                 }
                 break;
             case 41:
                 {
-                alt22=5;
+                alt23=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
                     // InternalSpecDsl.g:1023:3: (enumLiteral_0= 'Aggregation' )
                     {
@@ -2598,36 +2609,36 @@ public class InternalSpecDslParser extends AbstractInternalAntlrParser {
             // InternalSpecDsl.g:1073:2: ( (enumLiteral_0= 'LEFT' ) | (enumLiteral_1= 'RIGHT' ) | (enumLiteral_2= 'INNER' ) | (enumLiteral_3= 'FULL_OUTER' ) )
             {
             // InternalSpecDsl.g:1073:2: ( (enumLiteral_0= 'LEFT' ) | (enumLiteral_1= 'RIGHT' ) | (enumLiteral_2= 'INNER' ) | (enumLiteral_3= 'FULL_OUTER' ) )
-            int alt23=4;
+            int alt24=4;
             switch ( input.LA(1) ) {
             case 42:
                 {
-                alt23=1;
+                alt24=1;
                 }
                 break;
             case 43:
                 {
-                alt23=2;
+                alt24=2;
                 }
                 break;
             case 44:
                 {
-                alt23=3;
+                alt24=3;
                 }
                 break;
             case 45:
                 {
-                alt23=4;
+                alt24=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
                     // InternalSpecDsl.g:1074:3: (enumLiteral_0= 'LEFT' )
                     {
@@ -2740,17 +2751,17 @@ public class InternalSpecDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000002L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004000020L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000001F78800000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000001F78000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000001F70000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000001F60000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000001F40000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000001F7A800002L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000001F7A000002L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000001F72000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000001F62000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000001F42000002L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000080008000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000001F00000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000001E00000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000001C00000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001800000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000001F02000002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000001E02000002L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000001C02000002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001802000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001002000002L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x00003C0000000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000002000002L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000004000000L});

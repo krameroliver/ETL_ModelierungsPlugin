@@ -3,6 +3,7 @@
 package specmodel;
 
 import ETL_MODEL.namedelement;
+
 import org.eclipse.emf.common.util.EList;
 
 /**

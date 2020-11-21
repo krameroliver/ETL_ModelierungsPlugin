@@ -3,10 +3,12 @@
 package specmodel;
 
 import ETL_MODEL.namedelement;
+
 import logmodel.CommonMapping;
 import logmodel.Entity;
 import logmodel.Include;
 import logmodel.Relationship;
+
 import org.eclipse.emf.common.util.EList;
 
 /**

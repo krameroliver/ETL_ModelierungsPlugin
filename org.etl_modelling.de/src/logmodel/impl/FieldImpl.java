@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import type_enum.FieldTypes;
 
 /**
@@ -43,6 +44,7 @@ import type_enum.FieldTypes;
  *   <li>{@link logmodel.impl.FieldImpl#isTableOnly <em>Table Only</em>}</li>
  *   <li>{@link logmodel.impl.FieldImpl#isIsFastChanging <em>Is Fast Changing</em>}</li>
  *   <li>{@link logmodel.impl.FieldImpl#getType <em>Type</em>}</li>
+ *   <li>{@link logmodel.impl.FieldImpl#isIsBusinessKey <em>Is Business Key</em>}</li>
  * </ul>
  *
  * @generated
@@ -337,6 +339,26 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @ordered
 	 */
 	protected FieldTypes type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsBusinessKey() <em>Is Business Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsBusinessKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_BUSINESS_KEY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsBusinessKey() <em>Is Business Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsBusinessKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isBusinessKey = IS_BUSINESS_KEY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -790,6 +812,29 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @generated
 	 */
 	@Override
+	public boolean isIsBusinessKey() {
+		return isBusinessKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsBusinessKey(boolean newIsBusinessKey) {
+		boolean oldIsBusinessKey = isBusinessKey;
+		isBusinessKey = newIsBusinessKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogmodelPackage.FIELD__IS_BUSINESS_KEY, oldIsBusinessKey, isBusinessKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LogmodelPackage.FIELD__ENTITY:
@@ -875,6 +920,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return isIsFastChanging();
 			case LogmodelPackage.FIELD__TYPE:
 				return getType();
+			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
+				return isIsBusinessKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -934,6 +981,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return;
 			case LogmodelPackage.FIELD__TYPE:
 				setType((FieldTypes)newValue);
+				return;
+			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
+				setIsBusinessKey((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -995,6 +1045,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			case LogmodelPackage.FIELD__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
+				setIsBusinessKey(IS_BUSINESS_KEY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1039,6 +1092,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return isFastChanging != IS_FAST_CHANGING_EDEFAULT;
 			case LogmodelPackage.FIELD__TYPE:
 				return type != TYPE_EDEFAULT;
+			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
+				return isBusinessKey != IS_BUSINESS_KEY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1081,6 +1136,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		result.append(isFastChanging);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", isBusinessKey: ");
+		result.append(isBusinessKey);
 		result.append(')');
 		return result.toString();
 	}

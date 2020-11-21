@@ -174,6 +174,71 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Entity
 		public RuleCall getEntityEntityParserRuleCall_7_1_1_1_0() { return cEntityEntityParserRuleCall_7_1_1_1_0; }
 	}
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.QualifiedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//	ID ('.' ID)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID ('.' ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//('.' ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+	public class EIntElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.EInt");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//EInt ecore::EInt:
+		//	'-'? INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'-'? INT
+		public Group getGroup() { return cGroup; }
+		
+		//'-'?
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+	}
+	public class EBooleanElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.EBoolean");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//EBoolean ecore::EBoolean:
+		//	'true' | 'false';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'true' | 'false'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'true'
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+		
+		//'false'
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.EString");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -715,71 +780,6 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//"]"
 		public Keyword getRightSquareBracketKeyword_17() { return cRightSquareBracketKeyword_17; }
 	}
-	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.QualifiedName");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		
-		//QualifiedName:
-		//	ID ('.' ID)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//ID ('.' ID)*
-		public Group getGroup() { return cGroup; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-		
-		//('.' ID)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
-	}
-	public class EIntElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.EInt");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//EInt ecore::EInt:
-		//	'-'? INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'-'? INT
-		public Group getGroup() { return cGroup; }
-		
-		//'-'?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-	}
-	public class EBooleanElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.EBoolean");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//EBoolean ecore::EBoolean:
-		//	'true' | 'false';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'true' | 'false'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'true'
-		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
-		
-		//'false'
-		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
-	}
 	public class IncludeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.Include");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1064,6 +1064,73 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	
+	public class FtElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.ft");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cStringEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cStringStringKeyword_0_0 = (Keyword)cStringEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDateEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDateDateKeyword_1_0 = (Keyword)cDateEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cDecimalEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cDecimalDecimalKeyword_2_0 = (Keyword)cDecimalEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cHKEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cHKHKKeyword_3_0 = (Keyword)cHKEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cIntEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cIntIntKeyword_4_0 = (Keyword)cIntEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cTimeStampEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cTimeStampTimeStampKeyword_5_0 = (Keyword)cTimeStampEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cTrueFalseEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cTrueFalseTrueFalseKeyword_6_0 = (Keyword)cTrueFalseEnumLiteralDeclaration_6.eContents().get(0);
+		
+		//enum ft returns type_enums::FieldTypes:
+		//	String | Date | Decimal | HK | Int | TimeStamp | TrueFalse;
+		public EnumRule getRule() { return rule; }
+		
+		//String | Date | Decimal | HK | Int | TimeStamp | TrueFalse
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//String
+		public EnumLiteralDeclaration getStringEnumLiteralDeclaration_0() { return cStringEnumLiteralDeclaration_0; }
+		
+		//'String'
+		public Keyword getStringStringKeyword_0_0() { return cStringStringKeyword_0_0; }
+		
+		//Date
+		public EnumLiteralDeclaration getDateEnumLiteralDeclaration_1() { return cDateEnumLiteralDeclaration_1; }
+		
+		//'Date'
+		public Keyword getDateDateKeyword_1_0() { return cDateDateKeyword_1_0; }
+		
+		//Decimal
+		public EnumLiteralDeclaration getDecimalEnumLiteralDeclaration_2() { return cDecimalEnumLiteralDeclaration_2; }
+		
+		//'Decimal'
+		public Keyword getDecimalDecimalKeyword_2_0() { return cDecimalDecimalKeyword_2_0; }
+		
+		//HK
+		public EnumLiteralDeclaration getHKEnumLiteralDeclaration_3() { return cHKEnumLiteralDeclaration_3; }
+		
+		//'HK'
+		public Keyword getHKHKKeyword_3_0() { return cHKHKKeyword_3_0; }
+		
+		//Int
+		public EnumLiteralDeclaration getIntEnumLiteralDeclaration_4() { return cIntEnumLiteralDeclaration_4; }
+		
+		//'Int'
+		public Keyword getIntIntKeyword_4_0() { return cIntIntKeyword_4_0; }
+		
+		//TimeStamp
+		public EnumLiteralDeclaration getTimeStampEnumLiteralDeclaration_5() { return cTimeStampEnumLiteralDeclaration_5; }
+		
+		//'TimeStamp'
+		public Keyword getTimeStampTimeStampKeyword_5_0() { return cTimeStampTimeStampKeyword_5_0; }
+		
+		//TrueFalse
+		public EnumLiteralDeclaration getTrueFalseEnumLiteralDeclaration_6() { return cTrueFalseEnumLiteralDeclaration_6; }
+		
+		//'TrueFalse'
+		public Keyword getTrueFalseTrueFalseKeyword_6_0() { return cTrueFalseTrueFalseKeyword_6_0; }
+	}
 	public class LAYERTYPEElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.LAYERTYPE");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1209,75 +1276,12 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'STAR'
 		public Keyword getSTARSTARKeyword_4_0() { return cSTARSTARKeyword_4_0; }
 	}
-	public class FtElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.ft");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cStringEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cStringStringKeyword_0_0 = (Keyword)cStringEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cDateEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cDateDateKeyword_1_0 = (Keyword)cDateEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cDecimalEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cDecimalDecimalKeyword_2_0 = (Keyword)cDecimalEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cHKEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cHKHKKeyword_3_0 = (Keyword)cHKEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cIntEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cIntIntKeyword_4_0 = (Keyword)cIntEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cTimeStampEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cTimeStampTimeStampKeyword_5_0 = (Keyword)cTimeStampEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cTrueFalseEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cTrueFalseTrueFalseKeyword_6_0 = (Keyword)cTrueFalseEnumLiteralDeclaration_6.eContents().get(0);
-		
-		//enum ft returns type_enums::FieldTypes:
-		//	String | Date | Decimal | HK | Int | TimeStamp | TrueFalse;
-		public EnumRule getRule() { return rule; }
-		
-		//String | Date | Decimal | HK | Int | TimeStamp | TrueFalse
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//String
-		public EnumLiteralDeclaration getStringEnumLiteralDeclaration_0() { return cStringEnumLiteralDeclaration_0; }
-		
-		//'String'
-		public Keyword getStringStringKeyword_0_0() { return cStringStringKeyword_0_0; }
-		
-		//Date
-		public EnumLiteralDeclaration getDateEnumLiteralDeclaration_1() { return cDateEnumLiteralDeclaration_1; }
-		
-		//'Date'
-		public Keyword getDateDateKeyword_1_0() { return cDateDateKeyword_1_0; }
-		
-		//Decimal
-		public EnumLiteralDeclaration getDecimalEnumLiteralDeclaration_2() { return cDecimalEnumLiteralDeclaration_2; }
-		
-		//'Decimal'
-		public Keyword getDecimalDecimalKeyword_2_0() { return cDecimalDecimalKeyword_2_0; }
-		
-		//HK
-		public EnumLiteralDeclaration getHKEnumLiteralDeclaration_3() { return cHKEnumLiteralDeclaration_3; }
-		
-		//'HK'
-		public Keyword getHKHKKeyword_3_0() { return cHKHKKeyword_3_0; }
-		
-		//Int
-		public EnumLiteralDeclaration getIntEnumLiteralDeclaration_4() { return cIntEnumLiteralDeclaration_4; }
-		
-		//'Int'
-		public Keyword getIntIntKeyword_4_0() { return cIntIntKeyword_4_0; }
-		
-		//TimeStamp
-		public EnumLiteralDeclaration getTimeStampEnumLiteralDeclaration_5() { return cTimeStampEnumLiteralDeclaration_5; }
-		
-		//'TimeStamp'
-		public Keyword getTimeStampTimeStampKeyword_5_0() { return cTimeStampTimeStampKeyword_5_0; }
-		
-		//TrueFalse
-		public EnumLiteralDeclaration getTrueFalseEnumLiteralDeclaration_6() { return cTrueFalseEnumLiteralDeclaration_6; }
-		
-		//'TrueFalse'
-		public Keyword getTrueFalseTrueFalseKeyword_6_0() { return cTrueFalseTrueFalseKeyword_6_0; }
-	}
 	
 	private final LogpackageElements pLogpackage;
+	private final QualifiedNameElements pQualifiedName;
+	private final EIntElements pEInt;
+	private final EBooleanElements pEBoolean;
+	private final FtElements eFt;
 	private final EStringElements pEString;
 	private final LAYERTYPEElements eLAYERTYPE;
 	private final HISTORISATIONTYPEElements eHISTORISATIONTYPE;
@@ -1285,10 +1289,6 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final CommonMappingElements pCommonMapping;
 	private final EntityElements pEntity;
 	private final FieldElements pField;
-	private final QualifiedNameElements pQualifiedName;
-	private final EIntElements pEInt;
-	private final EBooleanElements pEBoolean;
-	private final FtElements eFt;
 	private final IncludeElements pInclude;
 	private final RelationshipElements pRelationship;
 	
@@ -1302,6 +1302,10 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pLogpackage = new LogpackageElements();
+		this.pQualifiedName = new QualifiedNameElements();
+		this.pEInt = new EIntElements();
+		this.pEBoolean = new EBooleanElements();
+		this.eFt = new FtElements();
 		this.pEString = new EStringElements();
 		this.eLAYERTYPE = new LAYERTYPEElements();
 		this.eHISTORISATIONTYPE = new HISTORISATIONTYPEElements();
@@ -1309,10 +1313,6 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pCommonMapping = new CommonMappingElements();
 		this.pEntity = new EntityElements();
 		this.pField = new FieldElements();
-		this.pQualifiedName = new QualifiedNameElements();
-		this.pEInt = new EIntElements();
-		this.pEBoolean = new EBooleanElements();
-		this.eFt = new FtElements();
 		this.pInclude = new IncludeElements();
 		this.pRelationship = new RelationshipElements();
 	}
@@ -1355,6 +1355,46 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	public ParserRule getLogpackageRule() {
 		return getLogpackageAccess().getRule();
+	}
+	
+	//QualifiedName:
+	//	ID ('.' ID)*;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return pQualifiedName;
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
+	}
+	
+	//EInt ecore::EInt:
+	//	'-'? INT;
+	public EIntElements getEIntAccess() {
+		return pEInt;
+	}
+	
+	public ParserRule getEIntRule() {
+		return getEIntAccess().getRule();
+	}
+	
+	//EBoolean ecore::EBoolean:
+	//	'true' | 'false';
+	public EBooleanElements getEBooleanAccess() {
+		return pEBoolean;
+	}
+	
+	public ParserRule getEBooleanRule() {
+		return getEBooleanAccess().getRule();
+	}
+	
+	//enum ft returns type_enums::FieldTypes:
+	//	String | Date | Decimal | HK | Int | TimeStamp | TrueFalse;
+	public FtElements getFtAccess() {
+		return eFt;
+	}
+	
+	public EnumRule getFtRule() {
+		return getFtAccess().getRule();
 	}
 	
 	//EString:
@@ -1439,46 +1479,6 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	public ParserRule getFieldRule() {
 		return getFieldAccess().getRule();
-	}
-	
-	//QualifiedName:
-	//	ID ('.' ID)*;
-	public QualifiedNameElements getQualifiedNameAccess() {
-		return pQualifiedName;
-	}
-	
-	public ParserRule getQualifiedNameRule() {
-		return getQualifiedNameAccess().getRule();
-	}
-	
-	//EInt ecore::EInt:
-	//	'-'? INT;
-	public EIntElements getEIntAccess() {
-		return pEInt;
-	}
-	
-	public ParserRule getEIntRule() {
-		return getEIntAccess().getRule();
-	}
-	
-	//EBoolean ecore::EBoolean:
-	//	'true' | 'false';
-	public EBooleanElements getEBooleanAccess() {
-		return pEBoolean;
-	}
-	
-	public ParserRule getEBooleanRule() {
-		return getEBooleanAccess().getRule();
-	}
-	
-	//enum ft returns type_enums::FieldTypes:
-	//	String | Date | Decimal | HK | Int | TimeStamp | TrueFalse;
-	public FtElements getFtAccess() {
-		return eFt;
-	}
-	
-	public EnumRule getFtRule() {
-		return getFtAccess().getRule();
 	}
 	
 	//Include:

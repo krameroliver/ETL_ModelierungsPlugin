@@ -46,6 +46,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/tableOnly"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/isFastChanging"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/isBusinessKey"/>
     </genClasses>
     <genClasses ecoreClass="logmodel.ecore#//Relationship">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/fromEntity"/>

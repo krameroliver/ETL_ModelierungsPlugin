@@ -362,6 +362,15 @@ public interface SpecmodelPackage extends EPackage {
 	int JOIN_FIELD__TYPE = LogmodelPackage.FIELD__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Is Business Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOIN_FIELD__IS_BUSINESS_KEY = LogmodelPackage.FIELD__IS_BUSINESS_KEY;
+
+	/**
 	 * The feature id for the '<em><b>Parent Source</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

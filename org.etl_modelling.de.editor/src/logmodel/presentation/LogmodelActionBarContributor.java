@@ -3,6 +3,7 @@
 package logmodel.presentation;
 
 import ETL_MODEL.presentation.LogmodelEditorPlugin;
+
 import java.util.ArrayList;
 import java.util.Collection;
 

@@ -3,6 +3,7 @@
 package logmodel;
 
 import ETL_MODEL.namedelement;
+
 import type_enum.FieldTypes;
 
 /**
@@ -29,6 +30,7 @@ import type_enum.FieldTypes;
  *   <li>{@link logmodel.Field#isTableOnly <em>Table Only</em>}</li>
  *   <li>{@link logmodel.Field#isIsFastChanging <em>Is Fast Changing</em>}</li>
  *   <li>{@link logmodel.Field#getType <em>Type</em>}</li>
+ *   <li>{@link logmodel.Field#isIsBusinessKey <em>Is Business Key</em>}</li>
  * </ul>
  *
  * @see logmodel.LogmodelPackage#getField()
@@ -373,5 +375,27 @@ public interface Field extends namedelement {
 	 * @generated
 	 */
 	void setType(FieldTypes value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Business Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Business Key</em>' attribute.
+	 * @see #setIsBusinessKey(boolean)
+	 * @see logmodel.LogmodelPackage#getField_IsBusinessKey()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsBusinessKey();
+
+	/**
+	 * Sets the value of the '{@link logmodel.Field#isIsBusinessKey <em>Is Business Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Business Key</em>' attribute.
+	 * @see #isIsBusinessKey()
+	 * @generated
+	 */
+	void setIsBusinessKey(boolean value);
 
 } // Field

@@ -72,7 +72,10 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 import logmodel.LogmodelFactory;
 import logmodel.LogmodelPackage;
 import ETL_MODEL.provider.LogmodelEditPlugin;
+
+
 import ETL_MODEL.presentation.LogmodelEditorPlugin;
+
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;

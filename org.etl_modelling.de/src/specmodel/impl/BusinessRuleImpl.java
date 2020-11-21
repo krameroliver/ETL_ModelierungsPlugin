@@ -8,6 +8,7 @@ import logmodel.CommonMapping;
 import logmodel.Entity;
 import logmodel.Include;
 import logmodel.Relationship;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 

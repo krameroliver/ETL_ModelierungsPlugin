@@ -3,9 +3,12 @@
 package specmodel;
 
 import ETL_MODEL.namedelement;
+
 import logmodel.Entity;
 import logmodel.Relationship;
+
 import org.eclipse.emf.common.util.EList;
+
 import type_enum.JoinTypes;
 
 /**

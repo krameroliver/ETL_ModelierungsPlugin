@@ -64,7 +64,6 @@ public interface Type_enumPackage extends EPackage {
 	 */
 	int FIELD_TYPES = 0;
 
-
 	/**
 	 * The meta object id for the '{@link type_enum.JoinTypes <em>Join Types</em>}' enum.
 	 * <!-- begin-user-doc -->
@@ -128,6 +127,7 @@ public interface Type_enumPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FIELD_TYPES = eINSTANCE.getFieldTypes();
+
 		/**
 		 * The meta object literal for the '{@link type_enum.JoinTypes <em>Join Types</em>}' enum.
 		 * <!-- begin-user-doc -->

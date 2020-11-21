@@ -36,7 +36,9 @@ public enum REPRESENTATIONS implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DATAVAULT(1, "DATAVAULT", "DATAVAULT"), /**
+	DATAVAULT(1, "DATAVAULT", "DATAVAULT"),
+
+	/**
 	 * The '<em><b>Third NF</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -28,9 +28,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import package_enums.Package_enumsPackage;
 
 import package_enums.impl.Package_enumsPackageImpl;
+
 import specmodel.SpecmodelPackage;
+
 import specmodel.impl.SpecmodelPackageImpl;
+
 import type_enum.Type_enumPackage;
+
 import type_enum.impl.Type_enumPackageImpl;
 
 /**
@@ -428,6 +432,16 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getField_IsBusinessKey() {
+		return (EAttribute)fieldEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRelationship() {
 		return relationshipEClass;
 	}
@@ -767,6 +781,7 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		createEAttribute(fieldEClass, FIELD__TABLE_ONLY);
 		createEAttribute(fieldEClass, FIELD__IS_FAST_CHANGING);
 		createEAttribute(fieldEClass, FIELD__TYPE);
+		createEAttribute(fieldEClass, FIELD__IS_BUSINESS_KEY);
 
 		relationshipEClass = createEClass(RELATIONSHIP);
 		createEReference(relationshipEClass, RELATIONSHIP__FROM_ENTITY);
@@ -873,6 +888,7 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		initEAttribute(getField_TableOnly(), ecorePackage.getEBoolean(), "tableOnly", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getField_IsFastChanging(), ecorePackage.getEBoolean(), "isFastChanging", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getField_Type(), theType_enumPackage.getFieldTypes(), "type", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getField_IsBusinessKey(), ecorePackage.getEBoolean(), "isBusinessKey", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelationship_FromEntity(), this.getEntity(), null, "fromEntity", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

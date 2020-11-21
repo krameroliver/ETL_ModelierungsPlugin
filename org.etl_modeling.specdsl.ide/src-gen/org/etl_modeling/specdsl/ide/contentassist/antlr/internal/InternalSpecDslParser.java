@@ -5580,7 +5580,7 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             // InternalSpecDsl.g:1783:1: ( rule__Source__Group__11__Impl rule__Source__Group__12 )
             // InternalSpecDsl.g:1784:2: rule__Source__Group__11__Impl rule__Source__Group__12
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_24);
             rule__Source__Group__11__Impl();
 
             state._fsp--;
@@ -5609,27 +5609,38 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Source__Group__11__Impl"
-    // InternalSpecDsl.g:1791:1: rule__Source__Group__11__Impl : ( ( rule__Source__Group_11__0 ) ) ;
+    // InternalSpecDsl.g:1791:1: rule__Source__Group__11__Impl : ( ( rule__Source__Group_11__0 )? ) ;
     public final void rule__Source__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSpecDsl.g:1795:1: ( ( ( rule__Source__Group_11__0 ) ) )
-            // InternalSpecDsl.g:1796:1: ( ( rule__Source__Group_11__0 ) )
+            // InternalSpecDsl.g:1795:1: ( ( ( rule__Source__Group_11__0 )? ) )
+            // InternalSpecDsl.g:1796:1: ( ( rule__Source__Group_11__0 )? )
             {
-            // InternalSpecDsl.g:1796:1: ( ( rule__Source__Group_11__0 ) )
-            // InternalSpecDsl.g:1797:2: ( rule__Source__Group_11__0 )
+            // InternalSpecDsl.g:1796:1: ( ( rule__Source__Group_11__0 )? )
+            // InternalSpecDsl.g:1797:2: ( rule__Source__Group_11__0 )?
             {
              before(grammarAccess.getSourceAccess().getGroup_11()); 
-            // InternalSpecDsl.g:1798:2: ( rule__Source__Group_11__0 )
-            // InternalSpecDsl.g:1798:3: rule__Source__Group_11__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Source__Group_11__0();
+            // InternalSpecDsl.g:1798:2: ( rule__Source__Group_11__0 )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA20_0==42) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // InternalSpecDsl.g:1798:3: rule__Source__Group_11__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Source__Group_11__0();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -5703,17 +5714,17 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSourceAccess().getGroup_12()); 
             // InternalSpecDsl.g:1824:2: ( rule__Source__Group_12__0 )*
-            loop20:
+            loop21:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( (LA20_0==34) ) {
-                    alt20=1;
+                if ( (LA21_0==34) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt21) {
             	case 1 :
             	    // InternalSpecDsl.g:1824:3: rule__Source__Group_12__0
             	    {
@@ -5727,7 +5738,7 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop21;
                 }
             } while (true);
 
@@ -6276,17 +6287,17 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSourceAccess().getGroup_6_2_1()); 
             // InternalSpecDsl.g:2014:2: ( rule__Source__Group_6_2_1__0 )*
-            loop21:
+            loop22:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA21_0==37) ) {
-                    alt21=1;
+                if ( (LA22_0==37) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt22) {
             	case 1 :
             	    // InternalSpecDsl.g:2014:3: rule__Source__Group_6_2_1__0
             	    {
@@ -6300,7 +6311,7 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop22;
                 }
             } while (true);
 
@@ -7299,17 +7310,17 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSourceAccess().getGroup_9_2_1()); 
             // InternalSpecDsl.g:2364:2: ( rule__Source__Group_9_2_1__0 )*
-            loop22:
+            loop23:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA22_0==37) ) {
-                    alt22=1;
+                if ( (LA23_0==37) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt23) {
             	case 1 :
             	    // InternalSpecDsl.g:2364:3: rule__Source__Group_9_2_1__0
             	    {
@@ -7323,7 +7334,7 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop23;
                 }
             } while (true);
 
@@ -7942,17 +7953,17 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getSourceAccess().getGroup_10_2_1()); 
             // InternalSpecDsl.g:2580:2: ( rule__Source__Group_10_2_1__0 )*
-            loop23:
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA23_0==37) ) {
-                    alt23=1;
+                if ( (LA24_0==37) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
             	    // InternalSpecDsl.g:2580:3: rule__Source__Group_10_2_1__0
             	    {
@@ -7966,7 +7977,7 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -9906,7 +9917,7 @@ public class InternalSpecDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x00003FD100000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x00003FD500000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000002001000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000002000000002L});

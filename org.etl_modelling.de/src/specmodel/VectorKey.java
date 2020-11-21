@@ -3,6 +3,7 @@
 package specmodel;
 
 import logmodel.Field;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

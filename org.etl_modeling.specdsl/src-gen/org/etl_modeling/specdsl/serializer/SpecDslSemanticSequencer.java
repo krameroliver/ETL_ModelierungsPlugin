@@ -130,7 +130,7 @@ public class SpecDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         joinComment=EString? 
 	 *         (parentJoinFields+=JoinField parentJoinFields+=JoinField*)? 
 	 *         (childJoinField+=JoinField childJoinField+=JoinField*)? 
-	 *         JoinType=JoinType 
+	 *         JoinType=JoinType? 
 	 *         childSources+=Source*
 	 *     )
 	 */
