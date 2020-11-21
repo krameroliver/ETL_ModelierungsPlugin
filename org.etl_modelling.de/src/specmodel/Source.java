@@ -2,11 +2,11 @@
  */
 package specmodel;
 
+import ETL_MODEL.namedelement;
 import logmodel.Entity;
 import logmodel.Relationship;
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import type_enum.JoinTypes;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,14 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link specmodel.Source#getSourceBusinessRule <em>Source Business Rule</em>}</li>
  *   <li>{@link specmodel.Source#getSourceSpecification <em>Source Specification</em>}</li>
  *   <li>{@link specmodel.Source#getParentSource <em>Parent Source</em>}</li>
  *   <li>{@link specmodel.Source#getChildSources <em>Child Sources</em>}</li>
  *   <li>{@link specmodel.Source#getSpecification <em>Specification</em>}</li>
  *   <li>{@link specmodel.Source#getParentJoinFields <em>Parent Join Fields</em>}</li>
  *   <li>{@link specmodel.Source#getChildJoinField <em>Child Join Field</em>}</li>
- *   <li>{@link specmodel.Source#getReadEntitySpecification <em>Read Entity Specification</em>}</li>
  *   <li>{@link specmodel.Source#getFilters <em>Filters</em>}</li>
  *   <li>{@link specmodel.Source#getVectorkeys <em>Vectorkeys</em>}</li>
  *   <li>{@link specmodel.Source#getSourceEntity <em>Source Entity</em>}</li>
@@ -37,35 +35,15 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link specmodel.Source#getRelationshipAlias <em>Relationship Alias</em>}</li>
  *   <li>{@link specmodel.Source#getSourceReleationship <em>Source Releationship</em>}</li>
  *   <li>{@link specmodel.Source#getJoinEntity <em>Join Entity</em>}</li>
+ *   <li>{@link specmodel.Source#getBusinessrule <em>Businessrule</em>}</li>
+ *   <li>{@link specmodel.Source#getJoinType <em>Join Type</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getSource()
  * @model
  * @generated
  */
-public interface Source extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Source Business Rule</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Business Rule</em>' reference.
-	 * @see #setSourceBusinessRule(BusinessRule)
-	 * @see specmodel.SpecmodelPackage#getSource_SourceBusinessRule()
-	 * @model
-	 * @generated
-	 */
-	BusinessRule getSourceBusinessRule();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getSourceBusinessRule <em>Source Business Rule</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Business Rule</em>' reference.
-	 * @see #getSourceBusinessRule()
-	 * @generated
-	 */
-	void setSourceBusinessRule(BusinessRule value);
-
+public interface Source extends namedelement {
 	/**
 	 * Returns the value of the '<em><b>Source Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -177,30 +155,6 @@ public interface Source extends EObject {
 	 * @generated
 	 */
 	EList<JoinField> getChildJoinField();
-
-	/**
-	 * Returns the value of the '<em><b>Read Entity Specification</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link specmodel.ReadEntitySpecification#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Read Entity Specification</em>' containment reference.
-	 * @see #setReadEntitySpecification(ReadEntitySpecification)
-	 * @see specmodel.SpecmodelPackage#getSource_ReadEntitySpecification()
-	 * @see specmodel.ReadEntitySpecification#getSource
-	 * @model opposite="source" containment="true"
-	 * @generated
-	 */
-	ReadEntitySpecification getReadEntitySpecification();
-
-	/**
-	 * Sets the value of the '{@link specmodel.Source#getReadEntitySpecification <em>Read Entity Specification</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Read Entity Specification</em>' containment reference.
-	 * @see #getReadEntitySpecification()
-	 * @generated
-	 */
-	void setReadEntitySpecification(ReadEntitySpecification value);
 
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
@@ -447,5 +401,54 @@ public interface Source extends EObject {
 	 * @generated
 	 */
 	void setJoinEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Businessrule</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link specmodel.BusinessRule#getSources <em>Sources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Businessrule</em>' container reference.
+	 * @see #setBusinessrule(BusinessRule)
+	 * @see specmodel.SpecmodelPackage#getSource_Businessrule()
+	 * @see specmodel.BusinessRule#getSources
+	 * @model opposite="sources" transient="false"
+	 * @generated
+	 */
+	BusinessRule getBusinessrule();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getBusinessrule <em>Businessrule</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Businessrule</em>' container reference.
+	 * @see #getBusinessrule()
+	 * @generated
+	 */
+	void setBusinessrule(BusinessRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Join Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link type_enum.JoinTypes}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Join Type</em>' attribute.
+	 * @see type_enum.JoinTypes
+	 * @see #setJoinType(JoinTypes)
+	 * @see specmodel.SpecmodelPackage#getSource_JoinType()
+	 * @model
+	 * @generated
+	 */
+	JoinTypes getJoinType();
+
+	/**
+	 * Sets the value of the '{@link specmodel.Source#getJoinType <em>Join Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Join Type</em>' attribute.
+	 * @see type_enum.JoinTypes
+	 * @see #getJoinType()
+	 * @generated
+	 */
+	void setJoinType(JoinTypes value);
 
 } // Source

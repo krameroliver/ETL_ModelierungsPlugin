@@ -72,6 +72,8 @@ public class Type_enumFactoryImpl extends EFactoryImpl implements Type_enumFacto
 		switch (eDataType.getClassifierID()) {
 			case Type_enumPackage.FIELD_TYPES:
 				return createFieldTypesFromString(eDataType, initialValue);
+			case Type_enumPackage.JOIN_TYPES:
+				return createJoinTypesFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -87,6 +89,8 @@ public class Type_enumFactoryImpl extends EFactoryImpl implements Type_enumFacto
 		switch (eDataType.getClassifierID()) {
 			case Type_enumPackage.FIELD_TYPES:
 				return convertFieldTypesToString(eDataType, instanceValue);
+			case Type_enumPackage.JOIN_TYPES:
+				return convertJoinTypesToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -109,6 +113,26 @@ public class Type_enumFactoryImpl extends EFactoryImpl implements Type_enumFacto
 	 * @generated
 	 */
 	public String convertFieldTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JoinTypes createJoinTypesFromString(EDataType eDataType, String initialValue) {
+		JoinTypes result = JoinTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertJoinTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

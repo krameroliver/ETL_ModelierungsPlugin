@@ -22,6 +22,7 @@ import package_enums.impl.Package_enumsPackageImpl;
 import specmodel.SpecmodelPackage;
 import specmodel.impl.SpecmodelPackageImpl;
 import type_enum.FieldTypes;
+import type_enum.JoinTypes;
 import type_enum.Type_enumFactory;
 import type_enum.Type_enumPackage;
 
@@ -38,6 +39,13 @@ public class Type_enumPackageImpl extends EPackageImpl implements Type_enumPacka
 	 * @generated
 	 */
 	private EEnum fieldTypesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum joinTypesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -134,6 +142,16 @@ public class Type_enumPackageImpl extends EPackageImpl implements Type_enumPacka
 	 * @generated
 	 */
 	@Override
+	public EEnum getJoinTypes() {
+		return joinTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Type_enumFactory getType_enumFactory() {
 		return (Type_enumFactory)getEFactoryInstance();
 	}
@@ -158,6 +176,7 @@ public class Type_enumPackageImpl extends EPackageImpl implements Type_enumPacka
 
 		// Create enums
 		fieldTypesEEnum = createEEnum(FIELD_TYPES);
+		joinTypesEEnum = createEEnum(JOIN_TYPES);
 	}
 
 	/**
@@ -192,6 +211,12 @@ public class Type_enumPackageImpl extends EPackageImpl implements Type_enumPacka
 		addEEnumLiteral(fieldTypesEEnum, FieldTypes.TIME_STAMP);
 		addEEnumLiteral(fieldTypesEEnum, FieldTypes.HK);
 		addEEnumLiteral(fieldTypesEEnum, FieldTypes.TRUE_FALSE);
+
+		initEEnum(joinTypesEEnum, JoinTypes.class, "JoinTypes");
+		addEEnumLiteral(joinTypesEEnum, JoinTypes.LEFT);
+		addEEnumLiteral(joinTypesEEnum, JoinTypes.RIGHT);
+		addEEnumLiteral(joinTypesEEnum, JoinTypes.INNER);
+		addEEnumLiteral(joinTypesEEnum, JoinTypes.FULL_OUTER);
 
 		// Create resource
 		createResource(eNS_URI);

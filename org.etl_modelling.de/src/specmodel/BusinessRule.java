@@ -5,6 +5,7 @@ package specmodel;
 import ETL_MODEL.namedelement;
 import logmodel.CommonMapping;
 import logmodel.Entity;
+import logmodel.Include;
 import logmodel.Relationship;
 import org.eclipse.emf.common.util.EList;
 
@@ -31,6 +32,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link specmodel.BusinessRule#getLookupEntities <em>Lookup Entities</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}</li>
  *   <li>{@link specmodel.BusinessRule#getTargetRelationship <em>Target Relationship</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getTargetInclude <em>Target Include</em>}</li>
+ *   <li>{@link specmodel.BusinessRule#getSources <em>Sources</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getBusinessRule()
@@ -350,5 +353,41 @@ public interface BusinessRule extends namedelement {
 	 * @generated
 	 */
 	void setTargetRelationship(Relationship value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Include</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Include</em>' reference.
+	 * @see #setTargetInclude(Include)
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_TargetInclude()
+	 * @model
+	 * @generated
+	 */
+	Include getTargetInclude();
+
+	/**
+	 * Sets the value of the '{@link specmodel.BusinessRule#getTargetInclude <em>Target Include</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Include</em>' reference.
+	 * @see #getTargetInclude()
+	 * @generated
+	 */
+	void setTargetInclude(Include value);
+
+	/**
+	 * Returns the value of the '<em><b>Sources</b></em>' containment reference list.
+	 * The list contents are of type {@link specmodel.Source}.
+	 * It is bidirectional and its opposite is '{@link specmodel.Source#getBusinessrule <em>Businessrule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sources</em>' containment reference list.
+	 * @see specmodel.SpecmodelPackage#getBusinessRule_Sources()
+	 * @see specmodel.Source#getBusinessrule
+	 * @model opposite="businessrule" containment="true"
+	 * @generated
+	 */
+	EList<Source> getSources();
 
 } // BusinessRule

@@ -2,6 +2,7 @@
  */
 package specmodel;
 
+import logmodel.Field;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link specmodel.VectorKey#getBusinessrule <em>Businessrule</em>}</li>
  *   <li>{@link specmodel.VectorKey#getSource <em>Source</em>}</li>
+ *   <li>{@link specmodel.VectorKey#getVkField <em>Vk Field</em>}</li>
  * </ul>
  *
  * @see specmodel.SpecmodelPackage#getVectorKey()
@@ -69,5 +71,27 @@ public interface VectorKey extends EObject {
 	 * @generated
 	 */
 	void setSource(Source value);
+
+	/**
+	 * Returns the value of the '<em><b>Vk Field</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vk Field</em>' reference.
+	 * @see #setVkField(Field)
+	 * @see specmodel.SpecmodelPackage#getVectorKey_VkField()
+	 * @model
+	 * @generated
+	 */
+	Field getVkField();
+
+	/**
+	 * Sets the value of the '{@link specmodel.VectorKey#getVkField <em>Vk Field</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Vk Field</em>' reference.
+	 * @see #getVkField()
+	 * @generated
+	 */
+	void setVkField(Field value);
 
 } // VectorKey

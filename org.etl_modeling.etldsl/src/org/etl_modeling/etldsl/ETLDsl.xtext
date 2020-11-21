@@ -16,7 +16,19 @@ logpackage returns logpackage:
 		('HISTORISATION' HISTORISATION=HISTORISATIONTYPE)?
 		('REPRESENTATION' REPRESENTATION=REPRESENTATIONS)?
 		( (commonmapping+=CommonMapping | entity+=Entity) ( "," (commonmapping+=CommonMapping | entity+=Entity))*  )?
-	;
+;
+
+QualifiedName:
+    ID ('.' ID)*;
+    
+EInt returns ecore::EInt:
+	'-'? INT;
+
+EBoolean returns ecore::EBoolean:
+	'true' | 'false';
+
+enum  ft returns type_enums::FieldTypes:
+	String = 'String' | Date = 'Date' | Decimal = 'Decimal' | HK = 'HK' | Int = 'Int' | TimeStamp = 'TimeStamp' | TrueFalse = 'TrueFalse';
 
 
 
@@ -48,7 +60,8 @@ Entity returns Entity:
 	'Entity' name=ID
 	'{'
 		('entityFields' '{' entityField+=Field ( entityField+=Field)* '}' )?
-		(('Includes' '{'include+=Include("," include+=Include)* '}')? |	('Relationships' '{'relationships+=Relationship("," relationships+=Relationship)* '}')?	)
+		('Includes' '{'include+=Include("," include+=Include)* '}')? 	
+		('Relationships' '{'relationships+=Relationship("," relationships+=Relationship)* '}')?
 	'}';
 
 Field returns Field:
@@ -73,28 +86,23 @@ Field returns Field:
 
 
 
-QualifiedName:
-    ID ('.' ID)*;
-    
-EInt returns ecore::EInt:
-	'-'? INT;
-
-EBoolean returns ecore::EBoolean:
-	'true' | 'false';
-
-enum  ft returns type_enums::FieldTypes:
-	String = 'String' | Date = 'Date' | Decimal = 'Decimal' | HK = 'HK' | Int = 'Int' | TimeStamp = 'TimeStamp' | TrueFalse = 'TrueFalse';
 	
 Include returns Include: 
-name=STRING
-('{' includeFields+=Field ( "," includeFields+=Field)* '}' )?;
+'Include' name=EString
+('{'
+	('IncludeFields' '{' includeFields+=[Field|QualifiedName] ( "," includeFields+=[Field|QualifiedName])* '}' )?
+	('IdentifyingFields:{' identifyingfields+=[Field|QualifiedName](','identifyingfields+=[Field|QualifiedName])* '}')?
+'}');
 
 
 
 Relationship returns Relationship:
 	{Relationship}
-	name=ID
+	'Relationship' name=EString
+	'{'
     'ToEntity: ' toEntity=[Entity|QualifiedName]
-	('DescribingFields:{' describingFieldsRel+=[Field|QualifiedName] '}')? 
-	('IdentifyingFields:{' identifiyingFieldsRel+=[Field|QualifiedName] '}')?
+    
+	('DescribingFields:{' describingFieldsRel+=[Field|QualifiedName](',' describingFieldsRel+=[Field|QualifiedName])* '}')? 
+	('IdentifyingFields:{' identifiyingFieldsRel+=[Field|QualifiedName](','identifiyingFieldsRel+=[Field|QualifiedName])* '}')?
+	'}'
 	;

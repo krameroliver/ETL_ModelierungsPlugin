@@ -251,7 +251,7 @@ public interface LogmodelPackage extends EPackage {
 	int FIELD__ENTITY = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Include</b></em>' container reference.
+	 * The feature id for the '<em><b>Include</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -542,7 +542,7 @@ public interface LogmodelPackage extends EPackage {
 	int INCLUDE__NAME = ETL_MODELPackage.NAMEDELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Include Fields</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Include Fields</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -551,7 +551,7 @@ public interface LogmodelPackage extends EPackage {
 	int INCLUDE__INCLUDE_FIELDS = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Identifyingfields</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Identifyingfields</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -923,10 +923,10 @@ public interface LogmodelPackage extends EPackage {
 	EReference getField_Entity();
 
 	/**
-	 * Returns the meta object for the container reference '{@link logmodel.Field#getInclude <em>Include</em>}'.
+	 * Returns the meta object for the reference '{@link logmodel.Field#getInclude <em>Include</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Include</em>'.
+	 * @return the meta object for the reference '<em>Include</em>'.
 	 * @see logmodel.Field#getInclude()
 	 * @see #getField()
 	 * @generated
@@ -1184,10 +1184,10 @@ public interface LogmodelPackage extends EPackage {
 	EClass getInclude();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link logmodel.Include#getIncludeFields <em>Include Fields</em>}'.
+	 * Returns the meta object for the reference list '{@link logmodel.Include#getIncludeFields <em>Include Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Include Fields</em>'.
+	 * @return the meta object for the reference list '<em>Include Fields</em>'.
 	 * @see logmodel.Include#getIncludeFields()
 	 * @see #getInclude()
 	 * @generated
@@ -1195,10 +1195,10 @@ public interface LogmodelPackage extends EPackage {
 	EReference getInclude_IncludeFields();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link logmodel.Include#getIdentifyingfields <em>Identifyingfields</em>}'.
+	 * Returns the meta object for the reference list '{@link logmodel.Include#getIdentifyingfields <em>Identifyingfields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Identifyingfields</em>'.
+	 * @return the meta object for the reference list '<em>Identifyingfields</em>'.
 	 * @see logmodel.Include#getIdentifyingfields()
 	 * @see #getInclude()
 	 * @generated
@@ -1499,7 +1499,7 @@ public interface LogmodelPackage extends EPackage {
 		EReference FIELD__ENTITY = eINSTANCE.getField_Entity();
 
 		/**
-		 * The meta object literal for the '<em><b>Include</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Include</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1697,7 +1697,7 @@ public interface LogmodelPackage extends EPackage {
 		EClass INCLUDE = eINSTANCE.getInclude();
 
 		/**
-		 * The meta object literal for the '<em><b>Include Fields</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Include Fields</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1705,7 +1705,7 @@ public interface LogmodelPackage extends EPackage {
 		EReference INCLUDE__INCLUDE_FIELDS = eINSTANCE.getInclude_IncludeFields();
 
 		/**
-		 * The meta object literal for the '<em><b>Identifyingfields</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Identifyingfields</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

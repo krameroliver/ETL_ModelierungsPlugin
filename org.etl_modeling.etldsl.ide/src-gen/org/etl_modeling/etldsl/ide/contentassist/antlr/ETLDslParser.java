@@ -34,7 +34,6 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLogpackageAccess().getAlternatives_7_0(), "rule__Logpackage__Alternatives_7_0");
 			builder.put(grammarAccess.getLogpackageAccess().getAlternatives_7_1_1(), "rule__Logpackage__Alternatives_7_1_1");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getEntityAccess().getAlternatives_5(), "rule__Entity__Alternatives_5");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getLAYERTYPEAccess().getAlternatives(), "rule__LAYERTYPE__Alternatives");
 			builder.put(grammarAccess.getHISTORISATIONTYPEAccess().getAlternatives(), "rule__HISTORISATIONTYPE__Alternatives");
@@ -54,10 +53,10 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCommonMappingAccess().getGroup_4_3(), "rule__CommonMapping__Group_4_3__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup_4(), "rule__Entity__Group_4__0");
-			builder.put(grammarAccess.getEntityAccess().getGroup_5_0(), "rule__Entity__Group_5_0__0");
-			builder.put(grammarAccess.getEntityAccess().getGroup_5_0_3(), "rule__Entity__Group_5_0_3__0");
-			builder.put(grammarAccess.getEntityAccess().getGroup_5_1(), "rule__Entity__Group_5_1__0");
-			builder.put(grammarAccess.getEntityAccess().getGroup_5_1_3(), "rule__Entity__Group_5_1_3__0");
+			builder.put(grammarAccess.getEntityAccess().getGroup_5(), "rule__Entity__Group_5__0");
+			builder.put(grammarAccess.getEntityAccess().getGroup_5_3(), "rule__Entity__Group_5_3__0");
+			builder.put(grammarAccess.getEntityAccess().getGroup_6(), "rule__Entity__Group_6__0");
+			builder.put(grammarAccess.getEntityAccess().getGroup_6_3(), "rule__Entity__Group_6_3__0");
 			builder.put(grammarAccess.getFieldAccess().getGroup(), "rule__Field__Group__0");
 			builder.put(grammarAccess.getFieldAccess().getGroup_4(), "rule__Field__Group_4__0");
 			builder.put(grammarAccess.getFieldAccess().getGroup_5(), "rule__Field__Group_5__0");
@@ -76,11 +75,16 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getIncludeAccess().getGroup(), "rule__Include__Group__0");
-			builder.put(grammarAccess.getIncludeAccess().getGroup_1(), "rule__Include__Group_1__0");
-			builder.put(grammarAccess.getIncludeAccess().getGroup_1_2(), "rule__Include__Group_1_2__0");
+			builder.put(grammarAccess.getIncludeAccess().getGroup_2(), "rule__Include__Group_2__0");
+			builder.put(grammarAccess.getIncludeAccess().getGroup_2_1(), "rule__Include__Group_2_1__0");
+			builder.put(grammarAccess.getIncludeAccess().getGroup_2_1_3(), "rule__Include__Group_2_1_3__0");
+			builder.put(grammarAccess.getIncludeAccess().getGroup_2_2(), "rule__Include__Group_2_2__0");
+			builder.put(grammarAccess.getIncludeAccess().getGroup_2_2_2(), "rule__Include__Group_2_2_2__0");
 			builder.put(grammarAccess.getRelationshipAccess().getGroup(), "rule__Relationship__Group__0");
 			builder.put(grammarAccess.getRelationshipAccess().getGroup_6(), "rule__Relationship__Group_6__0");
+			builder.put(grammarAccess.getRelationshipAccess().getGroup_6_2(), "rule__Relationship__Group_6_2__0");
 			builder.put(grammarAccess.getRelationshipAccess().getGroup_7(), "rule__Relationship__Group_7__0");
+			builder.put(grammarAccess.getRelationshipAccess().getGroup_7_2(), "rule__Relationship__Group_7_2__0");
 			builder.put(grammarAccess.getLogpackageAccess().getNameAssignment_2(), "rule__Logpackage__NameAssignment_2");
 			builder.put(grammarAccess.getLogpackageAccess().getLAYERAssignment_3_1(), "rule__Logpackage__LAYERAssignment_3_1");
 			builder.put(grammarAccess.getLogpackageAccess().getLAYER_TYPEAssignment_4_1(), "rule__Logpackage__LAYER_TYPEAssignment_4_1");
@@ -98,10 +102,10 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntityAccess().getNameAssignment_2(), "rule__Entity__NameAssignment_2");
 			builder.put(grammarAccess.getEntityAccess().getEntityFieldAssignment_4_2(), "rule__Entity__EntityFieldAssignment_4_2");
 			builder.put(grammarAccess.getEntityAccess().getEntityFieldAssignment_4_3(), "rule__Entity__EntityFieldAssignment_4_3");
-			builder.put(grammarAccess.getEntityAccess().getIncludeAssignment_5_0_2(), "rule__Entity__IncludeAssignment_5_0_2");
-			builder.put(grammarAccess.getEntityAccess().getIncludeAssignment_5_0_3_1(), "rule__Entity__IncludeAssignment_5_0_3_1");
-			builder.put(grammarAccess.getEntityAccess().getRelationshipsAssignment_5_1_2(), "rule__Entity__RelationshipsAssignment_5_1_2");
-			builder.put(grammarAccess.getEntityAccess().getRelationshipsAssignment_5_1_3_1(), "rule__Entity__RelationshipsAssignment_5_1_3_1");
+			builder.put(grammarAccess.getEntityAccess().getIncludeAssignment_5_2(), "rule__Entity__IncludeAssignment_5_2");
+			builder.put(grammarAccess.getEntityAccess().getIncludeAssignment_5_3_1(), "rule__Entity__IncludeAssignment_5_3_1");
+			builder.put(grammarAccess.getEntityAccess().getRelationshipsAssignment_6_2(), "rule__Entity__RelationshipsAssignment_6_2");
+			builder.put(grammarAccess.getEntityAccess().getRelationshipsAssignment_6_3_1(), "rule__Entity__RelationshipsAssignment_6_3_1");
 			builder.put(grammarAccess.getFieldAccess().getNameAssignment_2(), "rule__Field__NameAssignment_2");
 			builder.put(grammarAccess.getFieldAccess().getTypeAssignment_4_1(), "rule__Field__TypeAssignment_4_1");
 			builder.put(grammarAccess.getFieldAccess().getLengthAssignment_5_1(), "rule__Field__LengthAssignment_5_1");
@@ -116,14 +120,17 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFieldAccess().getInterfaceOnlyAssignment_14_1(), "rule__Field__InterfaceOnlyAssignment_14_1");
 			builder.put(grammarAccess.getFieldAccess().getTableOnlyAssignment_15_1(), "rule__Field__TableOnlyAssignment_15_1");
 			builder.put(grammarAccess.getFieldAccess().getIsFastChangingAssignment_16_1(), "rule__Field__IsFastChangingAssignment_16_1");
-			builder.put(grammarAccess.getIncludeAccess().getNameAssignment_0(), "rule__Include__NameAssignment_0");
-			builder.put(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_1_1(), "rule__Include__IncludeFieldsAssignment_1_1");
-			builder.put(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_1_2_1(), "rule__Include__IncludeFieldsAssignment_1_2_1");
-			builder.put(grammarAccess.getRelationshipAccess().getNameAssignment_1(), "rule__Relationship__NameAssignment_1");
-			builder.put(grammarAccess.getRelationshipAccess().getFromEntityAssignment_3(), "rule__Relationship__FromEntityAssignment_3");
+			builder.put(grammarAccess.getIncludeAccess().getNameAssignment_1(), "rule__Include__NameAssignment_1");
+			builder.put(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_2_1_2(), "rule__Include__IncludeFieldsAssignment_2_1_2");
+			builder.put(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_2_1_3_1(), "rule__Include__IncludeFieldsAssignment_2_1_3_1");
+			builder.put(grammarAccess.getIncludeAccess().getIdentifyingfieldsAssignment_2_2_1(), "rule__Include__IdentifyingfieldsAssignment_2_2_1");
+			builder.put(grammarAccess.getIncludeAccess().getIdentifyingfieldsAssignment_2_2_2_1(), "rule__Include__IdentifyingfieldsAssignment_2_2_2_1");
+			builder.put(grammarAccess.getRelationshipAccess().getNameAssignment_2(), "rule__Relationship__NameAssignment_2");
 			builder.put(grammarAccess.getRelationshipAccess().getToEntityAssignment_5(), "rule__Relationship__ToEntityAssignment_5");
 			builder.put(grammarAccess.getRelationshipAccess().getDescribingFieldsRelAssignment_6_1(), "rule__Relationship__DescribingFieldsRelAssignment_6_1");
+			builder.put(grammarAccess.getRelationshipAccess().getDescribingFieldsRelAssignment_6_2_1(), "rule__Relationship__DescribingFieldsRelAssignment_6_2_1");
 			builder.put(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelAssignment_7_1(), "rule__Relationship__IdentifiyingFieldsRelAssignment_7_1");
+			builder.put(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelAssignment_7_2_1(), "rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1");
 		}
 	}
 	

@@ -66,6 +66,17 @@ public interface Type_enumPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link type_enum.JoinTypes <em>Join Types</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see type_enum.JoinTypes
+	 * @see type_enum.impl.Type_enumPackageImpl#getJoinTypes()
+	 * @generated
+	 */
+	int JOIN_TYPES = 1;
+
+
+	/**
 	 * Returns the meta object for enum '{@link type_enum.FieldTypes <em>Field Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +85,16 @@ public interface Type_enumPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getFieldTypes();
+
+	/**
+	 * Returns the meta object for enum '{@link type_enum.JoinTypes <em>Join Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Join Types</em>'.
+	 * @see type_enum.JoinTypes
+	 * @generated
+	 */
+	EEnum getJoinTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -107,6 +128,15 @@ public interface Type_enumPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FIELD_TYPES = eINSTANCE.getFieldTypes();
+		/**
+		 * The meta object literal for the '{@link type_enum.JoinTypes <em>Join Types</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see type_enum.JoinTypes
+		 * @see type_enum.impl.Type_enumPackageImpl#getJoinTypes()
+		 * @generated
+		 */
+		EEnum JOIN_TYPES = eINSTANCE.getJoinTypes();
 
 	}
 

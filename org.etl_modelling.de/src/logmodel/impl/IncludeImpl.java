@@ -19,9 +19,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -63,7 +62,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIncludeFields() <em>Include Fields</em>}' containment reference list.
+	 * The cached value of the '{@link #getIncludeFields() <em>Include Fields</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIncludeFields()
@@ -73,7 +72,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	protected EList<Field> includeFields;
 
 	/**
-	 * The cached value of the '{@link #getIdentifyingfields() <em>Identifyingfields</em>}' containment reference list.
+	 * The cached value of the '{@link #getIdentifyingfields() <em>Identifyingfields</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIdentifyingfields()
@@ -132,7 +131,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	@Override
 	public EList<Field> getIncludeFields() {
 		if (includeFields == null) {
-			includeFields = new EObjectContainmentWithInverseEList<Field>(Field.class, this, LogmodelPackage.INCLUDE__INCLUDE_FIELDS, LogmodelPackage.FIELD__INCLUDE);
+			includeFields = new EObjectWithInverseResolvingEList<Field>(Field.class, this, LogmodelPackage.INCLUDE__INCLUDE_FIELDS, LogmodelPackage.FIELD__INCLUDE);
 		}
 		return includeFields;
 	}
@@ -145,7 +144,7 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	@Override
 	public EList<Field> getIdentifyingfields() {
 		if (identifyingfields == null) {
-			identifyingfields = new EObjectContainmentEList<Field>(Field.class, this, LogmodelPackage.INCLUDE__IDENTIFYINGFIELDS);
+			identifyingfields = new EObjectResolvingEList<Field>(Field.class, this, LogmodelPackage.INCLUDE__IDENTIFYINGFIELDS);
 		}
 		return identifyingfields;
 	}
@@ -222,8 +221,6 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 		switch (featureID) {
 			case LogmodelPackage.INCLUDE__INCLUDE_FIELDS:
 				return ((InternalEList<?>)getIncludeFields()).basicRemove(otherEnd, msgs);
-			case LogmodelPackage.INCLUDE__IDENTIFYINGFIELDS:
-				return ((InternalEList<?>)getIdentifyingfields()).basicRemove(otherEnd, msgs);
 			case LogmodelPackage.INCLUDE__ENTITY:
 				return basicSetEntity(null, msgs);
 		}

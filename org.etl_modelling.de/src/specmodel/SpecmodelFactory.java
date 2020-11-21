@@ -40,15 +40,6 @@ public interface SpecmodelFactory extends EFactory {
 	Specification createSpecification();
 
 	/**
-	 * Returns a new object of class '<em>Read Entity Specification</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Read Entity Specification</em>'.
-	 * @generated
-	 */
-	ReadEntitySpecification createReadEntitySpecification();
-
-	/**
 	 * Returns a new object of class '<em>Join Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

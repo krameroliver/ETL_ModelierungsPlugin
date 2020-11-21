@@ -53,9 +53,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="BKDomain"/>
   <eClassifiers xsi:type="ecore:EClass" name="Include" eSuperTypes="ETL_MODEL.ecore#//namedelement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="includeFields" upperBound="-1"
-        eType="#//Field" containment="true" eOpposite="#//Field/include"/>
+        eType="#//Field" eOpposite="#//Field/include"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifyingfields" upperBound="-1"
-        eType="#//Field" containment="true"/>
+        eType="#//Field"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
         eOpposite="#//Entity/include"/>
   </eClassifiers>

@@ -81,6 +81,8 @@ public class BusinessRuleItemProvider
 			addLookupEntitiesPropertyDescriptor(object);
 			addTargetMappingOutputFieldsPropertyDescriptor(object);
 			addTargetRelationshipPropertyDescriptor(object);
+			addTargetIncludePropertyDescriptor(object);
+			addSourcesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -416,6 +418,50 @@ public class BusinessRuleItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Target Include feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetIncludePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_targetInclude_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_targetInclude_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__TARGET_INCLUDE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessRule_sources_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessRule_sources_feature", "_UI_BusinessRule_type"),
+				 SpecmodelPackage.Literals.BUSINESS_RULE__SOURCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -432,6 +478,7 @@ public class BusinessRuleItemProvider
 			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__VECTORKEYS);
 			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__PRE_FILTER);
 			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__POST_FILTER);
+			childrenFeatures.add(SpecmodelPackage.Literals.BUSINESS_RULE__SOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -496,6 +543,7 @@ public class BusinessRuleItemProvider
 			case SpecmodelPackage.BUSINESS_RULE__VECTORKEYS:
 			case SpecmodelPackage.BUSINESS_RULE__PRE_FILTER:
 			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
+			case SpecmodelPackage.BUSINESS_RULE__SOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -537,6 +585,11 @@ public class BusinessRuleItemProvider
 			(createChildParameter
 				(SpecmodelPackage.Literals.BUSINESS_RULE__POST_FILTER,
 				 SpecmodelFactory.eINSTANCE.createFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SpecmodelPackage.Literals.BUSINESS_RULE__SOURCES,
+				 SpecmodelFactory.eINSTANCE.createSource()));
 	}
 
 	/**

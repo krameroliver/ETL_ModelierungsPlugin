@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import specmodel.BusinessRule;
 import specmodel.Filter;
 import specmodel.JoinField;
-import specmodel.ReadEntitySpecification;
 import specmodel.Source;
 import specmodel.Specification;
 import specmodel.SpecmodelPackage;
 import specmodel.VectorKey;
+import type_enum.JoinTypes;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,14 +39,13 @@ import specmodel.VectorKey;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link specmodel.impl.SourceImpl#getSourceBusinessRule <em>Source Business Rule</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getSourceSpecification <em>Source Specification</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getParentSource <em>Parent Source</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getChildSources <em>Child Sources</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getSpecification <em>Specification</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getParentJoinFields <em>Parent Join Fields</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getChildJoinField <em>Child Join Field</em>}</li>
- *   <li>{@link specmodel.impl.SourceImpl#getReadEntitySpecification <em>Read Entity Specification</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getVectorkeys <em>Vectorkeys</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getSourceEntity <em>Source Entity</em>}</li>
@@ -59,20 +58,32 @@ import specmodel.VectorKey;
  *   <li>{@link specmodel.impl.SourceImpl#getRelationshipAlias <em>Relationship Alias</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getSourceReleationship <em>Source Releationship</em>}</li>
  *   <li>{@link specmodel.impl.SourceImpl#getJoinEntity <em>Join Entity</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getBusinessrule <em>Businessrule</em>}</li>
+ *   <li>{@link specmodel.impl.SourceImpl#getJoinType <em>Join Type</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	/**
-	 * The cached value of the '{@link #getSourceBusinessRule() <em>Source Business Rule</em>}' reference.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSourceBusinessRule()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected BusinessRule sourceBusinessRule;
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSourceSpecification() <em>Source Specification</em>}' reference.
@@ -113,16 +124,6 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * @ordered
 	 */
 	protected EList<JoinField> childJoinField;
-
-	/**
-	 * The cached value of the '{@link #getReadEntitySpecification() <em>Read Entity Specification</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReadEntitySpecification()
-	 * @generated
-	 * @ordered
-	 */
-	protected ReadEntitySpecification readEntitySpecification;
 
 	/**
 	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
@@ -315,6 +316,26 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	protected Entity joinEntity;
 
 	/**
+	 * The default value of the '{@link #getJoinType() <em>Join Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJoinType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final JoinTypes JOIN_TYPE_EDEFAULT = JoinTypes.LEFT;
+
+	/**
+	 * The cached value of the '{@link #getJoinType() <em>Join Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJoinType()
+	 * @generated
+	 * @ordered
+	 */
+	protected JoinTypes joinType = JOIN_TYPE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -339,25 +360,8 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * @generated
 	 */
 	@Override
-	public BusinessRule getSourceBusinessRule() {
-		if (sourceBusinessRule != null && sourceBusinessRule.eIsProxy()) {
-			InternalEObject oldSourceBusinessRule = (InternalEObject)sourceBusinessRule;
-			sourceBusinessRule = (BusinessRule)eResolveProxy(oldSourceBusinessRule);
-			if (sourceBusinessRule != oldSourceBusinessRule) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.SOURCE__SOURCE_BUSINESS_RULE, oldSourceBusinessRule, sourceBusinessRule));
-			}
-		}
-		return sourceBusinessRule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BusinessRule basicGetSourceBusinessRule() {
-		return sourceBusinessRule;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -366,11 +370,11 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * @generated
 	 */
 	@Override
-	public void setSourceBusinessRule(BusinessRule newSourceBusinessRule) {
-		BusinessRule oldSourceBusinessRule = sourceBusinessRule;
-		sourceBusinessRule = newSourceBusinessRule;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__SOURCE_BUSINESS_RULE, oldSourceBusinessRule, sourceBusinessRule));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__NAME, oldName, name));
 	}
 
 	/**
@@ -536,51 +540,6 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			childJoinField = new EObjectContainmentWithInverseEList<JoinField>(JoinField.class, this, SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD, SpecmodelPackage.JOIN_FIELD__CHILD_SOURCE);
 		}
 		return childJoinField;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ReadEntitySpecification getReadEntitySpecification() {
-		return readEntitySpecification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetReadEntitySpecification(ReadEntitySpecification newReadEntitySpecification, NotificationChain msgs) {
-		ReadEntitySpecification oldReadEntitySpecification = readEntitySpecification;
-		readEntitySpecification = newReadEntitySpecification;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, oldReadEntitySpecification, newReadEntitySpecification);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReadEntitySpecification(ReadEntitySpecification newReadEntitySpecification) {
-		if (newReadEntitySpecification != readEntitySpecification) {
-			NotificationChain msgs = null;
-			if (readEntitySpecification != null)
-				msgs = ((InternalEObject)readEntitySpecification).eInverseRemove(this, SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE, ReadEntitySpecification.class, msgs);
-			if (newReadEntitySpecification != null)
-				msgs = ((InternalEObject)newReadEntitySpecification).eInverseAdd(this, SpecmodelPackage.READ_ENTITY_SPECIFICATION__SOURCE, ReadEntitySpecification.class, msgs);
-			msgs = basicSetReadEntitySpecification(newReadEntitySpecification, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, newReadEntitySpecification, newReadEntitySpecification));
 	}
 
 	/**
@@ -895,6 +854,72 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public BusinessRule getBusinessrule() {
+		if (eContainerFeatureID() != SpecmodelPackage.SOURCE__BUSINESSRULE) return null;
+		return (BusinessRule)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBusinessrule(BusinessRule newBusinessrule, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newBusinessrule, SpecmodelPackage.SOURCE__BUSINESSRULE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBusinessrule(BusinessRule newBusinessrule) {
+		if (newBusinessrule != eInternalContainer() || (eContainerFeatureID() != SpecmodelPackage.SOURCE__BUSINESSRULE && newBusinessrule != null)) {
+			if (EcoreUtil.isAncestor(this, newBusinessrule))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newBusinessrule != null)
+				msgs = ((InternalEObject)newBusinessrule).eInverseAdd(this, SpecmodelPackage.BUSINESS_RULE__SOURCES, BusinessRule.class, msgs);
+			msgs = basicSetBusinessrule(newBusinessrule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__BUSINESSRULE, newBusinessrule, newBusinessrule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public JoinTypes getJoinType() {
+		return joinType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setJoinType(JoinTypes newJoinType) {
+		JoinTypes oldJoinType = joinType;
+		joinType = newJoinType == null ? JOIN_TYPE_EDEFAULT : newJoinType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.SOURCE__JOIN_TYPE, oldJoinType, joinType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -913,12 +938,12 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParentJoinFields()).basicAdd(otherEnd, msgs);
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildJoinField()).basicAdd(otherEnd, msgs);
-			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
-				if (readEntitySpecification != null)
-					msgs = ((InternalEObject)readEntitySpecification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION, null, msgs);
-				return basicSetReadEntitySpecification((ReadEntitySpecification)otherEnd, msgs);
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVectorkeys()).basicAdd(otherEnd, msgs);
+			case SpecmodelPackage.SOURCE__BUSINESSRULE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetBusinessrule((BusinessRule)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -941,12 +966,12 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return ((InternalEList<?>)getParentJoinFields()).basicRemove(otherEnd, msgs);
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
 				return ((InternalEList<?>)getChildJoinField()).basicRemove(otherEnd, msgs);
-			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
-				return basicSetReadEntitySpecification(null, msgs);
 			case SpecmodelPackage.SOURCE__FILTERS:
 				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 				return ((InternalEList<?>)getVectorkeys()).basicRemove(otherEnd, msgs);
+			case SpecmodelPackage.SOURCE__BUSINESSRULE:
+				return basicSetBusinessrule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -963,6 +988,8 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SOURCE__CHILD_SOURCES, Source.class, msgs);
 			case SpecmodelPackage.SOURCE__SPECIFICATION:
 				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.SPECIFICATION__PRIMARY_SOURCES, Specification.class, msgs);
+			case SpecmodelPackage.SOURCE__BUSINESSRULE:
+				return eInternalContainer().eInverseRemove(this, SpecmodelPackage.BUSINESS_RULE__SOURCES, BusinessRule.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -975,9 +1002,8 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SpecmodelPackage.SOURCE__SOURCE_BUSINESS_RULE:
-				if (resolve) return getSourceBusinessRule();
-				return basicGetSourceBusinessRule();
+			case SpecmodelPackage.SOURCE__NAME:
+				return getName();
 			case SpecmodelPackage.SOURCE__SOURCE_SPECIFICATION:
 				if (resolve) return getSourceSpecification();
 				return basicGetSourceSpecification();
@@ -991,8 +1017,6 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return getParentJoinFields();
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
 				return getChildJoinField();
-			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
-				return getReadEntitySpecification();
 			case SpecmodelPackage.SOURCE__FILTERS:
 				return getFilters();
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
@@ -1020,6 +1044,10 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
 				if (resolve) return getJoinEntity();
 				return basicGetJoinEntity();
+			case SpecmodelPackage.SOURCE__BUSINESSRULE:
+				return getBusinessrule();
+			case SpecmodelPackage.SOURCE__JOIN_TYPE:
+				return getJoinType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1033,8 +1061,8 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SpecmodelPackage.SOURCE__SOURCE_BUSINESS_RULE:
-				setSourceBusinessRule((BusinessRule)newValue);
+			case SpecmodelPackage.SOURCE__NAME:
+				setName((String)newValue);
 				return;
 			case SpecmodelPackage.SOURCE__SOURCE_SPECIFICATION:
 				setSourceSpecification((Specification)newValue);
@@ -1056,9 +1084,6 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
 				getChildJoinField().clear();
 				getChildJoinField().addAll((Collection<? extends JoinField>)newValue);
-				return;
-			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
-				setReadEntitySpecification((ReadEntitySpecification)newValue);
 				return;
 			case SpecmodelPackage.SOURCE__FILTERS:
 				getFilters().clear();
@@ -1098,6 +1123,12 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
 				setJoinEntity((Entity)newValue);
 				return;
+			case SpecmodelPackage.SOURCE__BUSINESSRULE:
+				setBusinessrule((BusinessRule)newValue);
+				return;
+			case SpecmodelPackage.SOURCE__JOIN_TYPE:
+				setJoinType((JoinTypes)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1110,8 +1141,8 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SpecmodelPackage.SOURCE__SOURCE_BUSINESS_RULE:
-				setSourceBusinessRule((BusinessRule)null);
+			case SpecmodelPackage.SOURCE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case SpecmodelPackage.SOURCE__SOURCE_SPECIFICATION:
 				setSourceSpecification((Specification)null);
@@ -1130,9 +1161,6 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return;
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
 				getChildJoinField().clear();
-				return;
-			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
-				setReadEntitySpecification((ReadEntitySpecification)null);
 				return;
 			case SpecmodelPackage.SOURCE__FILTERS:
 				getFilters().clear();
@@ -1170,6 +1198,12 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
 				setJoinEntity((Entity)null);
 				return;
+			case SpecmodelPackage.SOURCE__BUSINESSRULE:
+				setBusinessrule((BusinessRule)null);
+				return;
+			case SpecmodelPackage.SOURCE__JOIN_TYPE:
+				setJoinType(JOIN_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1182,8 +1216,8 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SpecmodelPackage.SOURCE__SOURCE_BUSINESS_RULE:
-				return sourceBusinessRule != null;
+			case SpecmodelPackage.SOURCE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SpecmodelPackage.SOURCE__SOURCE_SPECIFICATION:
 				return sourceSpecification != null;
 			case SpecmodelPackage.SOURCE__PARENT_SOURCE:
@@ -1196,8 +1230,6 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return parentJoinFields != null && !parentJoinFields.isEmpty();
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
 				return childJoinField != null && !childJoinField.isEmpty();
-			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
-				return readEntitySpecification != null;
 			case SpecmodelPackage.SOURCE__FILTERS:
 				return filters != null && !filters.isEmpty();
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
@@ -1222,6 +1254,10 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 				return sourceReleationship != null;
 			case SpecmodelPackage.SOURCE__JOIN_ENTITY:
 				return joinEntity != null;
+			case SpecmodelPackage.SOURCE__BUSINESSRULE:
+				return getBusinessrule() != null;
+			case SpecmodelPackage.SOURCE__JOIN_TYPE:
+				return joinType != JOIN_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1236,7 +1272,9 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (isVector: ");
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", isVector: ");
 		result.append(isVector);
 		result.append(", isMultiplying: ");
 		result.append(isMultiplying);
@@ -1250,6 +1288,8 @@ public class SourceImpl extends MinimalEObjectImpl.Container implements Source {
 		result.append(joinComment);
 		result.append(", relationshipAlias: ");
 		result.append(relationshipAlias);
+		result.append(", JoinType: ");
+		result.append(joinType);
 		result.append(')');
 		return result.toString();
 	}

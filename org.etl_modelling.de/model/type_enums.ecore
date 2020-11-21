@@ -10,4 +10,10 @@
     <eLiterals name="HK" value="5"/>
     <eLiterals name="TrueFalse" value="6"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="JoinTypes">
+    <eLiterals name="LEFT"/>
+    <eLiterals name="RIGHT"/>
+    <eLiterals name="INNER"/>
+    <eLiterals name="FULL_OUTER"/>
+  </eClassifiers>
 </ecore:EPackage>

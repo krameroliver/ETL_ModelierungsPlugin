@@ -82,7 +82,8 @@ public class ETLDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (
 	 *         name=ID 
 	 *         (entityField+=Field entityField+=Field*)? 
-	 *         ((include+=Include include+=Include*) | (relationships+=Relationship relationships+=Relationship*))?
+	 *         (include+=Include include+=Include*)? 
+	 *         (relationships+=Relationship relationships+=Relationship*)?
 	 *     )
 	 */
 	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
@@ -122,7 +123,11 @@ public class ETLDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Include returns Include
 	 *
 	 * Constraint:
-	 *     (name=STRING (includeFields+=Field includeFields+=Field*)?)
+	 *     (
+	 *         name=EString 
+	 *         (includeFields+=[Field|QualifiedName] includeFields+=[Field|QualifiedName]*)? 
+	 *         (identifyingfields+=[Field|QualifiedName] identifyingfields+=[Field|QualifiedName]*)?
+	 *     )
 	 */
 	protected void sequence_Include(ISerializationContext context, Include semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -135,11 +140,10 @@ public class ETLDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
-	 *         fromEntity=[Entity|QualifiedName] 
+	 *         name=EString 
 	 *         toEntity=[Entity|QualifiedName] 
-	 *         describingFieldsRel+=[Field|QualifiedName]? 
-	 *         identifiyingFieldsRel+=[Field|QualifiedName]?
+	 *         (describingFieldsRel+=[Field|QualifiedName] describingFieldsRel+=[Field|QualifiedName]*)? 
+	 *         (identifiyingFieldsRel+=[Field|QualifiedName] identifiyingFieldsRel+=[Field|QualifiedName]*)?
 	 *     )
 	 */
 	protected void sequence_Relationship(ISerializationContext context, Relationship semanticObject) {

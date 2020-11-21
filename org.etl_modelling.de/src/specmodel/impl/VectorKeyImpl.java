@@ -2,6 +2,7 @@
  */
 package specmodel.impl;
 
+import logmodel.Field;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -28,11 +29,21 @@ import specmodel.VectorKey;
  * <ul>
  *   <li>{@link specmodel.impl.VectorKeyImpl#getBusinessrule <em>Businessrule</em>}</li>
  *   <li>{@link specmodel.impl.VectorKeyImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link specmodel.impl.VectorKeyImpl#getVkField <em>Vk Field</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VectorKeyImpl extends MinimalEObjectImpl.Container implements VectorKey {
+	/**
+	 * The cached value of the '{@link #getVkField() <em>Vk Field</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVkField()
+	 * @generated
+	 * @ordered
+	 */
+	protected Field vkField;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,6 +155,46 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 	 * @generated
 	 */
 	@Override
+	public Field getVkField() {
+		if (vkField != null && vkField.eIsProxy()) {
+			InternalEObject oldVkField = (InternalEObject)vkField;
+			vkField = (Field)eResolveProxy(oldVkField);
+			if (vkField != oldVkField) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.VECTOR_KEY__VK_FIELD, oldVkField, vkField));
+			}
+		}
+		return vkField;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Field basicGetVkField() {
+		return vkField;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVkField(Field newVkField) {
+		Field oldVkField = vkField;
+		vkField = newVkField;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.VECTOR_KEY__VK_FIELD, oldVkField, vkField));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SpecmodelPackage.VECTOR_KEY__BUSINESSRULE:
@@ -202,6 +253,9 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 				return getBusinessrule();
 			case SpecmodelPackage.VECTOR_KEY__SOURCE:
 				return getSource();
+			case SpecmodelPackage.VECTOR_KEY__VK_FIELD:
+				if (resolve) return getVkField();
+				return basicGetVkField();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,6 +273,9 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 				return;
 			case SpecmodelPackage.VECTOR_KEY__SOURCE:
 				setSource((Source)newValue);
+				return;
+			case SpecmodelPackage.VECTOR_KEY__VK_FIELD:
+				setVkField((Field)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,6 +295,9 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 			case SpecmodelPackage.VECTOR_KEY__SOURCE:
 				setSource((Source)null);
 				return;
+			case SpecmodelPackage.VECTOR_KEY__VK_FIELD:
+				setVkField((Field)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +314,8 @@ public class VectorKeyImpl extends MinimalEObjectImpl.Container implements Vecto
 				return getBusinessrule() != null;
 			case SpecmodelPackage.VECTOR_KEY__SOURCE:
 				return getSource() != null;
+			case SpecmodelPackage.VECTOR_KEY__VK_FIELD:
+				return vkField != null;
 		}
 		return super.eIsSet(featureID);
 	}

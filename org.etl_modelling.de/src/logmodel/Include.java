@@ -26,27 +26,27 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Include extends namedelement {
 	/**
-	 * Returns the value of the '<em><b>Include Fields</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Include Fields</b></em>' reference list.
 	 * The list contents are of type {@link logmodel.Field}.
 	 * It is bidirectional and its opposite is '{@link logmodel.Field#getInclude <em>Include</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Include Fields</em>' containment reference list.
+	 * @return the value of the '<em>Include Fields</em>' reference list.
 	 * @see logmodel.LogmodelPackage#getInclude_IncludeFields()
 	 * @see logmodel.Field#getInclude
-	 * @model opposite="include" containment="true"
+	 * @model opposite="include"
 	 * @generated
 	 */
 	EList<Field> getIncludeFields();
 
 	/**
-	 * Returns the value of the '<em><b>Identifyingfields</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Identifyingfields</b></em>' reference list.
 	 * The list contents are of type {@link logmodel.Field}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Identifyingfields</em>' containment reference list.
+	 * @return the value of the '<em>Identifyingfields</em>' reference list.
 	 * @see logmodel.LogmodelPackage#getInclude_Identifyingfields()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Field> getIdentifyingfields();

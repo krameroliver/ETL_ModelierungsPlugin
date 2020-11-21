@@ -61,24 +61,24 @@ public interface Field extends namedelement {
 	void setEntity(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Include</b></em>' container reference.
+	 * Returns the value of the '<em><b>Include</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link logmodel.Include#getIncludeFields <em>Include Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Include</em>' container reference.
+	 * @return the value of the '<em>Include</em>' reference.
 	 * @see #setInclude(Include)
 	 * @see logmodel.LogmodelPackage#getField_Include()
 	 * @see logmodel.Include#getIncludeFields
-	 * @model opposite="includeFields" transient="false"
+	 * @model opposite="includeFields"
 	 * @generated
 	 */
 	Include getInclude();
 
 	/**
-	 * Sets the value of the '{@link logmodel.Field#getInclude <em>Include</em>}' container reference.
+	 * Sets the value of the '{@link logmodel.Field#getInclude <em>Include</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Include</em>' container reference.
+	 * @param value the new value of the '<em>Include</em>' reference.
 	 * @see #getInclude()
 	 * @generated
 	 */

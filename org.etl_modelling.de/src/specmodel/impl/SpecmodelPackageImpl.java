@@ -26,7 +26,6 @@ import specmodel.BusinessRule;
 import specmodel.Dedup;
 import specmodel.Filter;
 import specmodel.JoinField;
-import specmodel.ReadEntitySpecification;
 import specmodel.RuleType;
 import specmodel.Source;
 import specmodel.SpecPackage;
@@ -60,13 +59,6 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	private EClass specificationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass readEntitySpecificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,46 +253,6 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	@Override
 	public EReference getSpecification_PrimarySources() {
 		return (EReference)specificationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getReadEntitySpecification() {
-		return readEntitySpecificationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getReadEntitySpecification_Source() {
-		return (EReference)readEntitySpecificationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getReadEntitySpecification_ReadKeySats() {
-		return (EAttribute)readEntitySpecificationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getReadEntitySpecification_ReadKeySatsReason() {
-		return (EAttribute)readEntitySpecificationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -589,6 +541,26 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
+	public EReference getBusinessRule_TargetInclude() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBusinessRule_Sources() {
+		return (EReference)businessRuleEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSource() {
 		return sourceEClass;
 	}
@@ -599,7 +571,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_SourceBusinessRule() {
+	public EReference getSource_SourceSpecification() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -609,7 +581,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_SourceSpecification() {
+	public EReference getSource_ParentSource() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -619,7 +591,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_ParentSource() {
+	public EReference getSource_ChildSources() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -629,7 +601,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_ChildSources() {
+	public EReference getSource_Specification() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -639,7 +611,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_Specification() {
+	public EReference getSource_ParentJoinFields() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -649,7 +621,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_ParentJoinFields() {
+	public EReference getSource_ChildJoinField() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -659,7 +631,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_ChildJoinField() {
+	public EReference getSource_Filters() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -669,7 +641,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_ReadEntitySpecification() {
+	public EReference getSource_Vectorkeys() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -679,7 +651,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_Filters() {
+	public EReference getSource_SourceEntity() {
 		return (EReference)sourceEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -689,28 +661,8 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 * @generated
 	 */
 	@Override
-	public EReference getSource_Vectorkeys() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSource_SourceEntity() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getSource_IsVector() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -720,7 +672,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EAttribute getSource_IsMultiplying() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -730,7 +682,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EAttribute getSource_Comment() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -740,7 +692,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EAttribute getSource_Alias() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -750,7 +702,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EAttribute getSource_IsMandatory() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -760,7 +712,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EAttribute getSource_JoinComment() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -770,7 +722,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EAttribute getSource_RelationshipAlias() {
-		return (EAttribute)sourceEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -780,7 +732,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EReference getSource_SourceReleationship() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(18);
+		return (EReference)sourceEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -790,7 +742,27 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	 */
 	@Override
 	public EReference getSource_JoinEntity() {
-		return (EReference)sourceEClass.getEStructuralFeatures().get(19);
+		return (EReference)sourceEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSource_Businessrule() {
+		return (EReference)sourceEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSource_JoinType() {
+		return (EAttribute)sourceEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -821,6 +793,16 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 	@Override
 	public EReference getVectorKey_Source() {
 		return (EReference)vectorKeyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getVectorKey_VkField() {
+		return (EReference)vectorKeyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -870,11 +852,6 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		createEReference(specificationEClass, SPECIFICATION__BUSINESSRULES);
 		createEReference(specificationEClass, SPECIFICATION__PRIMARY_SOURCES);
 
-		readEntitySpecificationEClass = createEClass(READ_ENTITY_SPECIFICATION);
-		createEReference(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__SOURCE);
-		createEAttribute(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__READ_KEY_SATS);
-		createEAttribute(readEntitySpecificationEClass, READ_ENTITY_SPECIFICATION__READ_KEY_SATS_REASON);
-
 		joinFieldEClass = createEClass(JOIN_FIELD);
 		createEReference(joinFieldEClass, JOIN_FIELD__PARENT_SOURCE);
 		createEReference(joinFieldEClass, JOIN_FIELD__CHILD_SOURCE);
@@ -907,16 +884,16 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		createEReference(businessRuleEClass, BUSINESS_RULE__LOOKUP_ENTITIES);
 		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_MAPPING_OUTPUT_FIELDS);
 		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_RELATIONSHIP);
+		createEReference(businessRuleEClass, BUSINESS_RULE__TARGET_INCLUDE);
+		createEReference(businessRuleEClass, BUSINESS_RULE__SOURCES);
 
 		sourceEClass = createEClass(SOURCE);
-		createEReference(sourceEClass, SOURCE__SOURCE_BUSINESS_RULE);
 		createEReference(sourceEClass, SOURCE__SOURCE_SPECIFICATION);
 		createEReference(sourceEClass, SOURCE__PARENT_SOURCE);
 		createEReference(sourceEClass, SOURCE__CHILD_SOURCES);
 		createEReference(sourceEClass, SOURCE__SPECIFICATION);
 		createEReference(sourceEClass, SOURCE__PARENT_JOIN_FIELDS);
 		createEReference(sourceEClass, SOURCE__CHILD_JOIN_FIELD);
-		createEReference(sourceEClass, SOURCE__READ_ENTITY_SPECIFICATION);
 		createEReference(sourceEClass, SOURCE__FILTERS);
 		createEReference(sourceEClass, SOURCE__VECTORKEYS);
 		createEReference(sourceEClass, SOURCE__SOURCE_ENTITY);
@@ -929,10 +906,13 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		createEAttribute(sourceEClass, SOURCE__RELATIONSHIP_ALIAS);
 		createEReference(sourceEClass, SOURCE__SOURCE_RELEATIONSHIP);
 		createEReference(sourceEClass, SOURCE__JOIN_ENTITY);
+		createEReference(sourceEClass, SOURCE__BUSINESSRULE);
+		createEAttribute(sourceEClass, SOURCE__JOIN_TYPE);
 
 		vectorKeyEClass = createEClass(VECTOR_KEY);
 		createEReference(vectorKeyEClass, VECTOR_KEY__BUSINESSRULE);
 		createEReference(vectorKeyEClass, VECTOR_KEY__SOURCE);
+		createEReference(vectorKeyEClass, VECTOR_KEY__VK_FIELD);
 
 		// Create enums
 		ruleTypeEEnum = createEEnum(RULE_TYPE);
@@ -964,6 +944,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		// Obtain other dependent packages
 		ETL_MODELPackage theETL_MODELPackage = (ETL_MODELPackage)EPackage.Registry.INSTANCE.getEPackage(ETL_MODELPackage.eNS_URI);
 		LogmodelPackage theLogmodelPackage = (LogmodelPackage)EPackage.Registry.INSTANCE.getEPackage(LogmodelPackage.eNS_URI);
+		Type_enumPackage theType_enumPackage = (Type_enumPackage)EPackage.Registry.INSTANCE.getEPackage(Type_enumPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -975,6 +956,7 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		joinFieldEClass.getESuperTypes().add(theLogmodelPackage.getField());
 		subSpecificationEClass.getESuperTypes().add(this.getSpecification());
 		businessRuleEClass.getESuperTypes().add(theETL_MODELPackage.getnamedelement());
+		sourceEClass.getESuperTypes().add(theETL_MODELPackage.getnamedelement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(specPackageEClass, SpecPackage.class, "SpecPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -984,11 +966,6 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		initEReference(getSpecification_Specpackage(), this.getSpecPackage(), this.getSpecPackage_Specifications(), "specpackage", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecification_Businessrules(), this.getBusinessRule(), this.getBusinessRule_Specification(), "businessrules", null, 0, -1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecification_PrimarySources(), this.getSource(), this.getSource_Specification(), "primarySources", null, 0, -1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(readEntitySpecificationEClass, ReadEntitySpecification.class, "ReadEntitySpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReadEntitySpecification_Source(), this.getSource(), this.getSource_ReadEntitySpecification(), "source", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReadEntitySpecification_ReadKeySats(), ecorePackage.getEBoolean(), "ReadKeySats", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReadEntitySpecification_ReadKeySatsReason(), ecorePackage.getEString(), "ReadKeySatsReason", null, 0, 1, ReadEntitySpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(joinFieldEClass, JoinField.class, "JoinField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJoinField_ParentSource(), this.getSource(), this.getSource_ParentJoinFields(), "parentSource", null, 0, 1, JoinField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1022,16 +999,16 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		initEReference(getBusinessRule_LookupEntities(), theLogmodelPackage.getEntity(), null, "lookupEntities", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBusinessRule_TargetMappingOutputFields(), theLogmodelPackage.getCommonMapping(), null, "targetMappingOutputFields", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBusinessRule_TargetRelationship(), theLogmodelPackage.getRelationship(), null, "targetRelationship", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_TargetInclude(), theLogmodelPackage.getInclude(), null, "targetInclude", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessRule_Sources(), this.getSource(), this.getSource_Businessrule(), "sources", null, 0, -1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSource_SourceBusinessRule(), this.getBusinessRule(), null, "sourceBusinessRule", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_SourceSpecification(), this.getSpecification(), null, "sourceSpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_ParentSource(), this.getSource(), this.getSource_ChildSources(), "parentSource", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_ChildSources(), this.getSource(), this.getSource_ParentSource(), "childSources", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_Specification(), this.getSpecification(), this.getSpecification_PrimarySources(), "specification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_ParentJoinFields(), this.getJoinField(), this.getJoinField_ParentSource(), "parentJoinFields", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_ChildJoinField(), this.getJoinField(), this.getJoinField_ChildSource(), "childJoinField", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSource_ReadEntitySpecification(), this.getReadEntitySpecification(), this.getReadEntitySpecification_Source(), "readEntitySpecification", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_Filters(), this.getFilter(), null, "filters", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_Vectorkeys(), this.getVectorKey(), this.getVectorKey_Source(), "vectorkeys", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_SourceEntity(), theLogmodelPackage.getEntity(), null, "sourceEntity", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1044,10 +1021,13 @@ public class SpecmodelPackageImpl extends EPackageImpl implements SpecmodelPacka
 		initEAttribute(getSource_RelationshipAlias(), ecorePackage.getEString(), "relationshipAlias", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_SourceReleationship(), theLogmodelPackage.getRelationship(), null, "sourceReleationship", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSource_JoinEntity(), theLogmodelPackage.getEntity(), null, "joinEntity", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSource_Businessrule(), this.getBusinessRule(), this.getBusinessRule_Sources(), "businessrule", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSource_JoinType(), theType_enumPackage.getJoinTypes(), "JoinType", null, 0, 1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vectorKeyEClass, VectorKey.class, "VectorKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVectorKey_Businessrule(), this.getBusinessRule(), this.getBusinessRule_Vectorkeys(), "businessrule", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVectorKey_Source(), this.getSource(), this.getSource_Vectorkeys(), "source", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVectorKey_VkField(), theLogmodelPackage.getField(), null, "vkField", null, 0, 1, VectorKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(ruleTypeEEnum, RuleType.class, "RuleType");

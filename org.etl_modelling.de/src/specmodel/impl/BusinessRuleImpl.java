@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import logmodel.CommonMapping;
 import logmodel.Entity;
+import logmodel.Include;
 import logmodel.Relationship;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,6 +27,7 @@ import specmodel.BusinessRule;
 import specmodel.Dedup;
 import specmodel.Filter;
 import specmodel.RuleType;
+import specmodel.Source;
 import specmodel.Specification;
 import specmodel.SpecmodelPackage;
 import specmodel.VectorKey;
@@ -53,6 +55,8 @@ import specmodel.VectorKey;
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getLookupEntities <em>Lookup Entities</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetMappingOutputFields <em>Target Mapping Output Fields</em>}</li>
  *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetRelationship <em>Target Relationship</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getTargetInclude <em>Target Include</em>}</li>
+ *   <li>{@link specmodel.impl.BusinessRuleImpl#getSources <em>Sources</em>}</li>
  * </ul>
  *
  * @generated
@@ -217,6 +221,26 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * @ordered
 	 */
 	protected Relationship targetRelationship;
+
+	/**
+	 * The cached value of the '{@link #getTargetInclude() <em>Target Include</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetInclude()
+	 * @generated
+	 * @ordered
+	 */
+	protected Include targetInclude;
+
+	/**
+	 * The cached value of the '{@link #getSources() <em>Sources</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSources()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Source> sources;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -804,6 +828,59 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Include getTargetInclude() {
+		if (targetInclude != null && targetInclude.eIsProxy()) {
+			InternalEObject oldTargetInclude = (InternalEObject)targetInclude;
+			targetInclude = (Include)eResolveProxy(oldTargetInclude);
+			if (targetInclude != oldTargetInclude) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpecmodelPackage.BUSINESS_RULE__TARGET_INCLUDE, oldTargetInclude, targetInclude));
+			}
+		}
+		return targetInclude;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Include basicGetTargetInclude() {
+		return targetInclude;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTargetInclude(Include newTargetInclude) {
+		Include oldTargetInclude = targetInclude;
+		targetInclude = newTargetInclude;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpecmodelPackage.BUSINESS_RULE__TARGET_INCLUDE, oldTargetInclude, targetInclude));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Source> getSources() {
+		if (sources == null) {
+			sources = new EObjectContainmentWithInverseEList<Source>(Source.class, this, SpecmodelPackage.BUSINESS_RULE__SOURCES, SpecmodelPackage.SOURCE__BUSINESSRULE);
+		}
+		return sources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -830,6 +907,8 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				if (postFilter != null)
 					msgs = ((InternalEObject)postFilter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecmodelPackage.BUSINESS_RULE__POST_FILTER, null, msgs);
 				return basicSetPostFilter((Filter)otherEnd, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__SOURCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSources()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -854,6 +933,8 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				return basicSetPreFilter(null, msgs);
 			case SpecmodelPackage.BUSINESS_RULE__POST_FILTER:
 				return basicSetPostFilter(null, msgs);
+			case SpecmodelPackage.BUSINESS_RULE__SOURCES:
+				return ((InternalEList<?>)getSources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -917,6 +998,11 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				if (resolve) return getTargetRelationship();
 				return basicGetTargetRelationship();
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_INCLUDE:
+				if (resolve) return getTargetInclude();
+				return basicGetTargetInclude();
+			case SpecmodelPackage.BUSINESS_RULE__SOURCES:
+				return getSources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -976,6 +1062,13 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				setTargetRelationship((Relationship)newValue);
 				return;
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_INCLUDE:
+				setTargetInclude((Include)newValue);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__SOURCES:
+				getSources().clear();
+				getSources().addAll((Collection<? extends Source>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1033,6 +1126,12 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				setTargetRelationship((Relationship)null);
 				return;
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_INCLUDE:
+				setTargetInclude((Include)null);
+				return;
+			case SpecmodelPackage.BUSINESS_RULE__SOURCES:
+				getSources().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1075,6 +1174,10 @@ public class BusinessRuleImpl extends MinimalEObjectImpl.Container implements Bu
 				return targetMappingOutputFields != null;
 			case SpecmodelPackage.BUSINESS_RULE__TARGET_RELATIONSHIP:
 				return targetRelationship != null;
+			case SpecmodelPackage.BUSINESS_RULE__TARGET_INCLUDE:
+				return targetInclude != null;
+			case SpecmodelPackage.BUSINESS_RULE__SOURCES:
+				return sources != null && !sources.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

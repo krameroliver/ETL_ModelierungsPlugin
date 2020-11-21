@@ -69,6 +69,16 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getInclude() <em>Include</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInclude()
+	 * @generated
+	 * @ordered
+	 */
+	protected Include include;
+
+	/**
 	 * The default value of the '{@link #getLength() <em>Length</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,8 +430,24 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 */
 	@Override
 	public Include getInclude() {
-		if (eContainerFeatureID() != LogmodelPackage.FIELD__INCLUDE) return null;
-		return (Include)eInternalContainer();
+		if (include != null && include.eIsProxy()) {
+			InternalEObject oldInclude = (InternalEObject)include;
+			include = (Include)eResolveProxy(oldInclude);
+			if (include != oldInclude) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LogmodelPackage.FIELD__INCLUDE, oldInclude, include));
+			}
+		}
+		return include;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Include basicGetInclude() {
+		return include;
 	}
 
 	/**
@@ -430,7 +456,12 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @generated
 	 */
 	public NotificationChain basicSetInclude(Include newInclude, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newInclude, LogmodelPackage.FIELD__INCLUDE, msgs);
+		Include oldInclude = include;
+		include = newInclude;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogmodelPackage.FIELD__INCLUDE, oldInclude, newInclude);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -441,12 +472,10 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 */
 	@Override
 	public void setInclude(Include newInclude) {
-		if (newInclude != eInternalContainer() || (eContainerFeatureID() != LogmodelPackage.FIELD__INCLUDE && newInclude != null)) {
-			if (EcoreUtil.isAncestor(this, newInclude))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+		if (newInclude != include) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
+			if (include != null)
+				msgs = ((InternalEObject)include).eInverseRemove(this, LogmodelPackage.INCLUDE__INCLUDE_FIELDS, Include.class, msgs);
 			if (newInclude != null)
 				msgs = ((InternalEObject)newInclude).eInverseAdd(this, LogmodelPackage.INCLUDE__INCLUDE_FIELDS, Include.class, msgs);
 			msgs = basicSetInclude(newInclude, msgs);
@@ -768,8 +797,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetEntity((Entity)otherEnd, msgs);
 			case LogmodelPackage.FIELD__INCLUDE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
+				if (include != null)
+					msgs = ((InternalEObject)include).eInverseRemove(this, LogmodelPackage.INCLUDE__INCLUDE_FIELDS, Include.class, msgs);
 				return basicSetInclude((Include)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -801,8 +830,6 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		switch (eContainerFeatureID()) {
 			case LogmodelPackage.FIELD__ENTITY:
 				return eInternalContainer().eInverseRemove(this, LogmodelPackage.ENTITY__ENTITY_FIELD, Entity.class, msgs);
-			case LogmodelPackage.FIELD__INCLUDE:
-				return eInternalContainer().eInverseRemove(this, LogmodelPackage.INCLUDE__INCLUDE_FIELDS, Include.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -820,7 +847,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			case LogmodelPackage.FIELD__ENTITY:
 				return getEntity();
 			case LogmodelPackage.FIELD__INCLUDE:
-				return getInclude();
+				if (resolve) return getInclude();
+				return basicGetInclude();
 			case LogmodelPackage.FIELD__LENGTH:
 				return getLength();
 			case LogmodelPackage.FIELD__PRECISION:
@@ -984,7 +1012,7 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			case LogmodelPackage.FIELD__ENTITY:
 				return getEntity() != null;
 			case LogmodelPackage.FIELD__INCLUDE:
-				return getInclude() != null;
+				return include != null;
 			case LogmodelPackage.FIELD__LENGTH:
 				return length != LENGTH_EDEFAULT;
 			case LogmodelPackage.FIELD__PRECISION:

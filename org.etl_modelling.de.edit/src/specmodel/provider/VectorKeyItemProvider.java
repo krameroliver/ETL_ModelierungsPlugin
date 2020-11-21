@@ -7,12 +7,10 @@ import ETL_MODEL.provider.LogmodelEditPlugin;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,7 +19,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
 import specmodel.SpecmodelPackage;
 
 /**
@@ -61,6 +58,7 @@ public class VectorKeyItemProvider
 
 			addBusinessrulePropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
+			addVkFieldPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,6 +99,28 @@ public class VectorKeyItemProvider
 				 getString("_UI_VectorKey_source_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_VectorKey_source_feature", "_UI_VectorKey_type"),
 				 SpecmodelPackage.Literals.VECTOR_KEY__SOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Vk Field feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVkFieldPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VectorKey_vkField_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VectorKey_vkField_feature", "_UI_VectorKey_type"),
+				 SpecmodelPackage.Literals.VECTOR_KEY__VK_FIELD,
 				 true,
 				 false,
 				 true,

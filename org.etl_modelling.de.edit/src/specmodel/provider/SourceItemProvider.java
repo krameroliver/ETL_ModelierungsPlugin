@@ -3,6 +3,7 @@
 package specmodel.provider;
 
 
+import ETL_MODEL.ETL_MODELPackage;
 import ETL_MODEL.provider.LogmodelEditPlugin;
 
 import java.util.Collection;
@@ -65,14 +66,13 @@ public class SourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourceBusinessRulePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addSourceSpecificationPropertyDescriptor(object);
 			addParentSourcePropertyDescriptor(object);
 			addChildSourcesPropertyDescriptor(object);
 			addSpecificationPropertyDescriptor(object);
 			addParentJoinFieldsPropertyDescriptor(object);
 			addChildJoinFieldPropertyDescriptor(object);
-			addReadEntitySpecificationPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 			addVectorkeysPropertyDescriptor(object);
 			addSourceEntityPropertyDescriptor(object);
@@ -85,28 +85,30 @@ public class SourceItemProvider
 			addRelationshipAliasPropertyDescriptor(object);
 			addSourceReleationshipPropertyDescriptor(object);
 			addJoinEntityPropertyDescriptor(object);
+			addBusinessrulePropertyDescriptor(object);
+			addJoinTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source Business Rule feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceBusinessRulePropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Source_sourceBusinessRule_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_sourceBusinessRule_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__SOURCE_BUSINESS_RULE,
+				 getString("_UI_namedelement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_namedelement_name_feature", "_UI_namedelement_type"),
+				 ETL_MODELPackage.Literals.NAMEDELEMENT__NAME,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -235,28 +237,6 @@ public class SourceItemProvider
 				 getString("_UI_Source_childJoinField_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Source_childJoinField_feature", "_UI_Source_type"),
 				 SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELD,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Read Entity Specification feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReadEntitySpecificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_readEntitySpecification_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_readEntitySpecification_feature", "_UI_Source_type"),
-				 SpecmodelPackage.Literals.SOURCE__READ_ENTITY_SPECIFICATION,
 				 true,
 				 false,
 				 true,
@@ -530,6 +510,50 @@ public class SourceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Businessrule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBusinessrulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_businessrule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_businessrule_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__BUSINESSRULE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Join Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addJoinTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_JoinType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_JoinType_feature", "_UI_Source_type"),
+				 SpecmodelPackage.Literals.SOURCE__JOIN_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -544,7 +568,6 @@ public class SourceItemProvider
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__CHILD_SOURCES);
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__PARENT_JOIN_FIELDS);
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELD);
-			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__READ_ENTITY_SPECIFICATION);
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__FILTERS);
 			childrenFeatures.add(SpecmodelPackage.Literals.SOURCE__VECTORKEYS);
 		}
@@ -583,8 +606,10 @@ public class SourceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Source source = (Source)object;
-		return getString("_UI_Source_type") + " " + source.isIsVector();
+		String label = ((Source)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Source_type") :
+			getString("_UI_Source_type") + " " + label;
 	}
 
 
@@ -600,6 +625,7 @@ public class SourceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Source.class)) {
+			case SpecmodelPackage.SOURCE__NAME:
 			case SpecmodelPackage.SOURCE__IS_VECTOR:
 			case SpecmodelPackage.SOURCE__IS_MULTIPLYING:
 			case SpecmodelPackage.SOURCE__COMMENT:
@@ -607,12 +633,12 @@ public class SourceItemProvider
 			case SpecmodelPackage.SOURCE__IS_MANDATORY:
 			case SpecmodelPackage.SOURCE__JOIN_COMMENT:
 			case SpecmodelPackage.SOURCE__RELATIONSHIP_ALIAS:
+			case SpecmodelPackage.SOURCE__JOIN_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SpecmodelPackage.SOURCE__CHILD_SOURCES:
 			case SpecmodelPackage.SOURCE__PARENT_JOIN_FIELDS:
 			case SpecmodelPackage.SOURCE__CHILD_JOIN_FIELD:
-			case SpecmodelPackage.SOURCE__READ_ENTITY_SPECIFICATION:
 			case SpecmodelPackage.SOURCE__FILTERS:
 			case SpecmodelPackage.SOURCE__VECTORKEYS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -646,11 +672,6 @@ public class SourceItemProvider
 			(createChildParameter
 				(SpecmodelPackage.Literals.SOURCE__CHILD_JOIN_FIELD,
 				 SpecmodelFactory.eINSTANCE.createJoinField()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SpecmodelPackage.Literals.SOURCE__READ_ENTITY_SPECIFICATION,
-				 SpecmodelFactory.eINSTANCE.createReadEntitySpecification()));
 
 		newChildDescriptors.add
 			(createChildParameter

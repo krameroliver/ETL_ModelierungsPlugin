@@ -59,7 +59,6 @@ public class SpecmodelFactoryImpl extends EFactoryImpl implements SpecmodelFacto
 		switch (eClass.getClassifierID()) {
 			case SpecmodelPackage.SPEC_PACKAGE: return createSpecPackage();
 			case SpecmodelPackage.SPECIFICATION: return createSpecification();
-			case SpecmodelPackage.READ_ENTITY_SPECIFICATION: return createReadEntitySpecification();
 			case SpecmodelPackage.JOIN_FIELD: return createJoinField();
 			case SpecmodelPackage.DEDUP: return createDedup();
 			case SpecmodelPackage.FILTER: return createFilter();
@@ -122,17 +121,6 @@ public class SpecmodelFactoryImpl extends EFactoryImpl implements SpecmodelFacto
 	public Specification createSpecification() {
 		SpecificationImpl specification = new SpecificationImpl();
 		return specification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ReadEntitySpecification createReadEntitySpecification() {
-		ReadEntitySpecificationImpl readEntitySpecification = new ReadEntitySpecificationImpl();
-		return readEntitySpecification;
 	}
 
 	/**
