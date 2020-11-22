@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="GrossATuin">
+      Modellerungstool
+   </description>
+   <feature url="features/GrossATuinFeature_1.0.0.202011221155.jar" id="GrossATuinFeature" version="1.0.0.202011221155">
+      <category name="GrossATuin"/>
+   </feature>
+   <category-def name="GrossATuin" label="GrossATuin"/>
+</site>

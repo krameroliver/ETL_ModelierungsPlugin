@@ -39,6 +39,8 @@ class BiTempDV extends AbstractGenerator {
 		content = content + createMainSatFC(entity)
 		content = content + createInclude(entity)
 		content = content + createIncludeFC(entity)
+		content = content + generateRelationshipSat(entity)
+		content = content + generateRelations(entity)
 		val path = "sql/CreateTable/"+entity.name.toLowerCase+".sql"
 		fsa.generateFile(path,content) 
 	}
@@ -184,34 +186,45 @@ class BiTempDV extends AbstractGenerator {
    '''
    «FOR relation : entity.relationships»
 	   «IF relation.identifiyingFieldsRel.length > 0»
-	   	  CREATE TABLE «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»(
+	CREATE TABLE «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»(
 	   «ELSE»
-	      CREATE TABLE «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»(
+	  CREATE TABLE «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»(
 	   «ENDIF»
-	   «FOR f : relation.describingfields»
-		«f.name.toLowerCase» «Utils.getDataTypeString(f)» -- describing field,
-		«ENDFOR»
-		«FOR f : relation.identifiyingFieldsRel»
-		«f.name.toLowerCase» «Utils.getDataTypeString(f)» -- identifiying field,
-		«ENDFOR»
-		«relation.name.toLowerCase»_hk CHAR(32),
-		creation_date DATE,
-		modification_date DATE,
-		processing_point VARCHAR(10),
-		record_source VARCHAR(255),
-		record_hk CHAR(32),
-		«entity.name.toLowerCase»_hk CHAR(32),
-		effectiv_timerange tstzrange,
-		PRIMARY KEY(«relation.name.toLowerCase»_hk,PROCESSING_POINT));
+	
+	«relation.name.toLowerCase»_hk CHAR(32),
+	creation_date DATE,
+	modification_date DATE,
+	processing_point VARCHAR(10),
+	record_source VARCHAR(255),
+	record_hk CHAR(32),
+	«entity.name.toLowerCase»_hk CHAR(32),
+	effectiv_timerange tstzrange,
+	PRIMARY KEY(«relation.name.toLowerCase»_hk,PROCESSING_POINT));
 		
 		«IF relation.identifiyingFieldsRel.length > 0»
-			CREATE TABLE «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist (like «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» including all);
-			CREATE TRIGGER versioning_trigger_«layer»_r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist', true);
+	CREATE TABLE «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist (like «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» including all);
+	CREATE TRIGGER versioning_trigger_«layer»_r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer».r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist', true);
 		«ELSE»
-			CREATE TABLE «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist (like «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» including all);
-			CREATE TRIGGER versioning_trigger_«layer»_r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist', true);
+	CREATE TABLE «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist (like «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» including all);
+	CREATE TRIGGER versioning_trigger_«layer»_r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer».r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist', true);
 		«ENDIF»	
    «ENDFOR»
+   
    '''
 	
+	
+	/*
+	 * 
+	 *    «IF relation.describingfields.length > 0»
+	      «FOR f : relation.describingfields»
+		     «f.name.toLowerCase» «Utils.getDataTypeString(f)», -- describing field
+	      «ENDFOR»
+	   «ENDIF»
+	   «IF relation.identifiyingFieldsRel.length > 0»
+	      «FOR f : relation.identifiyingFieldsRel»
+		     «f.name.toLowerCase» «Utils.getDataTypeString(f)», -- identifiying field
+	      «ENDFOR»
+	   «ENDIF»
+	 * 
+	 */
 }

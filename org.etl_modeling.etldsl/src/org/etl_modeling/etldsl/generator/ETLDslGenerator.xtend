@@ -9,6 +9,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import com.google.inject.Inject
 import org.etl_modeling.etldsl.generator.SQL.Postgres.BiTemp.DataVault.BiTempDV
+import org.etl_modeling.etldsl.generator.Abinitio.DML.CSV_INPUT.DML_CSV_Input
 
 /**
  * Generates code from your model files on save.
@@ -20,11 +21,13 @@ class ETLDslGenerator extends AbstractGenerator {
 @Inject BiTempDV stdv
 @Inject ExtensionGenerator eg
 @Inject CreateSchema cs
+@Inject DML_CSV_Input dml_csv_i
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		stdv.doGenerate(resource,fsa,context);
 		eg.doGenerate(resource,fsa,context);
 		cs.doGenerate(resource,fsa,context);
+		dml_csv_i.doGenerate(resource,fsa,context);
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(Greeting)
