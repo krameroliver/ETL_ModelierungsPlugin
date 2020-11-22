@@ -82,7 +82,7 @@ Field returns Field:
 	('interfaceOnly:'interfaceOnly?=EBoolean)?
 	('tableOnly:'tableOnly?=EBoolean)?
 	('isFastChanging:'isFastChanging?=EBoolean)?
-	(isBusinessKey?='BusinessKey')
+	(isBusinessKey?='BusinessKey')?
 	"]";
 
 

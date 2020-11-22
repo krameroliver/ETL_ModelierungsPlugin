@@ -120,6 +120,7 @@ public class ETLDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFieldAccess().getInterfaceOnlyAssignment_14_1(), "rule__Field__InterfaceOnlyAssignment_14_1");
 			builder.put(grammarAccess.getFieldAccess().getTableOnlyAssignment_15_1(), "rule__Field__TableOnlyAssignment_15_1");
 			builder.put(grammarAccess.getFieldAccess().getIsFastChangingAssignment_16_1(), "rule__Field__IsFastChangingAssignment_16_1");
+			builder.put(grammarAccess.getFieldAccess().getIsBusinessKeyAssignment_17(), "rule__Field__IsBusinessKeyAssignment_17");
 			builder.put(grammarAccess.getIncludeAccess().getNameAssignment_1(), "rule__Include__NameAssignment_1");
 			builder.put(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_2_1_2(), "rule__Include__IncludeFieldsAssignment_2_1_2");
 			builder.put(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_2_1_3_1(), "rule__Include__IncludeFieldsAssignment_2_1_3_1");

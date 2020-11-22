@@ -2,6 +2,7 @@
 '-'=41
 '.'=40
 'BITEMPORAL'=28
+'BusinessKey'=73
 'DATAVAULT'=30
 'DAY_PARTITIONED'=26
 'Date'=14
@@ -129,3 +130,4 @@ T__69=69
 T__70=70
 T__71=71
 T__72=72
+T__73=73

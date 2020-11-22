@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalETLDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'String'", "'Date'", "'Decimal'", "'HK'", "'Int'", "'TimeStamp'", "'TrueFalse'", "'STAGE'", "'INTEGRATION'", "'EXPORT'", "'REPORTING'", "'HARMONISATION'", "'NONE'", "'DAY_PARTITIONED'", "'MONTH_PARTITIONED'", "'BITEMPORAL'", "'FLAT_TABLE'", "'DATAVAULT'", "'ThirdNF'", "'SNOWFLAKE'", "'STAR'", "'logpackage'", "'LAYER'", "'LAYER_TYPE'", "'HISTORISATION'", "'REPRESENTATION'", "','", "'.'", "'-'", "'commonmapping'", "'{'", "'}'", "'InputField'", "'OutputField'", "'Entity'", "'entityFields'", "'Includes'", "'Relationships'", "'Field'", "'['", "']'", "'type'", "'length'", "'precision'", "'scale'", "'original_name'", "'short_describtion'", "'dateFormat'", "'NullIndicator'", "'allowExponent:'", "'hasImplicitComma:'", "'interfaceOnly:'", "'tableOnly:'", "'isFastChanging:'", "'Include'", "'IncludeFields'", "'IdentifyingFields:{'", "'Relationship'", "'ToEntity: '", "'DescribingFields:{'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'String'", "'Date'", "'Decimal'", "'HK'", "'Int'", "'TimeStamp'", "'TrueFalse'", "'STAGE'", "'INTEGRATION'", "'EXPORT'", "'REPORTING'", "'HARMONISATION'", "'NONE'", "'DAY_PARTITIONED'", "'MONTH_PARTITIONED'", "'BITEMPORAL'", "'FLAT_TABLE'", "'DATAVAULT'", "'ThirdNF'", "'SNOWFLAKE'", "'STAR'", "'logpackage'", "'LAYER'", "'LAYER_TYPE'", "'HISTORISATION'", "'REPRESENTATION'", "','", "'.'", "'-'", "'commonmapping'", "'{'", "'}'", "'InputField'", "'OutputField'", "'Entity'", "'entityFields'", "'Includes'", "'Relationships'", "'Field'", "'['", "']'", "'type'", "'length'", "'precision'", "'scale'", "'original_name'", "'short_describtion'", "'dateFormat'", "'NullIndicator'", "'allowExponent:'", "'hasImplicitComma:'", "'interfaceOnly:'", "'tableOnly:'", "'isFastChanging:'", "'Include'", "'IncludeFields'", "'IdentifyingFields:{'", "'Relationship'", "'ToEntity: '", "'DescribingFields:{'", "'BusinessKey'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -78,6 +78,7 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
+    public static final int T__73=73;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -9619,17 +9620,22 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__17"
-    // InternalETLDsl.g:3042:1: rule__Field__Group__17 : rule__Field__Group__17__Impl ;
+    // InternalETLDsl.g:3042:1: rule__Field__Group__17 : rule__Field__Group__17__Impl rule__Field__Group__18 ;
     public final void rule__Field__Group__17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3046:1: ( rule__Field__Group__17__Impl )
-            // InternalETLDsl.g:3047:2: rule__Field__Group__17__Impl
+            // InternalETLDsl.g:3046:1: ( rule__Field__Group__17__Impl rule__Field__Group__18 )
+            // InternalETLDsl.g:3047:2: rule__Field__Group__17__Impl rule__Field__Group__18
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_27);
             rule__Field__Group__17__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Field__Group__18();
 
             state._fsp--;
 
@@ -9652,21 +9658,42 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__17__Impl"
-    // InternalETLDsl.g:3053:1: rule__Field__Group__17__Impl : ( ']' ) ;
+    // InternalETLDsl.g:3054:1: rule__Field__Group__17__Impl : ( ( rule__Field__IsBusinessKeyAssignment_17 )? ) ;
     public final void rule__Field__Group__17__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3057:1: ( ( ']' ) )
-            // InternalETLDsl.g:3058:1: ( ']' )
+            // InternalETLDsl.g:3058:1: ( ( ( rule__Field__IsBusinessKeyAssignment_17 )? ) )
+            // InternalETLDsl.g:3059:1: ( ( rule__Field__IsBusinessKeyAssignment_17 )? )
             {
-            // InternalETLDsl.g:3058:1: ( ']' )
-            // InternalETLDsl.g:3059:2: ']'
+            // InternalETLDsl.g:3059:1: ( ( rule__Field__IsBusinessKeyAssignment_17 )? )
+            // InternalETLDsl.g:3060:2: ( rule__Field__IsBusinessKeyAssignment_17 )?
             {
-             before(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_17()); 
-            match(input,53,FOLLOW_2); 
-             after(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_17()); 
+             before(grammarAccess.getFieldAccess().getIsBusinessKeyAssignment_17()); 
+            // InternalETLDsl.g:3061:2: ( rule__Field__IsBusinessKeyAssignment_17 )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
+
+            if ( (LA39_0==73) ) {
+                alt39=1;
+            }
+            switch (alt39) {
+                case 1 :
+                    // InternalETLDsl.g:3061:3: rule__Field__IsBusinessKeyAssignment_17
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Field__IsBusinessKeyAssignment_17();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getFieldAccess().getIsBusinessKeyAssignment_17()); 
 
             }
 
@@ -9688,15 +9715,85 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Field__Group__17__Impl"
 
 
+    // $ANTLR start "rule__Field__Group__18"
+    // InternalETLDsl.g:3069:1: rule__Field__Group__18 : rule__Field__Group__18__Impl ;
+    public final void rule__Field__Group__18() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalETLDsl.g:3073:1: ( rule__Field__Group__18__Impl )
+            // InternalETLDsl.g:3074:2: rule__Field__Group__18__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Field__Group__18__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Field__Group__18"
+
+
+    // $ANTLR start "rule__Field__Group__18__Impl"
+    // InternalETLDsl.g:3080:1: rule__Field__Group__18__Impl : ( ']' ) ;
+    public final void rule__Field__Group__18__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalETLDsl.g:3084:1: ( ( ']' ) )
+            // InternalETLDsl.g:3085:1: ( ']' )
+            {
+            // InternalETLDsl.g:3085:1: ( ']' )
+            // InternalETLDsl.g:3086:2: ']'
+            {
+             before(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18()); 
+            match(input,53,FOLLOW_2); 
+             after(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Field__Group__18__Impl"
+
+
     // $ANTLR start "rule__Field__Group_4__0"
-    // InternalETLDsl.g:3069:1: rule__Field__Group_4__0 : rule__Field__Group_4__0__Impl rule__Field__Group_4__1 ;
+    // InternalETLDsl.g:3096:1: rule__Field__Group_4__0 : rule__Field__Group_4__0__Impl rule__Field__Group_4__1 ;
     public final void rule__Field__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3073:1: ( rule__Field__Group_4__0__Impl rule__Field__Group_4__1 )
-            // InternalETLDsl.g:3074:2: rule__Field__Group_4__0__Impl rule__Field__Group_4__1
+            // InternalETLDsl.g:3100:1: ( rule__Field__Group_4__0__Impl rule__Field__Group_4__1 )
+            // InternalETLDsl.g:3101:2: rule__Field__Group_4__0__Impl rule__Field__Group_4__1
             {
             pushFollow(FOLLOW_28);
             rule__Field__Group_4__0__Impl();
@@ -9727,17 +9824,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_4__0__Impl"
-    // InternalETLDsl.g:3081:1: rule__Field__Group_4__0__Impl : ( 'type' ) ;
+    // InternalETLDsl.g:3108:1: rule__Field__Group_4__0__Impl : ( 'type' ) ;
     public final void rule__Field__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3085:1: ( ( 'type' ) )
-            // InternalETLDsl.g:3086:1: ( 'type' )
+            // InternalETLDsl.g:3112:1: ( ( 'type' ) )
+            // InternalETLDsl.g:3113:1: ( 'type' )
             {
-            // InternalETLDsl.g:3086:1: ( 'type' )
-            // InternalETLDsl.g:3087:2: 'type'
+            // InternalETLDsl.g:3113:1: ( 'type' )
+            // InternalETLDsl.g:3114:2: 'type'
             {
              before(grammarAccess.getFieldAccess().getTypeKeyword_4_0()); 
             match(input,54,FOLLOW_2); 
@@ -9764,14 +9861,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_4__1"
-    // InternalETLDsl.g:3096:1: rule__Field__Group_4__1 : rule__Field__Group_4__1__Impl ;
+    // InternalETLDsl.g:3123:1: rule__Field__Group_4__1 : rule__Field__Group_4__1__Impl ;
     public final void rule__Field__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3100:1: ( rule__Field__Group_4__1__Impl )
-            // InternalETLDsl.g:3101:2: rule__Field__Group_4__1__Impl
+            // InternalETLDsl.g:3127:1: ( rule__Field__Group_4__1__Impl )
+            // InternalETLDsl.g:3128:2: rule__Field__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_4__1__Impl();
@@ -9797,21 +9894,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_4__1__Impl"
-    // InternalETLDsl.g:3107:1: rule__Field__Group_4__1__Impl : ( ( rule__Field__TypeAssignment_4_1 ) ) ;
+    // InternalETLDsl.g:3134:1: rule__Field__Group_4__1__Impl : ( ( rule__Field__TypeAssignment_4_1 ) ) ;
     public final void rule__Field__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3111:1: ( ( ( rule__Field__TypeAssignment_4_1 ) ) )
-            // InternalETLDsl.g:3112:1: ( ( rule__Field__TypeAssignment_4_1 ) )
+            // InternalETLDsl.g:3138:1: ( ( ( rule__Field__TypeAssignment_4_1 ) ) )
+            // InternalETLDsl.g:3139:1: ( ( rule__Field__TypeAssignment_4_1 ) )
             {
-            // InternalETLDsl.g:3112:1: ( ( rule__Field__TypeAssignment_4_1 ) )
-            // InternalETLDsl.g:3113:2: ( rule__Field__TypeAssignment_4_1 )
+            // InternalETLDsl.g:3139:1: ( ( rule__Field__TypeAssignment_4_1 ) )
+            // InternalETLDsl.g:3140:2: ( rule__Field__TypeAssignment_4_1 )
             {
              before(grammarAccess.getFieldAccess().getTypeAssignment_4_1()); 
-            // InternalETLDsl.g:3114:2: ( rule__Field__TypeAssignment_4_1 )
-            // InternalETLDsl.g:3114:3: rule__Field__TypeAssignment_4_1
+            // InternalETLDsl.g:3141:2: ( rule__Field__TypeAssignment_4_1 )
+            // InternalETLDsl.g:3141:3: rule__Field__TypeAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__TypeAssignment_4_1();
@@ -9844,14 +9941,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_5__0"
-    // InternalETLDsl.g:3123:1: rule__Field__Group_5__0 : rule__Field__Group_5__0__Impl rule__Field__Group_5__1 ;
+    // InternalETLDsl.g:3150:1: rule__Field__Group_5__0 : rule__Field__Group_5__0__Impl rule__Field__Group_5__1 ;
     public final void rule__Field__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3127:1: ( rule__Field__Group_5__0__Impl rule__Field__Group_5__1 )
-            // InternalETLDsl.g:3128:2: rule__Field__Group_5__0__Impl rule__Field__Group_5__1
+            // InternalETLDsl.g:3154:1: ( rule__Field__Group_5__0__Impl rule__Field__Group_5__1 )
+            // InternalETLDsl.g:3155:2: rule__Field__Group_5__0__Impl rule__Field__Group_5__1
             {
             pushFollow(FOLLOW_29);
             rule__Field__Group_5__0__Impl();
@@ -9882,17 +9979,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_5__0__Impl"
-    // InternalETLDsl.g:3135:1: rule__Field__Group_5__0__Impl : ( 'length' ) ;
+    // InternalETLDsl.g:3162:1: rule__Field__Group_5__0__Impl : ( 'length' ) ;
     public final void rule__Field__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3139:1: ( ( 'length' ) )
-            // InternalETLDsl.g:3140:1: ( 'length' )
+            // InternalETLDsl.g:3166:1: ( ( 'length' ) )
+            // InternalETLDsl.g:3167:1: ( 'length' )
             {
-            // InternalETLDsl.g:3140:1: ( 'length' )
-            // InternalETLDsl.g:3141:2: 'length'
+            // InternalETLDsl.g:3167:1: ( 'length' )
+            // InternalETLDsl.g:3168:2: 'length'
             {
              before(grammarAccess.getFieldAccess().getLengthKeyword_5_0()); 
             match(input,55,FOLLOW_2); 
@@ -9919,14 +10016,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_5__1"
-    // InternalETLDsl.g:3150:1: rule__Field__Group_5__1 : rule__Field__Group_5__1__Impl ;
+    // InternalETLDsl.g:3177:1: rule__Field__Group_5__1 : rule__Field__Group_5__1__Impl ;
     public final void rule__Field__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3154:1: ( rule__Field__Group_5__1__Impl )
-            // InternalETLDsl.g:3155:2: rule__Field__Group_5__1__Impl
+            // InternalETLDsl.g:3181:1: ( rule__Field__Group_5__1__Impl )
+            // InternalETLDsl.g:3182:2: rule__Field__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_5__1__Impl();
@@ -9952,21 +10049,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_5__1__Impl"
-    // InternalETLDsl.g:3161:1: rule__Field__Group_5__1__Impl : ( ( rule__Field__LengthAssignment_5_1 ) ) ;
+    // InternalETLDsl.g:3188:1: rule__Field__Group_5__1__Impl : ( ( rule__Field__LengthAssignment_5_1 ) ) ;
     public final void rule__Field__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3165:1: ( ( ( rule__Field__LengthAssignment_5_1 ) ) )
-            // InternalETLDsl.g:3166:1: ( ( rule__Field__LengthAssignment_5_1 ) )
+            // InternalETLDsl.g:3192:1: ( ( ( rule__Field__LengthAssignment_5_1 ) ) )
+            // InternalETLDsl.g:3193:1: ( ( rule__Field__LengthAssignment_5_1 ) )
             {
-            // InternalETLDsl.g:3166:1: ( ( rule__Field__LengthAssignment_5_1 ) )
-            // InternalETLDsl.g:3167:2: ( rule__Field__LengthAssignment_5_1 )
+            // InternalETLDsl.g:3193:1: ( ( rule__Field__LengthAssignment_5_1 ) )
+            // InternalETLDsl.g:3194:2: ( rule__Field__LengthAssignment_5_1 )
             {
              before(grammarAccess.getFieldAccess().getLengthAssignment_5_1()); 
-            // InternalETLDsl.g:3168:2: ( rule__Field__LengthAssignment_5_1 )
-            // InternalETLDsl.g:3168:3: rule__Field__LengthAssignment_5_1
+            // InternalETLDsl.g:3195:2: ( rule__Field__LengthAssignment_5_1 )
+            // InternalETLDsl.g:3195:3: rule__Field__LengthAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__LengthAssignment_5_1();
@@ -9999,14 +10096,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_6__0"
-    // InternalETLDsl.g:3177:1: rule__Field__Group_6__0 : rule__Field__Group_6__0__Impl rule__Field__Group_6__1 ;
+    // InternalETLDsl.g:3204:1: rule__Field__Group_6__0 : rule__Field__Group_6__0__Impl rule__Field__Group_6__1 ;
     public final void rule__Field__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3181:1: ( rule__Field__Group_6__0__Impl rule__Field__Group_6__1 )
-            // InternalETLDsl.g:3182:2: rule__Field__Group_6__0__Impl rule__Field__Group_6__1
+            // InternalETLDsl.g:3208:1: ( rule__Field__Group_6__0__Impl rule__Field__Group_6__1 )
+            // InternalETLDsl.g:3209:2: rule__Field__Group_6__0__Impl rule__Field__Group_6__1
             {
             pushFollow(FOLLOW_29);
             rule__Field__Group_6__0__Impl();
@@ -10037,17 +10134,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_6__0__Impl"
-    // InternalETLDsl.g:3189:1: rule__Field__Group_6__0__Impl : ( 'precision' ) ;
+    // InternalETLDsl.g:3216:1: rule__Field__Group_6__0__Impl : ( 'precision' ) ;
     public final void rule__Field__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3193:1: ( ( 'precision' ) )
-            // InternalETLDsl.g:3194:1: ( 'precision' )
+            // InternalETLDsl.g:3220:1: ( ( 'precision' ) )
+            // InternalETLDsl.g:3221:1: ( 'precision' )
             {
-            // InternalETLDsl.g:3194:1: ( 'precision' )
-            // InternalETLDsl.g:3195:2: 'precision'
+            // InternalETLDsl.g:3221:1: ( 'precision' )
+            // InternalETLDsl.g:3222:2: 'precision'
             {
              before(grammarAccess.getFieldAccess().getPrecisionKeyword_6_0()); 
             match(input,56,FOLLOW_2); 
@@ -10074,14 +10171,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_6__1"
-    // InternalETLDsl.g:3204:1: rule__Field__Group_6__1 : rule__Field__Group_6__1__Impl ;
+    // InternalETLDsl.g:3231:1: rule__Field__Group_6__1 : rule__Field__Group_6__1__Impl ;
     public final void rule__Field__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3208:1: ( rule__Field__Group_6__1__Impl )
-            // InternalETLDsl.g:3209:2: rule__Field__Group_6__1__Impl
+            // InternalETLDsl.g:3235:1: ( rule__Field__Group_6__1__Impl )
+            // InternalETLDsl.g:3236:2: rule__Field__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_6__1__Impl();
@@ -10107,21 +10204,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_6__1__Impl"
-    // InternalETLDsl.g:3215:1: rule__Field__Group_6__1__Impl : ( ( rule__Field__PrecisionAssignment_6_1 ) ) ;
+    // InternalETLDsl.g:3242:1: rule__Field__Group_6__1__Impl : ( ( rule__Field__PrecisionAssignment_6_1 ) ) ;
     public final void rule__Field__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3219:1: ( ( ( rule__Field__PrecisionAssignment_6_1 ) ) )
-            // InternalETLDsl.g:3220:1: ( ( rule__Field__PrecisionAssignment_6_1 ) )
+            // InternalETLDsl.g:3246:1: ( ( ( rule__Field__PrecisionAssignment_6_1 ) ) )
+            // InternalETLDsl.g:3247:1: ( ( rule__Field__PrecisionAssignment_6_1 ) )
             {
-            // InternalETLDsl.g:3220:1: ( ( rule__Field__PrecisionAssignment_6_1 ) )
-            // InternalETLDsl.g:3221:2: ( rule__Field__PrecisionAssignment_6_1 )
+            // InternalETLDsl.g:3247:1: ( ( rule__Field__PrecisionAssignment_6_1 ) )
+            // InternalETLDsl.g:3248:2: ( rule__Field__PrecisionAssignment_6_1 )
             {
              before(grammarAccess.getFieldAccess().getPrecisionAssignment_6_1()); 
-            // InternalETLDsl.g:3222:2: ( rule__Field__PrecisionAssignment_6_1 )
-            // InternalETLDsl.g:3222:3: rule__Field__PrecisionAssignment_6_1
+            // InternalETLDsl.g:3249:2: ( rule__Field__PrecisionAssignment_6_1 )
+            // InternalETLDsl.g:3249:3: rule__Field__PrecisionAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__PrecisionAssignment_6_1();
@@ -10154,14 +10251,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_7__0"
-    // InternalETLDsl.g:3231:1: rule__Field__Group_7__0 : rule__Field__Group_7__0__Impl rule__Field__Group_7__1 ;
+    // InternalETLDsl.g:3258:1: rule__Field__Group_7__0 : rule__Field__Group_7__0__Impl rule__Field__Group_7__1 ;
     public final void rule__Field__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3235:1: ( rule__Field__Group_7__0__Impl rule__Field__Group_7__1 )
-            // InternalETLDsl.g:3236:2: rule__Field__Group_7__0__Impl rule__Field__Group_7__1
+            // InternalETLDsl.g:3262:1: ( rule__Field__Group_7__0__Impl rule__Field__Group_7__1 )
+            // InternalETLDsl.g:3263:2: rule__Field__Group_7__0__Impl rule__Field__Group_7__1
             {
             pushFollow(FOLLOW_29);
             rule__Field__Group_7__0__Impl();
@@ -10192,17 +10289,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_7__0__Impl"
-    // InternalETLDsl.g:3243:1: rule__Field__Group_7__0__Impl : ( 'scale' ) ;
+    // InternalETLDsl.g:3270:1: rule__Field__Group_7__0__Impl : ( 'scale' ) ;
     public final void rule__Field__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3247:1: ( ( 'scale' ) )
-            // InternalETLDsl.g:3248:1: ( 'scale' )
+            // InternalETLDsl.g:3274:1: ( ( 'scale' ) )
+            // InternalETLDsl.g:3275:1: ( 'scale' )
             {
-            // InternalETLDsl.g:3248:1: ( 'scale' )
-            // InternalETLDsl.g:3249:2: 'scale'
+            // InternalETLDsl.g:3275:1: ( 'scale' )
+            // InternalETLDsl.g:3276:2: 'scale'
             {
              before(grammarAccess.getFieldAccess().getScaleKeyword_7_0()); 
             match(input,57,FOLLOW_2); 
@@ -10229,14 +10326,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_7__1"
-    // InternalETLDsl.g:3258:1: rule__Field__Group_7__1 : rule__Field__Group_7__1__Impl ;
+    // InternalETLDsl.g:3285:1: rule__Field__Group_7__1 : rule__Field__Group_7__1__Impl ;
     public final void rule__Field__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3262:1: ( rule__Field__Group_7__1__Impl )
-            // InternalETLDsl.g:3263:2: rule__Field__Group_7__1__Impl
+            // InternalETLDsl.g:3289:1: ( rule__Field__Group_7__1__Impl )
+            // InternalETLDsl.g:3290:2: rule__Field__Group_7__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_7__1__Impl();
@@ -10262,21 +10359,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_7__1__Impl"
-    // InternalETLDsl.g:3269:1: rule__Field__Group_7__1__Impl : ( ( rule__Field__ScaleAssignment_7_1 ) ) ;
+    // InternalETLDsl.g:3296:1: rule__Field__Group_7__1__Impl : ( ( rule__Field__ScaleAssignment_7_1 ) ) ;
     public final void rule__Field__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3273:1: ( ( ( rule__Field__ScaleAssignment_7_1 ) ) )
-            // InternalETLDsl.g:3274:1: ( ( rule__Field__ScaleAssignment_7_1 ) )
+            // InternalETLDsl.g:3300:1: ( ( ( rule__Field__ScaleAssignment_7_1 ) ) )
+            // InternalETLDsl.g:3301:1: ( ( rule__Field__ScaleAssignment_7_1 ) )
             {
-            // InternalETLDsl.g:3274:1: ( ( rule__Field__ScaleAssignment_7_1 ) )
-            // InternalETLDsl.g:3275:2: ( rule__Field__ScaleAssignment_7_1 )
+            // InternalETLDsl.g:3301:1: ( ( rule__Field__ScaleAssignment_7_1 ) )
+            // InternalETLDsl.g:3302:2: ( rule__Field__ScaleAssignment_7_1 )
             {
              before(grammarAccess.getFieldAccess().getScaleAssignment_7_1()); 
-            // InternalETLDsl.g:3276:2: ( rule__Field__ScaleAssignment_7_1 )
-            // InternalETLDsl.g:3276:3: rule__Field__ScaleAssignment_7_1
+            // InternalETLDsl.g:3303:2: ( rule__Field__ScaleAssignment_7_1 )
+            // InternalETLDsl.g:3303:3: rule__Field__ScaleAssignment_7_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__ScaleAssignment_7_1();
@@ -10309,14 +10406,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_8__0"
-    // InternalETLDsl.g:3285:1: rule__Field__Group_8__0 : rule__Field__Group_8__0__Impl rule__Field__Group_8__1 ;
+    // InternalETLDsl.g:3312:1: rule__Field__Group_8__0 : rule__Field__Group_8__0__Impl rule__Field__Group_8__1 ;
     public final void rule__Field__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3289:1: ( rule__Field__Group_8__0__Impl rule__Field__Group_8__1 )
-            // InternalETLDsl.g:3290:2: rule__Field__Group_8__0__Impl rule__Field__Group_8__1
+            // InternalETLDsl.g:3316:1: ( rule__Field__Group_8__0__Impl rule__Field__Group_8__1 )
+            // InternalETLDsl.g:3317:2: rule__Field__Group_8__0__Impl rule__Field__Group_8__1
             {
             pushFollow(FOLLOW_4);
             rule__Field__Group_8__0__Impl();
@@ -10347,17 +10444,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_8__0__Impl"
-    // InternalETLDsl.g:3297:1: rule__Field__Group_8__0__Impl : ( 'original_name' ) ;
+    // InternalETLDsl.g:3324:1: rule__Field__Group_8__0__Impl : ( 'original_name' ) ;
     public final void rule__Field__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3301:1: ( ( 'original_name' ) )
-            // InternalETLDsl.g:3302:1: ( 'original_name' )
+            // InternalETLDsl.g:3328:1: ( ( 'original_name' ) )
+            // InternalETLDsl.g:3329:1: ( 'original_name' )
             {
-            // InternalETLDsl.g:3302:1: ( 'original_name' )
-            // InternalETLDsl.g:3303:2: 'original_name'
+            // InternalETLDsl.g:3329:1: ( 'original_name' )
+            // InternalETLDsl.g:3330:2: 'original_name'
             {
              before(grammarAccess.getFieldAccess().getOriginal_nameKeyword_8_0()); 
             match(input,58,FOLLOW_2); 
@@ -10384,14 +10481,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_8__1"
-    // InternalETLDsl.g:3312:1: rule__Field__Group_8__1 : rule__Field__Group_8__1__Impl ;
+    // InternalETLDsl.g:3339:1: rule__Field__Group_8__1 : rule__Field__Group_8__1__Impl ;
     public final void rule__Field__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3316:1: ( rule__Field__Group_8__1__Impl )
-            // InternalETLDsl.g:3317:2: rule__Field__Group_8__1__Impl
+            // InternalETLDsl.g:3343:1: ( rule__Field__Group_8__1__Impl )
+            // InternalETLDsl.g:3344:2: rule__Field__Group_8__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_8__1__Impl();
@@ -10417,21 +10514,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_8__1__Impl"
-    // InternalETLDsl.g:3323:1: rule__Field__Group_8__1__Impl : ( ( rule__Field__Original_nameAssignment_8_1 ) ) ;
+    // InternalETLDsl.g:3350:1: rule__Field__Group_8__1__Impl : ( ( rule__Field__Original_nameAssignment_8_1 ) ) ;
     public final void rule__Field__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3327:1: ( ( ( rule__Field__Original_nameAssignment_8_1 ) ) )
-            // InternalETLDsl.g:3328:1: ( ( rule__Field__Original_nameAssignment_8_1 ) )
+            // InternalETLDsl.g:3354:1: ( ( ( rule__Field__Original_nameAssignment_8_1 ) ) )
+            // InternalETLDsl.g:3355:1: ( ( rule__Field__Original_nameAssignment_8_1 ) )
             {
-            // InternalETLDsl.g:3328:1: ( ( rule__Field__Original_nameAssignment_8_1 ) )
-            // InternalETLDsl.g:3329:2: ( rule__Field__Original_nameAssignment_8_1 )
+            // InternalETLDsl.g:3355:1: ( ( rule__Field__Original_nameAssignment_8_1 ) )
+            // InternalETLDsl.g:3356:2: ( rule__Field__Original_nameAssignment_8_1 )
             {
              before(grammarAccess.getFieldAccess().getOriginal_nameAssignment_8_1()); 
-            // InternalETLDsl.g:3330:2: ( rule__Field__Original_nameAssignment_8_1 )
-            // InternalETLDsl.g:3330:3: rule__Field__Original_nameAssignment_8_1
+            // InternalETLDsl.g:3357:2: ( rule__Field__Original_nameAssignment_8_1 )
+            // InternalETLDsl.g:3357:3: rule__Field__Original_nameAssignment_8_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__Original_nameAssignment_8_1();
@@ -10464,14 +10561,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_9__0"
-    // InternalETLDsl.g:3339:1: rule__Field__Group_9__0 : rule__Field__Group_9__0__Impl rule__Field__Group_9__1 ;
+    // InternalETLDsl.g:3366:1: rule__Field__Group_9__0 : rule__Field__Group_9__0__Impl rule__Field__Group_9__1 ;
     public final void rule__Field__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3343:1: ( rule__Field__Group_9__0__Impl rule__Field__Group_9__1 )
-            // InternalETLDsl.g:3344:2: rule__Field__Group_9__0__Impl rule__Field__Group_9__1
+            // InternalETLDsl.g:3370:1: ( rule__Field__Group_9__0__Impl rule__Field__Group_9__1 )
+            // InternalETLDsl.g:3371:2: rule__Field__Group_9__0__Impl rule__Field__Group_9__1
             {
             pushFollow(FOLLOW_4);
             rule__Field__Group_9__0__Impl();
@@ -10502,17 +10599,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_9__0__Impl"
-    // InternalETLDsl.g:3351:1: rule__Field__Group_9__0__Impl : ( 'short_describtion' ) ;
+    // InternalETLDsl.g:3378:1: rule__Field__Group_9__0__Impl : ( 'short_describtion' ) ;
     public final void rule__Field__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3355:1: ( ( 'short_describtion' ) )
-            // InternalETLDsl.g:3356:1: ( 'short_describtion' )
+            // InternalETLDsl.g:3382:1: ( ( 'short_describtion' ) )
+            // InternalETLDsl.g:3383:1: ( 'short_describtion' )
             {
-            // InternalETLDsl.g:3356:1: ( 'short_describtion' )
-            // InternalETLDsl.g:3357:2: 'short_describtion'
+            // InternalETLDsl.g:3383:1: ( 'short_describtion' )
+            // InternalETLDsl.g:3384:2: 'short_describtion'
             {
              before(grammarAccess.getFieldAccess().getShort_describtionKeyword_9_0()); 
             match(input,59,FOLLOW_2); 
@@ -10539,14 +10636,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_9__1"
-    // InternalETLDsl.g:3366:1: rule__Field__Group_9__1 : rule__Field__Group_9__1__Impl ;
+    // InternalETLDsl.g:3393:1: rule__Field__Group_9__1 : rule__Field__Group_9__1__Impl ;
     public final void rule__Field__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3370:1: ( rule__Field__Group_9__1__Impl )
-            // InternalETLDsl.g:3371:2: rule__Field__Group_9__1__Impl
+            // InternalETLDsl.g:3397:1: ( rule__Field__Group_9__1__Impl )
+            // InternalETLDsl.g:3398:2: rule__Field__Group_9__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_9__1__Impl();
@@ -10572,21 +10669,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_9__1__Impl"
-    // InternalETLDsl.g:3377:1: rule__Field__Group_9__1__Impl : ( ( rule__Field__Short_describtionAssignment_9_1 ) ) ;
+    // InternalETLDsl.g:3404:1: rule__Field__Group_9__1__Impl : ( ( rule__Field__Short_describtionAssignment_9_1 ) ) ;
     public final void rule__Field__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3381:1: ( ( ( rule__Field__Short_describtionAssignment_9_1 ) ) )
-            // InternalETLDsl.g:3382:1: ( ( rule__Field__Short_describtionAssignment_9_1 ) )
+            // InternalETLDsl.g:3408:1: ( ( ( rule__Field__Short_describtionAssignment_9_1 ) ) )
+            // InternalETLDsl.g:3409:1: ( ( rule__Field__Short_describtionAssignment_9_1 ) )
             {
-            // InternalETLDsl.g:3382:1: ( ( rule__Field__Short_describtionAssignment_9_1 ) )
-            // InternalETLDsl.g:3383:2: ( rule__Field__Short_describtionAssignment_9_1 )
+            // InternalETLDsl.g:3409:1: ( ( rule__Field__Short_describtionAssignment_9_1 ) )
+            // InternalETLDsl.g:3410:2: ( rule__Field__Short_describtionAssignment_9_1 )
             {
              before(grammarAccess.getFieldAccess().getShort_describtionAssignment_9_1()); 
-            // InternalETLDsl.g:3384:2: ( rule__Field__Short_describtionAssignment_9_1 )
-            // InternalETLDsl.g:3384:3: rule__Field__Short_describtionAssignment_9_1
+            // InternalETLDsl.g:3411:2: ( rule__Field__Short_describtionAssignment_9_1 )
+            // InternalETLDsl.g:3411:3: rule__Field__Short_describtionAssignment_9_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__Short_describtionAssignment_9_1();
@@ -10619,14 +10716,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_10__0"
-    // InternalETLDsl.g:3393:1: rule__Field__Group_10__0 : rule__Field__Group_10__0__Impl rule__Field__Group_10__1 ;
+    // InternalETLDsl.g:3420:1: rule__Field__Group_10__0 : rule__Field__Group_10__0__Impl rule__Field__Group_10__1 ;
     public final void rule__Field__Group_10__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3397:1: ( rule__Field__Group_10__0__Impl rule__Field__Group_10__1 )
-            // InternalETLDsl.g:3398:2: rule__Field__Group_10__0__Impl rule__Field__Group_10__1
+            // InternalETLDsl.g:3424:1: ( rule__Field__Group_10__0__Impl rule__Field__Group_10__1 )
+            // InternalETLDsl.g:3425:2: rule__Field__Group_10__0__Impl rule__Field__Group_10__1
             {
             pushFollow(FOLLOW_4);
             rule__Field__Group_10__0__Impl();
@@ -10657,17 +10754,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_10__0__Impl"
-    // InternalETLDsl.g:3405:1: rule__Field__Group_10__0__Impl : ( 'dateFormat' ) ;
+    // InternalETLDsl.g:3432:1: rule__Field__Group_10__0__Impl : ( 'dateFormat' ) ;
     public final void rule__Field__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3409:1: ( ( 'dateFormat' ) )
-            // InternalETLDsl.g:3410:1: ( 'dateFormat' )
+            // InternalETLDsl.g:3436:1: ( ( 'dateFormat' ) )
+            // InternalETLDsl.g:3437:1: ( 'dateFormat' )
             {
-            // InternalETLDsl.g:3410:1: ( 'dateFormat' )
-            // InternalETLDsl.g:3411:2: 'dateFormat'
+            // InternalETLDsl.g:3437:1: ( 'dateFormat' )
+            // InternalETLDsl.g:3438:2: 'dateFormat'
             {
              before(grammarAccess.getFieldAccess().getDateFormatKeyword_10_0()); 
             match(input,60,FOLLOW_2); 
@@ -10694,14 +10791,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_10__1"
-    // InternalETLDsl.g:3420:1: rule__Field__Group_10__1 : rule__Field__Group_10__1__Impl ;
+    // InternalETLDsl.g:3447:1: rule__Field__Group_10__1 : rule__Field__Group_10__1__Impl ;
     public final void rule__Field__Group_10__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3424:1: ( rule__Field__Group_10__1__Impl )
-            // InternalETLDsl.g:3425:2: rule__Field__Group_10__1__Impl
+            // InternalETLDsl.g:3451:1: ( rule__Field__Group_10__1__Impl )
+            // InternalETLDsl.g:3452:2: rule__Field__Group_10__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_10__1__Impl();
@@ -10727,21 +10824,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_10__1__Impl"
-    // InternalETLDsl.g:3431:1: rule__Field__Group_10__1__Impl : ( ( rule__Field__DateFormatAssignment_10_1 ) ) ;
+    // InternalETLDsl.g:3458:1: rule__Field__Group_10__1__Impl : ( ( rule__Field__DateFormatAssignment_10_1 ) ) ;
     public final void rule__Field__Group_10__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3435:1: ( ( ( rule__Field__DateFormatAssignment_10_1 ) ) )
-            // InternalETLDsl.g:3436:1: ( ( rule__Field__DateFormatAssignment_10_1 ) )
+            // InternalETLDsl.g:3462:1: ( ( ( rule__Field__DateFormatAssignment_10_1 ) ) )
+            // InternalETLDsl.g:3463:1: ( ( rule__Field__DateFormatAssignment_10_1 ) )
             {
-            // InternalETLDsl.g:3436:1: ( ( rule__Field__DateFormatAssignment_10_1 ) )
-            // InternalETLDsl.g:3437:2: ( rule__Field__DateFormatAssignment_10_1 )
+            // InternalETLDsl.g:3463:1: ( ( rule__Field__DateFormatAssignment_10_1 ) )
+            // InternalETLDsl.g:3464:2: ( rule__Field__DateFormatAssignment_10_1 )
             {
              before(grammarAccess.getFieldAccess().getDateFormatAssignment_10_1()); 
-            // InternalETLDsl.g:3438:2: ( rule__Field__DateFormatAssignment_10_1 )
-            // InternalETLDsl.g:3438:3: rule__Field__DateFormatAssignment_10_1
+            // InternalETLDsl.g:3465:2: ( rule__Field__DateFormatAssignment_10_1 )
+            // InternalETLDsl.g:3465:3: rule__Field__DateFormatAssignment_10_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__DateFormatAssignment_10_1();
@@ -10774,14 +10871,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_11__0"
-    // InternalETLDsl.g:3447:1: rule__Field__Group_11__0 : rule__Field__Group_11__0__Impl rule__Field__Group_11__1 ;
+    // InternalETLDsl.g:3474:1: rule__Field__Group_11__0 : rule__Field__Group_11__0__Impl rule__Field__Group_11__1 ;
     public final void rule__Field__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3451:1: ( rule__Field__Group_11__0__Impl rule__Field__Group_11__1 )
-            // InternalETLDsl.g:3452:2: rule__Field__Group_11__0__Impl rule__Field__Group_11__1
+            // InternalETLDsl.g:3478:1: ( rule__Field__Group_11__0__Impl rule__Field__Group_11__1 )
+            // InternalETLDsl.g:3479:2: rule__Field__Group_11__0__Impl rule__Field__Group_11__1
             {
             pushFollow(FOLLOW_4);
             rule__Field__Group_11__0__Impl();
@@ -10812,17 +10909,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_11__0__Impl"
-    // InternalETLDsl.g:3459:1: rule__Field__Group_11__0__Impl : ( 'NullIndicator' ) ;
+    // InternalETLDsl.g:3486:1: rule__Field__Group_11__0__Impl : ( 'NullIndicator' ) ;
     public final void rule__Field__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3463:1: ( ( 'NullIndicator' ) )
-            // InternalETLDsl.g:3464:1: ( 'NullIndicator' )
+            // InternalETLDsl.g:3490:1: ( ( 'NullIndicator' ) )
+            // InternalETLDsl.g:3491:1: ( 'NullIndicator' )
             {
-            // InternalETLDsl.g:3464:1: ( 'NullIndicator' )
-            // InternalETLDsl.g:3465:2: 'NullIndicator'
+            // InternalETLDsl.g:3491:1: ( 'NullIndicator' )
+            // InternalETLDsl.g:3492:2: 'NullIndicator'
             {
              before(grammarAccess.getFieldAccess().getNullIndicatorKeyword_11_0()); 
             match(input,61,FOLLOW_2); 
@@ -10849,14 +10946,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_11__1"
-    // InternalETLDsl.g:3474:1: rule__Field__Group_11__1 : rule__Field__Group_11__1__Impl ;
+    // InternalETLDsl.g:3501:1: rule__Field__Group_11__1 : rule__Field__Group_11__1__Impl ;
     public final void rule__Field__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3478:1: ( rule__Field__Group_11__1__Impl )
-            // InternalETLDsl.g:3479:2: rule__Field__Group_11__1__Impl
+            // InternalETLDsl.g:3505:1: ( rule__Field__Group_11__1__Impl )
+            // InternalETLDsl.g:3506:2: rule__Field__Group_11__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_11__1__Impl();
@@ -10882,21 +10979,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_11__1__Impl"
-    // InternalETLDsl.g:3485:1: rule__Field__Group_11__1__Impl : ( ( rule__Field__NullIndicatorAssignment_11_1 ) ) ;
+    // InternalETLDsl.g:3512:1: rule__Field__Group_11__1__Impl : ( ( rule__Field__NullIndicatorAssignment_11_1 ) ) ;
     public final void rule__Field__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3489:1: ( ( ( rule__Field__NullIndicatorAssignment_11_1 ) ) )
-            // InternalETLDsl.g:3490:1: ( ( rule__Field__NullIndicatorAssignment_11_1 ) )
+            // InternalETLDsl.g:3516:1: ( ( ( rule__Field__NullIndicatorAssignment_11_1 ) ) )
+            // InternalETLDsl.g:3517:1: ( ( rule__Field__NullIndicatorAssignment_11_1 ) )
             {
-            // InternalETLDsl.g:3490:1: ( ( rule__Field__NullIndicatorAssignment_11_1 ) )
-            // InternalETLDsl.g:3491:2: ( rule__Field__NullIndicatorAssignment_11_1 )
+            // InternalETLDsl.g:3517:1: ( ( rule__Field__NullIndicatorAssignment_11_1 ) )
+            // InternalETLDsl.g:3518:2: ( rule__Field__NullIndicatorAssignment_11_1 )
             {
              before(grammarAccess.getFieldAccess().getNullIndicatorAssignment_11_1()); 
-            // InternalETLDsl.g:3492:2: ( rule__Field__NullIndicatorAssignment_11_1 )
-            // InternalETLDsl.g:3492:3: rule__Field__NullIndicatorAssignment_11_1
+            // InternalETLDsl.g:3519:2: ( rule__Field__NullIndicatorAssignment_11_1 )
+            // InternalETLDsl.g:3519:3: rule__Field__NullIndicatorAssignment_11_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__NullIndicatorAssignment_11_1();
@@ -10929,14 +11026,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_12__0"
-    // InternalETLDsl.g:3501:1: rule__Field__Group_12__0 : rule__Field__Group_12__0__Impl rule__Field__Group_12__1 ;
+    // InternalETLDsl.g:3528:1: rule__Field__Group_12__0 : rule__Field__Group_12__0__Impl rule__Field__Group_12__1 ;
     public final void rule__Field__Group_12__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3505:1: ( rule__Field__Group_12__0__Impl rule__Field__Group_12__1 )
-            // InternalETLDsl.g:3506:2: rule__Field__Group_12__0__Impl rule__Field__Group_12__1
+            // InternalETLDsl.g:3532:1: ( rule__Field__Group_12__0__Impl rule__Field__Group_12__1 )
+            // InternalETLDsl.g:3533:2: rule__Field__Group_12__0__Impl rule__Field__Group_12__1
             {
             pushFollow(FOLLOW_30);
             rule__Field__Group_12__0__Impl();
@@ -10967,17 +11064,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_12__0__Impl"
-    // InternalETLDsl.g:3513:1: rule__Field__Group_12__0__Impl : ( 'allowExponent:' ) ;
+    // InternalETLDsl.g:3540:1: rule__Field__Group_12__0__Impl : ( 'allowExponent:' ) ;
     public final void rule__Field__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3517:1: ( ( 'allowExponent:' ) )
-            // InternalETLDsl.g:3518:1: ( 'allowExponent:' )
+            // InternalETLDsl.g:3544:1: ( ( 'allowExponent:' ) )
+            // InternalETLDsl.g:3545:1: ( 'allowExponent:' )
             {
-            // InternalETLDsl.g:3518:1: ( 'allowExponent:' )
-            // InternalETLDsl.g:3519:2: 'allowExponent:'
+            // InternalETLDsl.g:3545:1: ( 'allowExponent:' )
+            // InternalETLDsl.g:3546:2: 'allowExponent:'
             {
              before(grammarAccess.getFieldAccess().getAllowExponentKeyword_12_0()); 
             match(input,62,FOLLOW_2); 
@@ -11004,14 +11101,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_12__1"
-    // InternalETLDsl.g:3528:1: rule__Field__Group_12__1 : rule__Field__Group_12__1__Impl ;
+    // InternalETLDsl.g:3555:1: rule__Field__Group_12__1 : rule__Field__Group_12__1__Impl ;
     public final void rule__Field__Group_12__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3532:1: ( rule__Field__Group_12__1__Impl )
-            // InternalETLDsl.g:3533:2: rule__Field__Group_12__1__Impl
+            // InternalETLDsl.g:3559:1: ( rule__Field__Group_12__1__Impl )
+            // InternalETLDsl.g:3560:2: rule__Field__Group_12__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_12__1__Impl();
@@ -11037,21 +11134,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_12__1__Impl"
-    // InternalETLDsl.g:3539:1: rule__Field__Group_12__1__Impl : ( ( rule__Field__AllowExponentAssignment_12_1 ) ) ;
+    // InternalETLDsl.g:3566:1: rule__Field__Group_12__1__Impl : ( ( rule__Field__AllowExponentAssignment_12_1 ) ) ;
     public final void rule__Field__Group_12__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3543:1: ( ( ( rule__Field__AllowExponentAssignment_12_1 ) ) )
-            // InternalETLDsl.g:3544:1: ( ( rule__Field__AllowExponentAssignment_12_1 ) )
+            // InternalETLDsl.g:3570:1: ( ( ( rule__Field__AllowExponentAssignment_12_1 ) ) )
+            // InternalETLDsl.g:3571:1: ( ( rule__Field__AllowExponentAssignment_12_1 ) )
             {
-            // InternalETLDsl.g:3544:1: ( ( rule__Field__AllowExponentAssignment_12_1 ) )
-            // InternalETLDsl.g:3545:2: ( rule__Field__AllowExponentAssignment_12_1 )
+            // InternalETLDsl.g:3571:1: ( ( rule__Field__AllowExponentAssignment_12_1 ) )
+            // InternalETLDsl.g:3572:2: ( rule__Field__AllowExponentAssignment_12_1 )
             {
              before(grammarAccess.getFieldAccess().getAllowExponentAssignment_12_1()); 
-            // InternalETLDsl.g:3546:2: ( rule__Field__AllowExponentAssignment_12_1 )
-            // InternalETLDsl.g:3546:3: rule__Field__AllowExponentAssignment_12_1
+            // InternalETLDsl.g:3573:2: ( rule__Field__AllowExponentAssignment_12_1 )
+            // InternalETLDsl.g:3573:3: rule__Field__AllowExponentAssignment_12_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__AllowExponentAssignment_12_1();
@@ -11084,14 +11181,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_13__0"
-    // InternalETLDsl.g:3555:1: rule__Field__Group_13__0 : rule__Field__Group_13__0__Impl rule__Field__Group_13__1 ;
+    // InternalETLDsl.g:3582:1: rule__Field__Group_13__0 : rule__Field__Group_13__0__Impl rule__Field__Group_13__1 ;
     public final void rule__Field__Group_13__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3559:1: ( rule__Field__Group_13__0__Impl rule__Field__Group_13__1 )
-            // InternalETLDsl.g:3560:2: rule__Field__Group_13__0__Impl rule__Field__Group_13__1
+            // InternalETLDsl.g:3586:1: ( rule__Field__Group_13__0__Impl rule__Field__Group_13__1 )
+            // InternalETLDsl.g:3587:2: rule__Field__Group_13__0__Impl rule__Field__Group_13__1
             {
             pushFollow(FOLLOW_30);
             rule__Field__Group_13__0__Impl();
@@ -11122,17 +11219,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_13__0__Impl"
-    // InternalETLDsl.g:3567:1: rule__Field__Group_13__0__Impl : ( 'hasImplicitComma:' ) ;
+    // InternalETLDsl.g:3594:1: rule__Field__Group_13__0__Impl : ( 'hasImplicitComma:' ) ;
     public final void rule__Field__Group_13__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3571:1: ( ( 'hasImplicitComma:' ) )
-            // InternalETLDsl.g:3572:1: ( 'hasImplicitComma:' )
+            // InternalETLDsl.g:3598:1: ( ( 'hasImplicitComma:' ) )
+            // InternalETLDsl.g:3599:1: ( 'hasImplicitComma:' )
             {
-            // InternalETLDsl.g:3572:1: ( 'hasImplicitComma:' )
-            // InternalETLDsl.g:3573:2: 'hasImplicitComma:'
+            // InternalETLDsl.g:3599:1: ( 'hasImplicitComma:' )
+            // InternalETLDsl.g:3600:2: 'hasImplicitComma:'
             {
              before(grammarAccess.getFieldAccess().getHasImplicitCommaKeyword_13_0()); 
             match(input,63,FOLLOW_2); 
@@ -11159,14 +11256,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_13__1"
-    // InternalETLDsl.g:3582:1: rule__Field__Group_13__1 : rule__Field__Group_13__1__Impl ;
+    // InternalETLDsl.g:3609:1: rule__Field__Group_13__1 : rule__Field__Group_13__1__Impl ;
     public final void rule__Field__Group_13__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3586:1: ( rule__Field__Group_13__1__Impl )
-            // InternalETLDsl.g:3587:2: rule__Field__Group_13__1__Impl
+            // InternalETLDsl.g:3613:1: ( rule__Field__Group_13__1__Impl )
+            // InternalETLDsl.g:3614:2: rule__Field__Group_13__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_13__1__Impl();
@@ -11192,21 +11289,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_13__1__Impl"
-    // InternalETLDsl.g:3593:1: rule__Field__Group_13__1__Impl : ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) ) ;
+    // InternalETLDsl.g:3620:1: rule__Field__Group_13__1__Impl : ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) ) ;
     public final void rule__Field__Group_13__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3597:1: ( ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) ) )
-            // InternalETLDsl.g:3598:1: ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) )
+            // InternalETLDsl.g:3624:1: ( ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) ) )
+            // InternalETLDsl.g:3625:1: ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) )
             {
-            // InternalETLDsl.g:3598:1: ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) )
-            // InternalETLDsl.g:3599:2: ( rule__Field__HasImplicitCommaAssignment_13_1 )
+            // InternalETLDsl.g:3625:1: ( ( rule__Field__HasImplicitCommaAssignment_13_1 ) )
+            // InternalETLDsl.g:3626:2: ( rule__Field__HasImplicitCommaAssignment_13_1 )
             {
              before(grammarAccess.getFieldAccess().getHasImplicitCommaAssignment_13_1()); 
-            // InternalETLDsl.g:3600:2: ( rule__Field__HasImplicitCommaAssignment_13_1 )
-            // InternalETLDsl.g:3600:3: rule__Field__HasImplicitCommaAssignment_13_1
+            // InternalETLDsl.g:3627:2: ( rule__Field__HasImplicitCommaAssignment_13_1 )
+            // InternalETLDsl.g:3627:3: rule__Field__HasImplicitCommaAssignment_13_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__HasImplicitCommaAssignment_13_1();
@@ -11239,14 +11336,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_14__0"
-    // InternalETLDsl.g:3609:1: rule__Field__Group_14__0 : rule__Field__Group_14__0__Impl rule__Field__Group_14__1 ;
+    // InternalETLDsl.g:3636:1: rule__Field__Group_14__0 : rule__Field__Group_14__0__Impl rule__Field__Group_14__1 ;
     public final void rule__Field__Group_14__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3613:1: ( rule__Field__Group_14__0__Impl rule__Field__Group_14__1 )
-            // InternalETLDsl.g:3614:2: rule__Field__Group_14__0__Impl rule__Field__Group_14__1
+            // InternalETLDsl.g:3640:1: ( rule__Field__Group_14__0__Impl rule__Field__Group_14__1 )
+            // InternalETLDsl.g:3641:2: rule__Field__Group_14__0__Impl rule__Field__Group_14__1
             {
             pushFollow(FOLLOW_30);
             rule__Field__Group_14__0__Impl();
@@ -11277,17 +11374,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_14__0__Impl"
-    // InternalETLDsl.g:3621:1: rule__Field__Group_14__0__Impl : ( 'interfaceOnly:' ) ;
+    // InternalETLDsl.g:3648:1: rule__Field__Group_14__0__Impl : ( 'interfaceOnly:' ) ;
     public final void rule__Field__Group_14__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3625:1: ( ( 'interfaceOnly:' ) )
-            // InternalETLDsl.g:3626:1: ( 'interfaceOnly:' )
+            // InternalETLDsl.g:3652:1: ( ( 'interfaceOnly:' ) )
+            // InternalETLDsl.g:3653:1: ( 'interfaceOnly:' )
             {
-            // InternalETLDsl.g:3626:1: ( 'interfaceOnly:' )
-            // InternalETLDsl.g:3627:2: 'interfaceOnly:'
+            // InternalETLDsl.g:3653:1: ( 'interfaceOnly:' )
+            // InternalETLDsl.g:3654:2: 'interfaceOnly:'
             {
              before(grammarAccess.getFieldAccess().getInterfaceOnlyKeyword_14_0()); 
             match(input,64,FOLLOW_2); 
@@ -11314,14 +11411,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_14__1"
-    // InternalETLDsl.g:3636:1: rule__Field__Group_14__1 : rule__Field__Group_14__1__Impl ;
+    // InternalETLDsl.g:3663:1: rule__Field__Group_14__1 : rule__Field__Group_14__1__Impl ;
     public final void rule__Field__Group_14__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3640:1: ( rule__Field__Group_14__1__Impl )
-            // InternalETLDsl.g:3641:2: rule__Field__Group_14__1__Impl
+            // InternalETLDsl.g:3667:1: ( rule__Field__Group_14__1__Impl )
+            // InternalETLDsl.g:3668:2: rule__Field__Group_14__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_14__1__Impl();
@@ -11347,21 +11444,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_14__1__Impl"
-    // InternalETLDsl.g:3647:1: rule__Field__Group_14__1__Impl : ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) ) ;
+    // InternalETLDsl.g:3674:1: rule__Field__Group_14__1__Impl : ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) ) ;
     public final void rule__Field__Group_14__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3651:1: ( ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) ) )
-            // InternalETLDsl.g:3652:1: ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) )
+            // InternalETLDsl.g:3678:1: ( ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) ) )
+            // InternalETLDsl.g:3679:1: ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) )
             {
-            // InternalETLDsl.g:3652:1: ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) )
-            // InternalETLDsl.g:3653:2: ( rule__Field__InterfaceOnlyAssignment_14_1 )
+            // InternalETLDsl.g:3679:1: ( ( rule__Field__InterfaceOnlyAssignment_14_1 ) )
+            // InternalETLDsl.g:3680:2: ( rule__Field__InterfaceOnlyAssignment_14_1 )
             {
              before(grammarAccess.getFieldAccess().getInterfaceOnlyAssignment_14_1()); 
-            // InternalETLDsl.g:3654:2: ( rule__Field__InterfaceOnlyAssignment_14_1 )
-            // InternalETLDsl.g:3654:3: rule__Field__InterfaceOnlyAssignment_14_1
+            // InternalETLDsl.g:3681:2: ( rule__Field__InterfaceOnlyAssignment_14_1 )
+            // InternalETLDsl.g:3681:3: rule__Field__InterfaceOnlyAssignment_14_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__InterfaceOnlyAssignment_14_1();
@@ -11394,14 +11491,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_15__0"
-    // InternalETLDsl.g:3663:1: rule__Field__Group_15__0 : rule__Field__Group_15__0__Impl rule__Field__Group_15__1 ;
+    // InternalETLDsl.g:3690:1: rule__Field__Group_15__0 : rule__Field__Group_15__0__Impl rule__Field__Group_15__1 ;
     public final void rule__Field__Group_15__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3667:1: ( rule__Field__Group_15__0__Impl rule__Field__Group_15__1 )
-            // InternalETLDsl.g:3668:2: rule__Field__Group_15__0__Impl rule__Field__Group_15__1
+            // InternalETLDsl.g:3694:1: ( rule__Field__Group_15__0__Impl rule__Field__Group_15__1 )
+            // InternalETLDsl.g:3695:2: rule__Field__Group_15__0__Impl rule__Field__Group_15__1
             {
             pushFollow(FOLLOW_30);
             rule__Field__Group_15__0__Impl();
@@ -11432,17 +11529,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_15__0__Impl"
-    // InternalETLDsl.g:3675:1: rule__Field__Group_15__0__Impl : ( 'tableOnly:' ) ;
+    // InternalETLDsl.g:3702:1: rule__Field__Group_15__0__Impl : ( 'tableOnly:' ) ;
     public final void rule__Field__Group_15__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3679:1: ( ( 'tableOnly:' ) )
-            // InternalETLDsl.g:3680:1: ( 'tableOnly:' )
+            // InternalETLDsl.g:3706:1: ( ( 'tableOnly:' ) )
+            // InternalETLDsl.g:3707:1: ( 'tableOnly:' )
             {
-            // InternalETLDsl.g:3680:1: ( 'tableOnly:' )
-            // InternalETLDsl.g:3681:2: 'tableOnly:'
+            // InternalETLDsl.g:3707:1: ( 'tableOnly:' )
+            // InternalETLDsl.g:3708:2: 'tableOnly:'
             {
              before(grammarAccess.getFieldAccess().getTableOnlyKeyword_15_0()); 
             match(input,65,FOLLOW_2); 
@@ -11469,14 +11566,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_15__1"
-    // InternalETLDsl.g:3690:1: rule__Field__Group_15__1 : rule__Field__Group_15__1__Impl ;
+    // InternalETLDsl.g:3717:1: rule__Field__Group_15__1 : rule__Field__Group_15__1__Impl ;
     public final void rule__Field__Group_15__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3694:1: ( rule__Field__Group_15__1__Impl )
-            // InternalETLDsl.g:3695:2: rule__Field__Group_15__1__Impl
+            // InternalETLDsl.g:3721:1: ( rule__Field__Group_15__1__Impl )
+            // InternalETLDsl.g:3722:2: rule__Field__Group_15__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_15__1__Impl();
@@ -11502,21 +11599,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_15__1__Impl"
-    // InternalETLDsl.g:3701:1: rule__Field__Group_15__1__Impl : ( ( rule__Field__TableOnlyAssignment_15_1 ) ) ;
+    // InternalETLDsl.g:3728:1: rule__Field__Group_15__1__Impl : ( ( rule__Field__TableOnlyAssignment_15_1 ) ) ;
     public final void rule__Field__Group_15__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3705:1: ( ( ( rule__Field__TableOnlyAssignment_15_1 ) ) )
-            // InternalETLDsl.g:3706:1: ( ( rule__Field__TableOnlyAssignment_15_1 ) )
+            // InternalETLDsl.g:3732:1: ( ( ( rule__Field__TableOnlyAssignment_15_1 ) ) )
+            // InternalETLDsl.g:3733:1: ( ( rule__Field__TableOnlyAssignment_15_1 ) )
             {
-            // InternalETLDsl.g:3706:1: ( ( rule__Field__TableOnlyAssignment_15_1 ) )
-            // InternalETLDsl.g:3707:2: ( rule__Field__TableOnlyAssignment_15_1 )
+            // InternalETLDsl.g:3733:1: ( ( rule__Field__TableOnlyAssignment_15_1 ) )
+            // InternalETLDsl.g:3734:2: ( rule__Field__TableOnlyAssignment_15_1 )
             {
              before(grammarAccess.getFieldAccess().getTableOnlyAssignment_15_1()); 
-            // InternalETLDsl.g:3708:2: ( rule__Field__TableOnlyAssignment_15_1 )
-            // InternalETLDsl.g:3708:3: rule__Field__TableOnlyAssignment_15_1
+            // InternalETLDsl.g:3735:2: ( rule__Field__TableOnlyAssignment_15_1 )
+            // InternalETLDsl.g:3735:3: rule__Field__TableOnlyAssignment_15_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__TableOnlyAssignment_15_1();
@@ -11549,14 +11646,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_16__0"
-    // InternalETLDsl.g:3717:1: rule__Field__Group_16__0 : rule__Field__Group_16__0__Impl rule__Field__Group_16__1 ;
+    // InternalETLDsl.g:3744:1: rule__Field__Group_16__0 : rule__Field__Group_16__0__Impl rule__Field__Group_16__1 ;
     public final void rule__Field__Group_16__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3721:1: ( rule__Field__Group_16__0__Impl rule__Field__Group_16__1 )
-            // InternalETLDsl.g:3722:2: rule__Field__Group_16__0__Impl rule__Field__Group_16__1
+            // InternalETLDsl.g:3748:1: ( rule__Field__Group_16__0__Impl rule__Field__Group_16__1 )
+            // InternalETLDsl.g:3749:2: rule__Field__Group_16__0__Impl rule__Field__Group_16__1
             {
             pushFollow(FOLLOW_30);
             rule__Field__Group_16__0__Impl();
@@ -11587,17 +11684,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_16__0__Impl"
-    // InternalETLDsl.g:3729:1: rule__Field__Group_16__0__Impl : ( 'isFastChanging:' ) ;
+    // InternalETLDsl.g:3756:1: rule__Field__Group_16__0__Impl : ( 'isFastChanging:' ) ;
     public final void rule__Field__Group_16__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3733:1: ( ( 'isFastChanging:' ) )
-            // InternalETLDsl.g:3734:1: ( 'isFastChanging:' )
+            // InternalETLDsl.g:3760:1: ( ( 'isFastChanging:' ) )
+            // InternalETLDsl.g:3761:1: ( 'isFastChanging:' )
             {
-            // InternalETLDsl.g:3734:1: ( 'isFastChanging:' )
-            // InternalETLDsl.g:3735:2: 'isFastChanging:'
+            // InternalETLDsl.g:3761:1: ( 'isFastChanging:' )
+            // InternalETLDsl.g:3762:2: 'isFastChanging:'
             {
              before(grammarAccess.getFieldAccess().getIsFastChangingKeyword_16_0()); 
             match(input,66,FOLLOW_2); 
@@ -11624,14 +11721,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_16__1"
-    // InternalETLDsl.g:3744:1: rule__Field__Group_16__1 : rule__Field__Group_16__1__Impl ;
+    // InternalETLDsl.g:3771:1: rule__Field__Group_16__1 : rule__Field__Group_16__1__Impl ;
     public final void rule__Field__Group_16__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3748:1: ( rule__Field__Group_16__1__Impl )
-            // InternalETLDsl.g:3749:2: rule__Field__Group_16__1__Impl
+            // InternalETLDsl.g:3775:1: ( rule__Field__Group_16__1__Impl )
+            // InternalETLDsl.g:3776:2: rule__Field__Group_16__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Field__Group_16__1__Impl();
@@ -11657,21 +11754,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group_16__1__Impl"
-    // InternalETLDsl.g:3755:1: rule__Field__Group_16__1__Impl : ( ( rule__Field__IsFastChangingAssignment_16_1 ) ) ;
+    // InternalETLDsl.g:3782:1: rule__Field__Group_16__1__Impl : ( ( rule__Field__IsFastChangingAssignment_16_1 ) ) ;
     public final void rule__Field__Group_16__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3759:1: ( ( ( rule__Field__IsFastChangingAssignment_16_1 ) ) )
-            // InternalETLDsl.g:3760:1: ( ( rule__Field__IsFastChangingAssignment_16_1 ) )
+            // InternalETLDsl.g:3786:1: ( ( ( rule__Field__IsFastChangingAssignment_16_1 ) ) )
+            // InternalETLDsl.g:3787:1: ( ( rule__Field__IsFastChangingAssignment_16_1 ) )
             {
-            // InternalETLDsl.g:3760:1: ( ( rule__Field__IsFastChangingAssignment_16_1 ) )
-            // InternalETLDsl.g:3761:2: ( rule__Field__IsFastChangingAssignment_16_1 )
+            // InternalETLDsl.g:3787:1: ( ( rule__Field__IsFastChangingAssignment_16_1 ) )
+            // InternalETLDsl.g:3788:2: ( rule__Field__IsFastChangingAssignment_16_1 )
             {
              before(grammarAccess.getFieldAccess().getIsFastChangingAssignment_16_1()); 
-            // InternalETLDsl.g:3762:2: ( rule__Field__IsFastChangingAssignment_16_1 )
-            // InternalETLDsl.g:3762:3: rule__Field__IsFastChangingAssignment_16_1
+            // InternalETLDsl.g:3789:2: ( rule__Field__IsFastChangingAssignment_16_1 )
+            // InternalETLDsl.g:3789:3: rule__Field__IsFastChangingAssignment_16_1
             {
             pushFollow(FOLLOW_2);
             rule__Field__IsFastChangingAssignment_16_1();
@@ -11704,14 +11801,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group__0"
-    // InternalETLDsl.g:3771:1: rule__Include__Group__0 : rule__Include__Group__0__Impl rule__Include__Group__1 ;
+    // InternalETLDsl.g:3798:1: rule__Include__Group__0 : rule__Include__Group__0__Impl rule__Include__Group__1 ;
     public final void rule__Include__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3775:1: ( rule__Include__Group__0__Impl rule__Include__Group__1 )
-            // InternalETLDsl.g:3776:2: rule__Include__Group__0__Impl rule__Include__Group__1
+            // InternalETLDsl.g:3802:1: ( rule__Include__Group__0__Impl rule__Include__Group__1 )
+            // InternalETLDsl.g:3803:2: rule__Include__Group__0__Impl rule__Include__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Include__Group__0__Impl();
@@ -11742,17 +11839,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group__0__Impl"
-    // InternalETLDsl.g:3783:1: rule__Include__Group__0__Impl : ( 'Include' ) ;
+    // InternalETLDsl.g:3810:1: rule__Include__Group__0__Impl : ( 'Include' ) ;
     public final void rule__Include__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3787:1: ( ( 'Include' ) )
-            // InternalETLDsl.g:3788:1: ( 'Include' )
+            // InternalETLDsl.g:3814:1: ( ( 'Include' ) )
+            // InternalETLDsl.g:3815:1: ( 'Include' )
             {
-            // InternalETLDsl.g:3788:1: ( 'Include' )
-            // InternalETLDsl.g:3789:2: 'Include'
+            // InternalETLDsl.g:3815:1: ( 'Include' )
+            // InternalETLDsl.g:3816:2: 'Include'
             {
              before(grammarAccess.getIncludeAccess().getIncludeKeyword_0()); 
             match(input,67,FOLLOW_2); 
@@ -11779,14 +11876,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group__1"
-    // InternalETLDsl.g:3798:1: rule__Include__Group__1 : rule__Include__Group__1__Impl rule__Include__Group__2 ;
+    // InternalETLDsl.g:3825:1: rule__Include__Group__1 : rule__Include__Group__1__Impl rule__Include__Group__2 ;
     public final void rule__Include__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3802:1: ( rule__Include__Group__1__Impl rule__Include__Group__2 )
-            // InternalETLDsl.g:3803:2: rule__Include__Group__1__Impl rule__Include__Group__2
+            // InternalETLDsl.g:3829:1: ( rule__Include__Group__1__Impl rule__Include__Group__2 )
+            // InternalETLDsl.g:3830:2: rule__Include__Group__1__Impl rule__Include__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__Include__Group__1__Impl();
@@ -11817,21 +11914,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group__1__Impl"
-    // InternalETLDsl.g:3810:1: rule__Include__Group__1__Impl : ( ( rule__Include__NameAssignment_1 ) ) ;
+    // InternalETLDsl.g:3837:1: rule__Include__Group__1__Impl : ( ( rule__Include__NameAssignment_1 ) ) ;
     public final void rule__Include__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3814:1: ( ( ( rule__Include__NameAssignment_1 ) ) )
-            // InternalETLDsl.g:3815:1: ( ( rule__Include__NameAssignment_1 ) )
+            // InternalETLDsl.g:3841:1: ( ( ( rule__Include__NameAssignment_1 ) ) )
+            // InternalETLDsl.g:3842:1: ( ( rule__Include__NameAssignment_1 ) )
             {
-            // InternalETLDsl.g:3815:1: ( ( rule__Include__NameAssignment_1 ) )
-            // InternalETLDsl.g:3816:2: ( rule__Include__NameAssignment_1 )
+            // InternalETLDsl.g:3842:1: ( ( rule__Include__NameAssignment_1 ) )
+            // InternalETLDsl.g:3843:2: ( rule__Include__NameAssignment_1 )
             {
              before(grammarAccess.getIncludeAccess().getNameAssignment_1()); 
-            // InternalETLDsl.g:3817:2: ( rule__Include__NameAssignment_1 )
-            // InternalETLDsl.g:3817:3: rule__Include__NameAssignment_1
+            // InternalETLDsl.g:3844:2: ( rule__Include__NameAssignment_1 )
+            // InternalETLDsl.g:3844:3: rule__Include__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Include__NameAssignment_1();
@@ -11864,14 +11961,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group__2"
-    // InternalETLDsl.g:3825:1: rule__Include__Group__2 : rule__Include__Group__2__Impl ;
+    // InternalETLDsl.g:3852:1: rule__Include__Group__2 : rule__Include__Group__2__Impl ;
     public final void rule__Include__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3829:1: ( rule__Include__Group__2__Impl )
-            // InternalETLDsl.g:3830:2: rule__Include__Group__2__Impl
+            // InternalETLDsl.g:3856:1: ( rule__Include__Group__2__Impl )
+            // InternalETLDsl.g:3857:2: rule__Include__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Include__Group__2__Impl();
@@ -11897,21 +11994,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group__2__Impl"
-    // InternalETLDsl.g:3836:1: rule__Include__Group__2__Impl : ( ( rule__Include__Group_2__0 ) ) ;
+    // InternalETLDsl.g:3863:1: rule__Include__Group__2__Impl : ( ( rule__Include__Group_2__0 ) ) ;
     public final void rule__Include__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3840:1: ( ( ( rule__Include__Group_2__0 ) ) )
-            // InternalETLDsl.g:3841:1: ( ( rule__Include__Group_2__0 ) )
+            // InternalETLDsl.g:3867:1: ( ( ( rule__Include__Group_2__0 ) ) )
+            // InternalETLDsl.g:3868:1: ( ( rule__Include__Group_2__0 ) )
             {
-            // InternalETLDsl.g:3841:1: ( ( rule__Include__Group_2__0 ) )
-            // InternalETLDsl.g:3842:2: ( rule__Include__Group_2__0 )
+            // InternalETLDsl.g:3868:1: ( ( rule__Include__Group_2__0 ) )
+            // InternalETLDsl.g:3869:2: ( rule__Include__Group_2__0 )
             {
              before(grammarAccess.getIncludeAccess().getGroup_2()); 
-            // InternalETLDsl.g:3843:2: ( rule__Include__Group_2__0 )
-            // InternalETLDsl.g:3843:3: rule__Include__Group_2__0
+            // InternalETLDsl.g:3870:2: ( rule__Include__Group_2__0 )
+            // InternalETLDsl.g:3870:3: rule__Include__Group_2__0
             {
             pushFollow(FOLLOW_2);
             rule__Include__Group_2__0();
@@ -11944,14 +12041,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__0"
-    // InternalETLDsl.g:3852:1: rule__Include__Group_2__0 : rule__Include__Group_2__0__Impl rule__Include__Group_2__1 ;
+    // InternalETLDsl.g:3879:1: rule__Include__Group_2__0 : rule__Include__Group_2__0__Impl rule__Include__Group_2__1 ;
     public final void rule__Include__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3856:1: ( rule__Include__Group_2__0__Impl rule__Include__Group_2__1 )
-            // InternalETLDsl.g:3857:2: rule__Include__Group_2__0__Impl rule__Include__Group_2__1
+            // InternalETLDsl.g:3883:1: ( rule__Include__Group_2__0__Impl rule__Include__Group_2__1 )
+            // InternalETLDsl.g:3884:2: rule__Include__Group_2__0__Impl rule__Include__Group_2__1
             {
             pushFollow(FOLLOW_31);
             rule__Include__Group_2__0__Impl();
@@ -11982,17 +12079,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__0__Impl"
-    // InternalETLDsl.g:3864:1: rule__Include__Group_2__0__Impl : ( '{' ) ;
+    // InternalETLDsl.g:3891:1: rule__Include__Group_2__0__Impl : ( '{' ) ;
     public final void rule__Include__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3868:1: ( ( '{' ) )
-            // InternalETLDsl.g:3869:1: ( '{' )
+            // InternalETLDsl.g:3895:1: ( ( '{' ) )
+            // InternalETLDsl.g:3896:1: ( '{' )
             {
-            // InternalETLDsl.g:3869:1: ( '{' )
-            // InternalETLDsl.g:3870:2: '{'
+            // InternalETLDsl.g:3896:1: ( '{' )
+            // InternalETLDsl.g:3897:2: '{'
             {
              before(grammarAccess.getIncludeAccess().getLeftCurlyBracketKeyword_2_0()); 
             match(input,43,FOLLOW_2); 
@@ -12019,14 +12116,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__1"
-    // InternalETLDsl.g:3879:1: rule__Include__Group_2__1 : rule__Include__Group_2__1__Impl rule__Include__Group_2__2 ;
+    // InternalETLDsl.g:3906:1: rule__Include__Group_2__1 : rule__Include__Group_2__1__Impl rule__Include__Group_2__2 ;
     public final void rule__Include__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3883:1: ( rule__Include__Group_2__1__Impl rule__Include__Group_2__2 )
-            // InternalETLDsl.g:3884:2: rule__Include__Group_2__1__Impl rule__Include__Group_2__2
+            // InternalETLDsl.g:3910:1: ( rule__Include__Group_2__1__Impl rule__Include__Group_2__2 )
+            // InternalETLDsl.g:3911:2: rule__Include__Group_2__1__Impl rule__Include__Group_2__2
             {
             pushFollow(FOLLOW_31);
             rule__Include__Group_2__1__Impl();
@@ -12057,29 +12154,29 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__1__Impl"
-    // InternalETLDsl.g:3891:1: rule__Include__Group_2__1__Impl : ( ( rule__Include__Group_2_1__0 )? ) ;
+    // InternalETLDsl.g:3918:1: rule__Include__Group_2__1__Impl : ( ( rule__Include__Group_2_1__0 )? ) ;
     public final void rule__Include__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3895:1: ( ( ( rule__Include__Group_2_1__0 )? ) )
-            // InternalETLDsl.g:3896:1: ( ( rule__Include__Group_2_1__0 )? )
+            // InternalETLDsl.g:3922:1: ( ( ( rule__Include__Group_2_1__0 )? ) )
+            // InternalETLDsl.g:3923:1: ( ( rule__Include__Group_2_1__0 )? )
             {
-            // InternalETLDsl.g:3896:1: ( ( rule__Include__Group_2_1__0 )? )
-            // InternalETLDsl.g:3897:2: ( rule__Include__Group_2_1__0 )?
+            // InternalETLDsl.g:3923:1: ( ( rule__Include__Group_2_1__0 )? )
+            // InternalETLDsl.g:3924:2: ( rule__Include__Group_2_1__0 )?
             {
              before(grammarAccess.getIncludeAccess().getGroup_2_1()); 
-            // InternalETLDsl.g:3898:2: ( rule__Include__Group_2_1__0 )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalETLDsl.g:3925:2: ( rule__Include__Group_2_1__0 )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==68) ) {
-                alt39=1;
+            if ( (LA40_0==68) ) {
+                alt40=1;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // InternalETLDsl.g:3898:3: rule__Include__Group_2_1__0
+                    // InternalETLDsl.g:3925:3: rule__Include__Group_2_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Include__Group_2_1__0();
@@ -12115,14 +12212,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__2"
-    // InternalETLDsl.g:3906:1: rule__Include__Group_2__2 : rule__Include__Group_2__2__Impl rule__Include__Group_2__3 ;
+    // InternalETLDsl.g:3933:1: rule__Include__Group_2__2 : rule__Include__Group_2__2__Impl rule__Include__Group_2__3 ;
     public final void rule__Include__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3910:1: ( rule__Include__Group_2__2__Impl rule__Include__Group_2__3 )
-            // InternalETLDsl.g:3911:2: rule__Include__Group_2__2__Impl rule__Include__Group_2__3
+            // InternalETLDsl.g:3937:1: ( rule__Include__Group_2__2__Impl rule__Include__Group_2__3 )
+            // InternalETLDsl.g:3938:2: rule__Include__Group_2__2__Impl rule__Include__Group_2__3
             {
             pushFollow(FOLLOW_31);
             rule__Include__Group_2__2__Impl();
@@ -12153,29 +12250,29 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__2__Impl"
-    // InternalETLDsl.g:3918:1: rule__Include__Group_2__2__Impl : ( ( rule__Include__Group_2_2__0 )? ) ;
+    // InternalETLDsl.g:3945:1: rule__Include__Group_2__2__Impl : ( ( rule__Include__Group_2_2__0 )? ) ;
     public final void rule__Include__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3922:1: ( ( ( rule__Include__Group_2_2__0 )? ) )
-            // InternalETLDsl.g:3923:1: ( ( rule__Include__Group_2_2__0 )? )
+            // InternalETLDsl.g:3949:1: ( ( ( rule__Include__Group_2_2__0 )? ) )
+            // InternalETLDsl.g:3950:1: ( ( rule__Include__Group_2_2__0 )? )
             {
-            // InternalETLDsl.g:3923:1: ( ( rule__Include__Group_2_2__0 )? )
-            // InternalETLDsl.g:3924:2: ( rule__Include__Group_2_2__0 )?
+            // InternalETLDsl.g:3950:1: ( ( rule__Include__Group_2_2__0 )? )
+            // InternalETLDsl.g:3951:2: ( rule__Include__Group_2_2__0 )?
             {
              before(grammarAccess.getIncludeAccess().getGroup_2_2()); 
-            // InternalETLDsl.g:3925:2: ( rule__Include__Group_2_2__0 )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalETLDsl.g:3952:2: ( rule__Include__Group_2_2__0 )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA40_0==69) ) {
-                alt40=1;
+            if ( (LA41_0==69) ) {
+                alt41=1;
             }
-            switch (alt40) {
+            switch (alt41) {
                 case 1 :
-                    // InternalETLDsl.g:3925:3: rule__Include__Group_2_2__0
+                    // InternalETLDsl.g:3952:3: rule__Include__Group_2_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Include__Group_2_2__0();
@@ -12211,14 +12308,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__3"
-    // InternalETLDsl.g:3933:1: rule__Include__Group_2__3 : rule__Include__Group_2__3__Impl ;
+    // InternalETLDsl.g:3960:1: rule__Include__Group_2__3 : rule__Include__Group_2__3__Impl ;
     public final void rule__Include__Group_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3937:1: ( rule__Include__Group_2__3__Impl )
-            // InternalETLDsl.g:3938:2: rule__Include__Group_2__3__Impl
+            // InternalETLDsl.g:3964:1: ( rule__Include__Group_2__3__Impl )
+            // InternalETLDsl.g:3965:2: rule__Include__Group_2__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Include__Group_2__3__Impl();
@@ -12244,17 +12341,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2__3__Impl"
-    // InternalETLDsl.g:3944:1: rule__Include__Group_2__3__Impl : ( '}' ) ;
+    // InternalETLDsl.g:3971:1: rule__Include__Group_2__3__Impl : ( '}' ) ;
     public final void rule__Include__Group_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3948:1: ( ( '}' ) )
-            // InternalETLDsl.g:3949:1: ( '}' )
+            // InternalETLDsl.g:3975:1: ( ( '}' ) )
+            // InternalETLDsl.g:3976:1: ( '}' )
             {
-            // InternalETLDsl.g:3949:1: ( '}' )
-            // InternalETLDsl.g:3950:2: '}'
+            // InternalETLDsl.g:3976:1: ( '}' )
+            // InternalETLDsl.g:3977:2: '}'
             {
              before(grammarAccess.getIncludeAccess().getRightCurlyBracketKeyword_2_3()); 
             match(input,44,FOLLOW_2); 
@@ -12281,14 +12378,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__0"
-    // InternalETLDsl.g:3960:1: rule__Include__Group_2_1__0 : rule__Include__Group_2_1__0__Impl rule__Include__Group_2_1__1 ;
+    // InternalETLDsl.g:3987:1: rule__Include__Group_2_1__0 : rule__Include__Group_2_1__0__Impl rule__Include__Group_2_1__1 ;
     public final void rule__Include__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3964:1: ( rule__Include__Group_2_1__0__Impl rule__Include__Group_2_1__1 )
-            // InternalETLDsl.g:3965:2: rule__Include__Group_2_1__0__Impl rule__Include__Group_2_1__1
+            // InternalETLDsl.g:3991:1: ( rule__Include__Group_2_1__0__Impl rule__Include__Group_2_1__1 )
+            // InternalETLDsl.g:3992:2: rule__Include__Group_2_1__0__Impl rule__Include__Group_2_1__1
             {
             pushFollow(FOLLOW_16);
             rule__Include__Group_2_1__0__Impl();
@@ -12319,17 +12416,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__0__Impl"
-    // InternalETLDsl.g:3972:1: rule__Include__Group_2_1__0__Impl : ( 'IncludeFields' ) ;
+    // InternalETLDsl.g:3999:1: rule__Include__Group_2_1__0__Impl : ( 'IncludeFields' ) ;
     public final void rule__Include__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3976:1: ( ( 'IncludeFields' ) )
-            // InternalETLDsl.g:3977:1: ( 'IncludeFields' )
+            // InternalETLDsl.g:4003:1: ( ( 'IncludeFields' ) )
+            // InternalETLDsl.g:4004:1: ( 'IncludeFields' )
             {
-            // InternalETLDsl.g:3977:1: ( 'IncludeFields' )
-            // InternalETLDsl.g:3978:2: 'IncludeFields'
+            // InternalETLDsl.g:4004:1: ( 'IncludeFields' )
+            // InternalETLDsl.g:4005:2: 'IncludeFields'
             {
              before(grammarAccess.getIncludeAccess().getIncludeFieldsKeyword_2_1_0()); 
             match(input,68,FOLLOW_2); 
@@ -12356,14 +12453,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__1"
-    // InternalETLDsl.g:3987:1: rule__Include__Group_2_1__1 : rule__Include__Group_2_1__1__Impl rule__Include__Group_2_1__2 ;
+    // InternalETLDsl.g:4014:1: rule__Include__Group_2_1__1 : rule__Include__Group_2_1__1__Impl rule__Include__Group_2_1__2 ;
     public final void rule__Include__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:3991:1: ( rule__Include__Group_2_1__1__Impl rule__Include__Group_2_1__2 )
-            // InternalETLDsl.g:3992:2: rule__Include__Group_2_1__1__Impl rule__Include__Group_2_1__2
+            // InternalETLDsl.g:4018:1: ( rule__Include__Group_2_1__1__Impl rule__Include__Group_2_1__2 )
+            // InternalETLDsl.g:4019:2: rule__Include__Group_2_1__1__Impl rule__Include__Group_2_1__2
             {
             pushFollow(FOLLOW_14);
             rule__Include__Group_2_1__1__Impl();
@@ -12394,17 +12491,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__1__Impl"
-    // InternalETLDsl.g:3999:1: rule__Include__Group_2_1__1__Impl : ( '{' ) ;
+    // InternalETLDsl.g:4026:1: rule__Include__Group_2_1__1__Impl : ( '{' ) ;
     public final void rule__Include__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4003:1: ( ( '{' ) )
-            // InternalETLDsl.g:4004:1: ( '{' )
+            // InternalETLDsl.g:4030:1: ( ( '{' ) )
+            // InternalETLDsl.g:4031:1: ( '{' )
             {
-            // InternalETLDsl.g:4004:1: ( '{' )
-            // InternalETLDsl.g:4005:2: '{'
+            // InternalETLDsl.g:4031:1: ( '{' )
+            // InternalETLDsl.g:4032:2: '{'
             {
              before(grammarAccess.getIncludeAccess().getLeftCurlyBracketKeyword_2_1_1()); 
             match(input,43,FOLLOW_2); 
@@ -12431,14 +12528,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__2"
-    // InternalETLDsl.g:4014:1: rule__Include__Group_2_1__2 : rule__Include__Group_2_1__2__Impl rule__Include__Group_2_1__3 ;
+    // InternalETLDsl.g:4041:1: rule__Include__Group_2_1__2 : rule__Include__Group_2_1__2__Impl rule__Include__Group_2_1__3 ;
     public final void rule__Include__Group_2_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4018:1: ( rule__Include__Group_2_1__2__Impl rule__Include__Group_2_1__3 )
-            // InternalETLDsl.g:4019:2: rule__Include__Group_2_1__2__Impl rule__Include__Group_2_1__3
+            // InternalETLDsl.g:4045:1: ( rule__Include__Group_2_1__2__Impl rule__Include__Group_2_1__3 )
+            // InternalETLDsl.g:4046:2: rule__Include__Group_2_1__2__Impl rule__Include__Group_2_1__3
             {
             pushFollow(FOLLOW_19);
             rule__Include__Group_2_1__2__Impl();
@@ -12469,21 +12566,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__2__Impl"
-    // InternalETLDsl.g:4026:1: rule__Include__Group_2_1__2__Impl : ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) ) ;
+    // InternalETLDsl.g:4053:1: rule__Include__Group_2_1__2__Impl : ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) ) ;
     public final void rule__Include__Group_2_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4030:1: ( ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) ) )
-            // InternalETLDsl.g:4031:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) )
+            // InternalETLDsl.g:4057:1: ( ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) ) )
+            // InternalETLDsl.g:4058:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) )
             {
-            // InternalETLDsl.g:4031:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) )
-            // InternalETLDsl.g:4032:2: ( rule__Include__IncludeFieldsAssignment_2_1_2 )
+            // InternalETLDsl.g:4058:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_2 ) )
+            // InternalETLDsl.g:4059:2: ( rule__Include__IncludeFieldsAssignment_2_1_2 )
             {
              before(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_2_1_2()); 
-            // InternalETLDsl.g:4033:2: ( rule__Include__IncludeFieldsAssignment_2_1_2 )
-            // InternalETLDsl.g:4033:3: rule__Include__IncludeFieldsAssignment_2_1_2
+            // InternalETLDsl.g:4060:2: ( rule__Include__IncludeFieldsAssignment_2_1_2 )
+            // InternalETLDsl.g:4060:3: rule__Include__IncludeFieldsAssignment_2_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Include__IncludeFieldsAssignment_2_1_2();
@@ -12516,14 +12613,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__3"
-    // InternalETLDsl.g:4041:1: rule__Include__Group_2_1__3 : rule__Include__Group_2_1__3__Impl rule__Include__Group_2_1__4 ;
+    // InternalETLDsl.g:4068:1: rule__Include__Group_2_1__3 : rule__Include__Group_2_1__3__Impl rule__Include__Group_2_1__4 ;
     public final void rule__Include__Group_2_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4045:1: ( rule__Include__Group_2_1__3__Impl rule__Include__Group_2_1__4 )
-            // InternalETLDsl.g:4046:2: rule__Include__Group_2_1__3__Impl rule__Include__Group_2_1__4
+            // InternalETLDsl.g:4072:1: ( rule__Include__Group_2_1__3__Impl rule__Include__Group_2_1__4 )
+            // InternalETLDsl.g:4073:2: rule__Include__Group_2_1__3__Impl rule__Include__Group_2_1__4
             {
             pushFollow(FOLLOW_19);
             rule__Include__Group_2_1__3__Impl();
@@ -12554,33 +12651,33 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__3__Impl"
-    // InternalETLDsl.g:4053:1: rule__Include__Group_2_1__3__Impl : ( ( rule__Include__Group_2_1_3__0 )* ) ;
+    // InternalETLDsl.g:4080:1: rule__Include__Group_2_1__3__Impl : ( ( rule__Include__Group_2_1_3__0 )* ) ;
     public final void rule__Include__Group_2_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4057:1: ( ( ( rule__Include__Group_2_1_3__0 )* ) )
-            // InternalETLDsl.g:4058:1: ( ( rule__Include__Group_2_1_3__0 )* )
+            // InternalETLDsl.g:4084:1: ( ( ( rule__Include__Group_2_1_3__0 )* ) )
+            // InternalETLDsl.g:4085:1: ( ( rule__Include__Group_2_1_3__0 )* )
             {
-            // InternalETLDsl.g:4058:1: ( ( rule__Include__Group_2_1_3__0 )* )
-            // InternalETLDsl.g:4059:2: ( rule__Include__Group_2_1_3__0 )*
+            // InternalETLDsl.g:4085:1: ( ( rule__Include__Group_2_1_3__0 )* )
+            // InternalETLDsl.g:4086:2: ( rule__Include__Group_2_1_3__0 )*
             {
              before(grammarAccess.getIncludeAccess().getGroup_2_1_3()); 
-            // InternalETLDsl.g:4060:2: ( rule__Include__Group_2_1_3__0 )*
-            loop41:
+            // InternalETLDsl.g:4087:2: ( rule__Include__Group_2_1_3__0 )*
+            loop42:
             do {
-                int alt41=2;
-                int LA41_0 = input.LA(1);
+                int alt42=2;
+                int LA42_0 = input.LA(1);
 
-                if ( (LA41_0==39) ) {
-                    alt41=1;
+                if ( (LA42_0==39) ) {
+                    alt42=1;
                 }
 
 
-                switch (alt41) {
+                switch (alt42) {
             	case 1 :
-            	    // InternalETLDsl.g:4060:3: rule__Include__Group_2_1_3__0
+            	    // InternalETLDsl.g:4087:3: rule__Include__Group_2_1_3__0
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Include__Group_2_1_3__0();
@@ -12592,7 +12689,7 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop41;
+            	    break loop42;
                 }
             } while (true);
 
@@ -12619,14 +12716,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__4"
-    // InternalETLDsl.g:4068:1: rule__Include__Group_2_1__4 : rule__Include__Group_2_1__4__Impl ;
+    // InternalETLDsl.g:4095:1: rule__Include__Group_2_1__4 : rule__Include__Group_2_1__4__Impl ;
     public final void rule__Include__Group_2_1__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4072:1: ( rule__Include__Group_2_1__4__Impl )
-            // InternalETLDsl.g:4073:2: rule__Include__Group_2_1__4__Impl
+            // InternalETLDsl.g:4099:1: ( rule__Include__Group_2_1__4__Impl )
+            // InternalETLDsl.g:4100:2: rule__Include__Group_2_1__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Include__Group_2_1__4__Impl();
@@ -12652,17 +12749,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1__4__Impl"
-    // InternalETLDsl.g:4079:1: rule__Include__Group_2_1__4__Impl : ( '}' ) ;
+    // InternalETLDsl.g:4106:1: rule__Include__Group_2_1__4__Impl : ( '}' ) ;
     public final void rule__Include__Group_2_1__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4083:1: ( ( '}' ) )
-            // InternalETLDsl.g:4084:1: ( '}' )
+            // InternalETLDsl.g:4110:1: ( ( '}' ) )
+            // InternalETLDsl.g:4111:1: ( '}' )
             {
-            // InternalETLDsl.g:4084:1: ( '}' )
-            // InternalETLDsl.g:4085:2: '}'
+            // InternalETLDsl.g:4111:1: ( '}' )
+            // InternalETLDsl.g:4112:2: '}'
             {
              before(grammarAccess.getIncludeAccess().getRightCurlyBracketKeyword_2_1_4()); 
             match(input,44,FOLLOW_2); 
@@ -12689,14 +12786,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1_3__0"
-    // InternalETLDsl.g:4095:1: rule__Include__Group_2_1_3__0 : rule__Include__Group_2_1_3__0__Impl rule__Include__Group_2_1_3__1 ;
+    // InternalETLDsl.g:4122:1: rule__Include__Group_2_1_3__0 : rule__Include__Group_2_1_3__0__Impl rule__Include__Group_2_1_3__1 ;
     public final void rule__Include__Group_2_1_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4099:1: ( rule__Include__Group_2_1_3__0__Impl rule__Include__Group_2_1_3__1 )
-            // InternalETLDsl.g:4100:2: rule__Include__Group_2_1_3__0__Impl rule__Include__Group_2_1_3__1
+            // InternalETLDsl.g:4126:1: ( rule__Include__Group_2_1_3__0__Impl rule__Include__Group_2_1_3__1 )
+            // InternalETLDsl.g:4127:2: rule__Include__Group_2_1_3__0__Impl rule__Include__Group_2_1_3__1
             {
             pushFollow(FOLLOW_14);
             rule__Include__Group_2_1_3__0__Impl();
@@ -12727,17 +12824,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1_3__0__Impl"
-    // InternalETLDsl.g:4107:1: rule__Include__Group_2_1_3__0__Impl : ( ',' ) ;
+    // InternalETLDsl.g:4134:1: rule__Include__Group_2_1_3__0__Impl : ( ',' ) ;
     public final void rule__Include__Group_2_1_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4111:1: ( ( ',' ) )
-            // InternalETLDsl.g:4112:1: ( ',' )
+            // InternalETLDsl.g:4138:1: ( ( ',' ) )
+            // InternalETLDsl.g:4139:1: ( ',' )
             {
-            // InternalETLDsl.g:4112:1: ( ',' )
-            // InternalETLDsl.g:4113:2: ','
+            // InternalETLDsl.g:4139:1: ( ',' )
+            // InternalETLDsl.g:4140:2: ','
             {
              before(grammarAccess.getIncludeAccess().getCommaKeyword_2_1_3_0()); 
             match(input,39,FOLLOW_2); 
@@ -12764,14 +12861,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1_3__1"
-    // InternalETLDsl.g:4122:1: rule__Include__Group_2_1_3__1 : rule__Include__Group_2_1_3__1__Impl ;
+    // InternalETLDsl.g:4149:1: rule__Include__Group_2_1_3__1 : rule__Include__Group_2_1_3__1__Impl ;
     public final void rule__Include__Group_2_1_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4126:1: ( rule__Include__Group_2_1_3__1__Impl )
-            // InternalETLDsl.g:4127:2: rule__Include__Group_2_1_3__1__Impl
+            // InternalETLDsl.g:4153:1: ( rule__Include__Group_2_1_3__1__Impl )
+            // InternalETLDsl.g:4154:2: rule__Include__Group_2_1_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Include__Group_2_1_3__1__Impl();
@@ -12797,21 +12894,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_1_3__1__Impl"
-    // InternalETLDsl.g:4133:1: rule__Include__Group_2_1_3__1__Impl : ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) ) ;
+    // InternalETLDsl.g:4160:1: rule__Include__Group_2_1_3__1__Impl : ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) ) ;
     public final void rule__Include__Group_2_1_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4137:1: ( ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) ) )
-            // InternalETLDsl.g:4138:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) )
+            // InternalETLDsl.g:4164:1: ( ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) ) )
+            // InternalETLDsl.g:4165:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) )
             {
-            // InternalETLDsl.g:4138:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) )
-            // InternalETLDsl.g:4139:2: ( rule__Include__IncludeFieldsAssignment_2_1_3_1 )
+            // InternalETLDsl.g:4165:1: ( ( rule__Include__IncludeFieldsAssignment_2_1_3_1 ) )
+            // InternalETLDsl.g:4166:2: ( rule__Include__IncludeFieldsAssignment_2_1_3_1 )
             {
              before(grammarAccess.getIncludeAccess().getIncludeFieldsAssignment_2_1_3_1()); 
-            // InternalETLDsl.g:4140:2: ( rule__Include__IncludeFieldsAssignment_2_1_3_1 )
-            // InternalETLDsl.g:4140:3: rule__Include__IncludeFieldsAssignment_2_1_3_1
+            // InternalETLDsl.g:4167:2: ( rule__Include__IncludeFieldsAssignment_2_1_3_1 )
+            // InternalETLDsl.g:4167:3: rule__Include__IncludeFieldsAssignment_2_1_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Include__IncludeFieldsAssignment_2_1_3_1();
@@ -12844,14 +12941,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__0"
-    // InternalETLDsl.g:4149:1: rule__Include__Group_2_2__0 : rule__Include__Group_2_2__0__Impl rule__Include__Group_2_2__1 ;
+    // InternalETLDsl.g:4176:1: rule__Include__Group_2_2__0 : rule__Include__Group_2_2__0__Impl rule__Include__Group_2_2__1 ;
     public final void rule__Include__Group_2_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4153:1: ( rule__Include__Group_2_2__0__Impl rule__Include__Group_2_2__1 )
-            // InternalETLDsl.g:4154:2: rule__Include__Group_2_2__0__Impl rule__Include__Group_2_2__1
+            // InternalETLDsl.g:4180:1: ( rule__Include__Group_2_2__0__Impl rule__Include__Group_2_2__1 )
+            // InternalETLDsl.g:4181:2: rule__Include__Group_2_2__0__Impl rule__Include__Group_2_2__1
             {
             pushFollow(FOLLOW_14);
             rule__Include__Group_2_2__0__Impl();
@@ -12882,17 +12979,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__0__Impl"
-    // InternalETLDsl.g:4161:1: rule__Include__Group_2_2__0__Impl : ( 'IdentifyingFields:{' ) ;
+    // InternalETLDsl.g:4188:1: rule__Include__Group_2_2__0__Impl : ( 'IdentifyingFields:{' ) ;
     public final void rule__Include__Group_2_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4165:1: ( ( 'IdentifyingFields:{' ) )
-            // InternalETLDsl.g:4166:1: ( 'IdentifyingFields:{' )
+            // InternalETLDsl.g:4192:1: ( ( 'IdentifyingFields:{' ) )
+            // InternalETLDsl.g:4193:1: ( 'IdentifyingFields:{' )
             {
-            // InternalETLDsl.g:4166:1: ( 'IdentifyingFields:{' )
-            // InternalETLDsl.g:4167:2: 'IdentifyingFields:{'
+            // InternalETLDsl.g:4193:1: ( 'IdentifyingFields:{' )
+            // InternalETLDsl.g:4194:2: 'IdentifyingFields:{'
             {
              before(grammarAccess.getIncludeAccess().getIdentifyingFieldsKeyword_2_2_0()); 
             match(input,69,FOLLOW_2); 
@@ -12919,14 +13016,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__1"
-    // InternalETLDsl.g:4176:1: rule__Include__Group_2_2__1 : rule__Include__Group_2_2__1__Impl rule__Include__Group_2_2__2 ;
+    // InternalETLDsl.g:4203:1: rule__Include__Group_2_2__1 : rule__Include__Group_2_2__1__Impl rule__Include__Group_2_2__2 ;
     public final void rule__Include__Group_2_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4180:1: ( rule__Include__Group_2_2__1__Impl rule__Include__Group_2_2__2 )
-            // InternalETLDsl.g:4181:2: rule__Include__Group_2_2__1__Impl rule__Include__Group_2_2__2
+            // InternalETLDsl.g:4207:1: ( rule__Include__Group_2_2__1__Impl rule__Include__Group_2_2__2 )
+            // InternalETLDsl.g:4208:2: rule__Include__Group_2_2__1__Impl rule__Include__Group_2_2__2
             {
             pushFollow(FOLLOW_19);
             rule__Include__Group_2_2__1__Impl();
@@ -12957,21 +13054,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__1__Impl"
-    // InternalETLDsl.g:4188:1: rule__Include__Group_2_2__1__Impl : ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) ) ;
+    // InternalETLDsl.g:4215:1: rule__Include__Group_2_2__1__Impl : ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) ) ;
     public final void rule__Include__Group_2_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4192:1: ( ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) ) )
-            // InternalETLDsl.g:4193:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) )
+            // InternalETLDsl.g:4219:1: ( ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) ) )
+            // InternalETLDsl.g:4220:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) )
             {
-            // InternalETLDsl.g:4193:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) )
-            // InternalETLDsl.g:4194:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_1 )
+            // InternalETLDsl.g:4220:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_1 ) )
+            // InternalETLDsl.g:4221:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_1 )
             {
              before(grammarAccess.getIncludeAccess().getIdentifyingfieldsAssignment_2_2_1()); 
-            // InternalETLDsl.g:4195:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_1 )
-            // InternalETLDsl.g:4195:3: rule__Include__IdentifyingfieldsAssignment_2_2_1
+            // InternalETLDsl.g:4222:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_1 )
+            // InternalETLDsl.g:4222:3: rule__Include__IdentifyingfieldsAssignment_2_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Include__IdentifyingfieldsAssignment_2_2_1();
@@ -13004,14 +13101,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__2"
-    // InternalETLDsl.g:4203:1: rule__Include__Group_2_2__2 : rule__Include__Group_2_2__2__Impl rule__Include__Group_2_2__3 ;
+    // InternalETLDsl.g:4230:1: rule__Include__Group_2_2__2 : rule__Include__Group_2_2__2__Impl rule__Include__Group_2_2__3 ;
     public final void rule__Include__Group_2_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4207:1: ( rule__Include__Group_2_2__2__Impl rule__Include__Group_2_2__3 )
-            // InternalETLDsl.g:4208:2: rule__Include__Group_2_2__2__Impl rule__Include__Group_2_2__3
+            // InternalETLDsl.g:4234:1: ( rule__Include__Group_2_2__2__Impl rule__Include__Group_2_2__3 )
+            // InternalETLDsl.g:4235:2: rule__Include__Group_2_2__2__Impl rule__Include__Group_2_2__3
             {
             pushFollow(FOLLOW_19);
             rule__Include__Group_2_2__2__Impl();
@@ -13042,33 +13139,33 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__2__Impl"
-    // InternalETLDsl.g:4215:1: rule__Include__Group_2_2__2__Impl : ( ( rule__Include__Group_2_2_2__0 )* ) ;
+    // InternalETLDsl.g:4242:1: rule__Include__Group_2_2__2__Impl : ( ( rule__Include__Group_2_2_2__0 )* ) ;
     public final void rule__Include__Group_2_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4219:1: ( ( ( rule__Include__Group_2_2_2__0 )* ) )
-            // InternalETLDsl.g:4220:1: ( ( rule__Include__Group_2_2_2__0 )* )
+            // InternalETLDsl.g:4246:1: ( ( ( rule__Include__Group_2_2_2__0 )* ) )
+            // InternalETLDsl.g:4247:1: ( ( rule__Include__Group_2_2_2__0 )* )
             {
-            // InternalETLDsl.g:4220:1: ( ( rule__Include__Group_2_2_2__0 )* )
-            // InternalETLDsl.g:4221:2: ( rule__Include__Group_2_2_2__0 )*
+            // InternalETLDsl.g:4247:1: ( ( rule__Include__Group_2_2_2__0 )* )
+            // InternalETLDsl.g:4248:2: ( rule__Include__Group_2_2_2__0 )*
             {
              before(grammarAccess.getIncludeAccess().getGroup_2_2_2()); 
-            // InternalETLDsl.g:4222:2: ( rule__Include__Group_2_2_2__0 )*
-            loop42:
+            // InternalETLDsl.g:4249:2: ( rule__Include__Group_2_2_2__0 )*
+            loop43:
             do {
-                int alt42=2;
-                int LA42_0 = input.LA(1);
+                int alt43=2;
+                int LA43_0 = input.LA(1);
 
-                if ( (LA42_0==39) ) {
-                    alt42=1;
+                if ( (LA43_0==39) ) {
+                    alt43=1;
                 }
 
 
-                switch (alt42) {
+                switch (alt43) {
             	case 1 :
-            	    // InternalETLDsl.g:4222:3: rule__Include__Group_2_2_2__0
+            	    // InternalETLDsl.g:4249:3: rule__Include__Group_2_2_2__0
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Include__Group_2_2_2__0();
@@ -13080,7 +13177,7 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop42;
+            	    break loop43;
                 }
             } while (true);
 
@@ -13107,14 +13204,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__3"
-    // InternalETLDsl.g:4230:1: rule__Include__Group_2_2__3 : rule__Include__Group_2_2__3__Impl ;
+    // InternalETLDsl.g:4257:1: rule__Include__Group_2_2__3 : rule__Include__Group_2_2__3__Impl ;
     public final void rule__Include__Group_2_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4234:1: ( rule__Include__Group_2_2__3__Impl )
-            // InternalETLDsl.g:4235:2: rule__Include__Group_2_2__3__Impl
+            // InternalETLDsl.g:4261:1: ( rule__Include__Group_2_2__3__Impl )
+            // InternalETLDsl.g:4262:2: rule__Include__Group_2_2__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Include__Group_2_2__3__Impl();
@@ -13140,17 +13237,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2__3__Impl"
-    // InternalETLDsl.g:4241:1: rule__Include__Group_2_2__3__Impl : ( '}' ) ;
+    // InternalETLDsl.g:4268:1: rule__Include__Group_2_2__3__Impl : ( '}' ) ;
     public final void rule__Include__Group_2_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4245:1: ( ( '}' ) )
-            // InternalETLDsl.g:4246:1: ( '}' )
+            // InternalETLDsl.g:4272:1: ( ( '}' ) )
+            // InternalETLDsl.g:4273:1: ( '}' )
             {
-            // InternalETLDsl.g:4246:1: ( '}' )
-            // InternalETLDsl.g:4247:2: '}'
+            // InternalETLDsl.g:4273:1: ( '}' )
+            // InternalETLDsl.g:4274:2: '}'
             {
              before(grammarAccess.getIncludeAccess().getRightCurlyBracketKeyword_2_2_3()); 
             match(input,44,FOLLOW_2); 
@@ -13177,14 +13274,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2_2__0"
-    // InternalETLDsl.g:4257:1: rule__Include__Group_2_2_2__0 : rule__Include__Group_2_2_2__0__Impl rule__Include__Group_2_2_2__1 ;
+    // InternalETLDsl.g:4284:1: rule__Include__Group_2_2_2__0 : rule__Include__Group_2_2_2__0__Impl rule__Include__Group_2_2_2__1 ;
     public final void rule__Include__Group_2_2_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4261:1: ( rule__Include__Group_2_2_2__0__Impl rule__Include__Group_2_2_2__1 )
-            // InternalETLDsl.g:4262:2: rule__Include__Group_2_2_2__0__Impl rule__Include__Group_2_2_2__1
+            // InternalETLDsl.g:4288:1: ( rule__Include__Group_2_2_2__0__Impl rule__Include__Group_2_2_2__1 )
+            // InternalETLDsl.g:4289:2: rule__Include__Group_2_2_2__0__Impl rule__Include__Group_2_2_2__1
             {
             pushFollow(FOLLOW_14);
             rule__Include__Group_2_2_2__0__Impl();
@@ -13215,17 +13312,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2_2__0__Impl"
-    // InternalETLDsl.g:4269:1: rule__Include__Group_2_2_2__0__Impl : ( ',' ) ;
+    // InternalETLDsl.g:4296:1: rule__Include__Group_2_2_2__0__Impl : ( ',' ) ;
     public final void rule__Include__Group_2_2_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4273:1: ( ( ',' ) )
-            // InternalETLDsl.g:4274:1: ( ',' )
+            // InternalETLDsl.g:4300:1: ( ( ',' ) )
+            // InternalETLDsl.g:4301:1: ( ',' )
             {
-            // InternalETLDsl.g:4274:1: ( ',' )
-            // InternalETLDsl.g:4275:2: ','
+            // InternalETLDsl.g:4301:1: ( ',' )
+            // InternalETLDsl.g:4302:2: ','
             {
              before(grammarAccess.getIncludeAccess().getCommaKeyword_2_2_2_0()); 
             match(input,39,FOLLOW_2); 
@@ -13252,14 +13349,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2_2__1"
-    // InternalETLDsl.g:4284:1: rule__Include__Group_2_2_2__1 : rule__Include__Group_2_2_2__1__Impl ;
+    // InternalETLDsl.g:4311:1: rule__Include__Group_2_2_2__1 : rule__Include__Group_2_2_2__1__Impl ;
     public final void rule__Include__Group_2_2_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4288:1: ( rule__Include__Group_2_2_2__1__Impl )
-            // InternalETLDsl.g:4289:2: rule__Include__Group_2_2_2__1__Impl
+            // InternalETLDsl.g:4315:1: ( rule__Include__Group_2_2_2__1__Impl )
+            // InternalETLDsl.g:4316:2: rule__Include__Group_2_2_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Include__Group_2_2_2__1__Impl();
@@ -13285,21 +13382,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__Group_2_2_2__1__Impl"
-    // InternalETLDsl.g:4295:1: rule__Include__Group_2_2_2__1__Impl : ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) ) ;
+    // InternalETLDsl.g:4322:1: rule__Include__Group_2_2_2__1__Impl : ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) ) ;
     public final void rule__Include__Group_2_2_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4299:1: ( ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) ) )
-            // InternalETLDsl.g:4300:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) )
+            // InternalETLDsl.g:4326:1: ( ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) ) )
+            // InternalETLDsl.g:4327:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) )
             {
-            // InternalETLDsl.g:4300:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) )
-            // InternalETLDsl.g:4301:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 )
+            // InternalETLDsl.g:4327:1: ( ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 ) )
+            // InternalETLDsl.g:4328:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 )
             {
              before(grammarAccess.getIncludeAccess().getIdentifyingfieldsAssignment_2_2_2_1()); 
-            // InternalETLDsl.g:4302:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 )
-            // InternalETLDsl.g:4302:3: rule__Include__IdentifyingfieldsAssignment_2_2_2_1
+            // InternalETLDsl.g:4329:2: ( rule__Include__IdentifyingfieldsAssignment_2_2_2_1 )
+            // InternalETLDsl.g:4329:3: rule__Include__IdentifyingfieldsAssignment_2_2_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Include__IdentifyingfieldsAssignment_2_2_2_1();
@@ -13332,14 +13429,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__0"
-    // InternalETLDsl.g:4311:1: rule__Relationship__Group__0 : rule__Relationship__Group__0__Impl rule__Relationship__Group__1 ;
+    // InternalETLDsl.g:4338:1: rule__Relationship__Group__0 : rule__Relationship__Group__0__Impl rule__Relationship__Group__1 ;
     public final void rule__Relationship__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4315:1: ( rule__Relationship__Group__0__Impl rule__Relationship__Group__1 )
-            // InternalETLDsl.g:4316:2: rule__Relationship__Group__0__Impl rule__Relationship__Group__1
+            // InternalETLDsl.g:4342:1: ( rule__Relationship__Group__0__Impl rule__Relationship__Group__1 )
+            // InternalETLDsl.g:4343:2: rule__Relationship__Group__0__Impl rule__Relationship__Group__1
             {
             pushFollow(FOLLOW_24);
             rule__Relationship__Group__0__Impl();
@@ -13370,21 +13467,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__0__Impl"
-    // InternalETLDsl.g:4323:1: rule__Relationship__Group__0__Impl : ( () ) ;
+    // InternalETLDsl.g:4350:1: rule__Relationship__Group__0__Impl : ( () ) ;
     public final void rule__Relationship__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4327:1: ( ( () ) )
-            // InternalETLDsl.g:4328:1: ( () )
+            // InternalETLDsl.g:4354:1: ( ( () ) )
+            // InternalETLDsl.g:4355:1: ( () )
             {
-            // InternalETLDsl.g:4328:1: ( () )
-            // InternalETLDsl.g:4329:2: ()
+            // InternalETLDsl.g:4355:1: ( () )
+            // InternalETLDsl.g:4356:2: ()
             {
              before(grammarAccess.getRelationshipAccess().getRelationshipAction_0()); 
-            // InternalETLDsl.g:4330:2: ()
-            // InternalETLDsl.g:4330:3: 
+            // InternalETLDsl.g:4357:2: ()
+            // InternalETLDsl.g:4357:3: 
             {
             }
 
@@ -13407,14 +13504,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__1"
-    // InternalETLDsl.g:4338:1: rule__Relationship__Group__1 : rule__Relationship__Group__1__Impl rule__Relationship__Group__2 ;
+    // InternalETLDsl.g:4365:1: rule__Relationship__Group__1 : rule__Relationship__Group__1__Impl rule__Relationship__Group__2 ;
     public final void rule__Relationship__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4342:1: ( rule__Relationship__Group__1__Impl rule__Relationship__Group__2 )
-            // InternalETLDsl.g:4343:2: rule__Relationship__Group__1__Impl rule__Relationship__Group__2
+            // InternalETLDsl.g:4369:1: ( rule__Relationship__Group__1__Impl rule__Relationship__Group__2 )
+            // InternalETLDsl.g:4370:2: rule__Relationship__Group__1__Impl rule__Relationship__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Relationship__Group__1__Impl();
@@ -13445,17 +13542,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__1__Impl"
-    // InternalETLDsl.g:4350:1: rule__Relationship__Group__1__Impl : ( 'Relationship' ) ;
+    // InternalETLDsl.g:4377:1: rule__Relationship__Group__1__Impl : ( 'Relationship' ) ;
     public final void rule__Relationship__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4354:1: ( ( 'Relationship' ) )
-            // InternalETLDsl.g:4355:1: ( 'Relationship' )
+            // InternalETLDsl.g:4381:1: ( ( 'Relationship' ) )
+            // InternalETLDsl.g:4382:1: ( 'Relationship' )
             {
-            // InternalETLDsl.g:4355:1: ( 'Relationship' )
-            // InternalETLDsl.g:4356:2: 'Relationship'
+            // InternalETLDsl.g:4382:1: ( 'Relationship' )
+            // InternalETLDsl.g:4383:2: 'Relationship'
             {
              before(grammarAccess.getRelationshipAccess().getRelationshipKeyword_1()); 
             match(input,70,FOLLOW_2); 
@@ -13482,14 +13579,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__2"
-    // InternalETLDsl.g:4365:1: rule__Relationship__Group__2 : rule__Relationship__Group__2__Impl rule__Relationship__Group__3 ;
+    // InternalETLDsl.g:4392:1: rule__Relationship__Group__2 : rule__Relationship__Group__2__Impl rule__Relationship__Group__3 ;
     public final void rule__Relationship__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4369:1: ( rule__Relationship__Group__2__Impl rule__Relationship__Group__3 )
-            // InternalETLDsl.g:4370:2: rule__Relationship__Group__2__Impl rule__Relationship__Group__3
+            // InternalETLDsl.g:4396:1: ( rule__Relationship__Group__2__Impl rule__Relationship__Group__3 )
+            // InternalETLDsl.g:4397:2: rule__Relationship__Group__2__Impl rule__Relationship__Group__3
             {
             pushFollow(FOLLOW_16);
             rule__Relationship__Group__2__Impl();
@@ -13520,21 +13617,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__2__Impl"
-    // InternalETLDsl.g:4377:1: rule__Relationship__Group__2__Impl : ( ( rule__Relationship__NameAssignment_2 ) ) ;
+    // InternalETLDsl.g:4404:1: rule__Relationship__Group__2__Impl : ( ( rule__Relationship__NameAssignment_2 ) ) ;
     public final void rule__Relationship__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4381:1: ( ( ( rule__Relationship__NameAssignment_2 ) ) )
-            // InternalETLDsl.g:4382:1: ( ( rule__Relationship__NameAssignment_2 ) )
+            // InternalETLDsl.g:4408:1: ( ( ( rule__Relationship__NameAssignment_2 ) ) )
+            // InternalETLDsl.g:4409:1: ( ( rule__Relationship__NameAssignment_2 ) )
             {
-            // InternalETLDsl.g:4382:1: ( ( rule__Relationship__NameAssignment_2 ) )
-            // InternalETLDsl.g:4383:2: ( rule__Relationship__NameAssignment_2 )
+            // InternalETLDsl.g:4409:1: ( ( rule__Relationship__NameAssignment_2 ) )
+            // InternalETLDsl.g:4410:2: ( rule__Relationship__NameAssignment_2 )
             {
              before(grammarAccess.getRelationshipAccess().getNameAssignment_2()); 
-            // InternalETLDsl.g:4384:2: ( rule__Relationship__NameAssignment_2 )
-            // InternalETLDsl.g:4384:3: rule__Relationship__NameAssignment_2
+            // InternalETLDsl.g:4411:2: ( rule__Relationship__NameAssignment_2 )
+            // InternalETLDsl.g:4411:3: rule__Relationship__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__NameAssignment_2();
@@ -13567,14 +13664,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__3"
-    // InternalETLDsl.g:4392:1: rule__Relationship__Group__3 : rule__Relationship__Group__3__Impl rule__Relationship__Group__4 ;
+    // InternalETLDsl.g:4419:1: rule__Relationship__Group__3 : rule__Relationship__Group__3__Impl rule__Relationship__Group__4 ;
     public final void rule__Relationship__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4396:1: ( rule__Relationship__Group__3__Impl rule__Relationship__Group__4 )
-            // InternalETLDsl.g:4397:2: rule__Relationship__Group__3__Impl rule__Relationship__Group__4
+            // InternalETLDsl.g:4423:1: ( rule__Relationship__Group__3__Impl rule__Relationship__Group__4 )
+            // InternalETLDsl.g:4424:2: rule__Relationship__Group__3__Impl rule__Relationship__Group__4
             {
             pushFollow(FOLLOW_32);
             rule__Relationship__Group__3__Impl();
@@ -13605,17 +13702,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__3__Impl"
-    // InternalETLDsl.g:4404:1: rule__Relationship__Group__3__Impl : ( '{' ) ;
+    // InternalETLDsl.g:4431:1: rule__Relationship__Group__3__Impl : ( '{' ) ;
     public final void rule__Relationship__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4408:1: ( ( '{' ) )
-            // InternalETLDsl.g:4409:1: ( '{' )
+            // InternalETLDsl.g:4435:1: ( ( '{' ) )
+            // InternalETLDsl.g:4436:1: ( '{' )
             {
-            // InternalETLDsl.g:4409:1: ( '{' )
-            // InternalETLDsl.g:4410:2: '{'
+            // InternalETLDsl.g:4436:1: ( '{' )
+            // InternalETLDsl.g:4437:2: '{'
             {
              before(grammarAccess.getRelationshipAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,43,FOLLOW_2); 
@@ -13642,14 +13739,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__4"
-    // InternalETLDsl.g:4419:1: rule__Relationship__Group__4 : rule__Relationship__Group__4__Impl rule__Relationship__Group__5 ;
+    // InternalETLDsl.g:4446:1: rule__Relationship__Group__4 : rule__Relationship__Group__4__Impl rule__Relationship__Group__5 ;
     public final void rule__Relationship__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4423:1: ( rule__Relationship__Group__4__Impl rule__Relationship__Group__5 )
-            // InternalETLDsl.g:4424:2: rule__Relationship__Group__4__Impl rule__Relationship__Group__5
+            // InternalETLDsl.g:4450:1: ( rule__Relationship__Group__4__Impl rule__Relationship__Group__5 )
+            // InternalETLDsl.g:4451:2: rule__Relationship__Group__4__Impl rule__Relationship__Group__5
             {
             pushFollow(FOLLOW_14);
             rule__Relationship__Group__4__Impl();
@@ -13680,17 +13777,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__4__Impl"
-    // InternalETLDsl.g:4431:1: rule__Relationship__Group__4__Impl : ( 'ToEntity: ' ) ;
+    // InternalETLDsl.g:4458:1: rule__Relationship__Group__4__Impl : ( 'ToEntity: ' ) ;
     public final void rule__Relationship__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4435:1: ( ( 'ToEntity: ' ) )
-            // InternalETLDsl.g:4436:1: ( 'ToEntity: ' )
+            // InternalETLDsl.g:4462:1: ( ( 'ToEntity: ' ) )
+            // InternalETLDsl.g:4463:1: ( 'ToEntity: ' )
             {
-            // InternalETLDsl.g:4436:1: ( 'ToEntity: ' )
-            // InternalETLDsl.g:4437:2: 'ToEntity: '
+            // InternalETLDsl.g:4463:1: ( 'ToEntity: ' )
+            // InternalETLDsl.g:4464:2: 'ToEntity: '
             {
              before(grammarAccess.getRelationshipAccess().getToEntityKeyword_4()); 
             match(input,71,FOLLOW_2); 
@@ -13717,14 +13814,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__5"
-    // InternalETLDsl.g:4446:1: rule__Relationship__Group__5 : rule__Relationship__Group__5__Impl rule__Relationship__Group__6 ;
+    // InternalETLDsl.g:4473:1: rule__Relationship__Group__5 : rule__Relationship__Group__5__Impl rule__Relationship__Group__6 ;
     public final void rule__Relationship__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4450:1: ( rule__Relationship__Group__5__Impl rule__Relationship__Group__6 )
-            // InternalETLDsl.g:4451:2: rule__Relationship__Group__5__Impl rule__Relationship__Group__6
+            // InternalETLDsl.g:4477:1: ( rule__Relationship__Group__5__Impl rule__Relationship__Group__6 )
+            // InternalETLDsl.g:4478:2: rule__Relationship__Group__5__Impl rule__Relationship__Group__6
             {
             pushFollow(FOLLOW_33);
             rule__Relationship__Group__5__Impl();
@@ -13755,21 +13852,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__5__Impl"
-    // InternalETLDsl.g:4458:1: rule__Relationship__Group__5__Impl : ( ( rule__Relationship__ToEntityAssignment_5 ) ) ;
+    // InternalETLDsl.g:4485:1: rule__Relationship__Group__5__Impl : ( ( rule__Relationship__ToEntityAssignment_5 ) ) ;
     public final void rule__Relationship__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4462:1: ( ( ( rule__Relationship__ToEntityAssignment_5 ) ) )
-            // InternalETLDsl.g:4463:1: ( ( rule__Relationship__ToEntityAssignment_5 ) )
+            // InternalETLDsl.g:4489:1: ( ( ( rule__Relationship__ToEntityAssignment_5 ) ) )
+            // InternalETLDsl.g:4490:1: ( ( rule__Relationship__ToEntityAssignment_5 ) )
             {
-            // InternalETLDsl.g:4463:1: ( ( rule__Relationship__ToEntityAssignment_5 ) )
-            // InternalETLDsl.g:4464:2: ( rule__Relationship__ToEntityAssignment_5 )
+            // InternalETLDsl.g:4490:1: ( ( rule__Relationship__ToEntityAssignment_5 ) )
+            // InternalETLDsl.g:4491:2: ( rule__Relationship__ToEntityAssignment_5 )
             {
              before(grammarAccess.getRelationshipAccess().getToEntityAssignment_5()); 
-            // InternalETLDsl.g:4465:2: ( rule__Relationship__ToEntityAssignment_5 )
-            // InternalETLDsl.g:4465:3: rule__Relationship__ToEntityAssignment_5
+            // InternalETLDsl.g:4492:2: ( rule__Relationship__ToEntityAssignment_5 )
+            // InternalETLDsl.g:4492:3: rule__Relationship__ToEntityAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__ToEntityAssignment_5();
@@ -13802,14 +13899,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__6"
-    // InternalETLDsl.g:4473:1: rule__Relationship__Group__6 : rule__Relationship__Group__6__Impl rule__Relationship__Group__7 ;
+    // InternalETLDsl.g:4500:1: rule__Relationship__Group__6 : rule__Relationship__Group__6__Impl rule__Relationship__Group__7 ;
     public final void rule__Relationship__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4477:1: ( rule__Relationship__Group__6__Impl rule__Relationship__Group__7 )
-            // InternalETLDsl.g:4478:2: rule__Relationship__Group__6__Impl rule__Relationship__Group__7
+            // InternalETLDsl.g:4504:1: ( rule__Relationship__Group__6__Impl rule__Relationship__Group__7 )
+            // InternalETLDsl.g:4505:2: rule__Relationship__Group__6__Impl rule__Relationship__Group__7
             {
             pushFollow(FOLLOW_33);
             rule__Relationship__Group__6__Impl();
@@ -13840,29 +13937,29 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__6__Impl"
-    // InternalETLDsl.g:4485:1: rule__Relationship__Group__6__Impl : ( ( rule__Relationship__Group_6__0 )? ) ;
+    // InternalETLDsl.g:4512:1: rule__Relationship__Group__6__Impl : ( ( rule__Relationship__Group_6__0 )? ) ;
     public final void rule__Relationship__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4489:1: ( ( ( rule__Relationship__Group_6__0 )? ) )
-            // InternalETLDsl.g:4490:1: ( ( rule__Relationship__Group_6__0 )? )
+            // InternalETLDsl.g:4516:1: ( ( ( rule__Relationship__Group_6__0 )? ) )
+            // InternalETLDsl.g:4517:1: ( ( rule__Relationship__Group_6__0 )? )
             {
-            // InternalETLDsl.g:4490:1: ( ( rule__Relationship__Group_6__0 )? )
-            // InternalETLDsl.g:4491:2: ( rule__Relationship__Group_6__0 )?
+            // InternalETLDsl.g:4517:1: ( ( rule__Relationship__Group_6__0 )? )
+            // InternalETLDsl.g:4518:2: ( rule__Relationship__Group_6__0 )?
             {
              before(grammarAccess.getRelationshipAccess().getGroup_6()); 
-            // InternalETLDsl.g:4492:2: ( rule__Relationship__Group_6__0 )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalETLDsl.g:4519:2: ( rule__Relationship__Group_6__0 )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==72) ) {
-                alt43=1;
+            if ( (LA44_0==72) ) {
+                alt44=1;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
-                    // InternalETLDsl.g:4492:3: rule__Relationship__Group_6__0
+                    // InternalETLDsl.g:4519:3: rule__Relationship__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Relationship__Group_6__0();
@@ -13898,14 +13995,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__7"
-    // InternalETLDsl.g:4500:1: rule__Relationship__Group__7 : rule__Relationship__Group__7__Impl rule__Relationship__Group__8 ;
+    // InternalETLDsl.g:4527:1: rule__Relationship__Group__7 : rule__Relationship__Group__7__Impl rule__Relationship__Group__8 ;
     public final void rule__Relationship__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4504:1: ( rule__Relationship__Group__7__Impl rule__Relationship__Group__8 )
-            // InternalETLDsl.g:4505:2: rule__Relationship__Group__7__Impl rule__Relationship__Group__8
+            // InternalETLDsl.g:4531:1: ( rule__Relationship__Group__7__Impl rule__Relationship__Group__8 )
+            // InternalETLDsl.g:4532:2: rule__Relationship__Group__7__Impl rule__Relationship__Group__8
             {
             pushFollow(FOLLOW_33);
             rule__Relationship__Group__7__Impl();
@@ -13936,29 +14033,29 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__7__Impl"
-    // InternalETLDsl.g:4512:1: rule__Relationship__Group__7__Impl : ( ( rule__Relationship__Group_7__0 )? ) ;
+    // InternalETLDsl.g:4539:1: rule__Relationship__Group__7__Impl : ( ( rule__Relationship__Group_7__0 )? ) ;
     public final void rule__Relationship__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4516:1: ( ( ( rule__Relationship__Group_7__0 )? ) )
-            // InternalETLDsl.g:4517:1: ( ( rule__Relationship__Group_7__0 )? )
+            // InternalETLDsl.g:4543:1: ( ( ( rule__Relationship__Group_7__0 )? ) )
+            // InternalETLDsl.g:4544:1: ( ( rule__Relationship__Group_7__0 )? )
             {
-            // InternalETLDsl.g:4517:1: ( ( rule__Relationship__Group_7__0 )? )
-            // InternalETLDsl.g:4518:2: ( rule__Relationship__Group_7__0 )?
+            // InternalETLDsl.g:4544:1: ( ( rule__Relationship__Group_7__0 )? )
+            // InternalETLDsl.g:4545:2: ( rule__Relationship__Group_7__0 )?
             {
              before(grammarAccess.getRelationshipAccess().getGroup_7()); 
-            // InternalETLDsl.g:4519:2: ( rule__Relationship__Group_7__0 )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalETLDsl.g:4546:2: ( rule__Relationship__Group_7__0 )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==69) ) {
-                alt44=1;
+            if ( (LA45_0==69) ) {
+                alt45=1;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // InternalETLDsl.g:4519:3: rule__Relationship__Group_7__0
+                    // InternalETLDsl.g:4546:3: rule__Relationship__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Relationship__Group_7__0();
@@ -13994,14 +14091,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__8"
-    // InternalETLDsl.g:4527:1: rule__Relationship__Group__8 : rule__Relationship__Group__8__Impl ;
+    // InternalETLDsl.g:4554:1: rule__Relationship__Group__8 : rule__Relationship__Group__8__Impl ;
     public final void rule__Relationship__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4531:1: ( rule__Relationship__Group__8__Impl )
-            // InternalETLDsl.g:4532:2: rule__Relationship__Group__8__Impl
+            // InternalETLDsl.g:4558:1: ( rule__Relationship__Group__8__Impl )
+            // InternalETLDsl.g:4559:2: rule__Relationship__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__Group__8__Impl();
@@ -14027,17 +14124,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group__8__Impl"
-    // InternalETLDsl.g:4538:1: rule__Relationship__Group__8__Impl : ( '}' ) ;
+    // InternalETLDsl.g:4565:1: rule__Relationship__Group__8__Impl : ( '}' ) ;
     public final void rule__Relationship__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4542:1: ( ( '}' ) )
-            // InternalETLDsl.g:4543:1: ( '}' )
+            // InternalETLDsl.g:4569:1: ( ( '}' ) )
+            // InternalETLDsl.g:4570:1: ( '}' )
             {
-            // InternalETLDsl.g:4543:1: ( '}' )
-            // InternalETLDsl.g:4544:2: '}'
+            // InternalETLDsl.g:4570:1: ( '}' )
+            // InternalETLDsl.g:4571:2: '}'
             {
              before(grammarAccess.getRelationshipAccess().getRightCurlyBracketKeyword_8()); 
             match(input,44,FOLLOW_2); 
@@ -14064,14 +14161,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__0"
-    // InternalETLDsl.g:4554:1: rule__Relationship__Group_6__0 : rule__Relationship__Group_6__0__Impl rule__Relationship__Group_6__1 ;
+    // InternalETLDsl.g:4581:1: rule__Relationship__Group_6__0 : rule__Relationship__Group_6__0__Impl rule__Relationship__Group_6__1 ;
     public final void rule__Relationship__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4558:1: ( rule__Relationship__Group_6__0__Impl rule__Relationship__Group_6__1 )
-            // InternalETLDsl.g:4559:2: rule__Relationship__Group_6__0__Impl rule__Relationship__Group_6__1
+            // InternalETLDsl.g:4585:1: ( rule__Relationship__Group_6__0__Impl rule__Relationship__Group_6__1 )
+            // InternalETLDsl.g:4586:2: rule__Relationship__Group_6__0__Impl rule__Relationship__Group_6__1
             {
             pushFollow(FOLLOW_14);
             rule__Relationship__Group_6__0__Impl();
@@ -14102,17 +14199,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__0__Impl"
-    // InternalETLDsl.g:4566:1: rule__Relationship__Group_6__0__Impl : ( 'DescribingFields:{' ) ;
+    // InternalETLDsl.g:4593:1: rule__Relationship__Group_6__0__Impl : ( 'DescribingFields:{' ) ;
     public final void rule__Relationship__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4570:1: ( ( 'DescribingFields:{' ) )
-            // InternalETLDsl.g:4571:1: ( 'DescribingFields:{' )
+            // InternalETLDsl.g:4597:1: ( ( 'DescribingFields:{' ) )
+            // InternalETLDsl.g:4598:1: ( 'DescribingFields:{' )
             {
-            // InternalETLDsl.g:4571:1: ( 'DescribingFields:{' )
-            // InternalETLDsl.g:4572:2: 'DescribingFields:{'
+            // InternalETLDsl.g:4598:1: ( 'DescribingFields:{' )
+            // InternalETLDsl.g:4599:2: 'DescribingFields:{'
             {
              before(grammarAccess.getRelationshipAccess().getDescribingFieldsKeyword_6_0()); 
             match(input,72,FOLLOW_2); 
@@ -14139,14 +14236,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__1"
-    // InternalETLDsl.g:4581:1: rule__Relationship__Group_6__1 : rule__Relationship__Group_6__1__Impl rule__Relationship__Group_6__2 ;
+    // InternalETLDsl.g:4608:1: rule__Relationship__Group_6__1 : rule__Relationship__Group_6__1__Impl rule__Relationship__Group_6__2 ;
     public final void rule__Relationship__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4585:1: ( rule__Relationship__Group_6__1__Impl rule__Relationship__Group_6__2 )
-            // InternalETLDsl.g:4586:2: rule__Relationship__Group_6__1__Impl rule__Relationship__Group_6__2
+            // InternalETLDsl.g:4612:1: ( rule__Relationship__Group_6__1__Impl rule__Relationship__Group_6__2 )
+            // InternalETLDsl.g:4613:2: rule__Relationship__Group_6__1__Impl rule__Relationship__Group_6__2
             {
             pushFollow(FOLLOW_19);
             rule__Relationship__Group_6__1__Impl();
@@ -14177,21 +14274,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__1__Impl"
-    // InternalETLDsl.g:4593:1: rule__Relationship__Group_6__1__Impl : ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) ) ;
+    // InternalETLDsl.g:4620:1: rule__Relationship__Group_6__1__Impl : ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) ) ;
     public final void rule__Relationship__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4597:1: ( ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) ) )
-            // InternalETLDsl.g:4598:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) )
+            // InternalETLDsl.g:4624:1: ( ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) ) )
+            // InternalETLDsl.g:4625:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) )
             {
-            // InternalETLDsl.g:4598:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) )
-            // InternalETLDsl.g:4599:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_1 )
+            // InternalETLDsl.g:4625:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_1 ) )
+            // InternalETLDsl.g:4626:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_1 )
             {
              before(grammarAccess.getRelationshipAccess().getDescribingFieldsRelAssignment_6_1()); 
-            // InternalETLDsl.g:4600:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_1 )
-            // InternalETLDsl.g:4600:3: rule__Relationship__DescribingFieldsRelAssignment_6_1
+            // InternalETLDsl.g:4627:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_1 )
+            // InternalETLDsl.g:4627:3: rule__Relationship__DescribingFieldsRelAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__DescribingFieldsRelAssignment_6_1();
@@ -14224,14 +14321,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__2"
-    // InternalETLDsl.g:4608:1: rule__Relationship__Group_6__2 : rule__Relationship__Group_6__2__Impl rule__Relationship__Group_6__3 ;
+    // InternalETLDsl.g:4635:1: rule__Relationship__Group_6__2 : rule__Relationship__Group_6__2__Impl rule__Relationship__Group_6__3 ;
     public final void rule__Relationship__Group_6__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4612:1: ( rule__Relationship__Group_6__2__Impl rule__Relationship__Group_6__3 )
-            // InternalETLDsl.g:4613:2: rule__Relationship__Group_6__2__Impl rule__Relationship__Group_6__3
+            // InternalETLDsl.g:4639:1: ( rule__Relationship__Group_6__2__Impl rule__Relationship__Group_6__3 )
+            // InternalETLDsl.g:4640:2: rule__Relationship__Group_6__2__Impl rule__Relationship__Group_6__3
             {
             pushFollow(FOLLOW_19);
             rule__Relationship__Group_6__2__Impl();
@@ -14262,33 +14359,33 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__2__Impl"
-    // InternalETLDsl.g:4620:1: rule__Relationship__Group_6__2__Impl : ( ( rule__Relationship__Group_6_2__0 )* ) ;
+    // InternalETLDsl.g:4647:1: rule__Relationship__Group_6__2__Impl : ( ( rule__Relationship__Group_6_2__0 )* ) ;
     public final void rule__Relationship__Group_6__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4624:1: ( ( ( rule__Relationship__Group_6_2__0 )* ) )
-            // InternalETLDsl.g:4625:1: ( ( rule__Relationship__Group_6_2__0 )* )
+            // InternalETLDsl.g:4651:1: ( ( ( rule__Relationship__Group_6_2__0 )* ) )
+            // InternalETLDsl.g:4652:1: ( ( rule__Relationship__Group_6_2__0 )* )
             {
-            // InternalETLDsl.g:4625:1: ( ( rule__Relationship__Group_6_2__0 )* )
-            // InternalETLDsl.g:4626:2: ( rule__Relationship__Group_6_2__0 )*
+            // InternalETLDsl.g:4652:1: ( ( rule__Relationship__Group_6_2__0 )* )
+            // InternalETLDsl.g:4653:2: ( rule__Relationship__Group_6_2__0 )*
             {
              before(grammarAccess.getRelationshipAccess().getGroup_6_2()); 
-            // InternalETLDsl.g:4627:2: ( rule__Relationship__Group_6_2__0 )*
-            loop45:
+            // InternalETLDsl.g:4654:2: ( rule__Relationship__Group_6_2__0 )*
+            loop46:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( (LA45_0==39) ) {
-                    alt45=1;
+                if ( (LA46_0==39) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt46) {
             	case 1 :
-            	    // InternalETLDsl.g:4627:3: rule__Relationship__Group_6_2__0
+            	    // InternalETLDsl.g:4654:3: rule__Relationship__Group_6_2__0
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Relationship__Group_6_2__0();
@@ -14300,7 +14397,7 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop46;
                 }
             } while (true);
 
@@ -14327,14 +14424,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__3"
-    // InternalETLDsl.g:4635:1: rule__Relationship__Group_6__3 : rule__Relationship__Group_6__3__Impl ;
+    // InternalETLDsl.g:4662:1: rule__Relationship__Group_6__3 : rule__Relationship__Group_6__3__Impl ;
     public final void rule__Relationship__Group_6__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4639:1: ( rule__Relationship__Group_6__3__Impl )
-            // InternalETLDsl.g:4640:2: rule__Relationship__Group_6__3__Impl
+            // InternalETLDsl.g:4666:1: ( rule__Relationship__Group_6__3__Impl )
+            // InternalETLDsl.g:4667:2: rule__Relationship__Group_6__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__Group_6__3__Impl();
@@ -14360,17 +14457,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6__3__Impl"
-    // InternalETLDsl.g:4646:1: rule__Relationship__Group_6__3__Impl : ( '}' ) ;
+    // InternalETLDsl.g:4673:1: rule__Relationship__Group_6__3__Impl : ( '}' ) ;
     public final void rule__Relationship__Group_6__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4650:1: ( ( '}' ) )
-            // InternalETLDsl.g:4651:1: ( '}' )
+            // InternalETLDsl.g:4677:1: ( ( '}' ) )
+            // InternalETLDsl.g:4678:1: ( '}' )
             {
-            // InternalETLDsl.g:4651:1: ( '}' )
-            // InternalETLDsl.g:4652:2: '}'
+            // InternalETLDsl.g:4678:1: ( '}' )
+            // InternalETLDsl.g:4679:2: '}'
             {
              before(grammarAccess.getRelationshipAccess().getRightCurlyBracketKeyword_6_3()); 
             match(input,44,FOLLOW_2); 
@@ -14397,14 +14494,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6_2__0"
-    // InternalETLDsl.g:4662:1: rule__Relationship__Group_6_2__0 : rule__Relationship__Group_6_2__0__Impl rule__Relationship__Group_6_2__1 ;
+    // InternalETLDsl.g:4689:1: rule__Relationship__Group_6_2__0 : rule__Relationship__Group_6_2__0__Impl rule__Relationship__Group_6_2__1 ;
     public final void rule__Relationship__Group_6_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4666:1: ( rule__Relationship__Group_6_2__0__Impl rule__Relationship__Group_6_2__1 )
-            // InternalETLDsl.g:4667:2: rule__Relationship__Group_6_2__0__Impl rule__Relationship__Group_6_2__1
+            // InternalETLDsl.g:4693:1: ( rule__Relationship__Group_6_2__0__Impl rule__Relationship__Group_6_2__1 )
+            // InternalETLDsl.g:4694:2: rule__Relationship__Group_6_2__0__Impl rule__Relationship__Group_6_2__1
             {
             pushFollow(FOLLOW_14);
             rule__Relationship__Group_6_2__0__Impl();
@@ -14435,17 +14532,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6_2__0__Impl"
-    // InternalETLDsl.g:4674:1: rule__Relationship__Group_6_2__0__Impl : ( ',' ) ;
+    // InternalETLDsl.g:4701:1: rule__Relationship__Group_6_2__0__Impl : ( ',' ) ;
     public final void rule__Relationship__Group_6_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4678:1: ( ( ',' ) )
-            // InternalETLDsl.g:4679:1: ( ',' )
+            // InternalETLDsl.g:4705:1: ( ( ',' ) )
+            // InternalETLDsl.g:4706:1: ( ',' )
             {
-            // InternalETLDsl.g:4679:1: ( ',' )
-            // InternalETLDsl.g:4680:2: ','
+            // InternalETLDsl.g:4706:1: ( ',' )
+            // InternalETLDsl.g:4707:2: ','
             {
              before(grammarAccess.getRelationshipAccess().getCommaKeyword_6_2_0()); 
             match(input,39,FOLLOW_2); 
@@ -14472,14 +14569,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6_2__1"
-    // InternalETLDsl.g:4689:1: rule__Relationship__Group_6_2__1 : rule__Relationship__Group_6_2__1__Impl ;
+    // InternalETLDsl.g:4716:1: rule__Relationship__Group_6_2__1 : rule__Relationship__Group_6_2__1__Impl ;
     public final void rule__Relationship__Group_6_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4693:1: ( rule__Relationship__Group_6_2__1__Impl )
-            // InternalETLDsl.g:4694:2: rule__Relationship__Group_6_2__1__Impl
+            // InternalETLDsl.g:4720:1: ( rule__Relationship__Group_6_2__1__Impl )
+            // InternalETLDsl.g:4721:2: rule__Relationship__Group_6_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__Group_6_2__1__Impl();
@@ -14505,21 +14602,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_6_2__1__Impl"
-    // InternalETLDsl.g:4700:1: rule__Relationship__Group_6_2__1__Impl : ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) ) ;
+    // InternalETLDsl.g:4727:1: rule__Relationship__Group_6_2__1__Impl : ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) ) ;
     public final void rule__Relationship__Group_6_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4704:1: ( ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) ) )
-            // InternalETLDsl.g:4705:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) )
+            // InternalETLDsl.g:4731:1: ( ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) ) )
+            // InternalETLDsl.g:4732:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) )
             {
-            // InternalETLDsl.g:4705:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) )
-            // InternalETLDsl.g:4706:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 )
+            // InternalETLDsl.g:4732:1: ( ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 ) )
+            // InternalETLDsl.g:4733:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 )
             {
              before(grammarAccess.getRelationshipAccess().getDescribingFieldsRelAssignment_6_2_1()); 
-            // InternalETLDsl.g:4707:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 )
-            // InternalETLDsl.g:4707:3: rule__Relationship__DescribingFieldsRelAssignment_6_2_1
+            // InternalETLDsl.g:4734:2: ( rule__Relationship__DescribingFieldsRelAssignment_6_2_1 )
+            // InternalETLDsl.g:4734:3: rule__Relationship__DescribingFieldsRelAssignment_6_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__DescribingFieldsRelAssignment_6_2_1();
@@ -14552,14 +14649,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__0"
-    // InternalETLDsl.g:4716:1: rule__Relationship__Group_7__0 : rule__Relationship__Group_7__0__Impl rule__Relationship__Group_7__1 ;
+    // InternalETLDsl.g:4743:1: rule__Relationship__Group_7__0 : rule__Relationship__Group_7__0__Impl rule__Relationship__Group_7__1 ;
     public final void rule__Relationship__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4720:1: ( rule__Relationship__Group_7__0__Impl rule__Relationship__Group_7__1 )
-            // InternalETLDsl.g:4721:2: rule__Relationship__Group_7__0__Impl rule__Relationship__Group_7__1
+            // InternalETLDsl.g:4747:1: ( rule__Relationship__Group_7__0__Impl rule__Relationship__Group_7__1 )
+            // InternalETLDsl.g:4748:2: rule__Relationship__Group_7__0__Impl rule__Relationship__Group_7__1
             {
             pushFollow(FOLLOW_14);
             rule__Relationship__Group_7__0__Impl();
@@ -14590,17 +14687,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__0__Impl"
-    // InternalETLDsl.g:4728:1: rule__Relationship__Group_7__0__Impl : ( 'IdentifyingFields:{' ) ;
+    // InternalETLDsl.g:4755:1: rule__Relationship__Group_7__0__Impl : ( 'IdentifyingFields:{' ) ;
     public final void rule__Relationship__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4732:1: ( ( 'IdentifyingFields:{' ) )
-            // InternalETLDsl.g:4733:1: ( 'IdentifyingFields:{' )
+            // InternalETLDsl.g:4759:1: ( ( 'IdentifyingFields:{' ) )
+            // InternalETLDsl.g:4760:1: ( 'IdentifyingFields:{' )
             {
-            // InternalETLDsl.g:4733:1: ( 'IdentifyingFields:{' )
-            // InternalETLDsl.g:4734:2: 'IdentifyingFields:{'
+            // InternalETLDsl.g:4760:1: ( 'IdentifyingFields:{' )
+            // InternalETLDsl.g:4761:2: 'IdentifyingFields:{'
             {
              before(grammarAccess.getRelationshipAccess().getIdentifyingFieldsKeyword_7_0()); 
             match(input,69,FOLLOW_2); 
@@ -14627,14 +14724,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__1"
-    // InternalETLDsl.g:4743:1: rule__Relationship__Group_7__1 : rule__Relationship__Group_7__1__Impl rule__Relationship__Group_7__2 ;
+    // InternalETLDsl.g:4770:1: rule__Relationship__Group_7__1 : rule__Relationship__Group_7__1__Impl rule__Relationship__Group_7__2 ;
     public final void rule__Relationship__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4747:1: ( rule__Relationship__Group_7__1__Impl rule__Relationship__Group_7__2 )
-            // InternalETLDsl.g:4748:2: rule__Relationship__Group_7__1__Impl rule__Relationship__Group_7__2
+            // InternalETLDsl.g:4774:1: ( rule__Relationship__Group_7__1__Impl rule__Relationship__Group_7__2 )
+            // InternalETLDsl.g:4775:2: rule__Relationship__Group_7__1__Impl rule__Relationship__Group_7__2
             {
             pushFollow(FOLLOW_19);
             rule__Relationship__Group_7__1__Impl();
@@ -14665,21 +14762,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__1__Impl"
-    // InternalETLDsl.g:4755:1: rule__Relationship__Group_7__1__Impl : ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) ) ;
+    // InternalETLDsl.g:4782:1: rule__Relationship__Group_7__1__Impl : ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) ) ;
     public final void rule__Relationship__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4759:1: ( ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) ) )
-            // InternalETLDsl.g:4760:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) )
+            // InternalETLDsl.g:4786:1: ( ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) ) )
+            // InternalETLDsl.g:4787:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) )
             {
-            // InternalETLDsl.g:4760:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) )
-            // InternalETLDsl.g:4761:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 )
+            // InternalETLDsl.g:4787:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 ) )
+            // InternalETLDsl.g:4788:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 )
             {
              before(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelAssignment_7_1()); 
-            // InternalETLDsl.g:4762:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 )
-            // InternalETLDsl.g:4762:3: rule__Relationship__IdentifiyingFieldsRelAssignment_7_1
+            // InternalETLDsl.g:4789:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 )
+            // InternalETLDsl.g:4789:3: rule__Relationship__IdentifiyingFieldsRelAssignment_7_1
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__IdentifiyingFieldsRelAssignment_7_1();
@@ -14712,14 +14809,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__2"
-    // InternalETLDsl.g:4770:1: rule__Relationship__Group_7__2 : rule__Relationship__Group_7__2__Impl rule__Relationship__Group_7__3 ;
+    // InternalETLDsl.g:4797:1: rule__Relationship__Group_7__2 : rule__Relationship__Group_7__2__Impl rule__Relationship__Group_7__3 ;
     public final void rule__Relationship__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4774:1: ( rule__Relationship__Group_7__2__Impl rule__Relationship__Group_7__3 )
-            // InternalETLDsl.g:4775:2: rule__Relationship__Group_7__2__Impl rule__Relationship__Group_7__3
+            // InternalETLDsl.g:4801:1: ( rule__Relationship__Group_7__2__Impl rule__Relationship__Group_7__3 )
+            // InternalETLDsl.g:4802:2: rule__Relationship__Group_7__2__Impl rule__Relationship__Group_7__3
             {
             pushFollow(FOLLOW_19);
             rule__Relationship__Group_7__2__Impl();
@@ -14750,33 +14847,33 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__2__Impl"
-    // InternalETLDsl.g:4782:1: rule__Relationship__Group_7__2__Impl : ( ( rule__Relationship__Group_7_2__0 )* ) ;
+    // InternalETLDsl.g:4809:1: rule__Relationship__Group_7__2__Impl : ( ( rule__Relationship__Group_7_2__0 )* ) ;
     public final void rule__Relationship__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4786:1: ( ( ( rule__Relationship__Group_7_2__0 )* ) )
-            // InternalETLDsl.g:4787:1: ( ( rule__Relationship__Group_7_2__0 )* )
+            // InternalETLDsl.g:4813:1: ( ( ( rule__Relationship__Group_7_2__0 )* ) )
+            // InternalETLDsl.g:4814:1: ( ( rule__Relationship__Group_7_2__0 )* )
             {
-            // InternalETLDsl.g:4787:1: ( ( rule__Relationship__Group_7_2__0 )* )
-            // InternalETLDsl.g:4788:2: ( rule__Relationship__Group_7_2__0 )*
+            // InternalETLDsl.g:4814:1: ( ( rule__Relationship__Group_7_2__0 )* )
+            // InternalETLDsl.g:4815:2: ( rule__Relationship__Group_7_2__0 )*
             {
              before(grammarAccess.getRelationshipAccess().getGroup_7_2()); 
-            // InternalETLDsl.g:4789:2: ( rule__Relationship__Group_7_2__0 )*
-            loop46:
+            // InternalETLDsl.g:4816:2: ( rule__Relationship__Group_7_2__0 )*
+            loop47:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA46_0==39) ) {
-                    alt46=1;
+                if ( (LA47_0==39) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt47) {
             	case 1 :
-            	    // InternalETLDsl.g:4789:3: rule__Relationship__Group_7_2__0
+            	    // InternalETLDsl.g:4816:3: rule__Relationship__Group_7_2__0
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Relationship__Group_7_2__0();
@@ -14788,7 +14885,7 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop47;
                 }
             } while (true);
 
@@ -14815,14 +14912,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__3"
-    // InternalETLDsl.g:4797:1: rule__Relationship__Group_7__3 : rule__Relationship__Group_7__3__Impl ;
+    // InternalETLDsl.g:4824:1: rule__Relationship__Group_7__3 : rule__Relationship__Group_7__3__Impl ;
     public final void rule__Relationship__Group_7__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4801:1: ( rule__Relationship__Group_7__3__Impl )
-            // InternalETLDsl.g:4802:2: rule__Relationship__Group_7__3__Impl
+            // InternalETLDsl.g:4828:1: ( rule__Relationship__Group_7__3__Impl )
+            // InternalETLDsl.g:4829:2: rule__Relationship__Group_7__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__Group_7__3__Impl();
@@ -14848,17 +14945,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7__3__Impl"
-    // InternalETLDsl.g:4808:1: rule__Relationship__Group_7__3__Impl : ( '}' ) ;
+    // InternalETLDsl.g:4835:1: rule__Relationship__Group_7__3__Impl : ( '}' ) ;
     public final void rule__Relationship__Group_7__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4812:1: ( ( '}' ) )
-            // InternalETLDsl.g:4813:1: ( '}' )
+            // InternalETLDsl.g:4839:1: ( ( '}' ) )
+            // InternalETLDsl.g:4840:1: ( '}' )
             {
-            // InternalETLDsl.g:4813:1: ( '}' )
-            // InternalETLDsl.g:4814:2: '}'
+            // InternalETLDsl.g:4840:1: ( '}' )
+            // InternalETLDsl.g:4841:2: '}'
             {
              before(grammarAccess.getRelationshipAccess().getRightCurlyBracketKeyword_7_3()); 
             match(input,44,FOLLOW_2); 
@@ -14885,14 +14982,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7_2__0"
-    // InternalETLDsl.g:4824:1: rule__Relationship__Group_7_2__0 : rule__Relationship__Group_7_2__0__Impl rule__Relationship__Group_7_2__1 ;
+    // InternalETLDsl.g:4851:1: rule__Relationship__Group_7_2__0 : rule__Relationship__Group_7_2__0__Impl rule__Relationship__Group_7_2__1 ;
     public final void rule__Relationship__Group_7_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4828:1: ( rule__Relationship__Group_7_2__0__Impl rule__Relationship__Group_7_2__1 )
-            // InternalETLDsl.g:4829:2: rule__Relationship__Group_7_2__0__Impl rule__Relationship__Group_7_2__1
+            // InternalETLDsl.g:4855:1: ( rule__Relationship__Group_7_2__0__Impl rule__Relationship__Group_7_2__1 )
+            // InternalETLDsl.g:4856:2: rule__Relationship__Group_7_2__0__Impl rule__Relationship__Group_7_2__1
             {
             pushFollow(FOLLOW_14);
             rule__Relationship__Group_7_2__0__Impl();
@@ -14923,17 +15020,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7_2__0__Impl"
-    // InternalETLDsl.g:4836:1: rule__Relationship__Group_7_2__0__Impl : ( ',' ) ;
+    // InternalETLDsl.g:4863:1: rule__Relationship__Group_7_2__0__Impl : ( ',' ) ;
     public final void rule__Relationship__Group_7_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4840:1: ( ( ',' ) )
-            // InternalETLDsl.g:4841:1: ( ',' )
+            // InternalETLDsl.g:4867:1: ( ( ',' ) )
+            // InternalETLDsl.g:4868:1: ( ',' )
             {
-            // InternalETLDsl.g:4841:1: ( ',' )
-            // InternalETLDsl.g:4842:2: ','
+            // InternalETLDsl.g:4868:1: ( ',' )
+            // InternalETLDsl.g:4869:2: ','
             {
              before(grammarAccess.getRelationshipAccess().getCommaKeyword_7_2_0()); 
             match(input,39,FOLLOW_2); 
@@ -14960,14 +15057,14 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7_2__1"
-    // InternalETLDsl.g:4851:1: rule__Relationship__Group_7_2__1 : rule__Relationship__Group_7_2__1__Impl ;
+    // InternalETLDsl.g:4878:1: rule__Relationship__Group_7_2__1 : rule__Relationship__Group_7_2__1__Impl ;
     public final void rule__Relationship__Group_7_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4855:1: ( rule__Relationship__Group_7_2__1__Impl )
-            // InternalETLDsl.g:4856:2: rule__Relationship__Group_7_2__1__Impl
+            // InternalETLDsl.g:4882:1: ( rule__Relationship__Group_7_2__1__Impl )
+            // InternalETLDsl.g:4883:2: rule__Relationship__Group_7_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__Group_7_2__1__Impl();
@@ -14993,21 +15090,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__Group_7_2__1__Impl"
-    // InternalETLDsl.g:4862:1: rule__Relationship__Group_7_2__1__Impl : ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) ) ;
+    // InternalETLDsl.g:4889:1: rule__Relationship__Group_7_2__1__Impl : ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) ) ;
     public final void rule__Relationship__Group_7_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4866:1: ( ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) ) )
-            // InternalETLDsl.g:4867:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) )
+            // InternalETLDsl.g:4893:1: ( ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) ) )
+            // InternalETLDsl.g:4894:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) )
             {
-            // InternalETLDsl.g:4867:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) )
-            // InternalETLDsl.g:4868:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 )
+            // InternalETLDsl.g:4894:1: ( ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 ) )
+            // InternalETLDsl.g:4895:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 )
             {
              before(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelAssignment_7_2_1()); 
-            // InternalETLDsl.g:4869:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 )
-            // InternalETLDsl.g:4869:3: rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1
+            // InternalETLDsl.g:4896:2: ( rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 )
+            // InternalETLDsl.g:4896:3: rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1();
@@ -15040,17 +15137,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__NameAssignment_2"
-    // InternalETLDsl.g:4878:1: rule__Logpackage__NameAssignment_2 : ( ruleEString ) ;
+    // InternalETLDsl.g:4905:1: rule__Logpackage__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Logpackage__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4882:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:4883:2: ( ruleEString )
+            // InternalETLDsl.g:4909:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:4910:2: ( ruleEString )
             {
-            // InternalETLDsl.g:4883:2: ( ruleEString )
-            // InternalETLDsl.g:4884:3: ruleEString
+            // InternalETLDsl.g:4910:2: ( ruleEString )
+            // InternalETLDsl.g:4911:3: ruleEString
             {
              before(grammarAccess.getLogpackageAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15081,17 +15178,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__LAYERAssignment_3_1"
-    // InternalETLDsl.g:4893:1: rule__Logpackage__LAYERAssignment_3_1 : ( ruleEString ) ;
+    // InternalETLDsl.g:4920:1: rule__Logpackage__LAYERAssignment_3_1 : ( ruleEString ) ;
     public final void rule__Logpackage__LAYERAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4897:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:4898:2: ( ruleEString )
+            // InternalETLDsl.g:4924:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:4925:2: ( ruleEString )
             {
-            // InternalETLDsl.g:4898:2: ( ruleEString )
-            // InternalETLDsl.g:4899:3: ruleEString
+            // InternalETLDsl.g:4925:2: ( ruleEString )
+            // InternalETLDsl.g:4926:3: ruleEString
             {
              before(grammarAccess.getLogpackageAccess().getLAYEREStringParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15122,17 +15219,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__LAYER_TYPEAssignment_4_1"
-    // InternalETLDsl.g:4908:1: rule__Logpackage__LAYER_TYPEAssignment_4_1 : ( ruleLAYERTYPE ) ;
+    // InternalETLDsl.g:4935:1: rule__Logpackage__LAYER_TYPEAssignment_4_1 : ( ruleLAYERTYPE ) ;
     public final void rule__Logpackage__LAYER_TYPEAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4912:1: ( ( ruleLAYERTYPE ) )
-            // InternalETLDsl.g:4913:2: ( ruleLAYERTYPE )
+            // InternalETLDsl.g:4939:1: ( ( ruleLAYERTYPE ) )
+            // InternalETLDsl.g:4940:2: ( ruleLAYERTYPE )
             {
-            // InternalETLDsl.g:4913:2: ( ruleLAYERTYPE )
-            // InternalETLDsl.g:4914:3: ruleLAYERTYPE
+            // InternalETLDsl.g:4940:2: ( ruleLAYERTYPE )
+            // InternalETLDsl.g:4941:3: ruleLAYERTYPE
             {
              before(grammarAccess.getLogpackageAccess().getLAYER_TYPELAYERTYPEEnumRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15163,17 +15260,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__HISTORISATIONAssignment_5_1"
-    // InternalETLDsl.g:4923:1: rule__Logpackage__HISTORISATIONAssignment_5_1 : ( ruleHISTORISATIONTYPE ) ;
+    // InternalETLDsl.g:4950:1: rule__Logpackage__HISTORISATIONAssignment_5_1 : ( ruleHISTORISATIONTYPE ) ;
     public final void rule__Logpackage__HISTORISATIONAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4927:1: ( ( ruleHISTORISATIONTYPE ) )
-            // InternalETLDsl.g:4928:2: ( ruleHISTORISATIONTYPE )
+            // InternalETLDsl.g:4954:1: ( ( ruleHISTORISATIONTYPE ) )
+            // InternalETLDsl.g:4955:2: ( ruleHISTORISATIONTYPE )
             {
-            // InternalETLDsl.g:4928:2: ( ruleHISTORISATIONTYPE )
-            // InternalETLDsl.g:4929:3: ruleHISTORISATIONTYPE
+            // InternalETLDsl.g:4955:2: ( ruleHISTORISATIONTYPE )
+            // InternalETLDsl.g:4956:3: ruleHISTORISATIONTYPE
             {
              before(grammarAccess.getLogpackageAccess().getHISTORISATIONHISTORISATIONTYPEEnumRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15204,17 +15301,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__REPRESENTATIONAssignment_6_1"
-    // InternalETLDsl.g:4938:1: rule__Logpackage__REPRESENTATIONAssignment_6_1 : ( ruleREPRESENTATIONS ) ;
+    // InternalETLDsl.g:4965:1: rule__Logpackage__REPRESENTATIONAssignment_6_1 : ( ruleREPRESENTATIONS ) ;
     public final void rule__Logpackage__REPRESENTATIONAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4942:1: ( ( ruleREPRESENTATIONS ) )
-            // InternalETLDsl.g:4943:2: ( ruleREPRESENTATIONS )
+            // InternalETLDsl.g:4969:1: ( ( ruleREPRESENTATIONS ) )
+            // InternalETLDsl.g:4970:2: ( ruleREPRESENTATIONS )
             {
-            // InternalETLDsl.g:4943:2: ( ruleREPRESENTATIONS )
-            // InternalETLDsl.g:4944:3: ruleREPRESENTATIONS
+            // InternalETLDsl.g:4970:2: ( ruleREPRESENTATIONS )
+            // InternalETLDsl.g:4971:3: ruleREPRESENTATIONS
             {
              before(grammarAccess.getLogpackageAccess().getREPRESENTATIONREPRESENTATIONSEnumRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15245,17 +15342,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__CommonmappingAssignment_7_0_0"
-    // InternalETLDsl.g:4953:1: rule__Logpackage__CommonmappingAssignment_7_0_0 : ( ruleCommonMapping ) ;
+    // InternalETLDsl.g:4980:1: rule__Logpackage__CommonmappingAssignment_7_0_0 : ( ruleCommonMapping ) ;
     public final void rule__Logpackage__CommonmappingAssignment_7_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4957:1: ( ( ruleCommonMapping ) )
-            // InternalETLDsl.g:4958:2: ( ruleCommonMapping )
+            // InternalETLDsl.g:4984:1: ( ( ruleCommonMapping ) )
+            // InternalETLDsl.g:4985:2: ( ruleCommonMapping )
             {
-            // InternalETLDsl.g:4958:2: ( ruleCommonMapping )
-            // InternalETLDsl.g:4959:3: ruleCommonMapping
+            // InternalETLDsl.g:4985:2: ( ruleCommonMapping )
+            // InternalETLDsl.g:4986:3: ruleCommonMapping
             {
              before(grammarAccess.getLogpackageAccess().getCommonmappingCommonMappingParserRuleCall_7_0_0_0()); 
             pushFollow(FOLLOW_2);
@@ -15286,17 +15383,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__EntityAssignment_7_0_1"
-    // InternalETLDsl.g:4968:1: rule__Logpackage__EntityAssignment_7_0_1 : ( ruleEntity ) ;
+    // InternalETLDsl.g:4995:1: rule__Logpackage__EntityAssignment_7_0_1 : ( ruleEntity ) ;
     public final void rule__Logpackage__EntityAssignment_7_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4972:1: ( ( ruleEntity ) )
-            // InternalETLDsl.g:4973:2: ( ruleEntity )
+            // InternalETLDsl.g:4999:1: ( ( ruleEntity ) )
+            // InternalETLDsl.g:5000:2: ( ruleEntity )
             {
-            // InternalETLDsl.g:4973:2: ( ruleEntity )
-            // InternalETLDsl.g:4974:3: ruleEntity
+            // InternalETLDsl.g:5000:2: ( ruleEntity )
+            // InternalETLDsl.g:5001:3: ruleEntity
             {
              before(grammarAccess.getLogpackageAccess().getEntityEntityParserRuleCall_7_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15327,17 +15424,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__CommonmappingAssignment_7_1_1_0"
-    // InternalETLDsl.g:4983:1: rule__Logpackage__CommonmappingAssignment_7_1_1_0 : ( ruleCommonMapping ) ;
+    // InternalETLDsl.g:5010:1: rule__Logpackage__CommonmappingAssignment_7_1_1_0 : ( ruleCommonMapping ) ;
     public final void rule__Logpackage__CommonmappingAssignment_7_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:4987:1: ( ( ruleCommonMapping ) )
-            // InternalETLDsl.g:4988:2: ( ruleCommonMapping )
+            // InternalETLDsl.g:5014:1: ( ( ruleCommonMapping ) )
+            // InternalETLDsl.g:5015:2: ( ruleCommonMapping )
             {
-            // InternalETLDsl.g:4988:2: ( ruleCommonMapping )
-            // InternalETLDsl.g:4989:3: ruleCommonMapping
+            // InternalETLDsl.g:5015:2: ( ruleCommonMapping )
+            // InternalETLDsl.g:5016:3: ruleCommonMapping
             {
              before(grammarAccess.getLogpackageAccess().getCommonmappingCommonMappingParserRuleCall_7_1_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -15368,17 +15465,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Logpackage__EntityAssignment_7_1_1_1"
-    // InternalETLDsl.g:4998:1: rule__Logpackage__EntityAssignment_7_1_1_1 : ( ruleEntity ) ;
+    // InternalETLDsl.g:5025:1: rule__Logpackage__EntityAssignment_7_1_1_1 : ( ruleEntity ) ;
     public final void rule__Logpackage__EntityAssignment_7_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5002:1: ( ( ruleEntity ) )
-            // InternalETLDsl.g:5003:2: ( ruleEntity )
+            // InternalETLDsl.g:5029:1: ( ( ruleEntity ) )
+            // InternalETLDsl.g:5030:2: ( ruleEntity )
             {
-            // InternalETLDsl.g:5003:2: ( ruleEntity )
-            // InternalETLDsl.g:5004:3: ruleEntity
+            // InternalETLDsl.g:5030:2: ( ruleEntity )
+            // InternalETLDsl.g:5031:3: ruleEntity
             {
              before(grammarAccess.getLogpackageAccess().getEntityEntityParserRuleCall_7_1_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15409,17 +15506,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CommonMapping__NameAssignment_1"
-    // InternalETLDsl.g:5013:1: rule__CommonMapping__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalETLDsl.g:5040:1: rule__CommonMapping__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__CommonMapping__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5017:1: ( ( RULE_ID ) )
-            // InternalETLDsl.g:5018:2: ( RULE_ID )
+            // InternalETLDsl.g:5044:1: ( ( RULE_ID ) )
+            // InternalETLDsl.g:5045:2: ( RULE_ID )
             {
-            // InternalETLDsl.g:5018:2: ( RULE_ID )
-            // InternalETLDsl.g:5019:3: RULE_ID
+            // InternalETLDsl.g:5045:2: ( RULE_ID )
+            // InternalETLDsl.g:5046:3: RULE_ID
             {
              before(grammarAccess.getCommonMappingAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15446,17 +15543,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CommonMapping__CommonmappinginputfieldsAssignment_3_2"
-    // InternalETLDsl.g:5028:1: rule__CommonMapping__CommonmappinginputfieldsAssignment_3_2 : ( ruleField ) ;
+    // InternalETLDsl.g:5055:1: rule__CommonMapping__CommonmappinginputfieldsAssignment_3_2 : ( ruleField ) ;
     public final void rule__CommonMapping__CommonmappinginputfieldsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5032:1: ( ( ruleField ) )
-            // InternalETLDsl.g:5033:2: ( ruleField )
+            // InternalETLDsl.g:5059:1: ( ( ruleField ) )
+            // InternalETLDsl.g:5060:2: ( ruleField )
             {
-            // InternalETLDsl.g:5033:2: ( ruleField )
-            // InternalETLDsl.g:5034:3: ruleField
+            // InternalETLDsl.g:5060:2: ( ruleField )
+            // InternalETLDsl.g:5061:3: ruleField
             {
              before(grammarAccess.getCommonMappingAccess().getCommonmappinginputfieldsFieldParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15487,17 +15584,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CommonMapping__CommonmappinginputfieldsAssignment_3_3_1"
-    // InternalETLDsl.g:5043:1: rule__CommonMapping__CommonmappinginputfieldsAssignment_3_3_1 : ( ruleField ) ;
+    // InternalETLDsl.g:5070:1: rule__CommonMapping__CommonmappinginputfieldsAssignment_3_3_1 : ( ruleField ) ;
     public final void rule__CommonMapping__CommonmappinginputfieldsAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5047:1: ( ( ruleField ) )
-            // InternalETLDsl.g:5048:2: ( ruleField )
+            // InternalETLDsl.g:5074:1: ( ( ruleField ) )
+            // InternalETLDsl.g:5075:2: ( ruleField )
             {
-            // InternalETLDsl.g:5048:2: ( ruleField )
-            // InternalETLDsl.g:5049:3: ruleField
+            // InternalETLDsl.g:5075:2: ( ruleField )
+            // InternalETLDsl.g:5076:3: ruleField
             {
              before(grammarAccess.getCommonMappingAccess().getCommonmappinginputfieldsFieldParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15528,17 +15625,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_2"
-    // InternalETLDsl.g:5058:1: rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_2 : ( ruleField ) ;
+    // InternalETLDsl.g:5085:1: rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_2 : ( ruleField ) ;
     public final void rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5062:1: ( ( ruleField ) )
-            // InternalETLDsl.g:5063:2: ( ruleField )
+            // InternalETLDsl.g:5089:1: ( ( ruleField ) )
+            // InternalETLDsl.g:5090:2: ( ruleField )
             {
-            // InternalETLDsl.g:5063:2: ( ruleField )
-            // InternalETLDsl.g:5064:3: ruleField
+            // InternalETLDsl.g:5090:2: ( ruleField )
+            // InternalETLDsl.g:5091:3: ruleField
             {
              before(grammarAccess.getCommonMappingAccess().getCommonmappingoutputfieldsFieldParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15569,17 +15666,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_3_1"
-    // InternalETLDsl.g:5073:1: rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_3_1 : ( ruleField ) ;
+    // InternalETLDsl.g:5100:1: rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_3_1 : ( ruleField ) ;
     public final void rule__CommonMapping__CommonmappingoutputfieldsAssignment_4_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5077:1: ( ( ruleField ) )
-            // InternalETLDsl.g:5078:2: ( ruleField )
+            // InternalETLDsl.g:5104:1: ( ( ruleField ) )
+            // InternalETLDsl.g:5105:2: ( ruleField )
             {
-            // InternalETLDsl.g:5078:2: ( ruleField )
-            // InternalETLDsl.g:5079:3: ruleField
+            // InternalETLDsl.g:5105:2: ( ruleField )
+            // InternalETLDsl.g:5106:3: ruleField
             {
              before(grammarAccess.getCommonMappingAccess().getCommonmappingoutputfieldsFieldParserRuleCall_4_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15610,17 +15707,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__NameAssignment_2"
-    // InternalETLDsl.g:5088:1: rule__Entity__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalETLDsl.g:5115:1: rule__Entity__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5092:1: ( ( RULE_ID ) )
-            // InternalETLDsl.g:5093:2: ( RULE_ID )
+            // InternalETLDsl.g:5119:1: ( ( RULE_ID ) )
+            // InternalETLDsl.g:5120:2: ( RULE_ID )
             {
-            // InternalETLDsl.g:5093:2: ( RULE_ID )
-            // InternalETLDsl.g:5094:3: RULE_ID
+            // InternalETLDsl.g:5120:2: ( RULE_ID )
+            // InternalETLDsl.g:5121:3: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15647,17 +15744,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__EntityFieldAssignment_4_2"
-    // InternalETLDsl.g:5103:1: rule__Entity__EntityFieldAssignment_4_2 : ( ruleField ) ;
+    // InternalETLDsl.g:5130:1: rule__Entity__EntityFieldAssignment_4_2 : ( ruleField ) ;
     public final void rule__Entity__EntityFieldAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5107:1: ( ( ruleField ) )
-            // InternalETLDsl.g:5108:2: ( ruleField )
+            // InternalETLDsl.g:5134:1: ( ( ruleField ) )
+            // InternalETLDsl.g:5135:2: ( ruleField )
             {
-            // InternalETLDsl.g:5108:2: ( ruleField )
-            // InternalETLDsl.g:5109:3: ruleField
+            // InternalETLDsl.g:5135:2: ( ruleField )
+            // InternalETLDsl.g:5136:3: ruleField
             {
              before(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15688,17 +15785,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__EntityFieldAssignment_4_3"
-    // InternalETLDsl.g:5118:1: rule__Entity__EntityFieldAssignment_4_3 : ( ruleField ) ;
+    // InternalETLDsl.g:5145:1: rule__Entity__EntityFieldAssignment_4_3 : ( ruleField ) ;
     public final void rule__Entity__EntityFieldAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5122:1: ( ( ruleField ) )
-            // InternalETLDsl.g:5123:2: ( ruleField )
+            // InternalETLDsl.g:5149:1: ( ( ruleField ) )
+            // InternalETLDsl.g:5150:2: ( ruleField )
             {
-            // InternalETLDsl.g:5123:2: ( ruleField )
-            // InternalETLDsl.g:5124:3: ruleField
+            // InternalETLDsl.g:5150:2: ( ruleField )
+            // InternalETLDsl.g:5151:3: ruleField
             {
              before(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_4_3_0()); 
             pushFollow(FOLLOW_2);
@@ -15729,17 +15826,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__IncludeAssignment_5_2"
-    // InternalETLDsl.g:5133:1: rule__Entity__IncludeAssignment_5_2 : ( ruleInclude ) ;
+    // InternalETLDsl.g:5160:1: rule__Entity__IncludeAssignment_5_2 : ( ruleInclude ) ;
     public final void rule__Entity__IncludeAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5137:1: ( ( ruleInclude ) )
-            // InternalETLDsl.g:5138:2: ( ruleInclude )
+            // InternalETLDsl.g:5164:1: ( ( ruleInclude ) )
+            // InternalETLDsl.g:5165:2: ( ruleInclude )
             {
-            // InternalETLDsl.g:5138:2: ( ruleInclude )
-            // InternalETLDsl.g:5139:3: ruleInclude
+            // InternalETLDsl.g:5165:2: ( ruleInclude )
+            // InternalETLDsl.g:5166:3: ruleInclude
             {
              before(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15770,17 +15867,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__IncludeAssignment_5_3_1"
-    // InternalETLDsl.g:5148:1: rule__Entity__IncludeAssignment_5_3_1 : ( ruleInclude ) ;
+    // InternalETLDsl.g:5175:1: rule__Entity__IncludeAssignment_5_3_1 : ( ruleInclude ) ;
     public final void rule__Entity__IncludeAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5152:1: ( ( ruleInclude ) )
-            // InternalETLDsl.g:5153:2: ( ruleInclude )
+            // InternalETLDsl.g:5179:1: ( ( ruleInclude ) )
+            // InternalETLDsl.g:5180:2: ( ruleInclude )
             {
-            // InternalETLDsl.g:5153:2: ( ruleInclude )
-            // InternalETLDsl.g:5154:3: ruleInclude
+            // InternalETLDsl.g:5180:2: ( ruleInclude )
+            // InternalETLDsl.g:5181:3: ruleInclude
             {
              before(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15811,17 +15908,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__RelationshipsAssignment_6_2"
-    // InternalETLDsl.g:5163:1: rule__Entity__RelationshipsAssignment_6_2 : ( ruleRelationship ) ;
+    // InternalETLDsl.g:5190:1: rule__Entity__RelationshipsAssignment_6_2 : ( ruleRelationship ) ;
     public final void rule__Entity__RelationshipsAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5167:1: ( ( ruleRelationship ) )
-            // InternalETLDsl.g:5168:2: ( ruleRelationship )
+            // InternalETLDsl.g:5194:1: ( ( ruleRelationship ) )
+            // InternalETLDsl.g:5195:2: ( ruleRelationship )
             {
-            // InternalETLDsl.g:5168:2: ( ruleRelationship )
-            // InternalETLDsl.g:5169:3: ruleRelationship
+            // InternalETLDsl.g:5195:2: ( ruleRelationship )
+            // InternalETLDsl.g:5196:3: ruleRelationship
             {
              before(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15852,17 +15949,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__RelationshipsAssignment_6_3_1"
-    // InternalETLDsl.g:5178:1: rule__Entity__RelationshipsAssignment_6_3_1 : ( ruleRelationship ) ;
+    // InternalETLDsl.g:5205:1: rule__Entity__RelationshipsAssignment_6_3_1 : ( ruleRelationship ) ;
     public final void rule__Entity__RelationshipsAssignment_6_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5182:1: ( ( ruleRelationship ) )
-            // InternalETLDsl.g:5183:2: ( ruleRelationship )
+            // InternalETLDsl.g:5209:1: ( ( ruleRelationship ) )
+            // InternalETLDsl.g:5210:2: ( ruleRelationship )
             {
-            // InternalETLDsl.g:5183:2: ( ruleRelationship )
-            // InternalETLDsl.g:5184:3: ruleRelationship
+            // InternalETLDsl.g:5210:2: ( ruleRelationship )
+            // InternalETLDsl.g:5211:3: ruleRelationship
             {
              before(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_6_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15893,17 +15990,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__NameAssignment_2"
-    // InternalETLDsl.g:5193:1: rule__Field__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalETLDsl.g:5220:1: rule__Field__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Field__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5197:1: ( ( RULE_ID ) )
-            // InternalETLDsl.g:5198:2: ( RULE_ID )
+            // InternalETLDsl.g:5224:1: ( ( RULE_ID ) )
+            // InternalETLDsl.g:5225:2: ( RULE_ID )
             {
-            // InternalETLDsl.g:5198:2: ( RULE_ID )
-            // InternalETLDsl.g:5199:3: RULE_ID
+            // InternalETLDsl.g:5225:2: ( RULE_ID )
+            // InternalETLDsl.g:5226:3: RULE_ID
             {
              before(grammarAccess.getFieldAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15930,17 +16027,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__TypeAssignment_4_1"
-    // InternalETLDsl.g:5208:1: rule__Field__TypeAssignment_4_1 : ( ruleft ) ;
+    // InternalETLDsl.g:5235:1: rule__Field__TypeAssignment_4_1 : ( ruleft ) ;
     public final void rule__Field__TypeAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5212:1: ( ( ruleft ) )
-            // InternalETLDsl.g:5213:2: ( ruleft )
+            // InternalETLDsl.g:5239:1: ( ( ruleft ) )
+            // InternalETLDsl.g:5240:2: ( ruleft )
             {
-            // InternalETLDsl.g:5213:2: ( ruleft )
-            // InternalETLDsl.g:5214:3: ruleft
+            // InternalETLDsl.g:5240:2: ( ruleft )
+            // InternalETLDsl.g:5241:3: ruleft
             {
              before(grammarAccess.getFieldAccess().getTypeFtEnumRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15971,17 +16068,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__LengthAssignment_5_1"
-    // InternalETLDsl.g:5223:1: rule__Field__LengthAssignment_5_1 : ( ruleEInt ) ;
+    // InternalETLDsl.g:5250:1: rule__Field__LengthAssignment_5_1 : ( ruleEInt ) ;
     public final void rule__Field__LengthAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5227:1: ( ( ruleEInt ) )
-            // InternalETLDsl.g:5228:2: ( ruleEInt )
+            // InternalETLDsl.g:5254:1: ( ( ruleEInt ) )
+            // InternalETLDsl.g:5255:2: ( ruleEInt )
             {
-            // InternalETLDsl.g:5228:2: ( ruleEInt )
-            // InternalETLDsl.g:5229:3: ruleEInt
+            // InternalETLDsl.g:5255:2: ( ruleEInt )
+            // InternalETLDsl.g:5256:3: ruleEInt
             {
              before(grammarAccess.getFieldAccess().getLengthEIntParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16012,17 +16109,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__PrecisionAssignment_6_1"
-    // InternalETLDsl.g:5238:1: rule__Field__PrecisionAssignment_6_1 : ( ruleEInt ) ;
+    // InternalETLDsl.g:5265:1: rule__Field__PrecisionAssignment_6_1 : ( ruleEInt ) ;
     public final void rule__Field__PrecisionAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5242:1: ( ( ruleEInt ) )
-            // InternalETLDsl.g:5243:2: ( ruleEInt )
+            // InternalETLDsl.g:5269:1: ( ( ruleEInt ) )
+            // InternalETLDsl.g:5270:2: ( ruleEInt )
             {
-            // InternalETLDsl.g:5243:2: ( ruleEInt )
-            // InternalETLDsl.g:5244:3: ruleEInt
+            // InternalETLDsl.g:5270:2: ( ruleEInt )
+            // InternalETLDsl.g:5271:3: ruleEInt
             {
              before(grammarAccess.getFieldAccess().getPrecisionEIntParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16053,17 +16150,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__ScaleAssignment_7_1"
-    // InternalETLDsl.g:5253:1: rule__Field__ScaleAssignment_7_1 : ( ruleEInt ) ;
+    // InternalETLDsl.g:5280:1: rule__Field__ScaleAssignment_7_1 : ( ruleEInt ) ;
     public final void rule__Field__ScaleAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5257:1: ( ( ruleEInt ) )
-            // InternalETLDsl.g:5258:2: ( ruleEInt )
+            // InternalETLDsl.g:5284:1: ( ( ruleEInt ) )
+            // InternalETLDsl.g:5285:2: ( ruleEInt )
             {
-            // InternalETLDsl.g:5258:2: ( ruleEInt )
-            // InternalETLDsl.g:5259:3: ruleEInt
+            // InternalETLDsl.g:5285:2: ( ruleEInt )
+            // InternalETLDsl.g:5286:3: ruleEInt
             {
              before(grammarAccess.getFieldAccess().getScaleEIntParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16094,17 +16191,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Original_nameAssignment_8_1"
-    // InternalETLDsl.g:5268:1: rule__Field__Original_nameAssignment_8_1 : ( ruleEString ) ;
+    // InternalETLDsl.g:5295:1: rule__Field__Original_nameAssignment_8_1 : ( ruleEString ) ;
     public final void rule__Field__Original_nameAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5272:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:5273:2: ( ruleEString )
+            // InternalETLDsl.g:5299:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:5300:2: ( ruleEString )
             {
-            // InternalETLDsl.g:5273:2: ( ruleEString )
-            // InternalETLDsl.g:5274:3: ruleEString
+            // InternalETLDsl.g:5300:2: ( ruleEString )
+            // InternalETLDsl.g:5301:3: ruleEString
             {
              before(grammarAccess.getFieldAccess().getOriginal_nameEStringParserRuleCall_8_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16135,17 +16232,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Short_describtionAssignment_9_1"
-    // InternalETLDsl.g:5283:1: rule__Field__Short_describtionAssignment_9_1 : ( ruleEString ) ;
+    // InternalETLDsl.g:5310:1: rule__Field__Short_describtionAssignment_9_1 : ( ruleEString ) ;
     public final void rule__Field__Short_describtionAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5287:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:5288:2: ( ruleEString )
+            // InternalETLDsl.g:5314:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:5315:2: ( ruleEString )
             {
-            // InternalETLDsl.g:5288:2: ( ruleEString )
-            // InternalETLDsl.g:5289:3: ruleEString
+            // InternalETLDsl.g:5315:2: ( ruleEString )
+            // InternalETLDsl.g:5316:3: ruleEString
             {
              before(grammarAccess.getFieldAccess().getShort_describtionEStringParserRuleCall_9_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16176,17 +16273,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__DateFormatAssignment_10_1"
-    // InternalETLDsl.g:5298:1: rule__Field__DateFormatAssignment_10_1 : ( ruleEString ) ;
+    // InternalETLDsl.g:5325:1: rule__Field__DateFormatAssignment_10_1 : ( ruleEString ) ;
     public final void rule__Field__DateFormatAssignment_10_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5302:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:5303:2: ( ruleEString )
+            // InternalETLDsl.g:5329:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:5330:2: ( ruleEString )
             {
-            // InternalETLDsl.g:5303:2: ( ruleEString )
-            // InternalETLDsl.g:5304:3: ruleEString
+            // InternalETLDsl.g:5330:2: ( ruleEString )
+            // InternalETLDsl.g:5331:3: ruleEString
             {
              before(grammarAccess.getFieldAccess().getDateFormatEStringParserRuleCall_10_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16217,17 +16314,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__NullIndicatorAssignment_11_1"
-    // InternalETLDsl.g:5313:1: rule__Field__NullIndicatorAssignment_11_1 : ( ruleEString ) ;
+    // InternalETLDsl.g:5340:1: rule__Field__NullIndicatorAssignment_11_1 : ( ruleEString ) ;
     public final void rule__Field__NullIndicatorAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5317:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:5318:2: ( ruleEString )
+            // InternalETLDsl.g:5344:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:5345:2: ( ruleEString )
             {
-            // InternalETLDsl.g:5318:2: ( ruleEString )
-            // InternalETLDsl.g:5319:3: ruleEString
+            // InternalETLDsl.g:5345:2: ( ruleEString )
+            // InternalETLDsl.g:5346:3: ruleEString
             {
              before(grammarAccess.getFieldAccess().getNullIndicatorEStringParserRuleCall_11_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16258,17 +16355,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__AllowExponentAssignment_12_1"
-    // InternalETLDsl.g:5328:1: rule__Field__AllowExponentAssignment_12_1 : ( ruleEBoolean ) ;
+    // InternalETLDsl.g:5355:1: rule__Field__AllowExponentAssignment_12_1 : ( ruleEBoolean ) ;
     public final void rule__Field__AllowExponentAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5332:1: ( ( ruleEBoolean ) )
-            // InternalETLDsl.g:5333:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5359:1: ( ( ruleEBoolean ) )
+            // InternalETLDsl.g:5360:2: ( ruleEBoolean )
             {
-            // InternalETLDsl.g:5333:2: ( ruleEBoolean )
-            // InternalETLDsl.g:5334:3: ruleEBoolean
+            // InternalETLDsl.g:5360:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5361:3: ruleEBoolean
             {
              before(grammarAccess.getFieldAccess().getAllowExponentEBooleanParserRuleCall_12_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16299,17 +16396,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__HasImplicitCommaAssignment_13_1"
-    // InternalETLDsl.g:5343:1: rule__Field__HasImplicitCommaAssignment_13_1 : ( ruleEBoolean ) ;
+    // InternalETLDsl.g:5370:1: rule__Field__HasImplicitCommaAssignment_13_1 : ( ruleEBoolean ) ;
     public final void rule__Field__HasImplicitCommaAssignment_13_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5347:1: ( ( ruleEBoolean ) )
-            // InternalETLDsl.g:5348:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5374:1: ( ( ruleEBoolean ) )
+            // InternalETLDsl.g:5375:2: ( ruleEBoolean )
             {
-            // InternalETLDsl.g:5348:2: ( ruleEBoolean )
-            // InternalETLDsl.g:5349:3: ruleEBoolean
+            // InternalETLDsl.g:5375:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5376:3: ruleEBoolean
             {
              before(grammarAccess.getFieldAccess().getHasImplicitCommaEBooleanParserRuleCall_13_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16340,17 +16437,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__InterfaceOnlyAssignment_14_1"
-    // InternalETLDsl.g:5358:1: rule__Field__InterfaceOnlyAssignment_14_1 : ( ruleEBoolean ) ;
+    // InternalETLDsl.g:5385:1: rule__Field__InterfaceOnlyAssignment_14_1 : ( ruleEBoolean ) ;
     public final void rule__Field__InterfaceOnlyAssignment_14_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5362:1: ( ( ruleEBoolean ) )
-            // InternalETLDsl.g:5363:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5389:1: ( ( ruleEBoolean ) )
+            // InternalETLDsl.g:5390:2: ( ruleEBoolean )
             {
-            // InternalETLDsl.g:5363:2: ( ruleEBoolean )
-            // InternalETLDsl.g:5364:3: ruleEBoolean
+            // InternalETLDsl.g:5390:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5391:3: ruleEBoolean
             {
              before(grammarAccess.getFieldAccess().getInterfaceOnlyEBooleanParserRuleCall_14_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16381,17 +16478,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__TableOnlyAssignment_15_1"
-    // InternalETLDsl.g:5373:1: rule__Field__TableOnlyAssignment_15_1 : ( ruleEBoolean ) ;
+    // InternalETLDsl.g:5400:1: rule__Field__TableOnlyAssignment_15_1 : ( ruleEBoolean ) ;
     public final void rule__Field__TableOnlyAssignment_15_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5377:1: ( ( ruleEBoolean ) )
-            // InternalETLDsl.g:5378:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5404:1: ( ( ruleEBoolean ) )
+            // InternalETLDsl.g:5405:2: ( ruleEBoolean )
             {
-            // InternalETLDsl.g:5378:2: ( ruleEBoolean )
-            // InternalETLDsl.g:5379:3: ruleEBoolean
+            // InternalETLDsl.g:5405:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5406:3: ruleEBoolean
             {
              before(grammarAccess.getFieldAccess().getTableOnlyEBooleanParserRuleCall_15_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16422,17 +16519,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__IsFastChangingAssignment_16_1"
-    // InternalETLDsl.g:5388:1: rule__Field__IsFastChangingAssignment_16_1 : ( ruleEBoolean ) ;
+    // InternalETLDsl.g:5415:1: rule__Field__IsFastChangingAssignment_16_1 : ( ruleEBoolean ) ;
     public final void rule__Field__IsFastChangingAssignment_16_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5392:1: ( ( ruleEBoolean ) )
-            // InternalETLDsl.g:5393:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5419:1: ( ( ruleEBoolean ) )
+            // InternalETLDsl.g:5420:2: ( ruleEBoolean )
             {
-            // InternalETLDsl.g:5393:2: ( ruleEBoolean )
-            // InternalETLDsl.g:5394:3: ruleEBoolean
+            // InternalETLDsl.g:5420:2: ( ruleEBoolean )
+            // InternalETLDsl.g:5421:3: ruleEBoolean
             {
              before(grammarAccess.getFieldAccess().getIsFastChangingEBooleanParserRuleCall_16_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16462,18 +16559,63 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Field__IsFastChangingAssignment_16_1"
 
 
+    // $ANTLR start "rule__Field__IsBusinessKeyAssignment_17"
+    // InternalETLDsl.g:5430:1: rule__Field__IsBusinessKeyAssignment_17 : ( ( 'BusinessKey' ) ) ;
+    public final void rule__Field__IsBusinessKeyAssignment_17() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalETLDsl.g:5434:1: ( ( ( 'BusinessKey' ) ) )
+            // InternalETLDsl.g:5435:2: ( ( 'BusinessKey' ) )
+            {
+            // InternalETLDsl.g:5435:2: ( ( 'BusinessKey' ) )
+            // InternalETLDsl.g:5436:3: ( 'BusinessKey' )
+            {
+             before(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); 
+            // InternalETLDsl.g:5437:3: ( 'BusinessKey' )
+            // InternalETLDsl.g:5438:4: 'BusinessKey'
+            {
+             before(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); 
+            match(input,73,FOLLOW_2); 
+             after(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); 
+
+            }
+
+             after(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Field__IsBusinessKeyAssignment_17"
+
+
     // $ANTLR start "rule__Include__NameAssignment_1"
-    // InternalETLDsl.g:5403:1: rule__Include__NameAssignment_1 : ( ruleEString ) ;
+    // InternalETLDsl.g:5449:1: rule__Include__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__Include__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5407:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:5408:2: ( ruleEString )
+            // InternalETLDsl.g:5453:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:5454:2: ( ruleEString )
             {
-            // InternalETLDsl.g:5408:2: ( ruleEString )
-            // InternalETLDsl.g:5409:3: ruleEString
+            // InternalETLDsl.g:5454:2: ( ruleEString )
+            // InternalETLDsl.g:5455:3: ruleEString
             {
              before(grammarAccess.getIncludeAccess().getNameEStringParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16504,21 +16646,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__IncludeFieldsAssignment_2_1_2"
-    // InternalETLDsl.g:5418:1: rule__Include__IncludeFieldsAssignment_2_1_2 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5464:1: rule__Include__IncludeFieldsAssignment_2_1_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Include__IncludeFieldsAssignment_2_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5422:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5423:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5468:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5469:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5423:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5424:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5469:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5470:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getIncludeAccess().getIncludeFieldsFieldCrossReference_2_1_2_0()); 
-            // InternalETLDsl.g:5425:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5426:4: ruleQualifiedName
+            // InternalETLDsl.g:5471:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5472:4: ruleQualifiedName
             {
              before(grammarAccess.getIncludeAccess().getIncludeFieldsFieldQualifiedNameParserRuleCall_2_1_2_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16553,21 +16695,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__IncludeFieldsAssignment_2_1_3_1"
-    // InternalETLDsl.g:5437:1: rule__Include__IncludeFieldsAssignment_2_1_3_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5483:1: rule__Include__IncludeFieldsAssignment_2_1_3_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Include__IncludeFieldsAssignment_2_1_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5441:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5442:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5487:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5488:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5442:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5443:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5488:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5489:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getIncludeAccess().getIncludeFieldsFieldCrossReference_2_1_3_1_0()); 
-            // InternalETLDsl.g:5444:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5445:4: ruleQualifiedName
+            // InternalETLDsl.g:5490:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5491:4: ruleQualifiedName
             {
              before(grammarAccess.getIncludeAccess().getIncludeFieldsFieldQualifiedNameParserRuleCall_2_1_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16602,21 +16744,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__IdentifyingfieldsAssignment_2_2_1"
-    // InternalETLDsl.g:5456:1: rule__Include__IdentifyingfieldsAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5502:1: rule__Include__IdentifyingfieldsAssignment_2_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Include__IdentifyingfieldsAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5460:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5461:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5506:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5507:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5461:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5462:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5507:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5508:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getIncludeAccess().getIdentifyingfieldsFieldCrossReference_2_2_1_0()); 
-            // InternalETLDsl.g:5463:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5464:4: ruleQualifiedName
+            // InternalETLDsl.g:5509:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5510:4: ruleQualifiedName
             {
              before(grammarAccess.getIncludeAccess().getIdentifyingfieldsFieldQualifiedNameParserRuleCall_2_2_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16651,21 +16793,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Include__IdentifyingfieldsAssignment_2_2_2_1"
-    // InternalETLDsl.g:5475:1: rule__Include__IdentifyingfieldsAssignment_2_2_2_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5521:1: rule__Include__IdentifyingfieldsAssignment_2_2_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Include__IdentifyingfieldsAssignment_2_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5479:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5480:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5525:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5526:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5480:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5481:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5526:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5527:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getIncludeAccess().getIdentifyingfieldsFieldCrossReference_2_2_2_1_0()); 
-            // InternalETLDsl.g:5482:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5483:4: ruleQualifiedName
+            // InternalETLDsl.g:5528:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5529:4: ruleQualifiedName
             {
              before(grammarAccess.getIncludeAccess().getIdentifyingfieldsFieldQualifiedNameParserRuleCall_2_2_2_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16700,17 +16842,17 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__NameAssignment_2"
-    // InternalETLDsl.g:5494:1: rule__Relationship__NameAssignment_2 : ( ruleEString ) ;
+    // InternalETLDsl.g:5540:1: rule__Relationship__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Relationship__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5498:1: ( ( ruleEString ) )
-            // InternalETLDsl.g:5499:2: ( ruleEString )
+            // InternalETLDsl.g:5544:1: ( ( ruleEString ) )
+            // InternalETLDsl.g:5545:2: ( ruleEString )
             {
-            // InternalETLDsl.g:5499:2: ( ruleEString )
-            // InternalETLDsl.g:5500:3: ruleEString
+            // InternalETLDsl.g:5545:2: ( ruleEString )
+            // InternalETLDsl.g:5546:3: ruleEString
             {
              before(grammarAccess.getRelationshipAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16741,21 +16883,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__ToEntityAssignment_5"
-    // InternalETLDsl.g:5509:1: rule__Relationship__ToEntityAssignment_5 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5555:1: rule__Relationship__ToEntityAssignment_5 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Relationship__ToEntityAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5513:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5514:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5559:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5560:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5514:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5515:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5560:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5561:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationshipAccess().getToEntityEntityCrossReference_5_0()); 
-            // InternalETLDsl.g:5516:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5517:4: ruleQualifiedName
+            // InternalETLDsl.g:5562:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5563:4: ruleQualifiedName
             {
              before(grammarAccess.getRelationshipAccess().getToEntityEntityQualifiedNameParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16790,21 +16932,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__DescribingFieldsRelAssignment_6_1"
-    // InternalETLDsl.g:5528:1: rule__Relationship__DescribingFieldsRelAssignment_6_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5574:1: rule__Relationship__DescribingFieldsRelAssignment_6_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Relationship__DescribingFieldsRelAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5532:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5533:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5578:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5579:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5533:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5534:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5579:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5580:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationshipAccess().getDescribingFieldsRelFieldCrossReference_6_1_0()); 
-            // InternalETLDsl.g:5535:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5536:4: ruleQualifiedName
+            // InternalETLDsl.g:5581:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5582:4: ruleQualifiedName
             {
              before(grammarAccess.getRelationshipAccess().getDescribingFieldsRelFieldQualifiedNameParserRuleCall_6_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16839,21 +16981,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__DescribingFieldsRelAssignment_6_2_1"
-    // InternalETLDsl.g:5547:1: rule__Relationship__DescribingFieldsRelAssignment_6_2_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5593:1: rule__Relationship__DescribingFieldsRelAssignment_6_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Relationship__DescribingFieldsRelAssignment_6_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5551:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5552:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5597:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5598:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5552:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5553:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5598:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5599:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationshipAccess().getDescribingFieldsRelFieldCrossReference_6_2_1_0()); 
-            // InternalETLDsl.g:5554:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5555:4: ruleQualifiedName
+            // InternalETLDsl.g:5600:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5601:4: ruleQualifiedName
             {
              before(grammarAccess.getRelationshipAccess().getDescribingFieldsRelFieldQualifiedNameParserRuleCall_6_2_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16888,21 +17030,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__IdentifiyingFieldsRelAssignment_7_1"
-    // InternalETLDsl.g:5566:1: rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5612:1: rule__Relationship__IdentifiyingFieldsRelAssignment_7_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Relationship__IdentifiyingFieldsRelAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5570:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5571:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5616:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5617:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5571:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5572:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5617:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5618:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelFieldCrossReference_7_1_0()); 
-            // InternalETLDsl.g:5573:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5574:4: ruleQualifiedName
+            // InternalETLDsl.g:5619:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5620:4: ruleQualifiedName
             {
              before(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelFieldQualifiedNameParserRuleCall_7_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16937,21 +17079,21 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1"
-    // InternalETLDsl.g:5585:1: rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalETLDsl.g:5631:1: rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Relationship__IdentifiyingFieldsRelAssignment_7_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalETLDsl.g:5589:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalETLDsl.g:5590:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5635:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalETLDsl.g:5636:2: ( ( ruleQualifiedName ) )
             {
-            // InternalETLDsl.g:5590:2: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:5591:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5636:2: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:5637:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelFieldCrossReference_7_2_1_0()); 
-            // InternalETLDsl.g:5592:3: ( ruleQualifiedName )
-            // InternalETLDsl.g:5593:4: ruleQualifiedName
+            // InternalETLDsl.g:5638:3: ( ruleQualifiedName )
+            // InternalETLDsl.g:5639:4: ruleQualifiedName
             {
              before(grammarAccess.getRelationshipAccess().getIdentifiyingFieldsRelFieldQualifiedNameParserRuleCall_7_2_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -17015,7 +17157,7 @@ public class InternalETLDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0010000000000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0xFFA0000000000000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0xFFA0000000000000L,0x0000000000000207L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x00000000000FE000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000020000000040L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000001800L});

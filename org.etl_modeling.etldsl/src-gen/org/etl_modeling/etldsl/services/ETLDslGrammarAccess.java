@@ -586,7 +586,9 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cIsFastChangingKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
 		private final Assignment cIsFastChangingAssignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
 		private final RuleCall cIsFastChangingEBooleanParserRuleCall_16_1_0 = (RuleCall)cIsFastChangingAssignment_16_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cIsBusinessKeyAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final Keyword cIsBusinessKeyBusinessKeyKeyword_17_0 = (Keyword)cIsBusinessKeyAssignment_17.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
 		
 		//Field:
 		//	{Field}
@@ -596,6 +598,7 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//	('NullIndicator' NullIndicator=EString)? ('allowExponent:' allowExponent?=EBoolean)? ('hasImplicitComma:'
 		//	hasImplicitComma?=EBoolean)? ('interfaceOnly:' interfaceOnly?=EBoolean)? ('tableOnly:' tableOnly?=EBoolean)?
 		//	('isFastChanging:' isFastChanging?=EBoolean)?
+		//	isBusinessKey?='BusinessKey'?
 		//	"]";
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -603,7 +606,7 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//('original_name' original_name=EString)? ('short_describtion' short_describtion=EString)? ('dateFormat'
 		//dateFormat=EString)? ('NullIndicator' NullIndicator=EString)? ('allowExponent:' allowExponent?=EBoolean)?
 		//('hasImplicitComma:' hasImplicitComma?=EBoolean)? ('interfaceOnly:' interfaceOnly?=EBoolean)? ('tableOnly:'
-		//tableOnly?=EBoolean)? ('isFastChanging:' isFastChanging?=EBoolean)? "]"
+		//tableOnly?=EBoolean)? ('isFastChanging:' isFastChanging?=EBoolean)? isBusinessKey?='BusinessKey'? "]"
 		public Group getGroup() { return cGroup; }
 		
 		//{Field}
@@ -777,8 +780,14 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//EBoolean
 		public RuleCall getIsFastChangingEBooleanParserRuleCall_16_1_0() { return cIsFastChangingEBooleanParserRuleCall_16_1_0; }
 		
+		//isBusinessKey?='BusinessKey'?
+		public Assignment getIsBusinessKeyAssignment_17() { return cIsBusinessKeyAssignment_17; }
+		
+		//'BusinessKey'
+		public Keyword getIsBusinessKeyBusinessKeyKeyword_17_0() { return cIsBusinessKeyBusinessKeyKeyword_17_0; }
+		
 		//"]"
-		public Keyword getRightSquareBracketKeyword_17() { return cRightSquareBracketKeyword_17; }
+		public Keyword getRightSquareBracketKeyword_18() { return cRightSquareBracketKeyword_18; }
 	}
 	public class IncludeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.etl_modeling.etldsl.ETLDsl.Include");
@@ -1472,6 +1481,7 @@ public class ETLDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//	('NullIndicator' NullIndicator=EString)? ('allowExponent:' allowExponent?=EBoolean)? ('hasImplicitComma:'
 	//	hasImplicitComma?=EBoolean)? ('interfaceOnly:' interfaceOnly?=EBoolean)? ('tableOnly:' tableOnly?=EBoolean)?
 	//	('isFastChanging:' isFastChanging?=EBoolean)?
+	//	isBusinessKey?='BusinessKey'?
 	//	"]";
 	public FieldElements getFieldAccess() {
 		return pField;

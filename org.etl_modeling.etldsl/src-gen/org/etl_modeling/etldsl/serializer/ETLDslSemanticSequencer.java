@@ -110,7 +110,8 @@ public class ETLDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         hasImplicitComma?=EBoolean? 
 	 *         interfaceOnly?=EBoolean? 
 	 *         tableOnly?=EBoolean? 
-	 *         isFastChanging?=EBoolean?
+	 *         isFastChanging?=EBoolean? 
+	 *         isBusinessKey?='BusinessKey'?
 	 *     )
 	 */
 	protected void sequence_Field(ISerializationContext context, Field semanticObject) {

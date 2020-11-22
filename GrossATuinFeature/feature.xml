@@ -2,7 +2,7 @@
 <feature
       id="GrossATuinFeature"
       label="GrossATuinFeature"
-      version="1.0.0.qualifier">
+      version="1.0.1.qualifier">
 
    <description url="http://www.example.com/description">
       Das Tool wird zur modelierung von ETL Strecken und Fachlichen/logischen Datenmodellen genutzt.

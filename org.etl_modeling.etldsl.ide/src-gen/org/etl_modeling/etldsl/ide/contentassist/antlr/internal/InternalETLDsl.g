@@ -3045,6 +3045,7 @@ rule__Field__Group__17
 	}
 :
 	rule__Field__Group__17__Impl
+	rule__Field__Group__18
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3056,9 +3057,35 @@ rule__Field__Group__17__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_17()); }
+	{ before(grammarAccess.getFieldAccess().getIsBusinessKeyAssignment_17()); }
+	(rule__Field__IsBusinessKeyAssignment_17)?
+	{ after(grammarAccess.getFieldAccess().getIsBusinessKeyAssignment_17()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Field__Group__18
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Field__Group__18__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Field__Group__18__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18()); }
 	']'
-	{ after(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_17()); }
+	{ after(grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18()); }
 )
 ;
 finally {
@@ -5394,6 +5421,25 @@ rule__Field__IsFastChangingAssignment_16_1
 		{ before(grammarAccess.getFieldAccess().getIsFastChangingEBooleanParserRuleCall_16_1_0()); }
 		ruleEBoolean
 		{ after(grammarAccess.getFieldAccess().getIsFastChangingEBooleanParserRuleCall_16_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Field__IsBusinessKeyAssignment_17
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); }
+		(
+			{ before(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); }
+			'BusinessKey'
+			{ after(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); }
+		)
+		{ after(grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0()); }
 	)
 ;
 finally {

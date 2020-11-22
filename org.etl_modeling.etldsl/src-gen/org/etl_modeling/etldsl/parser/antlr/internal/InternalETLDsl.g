@@ -1200,9 +1200,23 @@ ruleField returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_30=']'
+		(
+			(
+				lv_isBusinessKey_30_0='BusinessKey'
+				{
+					newLeafNode(lv_isBusinessKey_30_0, grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldRule());
+					}
+					setWithLastConsumed($current, "isBusinessKey", lv_isBusinessKey_30_0 != null, "BusinessKey");
+				}
+			)
+		)?
+		otherlv_31=']'
 		{
-			newLeafNode(otherlv_30, grammarAccess.getFieldAccess().getRightSquareBracketKeyword_17());
+			newLeafNode(otherlv_31, grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18());
 		}
 	)
 ;
