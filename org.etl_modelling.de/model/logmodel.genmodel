@@ -5,8 +5,11 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>ETL_MODEL.ecore</foreignModel>
+  <foreignModel>jobnetz.ecore</foreignModel>
   <foreignModel>logmodel.ecore</foreignModel>
+  <foreignModel>package_enums.ecore</foreignModel>
   <foreignModel>Spec.ecore</foreignModel>
+  <foreignModel>type_enums.ecore</foreignModel>
   <genPackages prefix="ETL_MODEL" disposableProviderFactory="true" ecorePackage="ETL_MODEL.ecore#/">
     <genClasses image="false" ecoreClass="ETL_MODEL.ecore#//namedelement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ETL_MODEL.ecore#//namedelement/name"/>
@@ -81,6 +84,28 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//CommonMapping/logpackage"/>
     </genClasses>
     <genClasses ecoreClass="logmodel.ecore#//anotatable"/>
+  </genPackages>
+  <genPackages prefix="Package_enums" disposableProviderFactory="true" ecorePackage="package_enums.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//LAYERTYPE">
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/STAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/INTEGRATION"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/EXPORT"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/REPORTING"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/HARMONISATION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//HISTORISATIONTYPE">
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/DAY_PARTITIONED"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/MONTH_PARTITIONED"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/BITEMPORAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//REPRESENTATIONS">
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/FLAT_TABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/DATAVAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/ThirdNF"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/SNOWFLAKE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/STAR"/>
+    </genEnums>
   </genPackages>
   <genPackages prefix="Specmodel" disposableProviderFactory="true" ecorePackage="Spec.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Spec.ecore#//RuleType">
@@ -159,28 +184,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//VectorKey/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Spec.ecore#//VectorKey/vkField"/>
     </genClasses>
-  </genPackages>
-  <genPackages prefix="Package_enums" disposableProviderFactory="true" ecorePackage="package_enums.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//LAYERTYPE">
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/STAGE"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/INTEGRATION"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/EXPORT"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/REPORTING"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/HARMONISATION"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//HISTORISATIONTYPE">
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/NONE"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/DAY_PARTITIONED"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/MONTH_PARTITIONED"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/BITEMPORAL"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//REPRESENTATIONS">
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/FLAT_TABLE"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/DATAVAULT"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/ThirdNF"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/SNOWFLAKE"/>
-      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/STAR"/>
-    </genEnums>
   </genPackages>
   <genPackages prefix="Type_enum" ecorePackage="type_enums.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="type_enums.ecore#//FieldTypes">

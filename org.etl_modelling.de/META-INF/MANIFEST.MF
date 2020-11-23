@@ -20,7 +20,11 @@ Export-Package: ETL_MODEL,
  specmodel.impl,
  specmodel.util,
  type_enum,
- type_enum.impl
+ type_enum.impl,
+ jobnetz,
+ jobnetz.impl,
+ jobnetz.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.etl_modelling.de;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

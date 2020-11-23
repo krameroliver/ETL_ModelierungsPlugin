@@ -62,4 +62,31 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated jobnetz -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="jobnetz.presentation.JobnetzModelWizardID"
+            name="%_UI_JobnetzModelWizard_label"
+            class="jobnetz.presentation.JobnetzModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/JobnetzModelFile.gif">
+         <description>%_UI_JobnetzModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated jobnetz -->
+      <editor
+            id="jobnetz.presentation.JobnetzEditorID"
+            name="%_UI_JobnetzEditor_label"
+            icon="icons/full/obj16/JobnetzModelFile.gif"
+            extensions="jobnetz"
+            class="jobnetz.presentation.JobnetzEditor"
+            contributorClass="jobnetz.presentation.JobnetzActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

@@ -101,24 +101,24 @@ public class Type_enumPackageImpl extends EPackageImpl implements Type_enumPacka
 		ETL_MODELPackageImpl theETL_MODELPackage = (ETL_MODELPackageImpl)(registeredPackage instanceof ETL_MODELPackageImpl ? registeredPackage : ETL_MODELPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(LogmodelPackage.eNS_URI);
 		LogmodelPackageImpl theLogmodelPackage = (LogmodelPackageImpl)(registeredPackage instanceof LogmodelPackageImpl ? registeredPackage : LogmodelPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecmodelPackage.eNS_URI);
-		SpecmodelPackageImpl theSpecmodelPackage = (SpecmodelPackageImpl)(registeredPackage instanceof SpecmodelPackageImpl ? registeredPackage : SpecmodelPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Package_enumsPackage.eNS_URI);
 		Package_enumsPackageImpl thePackage_enumsPackage = (Package_enumsPackageImpl)(registeredPackage instanceof Package_enumsPackageImpl ? registeredPackage : Package_enumsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecmodelPackage.eNS_URI);
+		SpecmodelPackageImpl theSpecmodelPackage = (SpecmodelPackageImpl)(registeredPackage instanceof SpecmodelPackageImpl ? registeredPackage : SpecmodelPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theType_enumPackage.createPackageContents();
 		theETL_MODELPackage.createPackageContents();
 		theLogmodelPackage.createPackageContents();
-		theSpecmodelPackage.createPackageContents();
 		thePackage_enumsPackage.createPackageContents();
+		theSpecmodelPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theType_enumPackage.initializePackageContents();
 		theETL_MODELPackage.initializePackageContents();
 		theLogmodelPackage.initializePackageContents();
-		theSpecmodelPackage.initializePackageContents();
 		thePackage_enumsPackage.initializePackageContents();
+		theSpecmodelPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theType_enumPackage.freeze();

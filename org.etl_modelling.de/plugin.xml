@@ -46,4 +46,12 @@
             genModel="model/logmodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated jobnetz -->
+      <package
+            uri="http://www.example.org/jobnetz"
+            class="jobnetz.JobnetzPackage"
+            genModel="model/jobnetz.genmodel"/>
+   </extension>
+
 </plugin>

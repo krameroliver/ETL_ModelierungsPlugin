@@ -107,25 +107,25 @@ public class ETL_MODELPackageImpl extends EPackageImpl implements ETL_MODELPacka
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(LogmodelPackage.eNS_URI);
 		LogmodelPackageImpl theLogmodelPackage = (LogmodelPackageImpl)(registeredPackage instanceof LogmodelPackageImpl ? registeredPackage : LogmodelPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecmodelPackage.eNS_URI);
-		SpecmodelPackageImpl theSpecmodelPackage = (SpecmodelPackageImpl)(registeredPackage instanceof SpecmodelPackageImpl ? registeredPackage : SpecmodelPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Package_enumsPackage.eNS_URI);
 		Package_enumsPackageImpl thePackage_enumsPackage = (Package_enumsPackageImpl)(registeredPackage instanceof Package_enumsPackageImpl ? registeredPackage : Package_enumsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecmodelPackage.eNS_URI);
+		SpecmodelPackageImpl theSpecmodelPackage = (SpecmodelPackageImpl)(registeredPackage instanceof SpecmodelPackageImpl ? registeredPackage : SpecmodelPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Type_enumPackage.eNS_URI);
 		Type_enumPackageImpl theType_enumPackage = (Type_enumPackageImpl)(registeredPackage instanceof Type_enumPackageImpl ? registeredPackage : Type_enumPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theETL_MODELPackage.createPackageContents();
 		theLogmodelPackage.createPackageContents();
-		theSpecmodelPackage.createPackageContents();
 		thePackage_enumsPackage.createPackageContents();
+		theSpecmodelPackage.createPackageContents();
 		theType_enumPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theETL_MODELPackage.initializePackageContents();
 		theLogmodelPackage.initializePackageContents();
-		theSpecmodelPackage.initializePackageContents();
 		thePackage_enumsPackage.initializePackageContents();
+		theSpecmodelPackage.initializePackageContents();
 		theType_enumPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

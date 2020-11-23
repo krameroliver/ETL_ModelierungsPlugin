@@ -1,0 +1,226 @@
+/**
+ */
+package jobnetz;
+
+import ETL_MODEL.namedelement;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Job</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link jobnetz.Job#getSchedulepackage <em>Schedulepackage</em>}</li>
+ *   <li>{@link jobnetz.Job#getProcessingpoint <em>Processingpoint</em>}</li>
+ *   <li>{@link jobnetz.Job#getJob <em>Job</em>}</li>
+ *   <li>{@link jobnetz.Job#getPreDecessor <em>Pre Decessor</em>}</li>
+ *   <li>{@link jobnetz.Job#getRunTime <em>Run Time</em>}</li>
+ *   <li>{@link jobnetz.Job#getJobType <em>Job Type</em>}</li>
+ *   <li>{@link jobnetz.Job#isIsTestJob <em>Is Test Job</em>}</li>
+ *   <li>{@link jobnetz.Job#getTECH_SYSTEM <em>TECH SYSTEM</em>}</li>
+ *   <li>{@link jobnetz.Job#getExecutableName <em>Executable Name</em>}</li>
+ * </ul>
+ *
+ * @see jobnetz.JobnetzPackage#getJob()
+ * @model
+ * @generated
+ */
+public interface Job extends namedelement {
+	/**
+	 * Returns the value of the '<em><b>Schedulepackage</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jobnetz.SchedulePackage#getJobs <em>Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Schedulepackage</em>' container reference.
+	 * @see #setSchedulepackage(SchedulePackage)
+	 * @see jobnetz.JobnetzPackage#getJob_Schedulepackage()
+	 * @see jobnetz.SchedulePackage#getJobs
+	 * @model opposite="jobs" transient="false"
+	 * @generated
+	 */
+	SchedulePackage getSchedulepackage();
+
+	/**
+	 * Sets the value of the '{@link jobnetz.Job#getSchedulepackage <em>Schedulepackage</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Schedulepackage</em>' container reference.
+	 * @see #getSchedulepackage()
+	 * @generated
+	 */
+	void setSchedulepackage(SchedulePackage value);
+
+	/**
+	 * Returns the value of the '<em><b>Processingpoint</b></em>' containment reference list.
+	 * The list contents are of type {@link jobnetz.ProcessingPoint}.
+	 * It is bidirectional and its opposite is '{@link jobnetz.ProcessingPoint#getJob <em>Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Processingpoint</em>' containment reference list.
+	 * @see jobnetz.JobnetzPackage#getJob_Processingpoint()
+	 * @see jobnetz.ProcessingPoint#getJob
+	 * @model opposite="job" containment="true"
+	 * @generated
+	 */
+	EList<ProcessingPoint> getProcessingpoint();
+
+	/**
+	 * Returns the value of the '<em><b>Job</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jobnetz.Job#getPreDecessor <em>Pre Decessor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Job</em>' container reference.
+	 * @see #setJob(Job)
+	 * @see jobnetz.JobnetzPackage#getJob_Job()
+	 * @see jobnetz.Job#getPreDecessor
+	 * @model opposite="preDecessor" transient="false"
+	 * @generated
+	 */
+	Job getJob();
+
+	/**
+	 * Sets the value of the '{@link jobnetz.Job#getJob <em>Job</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Job</em>' container reference.
+	 * @see #getJob()
+	 * @generated
+	 */
+	void setJob(Job value);
+
+	/**
+	 * Returns the value of the '<em><b>Pre Decessor</b></em>' containment reference list.
+	 * The list contents are of type {@link jobnetz.Job}.
+	 * It is bidirectional and its opposite is '{@link jobnetz.Job#getJob <em>Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pre Decessor</em>' containment reference list.
+	 * @see jobnetz.JobnetzPackage#getJob_PreDecessor()
+	 * @see jobnetz.Job#getJob
+	 * @model opposite="job" containment="true"
+	 * @generated
+	 */
+	EList<Job> getPreDecessor();
+
+	/**
+	 * Returns the value of the '<em><b>Run Time</b></em>' attribute.
+	 * The literals are from the enumeration {@link jobnetz.RunningTime}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Run Time</em>' attribute.
+	 * @see jobnetz.RunningTime
+	 * @see #setRunTime(RunningTime)
+	 * @see jobnetz.JobnetzPackage#getJob_RunTime()
+	 * @model
+	 * @generated
+	 */
+	RunningTime getRunTime();
+
+	/**
+	 * Sets the value of the '{@link jobnetz.Job#getRunTime <em>Run Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Run Time</em>' attribute.
+	 * @see jobnetz.RunningTime
+	 * @see #getRunTime()
+	 * @generated
+	 */
+	void setRunTime(RunningTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Job Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link jobnetz.JobType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Job Type</em>' attribute.
+	 * @see jobnetz.JobType
+	 * @see #setJobType(JobType)
+	 * @see jobnetz.JobnetzPackage#getJob_JobType()
+	 * @model
+	 * @generated
+	 */
+	JobType getJobType();
+
+	/**
+	 * Sets the value of the '{@link jobnetz.Job#getJobType <em>Job Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Job Type</em>' attribute.
+	 * @see jobnetz.JobType
+	 * @see #getJobType()
+	 * @generated
+	 */
+	void setJobType(JobType value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Test Job</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Test Job</em>' attribute.
+	 * @see #setIsTestJob(boolean)
+	 * @see jobnetz.JobnetzPackage#getJob_IsTestJob()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsTestJob();
+
+	/**
+	 * Sets the value of the '{@link jobnetz.Job#isIsTestJob <em>Is Test Job</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Test Job</em>' attribute.
+	 * @see #isIsTestJob()
+	 * @generated
+	 */
+	void setIsTestJob(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>TECH SYSTEM</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>TECH SYSTEM</em>' attribute.
+	 * @see #setTECH_SYSTEM(String)
+	 * @see jobnetz.JobnetzPackage#getJob_TECH_SYSTEM()
+	 * @model
+	 * @generated
+	 */
+	String getTECH_SYSTEM();
+
+	/**
+	 * Sets the value of the '{@link jobnetz.Job#getTECH_SYSTEM <em>TECH SYSTEM</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>TECH SYSTEM</em>' attribute.
+	 * @see #getTECH_SYSTEM()
+	 * @generated
+	 */
+	void setTECH_SYSTEM(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Executable Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Executable Name</em>' attribute.
+	 * @see #setExecutableName(String)
+	 * @see jobnetz.JobnetzPackage#getJob_ExecutableName()
+	 * @model
+	 * @generated
+	 */
+	String getExecutableName();
+
+	/**
+	 * Sets the value of the '{@link jobnetz.Job#getExecutableName <em>Executable Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Executable Name</em>' attribute.
+	 * @see #getExecutableName()
+	 * @generated
+	 */
+	void setExecutableName(String value);
+
+} // Job

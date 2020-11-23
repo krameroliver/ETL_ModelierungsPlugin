@@ -12,7 +12,8 @@ Export-Package: ETL_MODEL.tests,
  logmodel.tests,
  package_enums.tests,
  specmodel.tests,
- type_enum.tests
+ type_enum.tests,
+ jobnetz.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.etl_modelling.de;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
