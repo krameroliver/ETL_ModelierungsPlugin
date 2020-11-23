@@ -58,6 +58,12 @@ CommonMapping returns CommonMapping:
 Entity returns Entity:
 	{Entity}
 	'Entity' name=ID
+	('metadata''{'
+		'FileName' filename=EString
+		'ColumnDelimiter'delimiter=EString
+		'lineDelimiter' lineend=EString		
+		'}'
+	)?
 	'{'
 		('entityFields' '{' entityField+=Field ( entityField+=Field)* '}' )?
 		('Includes' '{'include+=Include("," include+=Include)* '}')? 	
@@ -77,11 +83,11 @@ Field returns Field:
 	('dateFormat' dateFormat=EString)?
 	('NullIndicator' NullIndicator=EString)?
 	
-	('allowExponent:' allowExponent?=EBoolean)?
-	('hasImplicitComma:' hasImplicitComma?=EBoolean)?
-	('interfaceOnly:'interfaceOnly?=EBoolean)?
-	('tableOnly:'tableOnly?=EBoolean)?
-	('isFastChanging:'isFastChanging?=EBoolean)?
+	(allowExponent?='allowExponent')?
+	(hasImplicitComma?='hasImplicitComma' )?
+	(interfaceOnly?='interfaceOnly')?
+	(tableOnly?='tableOnly')?
+	(isFastChanging?='isFastChanging')?
 	(isBusinessKey?='BusinessKey')?
 	"]";
 
@@ -91,7 +97,7 @@ Field returns Field:
 Include returns Include: 
 'Include' name=EString
 ('{'
-	('IncludeFields' '{' includeFields+=[Field|QualifiedName] ( "," includeFields+=[Field|QualifiedName])* '}' )?
+	('IncludeFields' '{' includeFields+=Field ( "," includeFields+=Field)* '}' )?
 	('IdentifyingFields:{' identifyingfields+=[Field|QualifiedName](','identifyingfields+=[Field|QualifiedName])* '}')?
 '}');
 

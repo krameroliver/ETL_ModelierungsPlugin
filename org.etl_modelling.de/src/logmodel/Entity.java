@@ -19,6 +19,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link logmodel.Entity#getEntityField <em>Entity Field</em>}</li>
  *   <li>{@link logmodel.Entity#getInclude <em>Include</em>}</li>
  *   <li>{@link logmodel.Entity#getRelationships <em>Relationships</em>}</li>
+ *   <li>{@link logmodel.Entity#getFilename <em>Filename</em>}</li>
+ *   <li>{@link logmodel.Entity#getDelimiter <em>Delimiter</em>}</li>
+ *   <li>{@link logmodel.Entity#getLineend <em>Lineend</em>}</li>
  * </ul>
  *
  * @see logmodel.LogmodelPackage#getEntity()
@@ -91,5 +94,71 @@ public interface Entity extends namedelement {
 	 * @generated
 	 */
 	EList<Relationship> getRelationships();
+
+	/**
+	 * Returns the value of the '<em><b>Filename</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filename</em>' attribute.
+	 * @see #setFilename(String)
+	 * @see logmodel.LogmodelPackage#getEntity_Filename()
+	 * @model
+	 * @generated
+	 */
+	String getFilename();
+
+	/**
+	 * Sets the value of the '{@link logmodel.Entity#getFilename <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Filename</em>' attribute.
+	 * @see #getFilename()
+	 * @generated
+	 */
+	void setFilename(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Delimiter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Delimiter</em>' attribute.
+	 * @see #setDelimiter(String)
+	 * @see logmodel.LogmodelPackage#getEntity_Delimiter()
+	 * @model
+	 * @generated
+	 */
+	String getDelimiter();
+
+	/**
+	 * Sets the value of the '{@link logmodel.Entity#getDelimiter <em>Delimiter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Delimiter</em>' attribute.
+	 * @see #getDelimiter()
+	 * @generated
+	 */
+	void setDelimiter(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Lineend</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lineend</em>' attribute.
+	 * @see #setLineend(String)
+	 * @see logmodel.LogmodelPackage#getEntity_Lineend()
+	 * @model
+	 * @generated
+	 */
+	String getLineend();
+
+	/**
+	 * Sets the value of the '{@link logmodel.Entity#getLineend <em>Lineend</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Lineend</em>' attribute.
+	 * @see #getLineend()
+	 * @generated
+	 */
+	void setLineend(String value);
 
 } // Entity

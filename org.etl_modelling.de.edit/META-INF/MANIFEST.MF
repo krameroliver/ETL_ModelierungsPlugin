@@ -3,9 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.etl_modelling.de.edit;singleton:=true
 Automatic-Module-Name: org.etl_modelling.de.edit
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.5.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: jobnetz.provider.JobnetzEditPlugin$Implementation
+Bundle-Activator: ETL_MODEL.provider.LogmodelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

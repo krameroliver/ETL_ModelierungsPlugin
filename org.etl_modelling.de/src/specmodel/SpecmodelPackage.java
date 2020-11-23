@@ -236,7 +236,7 @@ public interface SpecmodelPackage extends EPackage {
 	int JOIN_FIELD__ENTITY = LogmodelPackage.FIELD__ENTITY;
 
 	/**
-	 * The feature id for the '<em><b>Include</b></em>' reference.
+	 * The feature id for the '<em><b>Include</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

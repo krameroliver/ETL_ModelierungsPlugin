@@ -26,20 +26,9 @@ public class ETLDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getEBooleanRule())
-			return getEBooleanToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * EBoolean returns ecore::EBoolean:
-	 * 	'true' | 'false';
-	 */
-	protected String getEBooleanToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "true";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

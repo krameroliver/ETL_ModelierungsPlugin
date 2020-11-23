@@ -205,13 +205,40 @@ public interface LogmodelPackage extends EPackage {
 	int ENTITY__RELATIONSHIPS = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Filename</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__FILENAME = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Delimiter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__DELIMITER = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Lineend</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__LINEEND = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -251,7 +278,7 @@ public interface LogmodelPackage extends EPackage {
 	int FIELD__ENTITY = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Include</b></em>' reference.
+	 * The feature id for the '<em><b>Include</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -551,7 +578,7 @@ public interface LogmodelPackage extends EPackage {
 	int INCLUDE__NAME = ETL_MODELPackage.NAMEDELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Include Fields</b></em>' reference list.
+	 * The feature id for the '<em><b>Include Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -911,6 +938,39 @@ public interface LogmodelPackage extends EPackage {
 	EReference getEntity_Relationships();
 
 	/**
+	 * Returns the meta object for the attribute '{@link logmodel.Entity#getFilename <em>Filename</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filename</em>'.
+	 * @see logmodel.Entity#getFilename()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_Filename();
+
+	/**
+	 * Returns the meta object for the attribute '{@link logmodel.Entity#getDelimiter <em>Delimiter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Delimiter</em>'.
+	 * @see logmodel.Entity#getDelimiter()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_Delimiter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link logmodel.Entity#getLineend <em>Lineend</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lineend</em>'.
+	 * @see logmodel.Entity#getLineend()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_Lineend();
+
+	/**
 	 * Returns the meta object for class '{@link logmodel.Field <em>Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -932,10 +992,10 @@ public interface LogmodelPackage extends EPackage {
 	EReference getField_Entity();
 
 	/**
-	 * Returns the meta object for the reference '{@link logmodel.Field#getInclude <em>Include</em>}'.
+	 * Returns the meta object for the container reference '{@link logmodel.Field#getInclude <em>Include</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Include</em>'.
+	 * @return the meta object for the container reference '<em>Include</em>'.
 	 * @see logmodel.Field#getInclude()
 	 * @see #getField()
 	 * @generated
@@ -1204,10 +1264,10 @@ public interface LogmodelPackage extends EPackage {
 	EClass getInclude();
 
 	/**
-	 * Returns the meta object for the reference list '{@link logmodel.Include#getIncludeFields <em>Include Fields</em>}'.
+	 * Returns the meta object for the containment reference list '{@link logmodel.Include#getIncludeFields <em>Include Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Include Fields</em>'.
+	 * @return the meta object for the containment reference list '<em>Include Fields</em>'.
 	 * @see logmodel.Include#getIncludeFields()
 	 * @see #getInclude()
 	 * @generated
@@ -1501,6 +1561,30 @@ public interface LogmodelPackage extends EPackage {
 		EReference ENTITY__RELATIONSHIPS = eINSTANCE.getEntity_Relationships();
 
 		/**
+		 * The meta object literal for the '<em><b>Filename</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__FILENAME = eINSTANCE.getEntity_Filename();
+
+		/**
+		 * The meta object literal for the '<em><b>Delimiter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__DELIMITER = eINSTANCE.getEntity_Delimiter();
+
+		/**
+		 * The meta object literal for the '<em><b>Lineend</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__LINEEND = eINSTANCE.getEntity_Lineend();
+
+		/**
 		 * The meta object literal for the '{@link logmodel.impl.FieldImpl <em>Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1519,7 +1603,7 @@ public interface LogmodelPackage extends EPackage {
 		EReference FIELD__ENTITY = eINSTANCE.getField_Entity();
 
 		/**
-		 * The meta object literal for the '<em><b>Include</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Include</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1725,7 +1809,7 @@ public interface LogmodelPackage extends EPackage {
 		EClass INCLUDE = eINSTANCE.getInclude();
 
 		/**
-		 * The meta object literal for the '<em><b>Include Fields</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Include Fields</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

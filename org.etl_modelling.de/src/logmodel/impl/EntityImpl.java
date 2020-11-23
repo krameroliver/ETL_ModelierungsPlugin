@@ -39,6 +39,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link logmodel.impl.EntityImpl#getEntityField <em>Entity Field</em>}</li>
  *   <li>{@link logmodel.impl.EntityImpl#getInclude <em>Include</em>}</li>
  *   <li>{@link logmodel.impl.EntityImpl#getRelationships <em>Relationships</em>}</li>
+ *   <li>{@link logmodel.impl.EntityImpl#getFilename <em>Filename</em>}</li>
+ *   <li>{@link logmodel.impl.EntityImpl#getDelimiter <em>Delimiter</em>}</li>
+ *   <li>{@link logmodel.impl.EntityImpl#getLineend <em>Lineend</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +96,66 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @ordered
 	 */
 	protected EList<Relationship> relationships;
+
+	/**
+	 * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FILENAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
+	protected String filename = FILENAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDelimiter() <em>Delimiter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelimiter()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DELIMITER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDelimiter() <em>Delimiter</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelimiter()
+	 * @generated
+	 * @ordered
+	 */
+	protected String delimiter = DELIMITER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLineend() <em>Lineend</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLineend()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LINEEND_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLineend() <em>Lineend</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLineend()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lineend = LINEEND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,6 +286,75 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getFilename() {
+		return filename;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFilename(String newFilename) {
+		String oldFilename = filename;
+		filename = newFilename;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogmodelPackage.ENTITY__FILENAME, oldFilename, filename));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDelimiter() {
+		return delimiter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDelimiter(String newDelimiter) {
+		String oldDelimiter = delimiter;
+		delimiter = newDelimiter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogmodelPackage.ENTITY__DELIMITER, oldDelimiter, delimiter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getLineend() {
+		return lineend;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLineend(String newLineend) {
+		String oldLineend = lineend;
+		lineend = newLineend;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogmodelPackage.ENTITY__LINEEND, oldLineend, lineend));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -293,6 +425,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return getInclude();
 			case LogmodelPackage.ENTITY__RELATIONSHIPS:
 				return getRelationships();
+			case LogmodelPackage.ENTITY__FILENAME:
+				return getFilename();
+			case LogmodelPackage.ENTITY__DELIMITER:
+				return getDelimiter();
+			case LogmodelPackage.ENTITY__LINEEND:
+				return getLineend();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -324,6 +462,15 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				getRelationships().clear();
 				getRelationships().addAll((Collection<? extends Relationship>)newValue);
 				return;
+			case LogmodelPackage.ENTITY__FILENAME:
+				setFilename((String)newValue);
+				return;
+			case LogmodelPackage.ENTITY__DELIMITER:
+				setDelimiter((String)newValue);
+				return;
+			case LogmodelPackage.ENTITY__LINEEND:
+				setLineend((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -351,6 +498,15 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case LogmodelPackage.ENTITY__RELATIONSHIPS:
 				getRelationships().clear();
 				return;
+			case LogmodelPackage.ENTITY__FILENAME:
+				setFilename(FILENAME_EDEFAULT);
+				return;
+			case LogmodelPackage.ENTITY__DELIMITER:
+				setDelimiter(DELIMITER_EDEFAULT);
+				return;
+			case LogmodelPackage.ENTITY__LINEEND:
+				setLineend(LINEEND_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -373,6 +529,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return include != null && !include.isEmpty();
 			case LogmodelPackage.ENTITY__RELATIONSHIPS:
 				return relationships != null && !relationships.isEmpty();
+			case LogmodelPackage.ENTITY__FILENAME:
+				return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
+			case LogmodelPackage.ENTITY__DELIMITER:
+				return DELIMITER_EDEFAULT == null ? delimiter != null : !DELIMITER_EDEFAULT.equals(delimiter);
+			case LogmodelPackage.ENTITY__LINEEND:
+				return LINEEND_EDEFAULT == null ? lineend != null : !LINEEND_EDEFAULT.equals(lineend);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -389,6 +551,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", filename: ");
+		result.append(filename);
+		result.append(", delimiter: ");
+		result.append(delimiter);
+		result.append(", lineend: ");
+		result.append(lineend);
 		result.append(')');
 		return result.toString();
 	}

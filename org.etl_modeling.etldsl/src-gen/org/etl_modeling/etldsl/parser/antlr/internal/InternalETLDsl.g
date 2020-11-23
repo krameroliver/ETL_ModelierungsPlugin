@@ -373,36 +373,6 @@ ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	)
 ;
 
-// Entry rule entryRuleEBoolean
-entryRuleEBoolean returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEBooleanRule()); }
-	iv_ruleEBoolean=ruleEBoolean
-	{ $current=$iv_ruleEBoolean.current.getText(); }
-	EOF;
-
-// Rule EBoolean
-ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		kw='true'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0());
-		}
-		    |
-		kw='false'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
-		}
-	)
-;
-
 // Entry rule entryRuleEString
 entryRuleEString returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getEStringRule()); }
@@ -647,25 +617,108 @@ ruleEntity returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
-			otherlv_4='entityFields'
+			otherlv_3='metadata'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getEntityFieldsKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getMetadataKeyword_3_0());
 			}
-			otherlv_5='{'
+			otherlv_4='{'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_4_1());
+				newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3_1());
+			}
+			otherlv_5='FileName'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getEntityAccess().getFileNameKeyword_3_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getFilenameEStringParserRuleCall_3_3_0());
 					}
-					lv_entityField_6_0=ruleField
+					lv_filename_6_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEntityRule());
+						}
+						set(
+							$current,
+							"filename",
+							lv_filename_6_0,
+							"org.etl_modeling.etldsl.ETLDsl.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_7='ColumnDelimiter'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getEntityAccess().getColumnDelimiterKeyword_3_4());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEntityAccess().getDelimiterEStringParserRuleCall_3_5_0());
+					}
+					lv_delimiter_8_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEntityRule());
+						}
+						set(
+							$current,
+							"delimiter",
+							lv_delimiter_8_0,
+							"org.etl_modeling.etldsl.ETLDsl.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_9='lineDelimiter'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getEntityAccess().getLineDelimiterKeyword_3_6());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEntityAccess().getLineendEStringParserRuleCall_3_7_0());
+					}
+					lv_lineend_10_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEntityRule());
+						}
+						set(
+							$current,
+							"lineend",
+							lv_lineend_10_0,
+							"org.etl_modeling.etldsl.ETLDsl.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_11='}'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_3_8());
+			}
+		)?
+		otherlv_12='{'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_4());
+		}
+		(
+			otherlv_13='entityFields'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getEntityAccess().getEntityFieldsKeyword_5_0());
+			}
+			otherlv_14='{'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_5_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_5_2_0());
+					}
+					lv_entityField_15_0=ruleField
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -673,7 +726,7 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"entityField",
-							lv_entityField_6_0,
+							lv_entityField_15_0,
 							"org.etl_modeling.etldsl.ETLDsl.Field");
 						afterParserOrEnumRuleCall();
 					}
@@ -682,9 +735,9 @@ ruleEntity returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_4_3_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_5_3_0());
 					}
-					lv_entityField_7_0=ruleField
+					lv_entityField_16_0=ruleField
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -692,32 +745,32 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"entityField",
-							lv_entityField_7_0,
+							lv_entityField_16_0,
 							"org.etl_modeling.etldsl.ETLDsl.Field");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_8='}'
+			otherlv_17='}'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_4_4());
+				newLeafNode(otherlv_17, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5_4());
 			}
 		)?
 		(
-			otherlv_9='Includes'
+			otherlv_18='Includes'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getEntityAccess().getIncludesKeyword_5_0());
+				newLeafNode(otherlv_18, grammarAccess.getEntityAccess().getIncludesKeyword_6_0());
 			}
-			otherlv_10='{'
+			otherlv_19='{'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_5_1());
+				newLeafNode(otherlv_19, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_6_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_6_2_0());
 					}
-					lv_include_11_0=ruleInclude
+					lv_include_20_0=ruleInclude
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -725,23 +778,23 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"include",
-							lv_include_11_0,
+							lv_include_20_0,
 							"org.etl_modeling.etldsl.ETLDsl.Include");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_12=','
+				otherlv_21=','
 				{
-					newLeafNode(otherlv_12, grammarAccess.getEntityAccess().getCommaKeyword_5_3_0());
+					newLeafNode(otherlv_21, grammarAccess.getEntityAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_5_3_1_0());
+							newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_6_3_1_0());
 						}
-						lv_include_13_0=ruleInclude
+						lv_include_22_0=ruleInclude
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -749,33 +802,33 @@ ruleEntity returns [EObject current=null]
 							add(
 								$current,
 								"include",
-								lv_include_13_0,
+								lv_include_22_0,
 								"org.etl_modeling.etldsl.ETLDsl.Include");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_14='}'
+			otherlv_23='}'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5_4());
+				newLeafNode(otherlv_23, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6_4());
 			}
 		)?
 		(
-			otherlv_15='Relationships'
+			otherlv_24='Relationships'
 			{
-				newLeafNode(otherlv_15, grammarAccess.getEntityAccess().getRelationshipsKeyword_6_0());
+				newLeafNode(otherlv_24, grammarAccess.getEntityAccess().getRelationshipsKeyword_7_0());
 			}
-			otherlv_16='{'
+			otherlv_25='{'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_6_1());
+				newLeafNode(otherlv_25, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_7_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_7_2_0());
 					}
-					lv_relationships_17_0=ruleRelationship
+					lv_relationships_26_0=ruleRelationship
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -783,23 +836,23 @@ ruleEntity returns [EObject current=null]
 						add(
 							$current,
 							"relationships",
-							lv_relationships_17_0,
+							lv_relationships_26_0,
 							"org.etl_modeling.etldsl.ETLDsl.Relationship");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_18=','
+				otherlv_27=','
 				{
-					newLeafNode(otherlv_18, grammarAccess.getEntityAccess().getCommaKeyword_6_3_0());
+					newLeafNode(otherlv_27, grammarAccess.getEntityAccess().getCommaKeyword_7_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_6_3_1_0());
+							newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_7_3_1_0());
 						}
-						lv_relationships_19_0=ruleRelationship
+						lv_relationships_28_0=ruleRelationship
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEntityRule());
@@ -807,21 +860,21 @@ ruleEntity returns [EObject current=null]
 							add(
 								$current,
 								"relationships",
-								lv_relationships_19_0,
+								lv_relationships_28_0,
 								"org.etl_modeling.etldsl.ETLDsl.Relationship");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_20='}'
+			otherlv_29='}'
 			{
-				newLeafNode(otherlv_20, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6_4());
+				newLeafNode(otherlv_29, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7_4());
 			}
 		)?
-		otherlv_21='}'
+		otherlv_30='}'
 		{
-			newLeafNode(otherlv_21, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_30, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
@@ -1076,147 +1129,92 @@ ruleField returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_20='allowExponent:'
-			{
-				newLeafNode(otherlv_20, grammarAccess.getFieldAccess().getAllowExponentKeyword_12_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFieldAccess().getAllowExponentEBooleanParserRuleCall_12_1_0());
-					}
-					lv_allowExponent_21_0=ruleEBoolean
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFieldRule());
-						}
-						set(
-							$current,
-							"allowExponent",
-							lv_allowExponent_21_0 != null,
-							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_22='hasImplicitComma:'
-			{
-				newLeafNode(otherlv_22, grammarAccess.getFieldAccess().getHasImplicitCommaKeyword_13_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFieldAccess().getHasImplicitCommaEBooleanParserRuleCall_13_1_0());
-					}
-					lv_hasImplicitComma_23_0=ruleEBoolean
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFieldRule());
-						}
-						set(
-							$current,
-							"hasImplicitComma",
-							lv_hasImplicitComma_23_0 != null,
-							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_24='interfaceOnly:'
-			{
-				newLeafNode(otherlv_24, grammarAccess.getFieldAccess().getInterfaceOnlyKeyword_14_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFieldAccess().getInterfaceOnlyEBooleanParserRuleCall_14_1_0());
-					}
-					lv_interfaceOnly_25_0=ruleEBoolean
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFieldRule());
-						}
-						set(
-							$current,
-							"interfaceOnly",
-							lv_interfaceOnly_25_0 != null,
-							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_26='tableOnly:'
-			{
-				newLeafNode(otherlv_26, grammarAccess.getFieldAccess().getTableOnlyKeyword_15_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFieldAccess().getTableOnlyEBooleanParserRuleCall_15_1_0());
-					}
-					lv_tableOnly_27_0=ruleEBoolean
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFieldRule());
-						}
-						set(
-							$current,
-							"tableOnly",
-							lv_tableOnly_27_0 != null,
-							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_28='isFastChanging:'
-			{
-				newLeafNode(otherlv_28, grammarAccess.getFieldAccess().getIsFastChangingKeyword_16_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFieldAccess().getIsFastChangingEBooleanParserRuleCall_16_1_0());
-					}
-					lv_isFastChanging_29_0=ruleEBoolean
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFieldRule());
-						}
-						set(
-							$current,
-							"isFastChanging",
-							lv_isFastChanging_29_0 != null,
-							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			(
-				lv_isBusinessKey_30_0='BusinessKey'
+				lv_allowExponent_20_0='allowExponent'
 				{
-					newLeafNode(lv_isBusinessKey_30_0, grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0());
+					newLeafNode(lv_allowExponent_20_0, grammarAccess.getFieldAccess().getAllowExponentAllowExponentKeyword_12_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getFieldRule());
 					}
-					setWithLastConsumed($current, "isBusinessKey", lv_isBusinessKey_30_0 != null, "BusinessKey");
+					setWithLastConsumed($current, "allowExponent", lv_allowExponent_20_0 != null, "allowExponent");
 				}
 			)
 		)?
-		otherlv_31=']'
+		(
+			(
+				lv_hasImplicitComma_21_0='hasImplicitComma'
+				{
+					newLeafNode(lv_hasImplicitComma_21_0, grammarAccess.getFieldAccess().getHasImplicitCommaHasImplicitCommaKeyword_13_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldRule());
+					}
+					setWithLastConsumed($current, "hasImplicitComma", lv_hasImplicitComma_21_0 != null, "hasImplicitComma");
+				}
+			)
+		)?
+		(
+			(
+				lv_interfaceOnly_22_0='interfaceOnly'
+				{
+					newLeafNode(lv_interfaceOnly_22_0, grammarAccess.getFieldAccess().getInterfaceOnlyInterfaceOnlyKeyword_14_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldRule());
+					}
+					setWithLastConsumed($current, "interfaceOnly", lv_interfaceOnly_22_0 != null, "interfaceOnly");
+				}
+			)
+		)?
+		(
+			(
+				lv_tableOnly_23_0='tableOnly'
+				{
+					newLeafNode(lv_tableOnly_23_0, grammarAccess.getFieldAccess().getTableOnlyTableOnlyKeyword_15_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldRule());
+					}
+					setWithLastConsumed($current, "tableOnly", lv_tableOnly_23_0 != null, "tableOnly");
+				}
+			)
+		)?
+		(
+			(
+				lv_isFastChanging_24_0='isFastChanging'
+				{
+					newLeafNode(lv_isFastChanging_24_0, grammarAccess.getFieldAccess().getIsFastChangingIsFastChangingKeyword_16_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldRule());
+					}
+					setWithLastConsumed($current, "isFastChanging", lv_isFastChanging_24_0 != null, "isFastChanging");
+				}
+			)
+		)?
+		(
+			(
+				lv_isBusinessKey_25_0='BusinessKey'
+				{
+					newLeafNode(lv_isBusinessKey_25_0, grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldRule());
+					}
+					setWithLastConsumed($current, "isBusinessKey", lv_isBusinessKey_25_0 != null, "BusinessKey");
+				}
+			)
+		)?
+		otherlv_26=']'
 		{
-			newLeafNode(otherlv_31, grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18());
+			newLeafNode(otherlv_26, grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18());
 		}
 	)
 ;
@@ -1277,15 +1275,18 @@ ruleInclude returns [EObject current=null]
 				(
 					(
 						{
+							newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldParserRuleCall_2_1_2_0());
+						}
+						lv_includeFields_5_0=ruleField
+						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getIncludeRule());
+								$current = createModelElementForParent(grammarAccess.getIncludeRule());
 							}
-						}
-						{
-							newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldCrossReference_2_1_2_0());
-						}
-						ruleQualifiedName
-						{
+							add(
+								$current,
+								"includeFields",
+								lv_includeFields_5_0,
+								"org.etl_modeling.etldsl.ETLDsl.Field");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -1298,15 +1299,18 @@ ruleInclude returns [EObject current=null]
 					(
 						(
 							{
+								newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldParserRuleCall_2_1_3_1_0());
+							}
+							lv_includeFields_7_0=ruleField
+							{
 								if ($current==null) {
-									$current = createModelElement(grammarAccess.getIncludeRule());
+									$current = createModelElementForParent(grammarAccess.getIncludeRule());
 								}
-							}
-							{
-								newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldCrossReference_2_1_3_1_0());
-							}
-							ruleQualifiedName
-							{
+								add(
+									$current,
+									"includeFields",
+									lv_includeFields_7_0,
+									"org.etl_modeling.etldsl.ETLDsl.Field");
 								afterParserOrEnumRuleCall();
 							}
 						)

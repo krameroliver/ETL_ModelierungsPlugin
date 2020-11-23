@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalETLDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'logpackage'", "'LAYER'", "'LAYER_TYPE'", "'HISTORISATION'", "'REPRESENTATION'", "','", "'.'", "'-'", "'true'", "'false'", "'commonmapping'", "'{'", "'InputField'", "'}'", "'OutputField'", "'Entity'", "'entityFields'", "'Includes'", "'Relationships'", "'Field'", "'['", "'type'", "'length'", "'precision'", "'scale'", "'original_name'", "'short_describtion'", "'dateFormat'", "'NullIndicator'", "'allowExponent:'", "'hasImplicitComma:'", "'interfaceOnly:'", "'tableOnly:'", "'isFastChanging:'", "'BusinessKey'", "']'", "'Include'", "'IncludeFields'", "'IdentifyingFields:{'", "'Relationship'", "'ToEntity: '", "'DescribingFields:{'", "'String'", "'Date'", "'Decimal'", "'HK'", "'Int'", "'TimeStamp'", "'TrueFalse'", "'STAGE'", "'INTEGRATION'", "'EXPORT'", "'REPORTING'", "'HARMONISATION'", "'NONE'", "'DAY_PARTITIONED'", "'MONTH_PARTITIONED'", "'BITEMPORAL'", "'FLAT_TABLE'", "'DATAVAULT'", "'ThirdNF'", "'SNOWFLAKE'", "'STAR'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'logpackage'", "'LAYER'", "'LAYER_TYPE'", "'HISTORISATION'", "'REPRESENTATION'", "','", "'.'", "'-'", "'commonmapping'", "'{'", "'InputField'", "'}'", "'OutputField'", "'Entity'", "'metadata'", "'FileName'", "'ColumnDelimiter'", "'lineDelimiter'", "'entityFields'", "'Includes'", "'Relationships'", "'Field'", "'['", "'type'", "'length'", "'precision'", "'scale'", "'original_name'", "'short_describtion'", "'dateFormat'", "'NullIndicator'", "'allowExponent'", "'hasImplicitComma'", "'interfaceOnly'", "'tableOnly'", "'isFastChanging'", "'BusinessKey'", "']'", "'Include'", "'IncludeFields'", "'IdentifyingFields:{'", "'Relationship'", "'ToEntity: '", "'DescribingFields:{'", "'String'", "'Date'", "'Decimal'", "'HK'", "'Int'", "'TimeStamp'", "'TrueFalse'", "'STAGE'", "'INTEGRATION'", "'EXPORT'", "'REPORTING'", "'HARMONISATION'", "'NONE'", "'DAY_PARTITIONED'", "'MONTH_PARTITIONED'", "'BITEMPORAL'", "'FLAT_TABLE'", "'DATAVAULT'", "'ThirdNF'", "'SNOWFLAKE'", "'STAR'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -81,7 +81,9 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
     public static final int T__73=73;
     public static final int EOF=-1;
     public static final int T__30=30;
+    public static final int T__74=74;
     public static final int T__31=31;
+    public static final int T__75=75;
     public static final int T__32=32;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -469,7 +471,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==21||LA8_0==26) ) {
+            if ( (LA8_0==19||LA8_0==24) ) {
                 alt8=1;
             }
             switch (alt8) {
@@ -480,10 +482,10 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
-                    if ( (LA5_0==21) ) {
+                    if ( (LA5_0==19) ) {
                         alt5=1;
                     }
-                    else if ( (LA5_0==26) ) {
+                    else if ( (LA5_0==24) ) {
                         alt5=2;
                     }
                     else {
@@ -593,10 +595,10 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     	    int alt6=2;
                     	    int LA6_0 = input.LA(1);
 
-                    	    if ( (LA6_0==21) ) {
+                    	    if ( (LA6_0==19) ) {
                     	        alt6=1;
                     	    }
-                    	    else if ( (LA6_0==26) ) {
+                    	    else if ( (LA6_0==24) ) {
                     	        alt6=2;
                     	    }
                     	    else {
@@ -945,119 +947,8 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEInt"
 
 
-    // $ANTLR start "entryRuleEBoolean"
-    // InternalETLDsl.g:377:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
-    public final String entryRuleEBoolean() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleEBoolean = null;
-
-
-        try {
-            // InternalETLDsl.g:377:48: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // InternalETLDsl.g:378:2: iv_ruleEBoolean= ruleEBoolean EOF
-            {
-             newCompositeNode(grammarAccess.getEBooleanRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleEBoolean=ruleEBoolean();
-
-            state._fsp--;
-
-             current =iv_ruleEBoolean.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEBoolean"
-
-
-    // $ANTLR start "ruleEBoolean"
-    // InternalETLDsl.g:384:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
-    public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalETLDsl.g:390:2: ( (kw= 'true' | kw= 'false' ) )
-            // InternalETLDsl.g:391:2: (kw= 'true' | kw= 'false' )
-            {
-            // InternalETLDsl.g:391:2: (kw= 'true' | kw= 'false' )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==19) ) {
-                alt11=1;
-            }
-            else if ( (LA11_0==20) ) {
-                alt11=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
-
-                throw nvae;
-            }
-            switch (alt11) {
-                case 1 :
-                    // InternalETLDsl.g:392:3: kw= 'true'
-                    {
-                    kw=(Token)match(input,19,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0());
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalETLDsl.g:398:3: kw= 'false'
-                    {
-                    kw=(Token)match(input,20,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEBoolean"
-
-
     // $ANTLR start "entryRuleEString"
-    // InternalETLDsl.g:407:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalETLDsl.g:377:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1065,8 +956,8 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalETLDsl.g:407:47: (iv_ruleEString= ruleEString EOF )
-            // InternalETLDsl.g:408:2: iv_ruleEString= ruleEString EOF
+            // InternalETLDsl.g:377:47: (iv_ruleEString= ruleEString EOF )
+            // InternalETLDsl.g:378:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -1093,7 +984,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalETLDsl.g:414:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalETLDsl.g:384:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1104,28 +995,28 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalETLDsl.g:420:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalETLDsl.g:421:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalETLDsl.g:390:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalETLDsl.g:391:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalETLDsl.g:421:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalETLDsl.g:391:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA12_0==RULE_STRING) ) {
-                alt12=1;
+            if ( (LA11_0==RULE_STRING) ) {
+                alt11=1;
             }
-            else if ( (LA12_0==RULE_ID) ) {
-                alt12=2;
+            else if ( (LA11_0==RULE_ID) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt11) {
                 case 1 :
-                    // InternalETLDsl.g:422:3: this_STRING_0= RULE_STRING
+                    // InternalETLDsl.g:392:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1138,7 +1029,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalETLDsl.g:430:3: this_ID_1= RULE_ID
+                    // InternalETLDsl.g:400:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1173,7 +1064,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCommonMapping"
-    // InternalETLDsl.g:441:1: entryRuleCommonMapping returns [EObject current=null] : iv_ruleCommonMapping= ruleCommonMapping EOF ;
+    // InternalETLDsl.g:411:1: entryRuleCommonMapping returns [EObject current=null] : iv_ruleCommonMapping= ruleCommonMapping EOF ;
     public final EObject entryRuleCommonMapping() throws RecognitionException {
         EObject current = null;
 
@@ -1181,8 +1072,8 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalETLDsl.g:441:54: (iv_ruleCommonMapping= ruleCommonMapping EOF )
-            // InternalETLDsl.g:442:2: iv_ruleCommonMapping= ruleCommonMapping EOF
+            // InternalETLDsl.g:411:54: (iv_ruleCommonMapping= ruleCommonMapping EOF )
+            // InternalETLDsl.g:412:2: iv_ruleCommonMapping= ruleCommonMapping EOF
             {
              newCompositeNode(grammarAccess.getCommonMappingRule()); 
             pushFollow(FOLLOW_1);
@@ -1209,7 +1100,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommonMapping"
-    // InternalETLDsl.g:448:1: ruleCommonMapping returns [EObject current=null] : (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) ;
+    // InternalETLDsl.g:418:1: ruleCommonMapping returns [EObject current=null] : (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) ;
     public final EObject ruleCommonMapping() throws RecognitionException {
         EObject current = null;
 
@@ -1238,21 +1129,21 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalETLDsl.g:454:2: ( (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) )
-            // InternalETLDsl.g:455:2: (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
+            // InternalETLDsl.g:424:2: ( (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' ) )
+            // InternalETLDsl.g:425:2: (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
             {
-            // InternalETLDsl.g:455:2: (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
-            // InternalETLDsl.g:456:3: otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}'
+            // InternalETLDsl.g:425:2: (otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}' )
+            // InternalETLDsl.g:426:3: otherlv_0= 'commonmapping' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )? otherlv_15= '}'
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_15); 
+            otherlv_0=(Token)match(input,19,FOLLOW_15); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCommonMappingAccess().getCommonmappingKeyword_0());
             		
-            // InternalETLDsl.g:460:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalETLDsl.g:461:4: (lv_name_1_0= RULE_ID )
+            // InternalETLDsl.g:430:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalETLDsl.g:431:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalETLDsl.g:461:4: (lv_name_1_0= RULE_ID )
-            // InternalETLDsl.g:462:5: lv_name_1_0= RULE_ID
+            // InternalETLDsl.g:431:4: (lv_name_1_0= RULE_ID )
+            // InternalETLDsl.g:432:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_17); 
 
@@ -1274,34 +1165,34 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,22,FOLLOW_18); 
+            otherlv_2=(Token)match(input,20,FOLLOW_18); 
 
             			newLeafNode(otherlv_2, grammarAccess.getCommonMappingAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalETLDsl.g:482:3: (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalETLDsl.g:452:3: (otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}' )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA14_0==23) ) {
-                alt14=1;
+            if ( (LA13_0==21) ) {
+                alt13=1;
             }
-            switch (alt14) {
+            switch (alt13) {
                 case 1 :
-                    // InternalETLDsl.g:483:4: otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}'
+                    // InternalETLDsl.g:453:4: otherlv_3= 'InputField' otherlv_4= '{' ( (lv_commonmappinginputfields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )* otherlv_8= '}'
                     {
-                    otherlv_3=(Token)match(input,23,FOLLOW_17); 
+                    otherlv_3=(Token)match(input,21,FOLLOW_17); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getCommonMappingAccess().getInputFieldKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,22,FOLLOW_19); 
+                    otherlv_4=(Token)match(input,20,FOLLOW_19); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getCommonMappingAccess().getLeftCurlyBracketKeyword_3_1());
                     			
-                    // InternalETLDsl.g:491:4: ( (lv_commonmappinginputfields_5_0= ruleField ) )
-                    // InternalETLDsl.g:492:5: (lv_commonmappinginputfields_5_0= ruleField )
+                    // InternalETLDsl.g:461:4: ( (lv_commonmappinginputfields_5_0= ruleField ) )
+                    // InternalETLDsl.g:462:5: (lv_commonmappinginputfields_5_0= ruleField )
                     {
-                    // InternalETLDsl.g:492:5: (lv_commonmappinginputfields_5_0= ruleField )
-                    // InternalETLDsl.g:493:6: lv_commonmappinginputfields_5_0= ruleField
+                    // InternalETLDsl.g:462:5: (lv_commonmappinginputfields_5_0= ruleField )
+                    // InternalETLDsl.g:463:6: lv_commonmappinginputfields_5_0= ruleField
                     {
 
                     						newCompositeNode(grammarAccess.getCommonMappingAccess().getCommonmappinginputfieldsFieldParserRuleCall_3_2_0());
@@ -1328,30 +1219,30 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:510:4: (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )*
-                    loop13:
+                    // InternalETLDsl.g:480:4: (otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) ) )*
+                    loop12:
                     do {
-                        int alt13=2;
-                        int LA13_0 = input.LA(1);
+                        int alt12=2;
+                        int LA12_0 = input.LA(1);
 
-                        if ( (LA13_0==16) ) {
-                            alt13=1;
+                        if ( (LA12_0==16) ) {
+                            alt12=1;
                         }
 
 
-                        switch (alt13) {
+                        switch (alt12) {
                     	case 1 :
-                    	    // InternalETLDsl.g:511:5: otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) )
+                    	    // InternalETLDsl.g:481:5: otherlv_6= ',' ( (lv_commonmappinginputfields_7_0= ruleField ) )
                     	    {
                     	    otherlv_6=(Token)match(input,16,FOLLOW_19); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getCommonMappingAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalETLDsl.g:515:5: ( (lv_commonmappinginputfields_7_0= ruleField ) )
-                    	    // InternalETLDsl.g:516:6: (lv_commonmappinginputfields_7_0= ruleField )
+                    	    // InternalETLDsl.g:485:5: ( (lv_commonmappinginputfields_7_0= ruleField ) )
+                    	    // InternalETLDsl.g:486:6: (lv_commonmappinginputfields_7_0= ruleField )
                     	    {
-                    	    // InternalETLDsl.g:516:6: (lv_commonmappinginputfields_7_0= ruleField )
-                    	    // InternalETLDsl.g:517:7: lv_commonmappinginputfields_7_0= ruleField
+                    	    // InternalETLDsl.g:486:6: (lv_commonmappinginputfields_7_0= ruleField )
+                    	    // InternalETLDsl.g:487:7: lv_commonmappinginputfields_7_0= ruleField
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getCommonMappingAccess().getCommonmappinginputfieldsFieldParserRuleCall_3_3_1_0());
@@ -1383,11 +1274,11 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop13;
+                    	    break loop12;
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,24,FOLLOW_21); 
+                    otherlv_8=(Token)match(input,22,FOLLOW_21); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getCommonMappingAccess().getRightCurlyBracketKeyword_3_4());
                     			
@@ -1397,30 +1288,30 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:540:3: (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalETLDsl.g:510:3: (otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}' )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA16_0==25) ) {
-                alt16=1;
+            if ( (LA15_0==23) ) {
+                alt15=1;
             }
-            switch (alt16) {
+            switch (alt15) {
                 case 1 :
-                    // InternalETLDsl.g:541:4: otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}'
+                    // InternalETLDsl.g:511:4: otherlv_9= 'OutputField' otherlv_10= '{' ( (lv_commonmappingoutputfields_11_0= ruleField ) ) (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )* otherlv_14= '}'
                     {
-                    otherlv_9=(Token)match(input,25,FOLLOW_17); 
+                    otherlv_9=(Token)match(input,23,FOLLOW_17); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getCommonMappingAccess().getOutputFieldKeyword_4_0());
                     			
-                    otherlv_10=(Token)match(input,22,FOLLOW_19); 
+                    otherlv_10=(Token)match(input,20,FOLLOW_19); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getCommonMappingAccess().getLeftCurlyBracketKeyword_4_1());
                     			
-                    // InternalETLDsl.g:549:4: ( (lv_commonmappingoutputfields_11_0= ruleField ) )
-                    // InternalETLDsl.g:550:5: (lv_commonmappingoutputfields_11_0= ruleField )
+                    // InternalETLDsl.g:519:4: ( (lv_commonmappingoutputfields_11_0= ruleField ) )
+                    // InternalETLDsl.g:520:5: (lv_commonmappingoutputfields_11_0= ruleField )
                     {
-                    // InternalETLDsl.g:550:5: (lv_commonmappingoutputfields_11_0= ruleField )
-                    // InternalETLDsl.g:551:6: lv_commonmappingoutputfields_11_0= ruleField
+                    // InternalETLDsl.g:520:5: (lv_commonmappingoutputfields_11_0= ruleField )
+                    // InternalETLDsl.g:521:6: lv_commonmappingoutputfields_11_0= ruleField
                     {
 
                     						newCompositeNode(grammarAccess.getCommonMappingAccess().getCommonmappingoutputfieldsFieldParserRuleCall_4_2_0());
@@ -1447,30 +1338,30 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:568:4: (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )*
-                    loop15:
+                    // InternalETLDsl.g:538:4: (otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) ) )*
+                    loop14:
                     do {
-                        int alt15=2;
-                        int LA15_0 = input.LA(1);
+                        int alt14=2;
+                        int LA14_0 = input.LA(1);
 
-                        if ( (LA15_0==16) ) {
-                            alt15=1;
+                        if ( (LA14_0==16) ) {
+                            alt14=1;
                         }
 
 
-                        switch (alt15) {
+                        switch (alt14) {
                     	case 1 :
-                    	    // InternalETLDsl.g:569:5: otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) )
+                    	    // InternalETLDsl.g:539:5: otherlv_12= ',' ( (lv_commonmappingoutputfields_13_0= ruleField ) )
                     	    {
                     	    otherlv_12=(Token)match(input,16,FOLLOW_19); 
 
                     	    					newLeafNode(otherlv_12, grammarAccess.getCommonMappingAccess().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalETLDsl.g:573:5: ( (lv_commonmappingoutputfields_13_0= ruleField ) )
-                    	    // InternalETLDsl.g:574:6: (lv_commonmappingoutputfields_13_0= ruleField )
+                    	    // InternalETLDsl.g:543:5: ( (lv_commonmappingoutputfields_13_0= ruleField ) )
+                    	    // InternalETLDsl.g:544:6: (lv_commonmappingoutputfields_13_0= ruleField )
                     	    {
-                    	    // InternalETLDsl.g:574:6: (lv_commonmappingoutputfields_13_0= ruleField )
-                    	    // InternalETLDsl.g:575:7: lv_commonmappingoutputfields_13_0= ruleField
+                    	    // InternalETLDsl.g:544:6: (lv_commonmappingoutputfields_13_0= ruleField )
+                    	    // InternalETLDsl.g:545:7: lv_commonmappingoutputfields_13_0= ruleField
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getCommonMappingAccess().getCommonmappingoutputfieldsFieldParserRuleCall_4_3_1_0());
@@ -1502,11 +1393,11 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop15;
+                    	    break loop14;
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,24,FOLLOW_22); 
+                    otherlv_14=(Token)match(input,22,FOLLOW_22); 
 
                     				newLeafNode(otherlv_14, grammarAccess.getCommonMappingAccess().getRightCurlyBracketKeyword_4_4());
                     			
@@ -1516,7 +1407,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,24,FOLLOW_2); 
+            otherlv_15=(Token)match(input,22,FOLLOW_2); 
 
             			newLeafNode(otherlv_15, grammarAccess.getCommonMappingAccess().getRightCurlyBracketKeyword_5());
             		
@@ -1543,7 +1434,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntity"
-    // InternalETLDsl.g:606:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
+    // InternalETLDsl.g:576:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
     public final EObject entryRuleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1551,8 +1442,8 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalETLDsl.g:606:47: (iv_ruleEntity= ruleEntity EOF )
-            // InternalETLDsl.g:607:2: iv_ruleEntity= ruleEntity EOF
+            // InternalETLDsl.g:576:47: (iv_ruleEntity= ruleEntity EOF )
+            // InternalETLDsl.g:577:2: iv_ruleEntity= ruleEntity EOF
             {
              newCompositeNode(grammarAccess.getEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -1579,7 +1470,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity"
-    // InternalETLDsl.g:613:1: ruleEntity returns [EObject current=null] : ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'entityFields' otherlv_5= '{' ( (lv_entityField_6_0= ruleField ) ) ( (lv_entityField_7_0= ruleField ) )* otherlv_8= '}' )? (otherlv_9= 'Includes' otherlv_10= '{' ( (lv_include_11_0= ruleInclude ) ) (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )* otherlv_14= '}' )? (otherlv_15= 'Relationships' otherlv_16= '{' ( (lv_relationships_17_0= ruleRelationship ) ) (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )* otherlv_20= '}' )? otherlv_21= '}' ) ;
+    // InternalETLDsl.g:583:1: ruleEntity returns [EObject current=null] : ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'metadata' otherlv_4= '{' otherlv_5= 'FileName' ( (lv_filename_6_0= ruleEString ) ) otherlv_7= 'ColumnDelimiter' ( (lv_delimiter_8_0= ruleEString ) ) otherlv_9= 'lineDelimiter' ( (lv_lineend_10_0= ruleEString ) ) otherlv_11= '}' )? otherlv_12= '{' (otherlv_13= 'entityFields' otherlv_14= '{' ( (lv_entityField_15_0= ruleField ) ) ( (lv_entityField_16_0= ruleField ) )* otherlv_17= '}' )? (otherlv_18= 'Includes' otherlv_19= '{' ( (lv_include_20_0= ruleInclude ) ) (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )* otherlv_23= '}' )? (otherlv_24= 'Relationships' otherlv_25= '{' ( (lv_relationships_26_0= ruleRelationship ) ) (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )* otherlv_29= '}' )? otherlv_30= '}' ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1588,41 +1479,53 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
-        Token otherlv_8=null;
+        Token otherlv_7=null;
         Token otherlv_9=null;
-        Token otherlv_10=null;
+        Token otherlv_11=null;
         Token otherlv_12=null;
+        Token otherlv_13=null;
         Token otherlv_14=null;
-        Token otherlv_15=null;
-        Token otherlv_16=null;
+        Token otherlv_17=null;
         Token otherlv_18=null;
-        Token otherlv_20=null;
+        Token otherlv_19=null;
         Token otherlv_21=null;
-        EObject lv_entityField_6_0 = null;
+        Token otherlv_23=null;
+        Token otherlv_24=null;
+        Token otherlv_25=null;
+        Token otherlv_27=null;
+        Token otherlv_29=null;
+        Token otherlv_30=null;
+        AntlrDatatypeRuleToken lv_filename_6_0 = null;
 
-        EObject lv_entityField_7_0 = null;
+        AntlrDatatypeRuleToken lv_delimiter_8_0 = null;
 
-        EObject lv_include_11_0 = null;
+        AntlrDatatypeRuleToken lv_lineend_10_0 = null;
 
-        EObject lv_include_13_0 = null;
+        EObject lv_entityField_15_0 = null;
 
-        EObject lv_relationships_17_0 = null;
+        EObject lv_entityField_16_0 = null;
 
-        EObject lv_relationships_19_0 = null;
+        EObject lv_include_20_0 = null;
+
+        EObject lv_include_22_0 = null;
+
+        EObject lv_relationships_26_0 = null;
+
+        EObject lv_relationships_28_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalETLDsl.g:619:2: ( ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'entityFields' otherlv_5= '{' ( (lv_entityField_6_0= ruleField ) ) ( (lv_entityField_7_0= ruleField ) )* otherlv_8= '}' )? (otherlv_9= 'Includes' otherlv_10= '{' ( (lv_include_11_0= ruleInclude ) ) (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )* otherlv_14= '}' )? (otherlv_15= 'Relationships' otherlv_16= '{' ( (lv_relationships_17_0= ruleRelationship ) ) (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )* otherlv_20= '}' )? otherlv_21= '}' ) )
-            // InternalETLDsl.g:620:2: ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'entityFields' otherlv_5= '{' ( (lv_entityField_6_0= ruleField ) ) ( (lv_entityField_7_0= ruleField ) )* otherlv_8= '}' )? (otherlv_9= 'Includes' otherlv_10= '{' ( (lv_include_11_0= ruleInclude ) ) (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )* otherlv_14= '}' )? (otherlv_15= 'Relationships' otherlv_16= '{' ( (lv_relationships_17_0= ruleRelationship ) ) (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )* otherlv_20= '}' )? otherlv_21= '}' )
+            // InternalETLDsl.g:589:2: ( ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'metadata' otherlv_4= '{' otherlv_5= 'FileName' ( (lv_filename_6_0= ruleEString ) ) otherlv_7= 'ColumnDelimiter' ( (lv_delimiter_8_0= ruleEString ) ) otherlv_9= 'lineDelimiter' ( (lv_lineend_10_0= ruleEString ) ) otherlv_11= '}' )? otherlv_12= '{' (otherlv_13= 'entityFields' otherlv_14= '{' ( (lv_entityField_15_0= ruleField ) ) ( (lv_entityField_16_0= ruleField ) )* otherlv_17= '}' )? (otherlv_18= 'Includes' otherlv_19= '{' ( (lv_include_20_0= ruleInclude ) ) (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )* otherlv_23= '}' )? (otherlv_24= 'Relationships' otherlv_25= '{' ( (lv_relationships_26_0= ruleRelationship ) ) (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )* otherlv_29= '}' )? otherlv_30= '}' ) )
+            // InternalETLDsl.g:590:2: ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'metadata' otherlv_4= '{' otherlv_5= 'FileName' ( (lv_filename_6_0= ruleEString ) ) otherlv_7= 'ColumnDelimiter' ( (lv_delimiter_8_0= ruleEString ) ) otherlv_9= 'lineDelimiter' ( (lv_lineend_10_0= ruleEString ) ) otherlv_11= '}' )? otherlv_12= '{' (otherlv_13= 'entityFields' otherlv_14= '{' ( (lv_entityField_15_0= ruleField ) ) ( (lv_entityField_16_0= ruleField ) )* otherlv_17= '}' )? (otherlv_18= 'Includes' otherlv_19= '{' ( (lv_include_20_0= ruleInclude ) ) (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )* otherlv_23= '}' )? (otherlv_24= 'Relationships' otherlv_25= '{' ( (lv_relationships_26_0= ruleRelationship ) ) (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )* otherlv_29= '}' )? otherlv_30= '}' )
             {
-            // InternalETLDsl.g:620:2: ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'entityFields' otherlv_5= '{' ( (lv_entityField_6_0= ruleField ) ) ( (lv_entityField_7_0= ruleField ) )* otherlv_8= '}' )? (otherlv_9= 'Includes' otherlv_10= '{' ( (lv_include_11_0= ruleInclude ) ) (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )* otherlv_14= '}' )? (otherlv_15= 'Relationships' otherlv_16= '{' ( (lv_relationships_17_0= ruleRelationship ) ) (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )* otherlv_20= '}' )? otherlv_21= '}' )
-            // InternalETLDsl.g:621:3: () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' (otherlv_4= 'entityFields' otherlv_5= '{' ( (lv_entityField_6_0= ruleField ) ) ( (lv_entityField_7_0= ruleField ) )* otherlv_8= '}' )? (otherlv_9= 'Includes' otherlv_10= '{' ( (lv_include_11_0= ruleInclude ) ) (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )* otherlv_14= '}' )? (otherlv_15= 'Relationships' otherlv_16= '{' ( (lv_relationships_17_0= ruleRelationship ) ) (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )* otherlv_20= '}' )? otherlv_21= '}'
+            // InternalETLDsl.g:590:2: ( () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'metadata' otherlv_4= '{' otherlv_5= 'FileName' ( (lv_filename_6_0= ruleEString ) ) otherlv_7= 'ColumnDelimiter' ( (lv_delimiter_8_0= ruleEString ) ) otherlv_9= 'lineDelimiter' ( (lv_lineend_10_0= ruleEString ) ) otherlv_11= '}' )? otherlv_12= '{' (otherlv_13= 'entityFields' otherlv_14= '{' ( (lv_entityField_15_0= ruleField ) ) ( (lv_entityField_16_0= ruleField ) )* otherlv_17= '}' )? (otherlv_18= 'Includes' otherlv_19= '{' ( (lv_include_20_0= ruleInclude ) ) (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )* otherlv_23= '}' )? (otherlv_24= 'Relationships' otherlv_25= '{' ( (lv_relationships_26_0= ruleRelationship ) ) (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )* otherlv_29= '}' )? otherlv_30= '}' )
+            // InternalETLDsl.g:591:3: () otherlv_1= 'Entity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'metadata' otherlv_4= '{' otherlv_5= 'FileName' ( (lv_filename_6_0= ruleEString ) ) otherlv_7= 'ColumnDelimiter' ( (lv_delimiter_8_0= ruleEString ) ) otherlv_9= 'lineDelimiter' ( (lv_lineend_10_0= ruleEString ) ) otherlv_11= '}' )? otherlv_12= '{' (otherlv_13= 'entityFields' otherlv_14= '{' ( (lv_entityField_15_0= ruleField ) ) ( (lv_entityField_16_0= ruleField ) )* otherlv_17= '}' )? (otherlv_18= 'Includes' otherlv_19= '{' ( (lv_include_20_0= ruleInclude ) ) (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )* otherlv_23= '}' )? (otherlv_24= 'Relationships' otherlv_25= '{' ( (lv_relationships_26_0= ruleRelationship ) ) (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )* otherlv_29= '}' )? otherlv_30= '}'
             {
-            // InternalETLDsl.g:621:3: ()
-            // InternalETLDsl.g:622:4: 
+            // InternalETLDsl.g:591:3: ()
+            // InternalETLDsl.g:592:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1632,17 +1535,17 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,26,FOLLOW_15); 
+            otherlv_1=(Token)match(input,24,FOLLOW_15); 
 
             			newLeafNode(otherlv_1, grammarAccess.getEntityAccess().getEntityKeyword_1());
             		
-            // InternalETLDsl.g:632:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalETLDsl.g:633:4: (lv_name_2_0= RULE_ID )
+            // InternalETLDsl.g:602:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalETLDsl.g:603:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalETLDsl.g:633:4: (lv_name_2_0= RULE_ID )
-            // InternalETLDsl.g:634:5: lv_name_2_0= RULE_ID
+            // InternalETLDsl.g:603:4: (lv_name_2_0= RULE_ID )
+            // InternalETLDsl.g:604:5: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_17); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_23); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_0());
             				
@@ -1662,40 +1565,174 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,22,FOLLOW_23); 
+            // InternalETLDsl.g:620:3: (otherlv_3= 'metadata' otherlv_4= '{' otherlv_5= 'FileName' ( (lv_filename_6_0= ruleEString ) ) otherlv_7= 'ColumnDelimiter' ( (lv_delimiter_8_0= ruleEString ) ) otherlv_9= 'lineDelimiter' ( (lv_lineend_10_0= ruleEString ) ) otherlv_11= '}' )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            			newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3());
+            if ( (LA16_0==25) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalETLDsl.g:621:4: otherlv_3= 'metadata' otherlv_4= '{' otherlv_5= 'FileName' ( (lv_filename_6_0= ruleEString ) ) otherlv_7= 'ColumnDelimiter' ( (lv_delimiter_8_0= ruleEString ) ) otherlv_9= 'lineDelimiter' ( (lv_lineend_10_0= ruleEString ) ) otherlv_11= '}'
+                    {
+                    otherlv_3=(Token)match(input,25,FOLLOW_17); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getMetadataKeyword_3_0());
+                    			
+                    otherlv_4=(Token)match(input,20,FOLLOW_24); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3_1());
+                    			
+                    otherlv_5=(Token)match(input,26,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getEntityAccess().getFileNameKeyword_3_2());
+                    			
+                    // InternalETLDsl.g:633:4: ( (lv_filename_6_0= ruleEString ) )
+                    // InternalETLDsl.g:634:5: (lv_filename_6_0= ruleEString )
+                    {
+                    // InternalETLDsl.g:634:5: (lv_filename_6_0= ruleEString )
+                    // InternalETLDsl.g:635:6: lv_filename_6_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getEntityAccess().getFilenameEStringParserRuleCall_3_3_0());
+                    					
+                    pushFollow(FOLLOW_25);
+                    lv_filename_6_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getEntityRule());
+                    						}
+                    						set(
+                    							current,
+                    							"filename",
+                    							lv_filename_6_0,
+                    							"org.etl_modeling.etldsl.ETLDsl.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_7=(Token)match(input,27,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getEntityAccess().getColumnDelimiterKeyword_3_4());
+                    			
+                    // InternalETLDsl.g:656:4: ( (lv_delimiter_8_0= ruleEString ) )
+                    // InternalETLDsl.g:657:5: (lv_delimiter_8_0= ruleEString )
+                    {
+                    // InternalETLDsl.g:657:5: (lv_delimiter_8_0= ruleEString )
+                    // InternalETLDsl.g:658:6: lv_delimiter_8_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getEntityAccess().getDelimiterEStringParserRuleCall_3_5_0());
+                    					
+                    pushFollow(FOLLOW_26);
+                    lv_delimiter_8_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getEntityRule());
+                    						}
+                    						set(
+                    							current,
+                    							"delimiter",
+                    							lv_delimiter_8_0,
+                    							"org.etl_modeling.etldsl.ETLDsl.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_9=(Token)match(input,28,FOLLOW_3); 
+
+                    				newLeafNode(otherlv_9, grammarAccess.getEntityAccess().getLineDelimiterKeyword_3_6());
+                    			
+                    // InternalETLDsl.g:679:4: ( (lv_lineend_10_0= ruleEString ) )
+                    // InternalETLDsl.g:680:5: (lv_lineend_10_0= ruleEString )
+                    {
+                    // InternalETLDsl.g:680:5: (lv_lineend_10_0= ruleEString )
+                    // InternalETLDsl.g:681:6: lv_lineend_10_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getEntityAccess().getLineendEStringParserRuleCall_3_7_0());
+                    					
+                    pushFollow(FOLLOW_22);
+                    lv_lineend_10_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getEntityRule());
+                    						}
+                    						set(
+                    							current,
+                    							"lineend",
+                    							lv_lineend_10_0,
+                    							"org.etl_modeling.etldsl.ETLDsl.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_11=(Token)match(input,22,FOLLOW_17); 
+
+                    				newLeafNode(otherlv_11, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_3_8());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_12=(Token)match(input,20,FOLLOW_27); 
+
+            			newLeafNode(otherlv_12, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalETLDsl.g:654:3: (otherlv_4= 'entityFields' otherlv_5= '{' ( (lv_entityField_6_0= ruleField ) ) ( (lv_entityField_7_0= ruleField ) )* otherlv_8= '}' )?
+            // InternalETLDsl.g:707:3: (otherlv_13= 'entityFields' otherlv_14= '{' ( (lv_entityField_15_0= ruleField ) ) ( (lv_entityField_16_0= ruleField ) )* otherlv_17= '}' )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==27) ) {
+            if ( (LA18_0==29) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
-                    // InternalETLDsl.g:655:4: otherlv_4= 'entityFields' otherlv_5= '{' ( (lv_entityField_6_0= ruleField ) ) ( (lv_entityField_7_0= ruleField ) )* otherlv_8= '}'
+                    // InternalETLDsl.g:708:4: otherlv_13= 'entityFields' otherlv_14= '{' ( (lv_entityField_15_0= ruleField ) ) ( (lv_entityField_16_0= ruleField ) )* otherlv_17= '}'
                     {
-                    otherlv_4=(Token)match(input,27,FOLLOW_17); 
+                    otherlv_13=(Token)match(input,29,FOLLOW_17); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getEntityFieldsKeyword_4_0());
+                    				newLeafNode(otherlv_13, grammarAccess.getEntityAccess().getEntityFieldsKeyword_5_0());
                     			
-                    otherlv_5=(Token)match(input,22,FOLLOW_19); 
+                    otherlv_14=(Token)match(input,20,FOLLOW_19); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_4_1());
+                    				newLeafNode(otherlv_14, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalETLDsl.g:663:4: ( (lv_entityField_6_0= ruleField ) )
-                    // InternalETLDsl.g:664:5: (lv_entityField_6_0= ruleField )
+                    // InternalETLDsl.g:716:4: ( (lv_entityField_15_0= ruleField ) )
+                    // InternalETLDsl.g:717:5: (lv_entityField_15_0= ruleField )
                     {
-                    // InternalETLDsl.g:664:5: (lv_entityField_6_0= ruleField )
-                    // InternalETLDsl.g:665:6: lv_entityField_6_0= ruleField
+                    // InternalETLDsl.g:717:5: (lv_entityField_15_0= ruleField )
+                    // InternalETLDsl.g:718:6: lv_entityField_15_0= ruleField
                     {
 
-                    						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_4_2_0());
+                    						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_5_2_0());
                     					
-                    pushFollow(FOLLOW_24);
-                    lv_entityField_6_0=ruleField();
+                    pushFollow(FOLLOW_28);
+                    lv_entityField_15_0=ruleField();
 
                     state._fsp--;
 
@@ -1706,7 +1743,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"entityField",
-                    							lv_entityField_6_0,
+                    							lv_entityField_15_0,
                     							"org.etl_modeling.etldsl.ETLDsl.Field");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1716,29 +1753,29 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:682:4: ( (lv_entityField_7_0= ruleField ) )*
+                    // InternalETLDsl.g:735:4: ( (lv_entityField_16_0= ruleField ) )*
                     loop17:
                     do {
                         int alt17=2;
                         int LA17_0 = input.LA(1);
 
-                        if ( (LA17_0==30) ) {
+                        if ( (LA17_0==32) ) {
                             alt17=1;
                         }
 
 
                         switch (alt17) {
                     	case 1 :
-                    	    // InternalETLDsl.g:683:5: (lv_entityField_7_0= ruleField )
+                    	    // InternalETLDsl.g:736:5: (lv_entityField_16_0= ruleField )
                     	    {
-                    	    // InternalETLDsl.g:683:5: (lv_entityField_7_0= ruleField )
-                    	    // InternalETLDsl.g:684:6: lv_entityField_7_0= ruleField
+                    	    // InternalETLDsl.g:736:5: (lv_entityField_16_0= ruleField )
+                    	    // InternalETLDsl.g:737:6: lv_entityField_16_0= ruleField
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_4_3_0());
+                    	    						newCompositeNode(grammarAccess.getEntityAccess().getEntityFieldFieldParserRuleCall_5_3_0());
                     	    					
-                    	    pushFollow(FOLLOW_24);
-                    	    lv_entityField_7_0=ruleField();
+                    	    pushFollow(FOLLOW_28);
+                    	    lv_entityField_16_0=ruleField();
 
                     	    state._fsp--;
 
@@ -1749,7 +1786,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"entityField",
-                    	    							lv_entityField_7_0,
+                    	    							lv_entityField_16_0,
                     	    							"org.etl_modeling.etldsl.ETLDsl.Field");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -1765,9 +1802,9 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,24,FOLLOW_25); 
+                    otherlv_17=(Token)match(input,22,FOLLOW_29); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_4_4());
+                    				newLeafNode(otherlv_17, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5_4());
                     			
 
                     }
@@ -1775,36 +1812,36 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:706:3: (otherlv_9= 'Includes' otherlv_10= '{' ( (lv_include_11_0= ruleInclude ) ) (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )* otherlv_14= '}' )?
+            // InternalETLDsl.g:759:3: (otherlv_18= 'Includes' otherlv_19= '{' ( (lv_include_20_0= ruleInclude ) ) (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )* otherlv_23= '}' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==28) ) {
+            if ( (LA20_0==30) ) {
                 alt20=1;
             }
             switch (alt20) {
                 case 1 :
-                    // InternalETLDsl.g:707:4: otherlv_9= 'Includes' otherlv_10= '{' ( (lv_include_11_0= ruleInclude ) ) (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )* otherlv_14= '}'
+                    // InternalETLDsl.g:760:4: otherlv_18= 'Includes' otherlv_19= '{' ( (lv_include_20_0= ruleInclude ) ) (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )* otherlv_23= '}'
                     {
-                    otherlv_9=(Token)match(input,28,FOLLOW_17); 
+                    otherlv_18=(Token)match(input,30,FOLLOW_17); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getEntityAccess().getIncludesKeyword_5_0());
+                    				newLeafNode(otherlv_18, grammarAccess.getEntityAccess().getIncludesKeyword_6_0());
                     			
-                    otherlv_10=(Token)match(input,22,FOLLOW_26); 
+                    otherlv_19=(Token)match(input,20,FOLLOW_30); 
 
-                    				newLeafNode(otherlv_10, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_5_1());
+                    				newLeafNode(otherlv_19, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_6_1());
                     			
-                    // InternalETLDsl.g:715:4: ( (lv_include_11_0= ruleInclude ) )
-                    // InternalETLDsl.g:716:5: (lv_include_11_0= ruleInclude )
+                    // InternalETLDsl.g:768:4: ( (lv_include_20_0= ruleInclude ) )
+                    // InternalETLDsl.g:769:5: (lv_include_20_0= ruleInclude )
                     {
-                    // InternalETLDsl.g:716:5: (lv_include_11_0= ruleInclude )
-                    // InternalETLDsl.g:717:6: lv_include_11_0= ruleInclude
+                    // InternalETLDsl.g:769:5: (lv_include_20_0= ruleInclude )
+                    // InternalETLDsl.g:770:6: lv_include_20_0= ruleInclude
                     {
 
-                    						newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_5_2_0());
+                    						newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_6_2_0());
                     					
                     pushFollow(FOLLOW_20);
-                    lv_include_11_0=ruleInclude();
+                    lv_include_20_0=ruleInclude();
 
                     state._fsp--;
 
@@ -1815,7 +1852,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"include",
-                    							lv_include_11_0,
+                    							lv_include_20_0,
                     							"org.etl_modeling.etldsl.ETLDsl.Include");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1825,7 +1862,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:734:4: (otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) ) )*
+                    // InternalETLDsl.g:787:4: (otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) ) )*
                     loop19:
                     do {
                         int alt19=2;
@@ -1838,23 +1875,23 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt19) {
                     	case 1 :
-                    	    // InternalETLDsl.g:735:5: otherlv_12= ',' ( (lv_include_13_0= ruleInclude ) )
+                    	    // InternalETLDsl.g:788:5: otherlv_21= ',' ( (lv_include_22_0= ruleInclude ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,16,FOLLOW_26); 
+                    	    otherlv_21=(Token)match(input,16,FOLLOW_30); 
 
-                    	    					newLeafNode(otherlv_12, grammarAccess.getEntityAccess().getCommaKeyword_5_3_0());
+                    	    					newLeafNode(otherlv_21, grammarAccess.getEntityAccess().getCommaKeyword_6_3_0());
                     	    				
-                    	    // InternalETLDsl.g:739:5: ( (lv_include_13_0= ruleInclude ) )
-                    	    // InternalETLDsl.g:740:6: (lv_include_13_0= ruleInclude )
+                    	    // InternalETLDsl.g:792:5: ( (lv_include_22_0= ruleInclude ) )
+                    	    // InternalETLDsl.g:793:6: (lv_include_22_0= ruleInclude )
                     	    {
-                    	    // InternalETLDsl.g:740:6: (lv_include_13_0= ruleInclude )
-                    	    // InternalETLDsl.g:741:7: lv_include_13_0= ruleInclude
+                    	    // InternalETLDsl.g:793:6: (lv_include_22_0= ruleInclude )
+                    	    // InternalETLDsl.g:794:7: lv_include_22_0= ruleInclude
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_5_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getEntityAccess().getIncludeIncludeParserRuleCall_6_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_20);
-                    	    lv_include_13_0=ruleInclude();
+                    	    lv_include_22_0=ruleInclude();
 
                     	    state._fsp--;
 
@@ -1865,7 +1902,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"include",
-                    	    								lv_include_13_0,
+                    	    								lv_include_22_0,
                     	    								"org.etl_modeling.etldsl.ETLDsl.Include");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -1884,9 +1921,9 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,24,FOLLOW_27); 
+                    otherlv_23=(Token)match(input,22,FOLLOW_31); 
 
-                    				newLeafNode(otherlv_14, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5_4());
+                    				newLeafNode(otherlv_23, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6_4());
                     			
 
                     }
@@ -1894,36 +1931,36 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:764:3: (otherlv_15= 'Relationships' otherlv_16= '{' ( (lv_relationships_17_0= ruleRelationship ) ) (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )* otherlv_20= '}' )?
+            // InternalETLDsl.g:817:3: (otherlv_24= 'Relationships' otherlv_25= '{' ( (lv_relationships_26_0= ruleRelationship ) ) (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )* otherlv_29= '}' )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==29) ) {
+            if ( (LA22_0==31) ) {
                 alt22=1;
             }
             switch (alt22) {
                 case 1 :
-                    // InternalETLDsl.g:765:4: otherlv_15= 'Relationships' otherlv_16= '{' ( (lv_relationships_17_0= ruleRelationship ) ) (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )* otherlv_20= '}'
+                    // InternalETLDsl.g:818:4: otherlv_24= 'Relationships' otherlv_25= '{' ( (lv_relationships_26_0= ruleRelationship ) ) (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )* otherlv_29= '}'
                     {
-                    otherlv_15=(Token)match(input,29,FOLLOW_17); 
+                    otherlv_24=(Token)match(input,31,FOLLOW_17); 
 
-                    				newLeafNode(otherlv_15, grammarAccess.getEntityAccess().getRelationshipsKeyword_6_0());
+                    				newLeafNode(otherlv_24, grammarAccess.getEntityAccess().getRelationshipsKeyword_7_0());
                     			
-                    otherlv_16=(Token)match(input,22,FOLLOW_28); 
+                    otherlv_25=(Token)match(input,20,FOLLOW_32); 
 
-                    				newLeafNode(otherlv_16, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_6_1());
+                    				newLeafNode(otherlv_25, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_7_1());
                     			
-                    // InternalETLDsl.g:773:4: ( (lv_relationships_17_0= ruleRelationship ) )
-                    // InternalETLDsl.g:774:5: (lv_relationships_17_0= ruleRelationship )
+                    // InternalETLDsl.g:826:4: ( (lv_relationships_26_0= ruleRelationship ) )
+                    // InternalETLDsl.g:827:5: (lv_relationships_26_0= ruleRelationship )
                     {
-                    // InternalETLDsl.g:774:5: (lv_relationships_17_0= ruleRelationship )
-                    // InternalETLDsl.g:775:6: lv_relationships_17_0= ruleRelationship
+                    // InternalETLDsl.g:827:5: (lv_relationships_26_0= ruleRelationship )
+                    // InternalETLDsl.g:828:6: lv_relationships_26_0= ruleRelationship
                     {
 
-                    						newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_6_2_0());
+                    						newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_7_2_0());
                     					
                     pushFollow(FOLLOW_20);
-                    lv_relationships_17_0=ruleRelationship();
+                    lv_relationships_26_0=ruleRelationship();
 
                     state._fsp--;
 
@@ -1934,7 +1971,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"relationships",
-                    							lv_relationships_17_0,
+                    							lv_relationships_26_0,
                     							"org.etl_modeling.etldsl.ETLDsl.Relationship");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1944,7 +1981,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:792:4: (otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) ) )*
+                    // InternalETLDsl.g:845:4: (otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) ) )*
                     loop21:
                     do {
                         int alt21=2;
@@ -1957,23 +1994,23 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt21) {
                     	case 1 :
-                    	    // InternalETLDsl.g:793:5: otherlv_18= ',' ( (lv_relationships_19_0= ruleRelationship ) )
+                    	    // InternalETLDsl.g:846:5: otherlv_27= ',' ( (lv_relationships_28_0= ruleRelationship ) )
                     	    {
-                    	    otherlv_18=(Token)match(input,16,FOLLOW_28); 
+                    	    otherlv_27=(Token)match(input,16,FOLLOW_32); 
 
-                    	    					newLeafNode(otherlv_18, grammarAccess.getEntityAccess().getCommaKeyword_6_3_0());
+                    	    					newLeafNode(otherlv_27, grammarAccess.getEntityAccess().getCommaKeyword_7_3_0());
                     	    				
-                    	    // InternalETLDsl.g:797:5: ( (lv_relationships_19_0= ruleRelationship ) )
-                    	    // InternalETLDsl.g:798:6: (lv_relationships_19_0= ruleRelationship )
+                    	    // InternalETLDsl.g:850:5: ( (lv_relationships_28_0= ruleRelationship ) )
+                    	    // InternalETLDsl.g:851:6: (lv_relationships_28_0= ruleRelationship )
                     	    {
-                    	    // InternalETLDsl.g:798:6: (lv_relationships_19_0= ruleRelationship )
-                    	    // InternalETLDsl.g:799:7: lv_relationships_19_0= ruleRelationship
+                    	    // InternalETLDsl.g:851:6: (lv_relationships_28_0= ruleRelationship )
+                    	    // InternalETLDsl.g:852:7: lv_relationships_28_0= ruleRelationship
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_6_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getEntityAccess().getRelationshipsRelationshipParserRuleCall_7_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_20);
-                    	    lv_relationships_19_0=ruleRelationship();
+                    	    lv_relationships_28_0=ruleRelationship();
 
                     	    state._fsp--;
 
@@ -1984,7 +2021,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"relationships",
-                    	    								lv_relationships_19_0,
+                    	    								lv_relationships_28_0,
                     	    								"org.etl_modeling.etldsl.ETLDsl.Relationship");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -2003,9 +2040,9 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_20=(Token)match(input,24,FOLLOW_22); 
+                    otherlv_29=(Token)match(input,22,FOLLOW_22); 
 
-                    				newLeafNode(otherlv_20, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6_4());
+                    				newLeafNode(otherlv_29, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7_4());
                     			
 
                     }
@@ -2013,9 +2050,9 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_21=(Token)match(input,24,FOLLOW_2); 
+            otherlv_30=(Token)match(input,22,FOLLOW_2); 
 
-            			newLeafNode(otherlv_21, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7());
+            			newLeafNode(otherlv_30, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -2040,7 +2077,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleField"
-    // InternalETLDsl.g:830:1: entryRuleField returns [EObject current=null] : iv_ruleField= ruleField EOF ;
+    // InternalETLDsl.g:883:1: entryRuleField returns [EObject current=null] : iv_ruleField= ruleField EOF ;
     public final EObject entryRuleField() throws RecognitionException {
         EObject current = null;
 
@@ -2048,8 +2085,8 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalETLDsl.g:830:46: (iv_ruleField= ruleField EOF )
-            // InternalETLDsl.g:831:2: iv_ruleField= ruleField EOF
+            // InternalETLDsl.g:883:46: (iv_ruleField= ruleField EOF )
+            // InternalETLDsl.g:884:2: iv_ruleField= ruleField EOF
             {
              newCompositeNode(grammarAccess.getFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -2076,7 +2113,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleField"
-    // InternalETLDsl.g:837:1: ruleField returns [EObject current=null] : ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? (otherlv_20= 'allowExponent:' ( (lv_allowExponent_21_0= ruleEBoolean ) ) )? (otherlv_22= 'hasImplicitComma:' ( (lv_hasImplicitComma_23_0= ruleEBoolean ) ) )? (otherlv_24= 'interfaceOnly:' ( (lv_interfaceOnly_25_0= ruleEBoolean ) ) )? (otherlv_26= 'tableOnly:' ( (lv_tableOnly_27_0= ruleEBoolean ) ) )? (otherlv_28= 'isFastChanging:' ( (lv_isFastChanging_29_0= ruleEBoolean ) ) )? ( (lv_isBusinessKey_30_0= 'BusinessKey' ) )? otherlv_31= ']' ) ;
+    // InternalETLDsl.g:890:1: ruleField returns [EObject current=null] : ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? ( (lv_allowExponent_20_0= 'allowExponent' ) )? ( (lv_hasImplicitComma_21_0= 'hasImplicitComma' ) )? ( (lv_interfaceOnly_22_0= 'interfaceOnly' ) )? ( (lv_tableOnly_23_0= 'tableOnly' ) )? ( (lv_isFastChanging_24_0= 'isFastChanging' ) )? ( (lv_isBusinessKey_25_0= 'BusinessKey' ) )? otherlv_26= ']' ) ;
     public final EObject ruleField() throws RecognitionException {
         EObject current = null;
 
@@ -2091,13 +2128,13 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         Token otherlv_14=null;
         Token otherlv_16=null;
         Token otherlv_18=null;
-        Token otherlv_20=null;
-        Token otherlv_22=null;
-        Token otherlv_24=null;
+        Token lv_allowExponent_20_0=null;
+        Token lv_hasImplicitComma_21_0=null;
+        Token lv_interfaceOnly_22_0=null;
+        Token lv_tableOnly_23_0=null;
+        Token lv_isFastChanging_24_0=null;
+        Token lv_isBusinessKey_25_0=null;
         Token otherlv_26=null;
-        Token otherlv_28=null;
-        Token lv_isBusinessKey_30_0=null;
-        Token otherlv_31=null;
         Enumerator lv_type_5_0 = null;
 
         AntlrDatatypeRuleToken lv_length_7_0 = null;
@@ -2114,29 +2151,19 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken lv_NullIndicator_19_0 = null;
 
-        AntlrDatatypeRuleToken lv_allowExponent_21_0 = null;
-
-        AntlrDatatypeRuleToken lv_hasImplicitComma_23_0 = null;
-
-        AntlrDatatypeRuleToken lv_interfaceOnly_25_0 = null;
-
-        AntlrDatatypeRuleToken lv_tableOnly_27_0 = null;
-
-        AntlrDatatypeRuleToken lv_isFastChanging_29_0 = null;
-
 
 
         	enterRule();
 
         try {
-            // InternalETLDsl.g:843:2: ( ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? (otherlv_20= 'allowExponent:' ( (lv_allowExponent_21_0= ruleEBoolean ) ) )? (otherlv_22= 'hasImplicitComma:' ( (lv_hasImplicitComma_23_0= ruleEBoolean ) ) )? (otherlv_24= 'interfaceOnly:' ( (lv_interfaceOnly_25_0= ruleEBoolean ) ) )? (otherlv_26= 'tableOnly:' ( (lv_tableOnly_27_0= ruleEBoolean ) ) )? (otherlv_28= 'isFastChanging:' ( (lv_isFastChanging_29_0= ruleEBoolean ) ) )? ( (lv_isBusinessKey_30_0= 'BusinessKey' ) )? otherlv_31= ']' ) )
-            // InternalETLDsl.g:844:2: ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? (otherlv_20= 'allowExponent:' ( (lv_allowExponent_21_0= ruleEBoolean ) ) )? (otherlv_22= 'hasImplicitComma:' ( (lv_hasImplicitComma_23_0= ruleEBoolean ) ) )? (otherlv_24= 'interfaceOnly:' ( (lv_interfaceOnly_25_0= ruleEBoolean ) ) )? (otherlv_26= 'tableOnly:' ( (lv_tableOnly_27_0= ruleEBoolean ) ) )? (otherlv_28= 'isFastChanging:' ( (lv_isFastChanging_29_0= ruleEBoolean ) ) )? ( (lv_isBusinessKey_30_0= 'BusinessKey' ) )? otherlv_31= ']' )
+            // InternalETLDsl.g:896:2: ( ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? ( (lv_allowExponent_20_0= 'allowExponent' ) )? ( (lv_hasImplicitComma_21_0= 'hasImplicitComma' ) )? ( (lv_interfaceOnly_22_0= 'interfaceOnly' ) )? ( (lv_tableOnly_23_0= 'tableOnly' ) )? ( (lv_isFastChanging_24_0= 'isFastChanging' ) )? ( (lv_isBusinessKey_25_0= 'BusinessKey' ) )? otherlv_26= ']' ) )
+            // InternalETLDsl.g:897:2: ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? ( (lv_allowExponent_20_0= 'allowExponent' ) )? ( (lv_hasImplicitComma_21_0= 'hasImplicitComma' ) )? ( (lv_interfaceOnly_22_0= 'interfaceOnly' ) )? ( (lv_tableOnly_23_0= 'tableOnly' ) )? ( (lv_isFastChanging_24_0= 'isFastChanging' ) )? ( (lv_isBusinessKey_25_0= 'BusinessKey' ) )? otherlv_26= ']' )
             {
-            // InternalETLDsl.g:844:2: ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? (otherlv_20= 'allowExponent:' ( (lv_allowExponent_21_0= ruleEBoolean ) ) )? (otherlv_22= 'hasImplicitComma:' ( (lv_hasImplicitComma_23_0= ruleEBoolean ) ) )? (otherlv_24= 'interfaceOnly:' ( (lv_interfaceOnly_25_0= ruleEBoolean ) ) )? (otherlv_26= 'tableOnly:' ( (lv_tableOnly_27_0= ruleEBoolean ) ) )? (otherlv_28= 'isFastChanging:' ( (lv_isFastChanging_29_0= ruleEBoolean ) ) )? ( (lv_isBusinessKey_30_0= 'BusinessKey' ) )? otherlv_31= ']' )
-            // InternalETLDsl.g:845:3: () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? (otherlv_20= 'allowExponent:' ( (lv_allowExponent_21_0= ruleEBoolean ) ) )? (otherlv_22= 'hasImplicitComma:' ( (lv_hasImplicitComma_23_0= ruleEBoolean ) ) )? (otherlv_24= 'interfaceOnly:' ( (lv_interfaceOnly_25_0= ruleEBoolean ) ) )? (otherlv_26= 'tableOnly:' ( (lv_tableOnly_27_0= ruleEBoolean ) ) )? (otherlv_28= 'isFastChanging:' ( (lv_isFastChanging_29_0= ruleEBoolean ) ) )? ( (lv_isBusinessKey_30_0= 'BusinessKey' ) )? otherlv_31= ']'
+            // InternalETLDsl.g:897:2: ( () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? ( (lv_allowExponent_20_0= 'allowExponent' ) )? ( (lv_hasImplicitComma_21_0= 'hasImplicitComma' ) )? ( (lv_interfaceOnly_22_0= 'interfaceOnly' ) )? ( (lv_tableOnly_23_0= 'tableOnly' ) )? ( (lv_isFastChanging_24_0= 'isFastChanging' ) )? ( (lv_isBusinessKey_25_0= 'BusinessKey' ) )? otherlv_26= ']' )
+            // InternalETLDsl.g:898:3: () otherlv_1= 'Field' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '[' (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) ) (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )? (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )? (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )? (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )? (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )? (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )? (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )? ( (lv_allowExponent_20_0= 'allowExponent' ) )? ( (lv_hasImplicitComma_21_0= 'hasImplicitComma' ) )? ( (lv_interfaceOnly_22_0= 'interfaceOnly' ) )? ( (lv_tableOnly_23_0= 'tableOnly' ) )? ( (lv_isFastChanging_24_0= 'isFastChanging' ) )? ( (lv_isBusinessKey_25_0= 'BusinessKey' ) )? otherlv_26= ']'
             {
-            // InternalETLDsl.g:845:3: ()
-            // InternalETLDsl.g:846:4: 
+            // InternalETLDsl.g:898:3: ()
+            // InternalETLDsl.g:899:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2146,17 +2173,17 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,30,FOLLOW_15); 
+            otherlv_1=(Token)match(input,32,FOLLOW_15); 
 
             			newLeafNode(otherlv_1, grammarAccess.getFieldAccess().getFieldKeyword_1());
             		
-            // InternalETLDsl.g:856:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalETLDsl.g:857:4: (lv_name_2_0= RULE_ID )
+            // InternalETLDsl.g:909:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalETLDsl.g:910:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalETLDsl.g:857:4: (lv_name_2_0= RULE_ID )
-            // InternalETLDsl.g:858:5: lv_name_2_0= RULE_ID
+            // InternalETLDsl.g:910:4: (lv_name_2_0= RULE_ID )
+            // InternalETLDsl.g:911:5: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_29); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_33); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getFieldAccess().getNameIDTerminalRuleCall_2_0());
             				
@@ -2176,27 +2203,27 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,31,FOLLOW_30); 
+            otherlv_3=(Token)match(input,33,FOLLOW_34); 
 
             			newLeafNode(otherlv_3, grammarAccess.getFieldAccess().getLeftSquareBracketKeyword_3());
             		
-            // InternalETLDsl.g:878:3: (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) )
-            // InternalETLDsl.g:879:4: otherlv_4= 'type' ( (lv_type_5_0= ruleft ) )
+            // InternalETLDsl.g:931:3: (otherlv_4= 'type' ( (lv_type_5_0= ruleft ) ) )
+            // InternalETLDsl.g:932:4: otherlv_4= 'type' ( (lv_type_5_0= ruleft ) )
             {
-            otherlv_4=(Token)match(input,32,FOLLOW_31); 
+            otherlv_4=(Token)match(input,34,FOLLOW_35); 
 
             				newLeafNode(otherlv_4, grammarAccess.getFieldAccess().getTypeKeyword_4_0());
             			
-            // InternalETLDsl.g:883:4: ( (lv_type_5_0= ruleft ) )
-            // InternalETLDsl.g:884:5: (lv_type_5_0= ruleft )
+            // InternalETLDsl.g:936:4: ( (lv_type_5_0= ruleft ) )
+            // InternalETLDsl.g:937:5: (lv_type_5_0= ruleft )
             {
-            // InternalETLDsl.g:884:5: (lv_type_5_0= ruleft )
-            // InternalETLDsl.g:885:6: lv_type_5_0= ruleft
+            // InternalETLDsl.g:937:5: (lv_type_5_0= ruleft )
+            // InternalETLDsl.g:938:6: lv_type_5_0= ruleft
             {
 
             						newCompositeNode(grammarAccess.getFieldAccess().getTypeFtEnumRuleCall_4_1_0());
             					
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_36);
             lv_type_5_0=ruleft();
 
             state._fsp--;
@@ -2221,31 +2248,31 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:903:3: (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )?
+            // InternalETLDsl.g:956:3: (otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) ) )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==33) ) {
+            if ( (LA23_0==35) ) {
                 alt23=1;
             }
             switch (alt23) {
                 case 1 :
-                    // InternalETLDsl.g:904:4: otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) )
+                    // InternalETLDsl.g:957:4: otherlv_6= 'length' ( (lv_length_7_0= ruleEInt ) )
                     {
-                    otherlv_6=(Token)match(input,33,FOLLOW_33); 
+                    otherlv_6=(Token)match(input,35,FOLLOW_37); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getFieldAccess().getLengthKeyword_5_0());
                     			
-                    // InternalETLDsl.g:908:4: ( (lv_length_7_0= ruleEInt ) )
-                    // InternalETLDsl.g:909:5: (lv_length_7_0= ruleEInt )
+                    // InternalETLDsl.g:961:4: ( (lv_length_7_0= ruleEInt ) )
+                    // InternalETLDsl.g:962:5: (lv_length_7_0= ruleEInt )
                     {
-                    // InternalETLDsl.g:909:5: (lv_length_7_0= ruleEInt )
-                    // InternalETLDsl.g:910:6: lv_length_7_0= ruleEInt
+                    // InternalETLDsl.g:962:5: (lv_length_7_0= ruleEInt )
+                    // InternalETLDsl.g:963:6: lv_length_7_0= ruleEInt
                     {
 
                     						newCompositeNode(grammarAccess.getFieldAccess().getLengthEIntParserRuleCall_5_1_0());
                     					
-                    pushFollow(FOLLOW_34);
+                    pushFollow(FOLLOW_38);
                     lv_length_7_0=ruleEInt();
 
                     state._fsp--;
@@ -2273,31 +2300,31 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:928:3: (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )?
+            // InternalETLDsl.g:981:3: (otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) ) )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
-            if ( (LA24_0==34) ) {
+            if ( (LA24_0==36) ) {
                 alt24=1;
             }
             switch (alt24) {
                 case 1 :
-                    // InternalETLDsl.g:929:4: otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) )
+                    // InternalETLDsl.g:982:4: otherlv_8= 'precision' ( (lv_precision_9_0= ruleEInt ) )
                     {
-                    otherlv_8=(Token)match(input,34,FOLLOW_33); 
+                    otherlv_8=(Token)match(input,36,FOLLOW_37); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getFieldAccess().getPrecisionKeyword_6_0());
                     			
-                    // InternalETLDsl.g:933:4: ( (lv_precision_9_0= ruleEInt ) )
-                    // InternalETLDsl.g:934:5: (lv_precision_9_0= ruleEInt )
+                    // InternalETLDsl.g:986:4: ( (lv_precision_9_0= ruleEInt ) )
+                    // InternalETLDsl.g:987:5: (lv_precision_9_0= ruleEInt )
                     {
-                    // InternalETLDsl.g:934:5: (lv_precision_9_0= ruleEInt )
-                    // InternalETLDsl.g:935:6: lv_precision_9_0= ruleEInt
+                    // InternalETLDsl.g:987:5: (lv_precision_9_0= ruleEInt )
+                    // InternalETLDsl.g:988:6: lv_precision_9_0= ruleEInt
                     {
 
                     						newCompositeNode(grammarAccess.getFieldAccess().getPrecisionEIntParserRuleCall_6_1_0());
                     					
-                    pushFollow(FOLLOW_35);
+                    pushFollow(FOLLOW_39);
                     lv_precision_9_0=ruleEInt();
 
                     state._fsp--;
@@ -2325,31 +2352,31 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:953:3: (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )?
+            // InternalETLDsl.g:1006:3: (otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) ) )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
-            if ( (LA25_0==35) ) {
+            if ( (LA25_0==37) ) {
                 alt25=1;
             }
             switch (alt25) {
                 case 1 :
-                    // InternalETLDsl.g:954:4: otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) )
+                    // InternalETLDsl.g:1007:4: otherlv_10= 'scale' ( (lv_scale_11_0= ruleEInt ) )
                     {
-                    otherlv_10=(Token)match(input,35,FOLLOW_33); 
+                    otherlv_10=(Token)match(input,37,FOLLOW_37); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getFieldAccess().getScaleKeyword_7_0());
                     			
-                    // InternalETLDsl.g:958:4: ( (lv_scale_11_0= ruleEInt ) )
-                    // InternalETLDsl.g:959:5: (lv_scale_11_0= ruleEInt )
+                    // InternalETLDsl.g:1011:4: ( (lv_scale_11_0= ruleEInt ) )
+                    // InternalETLDsl.g:1012:5: (lv_scale_11_0= ruleEInt )
                     {
-                    // InternalETLDsl.g:959:5: (lv_scale_11_0= ruleEInt )
-                    // InternalETLDsl.g:960:6: lv_scale_11_0= ruleEInt
+                    // InternalETLDsl.g:1012:5: (lv_scale_11_0= ruleEInt )
+                    // InternalETLDsl.g:1013:6: lv_scale_11_0= ruleEInt
                     {
 
                     						newCompositeNode(grammarAccess.getFieldAccess().getScaleEIntParserRuleCall_7_1_0());
                     					
-                    pushFollow(FOLLOW_36);
+                    pushFollow(FOLLOW_40);
                     lv_scale_11_0=ruleEInt();
 
                     state._fsp--;
@@ -2377,31 +2404,31 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:978:3: (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )?
+            // InternalETLDsl.g:1031:3: (otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) ) )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==36) ) {
+            if ( (LA26_0==38) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // InternalETLDsl.g:979:4: otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) )
+                    // InternalETLDsl.g:1032:4: otherlv_12= 'original_name' ( (lv_original_name_13_0= ruleEString ) )
                     {
-                    otherlv_12=(Token)match(input,36,FOLLOW_3); 
+                    otherlv_12=(Token)match(input,38,FOLLOW_3); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getFieldAccess().getOriginal_nameKeyword_8_0());
                     			
-                    // InternalETLDsl.g:983:4: ( (lv_original_name_13_0= ruleEString ) )
-                    // InternalETLDsl.g:984:5: (lv_original_name_13_0= ruleEString )
+                    // InternalETLDsl.g:1036:4: ( (lv_original_name_13_0= ruleEString ) )
+                    // InternalETLDsl.g:1037:5: (lv_original_name_13_0= ruleEString )
                     {
-                    // InternalETLDsl.g:984:5: (lv_original_name_13_0= ruleEString )
-                    // InternalETLDsl.g:985:6: lv_original_name_13_0= ruleEString
+                    // InternalETLDsl.g:1037:5: (lv_original_name_13_0= ruleEString )
+                    // InternalETLDsl.g:1038:6: lv_original_name_13_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getFieldAccess().getOriginal_nameEStringParserRuleCall_8_1_0());
                     					
-                    pushFollow(FOLLOW_37);
+                    pushFollow(FOLLOW_41);
                     lv_original_name_13_0=ruleEString();
 
                     state._fsp--;
@@ -2429,31 +2456,31 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1003:3: (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )?
+            // InternalETLDsl.g:1056:3: (otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) ) )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==37) ) {
+            if ( (LA27_0==39) ) {
                 alt27=1;
             }
             switch (alt27) {
                 case 1 :
-                    // InternalETLDsl.g:1004:4: otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) )
+                    // InternalETLDsl.g:1057:4: otherlv_14= 'short_describtion' ( (lv_short_describtion_15_0= ruleEString ) )
                     {
-                    otherlv_14=(Token)match(input,37,FOLLOW_3); 
+                    otherlv_14=(Token)match(input,39,FOLLOW_3); 
 
                     				newLeafNode(otherlv_14, grammarAccess.getFieldAccess().getShort_describtionKeyword_9_0());
                     			
-                    // InternalETLDsl.g:1008:4: ( (lv_short_describtion_15_0= ruleEString ) )
-                    // InternalETLDsl.g:1009:5: (lv_short_describtion_15_0= ruleEString )
+                    // InternalETLDsl.g:1061:4: ( (lv_short_describtion_15_0= ruleEString ) )
+                    // InternalETLDsl.g:1062:5: (lv_short_describtion_15_0= ruleEString )
                     {
-                    // InternalETLDsl.g:1009:5: (lv_short_describtion_15_0= ruleEString )
-                    // InternalETLDsl.g:1010:6: lv_short_describtion_15_0= ruleEString
+                    // InternalETLDsl.g:1062:5: (lv_short_describtion_15_0= ruleEString )
+                    // InternalETLDsl.g:1063:6: lv_short_describtion_15_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getFieldAccess().getShort_describtionEStringParserRuleCall_9_1_0());
                     					
-                    pushFollow(FOLLOW_38);
+                    pushFollow(FOLLOW_42);
                     lv_short_describtion_15_0=ruleEString();
 
                     state._fsp--;
@@ -2481,31 +2508,31 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1028:3: (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )?
+            // InternalETLDsl.g:1081:3: (otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) ) )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
-            if ( (LA28_0==38) ) {
+            if ( (LA28_0==40) ) {
                 alt28=1;
             }
             switch (alt28) {
                 case 1 :
-                    // InternalETLDsl.g:1029:4: otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) )
+                    // InternalETLDsl.g:1082:4: otherlv_16= 'dateFormat' ( (lv_dateFormat_17_0= ruleEString ) )
                     {
-                    otherlv_16=(Token)match(input,38,FOLLOW_3); 
+                    otherlv_16=(Token)match(input,40,FOLLOW_3); 
 
                     				newLeafNode(otherlv_16, grammarAccess.getFieldAccess().getDateFormatKeyword_10_0());
                     			
-                    // InternalETLDsl.g:1033:4: ( (lv_dateFormat_17_0= ruleEString ) )
-                    // InternalETLDsl.g:1034:5: (lv_dateFormat_17_0= ruleEString )
+                    // InternalETLDsl.g:1086:4: ( (lv_dateFormat_17_0= ruleEString ) )
+                    // InternalETLDsl.g:1087:5: (lv_dateFormat_17_0= ruleEString )
                     {
-                    // InternalETLDsl.g:1034:5: (lv_dateFormat_17_0= ruleEString )
-                    // InternalETLDsl.g:1035:6: lv_dateFormat_17_0= ruleEString
+                    // InternalETLDsl.g:1087:5: (lv_dateFormat_17_0= ruleEString )
+                    // InternalETLDsl.g:1088:6: lv_dateFormat_17_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getFieldAccess().getDateFormatEStringParserRuleCall_10_1_0());
                     					
-                    pushFollow(FOLLOW_39);
+                    pushFollow(FOLLOW_43);
                     lv_dateFormat_17_0=ruleEString();
 
                     state._fsp--;
@@ -2533,31 +2560,31 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1053:3: (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )?
+            // InternalETLDsl.g:1106:3: (otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) ) )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( (LA29_0==39) ) {
+            if ( (LA29_0==41) ) {
                 alt29=1;
             }
             switch (alt29) {
                 case 1 :
-                    // InternalETLDsl.g:1054:4: otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) )
+                    // InternalETLDsl.g:1107:4: otherlv_18= 'NullIndicator' ( (lv_NullIndicator_19_0= ruleEString ) )
                     {
-                    otherlv_18=(Token)match(input,39,FOLLOW_3); 
+                    otherlv_18=(Token)match(input,41,FOLLOW_3); 
 
                     				newLeafNode(otherlv_18, grammarAccess.getFieldAccess().getNullIndicatorKeyword_11_0());
                     			
-                    // InternalETLDsl.g:1058:4: ( (lv_NullIndicator_19_0= ruleEString ) )
-                    // InternalETLDsl.g:1059:5: (lv_NullIndicator_19_0= ruleEString )
+                    // InternalETLDsl.g:1111:4: ( (lv_NullIndicator_19_0= ruleEString ) )
+                    // InternalETLDsl.g:1112:5: (lv_NullIndicator_19_0= ruleEString )
                     {
-                    // InternalETLDsl.g:1059:5: (lv_NullIndicator_19_0= ruleEString )
-                    // InternalETLDsl.g:1060:6: lv_NullIndicator_19_0= ruleEString
+                    // InternalETLDsl.g:1112:5: (lv_NullIndicator_19_0= ruleEString )
+                    // InternalETLDsl.g:1113:6: lv_NullIndicator_19_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getFieldAccess().getNullIndicatorEStringParserRuleCall_11_1_0());
                     					
-                    pushFollow(FOLLOW_40);
+                    pushFollow(FOLLOW_44);
                     lv_NullIndicator_19_0=ruleEString();
 
                     state._fsp--;
@@ -2585,289 +2612,29 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1078:3: (otherlv_20= 'allowExponent:' ( (lv_allowExponent_21_0= ruleEBoolean ) ) )?
+            // InternalETLDsl.g:1131:3: ( (lv_allowExponent_20_0= 'allowExponent' ) )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( (LA30_0==40) ) {
+            if ( (LA30_0==42) ) {
                 alt30=1;
             }
             switch (alt30) {
                 case 1 :
-                    // InternalETLDsl.g:1079:4: otherlv_20= 'allowExponent:' ( (lv_allowExponent_21_0= ruleEBoolean ) )
+                    // InternalETLDsl.g:1132:4: (lv_allowExponent_20_0= 'allowExponent' )
                     {
-                    otherlv_20=(Token)match(input,40,FOLLOW_41); 
-
-                    				newLeafNode(otherlv_20, grammarAccess.getFieldAccess().getAllowExponentKeyword_12_0());
-                    			
-                    // InternalETLDsl.g:1083:4: ( (lv_allowExponent_21_0= ruleEBoolean ) )
-                    // InternalETLDsl.g:1084:5: (lv_allowExponent_21_0= ruleEBoolean )
+                    // InternalETLDsl.g:1132:4: (lv_allowExponent_20_0= 'allowExponent' )
+                    // InternalETLDsl.g:1133:5: lv_allowExponent_20_0= 'allowExponent'
                     {
-                    // InternalETLDsl.g:1084:5: (lv_allowExponent_21_0= ruleEBoolean )
-                    // InternalETLDsl.g:1085:6: lv_allowExponent_21_0= ruleEBoolean
-                    {
+                    lv_allowExponent_20_0=(Token)match(input,42,FOLLOW_45); 
 
-                    						newCompositeNode(grammarAccess.getFieldAccess().getAllowExponentEBooleanParserRuleCall_12_1_0());
-                    					
-                    pushFollow(FOLLOW_42);
-                    lv_allowExponent_21_0=ruleEBoolean();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFieldRule());
-                    						}
-                    						set(
-                    							current,
-                    							"allowExponent",
-                    							lv_allowExponent_21_0 != null,
-                    							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalETLDsl.g:1103:3: (otherlv_22= 'hasImplicitComma:' ( (lv_hasImplicitComma_23_0= ruleEBoolean ) ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
-
-            if ( (LA31_0==41) ) {
-                alt31=1;
-            }
-            switch (alt31) {
-                case 1 :
-                    // InternalETLDsl.g:1104:4: otherlv_22= 'hasImplicitComma:' ( (lv_hasImplicitComma_23_0= ruleEBoolean ) )
-                    {
-                    otherlv_22=(Token)match(input,41,FOLLOW_41); 
-
-                    				newLeafNode(otherlv_22, grammarAccess.getFieldAccess().getHasImplicitCommaKeyword_13_0());
-                    			
-                    // InternalETLDsl.g:1108:4: ( (lv_hasImplicitComma_23_0= ruleEBoolean ) )
-                    // InternalETLDsl.g:1109:5: (lv_hasImplicitComma_23_0= ruleEBoolean )
-                    {
-                    // InternalETLDsl.g:1109:5: (lv_hasImplicitComma_23_0= ruleEBoolean )
-                    // InternalETLDsl.g:1110:6: lv_hasImplicitComma_23_0= ruleEBoolean
-                    {
-
-                    						newCompositeNode(grammarAccess.getFieldAccess().getHasImplicitCommaEBooleanParserRuleCall_13_1_0());
-                    					
-                    pushFollow(FOLLOW_43);
-                    lv_hasImplicitComma_23_0=ruleEBoolean();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFieldRule());
-                    						}
-                    						set(
-                    							current,
-                    							"hasImplicitComma",
-                    							lv_hasImplicitComma_23_0 != null,
-                    							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalETLDsl.g:1128:3: (otherlv_24= 'interfaceOnly:' ( (lv_interfaceOnly_25_0= ruleEBoolean ) ) )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
-
-            if ( (LA32_0==42) ) {
-                alt32=1;
-            }
-            switch (alt32) {
-                case 1 :
-                    // InternalETLDsl.g:1129:4: otherlv_24= 'interfaceOnly:' ( (lv_interfaceOnly_25_0= ruleEBoolean ) )
-                    {
-                    otherlv_24=(Token)match(input,42,FOLLOW_41); 
-
-                    				newLeafNode(otherlv_24, grammarAccess.getFieldAccess().getInterfaceOnlyKeyword_14_0());
-                    			
-                    // InternalETLDsl.g:1133:4: ( (lv_interfaceOnly_25_0= ruleEBoolean ) )
-                    // InternalETLDsl.g:1134:5: (lv_interfaceOnly_25_0= ruleEBoolean )
-                    {
-                    // InternalETLDsl.g:1134:5: (lv_interfaceOnly_25_0= ruleEBoolean )
-                    // InternalETLDsl.g:1135:6: lv_interfaceOnly_25_0= ruleEBoolean
-                    {
-
-                    						newCompositeNode(grammarAccess.getFieldAccess().getInterfaceOnlyEBooleanParserRuleCall_14_1_0());
-                    					
-                    pushFollow(FOLLOW_44);
-                    lv_interfaceOnly_25_0=ruleEBoolean();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFieldRule());
-                    						}
-                    						set(
-                    							current,
-                    							"interfaceOnly",
-                    							lv_interfaceOnly_25_0 != null,
-                    							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalETLDsl.g:1153:3: (otherlv_26= 'tableOnly:' ( (lv_tableOnly_27_0= ruleEBoolean ) ) )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
-
-            if ( (LA33_0==43) ) {
-                alt33=1;
-            }
-            switch (alt33) {
-                case 1 :
-                    // InternalETLDsl.g:1154:4: otherlv_26= 'tableOnly:' ( (lv_tableOnly_27_0= ruleEBoolean ) )
-                    {
-                    otherlv_26=(Token)match(input,43,FOLLOW_41); 
-
-                    				newLeafNode(otherlv_26, grammarAccess.getFieldAccess().getTableOnlyKeyword_15_0());
-                    			
-                    // InternalETLDsl.g:1158:4: ( (lv_tableOnly_27_0= ruleEBoolean ) )
-                    // InternalETLDsl.g:1159:5: (lv_tableOnly_27_0= ruleEBoolean )
-                    {
-                    // InternalETLDsl.g:1159:5: (lv_tableOnly_27_0= ruleEBoolean )
-                    // InternalETLDsl.g:1160:6: lv_tableOnly_27_0= ruleEBoolean
-                    {
-
-                    						newCompositeNode(grammarAccess.getFieldAccess().getTableOnlyEBooleanParserRuleCall_15_1_0());
-                    					
-                    pushFollow(FOLLOW_45);
-                    lv_tableOnly_27_0=ruleEBoolean();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFieldRule());
-                    						}
-                    						set(
-                    							current,
-                    							"tableOnly",
-                    							lv_tableOnly_27_0 != null,
-                    							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalETLDsl.g:1178:3: (otherlv_28= 'isFastChanging:' ( (lv_isFastChanging_29_0= ruleEBoolean ) ) )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
-
-            if ( (LA34_0==44) ) {
-                alt34=1;
-            }
-            switch (alt34) {
-                case 1 :
-                    // InternalETLDsl.g:1179:4: otherlv_28= 'isFastChanging:' ( (lv_isFastChanging_29_0= ruleEBoolean ) )
-                    {
-                    otherlv_28=(Token)match(input,44,FOLLOW_41); 
-
-                    				newLeafNode(otherlv_28, grammarAccess.getFieldAccess().getIsFastChangingKeyword_16_0());
-                    			
-                    // InternalETLDsl.g:1183:4: ( (lv_isFastChanging_29_0= ruleEBoolean ) )
-                    // InternalETLDsl.g:1184:5: (lv_isFastChanging_29_0= ruleEBoolean )
-                    {
-                    // InternalETLDsl.g:1184:5: (lv_isFastChanging_29_0= ruleEBoolean )
-                    // InternalETLDsl.g:1185:6: lv_isFastChanging_29_0= ruleEBoolean
-                    {
-
-                    						newCompositeNode(grammarAccess.getFieldAccess().getIsFastChangingEBooleanParserRuleCall_16_1_0());
-                    					
-                    pushFollow(FOLLOW_46);
-                    lv_isFastChanging_29_0=ruleEBoolean();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFieldRule());
-                    						}
-                    						set(
-                    							current,
-                    							"isFastChanging",
-                    							lv_isFastChanging_29_0 != null,
-                    							"org.etl_modeling.etldsl.ETLDsl.EBoolean");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalETLDsl.g:1203:3: ( (lv_isBusinessKey_30_0= 'BusinessKey' ) )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
-
-            if ( (LA35_0==45) ) {
-                alt35=1;
-            }
-            switch (alt35) {
-                case 1 :
-                    // InternalETLDsl.g:1204:4: (lv_isBusinessKey_30_0= 'BusinessKey' )
-                    {
-                    // InternalETLDsl.g:1204:4: (lv_isBusinessKey_30_0= 'BusinessKey' )
-                    // InternalETLDsl.g:1205:5: lv_isBusinessKey_30_0= 'BusinessKey'
-                    {
-                    lv_isBusinessKey_30_0=(Token)match(input,45,FOLLOW_47); 
-
-                    					newLeafNode(lv_isBusinessKey_30_0, grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0());
+                    					newLeafNode(lv_allowExponent_20_0, grammarAccess.getFieldAccess().getAllowExponentAllowExponentKeyword_12_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getFieldRule());
                     					}
-                    					setWithLastConsumed(current, "isBusinessKey", lv_isBusinessKey_30_0 != null, "BusinessKey");
+                    					setWithLastConsumed(current, "allowExponent", lv_allowExponent_20_0 != null, "allowExponent");
                     				
 
                     }
@@ -2878,9 +2645,174 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_31=(Token)match(input,46,FOLLOW_2); 
+            // InternalETLDsl.g:1145:3: ( (lv_hasImplicitComma_21_0= 'hasImplicitComma' ) )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            			newLeafNode(otherlv_31, grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18());
+            if ( (LA31_0==43) ) {
+                alt31=1;
+            }
+            switch (alt31) {
+                case 1 :
+                    // InternalETLDsl.g:1146:4: (lv_hasImplicitComma_21_0= 'hasImplicitComma' )
+                    {
+                    // InternalETLDsl.g:1146:4: (lv_hasImplicitComma_21_0= 'hasImplicitComma' )
+                    // InternalETLDsl.g:1147:5: lv_hasImplicitComma_21_0= 'hasImplicitComma'
+                    {
+                    lv_hasImplicitComma_21_0=(Token)match(input,43,FOLLOW_46); 
+
+                    					newLeafNode(lv_hasImplicitComma_21_0, grammarAccess.getFieldAccess().getHasImplicitCommaHasImplicitCommaKeyword_13_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getFieldRule());
+                    					}
+                    					setWithLastConsumed(current, "hasImplicitComma", lv_hasImplicitComma_21_0 != null, "hasImplicitComma");
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalETLDsl.g:1159:3: ( (lv_interfaceOnly_22_0= 'interfaceOnly' ) )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
+
+            if ( (LA32_0==44) ) {
+                alt32=1;
+            }
+            switch (alt32) {
+                case 1 :
+                    // InternalETLDsl.g:1160:4: (lv_interfaceOnly_22_0= 'interfaceOnly' )
+                    {
+                    // InternalETLDsl.g:1160:4: (lv_interfaceOnly_22_0= 'interfaceOnly' )
+                    // InternalETLDsl.g:1161:5: lv_interfaceOnly_22_0= 'interfaceOnly'
+                    {
+                    lv_interfaceOnly_22_0=(Token)match(input,44,FOLLOW_47); 
+
+                    					newLeafNode(lv_interfaceOnly_22_0, grammarAccess.getFieldAccess().getInterfaceOnlyInterfaceOnlyKeyword_14_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getFieldRule());
+                    					}
+                    					setWithLastConsumed(current, "interfaceOnly", lv_interfaceOnly_22_0 != null, "interfaceOnly");
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalETLDsl.g:1173:3: ( (lv_tableOnly_23_0= 'tableOnly' ) )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
+
+            if ( (LA33_0==45) ) {
+                alt33=1;
+            }
+            switch (alt33) {
+                case 1 :
+                    // InternalETLDsl.g:1174:4: (lv_tableOnly_23_0= 'tableOnly' )
+                    {
+                    // InternalETLDsl.g:1174:4: (lv_tableOnly_23_0= 'tableOnly' )
+                    // InternalETLDsl.g:1175:5: lv_tableOnly_23_0= 'tableOnly'
+                    {
+                    lv_tableOnly_23_0=(Token)match(input,45,FOLLOW_48); 
+
+                    					newLeafNode(lv_tableOnly_23_0, grammarAccess.getFieldAccess().getTableOnlyTableOnlyKeyword_15_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getFieldRule());
+                    					}
+                    					setWithLastConsumed(current, "tableOnly", lv_tableOnly_23_0 != null, "tableOnly");
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalETLDsl.g:1187:3: ( (lv_isFastChanging_24_0= 'isFastChanging' ) )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
+
+            if ( (LA34_0==46) ) {
+                alt34=1;
+            }
+            switch (alt34) {
+                case 1 :
+                    // InternalETLDsl.g:1188:4: (lv_isFastChanging_24_0= 'isFastChanging' )
+                    {
+                    // InternalETLDsl.g:1188:4: (lv_isFastChanging_24_0= 'isFastChanging' )
+                    // InternalETLDsl.g:1189:5: lv_isFastChanging_24_0= 'isFastChanging'
+                    {
+                    lv_isFastChanging_24_0=(Token)match(input,46,FOLLOW_49); 
+
+                    					newLeafNode(lv_isFastChanging_24_0, grammarAccess.getFieldAccess().getIsFastChangingIsFastChangingKeyword_16_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getFieldRule());
+                    					}
+                    					setWithLastConsumed(current, "isFastChanging", lv_isFastChanging_24_0 != null, "isFastChanging");
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalETLDsl.g:1201:3: ( (lv_isBusinessKey_25_0= 'BusinessKey' ) )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
+
+            if ( (LA35_0==47) ) {
+                alt35=1;
+            }
+            switch (alt35) {
+                case 1 :
+                    // InternalETLDsl.g:1202:4: (lv_isBusinessKey_25_0= 'BusinessKey' )
+                    {
+                    // InternalETLDsl.g:1202:4: (lv_isBusinessKey_25_0= 'BusinessKey' )
+                    // InternalETLDsl.g:1203:5: lv_isBusinessKey_25_0= 'BusinessKey'
+                    {
+                    lv_isBusinessKey_25_0=(Token)match(input,47,FOLLOW_50); 
+
+                    					newLeafNode(lv_isBusinessKey_25_0, grammarAccess.getFieldAccess().getIsBusinessKeyBusinessKeyKeyword_17_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getFieldRule());
+                    					}
+                    					setWithLastConsumed(current, "isBusinessKey", lv_isBusinessKey_25_0 != null, "BusinessKey");
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_26=(Token)match(input,48,FOLLOW_2); 
+
+            			newLeafNode(otherlv_26, grammarAccess.getFieldAccess().getRightSquareBracketKeyword_18());
             		
 
             }
@@ -2905,7 +2837,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInclude"
-    // InternalETLDsl.g:1225:1: entryRuleInclude returns [EObject current=null] : iv_ruleInclude= ruleInclude EOF ;
+    // InternalETLDsl.g:1223:1: entryRuleInclude returns [EObject current=null] : iv_ruleInclude= ruleInclude EOF ;
     public final EObject entryRuleInclude() throws RecognitionException {
         EObject current = null;
 
@@ -2913,8 +2845,8 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalETLDsl.g:1225:48: (iv_ruleInclude= ruleInclude EOF )
-            // InternalETLDsl.g:1226:2: iv_ruleInclude= ruleInclude EOF
+            // InternalETLDsl.g:1223:48: (iv_ruleInclude= ruleInclude EOF )
+            // InternalETLDsl.g:1224:2: iv_ruleInclude= ruleInclude EOF
             {
              newCompositeNode(grammarAccess.getIncludeRule()); 
             pushFollow(FOLLOW_1);
@@ -2941,7 +2873,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInclude"
-    // InternalETLDsl.g:1232:1: ruleInclude returns [EObject current=null] : (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) ) ;
+    // InternalETLDsl.g:1230:1: ruleInclude returns [EObject current=null] : (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) ) ;
     public final EObject ruleInclude() throws RecognitionException {
         EObject current = null;
 
@@ -2957,26 +2889,30 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         Token otherlv_14=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
+        EObject lv_includeFields_5_0 = null;
+
+        EObject lv_includeFields_7_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalETLDsl.g:1238:2: ( (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) ) )
-            // InternalETLDsl.g:1239:2: (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) )
+            // InternalETLDsl.g:1236:2: ( (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) ) )
+            // InternalETLDsl.g:1237:2: (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) )
             {
-            // InternalETLDsl.g:1239:2: (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) )
-            // InternalETLDsl.g:1240:3: otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' )
+            // InternalETLDsl.g:1237:2: (otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' ) )
+            // InternalETLDsl.g:1238:3: otherlv_0= 'Include' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' )
             {
-            otherlv_0=(Token)match(input,47,FOLLOW_3); 
+            otherlv_0=(Token)match(input,49,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIncludeAccess().getIncludeKeyword_0());
             		
-            // InternalETLDsl.g:1244:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalETLDsl.g:1245:4: (lv_name_1_0= ruleEString )
+            // InternalETLDsl.g:1242:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalETLDsl.g:1243:4: (lv_name_1_0= ruleEString )
             {
-            // InternalETLDsl.g:1245:4: (lv_name_1_0= ruleEString )
-            // InternalETLDsl.g:1246:5: lv_name_1_0= ruleEString
+            // InternalETLDsl.g:1243:4: (lv_name_1_0= ruleEString )
+            // InternalETLDsl.g:1244:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIncludeAccess().getNameEStringParserRuleCall_1_0());
@@ -3003,52 +2939,55 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1263:3: (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' )
-            // InternalETLDsl.g:1264:4: otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}'
+            // InternalETLDsl.g:1261:3: (otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}' )
+            // InternalETLDsl.g:1262:4: otherlv_2= '{' (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )? (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )? otherlv_14= '}'
             {
-            otherlv_2=(Token)match(input,22,FOLLOW_48); 
+            otherlv_2=(Token)match(input,20,FOLLOW_51); 
 
             				newLeafNode(otherlv_2, grammarAccess.getIncludeAccess().getLeftCurlyBracketKeyword_2_0());
             			
-            // InternalETLDsl.g:1268:4: (otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}' )?
+            // InternalETLDsl.g:1266:4: (otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}' )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
-            if ( (LA37_0==48) ) {
+            if ( (LA37_0==50) ) {
                 alt37=1;
             }
             switch (alt37) {
                 case 1 :
-                    // InternalETLDsl.g:1269:5: otherlv_3= 'IncludeFields' otherlv_4= '{' ( ( ruleQualifiedName ) ) (otherlv_6= ',' ( ( ruleQualifiedName ) ) )* otherlv_8= '}'
+                    // InternalETLDsl.g:1267:5: otherlv_3= 'IncludeFields' otherlv_4= '{' ( (lv_includeFields_5_0= ruleField ) ) (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )* otherlv_8= '}'
                     {
-                    otherlv_3=(Token)match(input,48,FOLLOW_17); 
+                    otherlv_3=(Token)match(input,50,FOLLOW_17); 
 
                     					newLeafNode(otherlv_3, grammarAccess.getIncludeAccess().getIncludeFieldsKeyword_2_1_0());
                     				
-                    otherlv_4=(Token)match(input,22,FOLLOW_15); 
+                    otherlv_4=(Token)match(input,20,FOLLOW_19); 
 
                     					newLeafNode(otherlv_4, grammarAccess.getIncludeAccess().getLeftCurlyBracketKeyword_2_1_1());
                     				
-                    // InternalETLDsl.g:1277:5: ( ( ruleQualifiedName ) )
-                    // InternalETLDsl.g:1278:6: ( ruleQualifiedName )
+                    // InternalETLDsl.g:1275:5: ( (lv_includeFields_5_0= ruleField ) )
+                    // InternalETLDsl.g:1276:6: (lv_includeFields_5_0= ruleField )
                     {
-                    // InternalETLDsl.g:1278:6: ( ruleQualifiedName )
-                    // InternalETLDsl.g:1279:7: ruleQualifiedName
+                    // InternalETLDsl.g:1276:6: (lv_includeFields_5_0= ruleField )
+                    // InternalETLDsl.g:1277:7: lv_includeFields_5_0= ruleField
                     {
 
-                    							if (current==null) {
-                    								current = createModelElement(grammarAccess.getIncludeRule());
-                    							}
-                    						
-
-                    							newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldCrossReference_2_1_2_0());
+                    							newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldParserRuleCall_2_1_2_0());
                     						
                     pushFollow(FOLLOW_20);
-                    ruleQualifiedName();
+                    lv_includeFields_5_0=ruleField();
 
                     state._fsp--;
 
 
+                    							if (current==null) {
+                    								current = createModelElementForParent(grammarAccess.getIncludeRule());
+                    							}
+                    							add(
+                    								current,
+                    								"includeFields",
+                    								lv_includeFields_5_0,
+                    								"org.etl_modeling.etldsl.ETLDsl.Field");
                     							afterParserOrEnumRuleCall();
                     						
 
@@ -3057,7 +2996,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:1293:5: (otherlv_6= ',' ( ( ruleQualifiedName ) ) )*
+                    // InternalETLDsl.g:1294:5: (otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) ) )*
                     loop36:
                     do {
                         int alt36=2;
@@ -3070,32 +3009,35 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt36) {
                     	case 1 :
-                    	    // InternalETLDsl.g:1294:6: otherlv_6= ',' ( ( ruleQualifiedName ) )
+                    	    // InternalETLDsl.g:1295:6: otherlv_6= ',' ( (lv_includeFields_7_0= ruleField ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,16,FOLLOW_15); 
+                    	    otherlv_6=(Token)match(input,16,FOLLOW_19); 
 
                     	    						newLeafNode(otherlv_6, grammarAccess.getIncludeAccess().getCommaKeyword_2_1_3_0());
                     	    					
-                    	    // InternalETLDsl.g:1298:6: ( ( ruleQualifiedName ) )
-                    	    // InternalETLDsl.g:1299:7: ( ruleQualifiedName )
+                    	    // InternalETLDsl.g:1299:6: ( (lv_includeFields_7_0= ruleField ) )
+                    	    // InternalETLDsl.g:1300:7: (lv_includeFields_7_0= ruleField )
                     	    {
-                    	    // InternalETLDsl.g:1299:7: ( ruleQualifiedName )
-                    	    // InternalETLDsl.g:1300:8: ruleQualifiedName
+                    	    // InternalETLDsl.g:1300:7: (lv_includeFields_7_0= ruleField )
+                    	    // InternalETLDsl.g:1301:8: lv_includeFields_7_0= ruleField
                     	    {
 
-                    	    								if (current==null) {
-                    	    									current = createModelElement(grammarAccess.getIncludeRule());
-                    	    								}
-                    	    							
-
-                    	    								newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldCrossReference_2_1_3_1_0());
+                    	    								newCompositeNode(grammarAccess.getIncludeAccess().getIncludeFieldsFieldParserRuleCall_2_1_3_1_0());
                     	    							
                     	    pushFollow(FOLLOW_20);
-                    	    ruleQualifiedName();
+                    	    lv_includeFields_7_0=ruleField();
 
                     	    state._fsp--;
 
 
+                    	    								if (current==null) {
+                    	    									current = createModelElementForParent(grammarAccess.getIncludeRule());
+                    	    								}
+                    	    								add(
+                    	    									current,
+                    	    									"includeFields",
+                    	    									lv_includeFields_7_0,
+                    	    									"org.etl_modeling.etldsl.ETLDsl.Field");
                     	    								afterParserOrEnumRuleCall();
                     	    							
 
@@ -3113,7 +3055,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,24,FOLLOW_49); 
+                    otherlv_8=(Token)match(input,22,FOLLOW_52); 
 
                     					newLeafNode(otherlv_8, grammarAccess.getIncludeAccess().getRightCurlyBracketKeyword_2_1_4());
                     				
@@ -3123,26 +3065,26 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1320:4: (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )?
+            // InternalETLDsl.g:1324:4: (otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}' )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
-            if ( (LA39_0==49) ) {
+            if ( (LA39_0==51) ) {
                 alt39=1;
             }
             switch (alt39) {
                 case 1 :
-                    // InternalETLDsl.g:1321:5: otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}'
+                    // InternalETLDsl.g:1325:5: otherlv_9= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_11= ',' ( ( ruleQualifiedName ) ) )* otherlv_13= '}'
                     {
-                    otherlv_9=(Token)match(input,49,FOLLOW_15); 
+                    otherlv_9=(Token)match(input,51,FOLLOW_15); 
 
                     					newLeafNode(otherlv_9, grammarAccess.getIncludeAccess().getIdentifyingFieldsKeyword_2_2_0());
                     				
-                    // InternalETLDsl.g:1325:5: ( ( ruleQualifiedName ) )
-                    // InternalETLDsl.g:1326:6: ( ruleQualifiedName )
+                    // InternalETLDsl.g:1329:5: ( ( ruleQualifiedName ) )
+                    // InternalETLDsl.g:1330:6: ( ruleQualifiedName )
                     {
-                    // InternalETLDsl.g:1326:6: ( ruleQualifiedName )
-                    // InternalETLDsl.g:1327:7: ruleQualifiedName
+                    // InternalETLDsl.g:1330:6: ( ruleQualifiedName )
+                    // InternalETLDsl.g:1331:7: ruleQualifiedName
                     {
 
                     							if (current==null) {
@@ -3166,7 +3108,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:1341:5: (otherlv_11= ',' ( ( ruleQualifiedName ) ) )*
+                    // InternalETLDsl.g:1345:5: (otherlv_11= ',' ( ( ruleQualifiedName ) ) )*
                     loop38:
                     do {
                         int alt38=2;
@@ -3179,17 +3121,17 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt38) {
                     	case 1 :
-                    	    // InternalETLDsl.g:1342:6: otherlv_11= ',' ( ( ruleQualifiedName ) )
+                    	    // InternalETLDsl.g:1346:6: otherlv_11= ',' ( ( ruleQualifiedName ) )
                     	    {
                     	    otherlv_11=(Token)match(input,16,FOLLOW_15); 
 
                     	    						newLeafNode(otherlv_11, grammarAccess.getIncludeAccess().getCommaKeyword_2_2_2_0());
                     	    					
-                    	    // InternalETLDsl.g:1346:6: ( ( ruleQualifiedName ) )
-                    	    // InternalETLDsl.g:1347:7: ( ruleQualifiedName )
+                    	    // InternalETLDsl.g:1350:6: ( ( ruleQualifiedName ) )
+                    	    // InternalETLDsl.g:1351:7: ( ruleQualifiedName )
                     	    {
-                    	    // InternalETLDsl.g:1347:7: ( ruleQualifiedName )
-                    	    // InternalETLDsl.g:1348:8: ruleQualifiedName
+                    	    // InternalETLDsl.g:1351:7: ( ruleQualifiedName )
+                    	    // InternalETLDsl.g:1352:8: ruleQualifiedName
                     	    {
 
                     	    								if (current==null) {
@@ -3222,7 +3164,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_13=(Token)match(input,24,FOLLOW_22); 
+                    otherlv_13=(Token)match(input,22,FOLLOW_22); 
 
                     					newLeafNode(otherlv_13, grammarAccess.getIncludeAccess().getRightCurlyBracketKeyword_2_2_3());
                     				
@@ -3232,7 +3174,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_14=(Token)match(input,24,FOLLOW_2); 
+            otherlv_14=(Token)match(input,22,FOLLOW_2); 
 
             				newLeafNode(otherlv_14, grammarAccess.getIncludeAccess().getRightCurlyBracketKeyword_2_3());
             			
@@ -3262,7 +3204,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelationship"
-    // InternalETLDsl.g:1377:1: entryRuleRelationship returns [EObject current=null] : iv_ruleRelationship= ruleRelationship EOF ;
+    // InternalETLDsl.g:1381:1: entryRuleRelationship returns [EObject current=null] : iv_ruleRelationship= ruleRelationship EOF ;
     public final EObject entryRuleRelationship() throws RecognitionException {
         EObject current = null;
 
@@ -3270,8 +3212,8 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalETLDsl.g:1377:53: (iv_ruleRelationship= ruleRelationship EOF )
-            // InternalETLDsl.g:1378:2: iv_ruleRelationship= ruleRelationship EOF
+            // InternalETLDsl.g:1381:53: (iv_ruleRelationship= ruleRelationship EOF )
+            // InternalETLDsl.g:1382:2: iv_ruleRelationship= ruleRelationship EOF
             {
              newCompositeNode(grammarAccess.getRelationshipRule()); 
             pushFollow(FOLLOW_1);
@@ -3298,7 +3240,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelationship"
-    // InternalETLDsl.g:1384:1: ruleRelationship returns [EObject current=null] : ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
+    // InternalETLDsl.g:1388:1: ruleRelationship returns [EObject current=null] : ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
     public final EObject ruleRelationship() throws RecognitionException {
         EObject current = null;
 
@@ -3319,14 +3261,14 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalETLDsl.g:1390:2: ( ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
-            // InternalETLDsl.g:1391:2: ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalETLDsl.g:1394:2: ( ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
+            // InternalETLDsl.g:1395:2: ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
             {
-            // InternalETLDsl.g:1391:2: ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
-            // InternalETLDsl.g:1392:3: () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}'
+            // InternalETLDsl.g:1395:2: ( () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalETLDsl.g:1396:3: () otherlv_1= 'Relationship' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'ToEntity: ' ( ( ruleQualifiedName ) ) (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )? (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )? otherlv_16= '}'
             {
-            // InternalETLDsl.g:1392:3: ()
-            // InternalETLDsl.g:1393:4: 
+            // InternalETLDsl.g:1396:3: ()
+            // InternalETLDsl.g:1397:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3336,15 +3278,15 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,50,FOLLOW_3); 
+            otherlv_1=(Token)match(input,52,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRelationshipAccess().getRelationshipKeyword_1());
             		
-            // InternalETLDsl.g:1403:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalETLDsl.g:1404:4: (lv_name_2_0= ruleEString )
+            // InternalETLDsl.g:1407:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalETLDsl.g:1408:4: (lv_name_2_0= ruleEString )
             {
-            // InternalETLDsl.g:1404:4: (lv_name_2_0= ruleEString )
-            // InternalETLDsl.g:1405:5: lv_name_2_0= ruleEString
+            // InternalETLDsl.g:1408:4: (lv_name_2_0= ruleEString )
+            // InternalETLDsl.g:1409:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRelationshipAccess().getNameEStringParserRuleCall_2_0());
@@ -3371,19 +3313,19 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,22,FOLLOW_50); 
+            otherlv_3=(Token)match(input,20,FOLLOW_53); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRelationshipAccess().getLeftCurlyBracketKeyword_3());
             		
-            otherlv_4=(Token)match(input,51,FOLLOW_15); 
+            otherlv_4=(Token)match(input,53,FOLLOW_15); 
 
             			newLeafNode(otherlv_4, grammarAccess.getRelationshipAccess().getToEntityKeyword_4());
             		
-            // InternalETLDsl.g:1430:3: ( ( ruleQualifiedName ) )
-            // InternalETLDsl.g:1431:4: ( ruleQualifiedName )
+            // InternalETLDsl.g:1434:3: ( ( ruleQualifiedName ) )
+            // InternalETLDsl.g:1435:4: ( ruleQualifiedName )
             {
-            // InternalETLDsl.g:1431:4: ( ruleQualifiedName )
-            // InternalETLDsl.g:1432:5: ruleQualifiedName
+            // InternalETLDsl.g:1435:4: ( ruleQualifiedName )
+            // InternalETLDsl.g:1436:5: ruleQualifiedName
             {
 
             					if (current==null) {
@@ -3393,7 +3335,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getRelationshipAccess().getToEntityEntityCrossReference_5_0());
             				
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_54);
             ruleQualifiedName();
 
             state._fsp--;
@@ -3407,26 +3349,26 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1446:3: (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )?
+            // InternalETLDsl.g:1450:3: (otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}' )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==52) ) {
+            if ( (LA41_0==54) ) {
                 alt41=1;
             }
             switch (alt41) {
                 case 1 :
-                    // InternalETLDsl.g:1447:4: otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}'
+                    // InternalETLDsl.g:1451:4: otherlv_6= 'DescribingFields:{' ( ( ruleQualifiedName ) ) (otherlv_8= ',' ( ( ruleQualifiedName ) ) )* otherlv_10= '}'
                     {
-                    otherlv_6=(Token)match(input,52,FOLLOW_15); 
+                    otherlv_6=(Token)match(input,54,FOLLOW_15); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getRelationshipAccess().getDescribingFieldsKeyword_6_0());
                     			
-                    // InternalETLDsl.g:1451:4: ( ( ruleQualifiedName ) )
-                    // InternalETLDsl.g:1452:5: ( ruleQualifiedName )
+                    // InternalETLDsl.g:1455:4: ( ( ruleQualifiedName ) )
+                    // InternalETLDsl.g:1456:5: ( ruleQualifiedName )
                     {
-                    // InternalETLDsl.g:1452:5: ( ruleQualifiedName )
-                    // InternalETLDsl.g:1453:6: ruleQualifiedName
+                    // InternalETLDsl.g:1456:5: ( ruleQualifiedName )
+                    // InternalETLDsl.g:1457:6: ruleQualifiedName
                     {
 
                     						if (current==null) {
@@ -3450,7 +3392,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:1467:4: (otherlv_8= ',' ( ( ruleQualifiedName ) ) )*
+                    // InternalETLDsl.g:1471:4: (otherlv_8= ',' ( ( ruleQualifiedName ) ) )*
                     loop40:
                     do {
                         int alt40=2;
@@ -3463,17 +3405,17 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt40) {
                     	case 1 :
-                    	    // InternalETLDsl.g:1468:5: otherlv_8= ',' ( ( ruleQualifiedName ) )
+                    	    // InternalETLDsl.g:1472:5: otherlv_8= ',' ( ( ruleQualifiedName ) )
                     	    {
                     	    otherlv_8=(Token)match(input,16,FOLLOW_15); 
 
                     	    					newLeafNode(otherlv_8, grammarAccess.getRelationshipAccess().getCommaKeyword_6_2_0());
                     	    				
-                    	    // InternalETLDsl.g:1472:5: ( ( ruleQualifiedName ) )
-                    	    // InternalETLDsl.g:1473:6: ( ruleQualifiedName )
+                    	    // InternalETLDsl.g:1476:5: ( ( ruleQualifiedName ) )
+                    	    // InternalETLDsl.g:1477:6: ( ruleQualifiedName )
                     	    {
-                    	    // InternalETLDsl.g:1473:6: ( ruleQualifiedName )
-                    	    // InternalETLDsl.g:1474:7: ruleQualifiedName
+                    	    // InternalETLDsl.g:1477:6: ( ruleQualifiedName )
+                    	    // InternalETLDsl.g:1478:7: ruleQualifiedName
                     	    {
 
                     	    							if (current==null) {
@@ -3506,7 +3448,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_10=(Token)match(input,24,FOLLOW_49); 
+                    otherlv_10=(Token)match(input,22,FOLLOW_52); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getRelationshipAccess().getRightCurlyBracketKeyword_6_3());
                     			
@@ -3516,26 +3458,26 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalETLDsl.g:1494:3: (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )?
+            // InternalETLDsl.g:1498:3: (otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}' )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==49) ) {
+            if ( (LA43_0==51) ) {
                 alt43=1;
             }
             switch (alt43) {
                 case 1 :
-                    // InternalETLDsl.g:1495:4: otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}'
+                    // InternalETLDsl.g:1499:4: otherlv_11= 'IdentifyingFields:{' ( ( ruleQualifiedName ) ) (otherlv_13= ',' ( ( ruleQualifiedName ) ) )* otherlv_15= '}'
                     {
-                    otherlv_11=(Token)match(input,49,FOLLOW_15); 
+                    otherlv_11=(Token)match(input,51,FOLLOW_15); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getRelationshipAccess().getIdentifyingFieldsKeyword_7_0());
                     			
-                    // InternalETLDsl.g:1499:4: ( ( ruleQualifiedName ) )
-                    // InternalETLDsl.g:1500:5: ( ruleQualifiedName )
+                    // InternalETLDsl.g:1503:4: ( ( ruleQualifiedName ) )
+                    // InternalETLDsl.g:1504:5: ( ruleQualifiedName )
                     {
-                    // InternalETLDsl.g:1500:5: ( ruleQualifiedName )
-                    // InternalETLDsl.g:1501:6: ruleQualifiedName
+                    // InternalETLDsl.g:1504:5: ( ruleQualifiedName )
+                    // InternalETLDsl.g:1505:6: ruleQualifiedName
                     {
 
                     						if (current==null) {
@@ -3559,7 +3501,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalETLDsl.g:1515:4: (otherlv_13= ',' ( ( ruleQualifiedName ) ) )*
+                    // InternalETLDsl.g:1519:4: (otherlv_13= ',' ( ( ruleQualifiedName ) ) )*
                     loop42:
                     do {
                         int alt42=2;
@@ -3572,17 +3514,17 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt42) {
                     	case 1 :
-                    	    // InternalETLDsl.g:1516:5: otherlv_13= ',' ( ( ruleQualifiedName ) )
+                    	    // InternalETLDsl.g:1520:5: otherlv_13= ',' ( ( ruleQualifiedName ) )
                     	    {
                     	    otherlv_13=(Token)match(input,16,FOLLOW_15); 
 
                     	    					newLeafNode(otherlv_13, grammarAccess.getRelationshipAccess().getCommaKeyword_7_2_0());
                     	    				
-                    	    // InternalETLDsl.g:1520:5: ( ( ruleQualifiedName ) )
-                    	    // InternalETLDsl.g:1521:6: ( ruleQualifiedName )
+                    	    // InternalETLDsl.g:1524:5: ( ( ruleQualifiedName ) )
+                    	    // InternalETLDsl.g:1525:6: ( ruleQualifiedName )
                     	    {
-                    	    // InternalETLDsl.g:1521:6: ( ruleQualifiedName )
-                    	    // InternalETLDsl.g:1522:7: ruleQualifiedName
+                    	    // InternalETLDsl.g:1525:6: ( ruleQualifiedName )
+                    	    // InternalETLDsl.g:1526:7: ruleQualifiedName
                     	    {
 
                     	    							if (current==null) {
@@ -3615,7 +3557,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_15=(Token)match(input,24,FOLLOW_22); 
+                    otherlv_15=(Token)match(input,22,FOLLOW_22); 
 
                     				newLeafNode(otherlv_15, grammarAccess.getRelationshipAccess().getRightCurlyBracketKeyword_7_3());
                     			
@@ -3625,7 +3567,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_16=(Token)match(input,24,FOLLOW_2); 
+            otherlv_16=(Token)match(input,22,FOLLOW_2); 
 
             			newLeafNode(otherlv_16, grammarAccess.getRelationshipAccess().getRightCurlyBracketKeyword_8());
             		
@@ -3652,7 +3594,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleft"
-    // InternalETLDsl.g:1550:1: ruleft returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) ) ;
+    // InternalETLDsl.g:1554:1: ruleft returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) ) ;
     public final Enumerator ruleft() throws RecognitionException {
         Enumerator current = null;
 
@@ -3668,43 +3610,43 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalETLDsl.g:1556:2: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) ) )
-            // InternalETLDsl.g:1557:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) )
+            // InternalETLDsl.g:1560:2: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) ) )
+            // InternalETLDsl.g:1561:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) )
             {
-            // InternalETLDsl.g:1557:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) )
+            // InternalETLDsl.g:1561:2: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'Date' ) | (enumLiteral_2= 'Decimal' ) | (enumLiteral_3= 'HK' ) | (enumLiteral_4= 'Int' ) | (enumLiteral_5= 'TimeStamp' ) | (enumLiteral_6= 'TrueFalse' ) )
             int alt44=7;
             switch ( input.LA(1) ) {
-            case 53:
+            case 55:
                 {
                 alt44=1;
                 }
                 break;
-            case 54:
+            case 56:
                 {
                 alt44=2;
                 }
                 break;
-            case 55:
+            case 57:
                 {
                 alt44=3;
                 }
                 break;
-            case 56:
+            case 58:
                 {
                 alt44=4;
                 }
                 break;
-            case 57:
+            case 59:
                 {
                 alt44=5;
                 }
                 break;
-            case 58:
+            case 60:
                 {
                 alt44=6;
                 }
                 break;
-            case 59:
+            case 61:
                 {
                 alt44=7;
                 }
@@ -3718,12 +3660,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             switch (alt44) {
                 case 1 :
-                    // InternalETLDsl.g:1558:3: (enumLiteral_0= 'String' )
+                    // InternalETLDsl.g:1562:3: (enumLiteral_0= 'String' )
                     {
-                    // InternalETLDsl.g:1558:3: (enumLiteral_0= 'String' )
-                    // InternalETLDsl.g:1559:4: enumLiteral_0= 'String'
+                    // InternalETLDsl.g:1562:3: (enumLiteral_0= 'String' )
+                    // InternalETLDsl.g:1563:4: enumLiteral_0= 'String'
                     {
-                    enumLiteral_0=(Token)match(input,53,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,55,FOLLOW_2); 
 
                     				current = grammarAccess.getFtAccess().getStringEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getFtAccess().getStringEnumLiteralDeclaration_0());
@@ -3735,12 +3677,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalETLDsl.g:1566:3: (enumLiteral_1= 'Date' )
+                    // InternalETLDsl.g:1570:3: (enumLiteral_1= 'Date' )
                     {
-                    // InternalETLDsl.g:1566:3: (enumLiteral_1= 'Date' )
-                    // InternalETLDsl.g:1567:4: enumLiteral_1= 'Date'
+                    // InternalETLDsl.g:1570:3: (enumLiteral_1= 'Date' )
+                    // InternalETLDsl.g:1571:4: enumLiteral_1= 'Date'
                     {
-                    enumLiteral_1=(Token)match(input,54,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,56,FOLLOW_2); 
 
                     				current = grammarAccess.getFtAccess().getDateEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getFtAccess().getDateEnumLiteralDeclaration_1());
@@ -3752,12 +3694,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalETLDsl.g:1574:3: (enumLiteral_2= 'Decimal' )
+                    // InternalETLDsl.g:1578:3: (enumLiteral_2= 'Decimal' )
                     {
-                    // InternalETLDsl.g:1574:3: (enumLiteral_2= 'Decimal' )
-                    // InternalETLDsl.g:1575:4: enumLiteral_2= 'Decimal'
+                    // InternalETLDsl.g:1578:3: (enumLiteral_2= 'Decimal' )
+                    // InternalETLDsl.g:1579:4: enumLiteral_2= 'Decimal'
                     {
-                    enumLiteral_2=(Token)match(input,55,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,57,FOLLOW_2); 
 
                     				current = grammarAccess.getFtAccess().getDecimalEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getFtAccess().getDecimalEnumLiteralDeclaration_2());
@@ -3769,12 +3711,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalETLDsl.g:1582:3: (enumLiteral_3= 'HK' )
+                    // InternalETLDsl.g:1586:3: (enumLiteral_3= 'HK' )
                     {
-                    // InternalETLDsl.g:1582:3: (enumLiteral_3= 'HK' )
-                    // InternalETLDsl.g:1583:4: enumLiteral_3= 'HK'
+                    // InternalETLDsl.g:1586:3: (enumLiteral_3= 'HK' )
+                    // InternalETLDsl.g:1587:4: enumLiteral_3= 'HK'
                     {
-                    enumLiteral_3=(Token)match(input,56,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,58,FOLLOW_2); 
 
                     				current = grammarAccess.getFtAccess().getHKEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getFtAccess().getHKEnumLiteralDeclaration_3());
@@ -3786,12 +3728,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalETLDsl.g:1590:3: (enumLiteral_4= 'Int' )
+                    // InternalETLDsl.g:1594:3: (enumLiteral_4= 'Int' )
                     {
-                    // InternalETLDsl.g:1590:3: (enumLiteral_4= 'Int' )
-                    // InternalETLDsl.g:1591:4: enumLiteral_4= 'Int'
+                    // InternalETLDsl.g:1594:3: (enumLiteral_4= 'Int' )
+                    // InternalETLDsl.g:1595:4: enumLiteral_4= 'Int'
                     {
-                    enumLiteral_4=(Token)match(input,57,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,59,FOLLOW_2); 
 
                     				current = grammarAccess.getFtAccess().getIntEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getFtAccess().getIntEnumLiteralDeclaration_4());
@@ -3803,12 +3745,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalETLDsl.g:1598:3: (enumLiteral_5= 'TimeStamp' )
+                    // InternalETLDsl.g:1602:3: (enumLiteral_5= 'TimeStamp' )
                     {
-                    // InternalETLDsl.g:1598:3: (enumLiteral_5= 'TimeStamp' )
-                    // InternalETLDsl.g:1599:4: enumLiteral_5= 'TimeStamp'
+                    // InternalETLDsl.g:1602:3: (enumLiteral_5= 'TimeStamp' )
+                    // InternalETLDsl.g:1603:4: enumLiteral_5= 'TimeStamp'
                     {
-                    enumLiteral_5=(Token)match(input,58,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,60,FOLLOW_2); 
 
                     				current = grammarAccess.getFtAccess().getTimeStampEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getFtAccess().getTimeStampEnumLiteralDeclaration_5());
@@ -3820,12 +3762,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalETLDsl.g:1606:3: (enumLiteral_6= 'TrueFalse' )
+                    // InternalETLDsl.g:1610:3: (enumLiteral_6= 'TrueFalse' )
                     {
-                    // InternalETLDsl.g:1606:3: (enumLiteral_6= 'TrueFalse' )
-                    // InternalETLDsl.g:1607:4: enumLiteral_6= 'TrueFalse'
+                    // InternalETLDsl.g:1610:3: (enumLiteral_6= 'TrueFalse' )
+                    // InternalETLDsl.g:1611:4: enumLiteral_6= 'TrueFalse'
                     {
-                    enumLiteral_6=(Token)match(input,59,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,61,FOLLOW_2); 
 
                     				current = grammarAccess.getFtAccess().getTrueFalseEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getFtAccess().getTrueFalseEnumLiteralDeclaration_6());
@@ -3859,7 +3801,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLAYERTYPE"
-    // InternalETLDsl.g:1617:1: ruleLAYERTYPE returns [Enumerator current=null] : ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) ) ;
+    // InternalETLDsl.g:1621:1: ruleLAYERTYPE returns [Enumerator current=null] : ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) ) ;
     public final Enumerator ruleLAYERTYPE() throws RecognitionException {
         Enumerator current = null;
 
@@ -3873,33 +3815,33 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalETLDsl.g:1623:2: ( ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) ) )
-            // InternalETLDsl.g:1624:2: ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) )
+            // InternalETLDsl.g:1627:2: ( ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) ) )
+            // InternalETLDsl.g:1628:2: ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) )
             {
-            // InternalETLDsl.g:1624:2: ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) )
+            // InternalETLDsl.g:1628:2: ( (enumLiteral_0= 'STAGE' ) | (enumLiteral_1= 'INTEGRATION' ) | (enumLiteral_2= 'EXPORT' ) | (enumLiteral_3= 'REPORTING' ) | (enumLiteral_4= 'HARMONISATION' ) )
             int alt45=5;
             switch ( input.LA(1) ) {
-            case 60:
+            case 62:
                 {
                 alt45=1;
                 }
                 break;
-            case 61:
+            case 63:
                 {
                 alt45=2;
                 }
                 break;
-            case 62:
+            case 64:
                 {
                 alt45=3;
                 }
                 break;
-            case 63:
+            case 65:
                 {
                 alt45=4;
                 }
                 break;
-            case 64:
+            case 66:
                 {
                 alt45=5;
                 }
@@ -3913,12 +3855,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             switch (alt45) {
                 case 1 :
-                    // InternalETLDsl.g:1625:3: (enumLiteral_0= 'STAGE' )
+                    // InternalETLDsl.g:1629:3: (enumLiteral_0= 'STAGE' )
                     {
-                    // InternalETLDsl.g:1625:3: (enumLiteral_0= 'STAGE' )
-                    // InternalETLDsl.g:1626:4: enumLiteral_0= 'STAGE'
+                    // InternalETLDsl.g:1629:3: (enumLiteral_0= 'STAGE' )
+                    // InternalETLDsl.g:1630:4: enumLiteral_0= 'STAGE'
                     {
-                    enumLiteral_0=(Token)match(input,60,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,62,FOLLOW_2); 
 
                     				current = grammarAccess.getLAYERTYPEAccess().getSTAGEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getLAYERTYPEAccess().getSTAGEEnumLiteralDeclaration_0());
@@ -3930,12 +3872,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalETLDsl.g:1633:3: (enumLiteral_1= 'INTEGRATION' )
+                    // InternalETLDsl.g:1637:3: (enumLiteral_1= 'INTEGRATION' )
                     {
-                    // InternalETLDsl.g:1633:3: (enumLiteral_1= 'INTEGRATION' )
-                    // InternalETLDsl.g:1634:4: enumLiteral_1= 'INTEGRATION'
+                    // InternalETLDsl.g:1637:3: (enumLiteral_1= 'INTEGRATION' )
+                    // InternalETLDsl.g:1638:4: enumLiteral_1= 'INTEGRATION'
                     {
-                    enumLiteral_1=(Token)match(input,61,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,63,FOLLOW_2); 
 
                     				current = grammarAccess.getLAYERTYPEAccess().getINTEGRATIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getLAYERTYPEAccess().getINTEGRATIONEnumLiteralDeclaration_1());
@@ -3947,12 +3889,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalETLDsl.g:1641:3: (enumLiteral_2= 'EXPORT' )
+                    // InternalETLDsl.g:1645:3: (enumLiteral_2= 'EXPORT' )
                     {
-                    // InternalETLDsl.g:1641:3: (enumLiteral_2= 'EXPORT' )
-                    // InternalETLDsl.g:1642:4: enumLiteral_2= 'EXPORT'
+                    // InternalETLDsl.g:1645:3: (enumLiteral_2= 'EXPORT' )
+                    // InternalETLDsl.g:1646:4: enumLiteral_2= 'EXPORT'
                     {
-                    enumLiteral_2=(Token)match(input,62,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,64,FOLLOW_2); 
 
                     				current = grammarAccess.getLAYERTYPEAccess().getEXPORTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getLAYERTYPEAccess().getEXPORTEnumLiteralDeclaration_2());
@@ -3964,12 +3906,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalETLDsl.g:1649:3: (enumLiteral_3= 'REPORTING' )
+                    // InternalETLDsl.g:1653:3: (enumLiteral_3= 'REPORTING' )
                     {
-                    // InternalETLDsl.g:1649:3: (enumLiteral_3= 'REPORTING' )
-                    // InternalETLDsl.g:1650:4: enumLiteral_3= 'REPORTING'
+                    // InternalETLDsl.g:1653:3: (enumLiteral_3= 'REPORTING' )
+                    // InternalETLDsl.g:1654:4: enumLiteral_3= 'REPORTING'
                     {
-                    enumLiteral_3=(Token)match(input,63,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,65,FOLLOW_2); 
 
                     				current = grammarAccess.getLAYERTYPEAccess().getREPORTINGEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getLAYERTYPEAccess().getREPORTINGEnumLiteralDeclaration_3());
@@ -3981,12 +3923,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalETLDsl.g:1657:3: (enumLiteral_4= 'HARMONISATION' )
+                    // InternalETLDsl.g:1661:3: (enumLiteral_4= 'HARMONISATION' )
                     {
-                    // InternalETLDsl.g:1657:3: (enumLiteral_4= 'HARMONISATION' )
-                    // InternalETLDsl.g:1658:4: enumLiteral_4= 'HARMONISATION'
+                    // InternalETLDsl.g:1661:3: (enumLiteral_4= 'HARMONISATION' )
+                    // InternalETLDsl.g:1662:4: enumLiteral_4= 'HARMONISATION'
                     {
-                    enumLiteral_4=(Token)match(input,64,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,66,FOLLOW_2); 
 
                     				current = grammarAccess.getLAYERTYPEAccess().getHARMONISATIONEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getLAYERTYPEAccess().getHARMONISATIONEnumLiteralDeclaration_4());
@@ -4020,7 +3962,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHISTORISATIONTYPE"
-    // InternalETLDsl.g:1668:1: ruleHISTORISATIONTYPE returns [Enumerator current=null] : ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) ) ;
+    // InternalETLDsl.g:1672:1: ruleHISTORISATIONTYPE returns [Enumerator current=null] : ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) ) ;
     public final Enumerator ruleHISTORISATIONTYPE() throws RecognitionException {
         Enumerator current = null;
 
@@ -4033,28 +3975,28 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalETLDsl.g:1674:2: ( ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) ) )
-            // InternalETLDsl.g:1675:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) )
+            // InternalETLDsl.g:1678:2: ( ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) ) )
+            // InternalETLDsl.g:1679:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) )
             {
-            // InternalETLDsl.g:1675:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) )
+            // InternalETLDsl.g:1679:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'DAY_PARTITIONED' ) | (enumLiteral_2= 'MONTH_PARTITIONED' ) | (enumLiteral_3= 'BITEMPORAL' ) )
             int alt46=4;
             switch ( input.LA(1) ) {
-            case 65:
+            case 67:
                 {
                 alt46=1;
                 }
                 break;
-            case 66:
+            case 68:
                 {
                 alt46=2;
                 }
                 break;
-            case 67:
+            case 69:
                 {
                 alt46=3;
                 }
                 break;
-            case 68:
+            case 70:
                 {
                 alt46=4;
                 }
@@ -4068,12 +4010,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             switch (alt46) {
                 case 1 :
-                    // InternalETLDsl.g:1676:3: (enumLiteral_0= 'NONE' )
+                    // InternalETLDsl.g:1680:3: (enumLiteral_0= 'NONE' )
                     {
-                    // InternalETLDsl.g:1676:3: (enumLiteral_0= 'NONE' )
-                    // InternalETLDsl.g:1677:4: enumLiteral_0= 'NONE'
+                    // InternalETLDsl.g:1680:3: (enumLiteral_0= 'NONE' )
+                    // InternalETLDsl.g:1681:4: enumLiteral_0= 'NONE'
                     {
-                    enumLiteral_0=(Token)match(input,65,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,67,FOLLOW_2); 
 
                     				current = grammarAccess.getHISTORISATIONTYPEAccess().getNONEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getHISTORISATIONTYPEAccess().getNONEEnumLiteralDeclaration_0());
@@ -4085,12 +4027,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalETLDsl.g:1684:3: (enumLiteral_1= 'DAY_PARTITIONED' )
+                    // InternalETLDsl.g:1688:3: (enumLiteral_1= 'DAY_PARTITIONED' )
                     {
-                    // InternalETLDsl.g:1684:3: (enumLiteral_1= 'DAY_PARTITIONED' )
-                    // InternalETLDsl.g:1685:4: enumLiteral_1= 'DAY_PARTITIONED'
+                    // InternalETLDsl.g:1688:3: (enumLiteral_1= 'DAY_PARTITIONED' )
+                    // InternalETLDsl.g:1689:4: enumLiteral_1= 'DAY_PARTITIONED'
                     {
-                    enumLiteral_1=(Token)match(input,66,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,68,FOLLOW_2); 
 
                     				current = grammarAccess.getHISTORISATIONTYPEAccess().getDAY_PARTITIONEDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getHISTORISATIONTYPEAccess().getDAY_PARTITIONEDEnumLiteralDeclaration_1());
@@ -4102,12 +4044,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalETLDsl.g:1692:3: (enumLiteral_2= 'MONTH_PARTITIONED' )
+                    // InternalETLDsl.g:1696:3: (enumLiteral_2= 'MONTH_PARTITIONED' )
                     {
-                    // InternalETLDsl.g:1692:3: (enumLiteral_2= 'MONTH_PARTITIONED' )
-                    // InternalETLDsl.g:1693:4: enumLiteral_2= 'MONTH_PARTITIONED'
+                    // InternalETLDsl.g:1696:3: (enumLiteral_2= 'MONTH_PARTITIONED' )
+                    // InternalETLDsl.g:1697:4: enumLiteral_2= 'MONTH_PARTITIONED'
                     {
-                    enumLiteral_2=(Token)match(input,67,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,69,FOLLOW_2); 
 
                     				current = grammarAccess.getHISTORISATIONTYPEAccess().getMONTH_PARTITIONEDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getHISTORISATIONTYPEAccess().getMONTH_PARTITIONEDEnumLiteralDeclaration_2());
@@ -4119,12 +4061,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalETLDsl.g:1700:3: (enumLiteral_3= 'BITEMPORAL' )
+                    // InternalETLDsl.g:1704:3: (enumLiteral_3= 'BITEMPORAL' )
                     {
-                    // InternalETLDsl.g:1700:3: (enumLiteral_3= 'BITEMPORAL' )
-                    // InternalETLDsl.g:1701:4: enumLiteral_3= 'BITEMPORAL'
+                    // InternalETLDsl.g:1704:3: (enumLiteral_3= 'BITEMPORAL' )
+                    // InternalETLDsl.g:1705:4: enumLiteral_3= 'BITEMPORAL'
                     {
-                    enumLiteral_3=(Token)match(input,68,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,70,FOLLOW_2); 
 
                     				current = grammarAccess.getHISTORISATIONTYPEAccess().getBITEMPORALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getHISTORISATIONTYPEAccess().getBITEMPORALEnumLiteralDeclaration_3());
@@ -4158,7 +4100,7 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleREPRESENTATIONS"
-    // InternalETLDsl.g:1711:1: ruleREPRESENTATIONS returns [Enumerator current=null] : ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) ) ;
+    // InternalETLDsl.g:1715:1: ruleREPRESENTATIONS returns [Enumerator current=null] : ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) ) ;
     public final Enumerator ruleREPRESENTATIONS() throws RecognitionException {
         Enumerator current = null;
 
@@ -4172,33 +4114,33 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalETLDsl.g:1717:2: ( ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) ) )
-            // InternalETLDsl.g:1718:2: ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) )
+            // InternalETLDsl.g:1721:2: ( ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) ) )
+            // InternalETLDsl.g:1722:2: ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) )
             {
-            // InternalETLDsl.g:1718:2: ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) )
+            // InternalETLDsl.g:1722:2: ( (enumLiteral_0= 'FLAT_TABLE' ) | (enumLiteral_1= 'DATAVAULT' ) | (enumLiteral_2= 'ThirdNF' ) | (enumLiteral_3= 'SNOWFLAKE' ) | (enumLiteral_4= 'STAR' ) )
             int alt47=5;
             switch ( input.LA(1) ) {
-            case 69:
+            case 71:
                 {
                 alt47=1;
                 }
                 break;
-            case 70:
+            case 72:
                 {
                 alt47=2;
                 }
                 break;
-            case 71:
+            case 73:
                 {
                 alt47=3;
                 }
                 break;
-            case 72:
+            case 74:
                 {
                 alt47=4;
                 }
                 break;
-            case 73:
+            case 75:
                 {
                 alt47=5;
                 }
@@ -4212,12 +4154,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
 
             switch (alt47) {
                 case 1 :
-                    // InternalETLDsl.g:1719:3: (enumLiteral_0= 'FLAT_TABLE' )
+                    // InternalETLDsl.g:1723:3: (enumLiteral_0= 'FLAT_TABLE' )
                     {
-                    // InternalETLDsl.g:1719:3: (enumLiteral_0= 'FLAT_TABLE' )
-                    // InternalETLDsl.g:1720:4: enumLiteral_0= 'FLAT_TABLE'
+                    // InternalETLDsl.g:1723:3: (enumLiteral_0= 'FLAT_TABLE' )
+                    // InternalETLDsl.g:1724:4: enumLiteral_0= 'FLAT_TABLE'
                     {
-                    enumLiteral_0=(Token)match(input,69,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,71,FOLLOW_2); 
 
                     				current = grammarAccess.getREPRESENTATIONSAccess().getFLAT_TABLEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getREPRESENTATIONSAccess().getFLAT_TABLEEnumLiteralDeclaration_0());
@@ -4229,12 +4171,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalETLDsl.g:1727:3: (enumLiteral_1= 'DATAVAULT' )
+                    // InternalETLDsl.g:1731:3: (enumLiteral_1= 'DATAVAULT' )
                     {
-                    // InternalETLDsl.g:1727:3: (enumLiteral_1= 'DATAVAULT' )
-                    // InternalETLDsl.g:1728:4: enumLiteral_1= 'DATAVAULT'
+                    // InternalETLDsl.g:1731:3: (enumLiteral_1= 'DATAVAULT' )
+                    // InternalETLDsl.g:1732:4: enumLiteral_1= 'DATAVAULT'
                     {
-                    enumLiteral_1=(Token)match(input,70,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,72,FOLLOW_2); 
 
                     				current = grammarAccess.getREPRESENTATIONSAccess().getDATAVAULTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getREPRESENTATIONSAccess().getDATAVAULTEnumLiteralDeclaration_1());
@@ -4246,12 +4188,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalETLDsl.g:1735:3: (enumLiteral_2= 'ThirdNF' )
+                    // InternalETLDsl.g:1739:3: (enumLiteral_2= 'ThirdNF' )
                     {
-                    // InternalETLDsl.g:1735:3: (enumLiteral_2= 'ThirdNF' )
-                    // InternalETLDsl.g:1736:4: enumLiteral_2= 'ThirdNF'
+                    // InternalETLDsl.g:1739:3: (enumLiteral_2= 'ThirdNF' )
+                    // InternalETLDsl.g:1740:4: enumLiteral_2= 'ThirdNF'
                     {
-                    enumLiteral_2=(Token)match(input,71,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,73,FOLLOW_2); 
 
                     				current = grammarAccess.getREPRESENTATIONSAccess().getThirdNFEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getREPRESENTATIONSAccess().getThirdNFEnumLiteralDeclaration_2());
@@ -4263,12 +4205,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalETLDsl.g:1743:3: (enumLiteral_3= 'SNOWFLAKE' )
+                    // InternalETLDsl.g:1747:3: (enumLiteral_3= 'SNOWFLAKE' )
                     {
-                    // InternalETLDsl.g:1743:3: (enumLiteral_3= 'SNOWFLAKE' )
-                    // InternalETLDsl.g:1744:4: enumLiteral_3= 'SNOWFLAKE'
+                    // InternalETLDsl.g:1747:3: (enumLiteral_3= 'SNOWFLAKE' )
+                    // InternalETLDsl.g:1748:4: enumLiteral_3= 'SNOWFLAKE'
                     {
-                    enumLiteral_3=(Token)match(input,72,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,74,FOLLOW_2); 
 
                     				current = grammarAccess.getREPRESENTATIONSAccess().getSNOWFLAKEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getREPRESENTATIONSAccess().getSNOWFLAKEEnumLiteralDeclaration_3());
@@ -4280,12 +4222,12 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalETLDsl.g:1751:3: (enumLiteral_4= 'STAR' )
+                    // InternalETLDsl.g:1755:3: (enumLiteral_4= 'STAR' )
                     {
-                    // InternalETLDsl.g:1751:3: (enumLiteral_4= 'STAR' )
-                    // InternalETLDsl.g:1752:4: enumLiteral_4= 'STAR'
+                    // InternalETLDsl.g:1755:3: (enumLiteral_4= 'STAR' )
+                    // InternalETLDsl.g:1756:4: enumLiteral_4= 'STAR'
                     {
-                    enumLiteral_4=(Token)match(input,73,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,75,FOLLOW_2); 
 
                     				current = grammarAccess.getREPRESENTATIONSAccess().getSTAREnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getREPRESENTATIONSAccess().getSTAREnumLiteralDeclaration_4());
@@ -4325,53 +4267,56 @@ public class InternalETLDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000420F002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000420E002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0xF000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000420C002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000000L,0x000000000000001EL});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000004208002L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000000L,0x00000000000003E0L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000004200002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000108F002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000108E002L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0xC000000000000000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000108C002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000078L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000001088002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000F80L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001080002L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000001080000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000003800000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001010000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000039000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000041000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000031000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000021000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0FE0000000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x00007FFE00000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000040020L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x00007FFC00000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x00007FF800000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x00007FF000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x00007FE000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x00007FC000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x00007F8000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x00007F0000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x00007E0000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x00007C0000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000780000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000700000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000600000000000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0003000001000000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0002000001000000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0012000001000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000E00000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000410000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000C00000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000002100000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x00000000E0400000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000100400000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00000000C0400000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000080400000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x3F80000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0001FFF800000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000040020L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0001FFF000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0001FFE000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0001FFC000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0001FF8000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0001FF0000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0001FE0000000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0001FC0000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0001F80000000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0001F00000000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0001E00000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0001C00000000000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0001800000000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x000C000000400000L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0008000000400000L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0048000000400000L});
 
 }

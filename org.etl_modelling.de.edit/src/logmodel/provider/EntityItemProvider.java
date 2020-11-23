@@ -69,6 +69,9 @@ public class EntityItemProvider
 			addNamePropertyDescriptor(object);
 			addIncludePropertyDescriptor(object);
 			addRelationshipsPropertyDescriptor(object);
+			addFilenamePropertyDescriptor(object);
+			addDelimiterPropertyDescriptor(object);
+			addLineendPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,6 +138,72 @@ public class EntityItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Filename feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFilenamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_filename_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_filename_feature", "_UI_Entity_type"),
+				 LogmodelPackage.Literals.ENTITY__FILENAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Delimiter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDelimiterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_delimiter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_delimiter_feature", "_UI_Entity_type"),
+				 LogmodelPackage.Literals.ENTITY__DELIMITER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Lineend feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLineendPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_lineend_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_lineend_feature", "_UI_Entity_type"),
+				 LogmodelPackage.Literals.ENTITY__LINEEND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -210,6 +279,9 @@ public class EntityItemProvider
 
 		switch (notification.getFeatureID(Entity.class)) {
 			case LogmodelPackage.ENTITY__NAME:
+			case LogmodelPackage.ENTITY__FILENAME:
+			case LogmodelPackage.ENTITY__DELIMITER:
+			case LogmodelPackage.ENTITY__LINEEND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogmodelPackage.ENTITY__ENTITY_FIELD:

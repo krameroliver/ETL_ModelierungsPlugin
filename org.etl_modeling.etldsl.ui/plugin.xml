@@ -168,6 +168,14 @@
 					<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened" />
 				</visibleWhen>
 			</command>
+   <command
+         commandId="org.eclipse.ui.project.cleanAction"
+         icon="ico/besen.png"
+         style="push">
+      <visibleWhen
+            checkEnabled="false">
+      </visibleWhen>
+   </command>
 		</menuContribution>
 		<menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
@@ -431,4 +439,22 @@
 			type="text">
 		</fileTypes>
 	</extension>
+ <extension
+       id="Build"
+       name="Build"
+       point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="false"
+          locationURI="org.etl_modeling.etldsl.ui.menuContribution3">
+       <command
+             commandId="org.eclipse.ui.project.cleanAction"
+             icon="ico/besen.png"
+             label="CLEAN"
+             style="push">
+          <visibleWhen
+                checkEnabled="false">
+          </visibleWhen>
+       </command>
+    </menuContribution>
+ </extension>
 </plugin>

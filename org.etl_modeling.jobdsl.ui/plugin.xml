@@ -431,4 +431,48 @@
 			type="text">
 		</fileTypes>
 	</extension>
+ <extension
+       point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="false"
+          locationURI="org.etl_modeling.jobdsl.ui.menuContribution1">
+       <toolbar
+             id="org.etl_modeling.jobdsl.ui.toolbar1">
+          <command
+                commandId="org.eclipse.ui.project.buildAll"
+                label="Build"
+                style="push">
+          </command>
+          <command
+                commandId="org.eclipse.ui.project.cleanAction"
+                label="clean"
+                style="push">
+          </command>
+       </toolbar>
+    </menuContribution>
+ </extension>
+ <extension
+       id="CleanBuild"
+       name="CleanBuil"
+       point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="false"
+          locationURI="org.etl_modeling.jobdsl.ui.menuContribution2">
+       <toolbar
+             id="org.etl_modeling.jobdsl.ui.toolbar2"
+             label="cleanToolBar">
+          <command
+                commandId="org.eclipse.ui.project.buildAll"
+                label="Build"
+                style="push">
+          </command>
+          <command
+                commandId="org.eclipse.ui.project.cleanAction"
+                icon="ico/besen.png"
+                label="clean"
+                style="push">
+          </command>
+       </toolbar>
+    </menuContribution>
+ </extension>
 </plugin>

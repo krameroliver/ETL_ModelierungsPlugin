@@ -32,6 +32,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/entityField"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/include"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/relationships"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/filename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/delimiter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/lineend"/>
     </genClasses>
     <genClasses ecoreClass="logmodel.ecore#//Field">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//Field/entity"/>

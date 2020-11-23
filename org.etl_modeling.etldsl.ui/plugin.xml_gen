@@ -4,48 +4,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="spec"
-			id="org.etl_modeling.specdsl.SpecDsl"
-			name="SpecDsl Editor">
+			extensions="model"
+			id="org.etl_modeling.etldsl.ETLDsl"
+			name="ETLDsl Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+					definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="org.etl_modeling.specdsl.SpecDsl.validate">
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="org.etl_modeling.etldsl.ETLDsl.validate">
 			<activeWhen>
 				<reference
-					definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+					definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened" />
+				<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="org.etl_modeling.specdsl.SpecDsl.XtextEditor.opened" />
+					<reference definitionId="org.etl_modeling.etldsl.ETLDsl.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+		<definition id="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="org.etl_modeling.specdsl.SpecDsl"
+						value="org.etl_modeling.etldsl.ETLDsl"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="org.etl_modeling.specdsl.SpecDsl.XtextEditor.opened">
+		<definition id="org.etl_modeling.etldsl.ETLDsl.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="org.etl_modeling.specdsl.SpecDsl"
+						value="org.etl_modeling.etldsl.ETLDsl"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl"
-			name="SpecDsl">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl"
+			name="ETLDsl">
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 		</page>
 		<page
-			category="org.etl_modeling.specdsl.SpecDsl"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl.coloring"
+			category="org.etl_modeling.etldsl.ETLDsl"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 		</page>
 		<page
-			category="org.etl_modeling.specdsl.SpecDsl"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl.templates"
+			category="org.etl_modeling.etldsl.ETLDsl"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl.templates"
 			name="Templates">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl"
-			name="SpecDsl">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl"
+			name="ETLDsl">
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"
-			label="SpecDsl"/>
+			id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"
+			label="ETLDsl"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
 			description="Trigger expensive validation"
-			id="org.etl_modeling.specdsl.SpecDsl.validate"
+			id="org.etl_modeling.etldsl.ETLDsl.validate"
 			name="Validate">
 		</command>
 		<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			<command
-				commandId="org.etl_modeling.specdsl.SpecDsl.validate"
+				commandId="org.etl_modeling.etldsl.ETLDsl.validate"
 				style="push"
 				tooltip="Trigger expensive validation">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+						definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened" />
+					<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened" />
+					<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="org.etl_modeling.specdsl.SpecDsl.XtextEditor.opened" />
+						<reference definitionId="org.etl_modeling.etldsl.ETLDsl.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+					<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,11 +195,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+					definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -207,9 +207,9 @@
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
-			file-extensions="spec"
-			id="org.etl_modeling.specdsl.SpecDsl.contenttype"
-			name="SpecDsl File"
+			file-extensions="model"
+			id="org.etl_modeling.etldsl.ETLDsl.contenttype"
+			name="ETLDsl File"
 			priority="normal">
 		</content-type>
 	</extension>
@@ -217,68 +217,68 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="spec">
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="model">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-			uriExtension="spec">
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			uriExtension="model">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for org.etl_modeling.specdsl.SpecDsl -->
+	<!-- marker definitions for org.etl_modeling.etldsl.ETLDsl -->
 	<extension
-			id="specdsl.check.fast"
-			name="SpecDsl Problem"
+			id="etldsl.check.fast"
+			name="ETLDsl Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.fast"/>
 		<persistent value="true"/>
 	</extension>
 	<extension
-			id="specdsl.check.normal"
-			name="SpecDsl Problem"
+			id="etldsl.check.normal"
+			name="ETLDsl Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.normal"/>
 		<persistent value="true"/>
 	</extension>
 	<extension
-			id="specdsl.check.expensive"
-			name="SpecDsl Problem"
+			id="etldsl.check.expensive"
+			name="ETLDsl Problem"
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="org.etl_modeling.specdsl.SpecDsl"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl.validator.preferencePage"
+			category="org.etl_modeling.etldsl.ETLDsl"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl.validator.preferencePage"
 			name="Errors/Warnings">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-			fileExtensions="spec"/>
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			fileExtensions="model"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="org.etl_modeling.specdsl.SpecDsl"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl.compiler.preferencePage"
+			category="org.etl_modeling.etldsl.ETLDsl"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="org.etl_modeling.specdsl.SpecDsl"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl.compiler.propertyPage"
+			category="org.etl_modeling.etldsl.ETLDsl"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -289,20 +289,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="org.etl_modeling.specdsl.SpecDsl.OpenGeneratedCode"
+				id="org.etl_modeling.etldsl.ETLDsl.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened" />
+					<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened" />
+				<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -310,11 +310,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+					definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -334,33 +334,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened"/>
+					<reference definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for org.etl_modeling.specdsl.SpecDsl -->
+	<!-- quickfix marker resolution generator for org.etl_modeling.etldsl.ETLDsl -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="org.etl_modeling.specdsl.ui.specdsl.check.fast">
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="org.etl_modeling.etldsl.ui.etldsl.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="org.etl_modeling.specdsl.ui.specdsl.check.normal">
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="org.etl_modeling.etldsl.ui.etldsl.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-			markerType="org.etl_modeling.specdsl.ui.specdsl.check.expensive">
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="org.etl_modeling.etldsl.ui.etldsl.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
 				value="true">
@@ -370,11 +370,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+					definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -386,7 +386,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="org.etl_modeling.specdsl.SpecDsl.Editor.opened">
+						definitionId="org.etl_modeling.etldsl.ETLDsl.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -394,55 +394,41 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="org.etl_modeling.specdsl.SpecDsl"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="org.etl_modeling.specdsl.SpecDsl.refactoring"
+			category="org.etl_modeling.etldsl.ETLDsl"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="org.etl_modeling.etldsl.ETLDsl.refactoring"
 			name="Refactoring">
-			<keywordReference id="org.etl_modeling.specdsl.ui.keyword_SpecDsl"/>
+			<keywordReference id="org.etl_modeling.etldsl.ui.keyword_ETLDsl"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="org.etl_modeling.specdsl.SpecDsl.compare.contentViewers"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="spec">
+		<viewer id="org.etl_modeling.etldsl.ETLDsl.compare.contentViewers"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="model">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="org.etl_modeling.specdsl.SpecDsl.contenttype"
-			contentViewerId="org.etl_modeling.specdsl.SpecDsl.compare.contentViewers" />
+			contentTypeId="org.etl_modeling.etldsl.ETLDsl.contenttype"
+			contentViewerId="org.etl_modeling.etldsl.ETLDsl.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="org.etl_modeling.specdsl.SpecDsl.compare.contentMergeViewers"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="spec" label="SpecDsl Compare">
+		<viewer id="org.etl_modeling.etldsl.ETLDsl.compare.contentMergeViewers"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="model" label="ETLDsl Compare">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="org.etl_modeling.specdsl.SpecDsl.contenttype"
-			contentMergeViewerId="org.etl_modeling.specdsl.SpecDsl.compare.contentMergeViewers" />
+			contentTypeId="org.etl_modeling.etldsl.ETLDsl.contenttype"
+			contentMergeViewerId="org.etl_modeling.etldsl.ETLDsl.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="org.etl_modeling.specdsl.SpecDsl.editors.documentProviders"
-			class="org.etl_modeling.specdsl.ui.SpecDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-			extensions="spec">
+		<provider id="org.etl_modeling.etldsl.ETLDsl.editors.documentProviders"
+			class="org.etl_modeling.etldsl.ui.ETLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+			extensions="model">
 		</provider>
 	</extension>
 	<extension point="org.eclipse.team.core.fileTypes">
 		<fileTypes
-			extension="spec"
+			extension="model"
 			type="text">
 		</fileTypes>
 	</extension>
- <extension
-       id="clean"
-       name="clean"
-       point="org.eclipse.ui.menus">
-    <menuContribution
-          allPopups="false"
-          locationURI="org.etl_modeling.specdsl.ui.menuContribution4">
-       <command
-             commandId="org.eclipse.ui.project.cleanAction"
-             icon="ico/besen.png"
-             style="push">
-       </command>
-    </menuContribution>
- </extension>
 </plugin>

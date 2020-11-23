@@ -3,7 +3,7 @@ Automatic-Module-Name: org.etl_modeling.etldsl
 Bundle-ManifestVersion: 2
 Bundle-Name: org.etl_modeling.etldsl
 Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.5.0.qualifier
 Bundle-SymbolicName: org.etl_modeling.etldsl; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.etl_modelling.de,

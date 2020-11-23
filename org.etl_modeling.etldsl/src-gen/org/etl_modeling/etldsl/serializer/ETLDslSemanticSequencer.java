@@ -81,6 +81,7 @@ public class ETLDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         name=ID 
+	 *         (filename=EString delimiter=EString lineend=EString)? 
 	 *         (entityField+=Field entityField+=Field*)? 
 	 *         (include+=Include include+=Include*)? 
 	 *         (relationships+=Relationship relationships+=Relationship*)?
@@ -106,11 +107,11 @@ public class ETLDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         short_describtion=EString? 
 	 *         dateFormat=EString? 
 	 *         NullIndicator=EString? 
-	 *         allowExponent?=EBoolean? 
-	 *         hasImplicitComma?=EBoolean? 
-	 *         interfaceOnly?=EBoolean? 
-	 *         tableOnly?=EBoolean? 
-	 *         isFastChanging?=EBoolean? 
+	 *         allowExponent?='allowExponent'? 
+	 *         hasImplicitComma?='hasImplicitComma'? 
+	 *         interfaceOnly?='interfaceOnly'? 
+	 *         tableOnly?='tableOnly'? 
+	 *         isFastChanging?='isFastChanging'? 
 	 *         isBusinessKey?='BusinessKey'?
 	 *     )
 	 */
@@ -126,7 +127,7 @@ public class ETLDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         (includeFields+=[Field|QualifiedName] includeFields+=[Field|QualifiedName]*)? 
+	 *         (includeFields+=Field includeFields+=Field*)? 
 	 *         (identifyingfields+=[Field|QualifiedName] identifyingfields+=[Field|QualifiedName]*)?
 	 *     )
 	 */

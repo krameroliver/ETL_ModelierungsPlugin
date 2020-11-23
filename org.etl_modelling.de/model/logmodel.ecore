@@ -16,6 +16,9 @@
         eType="#//Include" containment="true" eOpposite="#//Include/entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" upperBound="-1"
         eType="#//Relationship" containment="true" eOpposite="#//Relationship/entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineend" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="ETL_MODEL.ecore#//namedelement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
@@ -54,7 +57,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BKDomain"/>
   <eClassifiers xsi:type="ecore:EClass" name="Include" eSuperTypes="ETL_MODEL.ecore#//namedelement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="includeFields" upperBound="-1"
-        eType="#//Field" eOpposite="#//Field/include"/>
+        eType="#//Field" containment="true" eOpposite="#//Field/include"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifyingfields" upperBound="-1"
         eType="#//Field"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
