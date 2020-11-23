@@ -153,8 +153,18 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getSchedulePackage_Jobs() {
+	public EReference getSchedulePackage_Processingpoint() {
 		return (EReference)schedulePackageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSchedulePackage_Jobs() {
+		return (EReference)schedulePackageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -173,8 +183,8 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getProcessingPoint_Job() {
-		return (EReference)processingPointEClass.getEStructuralFeatures().get(0);
+	public EAttribute getProcessingPoint_ProcessingPointType() {
+		return (EAttribute)processingPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -183,8 +193,18 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProcessingPoint_ProcessingPointType() {
-		return (EAttribute)processingPointEClass.getEStructuralFeatures().get(1);
+	public EReference getProcessingPoint_Jobs() {
+		return (EReference)processingPointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getProcessingPoint_PreDecessor() {
+		return (EReference)processingPointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -203,8 +223,8 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getJob_Schedulepackage() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(0);
+	public EReference getJob_Processingpoint() {
+		return (EReference)jobEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -213,8 +233,8 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getJob_Processingpoint() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(1);
+	public EReference getJob_PpPreDecessorprocessingpoint() {
+		return (EReference)jobEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -224,7 +244,7 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 */
 	@Override
 	public EReference getJob_Job() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(2);
+		return (EReference)jobEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -234,7 +254,7 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 */
 	@Override
 	public EReference getJob_PreDecessor() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(3);
+		return (EReference)jobEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -244,7 +264,7 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 */
 	@Override
 	public EAttribute getJob_RunTime() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -254,7 +274,7 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 */
 	@Override
 	public EAttribute getJob_JobType() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -264,7 +284,7 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 */
 	@Override
 	public EAttribute getJob_IsTestJob() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -274,7 +294,7 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 */
 	@Override
 	public EAttribute getJob_TECH_SYSTEM() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -284,7 +304,7 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 	 */
 	@Override
 	public EAttribute getJob_ExecutableName() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -347,15 +367,15 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 
 		// Create classes and their features
 		schedulePackageEClass = createEClass(SCHEDULE_PACKAGE);
+		createEReference(schedulePackageEClass, SCHEDULE_PACKAGE__PROCESSINGPOINT);
 		createEReference(schedulePackageEClass, SCHEDULE_PACKAGE__JOBS);
 
 		processingPointEClass = createEClass(PROCESSING_POINT);
-		createEReference(processingPointEClass, PROCESSING_POINT__JOB);
 		createEAttribute(processingPointEClass, PROCESSING_POINT__PROCESSING_POINT_TYPE);
+		createEReference(processingPointEClass, PROCESSING_POINT__JOBS);
+		createEReference(processingPointEClass, PROCESSING_POINT__PRE_DECESSOR);
 
 		jobEClass = createEClass(JOB);
-		createEReference(jobEClass, JOB__SCHEDULEPACKAGE);
-		createEReference(jobEClass, JOB__PROCESSINGPOINT);
 		createEReference(jobEClass, JOB__JOB);
 		createEReference(jobEClass, JOB__PRE_DECESSOR);
 		createEAttribute(jobEClass, JOB__RUN_TIME);
@@ -363,6 +383,8 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 		createEAttribute(jobEClass, JOB__IS_TEST_JOB);
 		createEAttribute(jobEClass, JOB__TECH_SYSTEM);
 		createEAttribute(jobEClass, JOB__EXECUTABLE_NAME);
+		createEReference(jobEClass, JOB__PROCESSINGPOINT);
+		createEReference(jobEClass, JOB__PP_PRE_DECESSORPROCESSINGPOINT);
 
 		// Create enums
 		runningTimeEEnum = createEEnum(RUNNING_TIME);
@@ -407,22 +429,24 @@ public class JobnetzPackageImpl extends EPackageImpl implements JobnetzPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(schedulePackageEClass, SchedulePackage.class, "SchedulePackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSchedulePackage_Jobs(), this.getJob(), this.getJob_Schedulepackage(), "jobs", null, 0, -1, SchedulePackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedulePackage_Processingpoint(), this.getProcessingPoint(), null, "processingpoint", null, 0, 1, SchedulePackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedulePackage_Jobs(), this.getJob(), null, "jobs", null, 0, -1, SchedulePackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(processingPointEClass, ProcessingPoint.class, "ProcessingPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProcessingPoint_Job(), this.getJob(), this.getJob_Processingpoint(), "job", null, 0, 1, ProcessingPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProcessingPoint_ProcessingPointType(), this.getProcessingPointType(), "ProcessingPointType", null, 0, 1, ProcessingPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcessingPoint_Jobs(), this.getJob(), this.getJob_Processingpoint(), "jobs", null, 0, -1, ProcessingPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcessingPoint_PreDecessor(), this.getJob(), null, "preDecessor", null, 0, -1, ProcessingPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getJob_Schedulepackage(), this.getSchedulePackage(), this.getSchedulePackage_Jobs(), "schedulepackage", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_Processingpoint(), this.getProcessingPoint(), this.getProcessingPoint_Job(), "processingpoint", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_Job(), this.getJob(), this.getJob_PreDecessor(), "job", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_PreDecessor(), this.getJob(), this.getJob_Job(), "preDecessor", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Job(), this.getJob(), this.getJob_PreDecessor(), "job", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_PreDecessor(), this.getJob(), this.getJob_Job(), "preDecessor", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_RunTime(), this.getRunningTime(), "RunTime", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_JobType(), this.getJobType(), "JobType", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_IsTestJob(), ecorePackage.getEBoolean(), "isTestJob", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_TECH_SYSTEM(), ecorePackage.getEString(), "TECH_SYSTEM", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_ExecutableName(), ecorePackage.getEString(), "ExecutableName", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Processingpoint(), this.getProcessingPoint(), this.getProcessingPoint_Jobs(), "processingpoint", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_PpPreDecessorprocessingpoint(), this.getProcessingPoint(), null, "ppPreDecessorprocessingpoint", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(runningTimeEEnum, RunningTime.class, "RunningTime");

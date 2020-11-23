@@ -2,26 +2,31 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="jobnetz" nsURI="http://www.example.org/jobnetz" nsPrefix="jobnetz">
   <eClassifiers xsi:type="ecore:EClass" name="SchedulePackage" eSuperTypes="ETL_MODEL.ecore#//Package">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processingpoint" eType="#//ProcessingPoint"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="jobs" upperBound="-1" eType="#//Job"
-        containment="true" eOpposite="#//Job/schedulepackage"/>
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessingPoint" eSuperTypes="ETL_MODEL.ecore#//namedelement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="job" eType="#//Job" eOpposite="#//Job/processingpoint"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ProcessingPointType" eType="#//ProcessingPointType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobs" upperBound="-1" eType="#//Job"
+        containment="true" eOpposite="#//Job/processingpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preDecessor" upperBound="-1"
+        eType="#//Job"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Job" eSuperTypes="ETL_MODEL.ecore#//namedelement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulepackage" eType="#//SchedulePackage"
-        eOpposite="#//SchedulePackage/jobs"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="processingpoint" upperBound="-1"
-        eType="#//ProcessingPoint" containment="true" eOpposite="#//ProcessingPoint/job"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="job" eType="#//Job" eOpposite="#//Job/preDecessor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preDecessor" upperBound="-1"
-        eType="#//Job" containment="true" eOpposite="#//Job/job"/>
+        eType="#//Job" eOpposite="#//Job/job"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="RunTime" eType="#//RunningTime"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="JobType" eType="#//JobType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTestJob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="TECH_SYSTEM" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ExecutableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processingpoint" eType="#//ProcessingPoint"
+        eOpposite="#//ProcessingPoint/jobs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ppPreDecessorprocessingpoint"
+        eType="#//ProcessingPoint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RunningTime">
     <eLiterals name="EveryDay"/>

@@ -9,16 +9,12 @@ import java.util.Collection;
 import java.util.List;
 
 import jobnetz.Job;
-import jobnetz.JobnetzFactory;
 import jobnetz.JobnetzPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -71,6 +67,8 @@ public class JobItemProvider
 			addIsTestJobPropertyDescriptor(object);
 			addTECH_SYSTEMPropertyDescriptor(object);
 			addExecutableNamePropertyDescriptor(object);
+			addProcessingpointPropertyDescriptor(object);
+			addPpPreDecessorprocessingpointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -208,34 +206,47 @@ public class JobItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Processingpoint feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(JobnetzPackage.Literals.JOB__PROCESSINGPOINT);
-			childrenFeatures.add(JobnetzPackage.Literals.JOB__PRE_DECESSOR);
-		}
-		return childrenFeatures;
+	protected void addProcessingpointPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Job_processingpoint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Job_processingpoint_feature", "_UI_Job_type"),
+				 JobnetzPackage.Literals.JOB__PROCESSINGPOINT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Pp Pre Decessorprocessingpoint feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addPpPreDecessorprocessingpointPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Job_ppPreDecessorprocessingpoint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Job_ppPreDecessorprocessingpoint_feature", "_UI_Job_type"),
+				 JobnetzPackage.Literals.JOB__PP_PRE_DECESSORPROCESSINGPOINT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -284,10 +295,6 @@ public class JobItemProvider
 			case JobnetzPackage.JOB__EXECUTABLE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case JobnetzPackage.JOB__PROCESSINGPOINT:
-			case JobnetzPackage.JOB__PRE_DECESSOR:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -302,16 +309,6 @@ public class JobItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(JobnetzPackage.Literals.JOB__PROCESSINGPOINT,
-				 JobnetzFactory.eINSTANCE.createProcessingPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(JobnetzPackage.Literals.JOB__PRE_DECESSOR,
-				 JobnetzFactory.eINSTANCE.createJob()));
 	}
 
 	/**

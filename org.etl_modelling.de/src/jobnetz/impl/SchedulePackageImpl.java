@@ -3,25 +3,21 @@
 package jobnetz.impl;
 
 import java.util.Collection;
-
 import jobnetz.Job;
 import jobnetz.JobnetzPackage;
+import jobnetz.ProcessingPoint;
 import jobnetz.SchedulePackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import package_enums.HISTORISATIONTYPE;
 import package_enums.LAYERTYPE;
 import package_enums.REPRESENTATIONS;
@@ -39,6 +35,7 @@ import package_enums.REPRESENTATIONS;
  *   <li>{@link jobnetz.impl.SchedulePackageImpl#getLAYER_TYPE <em>LAYER TYPE</em>}</li>
  *   <li>{@link jobnetz.impl.SchedulePackageImpl#getHISTORISATION <em>HISTORISATION</em>}</li>
  *   <li>{@link jobnetz.impl.SchedulePackageImpl#getREPRESENTATION <em>REPRESENTATION</em>}</li>
+ *   <li>{@link jobnetz.impl.SchedulePackageImpl#getProcessingpoint <em>Processingpoint</em>}</li>
  *   <li>{@link jobnetz.impl.SchedulePackageImpl#getJobs <em>Jobs</em>}</li>
  * </ul>
  *
@@ -144,6 +141,16 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected REPRESENTATIONS representation = REPRESENTATION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProcessingpoint() <em>Processingpoint</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProcessingpoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProcessingPoint processingpoint;
 
 	/**
 	 * The cached value of the '{@link #getJobs() <em>Jobs</em>}' containment reference list.
@@ -295,11 +302,8 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public EList<Job> getJobs() {
-		if (jobs == null) {
-			jobs = new EObjectContainmentWithInverseEList<Job>(Job.class, this, JobnetzPackage.SCHEDULE_PACKAGE__JOBS, JobnetzPackage.JOB__SCHEDULEPACKAGE);
-		}
-		return jobs;
+	public ProcessingPoint getProcessingpoint() {
+		return processingpoint;
 	}
 
 	/**
@@ -307,14 +311,47 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case JobnetzPackage.SCHEDULE_PACKAGE__JOBS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJobs()).basicAdd(otherEnd, msgs);
+	public NotificationChain basicSetProcessingpoint(ProcessingPoint newProcessingpoint, NotificationChain msgs) {
+		ProcessingPoint oldProcessingpoint = processingpoint;
+		processingpoint = newProcessingpoint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT, oldProcessingpoint, newProcessingpoint);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProcessingpoint(ProcessingPoint newProcessingpoint) {
+		if (newProcessingpoint != processingpoint) {
+			NotificationChain msgs = null;
+			if (processingpoint != null)
+				msgs = ((InternalEObject)processingpoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT, null, msgs);
+			if (newProcessingpoint != null)
+				msgs = ((InternalEObject)newProcessingpoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT, null, msgs);
+			msgs = basicSetProcessingpoint(newProcessingpoint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT, newProcessingpoint, newProcessingpoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Job> getJobs() {
+		if (jobs == null) {
+			jobs = new EObjectContainmentEList<Job>(Job.class, this, JobnetzPackage.SCHEDULE_PACKAGE__JOBS);
+		}
+		return jobs;
 	}
 
 	/**
@@ -325,6 +362,8 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT:
+				return basicSetProcessingpoint(null, msgs);
 			case JobnetzPackage.SCHEDULE_PACKAGE__JOBS:
 				return ((InternalEList<?>)getJobs()).basicRemove(otherEnd, msgs);
 		}
@@ -349,6 +388,8 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 				return getHISTORISATION();
 			case JobnetzPackage.SCHEDULE_PACKAGE__REPRESENTATION:
 				return getREPRESENTATION();
+			case JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT:
+				return getProcessingpoint();
 			case JobnetzPackage.SCHEDULE_PACKAGE__JOBS:
 				return getJobs();
 		}
@@ -378,6 +419,9 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case JobnetzPackage.SCHEDULE_PACKAGE__REPRESENTATION:
 				setREPRESENTATION((REPRESENTATIONS)newValue);
+				return;
+			case JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT:
+				setProcessingpoint((ProcessingPoint)newValue);
 				return;
 			case JobnetzPackage.SCHEDULE_PACKAGE__JOBS:
 				getJobs().clear();
@@ -410,6 +454,9 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 			case JobnetzPackage.SCHEDULE_PACKAGE__REPRESENTATION:
 				setREPRESENTATION(REPRESENTATION_EDEFAULT);
 				return;
+			case JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT:
+				setProcessingpoint((ProcessingPoint)null);
+				return;
 			case JobnetzPackage.SCHEDULE_PACKAGE__JOBS:
 				getJobs().clear();
 				return;
@@ -435,6 +482,8 @@ public class SchedulePackageImpl extends MinimalEObjectImpl.Container implements
 				return historisation != HISTORISATION_EDEFAULT;
 			case JobnetzPackage.SCHEDULE_PACKAGE__REPRESENTATION:
 				return representation != REPRESENTATION_EDEFAULT;
+			case JobnetzPackage.SCHEDULE_PACKAGE__PROCESSINGPOINT:
+				return processingpoint != null;
 			case JobnetzPackage.SCHEDULE_PACKAGE__JOBS:
 				return jobs != null && !jobs.isEmpty();
 		}

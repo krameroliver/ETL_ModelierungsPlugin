@@ -15,8 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link jobnetz.Job#getSchedulepackage <em>Schedulepackage</em>}</li>
- *   <li>{@link jobnetz.Job#getProcessingpoint <em>Processingpoint</em>}</li>
  *   <li>{@link jobnetz.Job#getJob <em>Job</em>}</li>
  *   <li>{@link jobnetz.Job#getPreDecessor <em>Pre Decessor</em>}</li>
  *   <li>{@link jobnetz.Job#getRunTime <em>Run Time</em>}</li>
@@ -24,6 +22,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link jobnetz.Job#isIsTestJob <em>Is Test Job</em>}</li>
  *   <li>{@link jobnetz.Job#getTECH_SYSTEM <em>TECH SYSTEM</em>}</li>
  *   <li>{@link jobnetz.Job#getExecutableName <em>Executable Name</em>}</li>
+ *   <li>{@link jobnetz.Job#getProcessingpoint <em>Processingpoint</em>}</li>
+ *   <li>{@link jobnetz.Job#getPpPreDecessorprocessingpoint <em>Pp Pre Decessorprocessingpoint</em>}</li>
  * </ul>
  *
  * @see jobnetz.JobnetzPackage#getJob()
@@ -32,77 +32,85 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Job extends namedelement {
 	/**
-	 * Returns the value of the '<em><b>Schedulepackage</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link jobnetz.SchedulePackage#getJobs <em>Jobs</em>}'.
+	 * Returns the value of the '<em><b>Processingpoint</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link jobnetz.ProcessingPoint#getJobs <em>Jobs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Schedulepackage</em>' container reference.
-	 * @see #setSchedulepackage(SchedulePackage)
-	 * @see jobnetz.JobnetzPackage#getJob_Schedulepackage()
-	 * @see jobnetz.SchedulePackage#getJobs
+	 * @return the value of the '<em>Processingpoint</em>' container reference.
+	 * @see #setProcessingpoint(ProcessingPoint)
+	 * @see jobnetz.JobnetzPackage#getJob_Processingpoint()
+	 * @see jobnetz.ProcessingPoint#getJobs
 	 * @model opposite="jobs" transient="false"
 	 * @generated
 	 */
-	SchedulePackage getSchedulepackage();
+	ProcessingPoint getProcessingpoint();
 
 	/**
-	 * Sets the value of the '{@link jobnetz.Job#getSchedulepackage <em>Schedulepackage</em>}' container reference.
+	 * Sets the value of the '{@link jobnetz.Job#getProcessingpoint <em>Processingpoint</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Schedulepackage</em>' container reference.
-	 * @see #getSchedulepackage()
+	 * @param value the new value of the '<em>Processingpoint</em>' container reference.
+	 * @see #getProcessingpoint()
 	 * @generated
 	 */
-	void setSchedulepackage(SchedulePackage value);
+	void setProcessingpoint(ProcessingPoint value);
 
 	/**
-	 * Returns the value of the '<em><b>Processingpoint</b></em>' containment reference list.
-	 * The list contents are of type {@link jobnetz.ProcessingPoint}.
-	 * It is bidirectional and its opposite is '{@link jobnetz.ProcessingPoint#getJob <em>Job</em>}'.
+	 * Returns the value of the '<em><b>Pp Pre Decessorprocessingpoint</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Processingpoint</em>' containment reference list.
-	 * @see jobnetz.JobnetzPackage#getJob_Processingpoint()
-	 * @see jobnetz.ProcessingPoint#getJob
-	 * @model opposite="job" containment="true"
+	 * @return the value of the '<em>Pp Pre Decessorprocessingpoint</em>' reference.
+	 * @see #setPpPreDecessorprocessingpoint(ProcessingPoint)
+	 * @see jobnetz.JobnetzPackage#getJob_PpPreDecessorprocessingpoint()
+	 * @model
 	 * @generated
 	 */
-	EList<ProcessingPoint> getProcessingpoint();
+	ProcessingPoint getPpPreDecessorprocessingpoint();
 
 	/**
-	 * Returns the value of the '<em><b>Job</b></em>' container reference.
+	 * Sets the value of the '{@link jobnetz.Job#getPpPreDecessorprocessingpoint <em>Pp Pre Decessorprocessingpoint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pp Pre Decessorprocessingpoint</em>' reference.
+	 * @see #getPpPreDecessorprocessingpoint()
+	 * @generated
+	 */
+	void setPpPreDecessorprocessingpoint(ProcessingPoint value);
+
+	/**
+	 * Returns the value of the '<em><b>Job</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link jobnetz.Job#getPreDecessor <em>Pre Decessor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Job</em>' container reference.
+	 * @return the value of the '<em>Job</em>' reference.
 	 * @see #setJob(Job)
 	 * @see jobnetz.JobnetzPackage#getJob_Job()
 	 * @see jobnetz.Job#getPreDecessor
-	 * @model opposite="preDecessor" transient="false"
+	 * @model opposite="preDecessor"
 	 * @generated
 	 */
 	Job getJob();
 
 	/**
-	 * Sets the value of the '{@link jobnetz.Job#getJob <em>Job</em>}' container reference.
+	 * Sets the value of the '{@link jobnetz.Job#getJob <em>Job</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Job</em>' container reference.
+	 * @param value the new value of the '<em>Job</em>' reference.
 	 * @see #getJob()
 	 * @generated
 	 */
 	void setJob(Job value);
 
 	/**
-	 * Returns the value of the '<em><b>Pre Decessor</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Pre Decessor</b></em>' reference list.
 	 * The list contents are of type {@link jobnetz.Job}.
 	 * It is bidirectional and its opposite is '{@link jobnetz.Job#getJob <em>Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pre Decessor</em>' containment reference list.
+	 * @return the value of the '<em>Pre Decessor</em>' reference list.
 	 * @see jobnetz.JobnetzPackage#getJob_PreDecessor()
 	 * @see jobnetz.Job#getJob
-	 * @model opposite="job" containment="true"
+	 * @model opposite="job"
 	 * @generated
 	 */
 	EList<Job> getPreDecessor();

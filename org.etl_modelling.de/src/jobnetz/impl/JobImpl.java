@@ -9,8 +9,6 @@ import jobnetz.JobType;
 import jobnetz.JobnetzPackage;
 import jobnetz.ProcessingPoint;
 import jobnetz.RunningTime;
-import jobnetz.SchedulePackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -21,8 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,8 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link jobnetz.impl.JobImpl#getName <em>Name</em>}</li>
- *   <li>{@link jobnetz.impl.JobImpl#getSchedulepackage <em>Schedulepackage</em>}</li>
- *   <li>{@link jobnetz.impl.JobImpl#getProcessingpoint <em>Processingpoint</em>}</li>
  *   <li>{@link jobnetz.impl.JobImpl#getJob <em>Job</em>}</li>
  *   <li>{@link jobnetz.impl.JobImpl#getPreDecessor <em>Pre Decessor</em>}</li>
  *   <li>{@link jobnetz.impl.JobImpl#getRunTime <em>Run Time</em>}</li>
@@ -44,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link jobnetz.impl.JobImpl#isIsTestJob <em>Is Test Job</em>}</li>
  *   <li>{@link jobnetz.impl.JobImpl#getTECH_SYSTEM <em>TECH SYSTEM</em>}</li>
  *   <li>{@link jobnetz.impl.JobImpl#getExecutableName <em>Executable Name</em>}</li>
+ *   <li>{@link jobnetz.impl.JobImpl#getProcessingpoint <em>Processingpoint</em>}</li>
+ *   <li>{@link jobnetz.impl.JobImpl#getPpPreDecessorprocessingpoint <em>Pp Pre Decessorprocessingpoint</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,17 +67,17 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getProcessingpoint() <em>Processingpoint</em>}' containment reference list.
+	 * The cached value of the '{@link #getJob() <em>Job</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProcessingpoint()
+	 * @see #getJob()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ProcessingPoint> processingpoint;
+	protected Job job;
 
 	/**
-	 * The cached value of the '{@link #getPreDecessor() <em>Pre Decessor</em>}' containment reference list.
+	 * The cached value of the '{@link #getPreDecessor() <em>Pre Decessor</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPreDecessor()
@@ -190,6 +187,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected String executableName = EXECUTABLE_NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPpPreDecessorprocessingpoint() <em>Pp Pre Decessorprocessingpoint</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPpPreDecessorprocessingpoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProcessingPoint ppPreDecessorprocessingpoint;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -237,9 +244,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public SchedulePackage getSchedulepackage() {
-		if (eContainerFeatureID() != JobnetzPackage.JOB__SCHEDULEPACKAGE) return null;
-		return (SchedulePackage)eInternalContainer();
+	public ProcessingPoint getProcessingpoint() {
+		if (eContainerFeatureID() != JobnetzPackage.JOB__PROCESSINGPOINT) return null;
+		return (ProcessingPoint)eInternalContainer();
 	}
 
 	/**
@@ -247,8 +254,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSchedulepackage(SchedulePackage newSchedulepackage, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSchedulepackage, JobnetzPackage.JOB__SCHEDULEPACKAGE, msgs);
+	public NotificationChain basicSetProcessingpoint(ProcessingPoint newProcessingpoint, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newProcessingpoint, JobnetzPackage.JOB__PROCESSINGPOINT, msgs);
 		return msgs;
 	}
 
@@ -258,20 +265,20 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public void setSchedulepackage(SchedulePackage newSchedulepackage) {
-		if (newSchedulepackage != eInternalContainer() || (eContainerFeatureID() != JobnetzPackage.JOB__SCHEDULEPACKAGE && newSchedulepackage != null)) {
-			if (EcoreUtil.isAncestor(this, newSchedulepackage))
+	public void setProcessingpoint(ProcessingPoint newProcessingpoint) {
+		if (newProcessingpoint != eInternalContainer() || (eContainerFeatureID() != JobnetzPackage.JOB__PROCESSINGPOINT && newProcessingpoint != null)) {
+			if (EcoreUtil.isAncestor(this, newProcessingpoint))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newSchedulepackage != null)
-				msgs = ((InternalEObject)newSchedulepackage).eInverseAdd(this, JobnetzPackage.SCHEDULE_PACKAGE__JOBS, SchedulePackage.class, msgs);
-			msgs = basicSetSchedulepackage(newSchedulepackage, msgs);
+			if (newProcessingpoint != null)
+				msgs = ((InternalEObject)newProcessingpoint).eInverseAdd(this, JobnetzPackage.PROCESSING_POINT__JOBS, ProcessingPoint.class, msgs);
+			msgs = basicSetProcessingpoint(newProcessingpoint, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JobnetzPackage.JOB__SCHEDULEPACKAGE, newSchedulepackage, newSchedulepackage));
+			eNotify(new ENotificationImpl(this, Notification.SET, JobnetzPackage.JOB__PROCESSINGPOINT, newProcessingpoint, newProcessingpoint));
 	}
 
 	/**
@@ -280,11 +287,38 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public EList<ProcessingPoint> getProcessingpoint() {
-		if (processingpoint == null) {
-			processingpoint = new EObjectContainmentWithInverseEList<ProcessingPoint>(ProcessingPoint.class, this, JobnetzPackage.JOB__PROCESSINGPOINT, JobnetzPackage.PROCESSING_POINT__JOB);
+	public ProcessingPoint getPpPreDecessorprocessingpoint() {
+		if (ppPreDecessorprocessingpoint != null && ppPreDecessorprocessingpoint.eIsProxy()) {
+			InternalEObject oldPpPreDecessorprocessingpoint = (InternalEObject)ppPreDecessorprocessingpoint;
+			ppPreDecessorprocessingpoint = (ProcessingPoint)eResolveProxy(oldPpPreDecessorprocessingpoint);
+			if (ppPreDecessorprocessingpoint != oldPpPreDecessorprocessingpoint) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JobnetzPackage.JOB__PP_PRE_DECESSORPROCESSINGPOINT, oldPpPreDecessorprocessingpoint, ppPreDecessorprocessingpoint));
+			}
 		}
-		return processingpoint;
+		return ppPreDecessorprocessingpoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProcessingPoint basicGetPpPreDecessorprocessingpoint() {
+		return ppPreDecessorprocessingpoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPpPreDecessorprocessingpoint(ProcessingPoint newPpPreDecessorprocessingpoint) {
+		ProcessingPoint oldPpPreDecessorprocessingpoint = ppPreDecessorprocessingpoint;
+		ppPreDecessorprocessingpoint = newPpPreDecessorprocessingpoint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JobnetzPackage.JOB__PP_PRE_DECESSORPROCESSINGPOINT, oldPpPreDecessorprocessingpoint, ppPreDecessorprocessingpoint));
 	}
 
 	/**
@@ -294,8 +328,24 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 */
 	@Override
 	public Job getJob() {
-		if (eContainerFeatureID() != JobnetzPackage.JOB__JOB) return null;
-		return (Job)eInternalContainer();
+		if (job != null && job.eIsProxy()) {
+			InternalEObject oldJob = (InternalEObject)job;
+			job = (Job)eResolveProxy(oldJob);
+			if (job != oldJob) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JobnetzPackage.JOB__JOB, oldJob, job));
+			}
+		}
+		return job;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Job basicGetJob() {
+		return job;
 	}
 
 	/**
@@ -304,7 +354,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	public NotificationChain basicSetJob(Job newJob, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newJob, JobnetzPackage.JOB__JOB, msgs);
+		Job oldJob = job;
+		job = newJob;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JobnetzPackage.JOB__JOB, oldJob, newJob);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -315,12 +370,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 */
 	@Override
 	public void setJob(Job newJob) {
-		if (newJob != eInternalContainer() || (eContainerFeatureID() != JobnetzPackage.JOB__JOB && newJob != null)) {
-			if (EcoreUtil.isAncestor(this, newJob))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+		if (newJob != job) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
+			if (job != null)
+				msgs = ((InternalEObject)job).eInverseRemove(this, JobnetzPackage.JOB__PRE_DECESSOR, Job.class, msgs);
 			if (newJob != null)
 				msgs = ((InternalEObject)newJob).eInverseAdd(this, JobnetzPackage.JOB__PRE_DECESSOR, Job.class, msgs);
 			msgs = basicSetJob(newJob, msgs);
@@ -338,7 +391,7 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	@Override
 	public EList<Job> getPreDecessor() {
 		if (preDecessor == null) {
-			preDecessor = new EObjectContainmentWithInverseEList<Job>(Job.class, this, JobnetzPackage.JOB__PRE_DECESSOR, JobnetzPackage.JOB__JOB);
+			preDecessor = new EObjectWithInverseResolvingEList<Job>(Job.class, this, JobnetzPackage.JOB__PRE_DECESSOR, JobnetzPackage.JOB__JOB);
 		}
 		return preDecessor;
 	}
@@ -467,18 +520,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JobnetzPackage.JOB__SCHEDULEPACKAGE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSchedulepackage((SchedulePackage)otherEnd, msgs);
-			case JobnetzPackage.JOB__PROCESSINGPOINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProcessingpoint()).basicAdd(otherEnd, msgs);
 			case JobnetzPackage.JOB__JOB:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
+				if (job != null)
+					msgs = ((InternalEObject)job).eInverseRemove(this, JobnetzPackage.JOB__PRE_DECESSOR, Job.class, msgs);
 				return basicSetJob((Job)otherEnd, msgs);
 			case JobnetzPackage.JOB__PRE_DECESSOR:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPreDecessor()).basicAdd(otherEnd, msgs);
+			case JobnetzPackage.JOB__PROCESSINGPOINT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetProcessingpoint((ProcessingPoint)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -491,14 +542,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case JobnetzPackage.JOB__SCHEDULEPACKAGE:
-				return basicSetSchedulepackage(null, msgs);
-			case JobnetzPackage.JOB__PROCESSINGPOINT:
-				return ((InternalEList<?>)getProcessingpoint()).basicRemove(otherEnd, msgs);
 			case JobnetzPackage.JOB__JOB:
 				return basicSetJob(null, msgs);
 			case JobnetzPackage.JOB__PRE_DECESSOR:
 				return ((InternalEList<?>)getPreDecessor()).basicRemove(otherEnd, msgs);
+			case JobnetzPackage.JOB__PROCESSINGPOINT:
+				return basicSetProcessingpoint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -511,10 +560,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case JobnetzPackage.JOB__SCHEDULEPACKAGE:
-				return eInternalContainer().eInverseRemove(this, JobnetzPackage.SCHEDULE_PACKAGE__JOBS, SchedulePackage.class, msgs);
-			case JobnetzPackage.JOB__JOB:
-				return eInternalContainer().eInverseRemove(this, JobnetzPackage.JOB__PRE_DECESSOR, Job.class, msgs);
+			case JobnetzPackage.JOB__PROCESSINGPOINT:
+				return eInternalContainer().eInverseRemove(this, JobnetzPackage.PROCESSING_POINT__JOBS, ProcessingPoint.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -529,12 +576,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case JobnetzPackage.JOB__NAME:
 				return getName();
-			case JobnetzPackage.JOB__SCHEDULEPACKAGE:
-				return getSchedulepackage();
-			case JobnetzPackage.JOB__PROCESSINGPOINT:
-				return getProcessingpoint();
 			case JobnetzPackage.JOB__JOB:
-				return getJob();
+				if (resolve) return getJob();
+				return basicGetJob();
 			case JobnetzPackage.JOB__PRE_DECESSOR:
 				return getPreDecessor();
 			case JobnetzPackage.JOB__RUN_TIME:
@@ -547,6 +591,11 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 				return getTECH_SYSTEM();
 			case JobnetzPackage.JOB__EXECUTABLE_NAME:
 				return getExecutableName();
+			case JobnetzPackage.JOB__PROCESSINGPOINT:
+				return getProcessingpoint();
+			case JobnetzPackage.JOB__PP_PRE_DECESSORPROCESSINGPOINT:
+				if (resolve) return getPpPreDecessorprocessingpoint();
+				return basicGetPpPreDecessorprocessingpoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -562,13 +611,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case JobnetzPackage.JOB__NAME:
 				setName((String)newValue);
-				return;
-			case JobnetzPackage.JOB__SCHEDULEPACKAGE:
-				setSchedulepackage((SchedulePackage)newValue);
-				return;
-			case JobnetzPackage.JOB__PROCESSINGPOINT:
-				getProcessingpoint().clear();
-				getProcessingpoint().addAll((Collection<? extends ProcessingPoint>)newValue);
 				return;
 			case JobnetzPackage.JOB__JOB:
 				setJob((Job)newValue);
@@ -592,6 +634,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			case JobnetzPackage.JOB__EXECUTABLE_NAME:
 				setExecutableName((String)newValue);
 				return;
+			case JobnetzPackage.JOB__PROCESSINGPOINT:
+				setProcessingpoint((ProcessingPoint)newValue);
+				return;
+			case JobnetzPackage.JOB__PP_PRE_DECESSORPROCESSINGPOINT:
+				setPpPreDecessorprocessingpoint((ProcessingPoint)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -606,12 +654,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case JobnetzPackage.JOB__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case JobnetzPackage.JOB__SCHEDULEPACKAGE:
-				setSchedulepackage((SchedulePackage)null);
-				return;
-			case JobnetzPackage.JOB__PROCESSINGPOINT:
-				getProcessingpoint().clear();
 				return;
 			case JobnetzPackage.JOB__JOB:
 				setJob((Job)null);
@@ -634,6 +676,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			case JobnetzPackage.JOB__EXECUTABLE_NAME:
 				setExecutableName(EXECUTABLE_NAME_EDEFAULT);
 				return;
+			case JobnetzPackage.JOB__PROCESSINGPOINT:
+				setProcessingpoint((ProcessingPoint)null);
+				return;
+			case JobnetzPackage.JOB__PP_PRE_DECESSORPROCESSINGPOINT:
+				setPpPreDecessorprocessingpoint((ProcessingPoint)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -648,12 +696,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case JobnetzPackage.JOB__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case JobnetzPackage.JOB__SCHEDULEPACKAGE:
-				return getSchedulepackage() != null;
-			case JobnetzPackage.JOB__PROCESSINGPOINT:
-				return processingpoint != null && !processingpoint.isEmpty();
 			case JobnetzPackage.JOB__JOB:
-				return getJob() != null;
+				return job != null;
 			case JobnetzPackage.JOB__PRE_DECESSOR:
 				return preDecessor != null && !preDecessor.isEmpty();
 			case JobnetzPackage.JOB__RUN_TIME:
@@ -666,6 +710,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 				return TECH_SYSTEM_EDEFAULT == null ? tecH_SYSTEM != null : !TECH_SYSTEM_EDEFAULT.equals(tecH_SYSTEM);
 			case JobnetzPackage.JOB__EXECUTABLE_NAME:
 				return EXECUTABLE_NAME_EDEFAULT == null ? executableName != null : !EXECUTABLE_NAME_EDEFAULT.equals(executableName);
+			case JobnetzPackage.JOB__PROCESSINGPOINT:
+				return getProcessingpoint() != null;
+			case JobnetzPackage.JOB__PP_PRE_DECESSORPROCESSINGPOINT:
+				return ppPreDecessorprocessingpoint != null;
 		}
 		return super.eIsSet(featureID);
 	}

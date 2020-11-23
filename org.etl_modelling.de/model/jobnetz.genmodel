@@ -27,22 +27,24 @@
       <genEnumLiterals ecoreEnumLiteral="jobnetz.ecore#//ProcessingPointType/Test"/>
     </genEnums>
     <genClasses ecoreClass="jobnetz.ecore#//SchedulePackage">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jobnetz.ecore#//SchedulePackage/jobs"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference jobnetz.ecore#//SchedulePackage/processingpoint"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference jobnetz.ecore#//SchedulePackage/jobs"/>
     </genClasses>
     <genClasses ecoreClass="jobnetz.ecore#//ProcessingPoint">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference jobnetz.ecore#//ProcessingPoint/job"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jobnetz.ecore#//ProcessingPoint/ProcessingPointType"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference jobnetz.ecore#//ProcessingPoint/jobs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jobnetz.ecore#//ProcessingPoint/preDecessor"/>
     </genClasses>
     <genClasses ecoreClass="jobnetz.ecore#//Job">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference jobnetz.ecore#//Job/schedulepackage"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jobnetz.ecore#//Job/processingpoint"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference jobnetz.ecore#//Job/job"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jobnetz.ecore#//Job/preDecessor"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference jobnetz.ecore#//Job/preDecessor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jobnetz.ecore#//Job/RunTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jobnetz.ecore#//Job/JobType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jobnetz.ecore#//Job/isTestJob"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jobnetz.ecore#//Job/TECH_SYSTEM"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jobnetz.ecore#//Job/ExecutableName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jobnetz.ecore#//Job/processingpoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference jobnetz.ecore#//Job/ppPreDecessorprocessingpoint"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

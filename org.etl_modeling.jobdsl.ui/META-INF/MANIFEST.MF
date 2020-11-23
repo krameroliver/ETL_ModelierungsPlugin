@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.etl_modeling.jobdsl.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: org.etl_modeling.jobdsl.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.etl_modeling.jobdsl.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.etl_modeling.jobdsl,
+ org.etl_modeling.jobdsl.ide,
+ org.etl_modelling.de,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.etl_modeling.jobdsl.ui.quickfix,
+ org.etl_modeling.jobdsl.ui.internal,
+ org.etl_modeling.jobdsl.ui.contentassist
+Bundle-Activator: org.etl_modeling.jobdsl.ui.internal.JobdslActivator

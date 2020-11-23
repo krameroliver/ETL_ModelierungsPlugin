@@ -115,13 +115,22 @@ public interface JobnetzPackage extends EPackage {
 	int SCHEDULE_PACKAGE__REPRESENTATION = ETL_MODELPackage.PACKAGE__REPRESENTATION;
 
 	/**
+	 * The feature id for the '<em><b>Processingpoint</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_PACKAGE__PROCESSINGPOINT = ETL_MODELPackage.PACKAGE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Jobs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE_PACKAGE__JOBS = ETL_MODELPackage.PACKAGE_FEATURE_COUNT + 0;
+	int SCHEDULE_PACKAGE__JOBS = ETL_MODELPackage.PACKAGE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Schedule Package</em>' class.
@@ -130,7 +139,7 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE_PACKAGE_FEATURE_COUNT = ETL_MODELPackage.PACKAGE_FEATURE_COUNT + 1;
+	int SCHEDULE_PACKAGE_FEATURE_COUNT = ETL_MODELPackage.PACKAGE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Schedule Package</em>' class.
@@ -161,22 +170,31 @@ public interface JobnetzPackage extends EPackage {
 	int PROCESSING_POINT__NAME = ETL_MODELPackage.NAMEDELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Job</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSING_POINT__JOB = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Processing Point Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSING_POINT__PROCESSING_POINT_TYPE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 1;
+	int PROCESSING_POINT__PROCESSING_POINT_TYPE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Jobs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_POINT__JOBS = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Pre Decessor</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_POINT__PRE_DECESSOR = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Processing Point</em>' class.
@@ -185,7 +203,7 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSING_POINT_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 2;
+	int PROCESSING_POINT_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Processing Point</em>' class.
@@ -216,40 +234,22 @@ public interface JobnetzPackage extends EPackage {
 	int JOB__NAME = ETL_MODELPackage.NAMEDELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Schedulepackage</b></em>' container reference.
+	 * The feature id for the '<em><b>Job</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__SCHEDULEPACKAGE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 0;
+	int JOB__JOB = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Processingpoint</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Pre Decessor</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__PROCESSINGPOINT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Job</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB__JOB = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Pre Decessor</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB__PRE_DECESSOR = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 3;
+	int JOB__PRE_DECESSOR = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Run Time</b></em>' attribute.
@@ -258,7 +258,7 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__RUN_TIME = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 4;
+	int JOB__RUN_TIME = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Job Type</b></em>' attribute.
@@ -267,7 +267,7 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__JOB_TYPE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 5;
+	int JOB__JOB_TYPE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Test Job</b></em>' attribute.
@@ -276,7 +276,7 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__IS_TEST_JOB = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 6;
+	int JOB__IS_TEST_JOB = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>TECH SYSTEM</b></em>' attribute.
@@ -285,7 +285,7 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__TECH_SYSTEM = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 7;
+	int JOB__TECH_SYSTEM = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Executable Name</b></em>' attribute.
@@ -294,7 +294,25 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__EXECUTABLE_NAME = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 8;
+	int JOB__EXECUTABLE_NAME = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Processingpoint</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__PROCESSINGPOINT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Pp Pre Decessorprocessingpoint</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__PP_PRE_DECESSORPROCESSINGPOINT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Job</em>' class.
@@ -356,6 +374,17 @@ public interface JobnetzPackage extends EPackage {
 	EClass getSchedulePackage();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link jobnetz.SchedulePackage#getProcessingpoint <em>Processingpoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Processingpoint</em>'.
+	 * @see jobnetz.SchedulePackage#getProcessingpoint()
+	 * @see #getSchedulePackage()
+	 * @generated
+	 */
+	EReference getSchedulePackage_Processingpoint();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link jobnetz.SchedulePackage#getJobs <em>Jobs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,17 +406,6 @@ public interface JobnetzPackage extends EPackage {
 	EClass getProcessingPoint();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jobnetz.ProcessingPoint#getJob <em>Job</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Job</em>'.
-	 * @see jobnetz.ProcessingPoint#getJob()
-	 * @see #getProcessingPoint()
-	 * @generated
-	 */
-	EReference getProcessingPoint_Job();
-
-	/**
 	 * Returns the meta object for the attribute '{@link jobnetz.ProcessingPoint#getProcessingPointType <em>Processing Point Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,6 +415,28 @@ public interface JobnetzPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProcessingPoint_ProcessingPointType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link jobnetz.ProcessingPoint#getJobs <em>Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Jobs</em>'.
+	 * @see jobnetz.ProcessingPoint#getJobs()
+	 * @see #getProcessingPoint()
+	 * @generated
+	 */
+	EReference getProcessingPoint_Jobs();
+
+	/**
+	 * Returns the meta object for the reference list '{@link jobnetz.ProcessingPoint#getPreDecessor <em>Pre Decessor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Pre Decessor</em>'.
+	 * @see jobnetz.ProcessingPoint#getPreDecessor()
+	 * @see #getProcessingPoint()
+	 * @generated
+	 */
+	EReference getProcessingPoint_PreDecessor();
 
 	/**
 	 * Returns the meta object for class '{@link jobnetz.Job <em>Job</em>}'.
@@ -409,21 +449,10 @@ public interface JobnetzPackage extends EPackage {
 	EClass getJob();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jobnetz.Job#getSchedulepackage <em>Schedulepackage</em>}'.
+	 * Returns the meta object for the container reference '{@link jobnetz.Job#getProcessingpoint <em>Processingpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Schedulepackage</em>'.
-	 * @see jobnetz.Job#getSchedulepackage()
-	 * @see #getJob()
-	 * @generated
-	 */
-	EReference getJob_Schedulepackage();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link jobnetz.Job#getProcessingpoint <em>Processingpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Processingpoint</em>'.
+	 * @return the meta object for the container reference '<em>Processingpoint</em>'.
 	 * @see jobnetz.Job#getProcessingpoint()
 	 * @see #getJob()
 	 * @generated
@@ -431,10 +460,21 @@ public interface JobnetzPackage extends EPackage {
 	EReference getJob_Processingpoint();
 
 	/**
-	 * Returns the meta object for the container reference '{@link jobnetz.Job#getJob <em>Job</em>}'.
+	 * Returns the meta object for the reference '{@link jobnetz.Job#getPpPreDecessorprocessingpoint <em>Pp Pre Decessorprocessingpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Job</em>'.
+	 * @return the meta object for the reference '<em>Pp Pre Decessorprocessingpoint</em>'.
+	 * @see jobnetz.Job#getPpPreDecessorprocessingpoint()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EReference getJob_PpPreDecessorprocessingpoint();
+
+	/**
+	 * Returns the meta object for the reference '{@link jobnetz.Job#getJob <em>Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Job</em>'.
 	 * @see jobnetz.Job#getJob()
 	 * @see #getJob()
 	 * @generated
@@ -442,10 +482,10 @@ public interface JobnetzPackage extends EPackage {
 	EReference getJob_Job();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link jobnetz.Job#getPreDecessor <em>Pre Decessor</em>}'.
+	 * Returns the meta object for the reference list '{@link jobnetz.Job#getPreDecessor <em>Pre Decessor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Pre Decessor</em>'.
+	 * @return the meta object for the reference list '<em>Pre Decessor</em>'.
 	 * @see jobnetz.Job#getPreDecessor()
 	 * @see #getJob()
 	 * @generated
@@ -571,6 +611,14 @@ public interface JobnetzPackage extends EPackage {
 		EClass SCHEDULE_PACKAGE = eINSTANCE.getSchedulePackage();
 
 		/**
+		 * The meta object literal for the '<em><b>Processingpoint</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_PACKAGE__PROCESSINGPOINT = eINSTANCE.getSchedulePackage_Processingpoint();
+
+		/**
 		 * The meta object literal for the '<em><b>Jobs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -589,20 +637,28 @@ public interface JobnetzPackage extends EPackage {
 		EClass PROCESSING_POINT = eINSTANCE.getProcessingPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Job</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROCESSING_POINT__JOB = eINSTANCE.getProcessingPoint_Job();
-
-		/**
 		 * The meta object literal for the '<em><b>Processing Point Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PROCESSING_POINT__PROCESSING_POINT_TYPE = eINSTANCE.getProcessingPoint_ProcessingPointType();
+
+		/**
+		 * The meta object literal for the '<em><b>Jobs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCESSING_POINT__JOBS = eINSTANCE.getProcessingPoint_Jobs();
+
+		/**
+		 * The meta object literal for the '<em><b>Pre Decessor</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCESSING_POINT__PRE_DECESSOR = eINSTANCE.getProcessingPoint_PreDecessor();
 
 		/**
 		 * The meta object literal for the '{@link jobnetz.impl.JobImpl <em>Job</em>}' class.
@@ -615,15 +671,7 @@ public interface JobnetzPackage extends EPackage {
 		EClass JOB = eINSTANCE.getJob();
 
 		/**
-		 * The meta object literal for the '<em><b>Schedulepackage</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference JOB__SCHEDULEPACKAGE = eINSTANCE.getJob_Schedulepackage();
-
-		/**
-		 * The meta object literal for the '<em><b>Processingpoint</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Processingpoint</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -631,7 +679,15 @@ public interface JobnetzPackage extends EPackage {
 		EReference JOB__PROCESSINGPOINT = eINSTANCE.getJob_Processingpoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Job</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Pp Pre Decessorprocessingpoint</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOB__PP_PRE_DECESSORPROCESSINGPOINT = eINSTANCE.getJob_PpPreDecessorprocessingpoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Job</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -639,7 +695,7 @@ public interface JobnetzPackage extends EPackage {
 		EReference JOB__JOB = eINSTANCE.getJob_Job();
 
 		/**
-		 * The meta object literal for the '<em><b>Pre Decessor</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Pre Decessor</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
