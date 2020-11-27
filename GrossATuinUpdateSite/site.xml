@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.etl_modeling.feature_1.5.1.202011232131.jar" id="org.etl_modeling.feature" version="1.5.1.202011232131">
+      <category name="GrossATuin"/>
+   </feature>
+   <feature url="features/org.etl_modeling.feature_1.7.1.202011252258.jar" id="org.etl_modeling.feature" version="1.7.1.202011252258">
+      <category name="GrossATuin"/>
+   </feature>
+   <feature url="features/org.etl_modeling.feature_1.7.2.202011252307.jar" id="org.etl_modeling.feature" version="1.7.2.202011252307">
+      <category name="GrossATuin"/>
+   </feature>
+   <feature url="features/org.etl_modeling.feature_1.7.5.202011260915.jar" id="org.etl_modeling.feature" version="1.7.5.202011260915">
+      <category name="GrossATuin"/>
+   </feature>
+   <feature url="features/org.etl_modeling.feature_1.7.6.202011260919.jar" id="org.etl_modeling.feature" version="1.7.6.202011260919">
+      <category name="GrossATuin"/>
+   </feature>
+   <feature url="features/org.etl_modeling.feature_1.7.7.202011261140.jar" id="org.etl_modeling.feature" version="1.7.7.202011261140">
+      <category name="GrossATuin"/>
+   </feature>
+   <feature url="features/org.etl_modeling.feature_1.8.5.202011272146.jar" id="org.etl_modeling.feature" version="1.8.5.202011272146">
+      <category name="GrossATuin"/>
+   </feature>
+   <category-def name="GrossATuin" label="GrossATuin"/>
+</site>

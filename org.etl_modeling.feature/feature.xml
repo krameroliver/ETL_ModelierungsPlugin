@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.etl_modeling.feature"
+      label="Feature"
+      version="1.8.5.qualifier">
+
+   <description url="http://www.example.com/description">
+      ETL Modelierungstool
+releaseNotes:
+dml generierierung angepasst
+
+sqls verkleinert
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      _,---.
+  ,:--._                   _,-------------.___          _,-&apos; _,--.\
+ /  `-. `-.           _,--&apos;                   `--._   ,&apos;   ,&apos;      :
+:      `.  `._     ,-&apos;                             `,&apos;   ,&apos;        |
+|        `.   `.,-&apos;                                     /          |
+|          `. ,&apos;                                       (           |
+|            /                                         \           ;
+:           /                                   ,-----. ; ,/      /
+ \     \   :                                  ,&apos;      | |&apos;/      ;
+  \     \`-| ,--._                          ,&apos;        | |/      /
+   \     `-|(     `._                      /          ; /      /
+    \       \        `._                 ,&apos;          / ;      :
+     \       \          `.              /       __  / /     ,&apos;
+      \       \           `.         _,&apos;   __,-&apos;|  : /    ,&apos;
+       `.______). -.________`:..___,&apos;__,-:&apos;     |  |/__,-&apos;
+                 `._  `\   ( o )d888b.( o )     | /&apos;
+                    )   `.__`,&apos;/Y8888&apos;\`.&apos;     /  `.
+                   /          |  `&quot;&quot;&apos; :  `----&apos;     )
+                  (           |\     / \          ,&apos;
+         -hrr-     \          | `---&apos; ,&apos;\       ,&apos;
+                    `._      /.\,-,-./ / `.__,-&apos;
+                       `----&apos;  \`---&apos; /
+                                `----&apos;
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      _,---.
+  ,:--._                   _,-------------.___          _,-&apos; _,--.\
+ /  `-. `-.           _,--&apos;                   `--._   ,&apos;   ,&apos;      :
+:      `.  `._     ,-&apos;                             `,&apos;   ,&apos;        |
+|        `.   `.,-&apos;                                     /          |
+|          `. ,&apos;                                       (           |
+|            /                                         \           ;
+:           /                                   ,-----. ; ,/      /
+ \     \   :                                  ,&apos;      | |&apos;/      ;
+  \     \`-| ,--._                          ,&apos;        | |/      /
+   \     `-|(     `._                      /          ; /      /
+    \       \        `._                 ,&apos;          / ;      :
+     \       \          `.              /       __  / /     ,&apos;
+      \       \           `.         _,&apos;   __,-&apos;|  : /    ,&apos;
+       `.______). -.________`:..___,&apos;__,-:&apos;     |  |/__,-&apos;
+                 `._  `\   ( o )d888b.( o )     | /&apos;
+                    )   `.__`,&apos;/Y8888&apos;\`.&apos;     /  `.
+                   /          |  `&quot;&quot;&apos; :  `----&apos;     )
+                  (           |\     / \          ,&apos;
+         -hrr-     \          | `---&apos; ,&apos;\       ,&apos;
+                    `._      /.\,-,-./ / `.__,-&apos;
+                       `----&apos;  \`---&apos; /
+                                `----&apos;
+   </license>
+
+   <includes
+         id="org.eclipse.tips.feature"
+         version="0.0.0"
+         optional="true"/>
+
+   <plugin
+         id="org.etl_modeling.etldsl.ui"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.specdsl.ide"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.etldsl"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.etldsl.ide"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.jobdsl.ide"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.jobdsl.ui"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.jobdsl"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.specdsl.ui"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modelling.de.edit"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modelling.de"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modelling.de.editor"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.specdsl"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.etldsl.tests"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.etldsl.ui.tests"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.jobdsl.tests"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.jobdsl.ui.tests"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.specdsl.tests"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modeling.specdsl.ui.tests"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.etl_modelling.de.tests"
+         download-size="0"
+         install-size="0"
+         version="1.8.5.qualifier"
+         unpack="false"/>
+
+</feature>
