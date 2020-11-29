@@ -9,7 +9,7 @@ import logmodel.logpackage
 import com.google.common.base.Charsets
 import com.google.common.io.Files
 import java.io.File
-
+import package_enums.*
 
 class FdsetGenerator extends AbstractGenerator {
 	
@@ -24,23 +24,30 @@ class FdsetGenerator extends AbstractGenerator {
 		for(p: input.allContents.toIterable.filter(logpackage)){
 			layer = p.LAYER.toLowerCase;
 			package_name = p.name.toUpperCase
-		}
+		
+		if(p.LAYER_TYPE == LAYERTYPE.STAGE){
 		for(entity : input.allContents.toIterable.filter(Entity)){
+			
 			var file = "fdsets/"+layer+"/"+package_name+"/"+entity.name.toLowerCase+".fdset"
 			var content = ""
-
-			var text = Files.toString(new File("template.fdset"), Charsets.UTF_8);
-			text = text.replace("<dml>",entity.name.toLowerCase+".dml")
-			text = text.replace("<filename>",entity.filename)
-			text = text.replace("<delimiter>",entity.delimiter)
-			text = text.replace("<line_end>",entity.lineend)
 			
-			content = text
-			fsa.generateFile(file,content);
-			
-			
+			//try{
+				var text = fsa.readTextFile("../src/templates/template.fdset").toString
+				//var text = Files.toString(new File("template.fdset"), Charsets.UTF_8);
+				text = text.replace("dml_replace",entity.name.toLowerCase+".dml")
+				text = text.replace("filename_replace",entity.filename)
+				text = text.replace("delimiter_replace",entity.delimiter)
+				text = text.replace("line_end_replace",entity.lineend)
+				
+				content = text
+				fsa.generateFile(file,content);
+			//}catch(Exception e){
+				
+			//}
+				
+			}
 		}
 		
-		
+		}
 	}
 }
