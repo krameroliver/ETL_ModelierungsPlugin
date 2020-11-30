@@ -90,12 +90,12 @@ public class DML_CSV_Input extends AbstractGenerator {
           EList<Field> _commonmappinginputfields = cm.getCommonmappinginputfields();
           for(final Field f : _commonmappinginputfields) {
             _builder.append("   ");
-            String _lowerCase = f.getName().toLowerCase();
-            _builder.append(_lowerCase, "   ");
-            _builder.append(" ");
             String _dMLDataTypeString = Utils.getDMLDataTypeString(f);
             _builder.append(_dMLDataTypeString, "   ");
-            _builder.append(";");
+            _builder.append(" ");
+            String _lowerCase = f.getName().toLowerCase();
+            _builder.append(_lowerCase, "   ");
+            _builder.append(" ;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -130,12 +130,12 @@ public class DML_CSV_Input extends AbstractGenerator {
           EList<Field> _commonmappingoutputfields = cm.getCommonmappingoutputfields();
           for(final Field f : _commonmappingoutputfields) {
             _builder.append("   ");
-            String _lowerCase = f.getName().toLowerCase();
-            _builder.append(_lowerCase, "   ");
-            _builder.append(" ");
             String _dMLDataTypeString = Utils.getDMLDataTypeString(f);
             _builder.append(_dMLDataTypeString, "   ");
-            _builder.append(";");
+            _builder.append(" ");
+            String _lowerCase = f.getName().toLowerCase();
+            _builder.append(_lowerCase, "   ");
+            _builder.append(" ;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -164,12 +164,12 @@ public class DML_CSV_Input extends AbstractGenerator {
           boolean _isTableOnly = f.isTableOnly();
           boolean _not = (!_isTableOnly);
           if (_not) {
-            String _lowerCase = f.getName().toLowerCase();
-            _builder.append(_lowerCase);
-            _builder.append(" ");
             String _dMLDataTypeString = Utils.getDMLDataTypeString(f);
             _builder.append(_dMLDataTypeString);
-            _builder.append(";");
+            _builder.append(" ");
+            String _lowerCase = f.getName().toLowerCase();
+            _builder.append(_lowerCase);
+            _builder.append(" ;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -184,9 +184,6 @@ public class DML_CSV_Input extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("record");
     _builder.newLine();
-    _builder.append("    ");
-    _builder.append("record");
-    _builder.newLine();
     {
       EList<Field> _entityField = entity.getEntityField();
       for(final Field f : _entityField) {
@@ -194,37 +191,34 @@ public class DML_CSV_Input extends AbstractGenerator {
           boolean _isInterfaceOnly = f.isInterfaceOnly();
           boolean _not = (!_isInterfaceOnly);
           if (_not) {
-            String _lowerCase = f.getName().toLowerCase();
-            _builder.append(_lowerCase);
-            _builder.append(" ");
             String _dMLDataTypeString = Utils.getDMLDataTypeString(f);
             _builder.append(_dMLDataTypeString);
-            _builder.append(";");
+            _builder.append(" ");
+            String _lowerCase = f.getName().toLowerCase();
+            _builder.append(_lowerCase);
+            _builder.append(" ;");
             _builder.newLineIfNotEmpty();
           }
         }
       }
     }
-    _builder.append("creation_date DATE;");
+    _builder.append("date(\"YYYY-MM-DD\") creation_date ;");
     _builder.newLine();
-    _builder.append("modification_date DATE;");
+    _builder.append("date(\"YYYY-MM-DD\") modification_date ;");
     _builder.newLine();
-    _builder.append("processing_point string(\"\\x01\");");
+    _builder.append("string(\"\\x01\") processing_point ;");
     _builder.newLine();
-    _builder.append("record_source string(\"\\x01\");");
+    _builder.append("string(\"\\x01\") record_source ;");
     _builder.newLine();
-    _builder.append("record_hk string(\"\\x01\");");
+    _builder.append("string(\"\\x01\") record_hk ;");
     _builder.newLine();
+    _builder.append("string(\"\\x01\") ");
     String _lowerCase_1 = entity.getName().toLowerCase();
     _builder.append(_lowerCase_1);
-    _builder.append("_hk string(\"\\x01\");");
+    _builder.append("_hk ;");
     _builder.newLineIfNotEmpty();
-    _builder.append("effectiv_timerange string(\"\\x01\");");
+    _builder.append("string(\"\\x01\") effectiv_timerange ;");
     _builder.newLine();
-    _builder.append("end ");
-    String _lowerCase_2 = entity.getName().toLowerCase();
-    _builder.append(_lowerCase_2);
-    _builder.newLineIfNotEmpty();
     _builder.append("end");
     _builder.newLine();
     return _builder;
@@ -261,13 +255,14 @@ public class DML_CSV_Input extends AbstractGenerator {
     _builder.newLine();
     _builder.append("record");
     _builder.newLine();
-    _builder.append("record_source string(\"\\x01\");");
+    _builder.append("string(\"\\x01\") record_source ;");
     _builder.newLine();
-    _builder.append("record_hk string(\"\\x01\");");
+    _builder.append("string(\"\\x01\") record_hk ;");
     _builder.newLine();
+    _builder.append("string(\"\\x01\") ");
     String _lowerCase_2 = entity.getName().toLowerCase();
     _builder.append(_lowerCase_2);
-    _builder.append("_hk string(\"\\x01\");");
+    _builder.append("_hk ;");
     _builder.newLineIfNotEmpty();
     _builder.append("end h_");
     String _lowerCase_3 = entity.getName().toLowerCase();

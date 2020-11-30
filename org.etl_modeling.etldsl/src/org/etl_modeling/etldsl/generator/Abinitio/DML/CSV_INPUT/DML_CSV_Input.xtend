@@ -57,7 +57,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	   record
 	   
 	   «FOR f : cm.commonmappinginputfields»
-	   «f.name.toLowerCase» «Utils.getDMLDataTypeString(f)»;
+	   «Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
 	   «ENDFOR»
 	   
 	   end «cm.name.toLowerCase»
@@ -72,7 +72,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	   record
 	   
 	   «FOR f : cm.commonmappingoutputfields»
-	   «f.name.toLowerCase» «Utils.getDMLDataTypeString(f)»;
+	   «Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
 	   «ENDFOR»
 	   
 	   end «cm.name.toLowerCase»
@@ -85,7 +85,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	record
 	«FOR f : entity.entityField»
 	«IF !f.tableOnly»
-	«f.name.toLowerCase» «Utils.getDMLDataTypeString(f)»;
+	«Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
 	«ENDIF»
 	«ENDFOR»
 	end
@@ -94,20 +94,18 @@ class DML_CSV_Input extends AbstractGenerator {
 	def genLoaderTecdml(Entity entity)
 	'''
 	record
-	    record
 	«FOR f : entity.entityField»
 		«IF !f.interfaceOnly»
-		«f.name.toLowerCase» «Utils.getDMLDataTypeString(f)»;
+		«Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
 		«ENDIF»
 	«ENDFOR»
-	creation_date DATE;
-	modification_date DATE;
-	processing_point string("\x01");
-	record_source string("\x01");
-	record_hk string("\x01");
-	«entity.name.toLowerCase»_hk string("\x01");
-	effectiv_timerange string("\x01");
-	end «entity.name.toLowerCase»
+	date("YYYY-MM-DD") creation_date ;
+	date("YYYY-MM-DD") modification_date ;
+	string("\x01") processing_point ;
+	string("\x01") record_source ;
+	string("\x01") record_hk ;
+	string("\x01") «entity.name.toLowerCase»_hk ;
+	string("\x01") effectiv_timerange ;
 	end
 	'''
 
@@ -124,9 +122,9 @@ class DML_CSV_Input extends AbstractGenerator {
 	end s_«entity.name.toLowerCase»
 	
 	record
-	record_source string("\x01");
-	record_hk string("\x01");
-	«entity.name.toLowerCase»_hk string("\x01");
+	string("\x01") record_source ;
+	string("\x01") record_hk ;
+	string("\x01") «entity.name.toLowerCase»_hk ;
 	end h_«entity.name.toLowerCase»
 	end
 	'''
