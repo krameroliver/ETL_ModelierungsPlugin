@@ -7,6 +7,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import logmodel.Entity
 import org.etl_modeling.etldsl.utils.Utils
 import logmodel.logpackage
+import logmodel.Relationship
 
 class TableDmls extends AbstractGenerator {
 	
@@ -34,6 +35,15 @@ class TableDmls extends AbstractGenerator {
 				fsa.generateFile(ENTITY_DML_PATH,genEntityDml(entity))
 				fsa.generateFile(loader_input_path,genLoaderInputDML(entity))
 				fsa.generateFile(re_output_path,genReadEntityOutputDML(entity))
+				for(rel : entity.relationships){
+					var link_dml = "dml/HUB/r_"+rel.name.toLowerCase+".dml"
+					var link_sat_dml = "dml/HUB/r_s_"+rel.name.toLowerCase+".dml"
+					fsa.generateFile(link_dml,genLinkTableDML(rel,entity))
+					fsa.generateFile(link_sat_dml,genLinkSATTableDML(rel,entity))
+					//genLinkSATTableDML
+				
+				
+				}
 				
 			}
 			
@@ -78,6 +88,25 @@ class TableDmls extends AbstractGenerator {
 	end
 	'''
 	
+	
+	def genLinkTableDML(Relationship rel,Entity entity)
+	'''
+	record
+	string("\x01") «rel.name.toLowerCase»_hk ;
+	string("\x01") «entity.name.toLowerCase»_hk;
+	string("\x01") «rel.toEntity.name.toLowerCase»_hk;
+	end
+	'''
+	
+	def genLinkSATTableDML(Relationship rel,Entity entity)
+	'''
+	record
+	string("\x01") «rel.name.toLowerCase»_hk,
+	date("YYYY-MM-DD") creation_date;
+	date("YYYY-MM-DD") modification_date;
+	string("\x01") effectiv_timerange;
+	end
+	'''
 	
 	def genTableSatDml(Entity entity)
 	'''

@@ -27,7 +27,7 @@ class CreateSchema extends AbstractGenerator {
 	def CreateSchema(ArrayList<String> layer)
 	'''
 	«FOR s : layer»
-	CREATE SCHEMA IF NOT EXISTS «s»;
+	CREATE SCHEMA IF NOT EXISTS «s»SCHEMA_ID;
 	«ENDFOR»
 	'''
 	

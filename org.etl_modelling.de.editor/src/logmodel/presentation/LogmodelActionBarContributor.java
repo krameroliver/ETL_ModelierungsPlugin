@@ -2,8 +2,6 @@
  */
 package logmodel.presentation;
 
-import ETL_MODEL.presentation.LogmodelEditorPlugin;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -40,6 +38,7 @@ import org.eclipse.jface.viewers.Viewer;
 
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
+import techmodel.presentation.TechmodelEditorPlugin;
 
 /**
  * This is the action bar contributor for the Logmodel model editor.
@@ -73,14 +72,14 @@ public class LogmodelActionBarContributor
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction =
-		new Action(LogmodelEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
+		new Action(TechmodelEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
 			@Override
 			public void run() {
 				try {
 					getPage().showView("org.eclipse.ui.views.PropertySheet");
 				}
 				catch (PartInitException exception) {
-					LogmodelEditorPlugin.INSTANCE.log(exception);
+					TechmodelEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -93,7 +92,7 @@ public class LogmodelActionBarContributor
 	 * @generated
 	 */
 	protected IAction refreshViewerAction =
-		new Action(LogmodelEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
+		new Action(TechmodelEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
 			@Override
 			public boolean isEnabled() {
 				return activeEditorPart instanceof IViewerProvider;
@@ -181,7 +180,7 @@ public class LogmodelActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditor_menu"), "logmodelMenuID");
+		IMenuManager submenuManager = new MenuManager(TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditor_menu"), "logmodelMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));
@@ -190,12 +189,12 @@ public class LogmodelActionBarContributor
 
 		// Prepare for CreateChild item addition or removal.
 		//
-		createChildMenuManager = new MenuManager(LogmodelEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		createChildMenuManager = new MenuManager(TechmodelEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		submenuManager.insertBefore("additions", createChildMenuManager);
 
 		// Prepare for CreateSibling item addition or removal.
 		//
-		createSiblingMenuManager = new MenuManager(LogmodelEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		createSiblingMenuManager = new MenuManager(TechmodelEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		submenuManager.insertBefore("additions", createSiblingMenuManager);
 
 		// Force an update because Eclipse hides empty menus now.
@@ -388,11 +387,11 @@ public class LogmodelActionBarContributor
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;
 
-		submenuManager = new MenuManager(LogmodelEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		submenuManager = new MenuManager(TechmodelEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		populateManager(submenuManager, createChildActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 
-		submenuManager = new MenuManager(LogmodelEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		submenuManager = new MenuManager(TechmodelEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 	}

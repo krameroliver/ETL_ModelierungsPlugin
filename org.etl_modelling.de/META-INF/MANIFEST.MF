@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.etl_modelling.de;singleton:=true
 Automatic-Module-Name: org.etl_modelling.de
-Bundle-Version: 1.5.0.qualifier
+Bundle-Version: 1.8.7.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -16,6 +16,9 @@ Export-Package: ETL_MODEL,
  logmodel.util,
  package_enums,
  package_enums.impl,
+ techmodel,
+ techmodel.impl,
+ techmodel.util,
  specmodel,
  specmodel.impl,
  specmodel.util,

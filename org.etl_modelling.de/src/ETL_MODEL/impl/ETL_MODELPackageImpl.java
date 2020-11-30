@@ -6,11 +6,8 @@ import ETL_MODEL.Annotation;
 import ETL_MODEL.ETL_MODELFactory;
 import ETL_MODEL.ETL_MODELPackage;
 import ETL_MODEL.namedelement;
-
 import logmodel.LogmodelPackage;
-
 import logmodel.impl.LogmodelPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -20,13 +17,9 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import package_enums.Package_enumsPackage;
 
 import package_enums.impl.Package_enumsPackageImpl;
-
-import specmodel.SpecmodelPackage;
-
-import specmodel.impl.SpecmodelPackageImpl;
-
+import techmodel.TechmodelPackage;
+import techmodel.impl.TechmodelPackageImpl;
 import type_enum.Type_enumPackage;
-
 import type_enum.impl.Type_enumPackageImpl;
 
 /**
@@ -105,27 +98,27 @@ public class ETL_MODELPackageImpl extends EPackageImpl implements ETL_MODELPacka
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(LogmodelPackage.eNS_URI);
-		LogmodelPackageImpl theLogmodelPackage = (LogmodelPackageImpl)(registeredPackage instanceof LogmodelPackageImpl ? registeredPackage : LogmodelPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechmodelPackage.eNS_URI);
+		TechmodelPackageImpl theTechmodelPackage = (TechmodelPackageImpl)(registeredPackage instanceof TechmodelPackageImpl ? registeredPackage : TechmodelPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Package_enumsPackage.eNS_URI);
 		Package_enumsPackageImpl thePackage_enumsPackage = (Package_enumsPackageImpl)(registeredPackage instanceof Package_enumsPackageImpl ? registeredPackage : Package_enumsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecmodelPackage.eNS_URI);
-		SpecmodelPackageImpl theSpecmodelPackage = (SpecmodelPackageImpl)(registeredPackage instanceof SpecmodelPackageImpl ? registeredPackage : SpecmodelPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(LogmodelPackage.eNS_URI);
+		LogmodelPackageImpl theLogmodelPackage = (LogmodelPackageImpl)(registeredPackage instanceof LogmodelPackageImpl ? registeredPackage : LogmodelPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Type_enumPackage.eNS_URI);
 		Type_enumPackageImpl theType_enumPackage = (Type_enumPackageImpl)(registeredPackage instanceof Type_enumPackageImpl ? registeredPackage : Type_enumPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theETL_MODELPackage.createPackageContents();
-		theLogmodelPackage.createPackageContents();
+		theTechmodelPackage.createPackageContents();
 		thePackage_enumsPackage.createPackageContents();
-		theSpecmodelPackage.createPackageContents();
+		theLogmodelPackage.createPackageContents();
 		theType_enumPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theETL_MODELPackage.initializePackageContents();
-		theLogmodelPackage.initializePackageContents();
+		theTechmodelPackage.initializePackageContents();
 		thePackage_enumsPackage.initializePackageContents();
-		theSpecmodelPackage.initializePackageContents();
+		theLogmodelPackage.initializePackageContents();
 		theType_enumPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed

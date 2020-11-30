@@ -232,13 +232,31 @@ public interface LogmodelPackage extends EPackage {
 	int ENTITY__LINEEND = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Techpackage</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__TECHPACKAGE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Tables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__TABLES = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -413,13 +431,22 @@ public interface LogmodelPackage extends EPackage {
 	int FIELD__IS_BUSINESS_KEY = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 15;
 
 	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__TABLE = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 16;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 16;
+	int FIELD_FEATURE_COUNT = ETL_MODELPackage.NAMEDELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of operations of the '<em>Field</em>' class.
@@ -971,6 +998,28 @@ public interface LogmodelPackage extends EPackage {
 	EAttribute getEntity_Lineend();
 
 	/**
+	 * Returns the meta object for the container reference '{@link logmodel.Entity#getTechpackage <em>Techpackage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Techpackage</em>'.
+	 * @see logmodel.Entity#getTechpackage()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EReference getEntity_Techpackage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link logmodel.Entity#getTables <em>Tables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tables</em>'.
+	 * @see logmodel.Entity#getTables()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EReference getEntity_Tables();
+
+	/**
 	 * Returns the meta object for class '{@link logmodel.Field <em>Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1155,6 +1204,17 @@ public interface LogmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getField_IsBusinessKey();
+
+	/**
+	 * Returns the meta object for the reference '{@link logmodel.Field#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Table</em>'.
+	 * @see logmodel.Field#getTable()
+	 * @see #getField()
+	 * @generated
+	 */
+	EReference getField_Table();
 
 	/**
 	 * Returns the meta object for class '{@link logmodel.Relationship <em>Relationship</em>}'.
@@ -1585,6 +1645,22 @@ public interface LogmodelPackage extends EPackage {
 		EAttribute ENTITY__LINEEND = eINSTANCE.getEntity_Lineend();
 
 		/**
+		 * The meta object literal for the '<em><b>Techpackage</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__TECHPACKAGE = eINSTANCE.getEntity_Techpackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Tables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__TABLES = eINSTANCE.getEntity_Tables();
+
+		/**
 		 * The meta object literal for the '{@link logmodel.impl.FieldImpl <em>Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1721,6 +1797,14 @@ public interface LogmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIELD__IS_BUSINESS_KEY = eINSTANCE.getField_IsBusinessKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FIELD__TABLE = eINSTANCE.getField_Table();
 
 		/**
 		 * The meta object literal for the '{@link logmodel.impl.RelationshipImpl <em>Relationship</em>}' class.

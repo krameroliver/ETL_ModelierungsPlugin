@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import com.google.inject.Inject
 import org.etl_modeling.etldsl.generator.SQL.Postgres.BiTemp.DataVault.BiTempDV
 import org.etl_modeling.etldsl.generator.Abinitio.DML.CSV_INPUT.DML_CSV_Input
+import org.etl_modeling.etldsl.generator.Abinitio.DML.CSV_INPUT.TableDmls
 import org.etl_modeling.etldsl.generator.Abinitio.CC_Jobnetz.CC_JobXML
 import org.etl_modeling.etldsl.generator.Abinitio.FDSET.FdsetGenerator
 import org.etl_modeling.etldsl.generator.Abinitio.PSET.GeneratorReadEntityPset
@@ -30,9 +31,13 @@ class ETLDslGenerator extends AbstractGenerator {
 @Inject FdsetGenerator fdset
 @Inject GeneratorReadEntityPset reg
 @Inject GeneratorWriteEntityPset weg
+@Inject TechModel tec
+@Inject TableDmls tdml
 
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		//tec.doGenerate(resource,fsa,context);
+		tdml.doGenerate(resource,fsa,context);
 		stdv.doGenerate(resource,fsa,context);
 		eg.doGenerate(resource,fsa,context);
 		cs.doGenerate(resource,fsa,context);

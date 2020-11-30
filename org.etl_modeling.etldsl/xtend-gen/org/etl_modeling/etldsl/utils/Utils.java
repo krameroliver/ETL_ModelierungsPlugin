@@ -59,7 +59,7 @@ public class Utils {
           return _builder_1.toString();
         case DECIMAL:
           StringConcatenation _builder_2 = new StringConcatenation();
-          _builder_2.append("decimal(\'\\x01\',20.10)");
+          _builder_2.append("decimal(20,10)");
           return _builder_2.toString();
         case DATE:
           StringConcatenation _builder_3 = new StringConcatenation();

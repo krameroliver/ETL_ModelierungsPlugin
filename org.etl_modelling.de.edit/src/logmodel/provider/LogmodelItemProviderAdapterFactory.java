@@ -15,7 +15,6 @@ import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -32,7 +31,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LogmodelItemProviderAdapterFactory extends LogmodelAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class LogmodelItemProviderAdapterFactory extends LogmodelAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -373,25 +372,6 @@ public class LogmodelItemProviderAdapterFactory extends LogmodelAdapterFactory i
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void dispose() {
-		if (logpackageItemProvider != null) logpackageItemProvider.dispose();
-		if (entityItemProvider != null) entityItemProvider.dispose();
-		if (fieldItemProvider != null) fieldItemProvider.dispose();
-		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
-		if (bkDomainItemProvider != null) bkDomainItemProvider.dispose();
-		if (includeItemProvider != null) includeItemProvider.dispose();
-		if (businessTermItemProvider != null) businessTermItemProvider.dispose();
-		if (commonMappingItemProvider != null) commonMappingItemProvider.dispose();
-		if (anotatableItemProvider != null) anotatableItemProvider.dispose();
 	}
 
 }

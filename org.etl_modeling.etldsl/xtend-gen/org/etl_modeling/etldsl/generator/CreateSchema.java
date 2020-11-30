@@ -35,7 +35,7 @@ public class CreateSchema extends AbstractGenerator {
       for(final String s : layer) {
         _builder.append("CREATE SCHEMA IF NOT EXISTS ");
         _builder.append(s);
-        _builder.append(";");
+        _builder.append("SCHEMA_ID;");
         _builder.newLineIfNotEmpty();
       }
     }

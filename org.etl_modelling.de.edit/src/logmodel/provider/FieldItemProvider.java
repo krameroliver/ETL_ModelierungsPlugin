@@ -4,7 +4,6 @@ package logmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-import ETL_MODEL.provider.LogmodelEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,6 +25,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import techmodel.provider.TechmodelEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link logmodel.Field} object.
@@ -77,6 +77,7 @@ public class FieldItemProvider
 			addIsFastChangingPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addIsBusinessKeyPropertyDescriptor(object);
+			addTablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -412,6 +413,28 @@ public class FieldItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Table feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Field_table_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Field_table_feature", "_UI_Field_type"),
+				 LogmodelPackage.Literals.FIELD__TABLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Field.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -490,7 +513,7 @@ public class FieldItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return LogmodelEditPlugin.INSTANCE;
+		return TechmodelEditPlugin.INSTANCE;
 	}
 
 }

@@ -4,6 +4,7 @@ import com.google.common.collect.Iterables;
 import logmodel.Entity;
 import logmodel.Field;
 import logmodel.Include;
+import logmodel.Relationship;
 import logmodel.logpackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -60,6 +61,19 @@ public class TableDmls extends AbstractGenerator {
             fsa.generateFile(ENTITY_DML_PATH, this.genEntityDml(entity));
             fsa.generateFile(loader_input_path, this.genLoaderInputDML(entity));
             fsa.generateFile(re_output_path, this.genReadEntityOutputDML(entity));
+            EList<Relationship> _relationships = entity.getRelationships();
+            for (final Relationship rel : _relationships) {
+              {
+                String _lowerCase_5 = rel.getName().toLowerCase();
+                String _plus_5 = ("dml/HUB/r_" + _lowerCase_5);
+                String link_dml = (_plus_5 + ".dml");
+                String _lowerCase_6 = rel.getName().toLowerCase();
+                String _plus_6 = ("dml/HUB/r_s_" + _lowerCase_6);
+                String link_sat_dml = (_plus_6 + ".dml");
+                fsa.generateFile(link_dml, this.genLinkTableDML(rel, entity));
+                fsa.generateFile(link_sat_dml, this.genLinkSATTableDML(rel, entity));
+              }
+            }
           }
         }
       }
@@ -134,6 +148,50 @@ public class TableDmls extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("end");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence genLinkTableDML(final Relationship rel, final Entity entity) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("record");
+    _builder.newLine();
+    _builder.append("string(\"\\x01\") ");
+    String _lowerCase = rel.getName().toLowerCase();
+    _builder.append(_lowerCase);
+    _builder.append("_hk ;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("string(\"\\x01\") ");
+    String _lowerCase_1 = entity.getName().toLowerCase();
+    _builder.append(_lowerCase_1);
+    _builder.append("_hk;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("string(\"\\x01\") ");
+    String _lowerCase_2 = rel.getToEntity().getName().toLowerCase();
+    _builder.append(_lowerCase_2);
+    _builder.append("_hk;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("end");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence genLinkSATTableDML(final Relationship rel, final Entity entity) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("record");
+    _builder.newLine();
+    _builder.append("string(\"\\x01\") ");
+    String _lowerCase = rel.getName().toLowerCase();
+    _builder.append(_lowerCase);
+    _builder.append("_hk,");
+    _builder.newLineIfNotEmpty();
+    _builder.append("date(\"YYYY-MM-DD\") creation_date;");
+    _builder.newLine();
+    _builder.append("date(\"YYYY-MM-DD\") modification_date;");
+    _builder.newLine();
+    _builder.append("string(\"\\x01\") effectiv_timerange;");
+    _builder.newLine();
     _builder.append("end");
     _builder.newLine();
     return _builder;

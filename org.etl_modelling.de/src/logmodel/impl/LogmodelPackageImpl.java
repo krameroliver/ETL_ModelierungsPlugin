@@ -28,11 +28,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import package_enums.Package_enumsPackage;
 
 import package_enums.impl.Package_enumsPackageImpl;
-
-import specmodel.SpecmodelPackage;
-
-import specmodel.impl.SpecmodelPackageImpl;
-
+import techmodel.TechmodelPackage;
+import techmodel.impl.TechmodelPackageImpl;
 import type_enum.Type_enumPackage;
 
 import type_enum.impl.Type_enumPackageImpl;
@@ -155,27 +152,27 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ETL_MODELPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TechmodelPackage.eNS_URI);
+		TechmodelPackageImpl theTechmodelPackage = (TechmodelPackageImpl)(registeredPackage instanceof TechmodelPackageImpl ? registeredPackage : TechmodelPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ETL_MODELPackage.eNS_URI);
 		ETL_MODELPackageImpl theETL_MODELPackage = (ETL_MODELPackageImpl)(registeredPackage instanceof ETL_MODELPackageImpl ? registeredPackage : ETL_MODELPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Package_enumsPackage.eNS_URI);
 		Package_enumsPackageImpl thePackage_enumsPackage = (Package_enumsPackageImpl)(registeredPackage instanceof Package_enumsPackageImpl ? registeredPackage : Package_enumsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpecmodelPackage.eNS_URI);
-		SpecmodelPackageImpl theSpecmodelPackage = (SpecmodelPackageImpl)(registeredPackage instanceof SpecmodelPackageImpl ? registeredPackage : SpecmodelPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(Type_enumPackage.eNS_URI);
 		Type_enumPackageImpl theType_enumPackage = (Type_enumPackageImpl)(registeredPackage instanceof Type_enumPackageImpl ? registeredPackage : Type_enumPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theLogmodelPackage.createPackageContents();
+		theTechmodelPackage.createPackageContents();
 		theETL_MODELPackage.createPackageContents();
 		thePackage_enumsPackage.createPackageContents();
-		theSpecmodelPackage.createPackageContents();
 		theType_enumPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theLogmodelPackage.initializePackageContents();
+		theTechmodelPackage.initializePackageContents();
 		theETL_MODELPackage.initializePackageContents();
 		thePackage_enumsPackage.initializePackageContents();
-		theSpecmodelPackage.initializePackageContents();
 		theType_enumPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -294,6 +291,26 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 	@Override
 	public EAttribute getEntity_Lineend() {
 		return (EAttribute)entityEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEntity_Techpackage() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEntity_Tables() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -464,6 +481,16 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 	@Override
 	public EAttribute getField_IsBusinessKey() {
 		return (EAttribute)fieldEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getField_Table() {
+		return (EReference)fieldEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -797,6 +824,8 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		createEAttribute(entityEClass, ENTITY__FILENAME);
 		createEAttribute(entityEClass, ENTITY__DELIMITER);
 		createEAttribute(entityEClass, ENTITY__LINEEND);
+		createEReference(entityEClass, ENTITY__TECHPACKAGE);
+		createEReference(entityEClass, ENTITY__TABLES);
 
 		fieldEClass = createEClass(FIELD);
 		createEReference(fieldEClass, FIELD__ENTITY);
@@ -815,6 +844,7 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		createEAttribute(fieldEClass, FIELD__IS_FAST_CHANGING);
 		createEAttribute(fieldEClass, FIELD__TYPE);
 		createEAttribute(fieldEClass, FIELD__IS_BUSINESS_KEY);
+		createEReference(fieldEClass, FIELD__TABLE);
 
 		relationshipEClass = createEClass(RELATIONSHIP);
 		createEReference(relationshipEClass, RELATIONSHIP__FROM_ENTITY);
@@ -877,6 +907,7 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 
 		// Obtain other dependent packages
 		ETL_MODELPackage theETL_MODELPackage = (ETL_MODELPackage)EPackage.Registry.INSTANCE.getEPackage(ETL_MODELPackage.eNS_URI);
+		TechmodelPackage theTechmodelPackage = (TechmodelPackage)EPackage.Registry.INSTANCE.getEPackage(TechmodelPackage.eNS_URI);
 		Type_enumPackage theType_enumPackage = (Type_enumPackage)EPackage.Registry.INSTANCE.getEPackage(Type_enumPackage.eNS_URI);
 
 		// Create type parameters
@@ -907,6 +938,8 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		initEAttribute(getEntity_Filename(), ecorePackage.getEString(), "filename", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_Delimiter(), ecorePackage.getEString(), "delimiter", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntity_Lineend(), ecorePackage.getEString(), "lineend", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Techpackage(), theTechmodelPackage.getTechPackage(), theTechmodelPackage.getTechPackage_Entitys(), "techpackage", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Tables(), theTechmodelPackage.getTable(), theTechmodelPackage.getTable_Entity(), "tables", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getField_Entity(), this.getEntity(), this.getEntity_EntityField(), "entity", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -925,6 +958,7 @@ public class LogmodelPackageImpl extends EPackageImpl implements LogmodelPackage
 		initEAttribute(getField_IsFastChanging(), ecorePackage.getEBoolean(), "isFastChanging", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getField_Type(), theType_enumPackage.getFieldTypes(), "type", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getField_IsBusinessKey(), ecorePackage.getEBoolean(), "isBusinessKey", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getField_Table(), theTechmodelPackage.getTable(), theTechmodelPackage.getTable_Fields(), "table", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelationship_FromEntity(), this.getEntity(), null, "fromEntity", null, 0, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

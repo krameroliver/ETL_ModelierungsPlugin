@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.etl_modelling.de/src" modelPluginID="org.etl_modelling.de"
+    modelName="Techmodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>TechModel.ecore</foreignModel>
+  <genPackages prefix="Techmodel" disposableProviderFactory="true" ecorePackage="TechModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TechModel.ecore#//TableType">
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/SAT"/>
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/HUB"/>
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/LINK"/>
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/Referenz"/>
+    </genEnums>
+    <genClasses ecoreClass="TechModel.ecore#//TechPackage">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//TechPackage/entitys"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//TechPackage/tables"/>
+    </genClasses>
+    <genClasses ecoreClass="TechModel.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TechModel.ecore#//Table/TableType"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//Table/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//Table/entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//Table/techpackage"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="ETL_MODEL" disposableProviderFactory="true" ecorePackage="ETL_MODEL.ecore#/">
+    <genClasses image="false" ecoreClass="ETL_MODEL.ecore#//namedelement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ETL_MODEL.ecore#//namedelement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ETL_MODEL.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ETL_MODEL.ecore#//Package/LAYER"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ETL_MODEL.ecore#//Package/LAYER_TYPE"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ETL_MODEL.ecore#//Package/HISTORISATION"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ETL_MODEL.ecore#//Package/REPRESENTATION"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ETL_MODEL.ecore#//Annotation"/>
+  </genPackages>
+  <genPackages prefix="Package_enums" disposableProviderFactory="true" ecorePackage="package_enums.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//LAYERTYPE">
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/STAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/INTEGRATION"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/EXPORT"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/REPORTING"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//LAYERTYPE/HARMONISATION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//HISTORISATIONTYPE">
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/DAY_PARTITIONED"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/MONTH_PARTITIONED"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//HISTORISATIONTYPE/BITEMPORAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="package_enums.ecore#//REPRESENTATIONS">
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/FLAT_TABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/DATAVAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/ThirdNF"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/SNOWFLAKE"/>
+      <genEnumLiterals ecoreEnumLiteral="package_enums.ecore#//REPRESENTATIONS/STAR"/>
+    </genEnums>
+  </genPackages>
+  <genPackages prefix="Logmodel" ecorePackage="logmodel.ecore#/">
+    <genClasses ecoreClass="logmodel.ecore#//logpackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//logpackage/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//logpackage/commonmapping"/>
+    </genClasses>
+    <genClasses ecoreClass="logmodel.ecore#//Entity">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/logpackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/entityField"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/include"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/relationships"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/filename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/delimiter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/lineend"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/techpackage"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/tables"/>
+    </genClasses>
+    <genClasses ecoreClass="logmodel.ecore#//Field">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//Field/entity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//Field/include"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/precision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/original_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/short_describtion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/dateFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/NullIndicator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/allowExponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/hasImplicitComma"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/interfaceOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/tableOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/isFastChanging"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/isBusinessKey"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Field/table"/>
+    </genClasses>
+    <genClasses ecoreClass="logmodel.ecore#//Relationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/fromEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/toEntity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/identifiyingFieldsRel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/describingFieldsRel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/describingfields"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/entity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Relationship/relationshipAlias"/>
+    </genClasses>
+    <genClasses ecoreClass="logmodel.ecore#//BKDomain"/>
+    <genClasses ecoreClass="logmodel.ecore#//Include">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//Include/includeFields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Include/identifyingfields"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//Include/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="logmodel.ecore#//BusinessTerm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/primaryFdmID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/groupID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/primaryFDMName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/usedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/functionalSpecification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/regulatoryRequirements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//BusinessTerm/DataOwner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//BusinessTerm/field"/>
+    </genClasses>
+    <genClasses ecoreClass="logmodel.ecore#//CommonMapping">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//CommonMapping/commonmappinginputfields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logmodel.ecore#//CommonMapping/commonmappingoutputfields"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//CommonMapping/logpackage"/>
+    </genClasses>
+    <genClasses ecoreClass="logmodel.ecore#//anotatable"/>
+  </genPackages>
+  <genPackages prefix="Type_enum" ecorePackage="type_enums.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="type_enums.ecore#//FieldTypes">
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//FieldTypes/String"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//FieldTypes/Int"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//FieldTypes/Decimal"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//FieldTypes/Date"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//FieldTypes/TimeStamp"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//FieldTypes/HK"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//FieldTypes/TrueFalse"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="type_enums.ecore#//JoinTypes">
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//JoinTypes/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//JoinTypes/RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//JoinTypes/INNER"/>
+      <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//JoinTypes/FULL_OUTER"/>
+    </genEnums>
+  </genPackages>
+</genmodel:GenModel>

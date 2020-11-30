@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.etl_modelling.de.tests;singleton:=true
 Automatic-Module-Name: org.etl_modelling.de.tests
-Bundle-Version: 1.5.0.qualifier
+Bundle-Version: 1.8.7.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -11,6 +11,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ETL_MODEL.tests,
  logmodel.tests,
  package_enums.tests,
+ techmodel.tests,
  specmodel.tests,
  type_enum.tests,
  jobnetz.tests

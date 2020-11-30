@@ -71,11 +71,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 
 import logmodel.LogmodelFactory;
 import logmodel.LogmodelPackage;
-import ETL_MODEL.provider.LogmodelEditPlugin;
-
-
-import ETL_MODEL.presentation.LogmodelEditorPlugin;
-
+import techmodel.provider.TechmodelEditPlugin;
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;
@@ -85,6 +81,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
+import techmodel.presentation.TechmodelEditorPlugin;
 
 
 /**
@@ -101,7 +98,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -110,7 +107,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -178,8 +175,8 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(LogmodelEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(LogmodelEditorPlugin.INSTANCE.getImage("full/wizban/NewLogmodel")));
+		setWindowTitle(TechmodelEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(TechmodelEditorPlugin.INSTANCE.getImage("full/wizban/NewLogmodel")));
 	}
 
 	/**
@@ -262,7 +259,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 							resource.save(options);
 						}
 						catch (Exception exception) {
-							LogmodelEditorPlugin.INSTANCE.log(exception);
+							TechmodelEditorPlugin.INSTANCE.log(exception);
 						}
 						finally {
 							progressMonitor.done();
@@ -296,14 +293,14 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), LogmodelEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), TechmodelEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
 		}
 		catch (Exception exception) {
-			LogmodelEditorPlugin.INSTANCE.log(exception);
+			TechmodelEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
 	}
@@ -337,7 +334,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(LogmodelEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(TechmodelEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -415,7 +412,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(LogmodelEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+				containerLabel.setText(TechmodelEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -441,7 +438,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(LogmodelEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+				encodingLabel.setText(TechmodelEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -541,10 +538,10 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return LogmodelEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+				return TechmodelEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
 			catch(MissingResourceException mre) {
-				LogmodelEditorPlugin.INSTANCE.log(mre);
+				TechmodelEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
@@ -557,7 +554,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(LogmodelEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(TechmodelEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -576,9 +573,9 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new LogmodelModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelModelWizard_label"));
-		newFileCreationPage.setDescription(LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelModelWizard_description"));
-		newFileCreationPage.setFileName(LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage.setTitle(TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelModelWizard_label"));
+		newFileCreationPage.setDescription(TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelModelWizard_description"));
+		newFileCreationPage.setFileName(TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -604,7 +601,7 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -615,8 +612,8 @@ public class LogmodelModelWizard extends Wizard implements INewWizard {
 			}
 		}
 		initialObjectCreationPage = new LogmodelModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(LogmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelModelWizard_label"));
-		initialObjectCreationPage.setDescription(LogmodelEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage.setTitle(TechmodelEditorPlugin.INSTANCE.getString("_UI_LogmodelModelWizard_label"));
+		initialObjectCreationPage.setDescription(TechmodelEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 

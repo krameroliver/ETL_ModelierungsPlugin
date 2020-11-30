@@ -4,7 +4,6 @@ package logmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-import ETL_MODEL.provider.LogmodelEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,7 +28,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import specmodel.SpecmodelFactory;
+import techmodel.provider.TechmodelEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link logmodel.Include} object.
@@ -67,7 +66,7 @@ public class IncludeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addEntityPropertyDescriptor(object);
+			addIdentifyingfieldsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,19 +94,19 @@ public class IncludeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Entity feature.
+	 * This adds a property descriptor for the Identifyingfields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntityPropertyDescriptor(Object object) {
+	protected void addIdentifyingfieldsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Include_entity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Include_entity_feature", "_UI_Include_type"),
-				 LogmodelPackage.Literals.INCLUDE__ENTITY,
+				 getString("_UI_Include_identifyingfields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Include_identifyingfields_feature", "_UI_Include_type"),
+				 LogmodelPackage.Literals.INCLUDE__IDENTIFYINGFIELDS,
 				 true,
 				 false,
 				 true,
@@ -129,7 +128,6 @@ public class IncludeItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LogmodelPackage.Literals.INCLUDE__INCLUDE_FIELDS);
-			childrenFeatures.add(LogmodelPackage.Literals.INCLUDE__IDENTIFYINGFIELDS);
 		}
 		return childrenFeatures;
 	}
@@ -189,7 +187,6 @@ public class IncludeItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LogmodelPackage.INCLUDE__INCLUDE_FIELDS:
-			case LogmodelPackage.INCLUDE__IDENTIFYINGFIELDS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -211,44 +208,6 @@ public class IncludeItemProvider
 			(createChildParameter
 				(LogmodelPackage.Literals.INCLUDE__INCLUDE_FIELDS,
 				 LogmodelFactory.eINSTANCE.createField()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(LogmodelPackage.Literals.INCLUDE__INCLUDE_FIELDS,
-				 SpecmodelFactory.eINSTANCE.createJoinField()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(LogmodelPackage.Literals.INCLUDE__IDENTIFYINGFIELDS,
-				 LogmodelFactory.eINSTANCE.createField()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(LogmodelPackage.Literals.INCLUDE__IDENTIFYINGFIELDS,
-				 SpecmodelFactory.eINSTANCE.createJoinField()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == LogmodelPackage.Literals.INCLUDE__INCLUDE_FIELDS ||
-			childFeature == LogmodelPackage.Literals.INCLUDE__IDENTIFYINGFIELDS;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
@@ -259,7 +218,7 @@ public class IncludeItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return LogmodelEditPlugin.INSTANCE;
+		return TechmodelEditPlugin.INSTANCE;
 	}
 
 }

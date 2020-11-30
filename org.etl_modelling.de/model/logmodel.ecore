@@ -19,6 +19,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineend" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="techpackage" eType="ecore:EClass TechModel.ecore#//TechPackage"
+        eOpposite="TechModel.ecore#//TechPackage/entitys"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
+        eType="ecore:EClass TechModel.ecore#//Table" containment="true" eOpposite="TechModel.ecore#//Table/entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="ETL_MODEL.ecore#//namedelement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
@@ -40,6 +44,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFastChanging" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum type_enums.ecore#//FieldTypes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBusinessKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="ecore:EClass TechModel.ecore#//Table"
+        eOpposite="TechModel.ecore#//Table/fields"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="ETL_MODEL.ecore#//namedelement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromEntity" eType="#//Entity"/>

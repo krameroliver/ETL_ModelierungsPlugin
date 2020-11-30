@@ -25,6 +25,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import techmodel.Table;
+import techmodel.TechPackage;
+import techmodel.TechmodelPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,6 +45,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link logmodel.impl.EntityImpl#getFilename <em>Filename</em>}</li>
  *   <li>{@link logmodel.impl.EntityImpl#getDelimiter <em>Delimiter</em>}</li>
  *   <li>{@link logmodel.impl.EntityImpl#getLineend <em>Lineend</em>}</li>
+ *   <li>{@link logmodel.impl.EntityImpl#getTechpackage <em>Techpackage</em>}</li>
+ *   <li>{@link logmodel.impl.EntityImpl#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @generated
@@ -156,6 +161,16 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @ordered
 	 */
 	protected String lineend = LINEEND_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTables() <em>Tables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Table> tables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -355,6 +370,62 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public TechPackage getTechpackage() {
+		if (eContainerFeatureID() != LogmodelPackage.ENTITY__TECHPACKAGE) return null;
+		return (TechPackage)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTechpackage(TechPackage newTechpackage, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newTechpackage, LogmodelPackage.ENTITY__TECHPACKAGE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTechpackage(TechPackage newTechpackage) {
+		if (newTechpackage != eInternalContainer() || (eContainerFeatureID() != LogmodelPackage.ENTITY__TECHPACKAGE && newTechpackage != null)) {
+			if (EcoreUtil.isAncestor(this, newTechpackage))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newTechpackage != null)
+				msgs = ((InternalEObject)newTechpackage).eInverseAdd(this, TechmodelPackage.TECH_PACKAGE__ENTITYS, TechPackage.class, msgs);
+			msgs = basicSetTechpackage(newTechpackage, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogmodelPackage.ENTITY__TECHPACKAGE, newTechpackage, newTechpackage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Table> getTables() {
+		if (tables == null) {
+			tables = new EObjectContainmentWithInverseEList<Table>(Table.class, this, LogmodelPackage.ENTITY__TABLES, TechmodelPackage.TABLE__ENTITY);
+		}
+		return tables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -369,6 +440,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInclude()).basicAdd(otherEnd, msgs);
 			case LogmodelPackage.ENTITY__RELATIONSHIPS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRelationships()).basicAdd(otherEnd, msgs);
+			case LogmodelPackage.ENTITY__TECHPACKAGE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetTechpackage((TechPackage)otherEnd, msgs);
+			case LogmodelPackage.ENTITY__TABLES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTables()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -389,6 +466,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return ((InternalEList<?>)getInclude()).basicRemove(otherEnd, msgs);
 			case LogmodelPackage.ENTITY__RELATIONSHIPS:
 				return ((InternalEList<?>)getRelationships()).basicRemove(otherEnd, msgs);
+			case LogmodelPackage.ENTITY__TECHPACKAGE:
+				return basicSetTechpackage(null, msgs);
+			case LogmodelPackage.ENTITY__TABLES:
+				return ((InternalEList<?>)getTables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -403,6 +484,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		switch (eContainerFeatureID()) {
 			case LogmodelPackage.ENTITY__LOGPACKAGE:
 				return eInternalContainer().eInverseRemove(this, LogmodelPackage.LOGPACKAGE__ENTITY, logpackage.class, msgs);
+			case LogmodelPackage.ENTITY__TECHPACKAGE:
+				return eInternalContainer().eInverseRemove(this, TechmodelPackage.TECH_PACKAGE__ENTITYS, TechPackage.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -431,6 +514,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return getDelimiter();
 			case LogmodelPackage.ENTITY__LINEEND:
 				return getLineend();
+			case LogmodelPackage.ENTITY__TECHPACKAGE:
+				return getTechpackage();
+			case LogmodelPackage.ENTITY__TABLES:
+				return getTables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -471,6 +558,13 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case LogmodelPackage.ENTITY__LINEEND:
 				setLineend((String)newValue);
 				return;
+			case LogmodelPackage.ENTITY__TECHPACKAGE:
+				setTechpackage((TechPackage)newValue);
+				return;
+			case LogmodelPackage.ENTITY__TABLES:
+				getTables().clear();
+				getTables().addAll((Collection<? extends Table>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -507,6 +601,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 			case LogmodelPackage.ENTITY__LINEEND:
 				setLineend(LINEEND_EDEFAULT);
 				return;
+			case LogmodelPackage.ENTITY__TECHPACKAGE:
+				setTechpackage((TechPackage)null);
+				return;
+			case LogmodelPackage.ENTITY__TABLES:
+				getTables().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -535,6 +635,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				return DELIMITER_EDEFAULT == null ? delimiter != null : !DELIMITER_EDEFAULT.equals(delimiter);
 			case LogmodelPackage.ENTITY__LINEEND:
 				return LINEEND_EDEFAULT == null ? lineend != null : !LINEEND_EDEFAULT.equals(lineend);
+			case LogmodelPackage.ENTITY__TECHPACKAGE:
+				return getTechpackage() != null;
+			case LogmodelPackage.ENTITY__TABLES:
+				return tables != null && !tables.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

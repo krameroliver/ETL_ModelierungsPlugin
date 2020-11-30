@@ -3,16 +3,17 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.etl_modelling.de.editor;singleton:=true
 Automatic-Module-Name: org.etl_modelling.de.editor
-Bundle-Version: 1.5.0.qualifier
+Bundle-Version: 1.8.7.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: ETL_MODEL.presentation.LogmodelEditorPlugin$Implementation
+Bundle-Activator: techmodel.presentation.TechmodelEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ETL_MODEL.presentation,
  logmodel.presentation,
  specmodel.presentation,
- jobnetz.presentation
+ jobnetz.presentation,
+ techmodel.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.etl_modelling.de.edit;visibility:=reexport,

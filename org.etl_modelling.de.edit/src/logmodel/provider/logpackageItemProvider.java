@@ -4,8 +4,6 @@ package logmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-
-import ETL_MODEL.provider.LogmodelEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
@@ -30,6 +28,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import techmodel.provider.TechmodelEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link logmodel.logpackage} object.
@@ -71,7 +70,6 @@ public class logpackageItemProvider
 			addLAYER_TYPEPropertyDescriptor(object);
 			addHISTORISATIONPropertyDescriptor(object);
 			addREPRESENTATIONPropertyDescriptor(object);
-			addCommonmappingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -182,28 +180,6 @@ public class logpackageItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Commonmapping feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommonmappingPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_logpackage_commonmapping_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_logpackage_commonmapping_feature", "_UI_logpackage_type"),
-				 LogmodelPackage.Literals.LOGPACKAGE__COMMONMAPPING,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -322,7 +298,7 @@ public class logpackageItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return LogmodelEditPlugin.INSTANCE;
+		return TechmodelEditPlugin.INSTANCE;
 	}
 
 }

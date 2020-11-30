@@ -89,4 +89,31 @@
             contributorClass="jobnetz.presentation.JobnetzActionBarContributor">
       </editor>
    </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated techmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="techmodel.presentation.TechmodelModelWizardID"
+            name="%_UI_TechmodelModelWizard_label"
+            class="techmodel.presentation.TechmodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TechmodelModelFile.gif">
+         <description>%_UI_TechmodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated techmodel -->
+      <editor
+            id="techmodel.presentation.TechmodelEditorID"
+            name="%_UI_TechmodelEditor_label"
+            icon="icons/full/obj16/TechmodelModelFile.gif"
+            extensions="techmodel"
+            class="techmodel.presentation.TechmodelEditor"
+            contributorClass="techmodel.presentation.TechmodelActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

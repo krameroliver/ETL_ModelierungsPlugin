@@ -4,9 +4,6 @@ package logmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-
-import ETL_MODEL.provider.LogmodelEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -28,6 +25,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import techmodel.provider.TechmodelEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link logmodel.anotatable} object.
@@ -156,7 +154,7 @@ public class anotatableItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return LogmodelEditPlugin.INSTANCE;
+		return TechmodelEditPlugin.INSTANCE;
 	}
 
 }

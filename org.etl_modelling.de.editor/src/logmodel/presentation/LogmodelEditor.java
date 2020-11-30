@@ -156,14 +156,11 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import logmodel.provider.LogmodelItemProviderAdapterFactory;
-
-import ETL_MODEL.presentation.LogmodelEditorPlugin;
-
 import ETL_MODEL.provider.ETL_MODELItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
-import specmodel.provider.SpecmodelItemProviderAdapterFactory;
+import techmodel.presentation.TechmodelEditorPlugin;
+import techmodel.provider.TechmodelItemProviderAdapterFactory;
 
 
 /**
@@ -547,7 +544,7 @@ public class LogmodelEditor
 					}
 				}
 				catch (CoreException exception) {
-					LogmodelEditorPlugin.INSTANCE.log(exception);
+					TechmodelEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -664,7 +661,7 @@ public class LogmodelEditor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					LogmodelEditorPlugin.INSTANCE.log(exception);
+					TechmodelEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -673,7 +670,7 @@ public class LogmodelEditor
 					markerHelper.updateMarkers(diagnostic);
 				}
 				catch (CoreException exception) {
-					LogmodelEditorPlugin.INSTANCE.log(exception);
+					TechmodelEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -716,9 +713,9 @@ public class LogmodelEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TechmodelItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ETL_MODELItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new LogmodelItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new SpecmodelItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1554,7 +1551,7 @@ public class LogmodelEditor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			LogmodelEditorPlugin.INSTANCE.log(exception);
+			TechmodelEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1763,7 +1760,7 @@ public class LogmodelEditor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return LogmodelEditorPlugin.INSTANCE.getString(key);
+		return TechmodelEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1773,7 +1770,7 @@ public class LogmodelEditor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return LogmodelEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return TechmodelEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

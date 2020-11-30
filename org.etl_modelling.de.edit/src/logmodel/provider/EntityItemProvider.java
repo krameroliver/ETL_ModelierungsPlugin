@@ -4,7 +4,6 @@ package logmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-import ETL_MODEL.provider.LogmodelEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,7 +28,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import specmodel.SpecmodelFactory;
+import techmodel.TechmodelFactory;
+import techmodel.provider.TechmodelEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link logmodel.Entity} object.
@@ -67,11 +67,11 @@ public class EntityItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addIncludePropertyDescriptor(object);
-			addRelationshipsPropertyDescriptor(object);
 			addFilenamePropertyDescriptor(object);
 			addDelimiterPropertyDescriptor(object);
 			addLineendPropertyDescriptor(object);
+			addTechpackagePropertyDescriptor(object);
+			addTablesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,50 +94,6 @@ public class EntityItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Include feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIncludePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_include_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_include_feature", "_UI_Entity_type"),
-				 LogmodelPackage.Literals.ENTITY__INCLUDE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Relationships feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRelationshipsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_relationships_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_relationships_feature", "_UI_Entity_type"),
-				 LogmodelPackage.Literals.ENTITY__RELATIONSHIPS,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -209,6 +165,50 @@ public class EntityItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Techpackage feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTechpackagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_techpackage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_techpackage_feature", "_UI_Entity_type"),
+				 LogmodelPackage.Literals.ENTITY__TECHPACKAGE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tables feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTablesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_tables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_tables_feature", "_UI_Entity_type"),
+				 LogmodelPackage.Literals.ENTITY__TABLES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -223,6 +223,7 @@ public class EntityItemProvider
 			childrenFeatures.add(LogmodelPackage.Literals.ENTITY__ENTITY_FIELD);
 			childrenFeatures.add(LogmodelPackage.Literals.ENTITY__INCLUDE);
 			childrenFeatures.add(LogmodelPackage.Literals.ENTITY__RELATIONSHIPS);
+			childrenFeatures.add(LogmodelPackage.Literals.ENTITY__TABLES);
 		}
 		return childrenFeatures;
 	}
@@ -287,6 +288,7 @@ public class EntityItemProvider
 			case LogmodelPackage.ENTITY__ENTITY_FIELD:
 			case LogmodelPackage.ENTITY__INCLUDE:
 			case LogmodelPackage.ENTITY__RELATIONSHIPS:
+			case LogmodelPackage.ENTITY__TABLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -311,11 +313,6 @@ public class EntityItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(LogmodelPackage.Literals.ENTITY__ENTITY_FIELD,
-				 SpecmodelFactory.eINSTANCE.createJoinField()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(LogmodelPackage.Literals.ENTITY__INCLUDE,
 				 LogmodelFactory.eINSTANCE.createInclude()));
 
@@ -323,6 +320,11 @@ public class EntityItemProvider
 			(createChildParameter
 				(LogmodelPackage.Literals.ENTITY__RELATIONSHIPS,
 				 LogmodelFactory.eINSTANCE.createRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LogmodelPackage.Literals.ENTITY__TABLES,
+				 TechmodelFactory.eINSTANCE.createTable()));
 	}
 
 	/**
@@ -333,7 +335,7 @@ public class EntityItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return LogmodelEditPlugin.INSTANCE;
+		return TechmodelEditPlugin.INSTANCE;
 	}
 
 }

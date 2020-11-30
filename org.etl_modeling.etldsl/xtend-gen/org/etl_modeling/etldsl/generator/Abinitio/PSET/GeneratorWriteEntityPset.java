@@ -6,6 +6,7 @@ import logmodel.Entity;
 import logmodel.Field;
 import logmodel.Include;
 import logmodel.Relationship;
+import logmodel.logpackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -27,31 +28,37 @@ public class GeneratorWriteEntityPset extends AbstractGenerator {
   
   @Override
   public void doGenerate(final Resource input, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    Iterable<Entity> _filter = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), Entity.class);
-    for (final Entity entity : _filter) {
+    Iterable<logpackage> _filter = Iterables.<logpackage>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), logpackage.class);
+    for (final logpackage p : _filter) {
       {
-        String _lowerCase = entity.getName().toLowerCase();
-        String _plus = ("pset/WriteEntity/Entity/" + _lowerCase);
-        String _plus_1 = (_plus + ".pset");
-        this.entity_file = _plus_1;
-        fsa.generateFile(this.entity_file, this.BasicEntityPsets(entity));
-        EList<Include> _include = entity.getInclude();
-        for (final Include include : _include) {
+        String layer = p.getLAYER().toLowerCase();
+        Iterable<Entity> _filter_1 = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), Entity.class);
+        for (final Entity entity : _filter_1) {
           {
-            String _includeName = TableUtils.getIncludeName(entity, include);
-            String _plus_2 = ("pset/WriteEntity/Include/" + _includeName);
-            String _plus_3 = (_plus_2 + ".pset");
-            this.include_file = _plus_3;
-            fsa.generateFile(this.include_file, this.IncludeEntityPsets(include, entity));
-          }
-        }
-        EList<Relationship> _relationships = entity.getRelationships();
-        for (final Relationship rel : _relationships) {
-          {
-            this.link_file = "pset/WriteEntity/Link/";
-            String _relationSatName = TableUtils.getRelationSatName(entity, rel);
-            /* (_relationSatName + ".pset"); */
-            fsa.generateFile(this.link_file, this.LinkEntityPsets(rel, entity));
+            String _lowerCase = entity.getName().toLowerCase();
+            String _plus = ("pset/WriteEntity/Entity/" + _lowerCase);
+            String _plus_1 = (_plus + ".txt");
+            this.entity_file = _plus_1;
+            fsa.generateFile(this.entity_file, this.BasicEntityPsets(entity, layer));
+            EList<Include> _include = entity.getInclude();
+            for (final Include include : _include) {
+              {
+                String _includeName = TableUtils.getIncludeName(entity, include);
+                String _plus_2 = ("pset/WriteEntity/Include/" + _includeName);
+                String _plus_3 = (_plus_2 + ".txt");
+                this.include_file = _plus_3;
+                fsa.generateFile(this.include_file, this.IncludeEntityPsets(include, entity, layer));
+              }
+            }
+            EList<Relationship> _relationships = entity.getRelationships();
+            for (final Relationship rel : _relationships) {
+              {
+                this.link_file = "pset/WriteEntity/Link/";
+                String _relationSatName = TableUtils.getRelationSatName(entity, rel);
+                /* (_relationSatName + ".txt"); */
+                fsa.generateFile(this.link_file, this.LinkEntityPsets(rel, entity, layer));
+              }
+            }
           }
         }
       }
@@ -85,10 +92,14 @@ public class GeneratorWriteEntityPset extends AbstractGenerator {
     return IterableExtensions.join(bk_fields, ",");
   }
   
-  public CharSequence BasicEntityPsets(final Entity entity) {
+  public CharSequence BasicEntityPsets(final Entity entity, final String layer) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("$[[record");
+    _builder.append("[record");
     _builder.newLine();
+    _builder.append("layer \"");
+    _builder.append(layer);
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     _builder.append("entity_name \"");
     String _lowerCase = entity.getName().toLowerCase();
     _builder.append(_lowerCase);
@@ -114,15 +125,19 @@ public class GeneratorWriteEntityPset extends AbstractGenerator {
     _builder.append(_BuildBusinessKeys);
     _builder.append("]");
     _builder.newLineIfNotEmpty();
-    _builder.append("]]");
+    _builder.append("]");
     _builder.newLine();
     return _builder;
   }
   
-  public CharSequence IncludeEntityPsets(final Include include, final Entity entity) {
+  public CharSequence IncludeEntityPsets(final Include include, final Entity entity, final String layer) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("$[[record");
+    _builder.append("[record");
     _builder.newLine();
+    _builder.append("layer \"");
+    _builder.append(layer);
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     _builder.append("entity_name \"");
     String _lowerCase = include.getName().toLowerCase();
     _builder.append(_lowerCase);
@@ -149,15 +164,19 @@ public class GeneratorWriteEntityPset extends AbstractGenerator {
     _builder.append(_BuildBusinessKeys);
     _builder.append("]");
     _builder.newLineIfNotEmpty();
-    _builder.append("]]");
+    _builder.append("]");
     _builder.newLine();
     return _builder;
   }
   
-  public CharSequence LinkEntityPsets(final Relationship relationship, final Entity entity) {
+  public CharSequence LinkEntityPsets(final Relationship relationship, final Entity entity, final String layer) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("$[[record");
+    _builder.append("[record");
     _builder.newLine();
+    _builder.append("layer \"");
+    _builder.append(layer);
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     _builder.append("entity_name \"");
     String _lowerCase = relationship.getName().toLowerCase();
     _builder.append(_lowerCase);
@@ -183,7 +202,7 @@ public class GeneratorWriteEntityPset extends AbstractGenerator {
     _builder.append(_BuildIdentifyingKeys);
     _builder.append("]");
     _builder.newLineIfNotEmpty();
-    _builder.append("]]");
+    _builder.append("]");
     _builder.newLine();
     return _builder;
   }

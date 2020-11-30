@@ -23,6 +23,14 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated techmodel -->
+      <package
+            uri="http://www.example.org/techmodel"
+            class="techmodel.TechmodelPackage"
+            genModel="model/techmodel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated logmodel -->
       <package
             uri="http://www.example.org/ETL_MODEL"

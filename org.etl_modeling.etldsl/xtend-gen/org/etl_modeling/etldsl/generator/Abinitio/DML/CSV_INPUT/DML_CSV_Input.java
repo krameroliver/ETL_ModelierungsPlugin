@@ -35,10 +35,10 @@ public class DML_CSV_Input extends AbstractGenerator {
         Iterable<CommonMapping> _filter_1 = Iterables.<CommonMapping>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), CommonMapping.class);
         for (final CommonMapping cm : _filter_1) {
           {
-            final String input_dml_path = "dml/commonmapping/input/";
+            final String input_dml_path = "dml/struktur/input/";
             String _lowerCase = cm.getName().toLowerCase();
             /* (_lowerCase + ".dml"); */
-            final String output_dml_path = "dml/commonmapping/output/";
+            final String output_dml_path = "dml/struktur/output/";
             String _lowerCase_1 = cm.getName().toLowerCase();
             /* (_lowerCase_1 + ".dml"); */
             fsa.generateFile(input_dml_path, this.genCommonMappingImportDML(cm));

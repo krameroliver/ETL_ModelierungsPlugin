@@ -22,21 +22,24 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource input, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     String file = "pset/readEntity/";
-    Class<logpackage> p = logpackage.class;
-    Iterable<Entity> _filter = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), Entity.class);
-    for (final Entity entity : _filter) {
-      {
-        String _lowerCase = entity.getName().toLowerCase();
-        String _plus = ("pset/readEntity/" + _lowerCase);
-        String _plus_1 = (_plus + ".pset");
-        file = _plus_1;
-        fsa.generateFile(file, this.compile(entity));
+    Iterable<logpackage> _filter = Iterables.<logpackage>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), logpackage.class);
+    for (final logpackage p : _filter) {
+      Iterable<Entity> _filter_1 = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(input.getAllContents()), Entity.class);
+      for (final Entity entity : _filter_1) {
+        {
+          String _lowerCase = entity.getName().toLowerCase();
+          String _plus = ("pset/readEntity/" + _lowerCase);
+          String _plus_1 = (_plus + ".txt");
+          file = _plus_1;
+          String layer = p.getLAYER().toLowerCase();
+          fsa.generateFile(file, this.compile(entity, layer));
+        }
       }
     }
   }
   
-  public CharSequence compile(final Entity entity) {
-    CharSequence pset = this.GenReadentityInputPset(entity);
+  public CharSequence compile(final Entity entity, final String Layer) {
+    CharSequence pset = this.GenReadentityInputPset(entity, Layer);
     pset = pset.toString().replace("],]", "]]");
     return pset;
   }
@@ -122,7 +125,7 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     return IterableExtensions.join(al, ",");
   }
   
-  public CharSequence GenReadentityInputPset(final Entity entity) {
+  public CharSequence GenReadentityInputPset(final Entity entity, final String Layer) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("$[[record");
     _builder.newLine();
@@ -133,6 +136,10 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("entity_type \"\"");
     _builder.newLine();
+    _builder.append("layer \"");
+    _builder.append(Layer);
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     _builder.append("layer_type \"BITEMPORAL\"");
     _builder.newLine();
     _builder.append("entity_desc [record");

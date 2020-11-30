@@ -4,6 +4,7 @@ package logmodel;
 
 import ETL_MODEL.namedelement;
 
+import techmodel.Table;
 import type_enum.FieldTypes;
 
 /**
@@ -31,6 +32,7 @@ import type_enum.FieldTypes;
  *   <li>{@link logmodel.Field#isIsFastChanging <em>Is Fast Changing</em>}</li>
  *   <li>{@link logmodel.Field#getType <em>Type</em>}</li>
  *   <li>{@link logmodel.Field#isIsBusinessKey <em>Is Business Key</em>}</li>
+ *   <li>{@link logmodel.Field#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @see logmodel.LogmodelPackage#getField()
@@ -397,5 +399,29 @@ public interface Field extends namedelement {
 	 * @generated
 	 */
 	void setIsBusinessKey(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Table</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link techmodel.Table#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Table</em>' reference.
+	 * @see #setTable(Table)
+	 * @see logmodel.LogmodelPackage#getField_Table()
+	 * @see techmodel.Table#getFields
+	 * @model opposite="fields"
+	 * @generated
+	 */
+	Table getTable();
+
+	/**
+	 * Sets the value of the '{@link logmodel.Field#getTable <em>Table</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Table</em>' reference.
+	 * @see #getTable()
+	 * @generated
+	 */
+	void setTable(Table value);
 
 } // Field

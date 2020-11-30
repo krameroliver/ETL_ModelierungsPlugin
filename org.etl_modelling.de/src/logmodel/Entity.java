@@ -5,6 +5,8 @@ package logmodel;
 import ETL_MODEL.namedelement;
 
 import org.eclipse.emf.common.util.EList;
+import techmodel.Table;
+import techmodel.TechPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +24,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link logmodel.Entity#getFilename <em>Filename</em>}</li>
  *   <li>{@link logmodel.Entity#getDelimiter <em>Delimiter</em>}</li>
  *   <li>{@link logmodel.Entity#getLineend <em>Lineend</em>}</li>
+ *   <li>{@link logmodel.Entity#getTechpackage <em>Techpackage</em>}</li>
+ *   <li>{@link logmodel.Entity#getTables <em>Tables</em>}</li>
  * </ul>
  *
  * @see logmodel.LogmodelPackage#getEntity()
@@ -160,5 +164,43 @@ public interface Entity extends namedelement {
 	 * @generated
 	 */
 	void setLineend(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Techpackage</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link techmodel.TechPackage#getEntitys <em>Entitys</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Techpackage</em>' container reference.
+	 * @see #setTechpackage(TechPackage)
+	 * @see logmodel.LogmodelPackage#getEntity_Techpackage()
+	 * @see techmodel.TechPackage#getEntitys
+	 * @model opposite="entitys" transient="false"
+	 * @generated
+	 */
+	TechPackage getTechpackage();
+
+	/**
+	 * Sets the value of the '{@link logmodel.Entity#getTechpackage <em>Techpackage</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Techpackage</em>' container reference.
+	 * @see #getTechpackage()
+	 * @generated
+	 */
+	void setTechpackage(TechPackage value);
+
+	/**
+	 * Returns the value of the '<em><b>Tables</b></em>' containment reference list.
+	 * The list contents are of type {@link techmodel.Table}.
+	 * It is bidirectional and its opposite is '{@link techmodel.Table#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tables</em>' containment reference list.
+	 * @see logmodel.LogmodelPackage#getEntity_Tables()
+	 * @see techmodel.Table#getEntity
+	 * @model opposite="entity" containment="true"
+	 * @generated
+	 */
+	EList<Table> getTables();
 
 } // Entity

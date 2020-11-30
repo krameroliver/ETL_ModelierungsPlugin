@@ -23,8 +23,8 @@ class DML_CSV_Input extends AbstractGenerator {
 			rep = p.REPRESENTATION.value;	
 			l_type = p.LAYER_TYPE.value;
 			for(cm : input.allContents.toIterable.filter(CommonMapping)){
-				val input_dml_path = "dml/commonmapping/input/"cm.name.toLowerCase+".dml"
-				val output_dml_path = "dml/commonmapping/output/"cm.name.toLowerCase+".dml"
+				val input_dml_path = "dml/struktur/input/"cm.name.toLowerCase+".dml"
+				val output_dml_path = "dml/struktur/output/"cm.name.toLowerCase+".dml"
 				fsa.generateFile(input_dml_path,genCommonMappingImportDML(cm))
 				fsa.generateFile(output_dml_path,genCommonMappingOutputDML(cm))
 			}

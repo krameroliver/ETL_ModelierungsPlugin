@@ -20,7 +20,7 @@ class Utils {
 		switch(field.type){
 			case FieldTypes.STRING: return '''string("\x01")'''
 			case FieldTypes.INT: return '''decimal('\x01',0)'''
-			case FieldTypes.DECIMAL: return '''decimal('\x01',20.10)'''
+			case FieldTypes.DECIMAL: return '''decimal(20,10)'''
 			case FieldTypes.DATE: return '''date("YYYY-MM-DD")'''
 			case FieldTypes.HK: return '''string("\x01")'''
 			case FieldTypes.TIME_STAMP: return '''datetime("YYYY-MM-DD HH24:MI:SS")'''

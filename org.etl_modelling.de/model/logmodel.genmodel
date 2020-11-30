@@ -35,6 +35,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/filename"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/delimiter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Entity/lineend"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/techpackage"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Entity/tables"/>
     </genClasses>
     <genClasses ecoreClass="logmodel.ecore#//Field">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference logmodel.ecore#//Field/entity"/>
@@ -53,6 +55,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/isFastChanging"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logmodel.ecore#//Field/isBusinessKey"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Field/table"/>
     </genClasses>
     <genClasses ecoreClass="logmodel.ecore#//Relationship">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logmodel.ecore#//Relationship/fromEntity"/>
@@ -204,5 +207,23 @@
       <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//JoinTypes/INNER"/>
       <genEnumLiterals ecoreEnumLiteral="type_enums.ecore#//JoinTypes/FULL_OUTER"/>
     </genEnums>
+  </genPackages>
+  <genPackages prefix="Techmodel" ecorePackage="TechModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TechModel.ecore#//TableType">
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/SAT"/>
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/HUB"/>
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/LINK"/>
+      <genEnumLiterals ecoreEnumLiteral="TechModel.ecore#//TableType/Referenz"/>
+    </genEnums>
+    <genClasses ecoreClass="TechModel.ecore#//TechPackage">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//TechPackage/entitys"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//TechPackage/tables"/>
+    </genClasses>
+    <genClasses ecoreClass="TechModel.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TechModel.ecore#//Table/TableType"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//Table/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//Table/entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TechModel.ecore#//Table/techpackage"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="techmodel" nsURI="http://www.example.org/techmodel" nsPrefix="techmodel">
+  <eClassifiers xsi:type="ecore:EClass" name="TechPackage" eSuperTypes="ETL_MODEL.ecore#//Package">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entitys" upperBound="-1"
+        eType="ecore:EClass logmodel.ecore#//Entity" containment="true" eOpposite="logmodel.ecore#//Entity/techpackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
+        eType="#//Table" containment="true" eOpposite="#//Table/techpackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="ETL_MODEL.ecore#//namedelement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TableType" eType="#//TableType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="ecore:EClass logmodel.ecore#//Field" eOpposite="logmodel.ecore#//Field/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="ecore:EClass logmodel.ecore#//Entity"
+        eOpposite="logmodel.ecore#//Entity/tables"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="techpackage" eType="#//TechPackage"
+        eOpposite="#//TechPackage/tables"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TableType">
+    <eLiterals name="SAT"/>
+    <eLiterals name="HUB" value="1"/>
+    <eLiterals name="LINK" value="2"/>
+    <eLiterals name="Referenz" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -15,15 +15,18 @@ class GeneratorReadEntityPset extends AbstractGenerator {
 		var file = "pset/readEntity/"
 		
 		
-			var p =  logpackage
+			for(p : input.allContents.toIterable.filter(logpackage)){
 			for (entity : input.allContents.toIterable.filter(Entity)){
-				file = "pset/readEntity/" + entity.name.toLowerCase+".pset"
-				fsa.generateFile(file,compile(entity))
+				file = "pset/readEntity/" + entity.name.toLowerCase+".txt"
+				var layer =p.LAYER.toLowerCase
+				fsa.generateFile(file,compile(entity,layer))
 			}
+			}
+			
 	}
 
-	def compile(Entity entity){
-		var pset = GenReadentityInputPset(entity);
+	def compile(Entity entity,String Layer){
+		var pset = GenReadentityInputPset(entity,Layer);
 		pset = pset.toString().replace("],]","]]")
 		return pset
 	}
@@ -73,11 +76,12 @@ class GeneratorReadEntityPset extends AbstractGenerator {
 	}
 
 
-	def GenReadentityInputPset(Entity entity)
+	def GenReadentityInputPset(Entity entity,String Layer)
 	'''
 	$[[record
 	entity_name "«entity.name.toLowerCase»"
 	entity_type ""
+	layer "«Layer»"
 	layer_type "BITEMPORAL"
 	entity_desc [record
 	main_table_description  [record

@@ -4,7 +4,6 @@ package logmodel.provider;
 
 
 import ETL_MODEL.ETL_MODELPackage;
-import ETL_MODEL.provider.LogmodelEditPlugin;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,6 +25,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import techmodel.provider.TechmodelEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link logmodel.Relationship} object.
@@ -68,7 +68,6 @@ public class RelationshipItemProvider
 			addIdentifiyingFieldsRelPropertyDescriptor(object);
 			addDescribingFieldsRelPropertyDescriptor(object);
 			addDescribingfieldsPropertyDescriptor(object);
-			addEntityPropertyDescriptor(object);
 			addRelationshipAliasPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -207,28 +206,6 @@ public class RelationshipItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Relationship_entity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Relationship_entity_feature", "_UI_Relationship_type"),
-				 LogmodelPackage.Literals.RELATIONSHIP__ENTITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Relationship Alias feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -316,7 +293,7 @@ public class RelationshipItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return LogmodelEditPlugin.INSTANCE;
+		return TechmodelEditPlugin.INSTANCE;
 	}
 
 }

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import techmodel.Table;
+import techmodel.TechmodelPackage;
 import type_enum.FieldTypes;
 
 /**
@@ -45,6 +47,7 @@ import type_enum.FieldTypes;
  *   <li>{@link logmodel.impl.FieldImpl#isIsFastChanging <em>Is Fast Changing</em>}</li>
  *   <li>{@link logmodel.impl.FieldImpl#getType <em>Type</em>}</li>
  *   <li>{@link logmodel.impl.FieldImpl#isIsBusinessKey <em>Is Business Key</em>}</li>
+ *   <li>{@link logmodel.impl.FieldImpl#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @generated
@@ -349,6 +352,16 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @ordered
 	 */
 	protected boolean isBusinessKey = IS_BUSINESS_KEY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Table table;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -806,6 +819,68 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @generated
 	 */
 	@Override
+	public Table getTable() {
+		if (table != null && table.eIsProxy()) {
+			InternalEObject oldTable = (InternalEObject)table;
+			table = (Table)eResolveProxy(oldTable);
+			if (table != oldTable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LogmodelPackage.FIELD__TABLE, oldTable, table));
+			}
+		}
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Table basicGetTable() {
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTable(Table newTable, NotificationChain msgs) {
+		Table oldTable = table;
+		table = newTable;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LogmodelPackage.FIELD__TABLE, oldTable, newTable);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTable(Table newTable) {
+		if (newTable != table) {
+			NotificationChain msgs = null;
+			if (table != null)
+				msgs = ((InternalEObject)table).eInverseRemove(this, TechmodelPackage.TABLE__FIELDS, Table.class, msgs);
+			if (newTable != null)
+				msgs = ((InternalEObject)newTable).eInverseAdd(this, TechmodelPackage.TABLE__FIELDS, Table.class, msgs);
+			msgs = basicSetTable(newTable, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LogmodelPackage.FIELD__TABLE, newTable, newTable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LogmodelPackage.FIELD__ENTITY:
@@ -816,6 +891,10 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetInclude((Include)otherEnd, msgs);
+			case LogmodelPackage.FIELD__TABLE:
+				if (table != null)
+					msgs = ((InternalEObject)table).eInverseRemove(this, TechmodelPackage.TABLE__FIELDS, Table.class, msgs);
+				return basicSetTable((Table)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -832,6 +911,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return basicSetEntity(null, msgs);
 			case LogmodelPackage.FIELD__INCLUDE:
 				return basicSetInclude(null, msgs);
+			case LogmodelPackage.FIELD__TABLE:
+				return basicSetTable(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -894,6 +975,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return getType();
 			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
 				return isIsBusinessKey();
+			case LogmodelPackage.FIELD__TABLE:
+				if (resolve) return getTable();
+				return basicGetTable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -956,6 +1040,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return;
 			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
 				setIsBusinessKey((Boolean)newValue);
+				return;
+			case LogmodelPackage.FIELD__TABLE:
+				setTable((Table)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1020,6 +1107,9 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
 				setIsBusinessKey(IS_BUSINESS_KEY_EDEFAULT);
 				return;
+			case LogmodelPackage.FIELD__TABLE:
+				setTable((Table)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1066,6 +1156,8 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 				return type != TYPE_EDEFAULT;
 			case LogmodelPackage.FIELD__IS_BUSINESS_KEY:
 				return isBusinessKey != IS_BUSINESS_KEY_EDEFAULT;
+			case LogmodelPackage.FIELD__TABLE:
+				return table != null;
 		}
 		return super.eIsSet(featureID);
 	}
