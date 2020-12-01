@@ -100,7 +100,10 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     for (final Field field : _entityField) {
       boolean _isIsBusinessKey = field.isIsBusinessKey();
       if (_isIsBusinessKey) {
-        bk_fields.add(field.getName().toLowerCase());
+        String _lowerCase = field.getName().toLowerCase();
+        String _plus = ("\"" + _lowerCase);
+        String _plus_1 = (_plus + "\"");
+        bk_fields.add(_plus_1);
       }
     }
     return IterableExtensions.join(bk_fields, ",");

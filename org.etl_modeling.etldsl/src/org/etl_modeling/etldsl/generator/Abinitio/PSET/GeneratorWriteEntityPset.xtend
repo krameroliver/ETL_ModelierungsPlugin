@@ -26,11 +26,7 @@ class GeneratorWriteEntityPset extends AbstractGenerator {
 				fsa.generateFile(include_file,IncludeEntityPsets(include,entity,layer))
 				
 			}
-			for(rel : entity.relationships){
-				link_file = "pset/WriteEntity/Link/"TableUtils.getRelationSatName(entity,rel)+".txt"
-				fsa.generateFile(link_file,LinkEntityPsets(rel,entity,layer))
-				
-			}
+			
 			
 			}
 		}
@@ -79,17 +75,6 @@ class GeneratorWriteEntityPset extends AbstractGenerator {
 	business_keys [vector «entity.BuildBusinessKeys»]
 	]
 	'''
-	
-	def LinkEntityPsets(Relationship relationship,Entity entity,String layer)
-	'''
-	[record
-	layer "«layer»"
-	entity_name "«relationship.name.toLowerCase»"
-	hub_name    "«TableUtils.getRelationLinkName(entity,relationship)»"
-	sat_name    "«TableUtils.getRelationSatName(entity,relationship)»"
-	tech_keys   [vector "«relationship.name.toLowerCase»_hk"]
-	business_keys [vector «relationship.BuildIdentifyingKeys»]
-	]
-	'''
+
 }
 

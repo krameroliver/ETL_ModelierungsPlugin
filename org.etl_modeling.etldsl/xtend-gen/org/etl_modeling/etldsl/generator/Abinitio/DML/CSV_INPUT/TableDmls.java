@@ -96,7 +96,7 @@ public class TableDmls extends AbstractGenerator {
       String _plus_3 = (_plus_2 + " ");
       String _lowerCase_1 = f.getName().toLowerCase();
       String _plus_4 = (_plus_3 + _lowerCase_1);
-      String _plus_5 = (_plus_4 + ";\n");
+      String _plus_5 = (_plus_4 + "=NULL;\n");
       context = _plus_5;
     }
     String _lowerCase_2 = entity.getName().toLowerCase();
@@ -115,7 +115,7 @@ public class TableDmls extends AbstractGenerator {
             String _plus_9 = (_plus_8 + " ");
             String _lowerCase_3 = inf.getName().toLowerCase();
             String _plus_10 = (_plus_9 + _lowerCase_3);
-            String _plus_11 = (_plus_10 + ";\n");
+            String _plus_11 = (_plus_10 + "=NULL;\n");
             context = _plus_11;
           }
           String _lowerCase_4 = entity.getName().toLowerCase();
@@ -144,7 +144,7 @@ public class TableDmls extends AbstractGenerator {
         _builder.append(" ");
         String _lowerCase = field.getName().toLowerCase();
         _builder.append(_lowerCase);
-        _builder.append(";");
+        _builder.append("= NULL;");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -209,7 +209,7 @@ public class TableDmls extends AbstractGenerator {
         _builder.append(" ");
         String _lowerCase = field.getName().toLowerCase();
         _builder.append(_lowerCase);
-        _builder.append(";");
+        _builder.append("= NULL;");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -246,7 +246,7 @@ public class TableDmls extends AbstractGenerator {
             _builder.append(" ");
             String _lowerCase = field.getName().toLowerCase();
             _builder.append(_lowerCase);
-            _builder.append(";");
+            _builder.append("= NULL;");
             _builder.newLineIfNotEmpty();
           }
         }

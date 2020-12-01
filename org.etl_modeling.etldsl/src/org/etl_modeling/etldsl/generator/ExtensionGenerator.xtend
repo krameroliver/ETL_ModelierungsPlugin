@@ -23,6 +23,6 @@ class ExtensionGenerator extends AbstractGenerator {
 	
 	def CreateExtension()
 	'''
-	CREATE EXTENSION temporal_tables;
+	CREATE EXTENSION IF NOT EXISTS temporal_tables;
 	'''
 }

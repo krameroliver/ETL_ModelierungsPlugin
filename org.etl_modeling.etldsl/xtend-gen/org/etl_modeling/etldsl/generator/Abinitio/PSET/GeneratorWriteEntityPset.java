@@ -50,15 +50,6 @@ public class GeneratorWriteEntityPset extends AbstractGenerator {
                 fsa.generateFile(this.include_file, this.IncludeEntityPsets(include, entity, layer));
               }
             }
-            EList<Relationship> _relationships = entity.getRelationships();
-            for (final Relationship rel : _relationships) {
-              {
-                this.link_file = "pset/WriteEntity/Link/";
-                String _relationSatName = TableUtils.getRelationSatName(entity, rel);
-                /* (_relationSatName + ".txt"); */
-                fsa.generateFile(this.link_file, this.LinkEntityPsets(rel, entity, layer));
-              }
-            }
           }
         }
       }
@@ -162,44 +153,6 @@ public class GeneratorWriteEntityPset extends AbstractGenerator {
     _builder.append("business_keys [vector ");
     String _BuildBusinessKeys = this.BuildBusinessKeys(entity);
     _builder.append(_BuildBusinessKeys);
-    _builder.append("]");
-    _builder.newLineIfNotEmpty();
-    _builder.append("]");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence LinkEntityPsets(final Relationship relationship, final Entity entity, final String layer) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("[record");
-    _builder.newLine();
-    _builder.append("layer \"");
-    _builder.append(layer);
-    _builder.append("\"");
-    _builder.newLineIfNotEmpty();
-    _builder.append("entity_name \"");
-    String _lowerCase = relationship.getName().toLowerCase();
-    _builder.append(_lowerCase);
-    _builder.append("\"");
-    _builder.newLineIfNotEmpty();
-    _builder.append("hub_name    \"");
-    String _relationLinkName = TableUtils.getRelationLinkName(entity, relationship);
-    _builder.append(_relationLinkName);
-    _builder.append("\"");
-    _builder.newLineIfNotEmpty();
-    _builder.append("sat_name    \"");
-    String _relationSatName = TableUtils.getRelationSatName(entity, relationship);
-    _builder.append(_relationSatName);
-    _builder.append("\"");
-    _builder.newLineIfNotEmpty();
-    _builder.append("tech_keys   [vector \"");
-    String _lowerCase_1 = relationship.getName().toLowerCase();
-    _builder.append(_lowerCase_1);
-    _builder.append("_hk\"]");
-    _builder.newLineIfNotEmpty();
-    _builder.append("business_keys [vector ");
-    String _BuildIdentifyingKeys = this.BuildIdentifyingKeys(relationship);
-    _builder.append(_BuildIdentifyingKeys);
     _builder.append("]");
     _builder.newLineIfNotEmpty();
     _builder.append("]");

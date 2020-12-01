@@ -56,7 +56,7 @@ class GeneratorReadEntityPset extends AbstractGenerator {
 		val bk_fields = new ArrayList<String>;
 		for(field : entity.entityField){
 			if(field.isIsBusinessKey){
-				bk_fields.add(field.name.toLowerCase)
+				bk_fields.add('"'+field.name.toLowerCase+'"')
 			}
 		}
 		return bk_fields.join(',')

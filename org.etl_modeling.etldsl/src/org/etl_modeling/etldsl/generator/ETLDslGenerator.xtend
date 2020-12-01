@@ -15,6 +15,7 @@ import org.etl_modeling.etldsl.generator.Abinitio.CC_Jobnetz.CC_JobXML
 import org.etl_modeling.etldsl.generator.Abinitio.FDSET.FdsetGenerator
 import org.etl_modeling.etldsl.generator.Abinitio.PSET.GeneratorReadEntityPset
 import org.etl_modeling.etldsl.generator.Abinitio.PSET.GeneratorWriteEntityPset
+import org.etl_modeling.etldsl.generator.Abinitio.PSET.LinkPsetLoader
 
 /**
  * Generates code from your model files on save.
@@ -33,6 +34,7 @@ class ETLDslGenerator extends AbstractGenerator {
 @Inject GeneratorWriteEntityPset weg
 @Inject TechModel tec
 @Inject TableDmls tdml
+@Inject LinkPsetLoader linkp
 
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
@@ -46,6 +48,7 @@ class ETLDslGenerator extends AbstractGenerator {
 		fdset.doGenerate(resource,fsa,context);
 		reg.doGenerate(resource,fsa,context);
 		weg.doGenerate(resource,fsa,context);
+		linkp.doGenerate(resource,fsa,context);
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(Greeting)

@@ -29,7 +29,7 @@ public class ExtensionGenerator extends AbstractGenerator {
   
   public CharSequence CreateExtension() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("CREATE EXTENSION temporal_tables;");
+    _builder.append("CREATE EXTENSION IF NOT EXISTS temporal_tables;");
     _builder.newLine();
     return _builder;
   }

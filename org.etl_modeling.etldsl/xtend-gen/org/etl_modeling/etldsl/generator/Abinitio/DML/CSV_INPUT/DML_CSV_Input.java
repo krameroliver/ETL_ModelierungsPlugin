@@ -95,7 +95,7 @@ public class DML_CSV_Input extends AbstractGenerator {
             _builder.append(" ");
             String _lowerCase = f.getName().toLowerCase();
             _builder.append(_lowerCase, "   ");
-            _builder.append(" ;");
+            _builder.append(" = NULL;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -135,7 +135,7 @@ public class DML_CSV_Input extends AbstractGenerator {
             _builder.append(" ");
             String _lowerCase = f.getName().toLowerCase();
             _builder.append(_lowerCase, "   ");
-            _builder.append(" ;");
+            _builder.append(" = NULL;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -169,7 +169,7 @@ public class DML_CSV_Input extends AbstractGenerator {
             _builder.append(" ");
             String _lowerCase = f.getName().toLowerCase();
             _builder.append(_lowerCase);
-            _builder.append(" ;");
+            _builder.append(" = NULL;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -196,7 +196,7 @@ public class DML_CSV_Input extends AbstractGenerator {
             _builder.append(" ");
             String _lowerCase = f.getName().toLowerCase();
             _builder.append(_lowerCase);
-            _builder.append(" ;");
+            _builder.append(" = NULL;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -242,7 +242,7 @@ public class DML_CSV_Input extends AbstractGenerator {
             _builder.append(" ");
             String _dMLDataTypeString = Utils.getDMLDataTypeString(f);
             _builder.append(_dMLDataTypeString);
-            _builder.append(";");
+            _builder.append("= NULL;");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -262,7 +262,7 @@ public class DML_CSV_Input extends AbstractGenerator {
     _builder.append("string(\"\\x01\") ");
     String _lowerCase_2 = entity.getName().toLowerCase();
     _builder.append(_lowerCase_2);
-    _builder.append("_hk ;");
+    _builder.append("_hk = NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("end h_");
     String _lowerCase_3 = entity.getName().toLowerCase();

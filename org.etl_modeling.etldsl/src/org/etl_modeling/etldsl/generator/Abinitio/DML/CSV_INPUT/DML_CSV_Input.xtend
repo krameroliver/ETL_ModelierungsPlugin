@@ -57,7 +57,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	   record
 	   
 	   «FOR f : cm.commonmappinginputfields»
-	   «Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
+	   «Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» = NULL;
 	   «ENDFOR»
 	   
 	   end «cm.name.toLowerCase»
@@ -72,7 +72,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	   record
 	   
 	   «FOR f : cm.commonmappingoutputfields»
-	   «Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
+	   «Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» = NULL;
 	   «ENDFOR»
 	   
 	   end «cm.name.toLowerCase»
@@ -85,7 +85,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	record
 	«FOR f : entity.entityField»
 	«IF !f.tableOnly»
-	«Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
+	«Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» = NULL;
 	«ENDIF»
 	«ENDFOR»
 	end
@@ -96,7 +96,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	record
 	«FOR f : entity.entityField»
 		«IF !f.interfaceOnly»
-		«Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» ;
+		«Utils.getDMLDataTypeString(f)» «f.name.toLowerCase» = NULL;
 		«ENDIF»
 	«ENDFOR»
 	date("YYYY-MM-DD") creation_date ;
@@ -116,7 +116,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	record
 	«FOR f : entity.entityField»
 	«IF !f.interfaceOnly»
-	«f.name.toLowerCase» «Utils.getDMLDataTypeString(f)»;
+	«f.name.toLowerCase» «Utils.getDMLDataTypeString(f)»= NULL;
 	«ENDIF»
 	«ENDFOR»
 	end s_«entity.name.toLowerCase»
@@ -124,7 +124,7 @@ class DML_CSV_Input extends AbstractGenerator {
 	record
 	string("\x01") record_source ;
 	string("\x01") record_hk ;
-	string("\x01") «entity.name.toLowerCase»_hk ;
+	string("\x01") «entity.name.toLowerCase»_hk = NULL;
 	end h_«entity.name.toLowerCase»
 	end
 	'''

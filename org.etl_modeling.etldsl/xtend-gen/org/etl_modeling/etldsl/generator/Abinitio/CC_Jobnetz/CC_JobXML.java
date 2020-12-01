@@ -34,7 +34,7 @@ public class CC_JobXML extends AbstractGenerator {
       predecs = _plus_1;
     }
     String job_out = job_template.replace("<executable>", job_executable).replace("techsystem", job_system).replace("<jobname>", jobname).replace("--dependencys", predecs);
-    String out_file = (("jobdef/" + jobname) + ".jobdef");
+    String out_file = (("/jobdef/" + jobname) + ".jobdef");
     fsa.generateFile(out_file, job_out);
   }
 }

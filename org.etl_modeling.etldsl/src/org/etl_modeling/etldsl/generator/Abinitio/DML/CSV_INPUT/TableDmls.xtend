@@ -58,7 +58,7 @@ class TableDmls extends AbstractGenerator {
 		context = context +'string("x01") ' +entity.name.toLowerCase+"_hk;\n";
 			context  = context + '\trecord\n'
 			for(f : entity.entityField){
-				context = context +"\t" +Utils.getDMLDataTypeString(f) + " "+f.name.toLowerCase+";\n";
+				context = context +"\t" +Utils.getDMLDataTypeString(f) + " "+f.name.toLowerCase+"=NULL;\n";
 			}
 			context = context + "end s_"+ entity.name.toLowerCase+";\n"
 			if(number_includes > 0){
@@ -66,7 +66,7 @@ class TableDmls extends AbstractGenerator {
 				for(include : entity.include){
 					context = context + "record\n"
 					for(inf : include.includeFields){
-						context = context +"\t" +Utils.getDMLDataTypeString(inf) + " "+inf.name.toLowerCase+";\n";
+						context = context +"\t" +Utils.getDMLDataTypeString(inf) + " "+inf.name.toLowerCase+"=NULL;\n";
 					}
 					context = context + "end s_"+entity.name.toLowerCase+"_"+ include.name.toLowerCase+";\n"
 				}
@@ -83,7 +83,7 @@ class TableDmls extends AbstractGenerator {
 	'''
 	record
 	«FOR field : entity.entityField»
-	«Utils.getDMLDataTypeString(field)» «field.name.toLowerCase»;
+	«Utils.getDMLDataTypeString(field)» «field.name.toLowerCase»= NULL;
 	«ENDFOR»
 	end
 	'''
@@ -112,7 +112,7 @@ class TableDmls extends AbstractGenerator {
 	'''
 	record
 	«FOR field : entity.entityField»
-	«Utils.getDMLDataTypeString(field)» «field.name.toLowerCase»;
+	«Utils.getDMLDataTypeString(field)» «field.name.toLowerCase»= NULL;
 	«ENDFOR»
 	date("YYYY-MM-DD") creation_date;
 	date("YYYY-MM-DD") modification_date;
@@ -127,7 +127,7 @@ class TableDmls extends AbstractGenerator {
 	record
 	«FOR field : entity.entityField»
 	«IF field.isIsBusinessKey»
-		«Utils.getDMLDataTypeString(field)» «field.name.toLowerCase»;
+		«Utils.getDMLDataTypeString(field)» «field.name.toLowerCase»= NULL;
 	«ENDIF»
 	«ENDFOR»
 	string("\x01") «entity.name.toLowerCase»_hk;

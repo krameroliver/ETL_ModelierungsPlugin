@@ -31,7 +31,7 @@ class CC_JobXML extends AbstractGenerator {
 		}
 		var job_out = job_template.replace("<executable>",job_executable).replace("techsystem",job_system).replace("<jobname>",jobname).replace("--dependencys",predecs)
 		
-		var out_file = "jobdef/"+jobname+".jobdef"
+		var out_file = "/jobdef/"+jobname+".jobdef"
 		fsa.generateFile(out_file,job_out)
 		
 	}
