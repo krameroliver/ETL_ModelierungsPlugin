@@ -52,6 +52,16 @@ class GeneratorReadEntityPset extends AbstractGenerator {
 		
 	}
 	
+	def TableBKFieldsJoined(Entity entity){
+		val bk_fields = new ArrayList<String>;
+		for(field : entity.entityField){
+			if(field.isIsBusinessKey){
+				bk_fields.add(field.name.toLowerCase)
+			}
+		}
+		return bk_fields.join(',')
+	}
+	
 	
 	def partner_table_descriptions(String entity_name,String table_name)
 	'''
@@ -59,7 +69,7 @@ class GeneratorReadEntityPset extends AbstractGenerator {
 	table_name "«table_name»"
 	historization_type "full"
 	tkey_fields [vector "«entity_name»_hk"]
-	bkey_fields	NULL
+	bkey_fields	[vector ]
 	table_relations    [vector]]
 	'''
 
@@ -78,24 +88,23 @@ class GeneratorReadEntityPset extends AbstractGenerator {
 
 	def GenReadentityInputPset(Entity entity,String Layer)
 	'''
-	$[[record
+	[record
+	layer "«Layer»"
 	entity_name "«entity.name.toLowerCase»"
 	entity_type ""
-	layer "«Layer»"
 	layer_type "BITEMPORAL"
 	entity_desc [record
 	main_table_description  [record
 	table_name         "«TableUtils.getHubName(entity)»"
 	historization_type "BITEMPORAL"
 	tkey_fields        [vector "«entity.name.toLowerCase»_hk"]
-	bkey_fields        [vector «FOR bkf : entity.entityField»«IF bkf.isIsBusinessKey»"«bkf.name»",«ENDIF»«ENDFOR»]
+	bkey_fields        [vector «TableBKFieldsJoined(entity)»]
 	table_relations    [vector
 	«entity.TableRecordJoind»
 	]]
 	partner_table_descriptions [vector
 	«entity.partner_tableRecordJoind»
-	]]]]
-	
+	]]]
 	'''
 	
 }

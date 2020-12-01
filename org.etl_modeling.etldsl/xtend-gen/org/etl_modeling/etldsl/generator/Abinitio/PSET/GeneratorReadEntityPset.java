@@ -94,6 +94,18 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     return IterableExtensions.join(al, ",");
   }
   
+  public String TableBKFieldsJoined(final Entity entity) {
+    final ArrayList<String> bk_fields = new ArrayList<String>();
+    EList<Field> _entityField = entity.getEntityField();
+    for (final Field field : _entityField) {
+      boolean _isIsBusinessKey = field.isIsBusinessKey();
+      if (_isIsBusinessKey) {
+        bk_fields.add(field.getName().toLowerCase());
+      }
+    }
+    return IterableExtensions.join(bk_fields, ",");
+  }
+  
   public CharSequence partner_table_descriptions(final String entity_name, final String table_name) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("[record");
@@ -108,7 +120,7 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     _builder.append(entity_name);
     _builder.append("_hk\"]");
     _builder.newLineIfNotEmpty();
-    _builder.append("bkey_fields\tNULL");
+    _builder.append("bkey_fields\t[vector ]");
     _builder.newLine();
     _builder.append("table_relations    [vector]]");
     _builder.newLine();
@@ -127,8 +139,12 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
   
   public CharSequence GenReadentityInputPset(final Entity entity, final String Layer) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("$[[record");
+    _builder.append("[record");
     _builder.newLine();
+    _builder.append("layer \"");
+    _builder.append(Layer);
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
     _builder.append("entity_name \"");
     String _lowerCase = entity.getName().toLowerCase();
     _builder.append(_lowerCase);
@@ -136,10 +152,6 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("entity_type \"\"");
     _builder.newLine();
-    _builder.append("layer \"");
-    _builder.append(Layer);
-    _builder.append("\"");
-    _builder.newLineIfNotEmpty();
     _builder.append("layer_type \"BITEMPORAL\"");
     _builder.newLine();
     _builder.append("entity_desc [record");
@@ -159,20 +171,8 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     _builder.append("_hk\"]");
     _builder.newLineIfNotEmpty();
     _builder.append("bkey_fields        [vector ");
-    {
-      EList<Field> _entityField = entity.getEntityField();
-      for(final Field bkf : _entityField) {
-        {
-          boolean _isIsBusinessKey = bkf.isIsBusinessKey();
-          if (_isIsBusinessKey) {
-            _builder.append("\"");
-            String _name = bkf.getName();
-            _builder.append(_name);
-            _builder.append("\",");
-          }
-        }
-      }
-    }
+    String _TableBKFieldsJoined = this.TableBKFieldsJoined(entity);
+    _builder.append(_TableBKFieldsJoined);
     _builder.append("]");
     _builder.newLineIfNotEmpty();
     _builder.append("table_relations    [vector");
@@ -187,8 +187,7 @@ public class GeneratorReadEntityPset extends AbstractGenerator {
     String _partner_tableRecordJoind = this.partner_tableRecordJoind(entity);
     _builder.append(_partner_tableRecordJoind);
     _builder.newLineIfNotEmpty();
-    _builder.append("]]]]");
-    _builder.newLine();
+    _builder.append("]]]");
     _builder.newLine();
     return _builder;
   }
