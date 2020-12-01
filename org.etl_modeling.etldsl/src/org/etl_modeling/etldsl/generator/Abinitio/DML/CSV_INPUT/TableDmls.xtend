@@ -38,8 +38,10 @@ class TableDmls extends AbstractGenerator {
 				for(rel : entity.relationships){
 					var link_dml = "dml/HUB/r_"+rel.name.toLowerCase+".dml"
 					var link_sat_dml = "dml/HUB/r_s_"+rel.name.toLowerCase+".dml"
+					var rel_loader_path="dml/LoaderInput/entity_"+rel.name.toLowerCase+".dml"
 					fsa.generateFile(link_dml,genLinkTableDML(rel,entity))
 					fsa.generateFile(link_sat_dml,genLinkSATTableDML(rel,entity))
+					fsa.generateFile(rel_loader_path,genLinkLoaderInput(rel,entity))
 					//genLinkSATTableDML
 				
 				
@@ -77,7 +79,13 @@ class TableDmls extends AbstractGenerator {
 		return context
 	}
 	
-	
+	def genLinkLoaderInput(Relationship rel,Entity entity)
+	'''
+	record
+	string("\x01") «entity.name.toLowerCase»_hk;
+	string("\x01") «rel.toEntity.name.toLowerCase»_hk;
+	end
+	'''
 
 	def genLoaderInputDML(Entity entity)
 	'''
@@ -92,18 +100,19 @@ class TableDmls extends AbstractGenerator {
 	def genLinkTableDML(Relationship rel,Entity entity)
 	'''
 	record
-	string("\x01") «rel.name.toLowerCase»_hk ;
-	string("\x01") «entity.name.toLowerCase»_hk;
-	string("\x01") «rel.toEntity.name.toLowerCase»_hk;
+	string("\x01") «rel.name.toLowerCase»_hk  = NULL;
+	string("\x01") «entity.name.toLowerCase»_hk =NULL;
+	string("\x01") «rel.toEntity.name.toLowerCase»_hk =NULL;
 	end
 	'''
 	
 	def genLinkSATTableDML(Relationship rel,Entity entity)
 	'''
 	record
-	string("\x01") «rel.name.toLowerCase»_hk,
+	string("\x01") «rel.name.toLowerCase»_hk = NULL;
 	date("YYYY-MM-DD") creation_date;
 	date("YYYY-MM-DD") modification_date;
+	string("\x01") record_source;
 	string("\x01") effectiv_timerange;
 	end
 	'''
@@ -117,7 +126,7 @@ class TableDmls extends AbstractGenerator {
 	date("YYYY-MM-DD") creation_date;
 	date("YYYY-MM-DD") modification_date;
 	string("\x01") record_source;
-	string("\x01") «entity.name.toLowerCase»_hk;
+	string("\x01") «entity.name.toLowerCase»_hk  = NULL;
 	string("\x01") effectiv_timerange;
 	end
 	'''
@@ -130,7 +139,7 @@ class TableDmls extends AbstractGenerator {
 		«Utils.getDMLDataTypeString(field)» «field.name.toLowerCase»= NULL;
 	«ENDIF»
 	«ENDFOR»
-	string("\x01") «entity.name.toLowerCase»_hk;
+	string("\x01") «entity.name.toLowerCase»_hk  = NULL;
 	end 
 	'''
 	

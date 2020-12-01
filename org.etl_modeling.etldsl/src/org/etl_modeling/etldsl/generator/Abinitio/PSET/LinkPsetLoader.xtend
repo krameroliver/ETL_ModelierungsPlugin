@@ -17,7 +17,7 @@ class LinkPsetLoader extends AbstractGenerator {
 		var layer = p.LAYER.toLowerCase
 		for(entity : input.allContents.toIterable.filter(Entity)){
 			for(rel : entity.relationships){
-				var rel_file = "pset/WriteEntity/Relationship/"+TableUtils.getRelationLinkName(entity,rel)+".txt"
+				var rel_file = "pset/WriteEntity/Relationship/"+rel.name.toLowerCase+".txt"
 				fsa.generateFile(rel_file,LinkEntityPsets(rel,entity,layer))
 				
 			}
@@ -44,7 +44,7 @@ class LinkPsetLoader extends AbstractGenerator {
 	hub_name    "«TableUtils.getRelationLinkName(entity,relationship)»"
 	sat_name    "«TableUtils.getRelationSatName(entity,relationship)»"
 	tech_keys   [vector "«relationship.name.toLowerCase»_hk"]
-	business_keys [vector «IdentifyingFields(relationship)» ]
+	business_keys [vector "«entity.name.toLowerCase»_hk","«relationship.toEntity.name.toLowerCase»_hk" ]
 	]
 	'''
 	

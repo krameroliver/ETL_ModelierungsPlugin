@@ -70,8 +70,12 @@ public class TableDmls extends AbstractGenerator {
                 String _lowerCase_6 = rel.getName().toLowerCase();
                 String _plus_6 = ("dml/HUB/r_s_" + _lowerCase_6);
                 String link_sat_dml = (_plus_6 + ".dml");
+                String _lowerCase_7 = rel.getName().toLowerCase();
+                String _plus_7 = ("dml/LoaderInput/entity_" + _lowerCase_7);
+                String rel_loader_path = (_plus_7 + ".dml");
                 fsa.generateFile(link_dml, this.genLinkTableDML(rel, entity));
                 fsa.generateFile(link_sat_dml, this.genLinkSATTableDML(rel, entity));
+                fsa.generateFile(rel_loader_path, this.genLinkLoaderInput(rel, entity));
               }
             }
           }
@@ -132,6 +136,25 @@ public class TableDmls extends AbstractGenerator {
     return context;
   }
   
+  public CharSequence genLinkLoaderInput(final Relationship rel, final Entity entity) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("record");
+    _builder.newLine();
+    _builder.append("string(\"\\x01\") ");
+    String _lowerCase = entity.getName().toLowerCase();
+    _builder.append(_lowerCase);
+    _builder.append("_hk;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("string(\"\\x01\") ");
+    String _lowerCase_1 = rel.getToEntity().getName().toLowerCase();
+    _builder.append(_lowerCase_1);
+    _builder.append("_hk;");
+    _builder.newLineIfNotEmpty();
+    _builder.append("end");
+    _builder.newLine();
+    return _builder;
+  }
+  
   public CharSequence genLoaderInputDML(final Entity entity) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("record");
@@ -160,17 +183,17 @@ public class TableDmls extends AbstractGenerator {
     _builder.append("string(\"\\x01\") ");
     String _lowerCase = rel.getName().toLowerCase();
     _builder.append(_lowerCase);
-    _builder.append("_hk ;");
+    _builder.append("_hk  = NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("string(\"\\x01\") ");
     String _lowerCase_1 = entity.getName().toLowerCase();
     _builder.append(_lowerCase_1);
-    _builder.append("_hk;");
+    _builder.append("_hk =NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("string(\"\\x01\") ");
     String _lowerCase_2 = rel.getToEntity().getName().toLowerCase();
     _builder.append(_lowerCase_2);
-    _builder.append("_hk;");
+    _builder.append("_hk =NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("end");
     _builder.newLine();
@@ -184,11 +207,13 @@ public class TableDmls extends AbstractGenerator {
     _builder.append("string(\"\\x01\") ");
     String _lowerCase = rel.getName().toLowerCase();
     _builder.append(_lowerCase);
-    _builder.append("_hk,");
+    _builder.append("_hk = NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("date(\"YYYY-MM-DD\") creation_date;");
     _builder.newLine();
     _builder.append("date(\"YYYY-MM-DD\") modification_date;");
+    _builder.newLine();
+    _builder.append("string(\"\\x01\") record_source;");
     _builder.newLine();
     _builder.append("string(\"\\x01\") effectiv_timerange;");
     _builder.newLine();
@@ -222,7 +247,7 @@ public class TableDmls extends AbstractGenerator {
     _builder.append("string(\"\\x01\") ");
     String _lowerCase_1 = entity.getName().toLowerCase();
     _builder.append(_lowerCase_1);
-    _builder.append("_hk;");
+    _builder.append("_hk  = NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("string(\"\\x01\") effectiv_timerange;");
     _builder.newLine();
@@ -255,7 +280,7 @@ public class TableDmls extends AbstractGenerator {
     _builder.append("string(\"\\x01\") ");
     String _lowerCase_1 = entity.getName().toLowerCase();
     _builder.append(_lowerCase_1);
-    _builder.append("_hk;");
+    _builder.append("_hk  = NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("end ");
     _builder.newLine();

@@ -175,7 +175,7 @@ class BiTempDV extends AbstractGenerator {
 	def generateRelations(Entity entity)
 	'''
 	«FOR relation : entity.relationships»
-			CREATE TABLE «layer»SCHEMA_ID.r_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»(
+			CREATE TABLE «layer»SCHEMA_ID.r_«relation.name.toLowerCase»(
 			«relation.name.toLowerCase»_hk CHAR(32),
 			«entity.name.toLowerCase»_hk CHAR(32),
 			«relation.toEntity.name.toLowerCase»_hk CHAR(32),
@@ -187,9 +187,9 @@ class BiTempDV extends AbstractGenerator {
    '''
    «FOR relation : entity.relationships»
 	   «IF relation.identifiyingFieldsRel.length > 0»
-	CREATE TABLE «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»(
+	CREATE TABLE «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»(
 	   «ELSE»
-	  CREATE TABLE «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»(
+	  CREATE TABLE «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»(
 	   «ENDIF»
 	
 	«relation.name.toLowerCase»_hk CHAR(32),
@@ -201,11 +201,11 @@ class BiTempDV extends AbstractGenerator {
 	PRIMARY KEY(«relation.name.toLowerCase»_hk),effectiv_timerange);
 	COMMIT;
 		«IF relation.identifiyingFieldsRel.length > 0»
-	CREATE TABLE «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist (like «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» including all);
-	CREATE TRIGGER versioning_trigger_«layer»_r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist', true);
+	CREATE TABLE «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»_hist (like «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase» including all);
+	CREATE TRIGGER versioning_trigger_«layer»_r_m_«relation.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer»SCHEMA_ID.r_m_«relation.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer»SCHEMA_ID.r_m_«relation.name.toLowerCase»_hist', true);
 		«ELSE»
-	CREATE TABLE «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist (like «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» including all);
-	CREATE TRIGGER versioning_trigger_«layer»_r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»_«entity.name.toLowerCase»_«relation.toEntity.name.toLowerCase»_hist', true);
+	CREATE TABLE «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»_hist (like «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase» including all);
+	CREATE TRIGGER versioning_trigger_«layer»_r_s_«relation.name.toLowerCase» BEFORE INSERT OR UPDATE OR DELETE ON «layer»SCHEMA_ID.r_s_«relation.name.toLowerCase» FOR EACH ROW EXECUTE PROCEDURE versioning('effectiv_timerange', '«layer»SCHEMA_ID.r_s_«relation.name.toLowerCase»_hist', true);
 		«ENDIF»	
    «ENDFOR»
    COMMIT;

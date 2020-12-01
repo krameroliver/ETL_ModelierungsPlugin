@@ -101,10 +101,8 @@ class DML_CSV_Input extends AbstractGenerator {
 	«ENDFOR»
 	date("YYYY-MM-DD") creation_date ;
 	date("YYYY-MM-DD") modification_date ;
-	string("\x01") processing_point ;
 	string("\x01") record_source ;
-	string("\x01") record_hk ;
-	string("\x01") «entity.name.toLowerCase»_hk ;
+	string("\x01") «entity.name.toLowerCase»_hk  = NULL;
 	string("\x01") effectiv_timerange ;
 	end
 	'''
@@ -123,7 +121,6 @@ class DML_CSV_Input extends AbstractGenerator {
 	
 	record
 	string("\x01") record_source ;
-	string("\x01") record_hk ;
 	string("\x01") «entity.name.toLowerCase»_hk = NULL;
 	end h_«entity.name.toLowerCase»
 	end

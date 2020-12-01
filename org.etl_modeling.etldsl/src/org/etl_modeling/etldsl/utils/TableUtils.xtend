@@ -30,9 +30,9 @@ class TableUtils {
 	def static getRelationSatName(Entity entity,Relationship relation){
 		var tablename = ""
 		if(relation.identifiyingFieldsRel.length > 0){
-			tablename= "r_m_"+relation.name+"__"+entity.name.toLowerCase+"_"+relation.toEntity.name.toLowerCase
+			tablename= "r_m_"+relation.name.toLowerCase
 		}else{
-			tablename= "r_s_"+relation.name+"__"+entity.name.toLowerCase+"_"+relation.toEntity.name.toLowerCase
+			tablename= "r_s_"+relation.name.toLowerCase
 		}
 		return tablename
 			
@@ -41,7 +41,7 @@ class TableUtils {
 	
 	def static getRelationLinkName(Entity entity,Relationship relation){
 		var tablename = ""
-		tablename= "r_"+relation.name+"__"+entity.name.toLowerCase+"_"+relation.toEntity.name.toLowerCase
+		tablename= "r_"+relation.name.toLowerCase
 		return tablename
 			
 	}

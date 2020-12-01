@@ -206,16 +206,12 @@ public class DML_CSV_Input extends AbstractGenerator {
     _builder.newLine();
     _builder.append("date(\"YYYY-MM-DD\") modification_date ;");
     _builder.newLine();
-    _builder.append("string(\"\\x01\") processing_point ;");
-    _builder.newLine();
     _builder.append("string(\"\\x01\") record_source ;");
-    _builder.newLine();
-    _builder.append("string(\"\\x01\") record_hk ;");
     _builder.newLine();
     _builder.append("string(\"\\x01\") ");
     String _lowerCase_1 = entity.getName().toLowerCase();
     _builder.append(_lowerCase_1);
-    _builder.append("_hk ;");
+    _builder.append("_hk  = NULL;");
     _builder.newLineIfNotEmpty();
     _builder.append("string(\"\\x01\") effectiv_timerange ;");
     _builder.newLine();
@@ -256,8 +252,6 @@ public class DML_CSV_Input extends AbstractGenerator {
     _builder.append("record");
     _builder.newLine();
     _builder.append("string(\"\\x01\") record_source ;");
-    _builder.newLine();
-    _builder.append("string(\"\\x01\") record_hk ;");
     _builder.newLine();
     _builder.append("string(\"\\x01\") ");
     String _lowerCase_2 = entity.getName().toLowerCase();

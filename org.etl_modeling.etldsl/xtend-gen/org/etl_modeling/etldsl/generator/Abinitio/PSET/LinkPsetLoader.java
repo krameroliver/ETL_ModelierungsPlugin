@@ -30,8 +30,8 @@ public class LinkPsetLoader extends AbstractGenerator {
           EList<Relationship> _relationships = entity.getRelationships();
           for (final Relationship rel : _relationships) {
             {
-              String _relationLinkName = TableUtils.getRelationLinkName(entity, rel);
-              String _plus = ("pset/WriteEntity/Relationship/" + _relationLinkName);
+              String _lowerCase = rel.getName().toLowerCase();
+              String _plus = ("pset/WriteEntity/Relationship/" + _lowerCase);
               String rel_file = (_plus + ".txt");
               fsa.generateFile(rel_file, this.LinkEntityPsets(rel, entity, layer));
             }
@@ -81,10 +81,13 @@ public class LinkPsetLoader extends AbstractGenerator {
     _builder.append(_lowerCase_1);
     _builder.append("_hk\"]");
     _builder.newLineIfNotEmpty();
-    _builder.append("business_keys [vector ");
-    String _IdentifyingFields = this.IdentifyingFields(relationship);
-    _builder.append(_IdentifyingFields);
-    _builder.append(" ]");
+    _builder.append("business_keys [vector \"");
+    String _lowerCase_2 = entity.getName().toLowerCase();
+    _builder.append(_lowerCase_2);
+    _builder.append("_hk\",\"");
+    String _lowerCase_3 = relationship.getToEntity().getName().toLowerCase();
+    _builder.append(_lowerCase_3);
+    _builder.append("_hk\" ]");
     _builder.newLineIfNotEmpty();
     _builder.append("]");
     _builder.newLine();

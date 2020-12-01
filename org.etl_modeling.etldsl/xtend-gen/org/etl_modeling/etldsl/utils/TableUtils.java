@@ -48,40 +48,22 @@ public class TableUtils {
     int _length = ((Object[])Conversions.unwrapArray(relation.getIdentifiyingFieldsRel(), Object.class)).length;
     boolean _greaterThan = (_length > 0);
     if (_greaterThan) {
-      String _name = relation.getName();
-      String _plus = ("r_m_" + _name);
-      String _plus_1 = (_plus + "__");
-      String _lowerCase = entity.getName().toLowerCase();
-      String _plus_2 = (_plus_1 + _lowerCase);
-      String _plus_3 = (_plus_2 + "_");
-      String _lowerCase_1 = relation.getToEntity().getName().toLowerCase();
-      String _plus_4 = (_plus_3 + _lowerCase_1);
-      tablename = _plus_4;
+      String _lowerCase = relation.getName().toLowerCase();
+      String _plus = ("r_m_" + _lowerCase);
+      tablename = _plus;
     } else {
-      String _name_1 = relation.getName();
-      String _plus_5 = ("r_s_" + _name_1);
-      String _plus_6 = (_plus_5 + "__");
-      String _lowerCase_2 = entity.getName().toLowerCase();
-      String _plus_7 = (_plus_6 + _lowerCase_2);
-      String _plus_8 = (_plus_7 + "_");
-      String _lowerCase_3 = relation.getToEntity().getName().toLowerCase();
-      String _plus_9 = (_plus_8 + _lowerCase_3);
-      tablename = _plus_9;
+      String _lowerCase_1 = relation.getName().toLowerCase();
+      String _plus_1 = ("r_s_" + _lowerCase_1);
+      tablename = _plus_1;
     }
     return tablename;
   }
   
   public static String getRelationLinkName(final Entity entity, final Relationship relation) {
     String tablename = "";
-    String _name = relation.getName();
-    String _plus = ("r_" + _name);
-    String _plus_1 = (_plus + "__");
-    String _lowerCase = entity.getName().toLowerCase();
-    String _plus_2 = (_plus_1 + _lowerCase);
-    String _plus_3 = (_plus_2 + "_");
-    String _lowerCase_1 = relation.getToEntity().getName().toLowerCase();
-    String _plus_4 = (_plus_3 + _lowerCase_1);
-    tablename = _plus_4;
+    String _lowerCase = relation.getName().toLowerCase();
+    String _plus = ("r_" + _lowerCase);
+    tablename = _plus;
     return tablename;
   }
 }
